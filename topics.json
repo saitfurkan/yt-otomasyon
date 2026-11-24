@@ -1,25 +1,19 @@
 {
-  "generated": "2026-11-24 12:09 UTC",
+  "generated": "2026-11-24 17:47 UTC",
   "errors": [],
   "topics": [
     {
-      "score": 59,
+      "score": 56,
       "title": "Fon soruşturması | Bulls Yatırım Yönetim Kurulu Başkanı Kemal Akkaya gözaltında",
       "sources": [
         "BirGün",
-        "Cumhuriyet",
         "Hürriyet",
-        "NTV",
-        "TRT Haber"
+        "NTV"
       ],
       "links": [
         {
           "source": "NTV",
           "url": "https://www.ntv.com.tr/turkiye/fon-sorusturmasi-bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-gozaltinda-1752349"
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/fon-sorusturmasinda-yeni-gelisme-bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-yeniden-gozaltina-alindi-2558872"
         },
         {
           "source": "Hürriyet",
@@ -28,10 +22,6 @@
         {
           "source": "BirGün",
           "url": "https://www.birgun.net/haber/bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-gozaltina-alindi-748131"
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-yeniden-gozaltinda-964292.html"
         }
       ],
       "reasons": [
@@ -42,6 +32,32 @@
       ],
       "sensitive": true,
       "newest": "2026-11-24T11:49:33+03:00"
+    },
+    {
+      "score": 41,
+      "title": "71 ilde mali suç örgütlerine operasyon, 455 şüpheliye işlem",
+      "sources": [
+        "NTV",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/71-ilde-mali-suc-orgutlerine-operasyon-455-supheliye-islem-1752398"
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/turkiye/71-ilde-mali-suc-orgutlerine-operasyon-964322.html"
+        }
+      ],
+      "reasons": [
+        "suç:+23",
+        "para:+6",
+        "güç:+6",
+        "rakam:+1"
+      ],
+      "sensitive": true,
+      "newest": "2026-11-24T15:19:24+03:00"
     },
     {
       "score": 36,
@@ -65,20 +81,15 @@
       "newest": "2026-11-24T12:19:12+03:00"
     },
     {
-      "score": 34,
+      "score": 31,
       "title": "Ankara merkezli 8 ilde Alihan Kuriş suç örgütüne operasyon. 21 gözaltı",
       "sources": [
-        "Habertürk",
         "NTV"
       ],
       "links": [
         {
           "source": "NTV",
           "url": "https://www.ntv.com.tr/turkiye/ankara-merkezli-8-ilde-alihan-kuris-suc-orgutune-operasyon-21-gozalti-1752318"
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/gundem/son-dakika-bakan-gurlek-duyurdu-5-ilde-suc-orgutlerine-operasyon-245-gozalti-3929687"
         }
       ],
       "reasons": [
@@ -88,47 +99,13 @@
         "rakam:+1"
       ],
       "sensitive": true,
-      "newest": "2026-11-24T08:58:05+00:00"
-    },
-    {
-      "score": 29,
-      "title": "Kartal Belediyesi'ne kentsel dönüşüm operasyonu. 10 şüpheli gözaltında",
-      "sources": [
-        "BirGün",
-        "Habertürk",
-        "NTV"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/kartal-belediyesine-kentsel-donusum-operasyonu-10-supheli-gozaltinda-1752285"
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/kartal-belediyesi-ne-kentsel-donusum-operasyonu-10-gozalti-748091"
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/gundem/son-dakika-kartal-belediyesine-operasyon-3929611"
-        }
-      ],
-      "reasons": [
-        "suç:+15",
-        "para:+1",
-        "güç:+3",
-        "merak:+1",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "newest": "2026-11-24T06:42:43+00:00"
+      "newest": "2026-11-24T10:05:55+03:00"
     },
     {
       "score": 29,
       "title": "Son dakika... Fatma Betül Sayan Kaya ev hapsi şartıyla tahliye edildi",
       "sources": [
         "BirGün",
-        "CNN Türk",
-        "Cumhuriyet",
         "Habertürk",
         "Hürriyet",
         "NTV"
@@ -147,16 +124,12 @@
           "url": "https://www.birgun.net/haber/fon-sorusturmasinda-tutuklanmisti-fatma-betul-sayan-kaya-ev-hapsiyle-tahliye-edildi-748173"
         },
         {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/son-dakika-fatma-betul-sayan-kaya-ev-hapsi-sartiyla-tahliye-edildi-3497478"
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/son-dakika-fatma-betul-sayan-kaya-ev-hapsi-sartiyla-tahliye-edildi-19-gun-tutuklu-kaldi-2558928"
-        },
-        {
           "source": "Hürriyet",
           "url": "https://www.hurriyet.com.tr/gundem/fatma-betul-sayan-kaya-ev-hapsi-sartiyla-tahliye-edildi-43389248"
+        },
+        {
+          "source": "Habertürk",
+          "url": "https://www.haberturk.com/ekonomi/son-dakika-fatma-betul-sayan-kaya-ya-ev-hapsi-sartiyla-tahliye-3929716"
         }
       ],
       "reasons": [
@@ -166,58 +139,7 @@
         "gürültü:-5"
       ],
       "sensitive": true,
-      "newest": "2026-11-24T13:35:03+00:00"
-    },
-    {
-      "score": 26,
-      "title": "Bakan Gürlek: Yasa dışı bahis ve suç örgütlerine operasyonlarda 245 şüpheli yakalandı",
-      "sources": [
-        "TRT Haber"
-      ],
-      "links": [
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/bakan-gurlek-yasa-disi-bahis-ve-suc-orgutlerine-operasyonlarda-245-supheli-yakalandi-964298.html"
-        }
-      ],
-      "reasons": [
-        "suç:+17",
-        "para:+5",
-        "güç:+1",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "newest": "2026-11-24T11:36:00+03:00"
-    },
-    {
-      "score": 26,
-      "title": "Fon vurgunu soruşturmasında yeni gelişme: 4 şüpheli tutuklandı",
-      "sources": [
-        "BirGün",
-        "Habertürk",
-        "Hürriyet"
-      ],
-      "links": [
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fon-vurgunu-sorusturmasinda-yeni-gelisme-4-supheli-tutuklandi-748072"
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasinda-gozaltina-alinan-4-supheli-tutuklandi-43388693"
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/ekonomi/son-dakika-fon-sorusturmasinda-yeni-gozaltilar-3929670"
-        }
-      ],
-      "reasons": [
-        "suç:+9",
-        "para:+6",
-        "güç:+3"
-      ],
-      "sensitive": false,
-      "newest": "2026-11-24T08:24:04+00:00"
+      "newest": "2026-11-24T11:59:32+00:00"
     },
     {
       "score": 23,
@@ -241,24 +163,38 @@
       "newest": "2026-11-24T10:39:12+03:00"
     },
     {
-      "score": 22,
-      "title": "Adana merkezli 13 ilde \"Bayğaralar\" operasyonu: 12'si çocuk 90 şüpheli tutuklandı, çok sayıda mal varlığına el konuldu",
+      "score": 23,
+      "title": "Son Dakika... AKP'de ikinci 'fon skandalı' depremi: AKP Genel Başkan Yardımcısı Hayati Yazıcı istifa etti",
       "sources": [
-        "BirGün"
+        "BirGün",
+        "Cumhuriyet",
+        "TRT Haber"
       ],
       "links": [
         {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/siyaset/son-dakika-akp-de-ikinci-fon-skandali-depremi-akp-genel-baskan-yardimcisi-hayati-yazici-istifa-etti-2559070"
+        },
+        {
           "source": "BirGün",
-          "url": "https://www.birgun.net/haber/adana-merkezli-13-ilde-baygaralar-operasyonu-12-si-cocuk-90-supheli-tutuklandi-cok-sayida-mal-varligina-el-konuldu-748040"
+          "url": "https://www.birgun.net/haber/akpde-ikinci-ust-duzey-fon-depremi-hayati-yazici-istifa-mi-etti-748237"
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/siyaset/akp-de-ikinci-ust-duzey-fon-depremi-hayati-yazici-istifa-sorusuna-ne-yanit-verdi-2559065"
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/ak-parti-genel-baskan-yardimcisi-hayati-yazici-istifa-etti-964352.html"
         }
       ],
       "reasons": [
-        "suç:+14",
-        "para:+5",
-        "rakam:+1"
+        "suç:+6",
+        "para:+6",
+        "güç:+3"
       ],
-      "sensitive": false,
-      "newest": "2026-11-23T21:49:00+03:00"
+      "sensitive": true,
+      "newest": "2026-11-24T20:27:00+03:00"
     },
     {
       "score": 20,
@@ -279,6 +215,45 @@
       ],
       "sensitive": true,
       "newest": "2026-11-24T10:35:07+03:00"
+    },
+    {
+      "score": 20,
+      "title": "Fon vurgunu soruşturmasında yeni gelişme: 4 şüpheli tutuklandı",
+      "sources": [
+        "BirGün"
+      ],
+      "links": [
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fon-vurgunu-sorusturmasinda-yeni-gelisme-4-supheli-tutuklandi-748072"
+        }
+      ],
+      "reasons": [
+        "suç:+9",
+        "para:+6",
+        "güç:+3"
+      ],
+      "sensitive": false,
+      "newest": "2026-11-24T00:49:00+03:00"
+    },
+    {
+      "score": 17,
+      "title": "İzmir'deki iş insanı cinayetinin ardından miras çıktı: Kızı dahil 4 kişi tutuklandı",
+      "sources": [
+        "BirGün"
+      ],
+      "links": [
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/izmir-deki-is-insani-cinayetinin-ardindan-miras-cikti-kizi-dahil-4-kisi-tutuklandi-748135"
+        }
+      ],
+      "reasons": [
+        "suç:+13",
+        "merak:+2"
+      ],
+      "sensitive": false,
+      "newest": "2026-11-24T11:26:00+03:00"
     }
   ]
 }
