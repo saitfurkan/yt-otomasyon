@@ -75,6 +75,29 @@ def build_sources(story):
             sw.log(f"   [haber ok] {host}: {sw.count_words(text)} kelime")
     return arts
 
+def extract_all(key, models, topic, arts):
+    """Her kaynaktan ayrı olgu çıkarır (tek çağrıda uzun metinlerden az olgu geliyor)."""
+    facts, seen, model = [], set(), models[0]
+    for a in arts:
+        try:
+            model, fs = sw.extract_facts(key, models, topic, [a])
+            models = [model] + [m for m in models if m != model]
+        except sw.GenerationFailed as e:
+            if isinstance(e, sw.QuotaExceeded):
+                raise
+            sw.log(f"   [olgu çıkarılamadı] {a['source']}: {str(e)[:80]}")
+            continue
+        n = 0
+        for f in fs:
+            k = re.sub(r"\W+", "", f["olgu"].lower())[:70]
+            if k in seen:
+                continue
+            seen.add(k); facts.append(f); n += 1
+        sw.log(f"   {a['source']}: +{n} olgu")
+        time.sleep(sw.PAUSE)
+    return model, facts[:110]
+
+
 def main():
     only = os.environ.get("STORY_ID", "").strip()
     with open(os.path.join(HERE, "stories.json"), encoding="utf-8") as f:
@@ -103,7 +126,7 @@ def main():
         if len(arts) < 2 or total < 1500:
             notes.append(f"'{st['title']}': yeterli kaynak yok"); continue
         try:
-            model, facts = sw.extract_facts(key, models, topic, arts)
+            model, facts = extract_all(key, models, topic, arts)
             models = [model] + [m for m in models if m != model]
             sw.log(f"   {len(facts)} olgu çıkarıldı")
             if len(facts) < sw.MIN_FACTS:
