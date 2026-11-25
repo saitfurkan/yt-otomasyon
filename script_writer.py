@@ -38,7 +38,7 @@ TOTAL_CHARS = 60000
 MAX_EXTRA = 8             # arka plan için aranıp okunacak ek makale sayısı
 BAD_HOSTS = ("youtube", "youtu.be", "twitter", "x.com", "instagram", "facebook",
              "tiktok", "t.me", "pinterest", "reddit")
-MAX_TOPICS_TRIED = 4
+MAX_TOPICS_TRIED = 5
 PAUSE = 5                 # çağrılar arası bekleme (saniye), ücretsiz limit için
 
 BANNED = [
@@ -51,7 +51,9 @@ BANNED = [
     "aynı hizada", "ışıkların",
 ]
 
-CELEB = ["ünlü", "şarkıcı", "oyuncu", "magazin", "fenomen", "sunucu", "futbolcu"]
+CELEB = ["ünlü", "şarkıcı", "oyuncu", "magazin", "fenomen", "sunucu", "futbolcu",
+         "meghan", "markle", "kraliyet", "prens", "hollywood", "manken", "mankenin"]
+PIPE_WARNINGS = []   # çalışma sırasında oluşan, rapora yazılacak uyarılar
 
 POLITICAL = ["imamoğlu", "erdoğan", "özgür özel", "bahçeli", "kılıçdaroğlu",
              "mansur yavaş", "demirtaş", "chp", "akp", "mhp", "dem parti",
@@ -721,22 +723,31 @@ def finalize_script(key, models, script, facts):
         if len(rp) < 2:
             break
         log(f"   {len(rp)} tekrar eden cümle bulundu, temizleniyor")
-        script = drop_self_intro(clean_script(revise(
-            key, models, script,
-            "Bu senaryoda aynı bilgi birden fazla kez anlatılıyor. Aşağıdaki cümleler daha "
-            "önce anlatılanı tekrar ediyor: bunları SİL (yerine yeni bilgi ekleyemiyorsan "
-            "boş bırak, metin kısalsın). İlk anlatımı koru, akışın bozulmadığından emin ol. "
-            "Metnin ilk paragrafını (kanca) ve son cümlesini ('Artık son tanık sizsiniz.') "
-            "aynen koru.\n\nTEKRAR EDEN CÜMLELER:\n- " + "\n- ".join(rp[:25]), facts)))
+        try:
+            script = drop_self_intro(clean_script(revise(
+                key, models, script,
+                "Bu senaryoda aynı bilgi birden fazla kez anlatılıyor. Aşağıdaki cümleler daha "
+                "önce anlatılanı tekrar ediyor: bunları SİL (yerine yeni bilgi ekleyemiyorsan "
+                "boş bırak, metin kısalsın). İlk anlatımı koru, akışın bozulmadığından emin ol. "
+                "Metnin ilk paragrafını (kanca) ve son cümlesini ('Artık son tanık sizsiniz.') "
+                "aynen koru.\n\nTEKRAR EDEN CÜMLELER:\n- " + "\n- ".join(rp[:25]), facts)))
+        except GenerationFailed as e:
+            log(f"   tekrar temizliği yapılamadı: {str(e)[:100]}")
+            PIPE_WARNINGS.append(f"Tekrar temizliği yapılamadı ({len(rp)} tekrar eden cümle olabilir), "
+                                 "metni tekrar için kontrol et.")
+            break
         time.sleep(PAUSE)
     bf = banned_found(script)
     if bf:
         log(f"   yasak kalıplar bulundu: {bf}")
-        script = drop_self_intro(clean_script(revise(
-            key, models, script,
-            "Şu ifadeleri içeren cümleleri doğal, konuşma dilinde yeniden yaz (başkasından "
-            "aktaran 'derler' kalıbı yerine birinci tekil kişiyle kendi sözünü kur): "
-            f"{', '.join(bf)}. Metnin geri kalanını olduğu gibi bırak.", facts)))
+        try:
+            script = drop_self_intro(clean_script(revise(
+                key, models, script,
+                "Şu ifadeleri içeren cümleleri doğal, konuşma dilinde yeniden yaz (başkasından "
+                "aktaran 'derler' kalıbı yerine birinci tekil kişiyle kendi sözünü kur): "
+                f"{', '.join(bf)}. Metnin geri kalanını olduğu gibi bırak.", facts)))
+        except GenerationFailed as e:
+            log(f"   yasak kalıp temizliği yapılamadı: {str(e)[:100]}")
     if not script.rstrip().endswith("Artık son tanık sizsiniz."):
         script = script.rstrip() + "\n\nArtık son tanık sizsiniz."
     return script
@@ -869,8 +880,11 @@ def candidates(tdata, history):
         if minors(t):
             log(f"   [atlandı: çocuk/reşit olmayan içeriyor] {t['title'][:70]}")
             continue
+        if celeb(t):
+            log(f"   [atlandı: ünlü/magazin konusu] {t['title'][:70]}")
+            continue
         kept.append(t)
-    pool = sorted(kept, key=lambda t: 1 if (political(t) or celeb(t)) else 0)
+    pool = sorted(kept, key=lambda t: 1 if political(t) else 0)
     for t in pool:
         if t["title"] in seen or t.get("single_source") or t.get("score", 0) <= 0:
             continue
@@ -943,7 +957,16 @@ def main():
             models, script = write_sections(key, models, topic, facts)
             script = finalize_script(key, models, script, facts)
             time.sleep(PAUSE)
-            meta = make_meta(key, models, topic, script, facts)
+            try:
+                meta = make_meta(key, models, topic, script, facts)
+            except GenerationFailed as e:
+                if isinstance(e, QuotaExceeded):
+                    raise
+                log(f"   başlık/Shorts bilgisi üretilemedi: {str(e)[:100]}")
+                PIPE_WARNINGS.append("Başlık, açıklama ve Shorts metinleri üretilemedi "
+                                     "(Gemini yoğunluğu). Senaryo hazır; bunlar sonraki çalışmada üretilir.")
+                meta = {"title_options": [topic["title"]], "shorts": [], "description": "",
+                        "tags": [], "thumbnail_text": "", "risk_notes": []}
         except GenerationFailed as e:
             notes.append(f"'{topic['title'][:60]}': {e}")
             if "API anahtarı" in str(e) or isinstance(e, QuotaExceeded):
@@ -951,7 +974,8 @@ def main():
             continue
         bad_nums, bad_names = unverified(script, arts)
         meta["hook"] = script.split("\n\n")[0].strip()
-        warnings = []
+        warnings = list(PIPE_WARNINGS)
+        PIPE_WARNINGS.clear()
         if count_words(script) < MIN_WORDS:
             warnings.append(f"Senaryo hedeften kısa kaldı ({count_words(script)} kelime). "
                             "Konunun malzemesi sınırlı olabilir.")
