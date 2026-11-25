@@ -21,6 +21,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -66,12 +67,14 @@ FURKAN'IN ANLATIM TARZI
 - Metin, konuya özel ve her videoda yeni kurulmuş kısa, sert, hükmeden bir sözle açılır. Söz birinci tekil kişiyle, kendi cümlesi gibi çıkar ("derim", "bilirim" ya da doğrudan hüküm). Örnek kalıp: "Taşa kazınan silgiyle silinmez." Bu örneği ya da bilinen atasözlerini KOPYALAMA, konuya uygun yeni bir söz kur. "Derler", "denir" gibi başkasından aktaran kalıplar yok.
 - Söz, Furkan'ın genel adalet/hukuk hükmü olsun. Olayın içindeki bir kişinin sözünü ya da durumunu kendi sözün gibi söyleme ("kendi cezamın bedelini ödetmem" gibi olay kahramanının ağzından konuşma yasak). Kendini tanıtma. "Ben Furkan", "hoş geldiniz", "kanalıma" gibi giriş yok. Kanal tanıtımını video kendi ayrı bölümünde yapıyor.
 - Kısa, doğrudan cümleler. Konuşma dili. Haber spikeri gibi değil, olayı bilen ve içi yanan mahalle abisi gibi. "Bak", "düşünsene", "inanması zor ama", "yani" gibi sözleri tüm metinde en fazla 2-3 kez kullan, yoksa yapay durur.
+- KENDİ YORUMUN: Metin sadece olay anlatısı olmasın; Furkan'ın sert, kısa yorumları olsun (tüm metinde 5-7 kez, her biri 1-2 cümle, "bence" ya da doğrudan hüküm tonuyla). Yorum olgudan hemen sonra gelir ve işleyişe, tutarsızlığa, adalet duygusuna yönelir: "Bu rakam küçük değil.", "Aynı ülkede iki ayrı uygulama, işte mesele bu." Yorum bir kişinin suçlu olduğunu söylemez, hakaret içermez, olgu gibi sunulmaz. Cart curt, net ve cesur ol; ama olguyu aşma.
+- KİŞİ DETAYLARI VE KARŞILAŞTIRMA: Haberde adı geçen tanınmış kişiler için olgulardaki önemli ayrıntıları ver (görevi, önceki davaları, şu anki durumu: tutuklu mu, ev hapsi mi, tahliye mi, sağlık durumu). Olgularda benzer bir başka dosya ya da farklı uygulama varsa (örneğin birine sağlık gerekçesiyle ev hapsi verilmesi, ağır hasta başka birine verilmemesi) iki olguyu yan yana koy ve farkı yorumla. Karşılaştırma sadece olgularda yazan bilgilerle yapılır; olgularda yoksa uydurma.
 - Güçlü bir adalet duygusu: kim, kime, ne yaptı, hesap verecek mi? Ama bunu ima ile değil, olgularla kur. "Acaba terazi mi şaştı?" gibi örtülü suçlamalar yasak.
 - Uzun bir cümleden sonra kısa bir cümle. Ara sıra tek kelimelik cümle.
 - Nefes ve vurgu yerlerine [duraklama] yaz (tüm metinde 8-12 kez).
 - Rakamları rakamla yaz (130, 245 gibi), okurken kolay olsun.
 - İSİM POLİTİKASI: Çok sayıda şüpheli varsa isim listesi ASLA okuma. En fazla 3 isim ver: yalnızca ülke çapında tanınan ve en az 3 kaynakta geçen kişiler. Diğerleri için "aralarında iş insanları, yönetmen, organizatör de var" gibi tanım kullan. Özel kişilerin adı yok.
-- YARGI YÜKLÜ SÖZ YOK: "kirli", "karanlık", "pırıltılı", "ışıkların arkası", "ağır iddialar örtülemez" gibi suçu önceden kabul ettiren ya da şiirli doldurma sözler yasak. "Bence" yalnızca süreç ve adalet işleyişi hakkında olur, bir kişinin suçlu olup olmadığı hakkında asla; tüm metinde en fazla 2 kez.
+- YARGI YÜKLÜ SÖZ YOK: "kirli", "karanlık", "pırıltılı", "ışıkların arkası", "ağır iddialar örtülemez" gibi suçu önceden kabul ettiren ya da şiirli doldurma sözler yasak. "Bence" yalnızca süreç ve adalet işleyişi hakkında olur, bir kişinin suçlu olup olmadığı hakkında asla; tüm metinde en fazla 7 kez.
 - VAAZ YOK: "Kanun karşısında herkes eşittir" türü genel adalet konuşması tüm metinde en fazla BİR kez, tek cümle. "Adliye koridorları", "ışıklar", "şöhret" gibi aynı imgeyi tekrar tekrar kurma.
 - SAYI FARKLARI: Gözaltı sayıları saatlere göre değişir. Kaynaklar farklı sayı veriyorsa "çelişki" deme; "sayı gün içinde 19'dan 24'e yükseldi" gibi her kaynağın verdiği sayıyı olgu olarak ver.
 - ASLA TEKRAR ETME: Bir olgu metinde yalnızca bir kez anlatılır. Daha önce anlatılmış bir rakamı, tarihi ya da olayı yeni bir bölümde yeniden anlatma. Malzeme azsa metin kısa kalsın, şişirme.
@@ -86,7 +89,7 @@ KESİN HUKUKİ VE ETİK KURALLAR
 - Kaynaklar aynı olgu için açıkça farklı bilgi veriyorsa ikisini de ver. Farklı tarihler farklı olay adımlarına ait olabilir; emin değilsen "çelişiyor" deme, her kaynağın ne aktardığını tek tek söyle ya da konuyu atla.
 - "Dikkat çeken gelişme", "şüpheli şekilde", "tesadüf mü" gibi yönlendirici ifadeler yok. Kurum kararlarını (HSK atamaları vb.) yorumsuz, olgu olarak ver.
 - Çocukların ve mağdurların kimliğini, ayrıntılı şiddet tasvirini verme. Çocuk şüpheli ya da mağdur varsa isim yok. Kamu görevlisi ya da tanınmış kişi olmayan özel kişilerde isim yerine tanım kullan ("bir iş insanı").
-- Kişilere hakaret, aşağılama, kanıtsız suçlama yok. Öfke olguya ve işleyişe yönelir. Furkan'ın yorumu "bence" diye açıkça ayrılır, kısa tutulur, olgu gibi sunulmaz.
+- Kişilere hakaret, aşağılama, kanıtsız suçlama yok. Öfke olguya ve işleyişe yönelir. Furkan'ın yorumu olgudan ayrı, kısa ve açık bir cümle olur; olgu gibi sunulmaz.
 - Siyasi taraf tutma yok: iktidar da muhalefet de aynı dille anlatılır.
 - "Her yerde örgüt var", "hepsi aynı çete" gibi genellemeleri olgu gibi söyleme."""
 
@@ -98,6 +101,7 @@ SECTIONS = [
     ("OLAY", "Ne oldu? Kronolojik, sahneyi kur. Kim, ne zaman, nerede. Bir kırılma noktası olsun.", 400, True),
     ("GEÇMİŞ VE BAĞLAM", "Buraya nasıl gelindi? Dosyanın önceki aşamaları, ilgili kişilerin bu dosyadaki rolü, daha önceki duruşmalar, operasyonlar ya da kararlar. Kronolojik anlat. Olay bölümünde geçenleri tekrar etme, yalnızca geçmişe ait olgulardan yaz.", 450, True),
     ("PARA VE İLİŞKİLER", "Rakamlar, kurumlar, kim kiminle bağlantılı (sadece olgulardaki kadar). Her iddiayı 'savcılığa göre' gibi kaynağa bağla. Olay bölümünde anlatılanları tekrar etme, yalnızca yeni olguları ver.", 400, True),
+    ("KİŞİLER VE KARŞILAŞTIRMA", "Haberde geçen en fazla 3 tanınmış kişi hakkında olgulardaki önemli ayrıntıları ver: kim olduğu, bu dosyadaki rolü, önceki davaları, şu anki durumu (tutuklu, ev hapsi, tahliye, sağlık gerekçesi). Olgularda benzer bir başka dosya ya da farklı uygulama varsa iki olguyu yan yana koy ve Furkan olarak keskin, kısa bir yorumla farkı göster (suç hükmü vermeden, işleyiş ve eşitlik üzerinden). Olgularda olmayan karşılaştırma uydurma; malzeme yoksa bu bölüm kısa kalsın. Önceki bölümlerde geçenleri tekrar etme.", 350, True),
     ("SORUŞTURMA VE SÜREÇ", "Savcılık ve mahkemeler ne yapmış, hangi adımlar atılmış, ne bekleniyor. Önceki bölümlerde geçmeyen olgulardan anlat.", 400, True),
     ("TARAFLAR VE NEDEN ÖNEMLİ", "Taraflar ne diyor (resmi açıklama, savunma, karşı görüş). Sonra sıradan insana etkisi. Yeni olgu yoksa kısa tut.", 250, True),
     ("KAPANIŞ", "Önce tek cümleyle sıradaki gelişmeyi söyle. Sonra izleyiciye bu dosyaya özel, iki kelimeyle cevaplanabilecek TEK bir soru sor (örnek biçimler: dosyada en çok hangi nokta cevapsız kaldı, bu detayı biliyor musunuz, A mı B mi). Dava sürüyorsa 'suçlu mu' diye ASLA sorma. Metnin son cümlesi birebir şu olsun: Artık son tanık sizsiniz. Abone ol daveti ve özet yok.", 70, False),
@@ -566,20 +570,60 @@ def search_sources(key, models, topic, known_urls):
     return []
 
 
+def bing_news_links(topic, known_urls, query=None):
+    """Bing Haber RSS ile konunun arka planını anlatan ek haber sayfalarını bulur.
+    Ücretsiz, kota yok. Bing bağlantısının içindeki gerçek adres 'url=' parametresindedir."""
+    words = [w for w in re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşüâîû0-9']+", topic["title"])
+             if len(w) >= 4 and tr_lower(w) not in STOP]
+    q = query or " ".join(words[:7])
+    if not q:
+        return []
+    url = ("https://www.bing.com/news/search?format=rss&mkt=tr-TR&q=" +
+           urllib.parse.quote(q))
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "tr-TR,tr;q=0.9"})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        xml = r.read()
+    import xml.etree.ElementTree as ET
+    out, seen = [], set(known_urls)
+    for it in ET.fromstring(xml).iter("item"):
+        link = (it.findtext("link") or "").strip()
+        qs = urllib.parse.parse_qs(urllib.parse.urlparse(link).query)
+        real = (qs.get("url") or [link])[0]
+        if not real.startswith("http") or real in seen:
+            continue
+        host = urllib.parse.urlparse(real).netloc.lower()
+        if any(b in host for b in BAD_HOSTS) or "bing.com" in host:
+            continue
+        seen.add(real)
+        out.append({"url": real, "title": host.replace("www.", "")})
+    return out[:MAX_EXTRA + 4]
+
+
 def add_background(key, models, topic, arts):
-    """Arka plan sayfalarını okuyup mevcut kaynaklara ekler."""
-    if GEMINI_DEAD or not key or SEARCH_STATE["dead"]:
-        log("   arka plan araması atlandı (Gemini kullanılamıyor ya da arama kotası dolu)")
-        return arts
+    """Arka plan sayfalarını (Bing Haber + varsa Gemini araması) okuyup kaynaklara ekler."""
+    known = [a["url"] for a in arts]
+    links = []
     try:
-        links = search_sources(key, models, topic, [a["url"] for a in arts])
+        links += bing_news_links(topic, known)
+        log(f"   Bing Haber: {len(links)} aday sayfa")
+        # haberdeki özel isimler için ayrı arama (kim, önceki davalar, son durum)
+        names = re.findall(r"(?:[A-ZÇĞİÖŞÜ][a-zçğıöşüâîû]+ ){1,2}[A-ZÇĞİÖŞÜ][a-zçğıöşüâîû]+", topic["title"])
+        if names:
+            more = bing_news_links(topic, known + [l["url"] for l in links], query=names[0] + " son durum")
+            log(f"   Bing Haber (kişi: {names[0]}): {len(more)} aday")
+            links += more[:4]
     except Exception as e:
-        log(f"   [arka plan araması hata] {e}")
-        return arts
+        log(f"   [Bing Haber hata] {str(e)[:120]}")
+    if not (GEMINI_DEAD or not key or SEARCH_STATE["dead"]) and models:
+        try:
+            more = search_sources(key, models, topic, known + [l["url"] for l in links])
+            links += more
+        except Exception as e:
+            log(f"   [arka plan araması hata] {e}")
     total = sum(len(a["text"]) for a in arts)
     added = 0
     for l in links:
-        if total > TOTAL_CHARS - 1500:
+        if added >= MAX_EXTRA or total > TOTAL_CHARS - 1500:
             break
         try:
             text = fetch_article(l["url"])
@@ -1014,7 +1058,7 @@ def main():
         total = sum(count_words(a["text"]) for a in arts)
         distinct = len({a["source"] for a in arts})
         log(f"   toplam kaynak: {len(arts)} makale, {distinct} site, {total} kelime")
-        if models and len(arts) >= 2 and distinct >= 2:
+        if len(arts) >= 2 and distinct >= 2 and not sources_only:
             arts = add_background(key, models, topic, arts)
             total = sum(count_words(a["text"]) for a in arts)
             log(f"   arka plan dahil toplam: {len(arts)} makale, {total} kelime")

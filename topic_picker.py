@@ -31,6 +31,16 @@ FEEDS = {
     "TRT Haber": "https://www.trthaber.com/sondakika.rss",
     "CNN Türk": "https://www.cnnturk.com/feed/rss/all/news",
     "Habertürk": "https://www.haberturk.com/rss",
+    # Genişletilmiş kaynaklar (çalışmayan adres atlanır, raporda HATA olarak görünür)
+    "BBC Türkçe": "https://feeds.bbci.co.uk/turkce/rss.xml",
+    "DW Türkçe": "https://rss.dw.com/rdf/rss-tur-all",
+    "T24": "https://t24.com.tr/rss",
+    "Medyascope": "https://medyascope.tv/feed/",
+    "Euronews TR": "https://tr.euronews.com/rss",
+    "Sözcü": "https://www.sozcu.com.tr/feeds-rss-category-gundem",
+    "Milliyet": "https://www.milliyet.com.tr/rss/rssnew/gundemrss.xml",
+    "Sabah": "https://www.sabah.com.tr/rss/gundem.xml",
+    "Bianet": "https://bianet.org/biamag.rss",
 }
 
 MAX_AGE_HOURS = 72   # en fazla kaç saat öncesine ait haberler
