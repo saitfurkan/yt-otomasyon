@@ -1,162 +1,110 @@
-# Senaryo: Danıştay İptali Onadı: İmamoğlu'nun Diploması Hakkındaki Karar
+# Senaryo: Ünlülere Uyuşturucu Soruşturması: Gözaltı Listesinde Kimler Var?
 
-- Konu: Danıştay 8. İdari Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi
-- Tarih: 2026-11-25 | Kelime: 1472 (yaklaşık 11 dk okuma) | Model: gemini-3.6-flash
+- Konu: Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında
+- Tarih: 2026-11-25 | Kelime: 554 (yaklaşık 4 dk okuma) | Model: gemini-3.6-flash
 - Durum: **Okumadan önce aşağıdaki 'KONTROL ET' bölümüne 2 dakika ayır.**
 
 ## Uyarılar
-- Siyasi hassasiyet işaretli konu: metni özellikle dikkatle oku.
-- Bazı kaynaklarda yalnızca kısa özet okunabildi.
+- Senaryo hedeften kısa kaldı (554 kelime). Konunun malzemesi sınırlı olabilir.
 
 ## Başlık önerileri
-1. Danıştay İptali Onadı: İmamoğlu'nun Diploması Hakkındaki Karar
-2. 3 Kişilik Kontenjana 54 Kişi mi? İmamoğlu'nun Diploma Dosyası
-3. Danıştay Kararı Verildi: İmamoğlu Diploması İptal Edildi
+1. Ünlülere Uyuşturucu Soruşturması: Gözaltı Listesinde Kimler Var?
+2. 35 Kişilik Dev Operasyon: Ünlü İsimler Sağlık Kontrolünde
+3. Işıkların Ardındaki Karanlık: Ünlü İsimlere Gözaltı Kararı
 
-Küçük resim yazısı: DANIŞTAY ONADI: DİPLOMA İPTAL
+Küçük resim yazısı: ÜNLÜLERE GÖZALTI ŞOKU
 
-## OKUMA METNİ
+## KANCA (videonun ilk 10-20 saniyesi)
 
-Taşa kazınan kalır derler ama bazen kağıda atılan bir imza onlarca yıl sonra ayağına dolanır. [duraklama] 
+Işıkların arkasına saklanan karanlığı iyi bilirim. Ekranlardan tanıdığımız isimler, hastane kontrolünün ardından adliyenin kapısına dayandı. Tam 35 kişi hakkında verilen o gözaltı kararı taşları yerinden oynattı. Peki gizli tanıkların beyanları ve dijital raporlar daha neleri ortaya çıkaracak? [duraklama]
 
-Bak, düşünsene. Bir sabah kalkıyorsun ve üniversite mezuniyetin sistemden tamamen silinmiş. [duraklama] e-Devlet’e giriyorsun, hiçbir kayıt yok. Sıfır. 
+## OKUMA METNİ (kanca dahil, baştan sona)
 
-NTV ve Hürriyet gibi kaynaklara yansıyan dava dosyasına bakıyorum; inanması zor iddialar var. [duraklama] 3 kişilik kontenjana tam 54 kişinin usulsüz alındığı yazıyor. 1990 yılına uzanan şüpheli kayıtlar, davanın ortasında değiştirilen mahkeme heyetleri ve Danıştay 8. Dairesi’nin oy birliğiyle verdiği o nihai karar. [duraklama] 
+Işıkların arkasına saklanan karanlığı iyi bilirim. Ekranlardan tanıdığımız isimler, hastane kontrolünün ardından adliyenin kapısına dayandı. Tam 35 kişi hakkında verilen o gözaltı kararı taşları yerinden oynattı. Peki gizli tanıkların beyanları ve dijital raporlar daha neleri ortaya çıkaracak? [duraklama]
 
-Peki ne oldu? Yıllar önce atılan o adımlar hukuku aşmaya yetti mi, yoksa adalet terazisi başka türlü mü çalıştı? [duraklama] Ben Furkan. Şimdi resmi kayıtlara giren bütün o belgeleri tek tek masaya koyuyoruz.
+Dosyanın geçmişi 8 Ekim 2025 tarihine dayanıyor. Geçen yıl ekim ayında başlayan bu operasyon sürecinde İstanbul Cumhuriyet Başsavcılığı Kaçakçılık, Narkotik ve Ekonomik Suçlar Soruşturma Bürosu takibi adım adım sürdürdü. İddialar ağır. Soruşturma fuhuş, uyuşturucu veya uyarıcı madde ticareti, temin etme ile uyuşturucu madde kullanma veya bulundurma suçlamaları çerçevesinde yürütülüyor.
 
-Olayın kökleri tam 1990 yılına, Kuzey Kıbrıs Türk Cumhuriyeti’ne dayanıyor. [duraklama] Ekrem İmamoğlu o dönem Kıbrıs’ta bir üniversitede öğrenci. Buradaki üniversitenin adı bile haber kaynaklarında farklı geçiyor; NTV ve Habertürk Girne Amerikan Üniversitesi derken, Hürriyet’in aktardığı iddianamede University College of Northern Cyprus, yani UCNC ismi yer alıyor. İmamoğlu oradan İstanbul Üniversitesi İngilizce İşletme Bölümü’ne yatay geçiş yapıyor ve 1994 yılında lisans diplomasını alıyor. [duraklama] 
+Operasyonun son dalgasında ünlü isimler hedefteydi. Şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve oyuncu Burcu Özberk gözaltına alınan şüpheliler arasında bulunuyor. Yanlarında organizatör Erdal Bozkuş da var. Listede yer alan diğer isimler Murat Ceylan, Murat Başoğlu, Cansu Taşkın ve İbrahim Yılmaz oldu. [duraklama]
 
-Yıllar geçiyor. Takvimler 18 Eylül 2024 tarihini gösterdiğinde bir vatandaş CİMER’e dilekçe veriyor. İddia net: Bu diploma sahte. [duraklama] İşte bütün bu yargı sürecini başlatan ilk kıvılcım bu başvuruyla çakılıyor. Soruşturmanın başlangıcı konusunda da kaynaklar çelişkili. Hürriyet, sürecin 1 Ekim 2024’teki şikayet dilekçesinin ardından başlatıldığını bildiriyor; NTV ise İstanbul Cumhuriyet Başsavcılığı’nın soruşturmayı 22 Şubat 2026’da başlattığını aktarıyor. [duraklama] 
+Soruşturma genişliyor. Pınar Bent, Ceylan Kaya, Işıl Işık Demir, Burhan Karaca, Cem Güler ve İbrahim İzzet Özilhan polis nezaretine alındı. Saghar Shojaeı, İlknur Şahin, Meltem Özkayadan, Seher Grothe Sevdişan, Ufuk Gündoğdu, Onur Yüksel, Muammer Kapucuoğlu, Mehmet Can Karcı ve Deniz Sözen de gözaltına alınanlar arasında yer alıyor.
 
-Ve asıl kırılma noktası 18 Mart 2025 günü yaşanıyor. Üniversite yönetimi toplanıyor. [duraklama] İstanbul Üniversitesi Yönetim Kurulu, 1990 yılındaki o yatay geçişte usulsüzlük yapıldığı gerekçesiyle aralarında Ekrem İmamoğlu’nun da bulunduğu tam 28 kişinin lisans diplomasını iptal ediyor. 
+Fakat süreç bitmedi. Hakkında arama kararı bulunan yönetmen Cem Karcı adresinde bulunamadı. Emniyet güçleri Karcı'yı yakalamak için çalışmalarını sürdürüyor. [duraklama]
 
-Sonrası hızla gelişiyor. Karardan bir gün sonra İmamoğlu gözaltına alınıyor. [duraklama] 23 Mart 2025’te ise tutuklanarak cezaevine gönderiliyor ve hemen ardından İstanbul Büyükşehir Belediye Başkanlığı görevinden uzaklaştırılıyor. 
+Gözaltı sayılarına dair haber kaynaklarından farklı bilgiler geliyor. NTV ve Cumhuriyet operasyonda 24 kişinin gözaltına alındığını aktardı. TRT Haber ile Hürriyet'in bir haberinde sayı 23 olarak geçti. Hürriyet'in diğer haberinde ise 19 kişinin gözaltına alındığı bildirildi.
 
-Yargı süreci iki koldan ilerlemeye başlıyor; bir yanda ceza davası, diğer yanda idari yargı. 8 Temmuz’da İstanbul 59. Asliye Ceza Mahkemesi hazırlanan iddianameyi kabul ediyor. Savcılığın iddianamesindeki tespitler çok sarsıcı. Normalde sadece 3 kişilik kontenjanı bulunan o bölüme usulsüz olarak 54 kişinin yatay geçişle alındığı kaydediliyor. Üstelik İmamoğlu’nun öğrenci kütük defterine gerçeğe aykırı şekilde Doğu Akdeniz Üniversitesi öğrencisi olarak kaydedildiği belirtiliyor. Savcılık, zincirleme şekilde resmi belgede sahtecilik suçundan 2 yıl 6 aydan 8 yıl 9 aya kadar hapis ve Türk Ceza Kanunu’nun 53. maddesi uyarınca hak yoksunluğu talep ediyor. [duraklama] 
+Adli Tıp Kurumu'na götürülen şüphelilerin akıbetini savcılık kararları belirleyecek. Savcılığın talebine göre kişiler ya serbest bırakılacak ya da mahkemeye sevk edilecek. Adalet bekliyor. [duraklama]
 
-İdari tarafta da tansiyon düşmüyor. Hakimler ve Savcılar Kurulu, 20 Haziran tarihli yaz kararnamesiyle davaya bakan İstanbul 5. İdare Mahkemesi Başkanı’nı ve üye hakimi görevden alarak yerlerine yeni isimler atıyor. Bu yeni heyet, 30 Temmuz’da diploma iptalinin yürütmesini durdurma talebini reddediyor. [duraklama] 5 Ağustos 2025’te ise diploma bilgileri üniversitenin veri tabanından tamamen siliniyor ve e-Devlet sisteminden çıkıyor. 
+Kirli ilişkinin ağına düşen, hesabını yargı önünde vermek zorunda kalır.
 
-Mahkemenin bu senenin başında açılan davayı reddetmesinin ardından son sözü Danıştay söyledi. [duraklama] Danıştay 8. Dairesi, 43 sayfalık gerekçeli kararında yatay geçiş işlemlerinde sistematik ve ağır hukuka aykırılıklar bulunduğunu belirterek iptal kararını oy birliğiyle onadı. Türkiye’de cumhurbaşkanı adayı olabilmek için yüksek öğrenim yapma şartı aranıyor. Adalet terazisinin verdiği bu karar, sadece bir diplomayı değil, bütün bir siyasi kariyeri doğrudan etkiliyor.
+Savcılığın bu kararları öyle bir anda almadığı anlaşılıyor. Dosyadaki iddialar sadece madde kullanımıyla sınırlı değil. Peki dosyadaki bu tablo nasıl kuruldu? Savcılığa göre süreç; şüpheli savunmaları, tanık beyanları ve gizli tanık anlatımları ile şekillendi. Bununla da bitmedi. Dijital materyaller tek tek incelendi. Bilirkişi inceleme raporları dosyaya girdi ve alınan kararlara dayanak oluşturdu. [duraklama]
 
-İp koptuğu yerden değil, en karmaşık düğümün atıldığı yerden çözülür derler. Bak, bu dosyada da düğüm tam 1990 yılına, o geçiş dönemine dayanıyor. 
+Bence ekran önündeki o pırıltılı yaşamlar, savcılığın dosyadaki ağır iddialarını örtmeye yetmiyor. Kimin neyle bağlantılı olduğu, hangi dijital verinin kime uzandığı adliye koridorlarında netleşecek.
 
-Şimdi o dönemin rakamlarına ve kurumlar arasındaki ilişki ağına iddialar üzerinden bakalım. [duraklama] Ortada çok net bir kontenjan sınırı var. İddianameye göre o dönem yatay geçiş için ayrılan kontenjan sadece 3 kişi. Peki kaç kişi geçiş yapmış dersin? Tam 54 kişi. 3 kişilik yere 54 kişinin alınması, savcılığın tespitine göre usulsüzlüğün ilk büyük halkası. 
+Yargının kapısından içeri giren kim olursa olsun yükü eşitlenir. [duraklama]
 
-Düşünsene, kafa karıştıran tek şey kontenjan sayıları da değil. Kurumların isimleri bile kaynaklarda çelişiyor. [duraklama] NTV ve Habertürk’ün haberlerinde 1990 yılında yatay geçiş yapılan okul Girne Amerikan Üniversitesi olarak aktarılıyor. Hürriyet’in aktardığı iddianamede ise bu kurumun adı University College of Northern Cyprus, yani UCNC olarak geçiyor. İşin daha da ilginç yanı ne biliyor musun? İddianamedeki bir başka tespite göre, öğrenci kütük defterine gerçeğe aykırı şekilde Doğu Akdeniz Üniversitesi öğrencisi olarak kaydedildiği belirtiliyor. [duraklama] Yani savcılığın tespitlerinde ve haber kaynaklarında farklı üniversite isimleri, uyuşmayan resmi kayıtlar var.
+Prosedür net. Gözaltına alınan isimler adliyeye sevk edilmeden önce ilk olarak hastanede sağlık kontrolünden geçiriliyor. Buradaki işlemlerin hemen ardından şüpheliler Adli Tıp Kurumu'na götürülüyor. Adli adımlar sırayla işliyor. Adli Tıp işlemleri ve sağlık kontrolleri tamamlanan şüpheliler için bir sonraki durak savcılık makamı olacak. Bundan sonraki gidişatı doğrudan savcılığın yapacağı değerlendirme şekillendirecek. [duraklama]
 
-Bu dosya sadece tek bir isimle sınırlı değil. [duraklama] 18 Mart 2025 tarihine geldiğimizde, İstanbul Üniversitesi Yönetim Kurulu toplanıyor. 1990 yılındaki o usulsüz yatay geçiş gerekçesiyle 28 kişinin lisans diplomasını aynı anda iptal ediyor. 1994 yılında İstanbul Üniversitesi İngilizce İşletme Bölümü’nden alınan diplomalar bir kararla geçersiz sayılıyor.
+Bence adliyenin koridorlarında isimlerin tanınmışlığı değil, dosyaya giren delillerin ağırlığı konuşur. Savcılığın sunacağı talepler ve mahkeme safhasında alınacak kararlar bu sürecin nereye uzanacağını net bir şekilde ortaya koyacak.
 
-Soruşturma sürecinin başlangıcı da kaynaklarda farklı anlatılıyor. [duraklama] 18 Eylül 2024 tarihinde diplomasının sahte olduğu iddiasıyla CİMER’e bir başvuru yapılıyor. Soruşturmanın başlama tarihi konusunda ise NTV, İstanbul Cumhuriyet Başsavcılığı’nın 22 Şubat 2026’da harekete geçtiğini aktarırken; Hürriyet soruşturmanın 1 Ekim 2024’teki şikayet dilekçesinin ardından başlatıldığını bildiriyor.
+Dosyaya giren resmi beyanlara baktığımızda süreç netleşiyor. Şüphelilerin verdikleri savunmalar ile bilirkişi incelemelerinin sonuçları süreçte belirleyici olacak. [duraklama]
 
-İşte adli iddialardaki bu rakamlar, kurumlar ve kayıt çelişkileri dosyanın bel kemiğini oluşturuyor. Bence hukuk, bu tür kafa karıştıran resmi kayıt iddialarının netleşmesi için var. Şüphelerin ve iddiaların akıbetini yargı süreci belirleyecek.
+Bence bu dosyanın sokaktaki insana söylediği tek bir şey var. Kim olursan ol, sahnenin ışıkları ne kadar parlak olursa olsun kanun karşısında herkes aynı hizada durur. Ekranlarda hayranlıkla izlenen isimlerin ağır iddialarla adliyeye taşınması, adalete duyulan güvenin sınandığı yerdir.
 
-Kağıt üstünde kalan imza değil, mahkeme salonunda verilen hüküm belirler son sözü. [duraklama]
+Şöhret ya da tanınmışlık iddiaları ortadan kaldırmaz. Savcılıkta yapılacak değerlendirmeler ve ortaya konan deliller doğrultusunda her şey netliğe kavuşacak. Kanun önünde ayrıcalık tanınmadığı sürece adalet yerini bulur. [duraklama]
 
-Peki savcılık bu süreçte ne yaptı, soruşturma hangi adımlarla ilerledi? İnanması zor ama olaylar birbiri ardına çorap söküğü gibi geldi.
-
-Bak, 18 Mart 2025’te üniversite yönetimi o iptal kararını verdi ya, hemen ertesi günü, yani 19 Mart’ta İmamoğlu gözaltına alındı. Süreç durmadı. 23 Mart 2025 tarihinde tutuklandı ve tutuklanmasının ardından İstanbul Büyükşehir Belediye Başkanlığı görevinden uzaklaştırıldı. [duraklama]
-
-İşin adli boyutu ise İstanbul 59. Asliye Ceza Mahkemesi’ne taşındı. Mahkeme, 8 Temmuz’da savcılığın hazırladığı iddianameyi kabul etti. Savcılığın tespitleri ve iddiaları gerçekten çarpıcı. İddianameye göre, zamanında sadece 3 kişilik kontenjanı bulunan bir bölüme, tam 54 kişi usulsüz bir şekilde yatay geçişle alınmış. [duraklama] Rakamı görüyorsun değil mi? 3 kişilik yere 54 kişi. Üstelik savcılık, İmamoğlu’nun öğrenci kütük defterine gerçeğe aykırı şekilde Doğu Akdeniz Üniversitesi öğrencisi olarak kaydedildiğini saptadı.
-
-İşte bu bulgular doğrultusunda savcılık faturayı kesti. [duraklama]
-
-İddianamede İmamoğlu’nun 'zincirleme şekilde resmi belgede sahtecilik' suçundan 2 yıl 6 aydan 8 yıl 9 aya kadar hapisle cezalandırılması istendi. Yetmedi. TCK 53. madde uyarınca hak yoksunluğu talep edildi. Bence bu dosyanın en kritik halkası burası. Niye biliyor musun? [duraklama] Çünkü Türkiye’de cumhurbaşkanı adayı olabilmek için yüksek öğrenim yapma koşulu var. Yani buradaki karar sadece bir diploma meselesi değil, doğrudan siyasi bir tablo çiziyor.
-
-Diğer tarafta ise idare mahkemesindeki süreç işliyordu. İmamoğlu'nun bu diploma iptal kararına karşı İstanbul 5. İdare Mahkemesi'nde açtığı dava bu senenin başında reddedilmişti. [duraklama]
-
-Fakat mahkemede dikkat çeken bir gelişme yaşandı. Hakimler ve Savcılar Kurulu, yani HSK, 20 Haziran tarihli yaz kararnamesiyle bu davaya bakan İstanbul 5. İdare Mahkemesi Başkanı'nı ve üye hakimi görevden alarak yerlerine yeni isimler atadı. [duraklama]
-
-Atanan bu yeni heyet, 30 Temmuz’da diploma iptali kararının yürütmesinin durdurulması talebini reddetti. İş idari boyuttan dijital kayıtlara da yansıdı tabii. 5 Ağustos 2025’te İmamoğlu’nun diploma bilgileri İstanbul Üniversitesi’nin veri tabanından silindi ve e-Devlet üzerinde artık görünmez hale geldi. [duraklama]
-
-Ve en son perde... Danıştay 8. Dairesi, idare mahkemesinin kararını oy birliğiyle onadı. Danıştay’ın 43 sayfalık o gerekçeli kararında, yapılan yatay geçiş işlemlerinde sistematik ve ağır hukuka aykırılıklar bulunduğu açıkça vurgulandı. [duraklama]
-
-İşte adımlar böyle atıldı, düğümler bir bir bağlandı. Şimdi gözler ceza yargılamasının gidişatına kilitlenmiş durumda.
-
-Peki dosyalar ve haberler bize tam olarak ne söylüyor? Bak, ortada kaynakların bile farklı aktardığı dikkat çekici ayrıntılar var. [duraklama]
-
-Mesela İmamoğlu'nun 1990 yılında yatay geçiş yaptığı KKTC'deki okul... NTV ve Habertürk bu okulu Girne Amerikan Üniversitesi olarak aktarırken, Hürriyet'in aktardığı iddianamede üniversitenin adı UCNC, yani University College of Northern Cyprus olarak geçiyor.
-
-Soruşturmanın ne zaman başladığı konusunda da kaynaklar uyuşmuyor. 18 Eylül 2024'te CİMER'e diplomasının sahte olduğu iddiasıyla bir başvuru yapılmıştı. NTV, İstanbul Cumhuriyet Başsavcılığı'nın soruşturmayı 22 Şubat 2026'da başlattığını duyurdu. Hürriyet ise soruşturmanın 1 Ekim 2024'teki şikayet dilekçesinin hemen ardından başladığını bildiriyor.
-
-İddianamede çok ciddi iddialar var. Savcılığa göre, sadece 3 kişilik kontenjanı bulunan bir bölüme usulsüz şekilde tam 54 kişi yatay geçişle alınmış. [duraklama]
-
-Ayrıca iddianamede, İmamoğlu'nun öğrenci kütük defterine gerçeğe aykırı şekilde Doğu Akdeniz Üniversitesi öğrencisi olarak kaydedildiği tespiti yer alıyor. Bu iddialar doğrultusunda İmamoğlu hakkında zincirleme şekilde resmi belgede sahtecilik suçundan 2 yıl 6 aydan 8 yıl 9 aya kadar hapis cezası ve TCK 53. madde uyarınca hak yoksunluğu talep ediliyor.
-
-Peki bu tablo neden bu kadar kritik? [duraklama]
-
-Çünkü Türkiye'de kanunlar net. Cumhurbaşkanı adayı olabilmek için yüksek öğrenim yapma koşulu aranıyor.
-
-Yani bu iptal kararları ve devam eden davalar sadece bir okul kaydını silmekle kalmıyor. Doğrudan siyasetin ve adaylık süreçlerinin dengesini etkiliyor.
-
-Danıştay 8. Dairesi, 43 sayfalık gerekçeli kararıyla noktayı oy birliğiyle koydu. [duraklama] 
-
-İdari yargıda diploma defteri kapandı. Zaten 5 Ağustos 2025'te üniversitenin veri tabanından ve e-Devlet'ten bilgiler tamamen silinmişti. 
-
-Ama süreç bitmedi. 
-
-Şimdi herkesin gözü 59. Asliye Ceza Mahkemesi'nde açılan ceza davasında. [duraklama] 
-
-Sahtecilik iddiasıyla istenen hapis ve TCK 53. madde kapsamındaki hak yoksunluğu talebi, önümüzdeki günlerin en sıcak başlığı olacak. Yargıdan çıkacak her karar, siyasetin kartlarını yeniden dağıtacak güçte. 
-
-Peki, yaşanan bu hukuki süreç hakkında siz ne düşünüyorsunuz? [duraklama] 
-
-Olayların arkasındaki gerçekleri benimle birlikte takip etmek için kanala abone olabilirsiniz.
+Önümüzdeki saatlerde savcılıktan çıkacak kararlar ve araması süren şüphelinin durumuyla operasyon yeni bir safhaya geçecek. Adliye koridorlarından gelecek haberleri yakından takip edeceğiz. Peki sizce bu dosyayı dijital materyaller mi, yoksa gizli tanık ifadeleri mi şekillendirecek? [duraklama] Artık son tanık sizsiniz.
 
 ## Shorts parçaları
 
-### Short 1 (Giriş ve Diplomaların İptali)
-Kanca: Bir sabah uyanıyorsunuz ve üniversite diplomanız sistemden tamamen silinmiş.
+### Short 1 (Operasyonun Başlangıcı ve Gözaltı Kararları)
+Kanca: Işıkların arkasına saklanan karanlığı iyi bilirim.
 
-Bir sabah uyanıyorsunuz ve üniversite diplomanız sistemden tamamen silinmiş. e-Devlet’e giriyorsunuz, hiçbir kayıt yok. 18 Mart 2025 tarihinde İstanbul Üniversitesi Yönetim Kurulu, 1990 yılındaki yatay geçişte usulsüzlük yapıldığı gerekçesiyle aralarında Ekrem İmamoğlu’nun da olduğu 28 kişinin diplomasını iptal etti. 5 Ağustos 2025’te ise tüm bilgiler veri tabanından silindi. Son olarak Danıştay 8. Dairesi, 43 sayfalık kararıyla iptal kararını oy birliğiyle onadı. Türkiye’de cumhurbaşkanı adayı olmak için yüksek öğrenim şartı aranıyor. Bu karar sadece bir diplomayı değil, siyasi kariyeri de doğrudan etkiliyor.
+Işıkların arkasına saklanan karanlığı iyi bilirim. Ekranlardan tanıdığımız ünlü isimler, hastane kontrolünün ardından adliyenin kapısına dayandı. İstanbul Cumhuriyet Başsavcılığı Kaçakçılık, Narkotik ve Ekonomik Suçlar Soruşturma Bürosu tarafından yürütülen dosyada 35 kişi hakkında gözaltı kararı verildi. Şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özberk de listede yer alıyor. Soruşturma uyuşturucu maddelerin ticareti, temini, kullanımı ve fuhuş iddialarını kapsıyor. Gözaltına alınan isimler sağlık kontrolünden geçirilip Adli Tıp Kurumu'na götürüldü. Arama kararı bulunan yönetmen Cem Karcı'yı yakalamak için ekiplerin takibi sürüyor.
 
-### Short 2 (İddianame ve Ceza Yargılaması)
-Kanca: 3 kişilik kontenjana tam 54 kişinin usulsüz yatay geçiş yaptığı iddia ediliyor.
+### Short 2 (Farklı Kaynak Verileri ve Delil Süreci)
+Kanca: Gözaltı sayılarına dair haber kaynaklarından farklı bilgiler geliyor.
 
-3 kişilik kontenjana tam 54 kişinin usulsüz yatay geçiş yaptığı iddia ediliyor. İstanbul 59. Asliye Ceza Mahkemesi’nce kabul edilen iddianamede çarpıcı detaylar var. Savcılık, İmamoğlu’nun kütük defterine gerçeğe aykırı şekilde Doğu Akdeniz Üniversitesi öğrencisi olarak kaydedildiğini ileri sürüyor. Bu iddialarla zincirleme şekilde resmi belgede sahtecilik suçundan 2 yıl 6 aydan 8 yıl 9 aya kadar hapis ve TCK 53 uyarınca hak yoksunluğu talep ediliyor. Karardan bir gün sonra gözaltına alınan İmamoğlu, 23 Mart 2025’te tutuklanmış ve görevinden uzaklaştırılmıştı.
+Gözaltı sayılarına dair haber kaynaklarından farklı bilgiler geliyor. NTV ve Cumhuriyet operasyonda 24 kişinin gözaltına alındığını duyururken, TRT Haber ile Hürriyet'in bir haberinde bu sayı 23 olarak aktarıldı. Hürriyet'in bir başka haberinde ise 19 kişinin gözaltında olduğu belirtildi. Peki savcılık bu kararları nasıl aldı? Dosyadaki iddialar şüpheli savunmaları, tanık beyanları ve gizli tanık anlatımlarıyla şekillendi. Dijital materyaller tek tek incelendi ve bilirkişi raporları dosyaya girdi. Savcılığın yapacağı değerlendirmenin ardından şüphelilerin serbest mi bırakılacağı yoksa mahkemeye mi sevk edileceği netleşecek.
 
-### Short 3 (Kaynak Çelişkileri ve Adli Süreç)
-Kanca: 1990 yılındaki o yatay geçiş dosyasında kaynaklar bile çelişiyor.
+### Short 3 (Adli Prosedür ve Hukuki İnceleme)
+Kanca: Yargının kapısından içeri giren kim olursa olsun yükü eşitlenir.
 
-1990 yılındaki o yatay geçiş dosyasında kaynaklar bile çelişiyor. NTV ve Habertürk, İmamoğlu’nun KKTC’de okuduğu okulu Girne Amerikan Üniversitesi olarak aktarırken, Hürriyet’in aktardığı iddianamede UCNC ismi geçiyor. Soruşturma başlangıcında da büyük bir çelişki var: Hürriyet sürecin 1 Ekim 2024’te başladığını bildirirken, NTV 22 Şubat 2026 tarihini aktarıyor. Davaya bakan idare mahkemesi heyeti HSK tarafından değiştirildikten sonra ret kararı verilmişti. Danıştay 8. Dairesi oy birliğiyle bu kararı onadı. İdari yargıda süreç tamamlandı ancak ceza davasındaki süreç devam ediyor.
+Yargının kapısından içeri giren kim olursa olsun yükü eşitlenir. Prosedür son derece net işliyor. Gözaltına alınan isimler adliyeye sevk edilmeden önce ilk olarak hastanede sağlık kontrolünden geçiriliyor. Buradaki işlemlerin hemen ardından şüpheliler Adli Tıp Kurumu'na götürülüyor. Adli Tıp ve sağlık kontrolleri tamamlanan isimler için bir sonraki durak savcılık makamı olacak. Bence sahnenin ışıkları ne kadar parlak olursa olsun kanun karşısında herkes aynı hizada durur. Ekranlarda izlenen ünlü isimlerin adliyeye taşınması, delillerin ağırlığının konuşacağı bir sürecin başladığını gösteriyor.
 
 ## Açıklama
 
-Danıştay 8. Dairesi, Ekrem İmamoğlu'nun lisans diplomasının iptaline ilişkin kararı oy birliğiyle onadı. 1990 yılındaki yatay geçişe dayanan dosyada ceza davası ve hukuki süreç devam ediyor. Türkiye'de cumhurbaşkanı adayı olabilmek için yüksek öğrenim şartı bulunuyor. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.
+İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturma kapsamında ünlü isimlerin de aralarında bulunduğu 35 şüpheli hakkında gözaltı kararı verildi. Özcan Deniz, Deniz Çakır ve Burcu Özberk gibi tanınan isimlerin sağlık kontrolü ve Adli Tıp işlemlerinin ardından savcılığa sevk edilmesi bekleniyor. Dosyada dijital incelemeler, gizli tanık ifadeleri ve ağır iddialar yer alıyor. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.
 
-Etiketler: Ekrem İmamoğlu, Danıştay, Diploma İptali, İstanbul Üniversitesi, Son Tanık, Hukuk, Dava Dosyası, Yatay Geçiş, İddianame, Haber, Yargı, Siyaset
+Etiketler: uyuşturucu soruşturması, özcan deniz, deniz çakır, burcu özberk, gözaltı, istanbul başsavcılığı, adli tıp, operasyon, son tanık, furkan, magazin soruşturma, cem karcı
 
 ## KONTROL ET
 
-- Hukuken hassas: Soruşturma ve dava sürecindeki iddiaları anlatırken kesin suçlamada bulunma, 'iddia ediliyor', 'savcılığa göre' ifadelerini koru.
-- Hukuken hassas: Kaynaklardaki tarih ve üniversite ismi çelişkilerini doğrudan olgu olarak aktar, ekstra yorum veya bilgi uydurma.
-- Hukuken hassas: Cumhurbaşkanlığı adaylığı koşulunu ve hak yoksunluğu talebini aktarırken kişisel hüküm vermeden sadece kanun ve iddianame maddelerini belirt.
-- Kaynaklarda **bulunamayan sayılar**: 19
-- Kaynaklarda **bulunamayan özel isimler**: Furkan, Hürriyet
+- Hukuken hassas: Hakkında kesin mahkûmiyet kararı bulunmayan şüpheliler için suçlu veya mahkûm ifadeleri kullanılmamalı, masumiyet karinesine dikkat edilmelidir.
+- Hukuken hassas: Haber kaynaklarındaki gözaltı sayısı farklılıkları (19, 23, 24) kesin bir yargı gibi sunulmamalı, haber kaynaklarının beyan ettiği olgusal veriler olarak aktarılmalıdır.
+- Hukuken hassas: Soruşturmadaki suçlamalar (fuhuş, uyuşturucu ticareti vb.) şahısların kesin fiilleri gibi değil, savcılığın soruşturma kapsamında incelediği iddialar olarak ifade edilmelidir.
 
 ### Kullanılan olgular
-- Danıştay 8. Dairesi, Ekrem İmamoğlu'nun lisans diplomasının iptaline ilişkin mahkeme kararını oy birliğiyle onadı. (kaynak: NTV, Hürriyet, BirGün, CNN Türk, Habertürk)
-- İmamoğlu'nun diploma bilgileri 5 Ağustos 2025'te İstanbul Üniversitesi'nin veri tabanından silindi ve e-Devlet'te görünmez hale geldi. (kaynak: NTV)
-- Ekrem İmamoğlu, 23 Mart 2025'te tutuklandıktan sonra İstanbul Büyükşehir Belediye Başkanlığı görevinden uzaklaştırıldı. (kaynak: NTV, Hürriyet)
-- İmamoğlu'nun diploma iptaline karşı İstanbul 5. İdare Mahkemesi'nde açtığı dava bu senenin başında reddedilmişti. (kaynak: NTV)
-- Ekrem İmamoğlu'nun 1990'da yatay geçiş yaptığı KKTC'deki üniversite NTV ve Habertürk'te Girne Amerikan Üniversitesi olarak geçerken, Hürriyet'in aktardığı iddianamede University College of Northern Cyprus (UCNC) olarak geçmektedir. (kaynak: NTV, Hürriyet, Habertürk)
-- Ekrem İmamoğlu 1994 yılında İstanbul Üniversitesi İngilizce İşletme Bölümü'nden mezun oldu. (kaynak: NTV)
-- 18 Eylül 2024 tarihinde İmamoğlu'nun diplomasının sahte olduğu iddiasıyla CİMER'e başvuru yapıldı. (kaynak: NTV, Hürriyet)
-- Soruşturmanın başlama tarihi konusunda kaynaklar çelişmektedir: NTV İstanbul Cumhuriyet Başsavcılığı'nın soruşturmayı 22 Şubat 2026'da başlattığını aktarırken, Hürriyet soruşturmanın 1 Ekim 2024'teki şikayet dilekçesinin ardından başlatıldığını bildirmektedir. (kaynak: NTV, Hürriyet)
-- 18 Mart 2025'te İstanbul Üniversitesi Yönetim Kurulu, 1990 yılında usulsüz yatay geçiş yapıldığı gerekçesiyle İmamoğlu dahil 28 kişinin lisans diplomasını iptal etti. (kaynak: NTV)
-- İmamoğlu, diploma iptal kararından bir gün sonra gözaltına alındı ve 23 Mart 2025'te tutuklandı. (kaynak: NTV)
-- Hakimler ve Savcılar Kurulu (HSK), 20 Haziran tarihli yaz kararnamesiyle davaya bakan İstanbul 5. İdare Mahkemesi Başkanı'nı ve üye hakimi görevden alarak yerlerine yeni isimler atadı. (kaynak: NTV)
-- İstanbul 5. İdare Mahkemesi heyeti, 30 Temmuz'da diploma iptali kararının yürütmesinin durdurulması talebini reddetti. (kaynak: NTV)
-- İstanbul 59. Asliye Ceza Mahkemesi, 8 Temmuz'da İmamoğlu'nun resmi belgede sahtecilik iddiasıyla yargılanacağı iddianameyi kabul etti. (kaynak: NTV)
-- İddianamede, 3 kişilik kontenjanı bulunan bölüme usulsüz olarak 54 kişinin yatay geçişle alındığı kaydedildi. (kaynak: Hürriyet)
-- İddianamede, İmamoğlu'nun öğrenci kütük defterine gerçeğe aykırı şekilde Doğu Akdeniz Üniversitesi öğrencisi olarak kaydedildiği tespit edildi. (kaynak: Hürriyet)
-- İddianamede İmamoğlu'nun 'zincirleme şekilde resmi belgede sahtecilik' suçundan 2 yıl 6 aydan 8 yıl 9 aya kadar hapisle cezalandırılması ve TCK 53. madde uyarınca hak yoksunluğu talep edildi. (kaynak: Hürriyet)
-- Danıştay 8. Dairesi'nin 43 sayfalık gerekçeli kararında, yatay geçiş işlemlerinde sistematik ve ağır hukuka aykırılıklar bulunduğu belirtildi. (kaynak: Habertürk)
-- Türkiye'de cumhurbaşkanı adayı olabilmek için yüksek öğrenim yapma koşulu aranmaktadır. (kaynak: NTV)
+- İstanbul Cumhuriyet Başsavcılığı Kaçakçılık, Narkotik ve Ekonomik Suçlar Soruşturma Bürosu tarafından yürütülen soruşturma kapsamında 35 şüpheli hakkında gözaltı kararı verilmiştir. (kaynak: NTV, Cumhuriyet, TRT Haber, Hürriyet)
+- Soruşturma fuhuş, uyuşturucu veya uyarıcı madde ticareti, uyuşturucu veya uyarıcı madde temin etme ile uyuşturucu madde kullanma veya bulundurma suçlamaları kapsamında yürütülmektedir. (kaynak: Cumhuriyet, TRT Haber, Hürriyet)
+- Gözaltı kararları; şüpheli savunmaları, tanık beyanları, gizli tanık anlatımları ile dijital materyaller üzerindeki bilirkişi inceleme raporları doğrultusunda alınmıştır. (kaynak: NTV, Cumhuriyet, TRT Haber, Hürriyet)
+- NTV ve Cumhuriyet haberlerine göre operasyon kapsamında gözaltına alınanların sayısı 24'tür. (kaynak: NTV, Cumhuriyet)
+- TRT Haber ve Hürriyet'in bir haberine göre gözaltına alınan şüpheli sayısı 23'tür. (kaynak: TRT Haber, Hürriyet)
+- Hürriyet'in diğer haberine göre 35 şüpheliden 19'u gözaltına alınmıştır. (kaynak: Hürriyet)
+- Şarkıcı Özcan Deniz soruşturma kapsamında gözaltına alınan şüpheliler arasındadır. (kaynak: NTV, Cumhuriyet, TRT Haber, Hürriyet)
+- Oyuncu Deniz Çakır (Deniz Çakır Baykal) gözaltına alınan isimlerden biridir. (kaynak: NTV, Cumhuriyet, TRT Haber, Hürriyet)
+- Oyuncu Burcu Özberk gözaltına alınan şüpheliler arasında yer almaktadır. (kaynak: NTV, TRT Haber, Hürriyet)
+- Organizatör Erdal Bozkuş gözaltına alınanlar arasındadır. (kaynak: NTV, TRT Haber, Hürriyet)
+- Hakkında gözaltı kararı bulunan yönetmen Cem Karcı'yı yakalamaya yönelik çalışmalar sürmektedir. (kaynak: Cumhuriyet)
+- Gözaltına alınan isimler adliyeye sevk edilmeden önce hastanede sağlık kontrolünden geçirilip Adli Tıp Kurumu'na götürülmektedir. (kaynak: NTV)
+- İstanbul Cumhuriyet Başsavcılığı'nın ünlülere yönelik yürüttüğü uyuşturucu soruşturması kapsamındaki operasyonlar 8 Ekim 2025'ten bu yana / geçen yıl ekim ayında başlamıştır. (kaynak: NTV)
+- Şüpheliler hakkında verilecek savcılık talebine göre kişiler serbest bırakılmakta veya mahkemeye sevk edilmektedir. (kaynak: NTV)
+- Murat Ceylan, Murat Başoğlu, Cansu Taşkın ve İbrahim Yılmaz gözaltına alınan listede bulunmaktadır. (kaynak: TRT Haber, Hürriyet)
+- Pınar Bent, Ceylan Kaya, Işıl Işık Demir, Burhan Karaca, Cem Güler ve İbrahim İzzet Özilhan gözaltına alınan isimler arasındadır. (kaynak: TRT Haber, Hürriyet)
+- Saghar Shojaeı, İlknur Şahin, Meltem Özkayadan, Seher Grothe Sevdişan, Ufuk Gündoğdu, Onur Yüksel, Muammer Kapucuoğlu, Mehmet Can Karcı ve Deniz Sözen gözaltına alınanlar arasındadır. (kaynak: TRT Haber, Hürriyet)
 
 ## Kaynaklar
-[1] NTV: https://www.ntv.com.tr/turkiye/danistay-8-idari-dairesi-imamoglunun-diplomasinin-iptali-kararini-onadi-1751606
-[2] Hürriyet: https://www.hurriyet.com.tr/gundem/danistay-ekrem-imamoglunun-diplomasinin-iptalini-onadi-43390351
-[3] BirGün: https://www.birgun.net/haber/danistay-onadi-ekrem-imamoglu-nun-diplomasinin-iptali-kesinlesti-748337
-[4] CNN Türk: https://www.cnnturk.com/turkiye/son-dakika-danistaydan-ekrem-imamoglu-karari-diplomasinin-iptali-kesinlesti-3497917
-[5] Habertürk: https://www.haberturk.com/gundem/son-dakika-imamoglunun-diploma-iptaline-onama-3929957
+[1] NTV: https://www.ntv.com.tr/turkiye/galeri-unlulere-uyusturucu-sorusturmasinda-yeni-dalga-ozcan-deniz-deniz-cakir-burcu-ozberk-de-gozaltinda-1752499
+[2] Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/istanbul-da-unlulere-yonelik-uyusturucu-sorusturmasinda-gozalti-sayisi-24-e-yukseldi-ozcan-deniz-ve-deniz-cakir-da-listede-2559198
+[3] TRT Haber: https://www.trthaber.com/haber/gundem/unlulere-yonelik-uyusturucu-sorusturmasinda-23-gozalti-964380.html
+[4] Hürriyet: https://www.hurriyet.com.tr/gundem/unlulere-uyusturucu-operasyonunda-yeni-dalga-cok-sayida-isme-gozalti-karari-listede-ozcan-deniz-burcu-ozberk-murat-ceylan-ve-deniz-43390110
+[5] Hürriyet: https://www.hurriyet.com.tr/gundem/son-dakika-aralarinda-ozcan-deniz-ile-deniz-cakir-da-var-unlulere-yonelik-sorusturmada-35-zanli-icin-gozalti-karari-43389996

@@ -29,7 +29,7 @@ API = "https://generativelanguage.googleapis.com/v1beta"
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/124.0 Safari/537.36")
 
-MIN_WORDS = 1300          # bunun altı "çok kısa" sayılır ve uzatılır
+MIN_WORDS = 900           # bunun altı uyarı olarak raporlanır (şişirme yapılmaz)
 MIN_SOURCE_WORDS = 600    # kaynak malzeme bunun altındaysa konu atlanır
 MIN_FACTS = 8
 MAX_ARTICLES = 6
@@ -42,18 +42,25 @@ BANNED = [
     "bu videoda", "sonuç olarak", "önemle belirtmek", "özetle", "kısacası",
     "günümüzde", "çok yönlü", "derinlemesine", "gelin bakalım", "birincisi",
     "ikincisi", "üçüncüsü", "unutulmamalıdır", "bu bağlamda", "söz konusu",
-    "sonuç itibarıyla", "dikkat çekici bir şekilde",
+    "sonuç itibarıyla", "dikkat çekici bir şekilde", "derler", "çorap söküğü",
+    "son perde", "faturayı kesti", "terazisi başka", "ben furkan",
 ]
+
+POLITICAL = ["imamoğlu", "erdoğan", "özgür özel", "bahçeli", "kılıçdaroğlu",
+             "mansur yavaş", "demirtaş", "chp", "akp", "mhp", "dem parti",
+             "cumhurbaşkan", "muhalefet", "iktidar", "milletvekili", "seçim"]
 
 SYSTEM = """Sen "Son Tanık" adlı Türkçe YouTube suç ve ceza kanalının yazarısın. Metni kanalın sahibi Furkan kendi sesiyle okuyacak. Metin Furkan'ın ağzından, birinci tekil kişiyle ("ben") çıkmış gibi yazılır.
 
 FURKAN'IN ANLATIM TARZI
-- Konuya uygun, sert ve akılda kalan bir söz ya da deyimle açılır (atasözü tadında). Her videoda yeni bir açılış sözü kur.
-- Kısa, doğrudan cümleler. Konuşma dili: "yani", "bak", "düşünsene", "peki ne oldu?", "inanması zor ama". Haber spikeri gibi değil, olayı bilen ve içi yanan mahalle abisi gibi.
-- Güçlü bir adalet duygusu: kim, kime, ne yaptı, hesap verecek mi?
+- Metin, konuya özel ve her videoda yeni kurulmuş kısa, sert, hükmeden bir sözle açılır. Söz birinci tekil kişiyle, kendi cümlesi gibi çıkar ("derim", "bilirim" ya da doğrudan hüküm). Örnek kalıp: "Taşa kazınan silgiyle silinmez." Bu örneği ya da bilinen atasözlerini KOPYALAMA, konuya uygun yeni bir söz kur. "Derler", "denir" gibi başkasından aktaran kalıplar yok.
+- Kendini tanıtma. "Ben Furkan", "hoş geldiniz", "kanalıma" gibi giriş yok. Kanal tanıtımını video kendi ayrı bölümünde yapıyor.
+- Kısa, doğrudan cümleler. Konuşma dili. Haber spikeri gibi değil, olayı bilen ve içi yanan mahalle abisi gibi. "Bak", "düşünsene", "inanması zor ama", "yani" gibi sözleri tüm metinde en fazla 2-3 kez kullan, yoksa yapay durur.
+- Güçlü bir adalet duygusu: kim, kime, ne yaptı, hesap verecek mi? Ama bunu ima ile değil, olgularla kur. "Acaba terazi mi şaştı?" gibi örtülü suçlamalar yasak.
 - Uzun bir cümleden sonra kısa bir cümle. Ara sıra tek kelimelik cümle.
 - Nefes ve vurgu yerlerine [duraklama] yaz (tüm metinde 8-12 kez).
 - Rakamları rakamla yaz (130, 245 gibi), okurken kolay olsun.
+- ASLA TEKRAR ETME: Bir olgu metinde yalnızca bir kez anlatılır. Daha önce anlatılmış bir rakamı, tarihi ya da olayı yeni bir bölümde yeniden anlatma. Malzeme azsa metin kısa kalsın, şişirme.
 
 YAPAY ZEKÂ KOKUSU YASAK
 Şunları ASLA kullanma: "Bu videoda", "sonuç olarak", "özetle", "kısacası", "önemle belirtmek gerekir", "günümüzde", "çok yönlü", "derinlemesine", "gelin bakalım", "birincisi/ikincisi/üçüncüsü" sıralamaları, "söz konusu", "bu bağlamda". Emoji, madde işareti, markdown başlığı, uzun tire (—) yok. Her paragrafı aynı kalıpla bitirme. Metni özetleyen kapanış paragrafı yazma. "Peki ama..." kalıbını her bölümde kullanma.
@@ -62,7 +69,8 @@ KESİN HUKUKİ VE ETİK KURALLAR
 - Sadece sana verilen OLGULAR listesindeki bilgileri kullan. Listede olmayan isim, rakam, tarih, sözcük, diyalog, iç düşünce UYDURMA. Emin değilsen yazma.
 - Haber metinlerini kopyalama, olguları kendi cümlelerinle anlat.
 - Soruşturma ve dava aşamasındaki kişiler için hüküm verme. "İddia ediliyor", "savcılığa göre", "soruşturma kapsamında", "gözaltına alındı", "tutuklandı" gibi olgusal dil kullan. Mahkûmiyet kesinleşmedikçe "suçlu" deme. Olgularda varsa ilgililerin açıklamasını ve savunmasını da aktar.
-- Kaynaklar farklı anlatıyorsa ikisini de ver.
+- Kaynaklar aynı olgu için açıkça farklı bilgi veriyorsa ikisini de ver. Farklı tarihler farklı olay adımlarına ait olabilir; emin değilsen "çelişiyor" deme, her kaynağın ne aktardığını tek tek söyle ya da konuyu atla.
+- "Dikkat çeken gelişme", "şüpheli şekilde", "tesadüf mü" gibi yönlendirici ifadeler yok. Kurum kararlarını (HSK atamaları vb.) yorumsuz, olgu olarak ver.
 - Çocukların ve mağdurların kimliğini, ayrıntılı şiddet tasvirini verme. Çocuk şüpheli ya da mağdur varsa isim yok. Kamu görevlisi ya da tanınmış kişi olmayan özel kişilerde isim yerine tanım kullan ("bir iş insanı").
 - Kişilere hakaret, aşağılama, kanıtsız suçlama yok. Öfke olguya ve işleyişe yönelir. Furkan'ın yorumu "bence" diye açıkça ayrılır, kısa tutulur, olgu gibi sunulmaz.
 - Siyasi taraf tutma yok: iktidar da muhalefet de aynı dille anlatılır.
@@ -72,12 +80,12 @@ FACT_SYSTEM = ("Sen titiz bir haber editörüsün. Görevin yalnızca kaynak met
                "açıkça yazan olguları çıkarmak. Yorum, tahmin, çıkarım, uydurma yok.")
 
 SECTIONS = [
-    ("KANCA", "İlk 15 saniye. Konuya uygun yeni bir açılış sözüyle ya da şaşırtıcı bir rakam/soruyla aç. Merak uyandır, haberin özetini verme.", 150),
-    ("OLAY", "Ne oldu? Kronolojik, sahneyi kur. Kim, ne zaman, nerede. Bir kırılma noktası olsun.", 450),
-    ("PARA VE İLİŞKİLER", "Rakamlar, kurumlar, kim kiminle bağlantılı (sadece olgulardaki kadar). Her iddiayı 'savcılığa göre' gibi kaynağa bağla.", 450),
-    ("SORUŞTURMA VE SÜREÇ", "Savcılık ne yapmış, hangi adımlar atılmış, ne bekleniyor. Dedektif gibi adım adım anlat.", 450),
-    ("TARAFLAR VE NEDEN ÖNEMLİ", "Taraflar ne diyor (resmi açıklama, savunma, karşı görüş, haberler arası farklar). Sonra sıradan insana etkisi.", 300),
-    ("KAPANIŞ", "Düşündüren tek bir son vuruş, sırada ne olabileceği. Tek cümlelik doğal bir 'kanala abone ol' daveti. Özet yapma.", 120),
+    ("KANCA", "Videonun ilk 10-20 saniyesi, TEK PARAGRAF, 35-55 kelime. Önce konuya özel yeni, kısa, sert bir söz (birinci tekil kişiyle). Sonra şaşırtıcı bir rakam ya da merak uyandıran bir soruyla bitir. Haberin özetini ya da sonucunu verme. Kendini tanıtma. Paragrafın sonuna [duraklama] koy.", 45, False),
+    ("OLAY", "Ne oldu? Kronolojik, sahneyi kur. Kim, ne zaman, nerede. Bir kırılma noktası olsun.", 400, True),
+    ("PARA VE İLİŞKİLER", "Rakamlar, kurumlar, kim kiminle bağlantılı (sadece olgulardaki kadar). Her iddiayı 'savcılığa göre' gibi kaynağa bağla. Olay bölümünde anlatılanları tekrar etme, yalnızca yeni olguları ver.", 400, True),
+    ("SORUŞTURMA VE SÜREÇ", "Savcılık ve mahkemeler ne yapmış, hangi adımlar atılmış, ne bekleniyor. Önceki bölümlerde geçmeyen olgulardan anlat.", 400, True),
+    ("TARAFLAR VE NEDEN ÖNEMLİ", "Taraflar ne diyor (resmi açıklama, savunma, karşı görüş). Sonra sıradan insana etkisi. Yeni olgu yoksa kısa tut.", 250, True),
+    ("KAPANIŞ", "Önce tek cümleyle sıradaki gelişmeyi söyle. Sonra izleyiciye bu dosyaya özel, iki kelimeyle cevaplanabilecek TEK bir soru sor (örnek biçimler: dosyada en çok hangi nokta cevapsız kaldı, bu detayı biliyor musunuz, A mı B mi). Dava sürüyorsa 'suçlu mu' diye ASLA sorma. Metnin son cümlesi birebir şu olsun: Artık son tanık sizsiniz. Abone ol daveti ve özet yok.", 70, False),
 ]
 
 META_SCHEMA = """Sadece şu JSON nesnesini döndür:
@@ -91,7 +99,7 @@ META_SCHEMA = """Sadece şu JSON nesnesini döndür:
   "thumbnail_text": "küçük resim için 2-4 kelimelik vurucu yazı",
   "risk_notes": ["Furkan'ın okurken dikkat etmesi gereken hukuken hassas cümleler, kısa kısa"]
 }
-"shorts" tam 3 öğe içersin."""
+"shorts" tam 3 öğe içersin. Short metinlerinde kendini tanıtma ve abone ol daveti yok."""
 
 
 # ---------------------------------------------------------------- yardımcılar
@@ -386,7 +394,7 @@ def extract_facts(key, models, topic, arts):
         f"KONU: {topic['title']}\n\nAşağıdaki haber metinleri aynı olayı anlatıyor. "
         "Yalnızca kaynaklarda AÇIKÇA yazan olguları çıkar: kim, ne, ne zaman, nerede, "
         "kaç kişi, kaç lira, hangi kurum, kim ne açıkladı, kim ne dedi. Her olgu tek "
-        "cümle olsun. Kaynaklar birbirini tutmuyorsa çelişkiyi ayrı bir olgu olarak yaz. "
+        "cümle olsun. Yalnızca AYNI olgu için kaynaklar açıkça farklı rakam ya da isim veriyorsa çelişkiyi ayrı olgu olarak yaz; farklı tarihler farklı olay adımlarına ait olabilir, çelişki ilan etme. Kaynaklarda geçen arka plan bilgilerini de (önceki olaylar, kurumlar, yasal çerçeve) olgu olarak ekle. "
         "En az 15 olgu çıkar (kaynak yeterliyse). Uydurma, yorum, tahmin ekleme.\n"
         'Çıktı: {"facts":[{"olgu":"...","kaynaklar":["NTV","Hürriyet"]}]}\n\n'
         + sources_block(arts))
@@ -410,12 +418,15 @@ def facts_text(facts):
 
 def write_sections(key, models, topic, facts):
     ft = facts_text(facts)
+    scale = max(0.5, min(1.0, len(facts) / 25.0))
     parts, so_far = [], ""
-    for name, brief, words in SECTIONS:
+    for name, brief, words, scalable in SECTIONS:
+        words = int(words * scale) if scalable else words
         prompt = (
             f"KONU: {topic['title']}\n\nOLGULAR (sadece bunları kullan):\n{ft}\n\n"
-            "Şu ana kadar yazılan metnin son kısmı (tekrar etme, akışı sürdür):\n"
-            f"{so_far[-1200:] or '(henüz yok, ilk bölümü yazıyorsun)'}\n\n"
+            "Şu ana kadar yazılan metin (burada anlatılan hiçbir olguyu, rakamı ya da "
+            "tarihi yeniden anlatma, akışı sürdür):\n"
+            f"{so_far[-7000:] or '(henüz yok, ilk bölümü yazıyorsun)'}\n\n"
             f'ŞİMDİ YAZ: "{name}" bölümü. Görev: {brief}\n'
             f"Yaklaşık {words} kelime. Sadece okunacak metni yaz. Başlık, açıklama, "
             "kaynak notu, bölüm adı ekleme.")
@@ -455,26 +466,56 @@ def revise(key, models, script, instruction, facts):
     return s if isinstance(s, str) and count_words(s) > 200 else script
 
 
+def split_sentences(text):
+    t = re.sub(r"\[duraklama\]", " ", text)
+    return [x.strip() for x in re.split(r"(?<=[.!?])\s+|\n+", t) if x.strip()]
+
+
+def repeats(script):
+    """Daha önce anlatılmış bir cümleyi büyük oranda tekrar eden cümleleri bulur."""
+    seen, out = [], []
+    for sent in split_sentences(script):
+        tok = {w[:5] for w in re.findall(r"[a-zçğıöşü0-9]+", tr_lower(sent)) if len(w) >= 4}
+        if len(tok) < 5:
+            continue
+        for old in seen:
+            if len(tok & old) / min(len(tok), len(old)) >= 0.65:
+                out.append(sent)
+                break
+        seen.append(tok)
+    return out
+
+
+def drop_self_intro(s):
+    s = re.sub(r"(?:^|(?<=[.!?]\s))[^.!?\n]*\bBen Furkan\b[^.!?\n]*[.!?]?\s*", "", s)
+    return s.strip()
+
+
 def finalize_script(key, models, script, facts):
-    script = clean_script(script)
+    script = drop_self_intro(clean_script(script))
     for _ in range(2):
-        n = count_words(script)
-        if n >= MIN_WORDS:
+        rp = repeats(script)
+        if len(rp) < 2:
             break
-        log(f"   senaryo {n} kelime, uzatılıyor")
-        script = clean_script(revise(
+        log(f"   {len(rp)} tekrar eden cümle bulundu, temizleniyor")
+        script = drop_self_intro(clean_script(revise(
             key, models, script,
-            f"Bu senaryo {n} kelime, çok kısa. Hedef 1500-1900 kelime. Olgular arasında "
-            "olup anlatılmamış ayrıntıları, olayın gelişimini, tarafların açıklamalarını "
-            "ve 'neden önemli' bölümünü genişleterek uzat. Yeni olgu uydurma.", facts))
+            "Bu senaryoda aynı bilgi birden fazla kez anlatılıyor. Aşağıdaki cümleler daha "
+            "önce anlatılanı tekrar ediyor: bunları SİL (yerine yeni bilgi ekleyemiyorsan "
+            "boş bırak, metin kısalsın). İlk anlatımı koru, akışın bozulmadığından emin ol. "
+            "Metnin ilk paragrafını (kanca) ve son cümlesini ('Artık son tanık sizsiniz.') "
+            "aynen koru.\n\nTEKRAR EDEN CÜMLELER:\n- " + "\n- ".join(rp[:25]), facts)))
         time.sleep(PAUSE)
     bf = banned_found(script)
     if bf:
         log(f"   yasak kalıplar bulundu: {bf}")
-        script = clean_script(revise(
+        script = drop_self_intro(clean_script(revise(
             key, models, script,
-            "Şu ifadeleri içeren cümleleri doğal, konuşma dilinde yeniden yaz: "
-            f"{', '.join(bf)}. Metnin geri kalanını olduğu gibi bırak.", facts))
+            "Şu ifadeleri içeren cümleleri doğal, konuşma dilinde yeniden yaz (başkasından "
+            "aktaran 'derler' kalıbı yerine birinci tekil kişiyle kendi sözünü kur): "
+            f"{', '.join(bf)}. Metnin geri kalanını olduğu gibi bırak.", facts)))
+    if not script.rstrip().endswith("Artık son tanık sizsiniz."):
+        script = script.rstrip() + "\n\nArtık son tanık sizsiniz."
     return script
 
 
@@ -488,6 +529,9 @@ def make_meta(key, models, topic, script, facts):
 
 
 def unverified(script, arts):
+    allow = {"Furkan", "Tanık", "Son"}
+    for a in arts:
+        allow.update(re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşü]+", a["source"]))
     """Senaryodaki sayı ve özel isimlerden kaynaklarda geçmeyenleri bulur."""
     src = " ".join(a["text"] for a in arts)
     src_nums = {re.sub(r"[.,]", "", n) for n in re.findall(r"\d[\d.,]*\d|\d", src)}
@@ -501,6 +545,8 @@ def unverified(script, arts):
         if not before or before[-1] in ".!?:\n\"“”‘’]":
             continue
         base = re.split(r"['’]", m.group(0))[0]
+        if base in allow:
+            continue
         if len(base) >= 4 and tr_lower(base)[:5] not in stems:
             bad_names.add(base)
     return bad_nums, sorted(bad_names)
@@ -520,7 +566,8 @@ def write_report(topic, arts, facts, meta, script, model, bad_nums, bad_names, w
         L += ["## Uyarılar", *[f"- {w}" for w in warnings], ""]
     L += ["## Başlık önerileri", *[f"{i}. {t}" for i, t in enumerate(titles, 1)], "",
           f"Küçük resim yazısı: {meta.get('thumbnail_text', '')}", "",
-          "## OKUMA METNİ", "", script, "", "## Shorts parçaları", ""]
+          "## KANCA (videonun ilk 10-20 saniyesi)", "", meta.get("hook", ""), "",
+          "## OKUMA METNİ (kanca dahil, baştan sona)", "", script, "", "## Shorts parçaları", ""]
     for i, s in enumerate(meta.get("shorts") or [], 1):
         L += [f"### Short {i} ({s.get('bolum', '')})", f"Kanca: {s.get('hook', '')}", "",
               s.get("text", ""), ""]
@@ -575,6 +622,11 @@ def candidates(tdata, history):
     out, seen = [], set()
     pool = ([tdata["selected"]] if tdata.get("selected") else []) + tdata.get("topics", [])
     used = [set(h.get("tok", [])) for h in history]
+    def political(t):
+        low = tr_lower(t["title"])
+        return bool(t.get("sensitive")) or any(p in low for p in POLITICAL)
+
+    pool = sorted(pool, key=lambda t: 1 if political(t) else 0)  # siyasi konular sona
     for t in pool:
         if t["title"] in seen or t.get("single_source") or t.get("score", 0) <= 0:
             continue
@@ -646,6 +698,7 @@ def main():
                 break
             continue
         bad_nums, bad_names = unverified(script, arts)
+        meta["hook"] = script.split("\n\n")[0].strip()
         warnings = []
         if count_words(script) < MIN_WORDS:
             warnings.append(f"Senaryo hedeften kısa kaldı ({count_words(script)} kelime). "
