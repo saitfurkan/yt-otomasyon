@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 18:21 UTC",
+  "generated": "2026-11-25 18:24 UTC",
   "errors": [
     "AA: Remote end closed connection without response",
     "T24: syntax error: line 1, column 0"
@@ -9,6 +9,7 @@
     "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
     "sources": [
       "BirGün",
+      "CNN Türk",
       "Hürriyet",
       "NTV",
       "Sözcü"
@@ -19,6 +20,12 @@
         "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
         "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
         "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
+      },
+      {
+        "source": "CNN Türk",
+        "url": "https://www.cnnturk.com/turkiye/sile-belediyesi-davasinda-haluk-leventten-dikkat-ceken-sozler-onun-yerine-benim-tutuklanmam-gerekiyor-3498211",
+        "title": "Şile Belediyesi davasında Haluk Levent'ten dikkat çeken sözler: \"Onun yerine benim tutuklanmam gerekiyor\"",
+        "summary": "Şile Belediyesi'ne yönelik rüşvet ve yolsuzluk soruşturması kapsamında 53 sanığın yargılandığı davanın 11'inci duruşması görüldü. Duruşmada tanık olarak dinlenen sanatçı Haluk Levent, asistanı Yeliz Kaya'nın hesaplarının kendisi tarafından kullanıldığını belirterek, \"Bu nedenle Yeliz Kaya'nın mahkemenizin Şile dosyasıyla ilgili hiçbir alakası yoktur. Onun yerine benim tutuklanmam gerekiyor\" dedi. Duruşma yarına ertelendi."
       },
       {
         "source": "Hürriyet",
@@ -54,7 +61,7 @@
     ],
     "sensitive": false,
     "single_source": false,
-    "newest": "2026-11-25T17:38:00+00:00"
+    "newest": "2026-11-25T21:11:17+00:00"
   },
   "topics": [
     {
@@ -62,6 +69,7 @@
       "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
       "sources": [
         "BirGün",
+        "CNN Türk",
         "Hürriyet",
         "NTV",
         "Sözcü"
@@ -72,6 +80,12 @@
           "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
           "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
           "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
+        },
+        {
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/turkiye/sile-belediyesi-davasinda-haluk-leventten-dikkat-ceken-sozler-onun-yerine-benim-tutuklanmam-gerekiyor-3498211",
+          "title": "Şile Belediyesi davasında Haluk Levent'ten dikkat çeken sözler: \"Onun yerine benim tutuklanmam gerekiyor\"",
+          "summary": "Şile Belediyesi'ne yönelik rüşvet ve yolsuzluk soruşturması kapsamında 53 sanığın yargılandığı davanın 11'inci duruşması görüldü. Duruşmada tanık olarak dinlenen sanatçı Haluk Levent, asistanı Yeliz Kaya'nın hesaplarının kendisi tarafından kullanıldığını belirterek, \"Bu nedenle Yeliz Kaya'nın mahkemenizin Şile dosyasıyla ilgili hiçbir alakası yoktur. Onun yerine benim tutuklanmam gerekiyor\" dedi. Duruşma yarına ertelendi."
         },
         {
           "source": "Hürriyet",
@@ -107,65 +121,7 @@
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T17:38:00+00:00"
-    },
-    {
-      "score": 28,
-      "title": "Danıştay 8. Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
-      "sources": [
-        "BBC Türkçe",
-        "BirGün",
-        "Euronews TR",
-        "Habertürk",
-        "Hürriyet",
-        "NTV"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/danistay-8-dairesi-karari-onadi-imamoglunun-diplomasi-iptal-edildi-1751606",
-          "title": "Danıştay 8. Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
-          "summary": "Danıştay, 8. Dairesi Ekrem İmamoğlu'nun üniversite diplomasının iptali kararını onadı. 23 Mart 2025'te tutuklandıktan sonra İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun üniversite diplomasının iptali kesinleşti. Kararı Danıştay 8. Dairesi onadı. Söz konusu yargılama süreci, İmamoğlu'nun 1990 yılında Girne Amerikan Üniversitesi'nden İstanbul Üniversitesi'ne yatay geçişinde usulsüzlük olduğu iddiasını konu ediniyordu. Dosyayı “üniversitenin tanınırlığı"
-        },
-        {
-          "source": "BBC Türkçe",
-          "url": "https://www.bbc.com/turkce/articles/c338535pvm2o?at_medium=RSS&at_campaign=rss",
-          "title": "Danıştay, İmamoğlu'nun diploma iptali kararını neye dayandırdı?",
-          "summary": "Tutuklanarak İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun diploma iptaline karşı Danıştay'a yaptığı temyiz başvurusu reddedildi"
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/danistay-ekrem-imamoglunun-diplomasinin-iptalini-onadi-43390351",
-          "title": "Danıştay, Ekrem İmamoğlu'nun diplomasının iptalini onadı",
-          "summary": ""
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/danistay-onadi-ekrem-imamoglu-nun-diplomasinin-iptali-kesinlesti-748337",
-          "title": "Danıştay onadı: Ekrem İmamoğlu'nun diplomasının iptali kesinleşti!",
-          "summary": "Danıştay 8. Dairesi, Ekrem İmamoğlu’nun lisans diplomasının iptaline ilişkin mahkeme kararını onadı. Danıştay 8. Dairesi, yatay geçiş işleminin 'açık hata' içerdiğini, bu nedenle süre şartı aranmaksızın geri alınabileceğini öne sürdü. Bu karar İmamoğlu için cumhurbaşkanlığı adaylığı yolunun kapanması anlamına geliyor."
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/gundem/son-dakika-imamoglunun-diploma-iptaline-onama-3929957",
-          "title": "Diploması resmen iptal edildi",
-          "summary": ""
-        },
-        {
-          "source": "Euronews TR",
-          "url": "https://tr.euronews.com/2026/11/25/imamoglu-diploma-davasi-icin-aymye-basvuracak-danistay-karari-hukuka-aykiridir",
-          "title": "İmamoğlu, diploma davası için AYM’ye başvuracak: 'Danıştay kararı hukuka aykırıdır'",
-          "summary": "İmamoğlu’nun avukatları, 'Danıştay kararı hukuka aykırıdır' diyerek diploma davasını AYM’ye taşıyacaklarını açıkladı. Bazı itirazların incelenmediğini belirten avukatlar, 1990’da bulunmayan bir şartın geri doğru uygulandığı ve idarenin hatasının öğrenciye yüklendiği savundu."
-        }
-      ],
-      "reasons": [
-        "suç:+12",
-        "güç:+4",
-        "merak:+1"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-25T12:56:49+01:00"
+      "newest": "2026-11-25T21:11:17+00:00"
     },
     {
       "score": 25,
@@ -288,6 +244,7 @@
       "score": 24,
       "title": "SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
       "sources": [
+        "CNN Türk",
         "Habertürk",
         "Hürriyet",
         "Milliyet",
@@ -299,6 +256,12 @@
           "url": "https://www.milliyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-7707969",
           "title": "SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
           "summary": "Şirketin Kamuyu Aydınlatma Platformu'nda (KAP) yayımlanan açıklamasında, İstanbul 6. Sulh Ceza Hakimliğinin 24 Kasım 2026 tarihli ve 2026/11489 D. İş sayılı kararıyla TMSF'nin şirkete kayyum olarak atandığı bildirildi. Söz konusu karar uyarınca Fon Kurulu tarafından şirketin yeni yönetim kurulunun oluşturulduğu belirtilen açıklamada, yönetim kurulu başkanlığına Nevzat Avunç'un, başkan vekilliğine ise Melek İnceköse İmert'in getirildiği kaydedildi. Açıklamada, yönetim kurulu üyeliklerine Erdinç P"
+        },
+        {
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/turkiye/tmsf-sumer-varlik-yonetime-kayyum-olarak-atandi-3498212",
+          "title": "TMSF, Sümer Varlık Yönetim'e kayyum olarak atandı",
+          "summary": "Sümer Varlık Yönetim AŞ'ye Tasarruf Mevduatı Sigorta Fonu (TMSF) kayyum olarak atandı."
         },
         {
           "source": "Hürriyet",
@@ -326,7 +289,7 @@
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T18:19:00+00:00"
+      "newest": "2026-11-25T21:13:14+00:00"
     },
     {
       "score": 21,
@@ -439,6 +402,56 @@
       "sensitive": false,
       "single_source": true,
       "newest": "2026-11-25T12:50:13+01:00"
+    },
+    {
+      "score": 17,
+      "title": "Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz",
+      "sources": [
+        "CNN Türk",
+        "Hürriyet",
+        "Milliyet",
+        "NTV",
+        "Sabah"
+      ],
+      "links": [
+        {
+          "source": "Milliyet",
+          "url": "https://www.milliyet.com.tr/dunya/disislerinden-riyaddaki-saldiriya-tepki-en-guclu-sekilde-kiniyoruz-7707943",
+          "title": "Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz",
+          "summary": "Bakanlık, Husilerin Suudi Arabistan'ı hedef alan saldırısına ilişkin yazılı açıklama yaptı. Açıklamada, \"Husiler tarafından dün Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi'ne gerçekleştirilen saldırıyı en güçlü şekilde kınıyor, yaralılara acil şifalar diliyoruz.\" ifadesi kullanıldı. İlginizi Çekebilir Sivil tesisleri hedef alan, bölgesel barış ve güvenliği tehdit eden bu eylemlerin derhal sona erdirilmesi yönündeki çağrının yinelendiği belirtilen açıklamada, \"Husile"
+        },
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/disislerinden-husilerin-riyada-yonelik-saldirisina-kinama-1752570",
+          "title": "Dışişleri'nden Husilerin Riyad'a yönelik saldırısına kınama",
+          "summary": "Dışişleri Bakanlığı, Husilerin Suudi Arabistan'ın başkenti Riyad'daki Kral Abdullah Finans Merkezi'ne yönelik saldırısını kınadı. Dışişleri Bakanlığı, Yemen'deki Husilerin Suudi Arabistan'ı hedef alan saldırılarına ilişkin yazılı açıklama yaptı. Bakanlık, Husilerin 24 Kasım'da Riyad'da bulunan Kral Abdullah Finans Merkezi'ne gerçekleştirdiği saldırıyı en güçlü şekilde kınadığını belirterek, yaralılara acil şifalar diledi. Açıklamada, \"Sivil tesisleri hedef alan, bölgesel barış ve güvenliği tehdi"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi-43391119",
+          "title": "Dışişleri Bakanlığı, Husilerin Riyad'daki Finans Merkezi'ne düzenlediği saldırıyı kınadı",
+          "summary": ""
+        },
+        {
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/turkiye/disislerinden-riyaddaki-finans-merkezine-gerceklestirilen-saldiriai-kinama-3498200",
+          "title": "Dışişleri'nden Riyad’daki Finans Merkezi’ne gerçekleştirilen saldırıya kınama",
+          "summary": "Dışişleri Bakanlığı tarafından yapılan açıklamada, \"Husiler tarafından Riyad’da bulunan Kral Abdullah Finans Merkezi’ne gerçekleştirilen saldırıyı en güçlü şekilde kınıyoruz.\" denildi."
+        },
+        {
+          "source": "Sabah",
+          "url": "https://www.sabah.com.tr/gundem/2026/11/25/disisleri-bakanligindan-riyaddaki-saldiriya-kinama",
+          "title": "Dışişleri Bakanlığı'ndan Riyad'daki saldırıya kınama!",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+5",
+        "güç:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T19:59:42+00:00"
     }
   ]
 }
