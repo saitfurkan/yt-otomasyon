@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 18:48 UTC",
+  "generated": "2026-11-25 18:57 UTC",
   "errors": [
     "T24: syntax error: line 1, column 0"
   ],
@@ -429,47 +429,47 @@
       "newest": "2026-11-25T19:59:42+00:00"
     },
     {
-      "score": 15,
-      "title": "Danıştay, İmamoğlu'nun diploma iptali kararını neye dayandırdı?",
+      "score": 16,
+      "title": "Fon soruşturmasıyla ilgili ortak basın toplantısı düzenlenecek",
       "sources": [
-        "BBC Türkçe",
-        "BirGün",
-        "DW Türkçe",
-        "Euronews TR"
+        "CNN Türk",
+        "Habertürk",
+        "Hürriyet",
+        "Milliyet"
       ],
       "links": [
         {
-          "source": "BBC Türkçe",
-          "url": "https://www.bbc.com/turkce/articles/c338535pvm2o?at_medium=RSS&at_campaign=rss",
-          "title": "Danıştay, İmamoğlu'nun diploma iptali kararını neye dayandırdı?",
-          "summary": "Tutuklanarak İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun diploma iptaline karşı Danıştay'a yaptığı temyiz başvurusu reddedildi"
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasiyla-ilgili-ortak-basin-toplantisi-duzenlenecek-43391202",
+          "title": "Fon soruşturmasıyla ilgili ortak basın toplantısı düzenlenecek",
+          "summary": ""
         },
         {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/danistay-onadi-ekrem-imamoglu-nun-diplomasinin-iptali-kesinlesti-748337",
-          "title": "Danıştay onadı: Ekrem İmamoğlu'nun diplomasının iptali kesinleşti!",
-          "summary": "Danıştay 8. Dairesi, Ekrem İmamoğlu’nun lisans diplomasının iptaline ilişkin mahkeme kararını onadı. Danıştay 8. Dairesi, yatay geçiş işleminin 'açık hata' içerdiğini, bu nedenle süre şartı aranmaksızın geri alınabileceğini öne sürdü. Bu karar İmamoğlu için cumhurbaşkanlığı adaylığı yolunun kapanması anlamına geliyor."
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/turkiye/fon-meselesine-iliskin-ortak-basin-toplantisi-duzenlenecek-3498215",
+          "title": "Fon meselesine ilişkin ortak basın toplantısı düzenlenecek",
+          "summary": "Cumhurbaşkanı Yardımcısı Cevdet Yılmaz, Adalet Bakanı Akın Gürlek ve Hazine ve Maliye Bakanı Mehmet Şimşek'in katılımıyla yarın fon meselesine ilişkin ortak basın toplantısı düzenlenecek."
         },
         {
-          "source": "DW Türkçe",
-          "url": "https://www.dw.com/tr/i̇mamoğlu-nun-diploma-iptali-kesinleşti-danıştay-ın-gerekçesi-ne/a-80043434?maca=tur-rss-tur-all-1495-rdf",
-          "title": "İmamoğlu'nun diploma iptali kesinleşti: Danıştay'ın gerekçesi ne?",
-          "summary": "Ekrem İmamoğlu'nun üniversite diplomasının iptali kesinleşti. Danıştay 8'inci Dairesi temyiz istemini reddetti. Peki, Danıştay'ın gerekçesi ne?"
+          "source": "Milliyet",
+          "url": "https://www.milliyet.com.tr/gundem/fon-meselesine-iliskin-ortak-basin-toplantisi-duzenlenecek-7707987",
+          "title": "Fon meselesine ilişkin ortak basın toplantısı düzenlenecek",
+          "summary": "Cumhurbaşkanlığı Külliyesi Basın Salonu'nda saat 19.00'da başlayacak toplantıda, Cumhurbaşkanı Yardımcısı Yılmaz, Adalet Bakanı Gürlek ve Hazine ve Maliye Bakanı Şimşek, fon meselesine ilişkin son durum hakkında bilgi verecek, basın mensuplarının sorularını cevaplandıracak. HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti Altında düşüş sürecek mi? Gram altın için rakam verdi: Bir fırsatın içerisindeyiz"
         },
         {
-          "source": "Euronews TR",
-          "url": "https://tr.euronews.com/2026/11/25/imamoglu-diploma-davasi-icin-aymye-basvuracak-danistay-karari-hukuka-aykiridir",
-          "title": "İmamoğlu, diploma davası için AYM’ye başvuracak: 'Danıştay kararı hukuka aykırıdır'",
-          "summary": "İmamoğlu’nun avukatları, 'Danıştay kararı hukuka aykırıdır' diyerek diploma davasını AYM’ye taşıyacaklarını açıkladı. Bazı itirazların incelenmediğini belirten avukatlar, 1990’da bulunmayan bir şartın geri doğru uygulandığı ve idarenin hatasının öğrenciye yüklendiği savundu."
+          "source": "Habertürk",
+          "url": "https://www.haberturk.com/gundem/fon-meselesi-hakkinda-ortak-basin-toplantisi-duzenlenecek-3930142",
+          "title": "Fon meselesi hakkında ortak basın toplantısı düzenlenecek",
+          "summary": ""
         }
       ],
       "reasons": [
         "suç:+3",
-        "güç:+1"
+        "para:+2"
       ],
       "sensitive": true,
       "single_source": false,
-      "newest": "2026-11-25T12:56:49+01:00"
+      "newest": "2026-11-25T21:35:05+00:00"
     }
   ]
 }

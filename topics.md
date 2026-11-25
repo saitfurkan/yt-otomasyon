@@ -1,4 +1,4 @@
-# Konu adayları (2026-11-25 18:48 UTC)
+# Konu adayları (2026-11-25 18:57 UTC)
 
 **SİSTEMİN SEÇTİĞİ KONU:** Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
 
@@ -70,13 +70,13 @@
 - CNN Türk: https://www.cnnturk.com/turkiye/disislerinden-riyaddaki-finans-merkezine-gerceklestirilen-saldiriai-kinama-3498200
 - Sabah: https://www.sabah.com.tr/gundem/2026/11/25/disisleri-bakanligindan-riyaddaki-saldiriya-kinama
 
-## 10. Danıştay, İmamoğlu'nun diploma iptali kararını neye dayandırdı?  (puan: 15)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
-- Kaynaklar: BBC Türkçe, BirGün, DW Türkçe, Euronews TR
-- Puan nedenleri: suç:+3, güç:+1
-- BBC Türkçe: https://www.bbc.com/turkce/articles/c338535pvm2o?at_medium=RSS&at_campaign=rss
-- BirGün: https://www.birgun.net/haber/danistay-onadi-ekrem-imamoglu-nun-diplomasinin-iptali-kesinlesti-748337
-- DW Türkçe: https://www.dw.com/tr/i̇mamoğlu-nun-diploma-iptali-kesinleşti-danıştay-ın-gerekçesi-ne/a-80043434?maca=tur-rss-tur-all-1495-rdf
-- Euronews TR: https://tr.euronews.com/2026/11/25/imamoglu-diploma-davasi-icin-aymye-basvuracak-danistay-karari-hukuka-aykiridir
+## 10. Fon soruşturmasıyla ilgili ortak basın toplantısı düzenlenecek  (puan: 16)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
+- Kaynaklar: CNN Türk, Habertürk, Hürriyet, Milliyet
+- Puan nedenleri: suç:+3, para:+2
+- Hürriyet: https://www.hurriyet.com.tr/gundem/fon-sorusturmasiyla-ilgili-ortak-basin-toplantisi-duzenlenecek-43391202
+- CNN Türk: https://www.cnnturk.com/turkiye/fon-meselesine-iliskin-ortak-basin-toplantisi-duzenlenecek-3498215
+- Milliyet: https://www.milliyet.com.tr/gundem/fon-meselesine-iliskin-ortak-basin-toplantisi-duzenlenecek-7707987
+- Habertürk: https://www.haberturk.com/gundem/fon-meselesi-hakkinda-ortak-basin-toplantisi-duzenlenecek-3930142
 
 ## Çalışmayan kaynaklar
 - T24: syntax error: line 1, column 0

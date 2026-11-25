@@ -1,182 +1,236 @@
 {
   "title_options": [
-    "Sümer Varlık Yönetim'e Kayyum Atandı",
-    "SMRVA'da Kayyum Depremi",
-    "24 Kasım Kararının Perde Arkası"
+    "Riyad'da İkinci Şok: Finans Merkezi Neden Hedefte?",
+    "Füzeler Riyad'ı Vurdu: Bölgesel Kriz Derinleşiyor",
+    "Kral Abdullah Finans Merkezi'ne Peş Peşe Saldırı"
   ],
   "shorts": [
     {
-      "hook": "Kağıt üstündeki karar bazen binlerce insanın hayatını tek imzayla değiştirir bilirim.",
-      "text": "Kağıt üstündeki karar bazen binlerce insanın hayatını tek imzayla değiştirir bilirim. Sümer Varlık Yönetim'e getirilen kayyum kararı tam olarak bunu gösteriyor. 24 Kasım 2026 tarihinde İstanbul 6. Sulh Ceza Hakimliği'nin kararıyla Tasarruf Mevduatı Sigorta Fonu şirkete kayyum olarak atandı. Fon Kurulu hemen yeni bir yönetim kurulu oluşturdu. Soruşturma sürecinde Altınbaş Holding'in de adının geçtiği biliniyor.",
-      "bolum": "Giriş ve Kayyum Ataması"
+      "hook": "Hedef masum bir bina değilse, o füze sadece duvara çarpmaz.",
+      "text": "Hedef masum bir bina değilse, o füze sadece duvara çarpmaz. 24 Kasım 2026 tarihinde Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi hedef alındı. Aynı binaya bir hafta içinde ikinci kez ateş açıldı. Sivil Savunma Kurumu, PIF Kulesi'nin kırılan camlarını ve dış cephesindeki hasarı paylaştı. Yetkililer saldırıyı doğrularken bölgede incelemeler sürüyor.",
+      "bolum": "Giriş ve ilk saldırı detayları"
     },
     {
-      "hook": "Hisseleri 2024 yılında halka arz edilen bir şirket için bu adım masadaki tüm dengeleri altüst eder.",
-      "text": "Hisseleri 2024 yılında halka arz edilen bir şirket için bu adım masadaki tüm dengeleri altüst eder. SMRVA koduyla işlem gören yapı, bankaların tahsili gecikmiş alacaklarını devralıyordu. Şirketin yönetim kurulu başkanlığına Nevzat Avunç getirilirken, başkan vekilliğine Melek İnceköse İmert oturdu. Bağımsız yönetim kurulu üyesi Ali Hepşen ise ekim ayındaki KAP duyurusuyla görevinden istifa etmişti.",
-      "bolum": "Yönetim ve İstifa Süreci"
+      "hook": "Yemen'de kriz derinleşirken füzeler başkenti buldu.",
+      "text": "Yemen'de Eylül 2014'ten bu yana süren kriz sahadaki denklemi değiştirdi. İran destekli Husiler, hükümet kontrolündeki bölgelere saldırırken Suudi Arabistan'ı da balistik füze ve İHA'larla hedef alıyor. 2026'nın son aylarında tırmanan çatışmalar haritayı yeniden şekillendirdi. Koalisyon sözcüsü Türki el-Malki, saldırının korkakça bir terörist eylem olduğunu doğruladı.",
+      "bolum": "Yemen'deki kriz ve koalisyon açıklaması"
     },
     {
-      "hook": "Sermaye Piyasası Kurulu'nun onayladığı bedelsiz sermaye artırımı şimdi savcılığın önündeki dosyada.",
-      "text": "Sermaye Piyasası Kurulu'nun onayladığı bedelsiz sermaye artırımı şimdi savcılığın önündeki dosyada. Kurul, Sümer Varlık Yönetim AŞ'nin 482 milyon liralık bedelsiz sermaye artırım talebini uygun bulmuştu. 2015 yılında faaliyet izni alan ve 2016'da ASV Holding AŞ'ye devredilen şirket şimdi kayyum yönetimi altında.",
-      "bolum": "Sermaye Artırımı ve Son Durum"
+      "hook": "Dışişleri Bakanlığı'ndan Riyad saldırısına sert tepki.",
+      "text": "Dışişleri Bakanlığı, Riyad'daki Kral Abdullah Finans Merkezi'ne düzenlenen saldırıyı en güçlü şekilde kınadı. Açıklamada, sivil tesisleri hedef alan ve bölgesel güvenliği tehdit eden eylemlerin derhal sona erdirilmesi istendi. Suudi Arabistan ile tam dayanışma içinde olunulduğu vurgulandı. AK Parti Sözcüsü Ömer Çelik ve İletişim Başkanı Burhanettin Duran da saldırıyı kınayan açıklamalar yaptı.",
+      "bolum": "Türkiye'nin resmi tepkileri"
     }
   ],
-  "description": "İstanbul 6. Sulh Ceza Hakimliği kararıyla Sümer Varlık Yönetim AŞ'ye Tasarruf Mevduatı Sigorta Fonu kayyum olarak atandı. Şirketin yeni yönetim kurulu belirlenirken soruşturma süreci tüm hızıyla devam ediyor. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.",
+  "description": "Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi'ne bir hafta içinde düzenlenen ikinci saldırının ardından yaşanan gelişmeler. Türkiye'nin kınama mesajları ve bölgedeki son durum. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.",
   "tags": [
-    "Sümer Varlık Yönetim",
-    "SMRVA",
-    "TMSF",
-    "kayyum",
-    "ekonomi",
-    "borsa",
-    "Borsa İstanbul",
-    "son dakika",
+    "Riyad saldırısı",
+    "Suudi Arabistan",
+    "Husiler",
+    "Dışişleri Bakanlığı",
+    "Kral Abdullah Finans Merkezi",
+    "Yemen krizi",
+    "PIF Kulesi",
+    "Arap Koalisyonu",
+    "balistik füze",
     "haber",
-    "Sermaye Piyasası Kurulu",
-    "SPK",
-    "Altınbaş Holding"
+    "dünya gündemi",
+    "Son Tanık"
   ],
-  "thumbnail_text": "Sümer Varlık Yönetim'e Kayyum",
+  "thumbnail_text": "RİYAD'DA İKİNCİ SALDIRI",
   "risk_notes": [
-    "Soruşturma aşamasında olduğu vurgulanmalı, kesin hüküm bildiren ifadelerden kaçınılmalı.",
-    "Altınbaş Holding ve soruşturma bağı bağlamında sadece basına yansıyan olgular kullanılmalı."
+    "Husiler için resmi kaynaklarda geçen 'terörist eylem' ve 'İran destekli' ifadeleri dışında başka bir sıfat kullanılmamalı.",
+    "Saldırının arkasındaki planlama veya istihbarat zafiyeti hakkında kesin yargılardan kaçınılmalı, sadece soruşturma ve inceleme vurgusu yapılmalı."
   ],
-  "hook": "Kağıt üstündeki karar bazen binlerce insanın hayatını tek imzayla değiştirir bilirim. Sümer Varlık Yönetim'e getirilen kayyum kararı tam olarak bunu gösteriyor. Peki   24 Kasım 2026 tarihinde İstanbul 6. Sulh Ceza Hakimliği'nin attığı o imzanın arkasında hangi soruşturma süreci yatıyor?",
-  "script": "Kağıt üstündeki karar bazen binlerce insanın hayatını tek imzayla değiştirir bilirim. Sümer Varlık Yönetim'e getirilen kayyum kararı tam olarak bunu gösteriyor. Peki   24 Kasım 2026 tarihinde İstanbul 6. Sulh Ceza Hakimliği'nin attığı o imzanın arkasında hangi soruşturma süreci yatıyor?\n\nİstanbul 6. Sulh Ceza Hakimliği'nin 2026/11489 D. 24 Kasım 2026 tarihinde alınan o kararla birlikte Sümer Varlık Yönetim AŞ'ye Tasarruf Mevduatı Sigorta Fonu kayyum olarak atandı. Kararın ardından Fon Kurulu şirketin yeni yönetim kurulunu hemen oluşturdu. Soruşturma sürecinde Altınbaş Holding'in de adının geçtiği biliniyor.\n\nHisseleri 2024 yılında halka arz edilen ve Borsa İstanbul'da SMRVA koduyla işlem gören bir şirket için bu adım   masadaki tüm dengeleri altüst eder. Bankaların ve finans kuruluşlarının tahsili gecikmiş alacaklarını devralan bu yapı, 2015 yılında kurulmuş ve 2016'da hisselerini ASV Holding AŞ'ye devretmişti. Süreç hızla ilerlerken   bağımsız yönetim kurulu üyesi Ali Hepşen'in 26 Ekim 2026 tarihli KAP duyurusuyla görevinden istifa ettiği de kayıtlara geçmişti.\n\nFon tarafından atanan yeni kadroda yönetim kurulu başkanlığına Nevzat Avunç getirilirken, başkan vekilliği koltuğuna Melek İnceköse İmert oturdu. Üyeliklere ise Erdinç Perçemli, Kezban Kök Demirvuran, Evrim Apan Ceylan, Cüneyit Kahraman ve Şaziye Hilal Nalçacıoğlu atandı.\n\nHer şey şirketin kuruluş adımlarıyla başladı. Sümer Varlık Yönetim AŞ, bankalar ve finans kuruluşlarının tahsili gecikmiş alacaklarını devralıp tahsil etmek üzere yola koyulmuştu. 2015 yılında kuruluş ve faaliyet izni süreçlerini tamamlayan şirket   kısa sürede finans sektöründe kendine yer açtı. Şirketin hisseleri 2016 yılında ASV Holding AŞ'ye devredildi ve kontrol el değiştirdi.\n\nSümer Varlık Yönetim 2024 yılında halka arz edildi ve payları Borsa İstanbul'da SMRVA koduyla işlem görmeye başladı. Sermaye Piyasası Kurulu da bu süreçte adımlar attı. Kurul, Sümer Varlık Yönetim AŞ'nin 482 milyon liralık bedelsiz sermaye artırım talebini uygun buldu ve bu karar resmiyet kazandı.\n\nHaberlere yansıyan bilgilere göre   Marine Le Pen ve Jordan Bardella, Rusya'nın ülkedeki Fransız ve Avrupalı şirketlere kayyum atama kararını kınayan bir açıklama yaptı.\n\n2015 yılında faaliyet izni alan, 2016'da ASV Holding AŞ'ye devredilen ve 2024'te halka arz edilip SMRVA koduyla işlem görmeye başlayan bir yapının   bugün kayyumla yönetilmesi   soruşturmanın derinliğini açıkça ortaya koyuyor. Sermaye Piyasası Kurulu'nun onayladığı 482 milyon liralık bedelsiz sermaye artırım talebi ve ekim ayındaki istifalar   şimdi savcılığın önündeki dosyanın en kritik detaylarını oluşturuyor.\n\nKayyum yönetimi altındaki şirket şimdi borç listesini tek tek çıkarmak zorunda. Borsadaki bu çöküşün bedelini gerçekten kim ödeyecek? Soruşturma genişlerken sırada hangi isim var? Artık son tanık sizsiniz.",
-  "topic": "SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
+  "hook": "Hedef masum bir bina değilse, o füze sadece duvara çarpmaz. [duraklama] 24 Kasım 2026 tarihinde Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi hedef alındı. Aynı binaya bir hafta içinde ikinci kez hangi akılla ateş açılır?",
+  "script": "Hedef masum bir bina değilse, o füze sadece duvara çarpmaz. [duraklama] 24 Kasım 2026 tarihinde Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi hedef alındı. Aynı binaya bir hafta içinde ikinci kez hangi akılla ateş açılır?\n\nSaldırı anında hoparlör takılı bir araç sokaklardaydı. [duraklama] Yayaları tehlikeye karşı uyarıyor, güvenli alanlara sığınmalarını istiyordu. [duraklama] Aynı kule bir hafta içinde ikinci kez saldırıya uğradı. Suudi yetkililer, geçen hafta düzenlenen ilk saldırıda binanın birkaç katının ve çevresindeki iki komşu yapının hasar gördüğünü bildirdi; olayda can kaybı yaşanmadı. Sivil Savunma Kurumu'nun paylaştığı fotoğraflarda, kulenin kırılan camları ve dış cephesindeki hasar net şekilde görüldü.\n\nYemen'de Eylül 2014'te Husilerin başkent Sana ve bazı bölgelerin kontrolünü ele geçirmesiyle kriz derinleşti. Mart 2015'ten itibaren Suudi Arabistan öncülüğündeki Arap Koalisyonu, uluslararası alanda tanınan Yemen hükümetine destek vermeye başladı. Nisan 2022'de yürürlüğe giren ateşkesle görece sakin bir dönem yaşandı, ancak temmuz ayından bu yana tırmanan çatışmalar sahadaki kontrol haritasını değiştirdi. [duraklama] İran destekli Husiler, hükümet kontrolündeki bölgelere yönelik saldırılarını artırırken Suudi Arabistan'ı da balistik füze ve İHA'larla hedef almayı sürdürüyor. [duraklama] 2026'nın son aylarında, kasım ayının son günlerinde Husiler geçici başkent Aden'e yakın yerleşim yerlerinde, dağlık bölgelerde ve deniz kıyısı şeridinde tekrar kontrol sağladı. Suudi liderliğindeki askeri koalisyonun sözcüsü Türki el-Malki, finans merkezindeki kulelerden birinin korkakça bir terörist saldırının hedefi olduğunu doğruladı ve ilgili makamların bölgeyi incelediğini belirtti. [duraklama] Bölgedeki bu tırmanış, tehditlerin nasıl çeşitlendiğini ve yoğunlaştığını açıkça ortaya koyuyor.\n\n2026 yılının son aylarında, kasım ayının son günlerinde yaşanan gelişmeler bu durumun en net kanıtı oldu.\n\nDışişleri Bakanlığı, Riyad'a düzenlenen bu saldırının ardından yazılı bir açıklama yayımladı. [duraklama] Yapılan açıklamada, Husilerin Riyad'daki Kral Abdullah Finans Merkezi'ne düzenlediği saldırı en güçlü şekilde kınandı ve yaralılara acil şifalar dilendi.\n\nSivil tesisleri hedef alan eylemler karşısındaki duruş net bir şekilde ortaya kondu. [duraklama] Dışişleri Bakanlığı açıklamasında, sivil tesisleri hedef alan ve bölgesel barış ile güvenliği tehdit eden eylemlerin derhal sona erdirilmesi çağrısı yinelendi. [duraklama] Aynı açıklamada, Suudi Arabistan ile tam dayanışma içinde olunulduğu vurgulandı ve ülkenin egemenliğine ile toprak bütünlüğüne yönelik destek teyit edildi.\n\nİbn Haldun Üniversitesi Öğretim Üyesi Dr. [duraklama]\n\nİlgili makamlar bölgeyi incelemek üzere derhal harekete geçti ve sahada kapsamlı soruşturma başlattı.\n\nRiyad'daki Kral Abdullah Finans Merkezi'nde bulunan gökdelenlerden birinin bir haftada ikinci kez saldırıya hedef olması, yürütülen soruşturmaların kapsamını daha da genişletti. [duraklama] Güvenlik birimleri, balistik füze ve İHA'larla gerçekleştirilen bu eylemlerin ardından bölgedeki koruma tedbirlerini en üst seviyeye çıkardı.\n\nİlgili makamlar, uluslararası hukuka ve sivil güvenliğe yönelen bu eylemlerin hukuki ve askeri sonuçlarıyla ilgili incelemelerini derinleştiriyor. [duraklama]\n\nGökdelenlerin hedef alındığı bu saldırı zincirinin arkasındaki planlama henüz aydınlatılmış değil. [duraklama] Sivil merkezleri vuran bu füze yağmurunda asıl merak edilen detayı biliyor musunuz, bu istihbarat zafiyeti mi yoksa koruma kalkanının bilinçli bir tercihi mi? Artık son tanık sizsiniz.",
+  "topic": "Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz",
   "model": "gemini-flash-lite-latest",
-  "words": 399,
+  "words": 453,
   "minutes": 3,
   "date": "2026-11-25",
   "facts": [
     {
-      "olgu": "Sümer Varlık Yönetim AŞ'ye Tasarruf Mevduatı Sigorta Fonu (TMSF) kayyum olarak atanmıştır.",
+      "olgu": "Dışişleri Bakanlığı, Husilerin Suudi Arabistan'ı hedef alan saldırısına ilişkin yazılı açıklama yaptı.",
       "kaynaklar": [
         "Milliyet",
         "AA",
-        "CNN Türk",
         "Hürriyet",
-        "Sözcü",
-        "Habertürk",
-        "milligazete.com.tr",
-        "finanshatti.com"
+        "CNN Türk",
+        "ensonhaber.com"
       ]
     },
     {
-      "olgu": "Kayyum ataması İstanbul 6. Sulh Ceza Hakimliğinin 24 Kasım 2026 tarihli ve 2026/11489 D. İş sayılı kararıyla gerçekleştirilmiştir.",
+      "olgu": "Husiler, 24 Kasım 2026 tarihinde Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi'ne saldırı gerçekleştirdi.",
       "kaynaklar": [
         "Milliyet",
         "AA",
-        "CNN Türk",
+        "NTV",
         "Hürriyet",
-        "Sözcü",
-        "Habertürk",
-        "milligazete.com.tr"
+        "CNN Türk",
+        "Sabah",
+        "aksam.com.tr",
+        "yirmidort.tv",
+        "yenisafak.com",
+        "ensonhaber.com",
+        "tgrthaber.com",
+        "takvim.com.tr"
       ]
     },
     {
-      "olgu": "Fon Kurulu tarafından şirketin yeni yönetim kurulu oluşturulmuştur.",
+      "olgu": "Türkiye Dışişleri Bakanlığı, Husilerin Riyad'daki Kral Abdullah Finans Merkezi'ne düzenlediği saldırıyı en güçlü şekilde kınadı ve yaralılara acil şifalar diledi.",
       "kaynaklar": [
         "Milliyet",
         "AA",
-        "CNN Türk",
+        "NTV",
         "Hürriyet",
-        "Sözcü",
-        "Habertürk",
-        "milligazete.com.tr"
+        "CNN Türk",
+        "Sabah",
+        "aksam.com.tr",
+        "yirmidort.tv",
+        "yenisafak.com",
+        "ensonhaber.com",
+        "tgrthaber.com",
+        "takvim.com.tr"
       ]
     },
     {
-      "olgu": "Sümer Varlık Yönetim AŞ yönetim kurulu başkanlığına Nevzat Avunç getirilmiştir.",
+      "olgu": "Dışişleri Bakanlığı açıklamasında, sivil tesisleri hedef alan ve bölgesel barış ile güvenliği tehdit eden eylemlerin derhal sona erdirilmesi çağrısı yinelendi.",
       "kaynaklar": [
         "Milliyet",
         "AA",
-        "CNN Türk",
         "Hürriyet",
-        "Sözcü",
-        "Habertürk",
-        "milligazete.com.tr",
-        "finanshatti.com"
+        "CNN Türk",
+        "Sabah",
+        "aksam.com.tr",
+        "yirmidort.tv",
+        "yenisafak.com",
+        "ensonhaber.com",
+        "tgrthaber.com",
+        "takvim.com.tr"
       ]
     },
     {
-      "olgu": "Sümer Varlık Yönetim AŞ yönetim kurulu başkan vekilliğine Melek İnceköse İmert getirilmiştir.",
+      "olgu": "Dışişleri Bakanlığı açıklamasında, Suudi Arabistan ile tam dayanışma içinde olunulduğu vurgulandı ve ülkenin egemenliğine ile toprak bütünlüğüne yönelik destek teyit edildi.",
       "kaynaklar": [
         "Milliyet",
         "AA",
-        "CNN Türk",
+        "NTV",
         "Hürriyet",
-        "Sözcü",
-        "Habertürk",
-        "milligazete.com.tr",
-        "finanshatti.com"
+        "CNN Türk",
+        "Sabah",
+        "aksam.com.tr",
+        "yirmidort.tv",
+        "tgrthaber.com",
+        "takvim.com.tr"
       ]
     },
     {
-      "olgu": "Sümer Varlık Yönetim AŞ yönetim kurulu üyeliklerine Erdinç Perçemli, Kezban Kök Demirvuran, Evrim Apan Ceylan, Cüneyit Kahraman ve Şaziye Hilal Nalçacıoğlu atanmıştır.",
+      "olgu": "Yemen'de İran destekli Husilerin Eylül 2014'te başkent Sana ile bazı bölgelerin kontrolünü ele geçirmesinin ardından kriz derinleşti.",
       "kaynaklar": [
         "Milliyet",
         "AA",
-        "CNN Türk",
         "Hürriyet",
-        "Sözcü",
-        "Habertürk",
-        "milligazete.com.tr",
-        "finanshatti.com"
+        "CNN Türk",
+        "aksam.com.tr",
+        "ensonhaber.com"
       ]
     },
     {
-      "olgu": "Sümer Varlık Yönetim AŞ, bankalar ve finans kuruluşlarının tahsili gecikmiş alacaklarının devralınması ve tahsil edilmesi alanında faaliyet gösteren bir varlık yönetim şirketidir.",
+      "olgu": "Suudi Arabistan öncülüğündeki Arap Koalisyonu, Mart 2015'ten itibaren uluslararası alanda tanınan Yemen hükümetine destek vermeye başladı.",
       "kaynaklar": [
-        "milligazete.com.tr"
+        "Milliyet",
+        "AA",
+        "Hürriyet",
+        "CNN Türk",
+        "aksam.com.tr",
+        "ensonhaber.com"
       ]
     },
     {
-      "olgu": "Sümer Varlık Yönetim, 2015 yılında kuruluş ve faaliyet izni süreçlerini tamamlamıştır.",
+      "olgu": "Nisan 2022'de yürürlüğe giren ateşkesle Yemen'de görece sakin bir dönem yaşandı, ancak temmuz ayından bu yana tırmanan çatışmalar sahadaki kontrol haritasını değiştirdi.",
       "kaynaklar": [
-        "milligazete.com.tr"
+        "Milliyet",
+        "AA",
+        "Hürriyet",
+        "CNN Türk",
+        "aksam.com.tr",
+        "ensonhaber.com"
       ]
     },
     {
-      "olgu": "Şirketin hisseleri 2016 yılında ASV Holding AŞ'ye devredilmiştir.",
+      "olgu": "İran destekli Husiler, Yemen'de hükümet kontrolündeki bölgelere yönelik saldırılarını artırırken Suudi Arabistan'ı da balistik füze ve İHA'larla hedef alıyor.",
       "kaynaklar": [
-        "milligazete.com.tr"
+        "Milliyet",
+        "AA",
+        "Hürriyet",
+        "CNN Türk",
+        "aksam.com.tr",
+        "ensonhaber.com"
       ]
     },
     {
-      "olgu": "Sümer Varlık Yönetim 2024 yılında halka arz edilmiş ve payları Borsa İstanbul'da SMRVA koduyla işlem görmeye başlamıştır.",
+      "olgu": "AK Parti Sözcüsü Ömer Çelik, Suudi Arabistan'ın başkenti Riyad'daki Kral Abdullah Finans Merkezi'ne düzenlenen saldırıyı şiddetle kınadıklarını, yaralananlara acil şifalar dilediklerini ve sivil alanları hedef alan bu saldırganlığın derhal son bulması gerektiğini açıkladı.",
       "kaynaklar": [
-        "milligazete.com.tr",
-        "finanshatti.com"
+        "Sabah",
+        "aksam.com.tr",
+        "yirmidort.tv",
+        "tgrthaber.com",
+        "takvim.com.tr"
       ]
     },
     {
-      "olgu": "Şirket kayyum atamasını 25 Kasım 2026 saat 19.07'de 1702730 numaralı KAP bildirimiyle duyurmuştur.",
+      "olgu": "Cumhurbaşkanlığı İletişim Başkanı Burhanettin Duran, Husilerin Riyad'daki Kral Abdullah Finans Merkezi'ne yönelik saldırısını şiddetle kınayarak yaralılara acil şifalar diledi ve bu saldırıların bölgenin barış ve istikrarına yönelik bir tehdit olduğunu belirtti.",
       "kaynaklar": [
-        "milligazete.com.tr"
+        "yirmidort.tv",
+        "tgrthaber.com",
+        "takvim.com.tr"
       ]
     },
     {
-      "olgu": "milligazete.com.tr'ye göre kayyum ataması Altınbaş Holding'in de adının geçtiği fon soruşturması sürecinde yaşanmıştır.",
+      "olgu": "Riyad'daki Kral Abdullah Finans Merkezi'nde bulunan gökdelenlerden biri bir haftada ikinci kez saldırıya hedef oldu.",
       "kaynaklar": [
-        "milligazete.com.tr"
+        "tgrthaber.com",
+        "elipshaber.com"
       ]
     },
     {
-      "olgu": "Ali Hepşen'in bağımsız yönetim kurulu üyeliğinden istifa ettiği 26 Ekim 2026 tarihli KAP duyurusuyla açıklanmıştı.",
+      "olgu": "Suudi liderliğindeki askeri koalisyonun sözcüsü Türki el-Malki, finans merkezindeki kulelerden birinin korkakça bir terörist saldırısının hedefi olduğunu ve ilgili makamların bölgeyi incelediğini doğruladı.",
       "kaynaklar": [
-        "bigpara.hurriyet.com.tr"
+        "elipshaber.com"
       ]
     },
     {
-      "olgu": "Marine Le Pen ve Jordan Bardella, Rusya'nın ülkedeki Fransız ve Avrupalı şirketlere kayyum atama kararını kınayan bir açıklama yapmıştır.",
+      "olgu": "Fransız haber ajansı AFP'ye konuşan bir görgü tanığı, hoparlör takılı bir aracın bölgedeki yayaları olası tehlikeye karşı uyardığını ve güvenli alanlara sığınmalarını istediğini aktardı.",
       "kaynaklar": [
-        "haberler.com",
-        "sondakika.com"
+        "elipshaber.com"
       ]
     },
     {
-      "olgu": "Sermaye Piyasası Kurulu (SPK), Sümer Varlık Yönetim AŞ'nin 482 milyon liralık bedelsiz sermaye artırım talebini uygun bulmuştur.",
+      "olgu": "Suudi yetkililer, geçen hafta finans bölgesindeki bir kuleye düzenlenen saldırıda binanın birkaç katının ve çevresindeki iki komşu yapının hasar gördüğünü ve olayda can kaybı yaşanmadığını bildirdi.",
+      "kaynaklar": [
+        "elipshaber.com"
+      ]
+    },
+    {
+      "olgu": "Suudi Sivil Savunma Kurumu tarafından paylaşılan fotoğraflarda, Kamu Yatırım Fonu'nun genel merkezinin bulunduğu yaklaşık 385 metre yüksekliğindeki PIF Kulesi'nin kırılan camları ve dış cephesindeki hasar dikkati çekti.",
+      "kaynaklar": [
+        "elipshaber.com"
+      ]
+    },
+    {
+      "olgu": "Yemen'de İran tarafından desteklenen Husiler, geçen haftaki saldırının sorumluluğunu üstlenmişti.",
+      "kaynaklar": [
+        "elipshaber.com"
+      ]
+    },
+    {
+      "olgu": "İbn Haldun Üniversitesi Öğretim Üyesi Dr. Gökhan Ereli'nin analizine göre, 2026'nın son aylarında Husiler kasım ayının son günlerinde geçici başkent Aden'e yakın yerleşim yerlerinde, dağlık bölgelerde ve deniz kıyısı şeridinde tekrar kontrol sağladı.",
+      "kaynaklar": [
+        "haberler.com"
+      ]
+    },
+    {
+      "olgu": "Dr. Gökhan Ereli'ye göre, Husilerin Riyad'daki Kamu Yatırım Fonu (PIF) binasını hedef alması, Suudi Arabistan'a yönelik tehditlerin çeşitlendiğini ve yoğunlaştığını gösteriyor.",
       "kaynaklar": [
         "haberler.com"
       ]
@@ -187,55 +241,59 @@
   "sources": [
     {
       "source": "Milliyet",
-      "url": "https://www.milliyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-7707969"
+      "url": "https://www.milliyet.com.tr/dunya/disislerinden-riyaddaki-saldiriya-tepki-en-guclu-sekilde-kiniyoruz-7707943"
     },
     {
       "source": "AA",
-      "url": "https://www.aa.com.tr/tr/ekonomi/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi/4137806"
+      "url": "https://www.aa.com.tr/tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi/4137757"
     },
     {
-      "source": "CNN Türk",
-      "url": "https://www.cnnturk.com/turkiye/tmsf-sumer-varlik-yonetime-kayyum-olarak-atandi-3498212"
+      "source": "NTV",
+      "url": "https://www.ntv.com.tr/turkiye/disislerinden-husilerin-riyada-yonelik-saldirisina-kinama-1752570"
     },
     {
       "source": "Hürriyet",
-      "url": "https://www.hurriyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-43391147"
+      "url": "https://www.hurriyet.com.tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi-43391119"
     },
     {
-      "source": "Sözcü",
-      "url": "https://www.sozcu.com.tr/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-p384406"
+      "source": "CNN Türk",
+      "url": "https://www.cnnturk.com/turkiye/disislerinden-riyaddaki-finans-merkezine-gerceklestirilen-saldiriai-kinama-3498200"
     },
     {
-      "source": "Habertürk",
-      "url": "https://www.haberturk.com/ekonomi/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-3930123"
+      "source": "Sabah",
+      "url": "https://www.sabah.com.tr/gundem/2026/11/25/disisleri-bakanligindan-riyaddaki-saldiriya-kinama"
     },
     {
-      "source": "milligazete.com.tr",
-      "url": "https://www.milligazete.com.tr/sumer-varlik-yonetim-as-kimin-altinbas-holding-ile-baglantisi-ne-sirketin-sahibi-kim"
+      "source": "aksam.com.tr",
+      "url": "https://www.aksam.com.tr/guncel/ankaradan-riyaddaki-saldiriya-sert-tepki-en-guclu-sekilde-kiniyoruz/haber-1717407"
     },
     {
-      "source": "bigpara.hurriyet.com.tr",
-      "url": "https://bigpara.hurriyet.com.tr/haberler/kap-haberleri/smrva-sumer-varlik-yonetim-a-s-ozel-dur_ID102278557/"
+      "source": "yirmidort.tv",
+      "url": "https://www.yirmidort.tv/gundem/turkiyeden-husilere-riyad-tepkisi-bu-saldirganlik-derhal-son-bulmali-301304"
+    },
+    {
+      "source": "yenisafak.com",
+      "url": "https://www.yenisafak.com/gundem/turkiyeden-riyaddaki-saldiriya-kinama-suudi-arabistana-tam-destek-4876519"
+    },
+    {
+      "source": "ensonhaber.com",
+      "url": "https://www.ensonhaber.com/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-saldirisini-kinadi-h1585622"
+    },
+    {
+      "source": "tgrthaber.com",
+      "url": "https://www.tgrthaber.com/gundem/husiler-suudi-arabistandaki-finans-merkezini-hedef-aldi-turkiye-saldiriyi-kinadi-3373498"
+    },
+    {
+      "source": "elipshaber.com",
+      "url": "https://www.elipshaber.com/finans-merkezine-saldiri-suudi-arabistanin-en-yuksek-binasi-yeniden-hedef-alindi"
+    },
+    {
+      "source": "takvim.com.tr",
+      "url": "https://www.takvim.com.tr/guncel/2026/11/25/turkiye-husilerin-riyada-duzenledigi-saldiriyi-kinadi"
     },
     {
       "source": "haberler.com",
-      "url": "https://www.haberler.com/guncel/le-pen-ve-bardella-rusya-nin-kayyum-kararina-20254992-haberi/"
-    },
-    {
-      "source": "sondakika.com",
-      "url": "https://www.sondakika.com/guncel/haber-rn-rusya-nin-kayyum-kararina-dusmanca-eylem-diyere-20255007/"
-    },
-    {
-      "source": "haberler.com",
-      "url": "https://www.haberler.com/ekonomi/spk-dan-sumer-varlik-yonetim-as-ye-sermaye-artirimi-onayi-19730513-haberi/"
-    },
-    {
-      "source": "bigpara.hurriyet.com.tr",
-      "url": "https://bigpara.hurriyet.com.tr/haberler/kap-haberleri/smrva-sumer-varlik-yonetim-as-pay-disinda-sermaye-piyasasi-araci-islemlerine-iliskin-bildirim-faiz-iceren_ID1889227/"
-    },
-    {
-      "source": "finanshatti.com",
-      "url": "https://finanshatti.com/smrva-hisselerinde-kayyim-soku-yonetim-kurulu-tamamen-degisti/"
+      "url": "https://www.haberler.com/guncel/dr-ereli-husilerin-suudi-arabistan-a-yonelik-20456837-haberi/"
     }
   ]
 }
