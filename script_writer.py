@@ -36,7 +36,7 @@ MIN_FACTS = 12
 MAX_ARTICLES = 6
 PER_ARTICLE_CHARS = 7000
 TOTAL_CHARS = 60000
-MAX_EXTRA = 8             # arka plan için aranıp okunacak ek makale sayısı
+MAX_EXTRA = 14             # arka plan için aranıp okunacak ek makale sayısı
 BAD_HOSTS = ("youtube", "youtu.be", "twitter", "x.com", "instagram", "facebook",
              "tiktok", "t.me", "pinterest", "reddit")
 MAX_TOPICS_TRIED = 5
@@ -599,6 +599,34 @@ def bing_news_links(topic, known_urls, query=None):
     return out[:MAX_EXTRA + 4]
 
 
+def detail_queries(key, models, topic, arts):
+    """Detay avcısı: haberdeki kişilerin son durumunu, önceki davalarını ve benzer/zıt
+    örnekleri bulacak kısa arama cümleleri üretir (ör. biri sağlık gerekçesiyle ev hapsine
+    çıkarken ağır hasta başkaları neden çıkamadı). Sadece arama cümlesi üretilir, olgu değil."""
+    if not key or GEMINI_DEAD or not models:
+        return []
+    head = "\n".join(f"- {a['source']}: {a['text'][:500]}" for a in arts[:3])
+    prompt = (
+        f"Haber: {topic['title']}\n{head}\n\n"
+        "Bu haberi derinleştirmek için Türkçe haber aramasında kullanılacak 5 kısa arama cümlesi yaz "
+        "(3-7 kelime, tarafsız dil, suçlayıcı kelime yok):\n"
+        "1) Haberdeki en tanınmış kişinin şu anki durumu ve önceki davaları\n"
+        "2) Aynı dosyada ya da benzer davalarda FARKLI uygulama görmüş kişiler (örneğin biri sağlık "
+        "gerekçesiyle ev hapsi/tahliye alırken ağır hasta, yaşlı ya da engelli başkalarının talebinin "
+        "reddedilmesi gibi tutarsız uygulama haberleri)\n"
+        "3) Daha önceki benzer dosya ya da emsal karar\n"
+        "4) Rakamların ve paranın ayrıntısı\n"
+        "5) Konunun geçmişi, ilk ne zaman başladı\n"
+        'Sadece JSON: {"queries": ["...", "..."]}')
+    try:
+        _, data = generate(key, models, prompt, json_out=True, temperature=0.3, max_tokens=600)
+        qs = [q.strip() for q in data.get("queries", []) if isinstance(q, str) and q.strip()]
+        return qs[:5]
+    except Exception as e:
+        log(f"   [detay aramaları üretilemedi] {str(e)[:100]}")
+        return []
+
+
 def add_background(key, models, topic, arts):
     """Arka plan sayfalarını (Bing Haber + varsa Gemini araması) okuyup kaynaklara ekler."""
     known = [a["url"] for a in arts]
@@ -614,6 +642,13 @@ def add_background(key, models, topic, arts):
             links += more[:4]
     except Exception as e:
         log(f"   [Bing Haber hata] {str(e)[:120]}")
+    for q in detail_queries(key, models, topic, arts):
+        try:
+            more = bing_news_links(topic, known + [l["url"] for l in links], query=q)
+            log(f"   Detay araması '{q}': {len(more)} aday")
+            links += more[:3]
+        except Exception as e:
+            log(f"   [detay araması hata] {str(e)[:100]}")
     if not (GEMINI_DEAD or not key or SEARCH_STATE["dead"]) and models:
         try:
             more = search_sources(key, models, topic, known + [l["url"] for l in links])
@@ -655,7 +690,7 @@ def extract_facts(key, models, topic, arts):
         "Yalnızca kaynaklarda AÇIKÇA yazan olguları çıkar: kim, ne, ne zaman, nerede, "
         "kaç kişi, kaç lira, hangi kurum, kim ne açıkladı, kim ne dedi. Her olgu tek "
         "cümle olsun. Yalnızca AYNI olgu için kaynaklar açıkça farklı rakam ya da isim veriyorsa çelişkiyi ayrı olgu olarak yaz; farklı tarihler farklı olay adımlarına ait olabilir, çelişki ilan etme. Kaynaklarda geçen arka plan bilgilerini de (önceki olaylar, kurumlar, yasal çerçeve) olgu olarak ekle. "
-        "Haberin merkezindeki kişilerin durumunu anlamak için gereken bağlamı da olgu olarak çıkar (kişi neden orada, neden tutuklu ya da yargılanıyor, hangi davanın parçası). En az 15 olgu çıkar (kaynak yeterliyse). Çok sayıda şüpheli ismi varsa tek olguda 'diğer şüpheliler' diye özetle, yalnızca en tanınan 3 ismi ayrı yaz; özel kişilerin adını yazma. Uydurma, yorum, tahmin ekleme.\n"
+        "Haberin merkezindeki kişilerin durumunu anlamak için gereken bağlamı da olgu olarak çıkar (kişi neden orada, neden tutuklu ya da yargılanıyor, hangi davanın parçası). Kişi detaylarını ayrıca çıkar: haberdeki tanınmış kişinin görevi, önceki davaları, şu anki durumu (tutuklu, ev hapsi, tahliye, sağlık gerekçesi, hangi tarihte). Kaynaklarda benzer başka dosyalar ya da FARKLI uygulamalar anlatılıyorsa (biri sağlık gerekçesiyle ev hapsi alırken ağır hasta başkalarının talebinin reddedilmesi, tahliye edilmeden ölenler gibi) bunları adı, tarihi ve rakamıyla ayrı olgu yap. Taraflı ya da yorum içeren kaynaklarda (iddia, eleştiri) olguyu 'X kaynağına göre' ya da 'eleştirenlere göre' diye kaynağa bağlayarak yaz, kesin bilgi gibi yazma. En az 20 olgu çıkar (kaynak yeterliyse). Çok sayıda şüpheli ismi varsa tek olguda 'diğer şüpheliler' diye özetle, yalnızca en tanınan 3 ismi ayrı yaz; özel kişilerin adını yazma. Uydurma, yorum, tahmin ekleme.\n"
         + DATE_RULE.format(d=today_tr()) + "\n"
         'Çıktı: {"facts":[{"olgu":"...","kaynaklar":["NTV","Hürriyet"]}]}\n\n'
         + sources_block(arts))
