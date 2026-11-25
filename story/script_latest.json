@@ -1,184 +1,713 @@
 {
   "title_options": [
-    "Bahisçinin Kulübü: Brentford'u Yükselten Matematik",
-    "Fizikçiden Kulüp Sahibine: Brentford'un Sırrı",
-    "74 Yıllık Hasret Nasıl Bitti?"
+    "Bahisçinin Kulübü: Brentford'un Matematiksel Yükselişi",
+    "Matematikle Gelen Premier Lig Başarısı",
+    "Kumarhaneden Premier Lig'e: Matthew Benham"
   ],
   "shorts": [
     {
-      "hook": "Yeşil sahalarda topun nereye gideceğini falcılar değil, matematik bilir derim.",
-      "text": "Yeşil sahalarda topun nereye gideceğini falcılar değil, matematik bilir derim. Mayısta doğan ve Oxford fizik okuyan bir adam, tribünlerde 11 yaşında izlediği takımı masa başında hesap kitapla Premier Lig'e taşıdı. 74 yıllık hasret nasıl bitti? Oxford mezunu Matthew Benham, Smartodds ve Matchbook kurucusu olarak istatistiği sahaya sürdü. Bees United'dan 2012'de devralınan Brentford, uzun bir tırmanışın ardından adını en üst lige yazdırdı.",
-      "bolum": "Giriş ve Benham'ın geçmişi"
+      "hook": "14 yaşında okuldan kaçıp maça giden bir çocuk, yıllar sonra matematiği kullanarak bir futbol kulübünü Premier Lig'e taşıdı.",
+      "text": "14 yaşında okuldan kaçıp maça giden bir çocuk, yıllar sonra matematiği kullanarak bir futbol kulübünü Premier Lig'e taşıdı. Oxford fizik mezunu Matthew Benham, Smartodds ile veri madenciliği yaparak spor dünyasının işleyişini değiştirdi. 2007 yılında borçları devralarak kulübe adım atan Benham, takımı 2021 yılında 74 yıl aradan sonra en üst lige çıkardı. Bugün 500 milyon dolar değerindeki bu kulüp, tamamen istatistiksel verilere dayanarak yönetiliyor.",
+      "bolum": "Giriş ve Kulübün Kuruluşu"
     },
     {
-      "hook": "11 yaşındayken tribünde izlediği takımı satın aldı.",
-      "text": "11 yaşındayken tribünde izlediği takımı satın aldı. Matthew Benham, 2012'de Brentford'un kontrolünü aldıktan sonra Danimarka'da Midtjylland'a da yatırım yaptı. Takım, 2014-2015 sezonunda Championship'e yükseldi. Ardından 74 yıl sonra ilk kez İngiltere futbolunun en üst ligi olan Premier League kapısını araladı. Benham, Midtjylland'daki hisselerini 2023'te sattı. Brentford'daki hisselerini ise 2025'te Best Intentions Analytics şirketine devretti.",
-      "bolum": "Kulübün yükselişi ve devir süreci"
+      "hook": "Kendi takımının maçına bahis oynamak bir futbolcunun kariyerini nasıl bitirir?",
+      "text": "Kendi takımının maçına bahis oynamak bir futbolcunun kariyerini nasıl bitirir? Premier Lig'de Brentford forması giyen Ivan Toney'in toplam 262 kez bahis oynadığı ortaya çıktı. Bunların 13'ü kendi takımının kaybetmesi yönündeydi. İngiltere Futbol Federasyonu, kumar bağımlılığı tespit edilen oyuncuya 8 ay futboldan men cezası verdi. Yıldız forvet, sahadaki başarısına rağmen kendi açtığı bu kuyuya düştü.",
+      "bolum": "Ivan Toney Bahis Soruşturması"
     },
     {
-      "hook": "Bahis borsasının kurucusuna ait kulüpte bahis skandalı yaşandı.",
-      "text": "Bahis borsasının kurucusuna ait kulüpte bahis skandalı yaşandı. Ivan Toney, Şubat 2017 ile Ocak 2021 arasında Kural E8'i ihlal ederek çok sayıda bahis oynadı. Bağımsız Düzenleme Komisyonu oyuncuya 8 ay men cezası verdi. Psikiyatrist Dr. Philip Hopley oyuncuya kumar bağımlısı teşhisi koydu. Kulübün sahibi Benham hisselerini devrederken, bu ceza kulüp tarihine geçti.",
-      "bolum": "Ivan Toney ve bahis cezası"
+      "hook": "Matematik masada kazanır ama sahada bazen insan zaaflarına yenilir.",
+      "text": "Matematik masada kazanır ama sahada bazen insan zaaflarına yenilir. Matthew Benham'ın formülleri Brentford'u 500 milyon dolarlık bir imparatorluğa dönüştürdü. Ancak yıldız golcü Ivan Toney'in kumar bağımlılığı bu kusursuz sistemi sarsan en büyük darbe oldu. Veriler kulübü zirveye çıkarırken, insan faktörü her şeyi altüst edebiliyor. Acaba bu düzenin galibi veriler mi olacak, yoksa zaaflar mı?",
+      "bolum": "Sonuç ve Değerlendirme"
     }
   ],
-  "description": "Oxford fizik mezunu Matthew Benham'ın veri ve istatistikle Brentford'u Premier Lig'e taşıma hikayesi. Kulübün yükseliş süreci, hisse devirleri ve Ivan Toney'in bahis cezası masaya yatırılıyor. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.",
+  "description": "Oxford mezunu bir fizikçinin ve kumar yatırımcısının matematiği kullanarak Brentford'u Premier Lig'e taşımasının hikayesi. Kulübün yükselişi ve yıldız forvet Ivan Toney'in bahis soruşturmasının arkasındaki detaylar. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.",
   "tags": [
     "Matthew Benham",
     "Brentford",
-    "Premier League",
-    "Smartodds",
     "Ivan Toney",
-    "futbol",
-    "matematik",
-    "bahis",
-    "kulüp sahibi",
-    "İngiltere futbolu",
-    "Midtjylland",
-    "Championship"
+    "Smartodds",
+    "Premier Lig",
+    "Futbol Ekonomi",
+    "Bahis Soruşturması",
+    "İngiltere Futbol Federasyonu",
+    "Futbol Analiz",
+    "Spor Haberleri",
+    "Son Tanık"
   ],
-  "thumbnail_text": "Bahisçinin Kulübü",
+  "thumbnail_text": "BAHİSÇİNİN KULÜBÜ",
   "risk_notes": [
-    "Ivan Toney hakkında verilen 8 aylık ceza bağımsız komisyon karar וב olgudur; ancak kumar bağımlılığı teşhisi tıbbi rapora dayandırılmalıdır.",
-    "Matthew Benham'ın hisse devir tarihleri ve şirket isimleri resmi duyurulara dayanmaktadır."
+    "Ivan Toney hakkında konuşurken kesin mahkumiyet ifadesi kullanılmamalı, FA raporu ve verilen ceza olgu olarak aktarılmalı.",
+    "Matthew Benham'ın kulüp satış süreci hakkındaki iddialar Bloomberg ve Sky Sports kaynaklarına dayandırılarak söylenmeli."
   ],
-  "hook": "Yeşil sahalarda topun nereye gideceğini falcılar değil, matematik bilir [duraklama] derim. Mayısta doğan ve Oxford fizik okuyan bir adam, tribünlerde 11 yaşında izlediği takımı masa başında hesap kitapla Premier Lig'e taşıdı. 74 yıllık hasret nasıl bitti?",
-  "script": "Yeşil sahalarda topun nereye gideceğini falcılar değil, matematik bilir [duraklama] derim. Mayısta doğan ve Oxford fizik okuyan bir adam, tribünlerde 11 yaşında izlediği takımı masa başında hesap kitapla Premier Lig'e taşıdı. 74 yıllık hasret nasıl bitti?\n\nMayıs 1968 doğumlu Matthew Benham [duraklama] Oxford Üniversitesi fizik bölümünden mezun oldu. Londra'nın City bölgesinde finans sektöründe 12 yıl çalıştı. Bu süre zarfında hedge fon yöneticiliği yaptı, Deutsche Bank'ta türev ürünler trader'ı olarak görev aldı ve Banka of America'da başkan yardımcılığına kadar yükseldi. 2001 yılında Tony Bloom tarafından Premier Bet'te çalışmak üzere işe alındı. Profesyonel kumarbazlar için istatistiksel araştırma yapan Smartodds şirketini 2004 yılında kurdu. Ardından Matchbook bahis borsasının da sahibi oldu.\n\nBrentford'un ilk maçını 1979 yılında, henüz 11 yaşındayken tribünde izlemişti. 1889 yılında kurulan ve maçlarını Londra'da oynayan Brentford, 1904'ten itibaren iç saha karşılaşmalarını Griffin Park'ta gerçekleştiriyordu. Batı Londra merkezli Fulham ve Queens Park Rangers, kulübün ana rakipleriydi. Brentford, Haziran 2012'de Bees United'ın kulübün tam kontrolünü Benham'a devretmesiyle üçüncü tier ligde mücadele ediyordu.\n\nTemmuz 2014'te 6,2 milyon pound yatırımla Danimarka Superliga kulübü FC Midtjylland'ın çoğunluk hissedarı oldu. Brentford, 2014-2015 sezonunda 21 yıl sonra ilk kez EFL Championship'e yükselme başarısını gösterdi.\n\nBrentford, 74 yıl sonra ilk kez İngiltere futbolunun en üst ligi olan Premier League'e yükseldi. 15 Ağustos 2023 tarihinde Midtjylland, Matthew Benham'ın kulüpteki hisselerini sattığını resmen açıkladı.\n\nBrentford forması giyen Ivan Toney, Şubat 2017 ile Ocak 2021 arasında İngiltere Futbol Federasyonu Talimatı'nda Kural E8'i ihlal ederek çok sayıda bahis oynamıştı. Bağımsız bir Düzenleme Komisyonu, Ivan Toney'e futbol ve futbolla ilgili faaliyetlerden 8 ay men cezası verdi. Psikiyatrist Dr. Philip Hopley, Ivan Toney için kumar bağımlısı teşhisi koymuştu.\n\nŞubat 2025'te Brentford, Matthew Benham'ın kulüpteki hisselerini Best Intentions Analytics adlı yeni kurulan bir holding şirketine devrettiğini duyurdu.\n\nBahis borsasının kurucusuna ait bir kulüpte, bir futbolcunun bahis kuralı ihlali nedeniyle uzun süre ceza alması [duraklama] oyunun kurallarının kimler için nasıl çalıştığının açık bir göstergesiydi.\n\nPsikiyatrist Dr. Philip Hopley'in kumar bağımlısı teşhisi koyduğu bu süreç, Şubat 2017 ile Ocak 2021 arasında Kural E8'e aykırı çok sayıda bahis oynandığının tescillenmesiyle sonuçlandı.\n\nKulübün sahibi Benham, hisselerini Şubat 2025'te Best Intentions Analytics şirketine devrederken [duraklama] Toney'in sahadan uzak kaldığı o 8 aylık dönem kulüp arşivine ağır bir ders olarak yazıldı.\n\nArtık son tanık sizsiniz.",
+  "hook": "Rakamların dili yalan söylemez, derim. [duraklama] Düşünsene, okuldan kaçıp deplasman maçına giden 14 yaşında bir çocuk, yıllar sonra matematiği kullanarak bir futbol kulübünü Premier Lig'in zirvesine taşıyor. Peki, bir kumarbazın kurduğu bu kusursuz sistem nasıl 500 milyon dolarlık bir imparatorluğa dönüştü?",
+  "script": "Rakamların dili yalan söylemez, derim. [duraklama] Düşünsene, okuldan kaçıp deplasman maçına giden 14 yaşında bir çocuk, yıllar sonra matematiği kullanarak bir futbol kulübünü Premier Lig'in zirvesine taşıyor. Peki, bir kumarbazın kurduğu bu kusursuz sistem nasıl 500 milyon dolarlık bir imparatorluğa dönüştü?\n\nHer şey 1968 yılının Mayıs ayında doğan bir İngiliz iş insanının yoluyla başladı. Adı Matthew Benham. Oxford Üniversitesi fizik bölümünden mezun olduktan sonra Londra'nın finans merkezi City'de yıllar geçirdi. [duraklama]\n\n1979 yılında, daha 11 yaşındayken ilk Brentford maçını izledi. [duraklama] Tutkusu o kadar büyüktü ki, Aralık 1982'de, 14 yaşındayken Brentford'un deplasmandaki Nottingham Forest maçına gidebilmek için okuldan kaçtı. Ama onu asıl dönüştüren şey kumar sektörüyle yollarının kesişmesi oldu. 2001 yılında Tony Bloom tarafından Premier Bet'te çalışmak üzere işe alındı. Orada, Lancaster Üniversitesi'nde geliştirilen istatistiksel modeli kullanarak Asya bahis piyasasında önemli miktarda para kazandı. [duraklama] Tony Bloom ile araları bozulduktan sonra yollarını ayırdı ve 2004 yılında Smartodds'u kurdu. Londra'nın Kentish Town bölgesinde kurduğu bu şirket, profesyonel kumarbazlar için istatistiksel araştırma ve spor modellemesine odaklanıyordu. Benham aynı zamanda profesyonel kumarbazlar için istatistiksel araştırma yapan Smartodds'un ve Matchbook bahis borsasının da sahibiydi. [duraklama] 2011 yılında Triplebet Limited adlı yatırımcı grubunun bir parçası olarak spor bahis borsası Matchbook'un sahipleri arasına katıldı.\n\nBenham, The Independent gazetesinde Bees United taraftar tröstünün eski sahibi Ron Noades'i satın alabilmek için acilen zengin yatırımcı aradığını belirten bir makale okudu. Sürece başlangıçta anonim bir \"gizemli yatırımcı\" olarak katıldı. 2006 yılında 500. Ocak 2007'de yaklaşık 3 milyon sterlin ödeyerek Brentford'un borçlarını devraldı ve bunları 5 yıl boyunca faizsiz tutmayı kabul etti. 2009 yılında kulüpte imtiyazlı hisseler karşılığında 5 yıl boyunca yılda ek 1 milyon sterlin yatırım yapmayı kabul etti. [duraklama] Bees United, 2012 yılının Haziran ayında kulüp İngiltere üçüncü ligindeyken Brentford'un tam kontrolünün Matthew Benham'a devredilmesi yönünde oy kullandı. [duraklama] 2012 yılında kulübün tam kontrolünü ele alan Benham, bugün hala Brentford FC'nin çoğunluk hissesi sahibi olmaya devam etmektedir. Başlangıçta birkaç milyon dolar ile yatırım yapılan kulübün bugünkü değeri yaklaşık 500 milyon dolardır. [duraklama] Aynı kulüp içinde mali disiplin ile sportif başarıyı aynı anda yürütmek, işte mesele bu.\n\nMatthew Benham kulübün tam kontrolünü ele alır almaz hamlelerini ardı ardına sıraladı. Yeni stadyum için arsa alımı ve kulüp içi yapılanma, her şey bu kırılma anıyla başladı.\n\nBenham, kulübün yeni sahibi olmasından on gün sonra Griffin Park'taki mevcut stadyumun yakınında, Kew Bridge tren istasyonu yakınında yeni bir stadyum inşa etme taahhüdünde bulunarak bir arsa satın aldı. [duraklama] Tarihi arenadan ayrılıp yeni bir döneme geçişin temelleri atılıyordu. Stadyumun adı Brentford Community Stadyumu oldu ve Ağustos 2020'de açıldı. [duraklama] 116 yıllık tarihi arenadan ayrılıp yeni stadyuma taşınan takım için ne yazık ki tribünler boş kaldı. Yeni Brentford stadyumu için kombine biletler satışa çıktığında Benham ticari departmana taraftarlardan aşırı ücret almamaları ve fiyatları uygun tutmaları talimatını verdi. [duraklama] Sadece sahada değil, bilet fiyatlarında bile taraftarı koruyan bu yaklaşım, kulübün ruhunu koruma çabasının en net kanıtıydı.\n\nBenham 2013 yılında bir başka eski City trader'ı olan Mark Warburton'ı menajerliğe terfi ettirdi. [duraklama] Bu hamle karşılığını verdi ve Brentford 2014-2015 sezonunda 21 yıldır ilk kez EFL Championship'e yükseldi. [duraklama] İkinci kademedeki bu ilk sezon, kulüp için uzun bir hasretin bitişiydi. Şubat 2015'te Mark Warburton ile sezon sonunda yolların ayrılacağı duyuruldu. [duraklama] Bu ayrılığın ardından kulüp, geleneksel menajerlik anlayışını tamamen bir kenara bıraktı. Brentford daha sonra Smartodds'un eski kantitatif analisti Phil Giles'ı ve Midtjylland'dan Rasmus Ankersen'i kulübün iki futbol eş direktörü olarak atadı. [duraklama]\n\nHollandalı menajer Marinus Dijkhuizen teknik direktör olarak göreve getirildi, ancak sadece dokuz maç sonra görevden alındı. [duraklama] Alınan bu başarısız sonuçların ardından Matthew Benham bu atamanın bir hata olduğunu açıkça kabul etti. Dean Smith'in Aston Villa'ya gitmesinin ardından 2018 yılında eski Danimarka genç takım koçu Thomas Frank Brentford'da teknik direktörlüğe terfi ettirildi. [duraklama] Bu atama, kulübün uzun vadeli planlamasının en sağlam taşı olacaktı.\n\nBrentford, Championship play-off'ları aracılığıyla 2021 yılında İngiltere futbolunun en üst ligine 74 yıl sonra ilk kez yükselme başarısı gösterdi. [duraklama] Kulüp, Premier Lig'deki ilk iki tam sezonunu sırasıyla 13. ve 9. sırada tamamladı. [duraklama]\n\nMatthew Benham Brentford'u sadece verilerle değil, doğrudan cebinden çıkardığı sermayeyle ayağa kaldırdı. Temmuz 2014'te ise rotayı başka bir ülkeye çevirip 6,2 milyon sterlin yatırım yaparak Danimarka birinci ligi Superliga kulübü FC Midtjylland'ın çoğunluk hissedarı oldu. [duraklama] Ancak her ortaklık sonsuza kadar sürmez; Midtjylland 15 Ağustos 2023 tarihinde Matthew Benham'ın kulüpteki hisselerini sattığını duyurdu. [duraklama] Futbol yatırımları global bir ticaret ağına dönüşürken, kökler her zaman Londra'da kaldı.\n\nKulüp binası, stadyumu ve kadrosuyla bugünkü değeri yaklaşık 500 milyon dolara ulaştı. [duraklama] Şubat 2025 tarihinde Matthew Benham, Brentford'daki hisselerini Best Intentions Analytics adlı yeni kurulan bir holding şirketine devretti. [duraklama] İngiliz iş insanı, kontrol hissesini elden çıkarırsa azınlık sahibi olarak kalmayı tercih edeceğini zaten biliyordu.\n\nJon Varney, BIA yönetim kurulu başkanı ve Brentford FC icra kurulu başkanı olarak görev yaparken, yeni atamaları duyurdu. [duraklama] Jon Varney, Prakash Melwani ve Lucian'ın BIA Yönetim Kurulu'na atandığını açıkladı. Prakash Melwani, Matthew Benham ve icra liderlik ekibinin yönetimi altında Brentford'un kaydettiği ilerlemeyi uzun süredir takdir ettiğini belirtti. [duraklama] Gary Lubner, Brentford'un futbol mükemmelliğinden fazlasını temsil ettiğini, topluma, dürüstlüğe ve sosyal ilerlemeye olan bağlılığının kendisi için önemli ilkeleri yansıttığını ifade etti. Sir Matthew Vaughn ise ilk yatırım turunu kapattıktan altı ay sonra rekabetçi bir kadroya, harika bir teknik direktöre ve saha dışında benzersiz bir ekibe sahip olduklarını kanıtladıklarını belirtti.\n\nSky Sports'a göre Matthew Benham, kulübün olası satışını denetlemek üzere Rothschild'deki finans uzmanlarını işe aldı. [duraklama] Bloomberg, Salı günü Benham'ın yeni yatırımlar aradığını bildirdi. Matthew Benham yatırım fırsatının ölçeği konusunda henüz kesin bir karara varamadı; ABD'li azınlık yatırımcıları memnuniyetle karşılayabilir veya çoğunluk hissesini satabilirdi. [duraklama] Kulüpten yapılan açıklamaya göre dış yatırımları değerlendirmek kulübün geleceği için esastır ve kulübün aralık ayındaki resmi açıklamasında bu fırsatların 'dikkatle inceleneceği' belirtildi. Brentford sözcüsü, kulüpteki yatırım fırsatlarına ilgi olmasının sürpriz olmadığını, Matthew Benham'ın kulübe olan bağlılığının her zamankinden güçlü kaldığını ifade etti.\n\nBrentford, sakatlıklarla boğuştuğu o dönemde Premier Lig tablosunda 11. sırada yer alıyordu.\n\nPremier Lig'de Brentford forması giyen forvet Ivan Toney'in bahis bağımlısı olduğu tespit edildi. [duraklama] Yapılan incelemelerde Ivan Toney'in toplam 262 kez bahis oynadığı ortaya çıktı. [duraklama] İşin en vahim tarafı ise Toney'in oynadığı bahislerin 13'ünün kendi takımının kaybetmesi yönünde olmasıydı. İngiltere Futbol Federasyonu, Toney'e kendi takımlarına karşı bahis oynaması ve kumar bağımlılığı teşhisi konulması nedeniyle 8 ay süreyle futboldan men cezası verdi. [duraklama] İngiltere Futbol Federasyonu milli oyuncuya verilen 15 maçlık men cezasını 8 aya indirdi. Bu indirimin sebebi Ivan Toney'in suçunu kısmen kabul etmesi ve uzman bir doktorun kendisinin kumar bağımlısı olduğunu tespit etmesiydi. [duraklama]\n\nIvan Toney bahislerin önemli kısmını Newcastle United oyuncusuyken yapmıştı. [duraklama] Newcastle üzerinden bahis oynadığı 7 maçta toplam 13 kez kendi takımının kaybına oynamıştı ve bu sırada Newcastle oyuncusu olmasına rağmen Wigan'da kiralık olarak forma giyiyordu. FA raporuna göre Toney kendisinin oynamadığı maçlara da bahis almıştı. [duraklama] Bununla da kalmadı; Mart 2018'de bir arkadaşına ilk 11 başlayacağı bir maç için önceden bilgi verdiği tespit edildi. [duraklama]\n\nFA'in raporunda Ivan Toney'in kendisinin sahada olduğu 9 maçta 15 kez gol atacağı yönünde bahis oynadığı yer aldı. [duraklama] Tüm bu fırtınanın ortasında Ivan Toney Brentford formasıyla 20 gol kaydetmişti ve kulübün Premier Lig'de 9. sırada yer almasını sağlayan en önemli oyunculardan birisiydi. [duraklama] Hatta bu performansının karşılığını alarak 26 Mart’ta ilk kez İngiltere Milli Takımı’nın formasını giymişti. Bahis üzerine kurulan bir kulübün imparatorluğunda, yıldız forvetin kendi bağımlılığına yenilmesi tarihin acı bir ironisiydi. [duraklama]\n\nİngiltere Futbol Federasyonu'nun verdiği 8 aylık men cezası, Ivan Toney'in kariyerinde kapanması güç bir yara açtı. Başlangıçta 15 ay olarak planlanan cezanın, oyuncunun kumar bağımlılığının uzman bir doktor tarafından raporlanması ve suçunu kısmen kabul etmesi sayesinde düşürüldüğü resmi kayıtlara geçti. [duraklama]\n\nKulüp cephesinde ise Matthew Benham'ın kurduğu matematiksel imparatorluk, saha dışındaki bu büyük sarsıntıya rağmen yoluna devam etmek zorunda kaldı. Brentford, Cumartesi günü Luton'u sahasında 3-1 yenerek sahadaki direncini gösterdi. [duraklama] Takım, Çarşamba gecesi Brighton deplasmanında sahne alırken, stratejik planlamanın ve veri temelli yönetimin inandırıcılığı test ediliyordu.\n\nRothschild'deki finans uzmanlarının denetiminde yürütülen olası satış ve ortaklık görüşmeleri, kulübün değerini 500 milyon dolarlık seviyede tutarken yeni bir dönemin kapılarını araladı. [duraklama] Best Intentions Analytics holding şirketine devredilen hisseler ve ardı ardına gelen azınlık yatırımları, geleneksel kulüp sahipliği modelinin tarihe karıştığının en net kanıtıydı. Kulüp sözcüsünün yaptığı açıklamada, uzun vadeli geleceği güvence altına almak için dış yatırımları incelemenin esastır denilmesi, geleceğin temellerinin çoktan atıldığını gösteriyordu. [duraklama]\n\nMatthew Benham'ın Oxford'un fizik formüllerinden yola çıkarak Smartodds ile yarattığı veri tabanlı düzen, İngiltere futbolunun en sert liginde kalıcı bir kale inşa etti. [duraklama] Benham hisselerini Best Intentions Analytics'e devredip Rothschild aracılığıyla yeni ortaklar ararken, kulüp sadece finansal bir varlık değil, aynı zamanda modern futbolun ne denli kırılgan bir zemin üzerinde yükseldiğinin anıtı haline geldi. [duraklama]\n\nMatematik masada kazanır, sahada ise her zaman adil oynamaz, bilirim. [duraklama] Benham'ın formülleri Brentford'u zirveye taşırken, Toney'in rakamları kendi kalesine yazıldı. [duraklama] Acaba bu düzenin galibi veriler mi olacak, yoksa insanın bitmeyen zaafları mı? [duraklama] Artık son tanık sizsiniz.",
   "topic": "Bahisçinin kulübü: Brentford'u yükselten matematik",
-  "model": "gemini-3.5-flash-lite",
-  "words": 389,
-  "minutes": 3,
+  "model": "gemini-flash-lite-latest",
+  "words": 1475,
+  "minutes": 11,
   "date": "2026-11-25",
   "facts": [
     {
-      "olgu": "Matthew Benham, İngiltere Premier Lig kulübü Brentford'un sahibidir ve Mayıs 1968 doğumlu bir İngiliz iş insanıdır.",
+      "olgu": "Matthew Alexander Benham Mayıs 1968'de doğmuştur.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Matthew Benham; profesyonel kumarbazlar için istatistiksel araştırma şirketi Smartodds'un ve Matchbook bahis borsasının kurucusu ve sahibidir.",
+      "olgu": "Matthew Benham İngiliz bir iş insanıdır.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Matthew Benham, Oxford Üniversitesi fizik bölümü mezunudur ve Londra'nın City bölgesinde finans sektöründe çalışmıştır.",
+      "olgu": "Matthew Benham İngiltere Premier Lig kulübü Brentford'un sahibidir.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Matthew Benham, Brentford'un ilk maçını 1979 yılında 11 yaşındayken izlemiştir.",
+      "olgu": "Matthew Benham profesyonel kumarbazlar için istatistiksel araştırma şirketi olan Smartodds'un kurucusu ve sahibidir.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Matthew Benham, 1990'larda Londra'nın City bölgesinde hedge fon yöneticisi, Deutsche Bank'ta türev ürünler trader'ı ve Banka of America'da başkan yardımcısı olarak 12 yıl çalışmıştır.",
+      "olgu": "Matthew Benham Matchbook bahis borsasının sahibidir.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Matthew Benham, 2001 yılında Tony Bloom tarafından Premier Bet'te çalışmak üzere işe alınarak kumar sektörüne girmiştir.",
+      "olgu": "Matthew Benham Oxford Üniversitesi fizik bölümü mezunudur.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Matthew Benham, 2004 yılında Smartodds'u kurmuştur.",
+      "olgu": "Matthew Benham Londra'nın finans merkezi City'de finans sektöründe çalışmıştır.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Brentford, Haziran 2012'de Bees United'ın kulübün tam kontrolünü Benham'a devretmesiyle üçüncü tier ligde yer alıyordu.",
+      "olgu": "Matthew Benham ilk Brentford maçını 1979 yılında, on bir yaşında izlemiştir.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Brentford, 2014-2015 sezonunda 21 yıl sonra ilk kez EFL Championship'e yükselmiştir.",
+      "olgu": "Matthew Benham Aralık 1982'de, 14 yaşındayken Brentford'un deplasmandaki Nottingham Forest maçını izlemek için okuldan kaçmıştır.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Matthew Benham, Temmuz 2014'te 6,2 milyon pound yatırımla Danimarka Superliga kulübü FC Midtjylland'ın çoğunluk hissedarı olmuştur.",
+      "olgu": "Matthew Benham 1990'larda Londra'nın finans merkezi City'de on iki yıl boyunca hedge fon yöneticisi, Deutsche Bank'ta türev ürünler trader'ı ve Bank of America'da başkan yardımcısı olarak çalışmıştır.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Midtjylland, 15 Ağustos 2023 tarihinde Matthew Benham'ın kulüpteki hisselerini sattığını açıklamıştır.",
+      "olgu": "Matthew Benham 2001 yılında Tony Bloom tarafından Premier Bet'te çalışmak üzere işe alınarak kumar sektörüne girmiştir.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Brentford, Ağustos 2020'de 17.000 kişilik yeni Brentford Community Stadium'unu açmıştır.",
+      "olgu": "Matthew Benham, Stuart Coles ve Mark Dixon tarafından Lancaster Üniversitesi'nde geliştirilen istatistiksel modeli kullanarak Asya bahis piyasasında önemli miktarda para kazanmıştır.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham"
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Brentford, 2021 yılında 74 yıl sonra ilk kez İngiltere futbolunun en üst ligi olan Premier League'e yükselmiştir.",
+      "olgu": "Tony Bloom ile araları bozulduktan sonra Matthew Benham 2004 yılında Smartodds'u kurmuş ve Stuart Coles'u işe almıştır.",
       "kaynaklar": [
-        "Vikipedi (en): Matthew Benham",
-        "Vikipedi (en): Brentford F.C."
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Brentford Futbol Kulübü 1889 yılında kurulmuştur ve maçlarını Londra, İngiltere'de oynamaktadır.",
+      "olgu": "Londra'nın Kentish Town bölgesinde bulunan Smartodds, profesyonel kumarbazlara satılan istatistiksel araştırma ve spor modellemesine odaklanmaktadır.",
       "kaynaklar": [
-        "Vikipedi (en): Brentford F.C."
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Brentford, 1904'ten itibaren Griffin Park'ta iç saha maçlarını oynamış, 2020 yılında Brentford Community Stadium'a taşınmıştır.",
+      "olgu": "Matthew Benham 2011 yılında Triplebet Limited adlı yatırımcı grubunun bir parçası olarak spor bahis borsası Matchbook'un sahipleri arasına katılmıştır.",
       "kaynaklar": [
-        "Vikipedi (en): Brentford F.C."
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Brentford'un ana rakipleri Batı Londra merkezli kulüpler olan Fulham ve Queens Park Rangers'tır.",
+      "olgu": "Matthew Benham, Bees United taraftar tröstünün eski sahibi Ron Noades'i satın alabilmek için acilen zengin yatırımcı aradığını belirten The Independent gazetesindeki 2005 tarihli bir makaleyi okuyarak Brentford ile ilk teması kurmuştur.",
       "kaynaklar": [
-        "Vikipedi (en): Brentford F.C."
+        "Vikipedi (en)"
       ]
     },
     {
-      "olgu": "Brentford, Şubat 2025'te Matthew Benham'ın kulüpteki hisselerini Best Intentions Analytics adlı yeni kurulan bir holding şirketine devrettiğini duyurmuştur.",
+      "olgu": "Matthew Benham sürece başlangıçta anonim bir \"gizemli yatırımcı\" olarak katılmıştır.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham 2007 yılında yaklaşık 3 milyon sterlin ödeyerek Brentford'un borçlarını devralmış ve bunları beş yıl boyunca faizsiz tutmayı kabul etmiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham 2009 yılında kulüpte imtiyazlı hisseler karşılığında beş yıl boyunca yılda ek 1 milyon sterlin yatırım yapmayı kabul etmiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Bees United, 2012 yılının Haziran ayında, kulüp İngiltere üçüncü ligindeyken Brentford'un tam kontrolünün Matthew Benham'a devredilmesi yönünde oy kullanmıştır.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham kulübün yeni sahibi olmasından on gün sonra Griffin Park'taki mevcut stadyumun yakınında, Kew Bridge tren istasyonu yakınında yeni bir stadyum inşa etme taahhüdünde bulunarak bir arsa satın almıştır.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham 2013 yılında bir başka eski City trader'ı olan Mark Warburton'ı menajerliğe terfi ettirmiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Brentford 2014-2015 sezonunda 21 yıldır ilk kez EFL Championship'e yükselmiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham Temmuz 2014'te 6,2 milyon sterlin yatırım yaparak Danimarka birinci ligi Superliga kulübü FC Midtjylland'ın çoğunluk hissedarı olmuştur.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Midtjylland 2015 yılında ilk lig şampiyonluğunu kazanmıştır.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Midtjylland 15 Ağustos 2023 tarihinde Matthew Benham'ın kulüpteki hisselerini sattığını duyurmuştur.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Brentford Şubat 2015'te Mark Warburton ile sezon sonunda yollarını ayıracağını duyurmuştur.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Brentford daha sonra Smartodds'un eski kantitatif analisti Phil Giles'ı ve Midtjylland'dan Rasmus Ankersen'i kulübün iki futbol eş direktörü olarak atamıştır.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Hollandalı menajer Marinus Dijkhuizen teknik direktör olarak göreve getirilmiş, ancak sadece dokuz maç sonra görevden alındıktan sonra Matthew Benham bu atamanın \"bir hata\" olduğunu açıkça kabul etmiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Dean Smith'in Aston Villa'ya gitmesinin ardından 2018 yılında eski Danimarka genç takım koçu Thomas Frank Brentford'da teknik direktörlüğe terfi ettirilmiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Yeni Brentford stadyumu için kombine biletler satışa çıktığında Matthew Benham ticari departmana taraftarlardan aşırı ücret almamaları ve fiyatları uygun tutmaları talimatını vermiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Yeni 17.000 kişilik Brentford Community Stadyumu Ağustos 2020'de açılmış, ancak COVID-19 pandemisi nedeniyle ilk maçlarını kapalı kapılar ardında oynamak zorunda kalmıştır.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Brentford 2021 yılında İngiltere futbolunun en üst ligine 74 yıl sonra ilk kez yükselme başarısı göstermiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham Brentford'u satın almak için yapılan en az bir teklifi reddetmiştir.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Nick Harris tarafından 10.500 Premier Lig taraftarıyla yürütülen Mart 2022 tarihli bir ankette Matthew Benham Premier Lig'deki en az varlıklı kulüp sahibi olmasına rağmen en yüksek onay oranına sahip olmuştur.",
+      "kaynaklar": [
+        "Vikipedi (en)"
+      ]
+    },
+    {
+      "olgu": "Brentford Futbol Kulübü, Londra'nın Brentford bölgesinde yer alan profesyonel bir futbol kulübüdür.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Kulüp, 1889 yılında kurulmuştur.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Kulüp maçlarını 1904'ten itibaren Griffin Park'ta oynamış, 2020 yılında Brentford Community Stadium'a taşınmıştır.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Kulüp, 1896 yılında Londra Ligi'ne katılmıştır.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Brentford, 1920 yılında Futbol Ligi'ne seçilmiştir.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Brentford, 1934-35 sezonunda Second Division şampiyonluğunu kazanarak kulüp tarihinde ilk kez First Division'a yükselmiştir.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Kulüp, First Division'daki en yüksek lig derecesini 1935-36 sezonunda beşinci olarak elde etmiştir.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Kulüp, 1961-60 sezonunda 50.000 sterlin borçla karşı karşıya kalmıştır.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "1966 yılının Aralık ayında yapılan genel kurulda, kulübün önceki mali yılda 20.000 sterlin zarar ettiği açıklanmıştır.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "19 Ocak 1967'de Brentford başkanı ile QPR başkanı Jim Gregory'nin, QPR'ın Griffin Park'a taşınması ve Brentford kulübünün varlığına son verilmesi konusunda anlaşmaya vardığı haberi duyulmuştur.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Taraftar protestoları ve 8.500 sterlin tutarındaki bağışların ardından, eski Plymouth Argyle başkanı Ron Blindell liderliğindeki altı kişilik bir sendika 23 Şubat 1967'de hisseleri devralmıştır.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham, 2006 yılında 500.000 sterlin bağışta bulunarak kulüple ilk etkileşimini gerçekleştirmiştir.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham, Ocak 2007'de kulübün bazı borçlarını devralmak için yaklaşık 3 milyon sterlin ödemiştir.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Temmuz 2009'da Benham ve Bees United, 'Gecko' kod adı altında bir anlaşma yaparak Benham'ın hisselerini %35'e çıkarması karşılığında 5 yıl boyunca her yıl 1 milyon sterlin vermesini kararlaştırmıştır.",
+      "kaynaklar": [
+        "Vikipedi"
+      ]
+    },
+    {
+      "olgu": "Brentford kulübü, sahibi Matthew Benham'ın kulüpteki bir hisse için potansiyel teklifleri değerlendirdiğini doğruladı.",
       "kaynaklar": [
         "sports.yahoo.com"
       ]
     },
     {
-      "olgu": "Ivan Toney, Şubat 2017 ile Ocak 2021 arasında İngiltere Futbol Federasyonu Talimatı'nda Kural E8'i ihlal ederek çok sayıda bahis oynamıştır.",
+      "olgu": "Bloomberg, Salı günü Benham'ın yeni yatırımlar aradığını bildirdi.",
       "kaynaklar": [
-        "sabah.com.tr",
-        "fanatik.com.tr"
+        "sports.yahoo.com"
       ]
     },
     {
-      "olgu": "Bağımsız bir Düzenleme Komisyonu, Ivan Toney'e futbol ve futbolla ilgili faaliyetlerden 8 ay men cezası vermiştir.",
+      "olgu": "Kulüpten yapılan açıklamaya göre dış yatırımları değerlendirmek kulübün gelecekteki başarısı için esastır.",
       "kaynaklar": [
-        "sabah.com.tr",
-        "fanatik.com.tr"
+        "sports.yahoo.com"
       ]
     },
     {
-      "olgu": "Psikiyatrist Dr. Philip Hopley, Ivan Toney için kumar bağımlısı teşhisi koymuştur.",
+      "olgu": "Brentford sözcüsü, kulüpteki yatırım fırsatlarına ilgi olmasının sürpriz olmadığını belirtti.",
       "kaynaklar": [
-        "sabah.com.tr",
-        "fanatik.com.tr"
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Sözcü, Matthew Benham'ın kulübe olan bağlılığının her zamankinden güçlü kaldığını ifade etti.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Sözcü, kulübün geleceği için yeni yatırımın potansiyel anlamını dikkatle incelemenin doğal ve esansiyel olduğunu söyledi.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Sözcü, kulübün uzun vadeli geleceğini güvence altına almaya ve en zorlu ligde rekabetçi kalmaya kararlı olduklarını belirtti.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Brentford, Cumartesi günü Luton'u sahasında 3-1 yendi.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Sakatlıklarla boğuşan Brentford, Premier Lig tablosunda 11. sırada yer almaktadır.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Brentford Çarşamba gecesi Brighton deplasmanında sahne alacaktır.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Brentford, Championship play-off'ları aracılığıyla 2021 yılında Premier Lig'e yükseldi.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Brentford, Premier Lig'deki ilk iki tam sezonunu 13. ve 9. sırada tamamladı.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham, 2012 yılında kulübün tam kontrolünü ele alarak Brentford FC'nin çoğunluk hissesi sahibi olmaya devam etmektedir.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Gary Lubner ve Sir Matthew Vaughn, July 2025 tarihinde This Day Sports and Media Limited (This Day) ve MARV Bee Limited (MARV) adlı şirketleri aracılığıyla azınlık hissedarı olmuşlardır.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Jon Varney, BIA yönetim kurulu başkanı ve Brentford FC icra kurulu başkanı (chief executive) olarak görev yapmaktadır.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Jon Varney, Prakash ve Lucian'ın BIA Yönetim Kurulu'na atandığını açıklamıştır.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Prakash Melwani, Matthew Benham ve icra liderlik ekibinin yönetimi altında Brentford'un kaydettiği ilerlemeyi uzun süredir takdir ettiğini belirtmiştir.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Gary Lubner, Brentford'un futbol mükemmelliğinden fazlasını temsil ettiğini, topluma, dürüstlüğe ve sosyal ilerlemeye olan bağlılığının kendisi için önemli ilkeleri yansıttığını ifade etmiştir.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Sir Matthew Vaughn, ilk yatırım turunu kapattıktan altı ay sonra rekabetçi bir kadroya, harika bir teknik direktöre ve saha dışında benzersiz bir ekibe sahip olduklarını kanıtladıklarını belirtmiştir.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "February 2025 tarihinde Matthew Benham, Brentford'daki hisselerini Best Intentions Analytics adlı yeni kurulan bir holding şirketine devretmiştir.",
+      "kaynaklar": [
+        "sports.yahoo.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham, Brentford kulübüne potansiyel yatırım yapılmasını memnuniyetle karşılamaktadır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham, 2007 yılında ilk olarak 'gizli yatırımcı' olarak bilinirken Premier League ekibine dahil olmuştur.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "İngiliz iş insanı Matthew Benham, 2007'deki başlangıçtan beş yıl sonra çoğunluk hissedarı olarak kulübü devralmıştır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham, kulübü devralmasının ardından arazi satın almış ve takıma yeni bir stadyum inşa etme sözü vermiştir.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Brentford Community Stadyumu 2020 yılında açılmıştır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Brentford, 116 yıllık tarihi arenadan ayrılarak yeni stadyuma taşınmıştır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham kulübün çoğunluk sahibi olduğunda The Bees (Arılar) League One'da yer almaktaydı.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Kulüp, 2013/14 sezonunun ardından Championship'e yükselmiştir.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Championship'e yükselme, kulübün 21 yıl sonra ikinci kademedeki ilk sezonu olmuştur.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Brentford, ilk kez 2021 yılında Premier League'e yükselmiştir.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham Brentford'a birkaç milyon dolar ile yatırım yapmaya başlamıştır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Brentford kulübünün bugünkü değeri yaklaşık 500 milyon dolardır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Sky Sports'a göre Matthew Benham, kulübün olası satışını denetlemek üzere Rothschild'deki finans uzmanlarını işe almıştır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham yatırım fırsatının ölçeği konusunda henüz kesin bir karara varamamıştır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham ABD'li azınlık yatırımcıları memnuniyetle karşılayabilir veya Brentford'un çoğunluk hissesini satabilir.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Matthew Benham kontrol hissesini elden çıkarırsa azınlık sahibi olarak kalmayı tercih edecektir.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Kulübün aralık ayındaki resmi açıklamasında dış yatırım fırsatlarının Matthew Benham tarafından 'dikkatle inceleneceği' belirtilmiştir.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Bir rapora göre Amerikalılar artık tüm İngiliz profesyonel futbol kulüplerinin yüzde 37'sinde rol sahibidir.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Yeni bir Kuzey Amerika kulübü elde etmek için mevcut genişleme fiyatı yaklaşık 500 milyon dolardır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Federico Chiesa, Juventus'tan yaz transfer döneminin sonlarında Liverpool'a katılmıştır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Jose Mourinho şu anda Fenerbahçe'yi çalıştırmaktadır.",
+      "kaynaklar": [
+        "worldsoccertalk.com"
+      ]
+    },
+    {
+      "olgu": "Premier Lig'de Brentford forması giyen forvet Ivan Toney'in bahis bağımlısı olduğu tespit edildi.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney'in kendi takımının mağlubiyetine oynadığı tespit edildi.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "İngiltere Futbol Federasyonu milli oyuncu Ivan Toney'e verilen 15 maçlık men cezasını 8 aya indirdi.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Cezanın indirilme sebebi Ivan Toney'nin suçunu kısmen kabul etmesi ve kumar bağımlısı olduğu sonucuna varılmasıdır.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney'in toplam 262 kez bahis oynadığı ortaya çıktı.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney'in oynadığı bahislerin 13'ünün kendi takımının kaybetmesi yönünde olduğu ortaya çıktı.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "İngiltere Futbol Federasyonu (FA), Ivan Toney'e kendi takımlarına karşı bahis oynaması ve kumar bağımlılığı teşhisi konulması nedeniyle 8 ay süreyle futboldan men cezası verdi.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney'e en başında 15 ay ceza verilmesi planlanıyordu.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Cezanın 8 aya indirilme nedenlerinden biri uzman bir doktorun kendisinin kumar bağımlısı olduğunu tespit etmesidir.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "FA raporuna göre Ivan Toney kendisinin oynamadığı maçlara bahis aldı.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney bahislerin önemli kısmını Newcastle United oyuncusuyken yaptı.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney Newcastle üzerinden bahis oynadığı 7 maçta toplam 13 kez kendi takımının kaybına oynadı.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney bahis oynadığı bu maçlar sırasında Newcastle oyuncusu olmasına rağmen Wigan'da kiralık olarak forma giyiyordu.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney'in Mart 2018'de bir arkadaşına ilk 11 başlayacağı bir maç için önceden bilgi verdiği tespit edildi.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "FA'in raporuna göre Ivan Toney'in kendisinin sahada olduğu 9 maçta 15 kez gol atacağı yönünde bahis oynadığı yer aldı.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney Brentford formasıyla 20 gol kaydetti.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney Brentford’un Premier Lig’de 9. sırada yer almasını sağlayan en önemli oyunculardan birisiydi.",
+      "kaynaklar": [
+        "ajansspor.com"
+      ]
+    },
+    {
+      "olgu": "Ivan Toney 26 Mart’ta ilk kez İngiltere Milli Takımı’nın formasını giydi.",
+      "kaynaklar": [
+        "ajansspor.com"
       ]
     }
   ],
   "unverified_numbers": [],
   "unverified_names": [
-    "Banka",
+    "Asya",
+    "Cumartesi",
     "Danimarka",
+    "Kurulu",
     "Londra",
+    "Salı",
+    "Stadyumu",
+    "Yönetim",
+    "Çarşamba",
     "Üniversitesi"
   ],
   "sources": [
@@ -201,14 +730,6 @@
     {
       "source": "worldsoccertalk.com",
       "url": "https://worldsoccertalk.com/news/us-investors-likely-to-target-premier-league-side-brentford-20240221-WST-490854.html"
-    },
-    {
-      "source": "sabah.com.tr",
-      "url": "https://www.sabah.com.tr/spor/futbol/2023/05/26/brentfordun-yildizi-ivan-toney-soku-yasiyor-bahis-oynadigi-maclar"
-    },
-    {
-      "source": "fanatik.com.tr",
-      "url": "https://www.fanatik.com.tr/futbol/ivan-toneynin-neden-232-kez-bahis-yaptigi-ortaya-cikti-2513204"
     },
     {
       "source": "ajansspor.com",
