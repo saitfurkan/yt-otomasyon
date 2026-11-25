@@ -1,15 +1,17 @@
 {
-  "generated": "2026-11-25 18:17 UTC",
+  "generated": "2026-11-25 18:21 UTC",
   "errors": [
-    "AA: Remote end closed connection without response"
+    "AA: Remote end closed connection without response",
+    "T24: syntax error: line 1, column 0"
   ],
   "selected": {
-    "score": 30,
+    "score": 33,
     "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
     "sources": [
       "BirGün",
       "Hürriyet",
-      "NTV"
+      "NTV",
+      "Sözcü"
     ],
     "links": [
       {
@@ -35,6 +37,12 @@
         "url": "https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345",
         "title": "Haluk Levent Şile Belediyesi davasında tanık olarak ifade verdi: \"Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\"",
         "summary": "Şile Belediyesi'ne yönelik davanın 11'inci duruşmasında tanık olarak dinlenen Haluk Levent, asistanı olduğunu ifade ettiği Yeliz Kaya adına açılan banka hesaplarını kendisinin kullandığını ifade etti. Ahbap derneği için ise \"Ahbap Derneği toplanan bağışların yüzde 94'ünü deprem bölgesine aktaran dünyanın en büyük ve en başarılı derneğidir. Çaldığım iddia edilen paralar yönetim kurulu kararı ile karar defterine işlenen paralardır. Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\" dedi."
+      },
+      {
+        "source": "Sözcü",
+        "url": "https://www.sozcu.com.tr/haluk-levent-mahkemede-konustu-onun-yerine-beni-tutuklayin-p384321",
+        "title": "Haluk Levent mahkemede konuştu: \"Onun yerine beni tutuklayın\"",
+        "summary": ""
       }
     ],
     "reasons": [
@@ -50,12 +58,13 @@
   },
   "topics": [
     {
-      "score": 30,
+      "score": 33,
       "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
       "sources": [
         "BirGün",
         "Hürriyet",
-        "NTV"
+        "NTV",
+        "Sözcü"
       ],
       "links": [
         {
@@ -81,6 +90,12 @@
           "url": "https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345",
           "title": "Haluk Levent Şile Belediyesi davasında tanık olarak ifade verdi: \"Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\"",
           "summary": "Şile Belediyesi'ne yönelik davanın 11'inci duruşmasında tanık olarak dinlenen Haluk Levent, asistanı olduğunu ifade ettiği Yeliz Kaya adına açılan banka hesaplarını kendisinin kullandığını ifade etti. Ahbap derneği için ise \"Ahbap Derneği toplanan bağışların yüzde 94'ünü deprem bölgesine aktaran dünyanın en büyük ve en başarılı derneğidir. Çaldığım iddia edilen paralar yönetim kurulu kararı ile karar defterine işlenen paralardır. Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\" dedi."
+        },
+        {
+          "source": "Sözcü",
+          "url": "https://www.sozcu.com.tr/haluk-levent-mahkemede-konustu-onun-yerine-beni-tutuklayin-p384321",
+          "title": "Haluk Levent mahkemede konuştu: \"Onun yerine beni tutuklayın\"",
+          "summary": ""
         }
       ],
       "reasons": [
@@ -98,7 +113,9 @@
       "score": 28,
       "title": "Danıştay 8. Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
       "sources": [
+        "BBC Türkçe",
         "BirGün",
+        "Euronews TR",
         "Habertürk",
         "Hürriyet",
         "NTV"
@@ -109,6 +126,12 @@
           "url": "https://www.ntv.com.tr/turkiye/danistay-8-dairesi-karari-onadi-imamoglunun-diplomasi-iptal-edildi-1751606",
           "title": "Danıştay 8. Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
           "summary": "Danıştay, 8. Dairesi Ekrem İmamoğlu'nun üniversite diplomasının iptali kararını onadı. 23 Mart 2025'te tutuklandıktan sonra İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun üniversite diplomasının iptali kesinleşti. Kararı Danıştay 8. Dairesi onadı. Söz konusu yargılama süreci, İmamoğlu'nun 1990 yılında Girne Amerikan Üniversitesi'nden İstanbul Üniversitesi'ne yatay geçişinde usulsüzlük olduğu iddiasını konu ediniyordu. Dosyayı “üniversitenin tanınırlığı"
+        },
+        {
+          "source": "BBC Türkçe",
+          "url": "https://www.bbc.com/turkce/articles/c338535pvm2o?at_medium=RSS&at_campaign=rss",
+          "title": "Danıştay, İmamoğlu'nun diploma iptali kararını neye dayandırdı?",
+          "summary": "Tutuklanarak İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun diploma iptaline karşı Danıştay'a yaptığı temyiz başvurusu reddedildi"
         },
         {
           "source": "Hürriyet",
@@ -127,6 +150,12 @@
           "url": "https://www.haberturk.com/gundem/son-dakika-imamoglunun-diploma-iptaline-onama-3929957",
           "title": "Diploması resmen iptal edildi",
           "summary": ""
+        },
+        {
+          "source": "Euronews TR",
+          "url": "https://tr.euronews.com/2026/11/25/imamoglu-diploma-davasi-icin-aymye-basvuracak-danistay-karari-hukuka-aykiridir",
+          "title": "İmamoğlu, diploma davası için AYM’ye başvuracak: 'Danıştay kararı hukuka aykırıdır'",
+          "summary": "İmamoğlu’nun avukatları, 'Danıştay kararı hukuka aykırıdır' diyerek diploma davasını AYM’ye taşıyacaklarını açıkladı. Bazı itirazların incelenmediğini belirten avukatlar, 1990’da bulunmayan bir şartın geri doğru uygulandığı ve idarenin hatasının öğrenciye yüklendiği savundu."
         }
       ],
       "reasons": [
@@ -136,7 +165,7 @@
       ],
       "sensitive": true,
       "single_source": false,
-      "newest": "2026-11-25T11:51:59+00:00"
+      "newest": "2026-11-25T12:56:49+01:00"
     },
     {
       "score": 25,
@@ -169,12 +198,13 @@
       "newest": "2026-11-25T13:22:55+03:00"
     },
     {
-      "score": 22,
+      "score": 25,
       "title": "Ünlülere yönelik uyuşturucu operasyonunda yeni gelişme: 1 isme tutuklama, 9 isme adli kontrol talebi!",
       "sources": [
         "BirGün",
         "Cumhuriyet",
-        "Habertürk"
+        "Habertürk",
+        "Sözcü"
       ],
       "links": [
         {
@@ -200,6 +230,12 @@
           "url": "https://www.haberturk.com/gundem/son-dakika-unlulere-uyusturucu-operasyonunda-1-tutuklama-talebi-3930112",
           "title": "Ünlülere uyuşturucu operasyonunda 1 tutuklama talebi",
           "summary": ""
+        },
+        {
+          "source": "Sözcü",
+          "url": "https://www.sozcu.com.tr/gozaltina-alinan-unluler-saglik-kontrolunde-boyle-gorduruldu-p384307",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu: 1 tutuklama, 9 adli kontrol talebi",
+          "summary": ""
         }
       ],
       "reasons": [
@@ -209,6 +245,88 @@
       "sensitive": false,
       "single_source": false,
       "newest": "2026-11-25T20:58:00+03:00"
+    },
+    {
+      "score": 24,
+      "title": "2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de",
+      "sources": [
+        "BirGün",
+        "Cumhuriyet",
+        "DW Türkçe"
+      ],
+      "links": [
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/2-2-milyar-tl-lik-vurguna-19-gun-gazetecilige-aylarca-hapis-fatma-betul-sayan-kaya-tahliye-edildi-gazeteciler-hala-silivri-de-2559339",
+          "title": "2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de",
+          "summary": "AKP’li eski Bakan Fatma Betül Sayan Kaya, fon soruşturması kapsamında 19 gün tutuklu kaldıktan sonra ev hapsiyle tahliye edilirken çok sayıda gazeteci haftalardır cezaevinde. Avukat Elif Ergin, “Tutuklama tedbiri gazeteciler açısından istisnai olmaktan çıkıp peşinen cezalandırma aracına dönüştü” dedi."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330",
+          "title": "Fatma Betül Sayan Kaya'nın cezaevinde ağladığı iddia edilmişti: Avukat Hatipoğlu, şahit olduğu anları anlattı",
+          "summary": "Avukat Afşin Hatipoğlu, fon vurgunu soruşturması kapsamında 18 gün tutuklu kalan Fatma Betül Sayan Kaya'nın cezaevindeki günlerine ilişkin iddialarda bulundu. Hatipoğlu, Kaya'nın diğer tutuklulardan farklı muamele gördüğünün yanı sıra gazeteci Nagehan Alçı'nın iddialarına karşı çıkarak, \"Gayet sohbetli, nezaketli, zevkli, sefalıydı. Oradaki, cezaevi ortamında nasıl olunacaksa o şekilde gördüm\" dedi."
+        },
+        {
+          "source": "DW Türkçe",
+          "url": "https://www.dw.com/tr/sayan-kaya-tahliye-edildi-yüzlerce-ağır-hasta-mahpus-hâlâ-cezaevinde/a-80043500?maca=tur-rss-tur-all-1495-rdf",
+          "title": "Sayan Kaya tahliye edildi, yüzlerce ağır hasta mahpus hâlâ cezaevinde",
+          "summary": "Fatma Betül Sayan Kaya sağlık gerekçesiyle tahliye edildi. Ancak cezaevlerinde en az 235 ağır hasta tutuklu ve hükümlü tahliye edilmeyi bekliyor. İHD, bu durumu \"eşitlik ilkesine\" aykırı görüyor."
+        }
+      ],
+      "reasons": [
+        "suç:+5",
+        "para:+9",
+        "güç:+1",
+        "rakam:+1"
+      ],
+      "sensitive": true,
+      "single_source": false,
+      "newest": "2026-11-25T15:29:00+03:00"
+    },
+    {
+      "score": 24,
+      "title": "SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
+      "sources": [
+        "Habertürk",
+        "Hürriyet",
+        "Milliyet",
+        "Sözcü"
+      ],
+      "links": [
+        {
+          "source": "Milliyet",
+          "url": "https://www.milliyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-7707969",
+          "title": "SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
+          "summary": "Şirketin Kamuyu Aydınlatma Platformu'nda (KAP) yayımlanan açıklamasında, İstanbul 6. Sulh Ceza Hakimliğinin 24 Kasım 2026 tarihli ve 2026/11489 D. İş sayılı kararıyla TMSF'nin şirkete kayyum olarak atandığı bildirildi. Söz konusu karar uyarınca Fon Kurulu tarafından şirketin yeni yönetim kurulunun oluşturulduğu belirtilen açıklamada, yönetim kurulu başkanlığına Nevzat Avunç'un, başkan vekilliğine ise Melek İnceköse İmert'in getirildiği kaydedildi. Açıklamada, yönetim kurulu üyeliklerine Erdinç P"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-43391147",
+          "title": "Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
+          "summary": ""
+        },
+        {
+          "source": "Sözcü",
+          "url": "https://www.sozcu.com.tr/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-p384406",
+          "title": "Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
+          "summary": ""
+        },
+        {
+          "source": "Habertürk",
+          "url": "https://www.haberturk.com/ekonomi/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-3930123",
+          "title": "Sümer Varlık Yönetim'e kayyum atandı",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+8",
+        "para:+2",
+        "güç:+3"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T18:19:00+00:00"
     },
     {
       "score": 21,
@@ -233,37 +351,6 @@
       "sensitive": false,
       "single_source": true,
       "newest": "2026-11-25T11:22:06+03:00"
-    },
-    {
-      "score": 21,
-      "title": "2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de",
-      "sources": [
-        "BirGün",
-        "Cumhuriyet"
-      ],
-      "links": [
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/2-2-milyar-tl-lik-vurguna-19-gun-gazetecilige-aylarca-hapis-fatma-betul-sayan-kaya-tahliye-edildi-gazeteciler-hala-silivri-de-2559339",
-          "title": "2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de",
-          "summary": "AKP’li eski Bakan Fatma Betül Sayan Kaya, fon soruşturması kapsamında 19 gün tutuklu kaldıktan sonra ev hapsiyle tahliye edilirken çok sayıda gazeteci haftalardır cezaevinde. Avukat Elif Ergin, “Tutuklama tedbiri gazeteciler açısından istisnai olmaktan çıkıp peşinen cezalandırma aracına dönüştü” dedi."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330",
-          "title": "Fatma Betül Sayan Kaya'nın cezaevinde ağladığı iddia edilmişti: Avukat Hatipoğlu, şahit olduğu anları anlattı",
-          "summary": "Avukat Afşin Hatipoğlu, fon vurgunu soruşturması kapsamında 18 gün tutuklu kalan Fatma Betül Sayan Kaya'nın cezaevindeki günlerine ilişkin iddialarda bulundu. Hatipoğlu, Kaya'nın diğer tutuklulardan farklı muamele gördüğünün yanı sıra gazeteci Nagehan Alçı'nın iddialarına karşı çıkarak, \"Gayet sohbetli, nezaketli, zevkli, sefalıydı. Oradaki, cezaevi ortamında nasıl olunacaksa o şekilde gördüm\" dedi."
-        }
-      ],
-      "reasons": [
-        "suç:+5",
-        "para:+9",
-        "güç:+1",
-        "rakam:+1"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-25T15:29:00+03:00"
     },
     {
       "score": 18,
@@ -296,11 +383,12 @@
       "newest": "2026-11-25T12:24:59+00:00"
     },
     {
-      "score": 15,
+      "score": 18,
       "title": "Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi",
       "sources": [
         "BirGün",
-        "Hürriyet"
+        "Hürriyet",
+        "Sabah"
       ],
       "links": [
         {
@@ -308,6 +396,12 @@
           "url": "https://www.birgun.net/haber/kepez-belediyesi-ne-operasyon-eski-belediye-baskani-dahil-24-kisi-adliyeye-sevk-edildi-748462",
           "title": "Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi",
           "summary": "Kepez Belediyesi'ne yönelik yürütülen soruşturma kapsamında düzenlenen operasyonda gözaltına alınan, aralarında eski belediye başkanı E.Ö'nün de bulunduğu 24 kişi adliyeye sevk edildi."
+        },
+        {
+          "source": "Sabah",
+          "url": "https://www.sabah.com.tr/gundem/2026/11/25/kepez-belediyesine-yonelsik-rusvet-operasyonunda-yeni-gelisme-24-supheli-adliyeye-sevk-edildi",
+          "title": "Kepez Belediyesi'ne yönelşik rüşvet operasyonunda yeni gelişme: 24 şüpheli adliyeye sevk edildi",
+          "summary": ""
         },
         {
           "source": "Hürriyet",
@@ -326,98 +420,25 @@
       "newest": "2026-11-25T14:54:13+00:00"
     },
     {
-      "score": 14,
-      "title": "Meghan Markle'ın babası Thomas Markle'a ağır suçlama: 40 yıl hapis cezasıyla karşı karşıya",
+      "score": 17,
+      "title": "İstanbul'da Daltonlar operasyonu: Alman kanalı ZDF'nin belgeselinde yer alan 9 kişi gözaltında",
       "sources": [
-        "BirGün",
-        "Cumhuriyet",
-        "Habertürk"
+        "Euronews TR"
       ],
       "links": [
         {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/magazin/meghan-markle-in-babasi-thomas-markle-a-agir-suclama-40-yil-hapis-cezasiyla-karsi-karsiya-2559396",
-          "title": "Meghan Markle'ın babası Thomas Markle'a ağır suçlama: 40 yıl hapis cezasıyla karşı karşıya",
-          "summary": "Sussex Düşesi Meghan Markle'ın 82 yaşındaki babası Thomas Markle hakkında, çocuklara yönelik cinsel istismar materyali bulundurduğu iddiasıyla iki ayrı suçlamayı içeren iddianame hazırlandı. Psikiyatrik değerlendirme sonucunda yargılanmasına engel bir durum bulunmadığı belirtilen Markle, suçlu bulunması halinde 40 yıla kadar hapis cezası alabilecek."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/meghan-markle-in-babasina-cocuk-istismari-materyali-suclamasi-40-yila-kadar-hapisle-karsi-karsiya-748342",
-          "title": "Meghan Markle'ın babasına çocuk istismarı materyali suçlaması: 40 yıla kadar hapisle karşı karşıya",
-          "summary": "Sussex Düşesi Meghan Markle'ın babası Thomas Markle hakkında, çocukların cinsel istismarını içeren materyalleri bulundurduğu suçlamasıyla ABD'de iki ayrı suçtan iddianame hazırlandı. Tutuklu bulunan 82 yaşındaki Markle'ın suçlu bulunması halinde 40 yıla kadar hapis cezası alabileceği belirtilirken Markle'ın suçlamaları reddettiği bildirildi."
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/magazin/meghan-markle-in-babasi-40-yil-hapis-cezasiyla-karsi-karsiya-3929999",
-          "title": "40 yıl hapis cezasıyla karşı karşıya",
-          "summary": ""
+          "source": "Euronews TR",
+          "url": "https://tr.euronews.com/2026/11/25/istanbulda-daltonlar-operasyonu-alman-kanali-zdfnin-belgeselinde-yer-alan-9-kisi-gozaltind",
+          "title": "İstanbul'da Daltonlar operasyonu: Alman kanalı ZDF'nin belgeselinde yer alan 9 kişi gözaltında",
+          "summary": "Almanya merkezli kamu yayıncısı ZDF, geçtiğimiz günlerde İstanbul'daki Daltonlar çetesini konu alan \"Sınır Tanımayan Cinayet\" başlıklı üç bölümlük bir belgesel yayınlamıştı. Belgeselde çete üyeleri ve örgütün faaliyetleri ele alınmıştı."
         }
       ],
       "reasons": [
-        "suç:+5",
-        "rakam:+1"
+        "suç:+15"
       ],
       "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T17:34:00+03:00"
-    },
-    {
-      "score": 14,
-      "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
-      "sources": [
-        "BirGün",
-        "CNN Türk",
-        "Cumhuriyet",
-        "Habertürk",
-        "Hürriyet",
-        "NTV",
-        "TRT Haber"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-1752573",
-          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
-          "summary": "Hakimler ve Savcılar Kurulunun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi. HSK Birinci Dairesinin adli ve idari yargıya ilişkin mazeret kararnamesi HSK'nin internet sitesinde ilan edildi. Buna göre, adli yargıda 915, idari yargıda 42 olmak üzere toplam 957 hakim ve savcı yeni görevlere atandı. Kararnameyle, Manisa Cumhuriyet Başsavcısı Kurtca Eker İzmir Cumhuriyet Başsavcılığına, İzmir Cumhuriyet Başsavcısı Ali Yeldan Ankara Bölge Adliye Mahkemesi Cu"
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/957-hakim-ve-savcinin-gorev-yeri-degisti-43391122",
-          "title": "957 hakim ve savcının görev yeri değişti",
-          "summary": ""
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/hsk-nin-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-2559422",
-          "title": "HSK'nin kararnamesiyle 957 hakim ve savcının görev yeri değişti",
-          "summary": "Hakimler ve Savcılar Kurulu'nun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi. İşte ayrıntılar..."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/hsk-nin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-748471",
-          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
-          "summary": "Hakimler ve Savcılar Kurulunun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi."
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/957-hakim-ve-savcinin-gorev-yeri-degisti-964465.html",
-          "title": "957 hakim ve savcının görev yeri değişti",
-          "summary": "Hakimler ve Savcılar Kurulunun HSK, mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi."
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-3498203",
-          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
-          "summary": "Hakimler ve Savcılar Kurulunun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi."
-        }
-      ],
-      "reasons": [
-        "güç:+2",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T19:59:35+00:00"
+      "single_source": true,
+      "newest": "2026-11-25T12:50:13+01:00"
     }
   ]
 }
