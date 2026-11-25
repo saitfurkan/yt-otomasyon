@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 18:24 UTC",
+  "generated": "2026-11-25 18:35 UTC",
   "errors": [
     "AA: Remote end closed connection without response",
     "T24: syntax error: line 1, column 0"
@@ -201,44 +201,6 @@
       "sensitive": false,
       "single_source": false,
       "newest": "2026-11-25T20:58:00+03:00"
-    },
-    {
-      "score": 24,
-      "title": "2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de",
-      "sources": [
-        "BirGün",
-        "Cumhuriyet",
-        "DW Türkçe"
-      ],
-      "links": [
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/2-2-milyar-tl-lik-vurguna-19-gun-gazetecilige-aylarca-hapis-fatma-betul-sayan-kaya-tahliye-edildi-gazeteciler-hala-silivri-de-2559339",
-          "title": "2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de",
-          "summary": "AKP’li eski Bakan Fatma Betül Sayan Kaya, fon soruşturması kapsamında 19 gün tutuklu kaldıktan sonra ev hapsiyle tahliye edilirken çok sayıda gazeteci haftalardır cezaevinde. Avukat Elif Ergin, “Tutuklama tedbiri gazeteciler açısından istisnai olmaktan çıkıp peşinen cezalandırma aracına dönüştü” dedi."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330",
-          "title": "Fatma Betül Sayan Kaya'nın cezaevinde ağladığı iddia edilmişti: Avukat Hatipoğlu, şahit olduğu anları anlattı",
-          "summary": "Avukat Afşin Hatipoğlu, fon vurgunu soruşturması kapsamında 18 gün tutuklu kalan Fatma Betül Sayan Kaya'nın cezaevindeki günlerine ilişkin iddialarda bulundu. Hatipoğlu, Kaya'nın diğer tutuklulardan farklı muamele gördüğünün yanı sıra gazeteci Nagehan Alçı'nın iddialarına karşı çıkarak, \"Gayet sohbetli, nezaketli, zevkli, sefalıydı. Oradaki, cezaevi ortamında nasıl olunacaksa o şekilde gördüm\" dedi."
-        },
-        {
-          "source": "DW Türkçe",
-          "url": "https://www.dw.com/tr/sayan-kaya-tahliye-edildi-yüzlerce-ağır-hasta-mahpus-hâlâ-cezaevinde/a-80043500?maca=tur-rss-tur-all-1495-rdf",
-          "title": "Sayan Kaya tahliye edildi, yüzlerce ağır hasta mahpus hâlâ cezaevinde",
-          "summary": "Fatma Betül Sayan Kaya sağlık gerekçesiyle tahliye edildi. Ancak cezaevlerinde en az 235 ağır hasta tutuklu ve hükümlü tahliye edilmeyi bekliyor. İHD, bu durumu \"eşitlik ilkesine\" aykırı görüyor."
-        }
-      ],
-      "reasons": [
-        "suç:+5",
-        "para:+9",
-        "güç:+1",
-        "rakam:+1"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-25T15:29:00+03:00"
     },
     {
       "score": 24,
@@ -452,6 +414,68 @@
       "sensitive": false,
       "single_source": false,
       "newest": "2026-11-25T19:59:42+00:00"
+    },
+    {
+      "score": 17,
+      "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+      "sources": [
+        "BirGün",
+        "CNN Türk",
+        "Cumhuriyet",
+        "Habertürk",
+        "Hürriyet",
+        "Milliyet",
+        "NTV",
+        "Sabah",
+        "Sözcü",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "Milliyet",
+          "url": "https://www.milliyet.com.tr/gundem/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-7707950",
+          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+          "summary": "HSK Birinci Dairesinin adli ve idari yargıya ilişkin mazeret kararnamesi HSK'nin internet sitesinde ilan edildi. Buna göre, adli yargıda 915, idari yargıda 42 olmak üzere toplam 957 hakim ve savcı yeni görevlere atandı. Kararnameyle, Manisa Cumhuriyet Başsavcısı Kurtca Eker İzmir Cumhuriyet Başsavcılığına, İzmir Cumhuriyet Başsavcısı Ali Yeldan Ankara Bölge Adliye Mahkemesi Cumhuriyet Başsavcılığına, Kırklareli Cumhuriyet Başsavcısı Özkan Levent Taşkoparan Çorum Cumhuriyet Başsavcılığına, Çanakk"
+        },
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-1752573",
+          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+          "summary": "Hakimler ve Savcılar Kurulunun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi. HSK Birinci Dairesinin adli ve idari yargıya ilişkin mazeret kararnamesi HSK'nin internet sitesinde ilan edildi. Buna göre, adli yargıda 915, idari yargıda 42 olmak üzere toplam 957 hakim ve savcı yeni görevlere atandı. Kararnameyle, Manisa Cumhuriyet Başsavcısı Kurtca Eker İzmir Cumhuriyet Başsavcılığına, İzmir Cumhuriyet Başsavcısı Ali Yeldan Ankara Bölge Adliye Mahkemesi Cu"
+        },
+        {
+          "source": "Sabah",
+          "url": "https://www.sabah.com.tr/gundem/2026/11/25/hsk-kararnamesi-yayimlandi-957-hakim-ve-savcinin-gorev-yeri-degisti",
+          "title": "HSK mazeret kararnamesi yayımlandı: 957 hakim ve savcının görev yeri değişti! 9 ilin başsavcılığında değişiklik",
+          "summary": ""
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/957-hakim-ve-savcinin-gorev-yeri-degisti-43391122",
+          "title": "957 hakim ve savcının görev yeri değişti",
+          "summary": ""
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/hsk-nin-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-2559422",
+          "title": "HSK'nin kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+          "summary": "Hakimler ve Savcılar Kurulu'nun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi. İşte ayrıntılar..."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/hsk-nin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-748471",
+          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+          "summary": "Hakimler ve Savcılar Kurulunun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi."
+        }
+      ],
+      "reasons": [
+        "para:+2",
+        "güç:+3",
+        "rakam:+1"
+      ],
+      "sensitive": true,
+      "single_source": false,
+      "newest": "2026-11-25T19:59:35+00:00"
     }
   ]
 }

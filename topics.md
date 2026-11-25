@@ -1,4 +1,4 @@
-# Konu adayları (2026-11-25 18:24 UTC)
+# Konu adayları (2026-11-25 18:35 UTC)
 
 **SİSTEMİN SEÇTİĞİ KONU:** Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
 
@@ -27,14 +27,7 @@
 - Habertürk: https://www.haberturk.com/gundem/son-dakika-unlulere-uyusturucu-operasyonunda-1-tutuklama-talebi-3930112
 - Sözcü: https://www.sozcu.com.tr/gozaltina-alinan-unluler-saglik-kontrolunde-boyle-gorduruldu-p384307
 
-## 4. 2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de  (puan: 24)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
-- Kaynaklar: BirGün, Cumhuriyet, DW Türkçe
-- Puan nedenleri: suç:+5, para:+9, güç:+1, rakam:+1
-- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/2-2-milyar-tl-lik-vurguna-19-gun-gazetecilige-aylarca-hapis-fatma-betul-sayan-kaya-tahliye-edildi-gazeteciler-hala-silivri-de-2559339
-- BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330
-- DW Türkçe: https://www.dw.com/tr/sayan-kaya-tahliye-edildi-yüzlerce-ağır-hasta-mahpus-hâlâ-cezaevinde/a-80043500?maca=tur-rss-tur-all-1495-rdf
-
-## 5. SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı  (puan: 24)
+## 4. SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı  (puan: 24)
 - Kaynaklar: CNN Türk, Habertürk, Hürriyet, Milliyet, Sözcü
 - Puan nedenleri: suç:+8, para:+2, güç:+3
 - Milliyet: https://www.milliyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-7707969
@@ -43,30 +36,30 @@
 - Sözcü: https://www.sozcu.com.tr/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-p384406
 - Habertürk: https://www.haberturk.com/ekonomi/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-3930123
 
-## 6. 15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: "Korkudan şehir değiştirdim"  (puan: 21)  ⚠️ tek kaynak: başka kaynaktan doğrulanmadan video yapılmaz
+## 5. 15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: "Korkudan şehir değiştirdim"  (puan: 21)  ⚠️ tek kaynak: başka kaynaktan doğrulanmadan video yapılmaz
 - Kaynaklar: NTV
 - Puan nedenleri: suç:+13, güç:+2, merak:+3, rakam:+1
 - NTV: https://www.ntv.com.tr/turkiye/galeri-15-yasindaki-iki-cocuk-oldurdu-azmettiriciler-peslerini-birakmadi-korkudan-sehir-degistirdim-1752521
 
-## 7. İsa Aras Mersinli için yeniden otopsi istendi. "Mekanik bir robot gibiydi"  (puan: 18)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
+## 6. İsa Aras Mersinli için yeniden otopsi istendi. "Mekanik bir robot gibiydi"  (puan: 18)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
 - Kaynaklar: Habertürk, NTV
 - Puan nedenleri: suç:+9, güç:+3, merak:+1
 - NTV: https://www.ntv.com.tr/turkiye/isa-aras-mersinli-icin-yeniden-otopsi-istendi-mekanik-bir-robot-gibiydi-1752553
 - Habertürk: https://www.haberturk.com/gundem/son-dakika-haber-mekanik-bir-robot-gibiydi-isa-aras-mersinli-ye-bir-daha-otopsi-yapilacak-3930017
 
-## 8. Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi  (puan: 18)
+## 7. Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi  (puan: 18)
 - Kaynaklar: BirGün, Hürriyet, Sabah
 - Puan nedenleri: suç:+8, güç:+1, rakam:+1
 - BirGün: https://www.birgun.net/haber/kepez-belediyesi-ne-operasyon-eski-belediye-baskani-dahil-24-kisi-adliyeye-sevk-edildi-748462
 - Sabah: https://www.sabah.com.tr/gundem/2026/11/25/kepez-belediyesine-yonelsik-rusvet-operasyonunda-yeni-gelisme-24-supheli-adliyeye-sevk-edildi
 - Hürriyet: https://www.hurriyet.com.tr/gundem/kepez-belediyesi-operasyonunda-24-supheli-adliyede-eski-baskan-ve-mudurler-de-listede-43391042
 
-## 9. İstanbul'da Daltonlar operasyonu: Alman kanalı ZDF'nin belgeselinde yer alan 9 kişi gözaltında  (puan: 17)  ⚠️ tek kaynak: başka kaynaktan doğrulanmadan video yapılmaz
+## 8. İstanbul'da Daltonlar operasyonu: Alman kanalı ZDF'nin belgeselinde yer alan 9 kişi gözaltında  (puan: 17)  ⚠️ tek kaynak: başka kaynaktan doğrulanmadan video yapılmaz
 - Kaynaklar: Euronews TR
 - Puan nedenleri: suç:+15
 - Euronews TR: https://tr.euronews.com/2026/11/25/istanbulda-daltonlar-operasyonu-alman-kanali-zdfnin-belgeselinde-yer-alan-9-kisi-gozaltind
 
-## 10. Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz  (puan: 17)
+## 9. Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz  (puan: 17)
 - Kaynaklar: CNN Türk, Hürriyet, Milliyet, NTV, Sabah
 - Puan nedenleri: suç:+5, güç:+1
 - Milliyet: https://www.milliyet.com.tr/dunya/disislerinden-riyaddaki-saldiriya-tepki-en-guclu-sekilde-kiniyoruz-7707943
@@ -74,6 +67,16 @@
 - Hürriyet: https://www.hurriyet.com.tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi-43391119
 - CNN Türk: https://www.cnnturk.com/turkiye/disislerinden-riyaddaki-finans-merkezine-gerceklestirilen-saldiriai-kinama-3498200
 - Sabah: https://www.sabah.com.tr/gundem/2026/11/25/disisleri-bakanligindan-riyaddaki-saldiriya-kinama
+
+## 10. HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti  (puan: 17)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
+- Kaynaklar: BirGün, CNN Türk, Cumhuriyet, Habertürk, Hürriyet, Milliyet, NTV, Sabah, Sözcü, TRT Haber
+- Puan nedenleri: para:+2, güç:+3, rakam:+1
+- Milliyet: https://www.milliyet.com.tr/gundem/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-7707950
+- NTV: https://www.ntv.com.tr/turkiye/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-1752573
+- Sabah: https://www.sabah.com.tr/gundem/2026/11/25/hsk-kararnamesi-yayimlandi-957-hakim-ve-savcinin-gorev-yeri-degisti
+- Hürriyet: https://www.hurriyet.com.tr/gundem/957-hakim-ve-savcinin-gorev-yeri-degisti-43391122
+- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/hsk-nin-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-2559422
+- BirGün: https://www.birgun.net/haber/hsk-nin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-748471
 
 ## Çalışmayan kaynaklar
 - AA: Remote end closed connection without response
