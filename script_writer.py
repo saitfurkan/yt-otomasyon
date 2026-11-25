@@ -48,7 +48,7 @@ BANNED = [
     "ikincisi", "üçüncüsü", "unutulmamalıdır", "bu bağlamda", "söz konusu",
     "sonuç itibarıyla", "dikkat çekici bir şekilde", "derler", "çorap söküğü",
     "son perde", "faturayı kesti", "terazisi başka", "ben furkan",
-    "kirli ilişki", "karanlığ", "pırıltılı", "taşları yerinden", "koridor",
+    "kirli ilişki", "karanlığ", "pırıltılı", "taşları yerinden", "koridor", "ışığı sönünce", "parmaklıklar ardındaki", "hücrelerinde izl", "ekranın ışığ",
     "aynı hizada", "ışıkların",
 ]
 
@@ -69,6 +69,7 @@ FURKAN'IN ANLATIM TARZI
 - Kısa, doğrudan cümleler. Konuşma dili. Haber spikeri gibi değil, olayı bilen ve içi yanan mahalle abisi gibi. "Bak", "düşünsene", "inanması zor ama", "yani" gibi sözleri tüm metinde en fazla 2-3 kez kullan, yoksa yapay durur.
 - KENDİ YORUMUN: Metin sadece olay anlatısı olmasın; Furkan'ın sert, kısa yorumları olsun (tüm metinde 5-7 kez, her biri 1-2 cümle, "bence" ya da doğrudan hüküm tonuyla). Yorum olgudan hemen sonra gelir ve işleyişe, tutarsızlığa, adalet duygusuna yönelir: "Bu rakam küçük değil.", "Aynı ülkede iki ayrı uygulama, işte mesele bu." Yorum bir kişinin suçlu olduğunu söylemez, hakaret içermez, olgu gibi sunulmaz. Cart curt, net ve cesur ol; ama olguyu aşma.
 - KİŞİ DETAYLARI VE KARŞILAŞTIRMA: Haberde adı geçen tanınmış kişiler için olgulardaki önemli ayrıntıları ver (görevi, önceki davaları, şu anki durumu: tutuklu mu, ev hapsi mi, tahliye mi, sağlık durumu). Olgularda benzer bir başka dosya ya da farklı uygulama varsa (örneğin birine sağlık gerekçesiyle ev hapsi verilmesi, ağır hasta başka birine verilmemesi) iki olguyu yan yana koy ve farkı yorumla. Karşılaştırma sadece olgularda yazan bilgilerle yapılır; olgularda yoksa uydurma.
+- KONU SADAKATİ: Olgular arasında ana konuyla bağı olmayan bağımsız olayları (başka şehirde başka bir operasyon, başka örgüt, genel istatistik) metne katma. Yalnızca ana konunun kişileriyle doğrudan bağlantılıysa ya da net bir karşılaştırma kuruyorsa kullan. Aynı olguda gerçek kişi adı ve rakam yoksa kullanma.
 - Güçlü bir adalet duygusu: kim, kime, ne yaptı, hesap verecek mi? Ama bunu ima ile değil, olgularla kur. "Acaba terazi mi şaştı?" gibi örtülü suçlamalar yasak.
 - Uzun bir cümleden sonra kısa bir cümle. Ara sıra tek kelimelik cümle.
 - Nefes ve vurgu yerlerine [duraklama] yaz (tüm metinde 8-12 kez).
@@ -599,6 +600,20 @@ def bing_news_links(topic, known_urls, query=None):
     return out[:MAX_EXTRA + 4]
 
 
+def relevant(topic, text, need=2):
+    """Arka plan sayfası konuyla gerçekten ilgili mi: başlıktaki ayırt edici kelimelerden
+    (ilk 5 harf eşleşmesiyle) en az 'need' tanesi metinde geçmeli."""
+    terms = []
+    for w in re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşüâîû0-9']+", topic["title"]):
+        w = tr_lower(w)
+        if len(w) >= 5 and w not in STOP and w[:5] not in terms:
+            terms.append(w[:5])
+    if len(terms) < need:
+        need = max(1, len(terms))
+    low = tr_lower(text)
+    return sum(1 for t in terms if t in low) >= need
+
+
 def detail_queries(key, models, topic, arts):
     """Detay avcısı: haberdeki kişilerin son durumunu, önceki davalarını ve benzer/zıt
     örnekleri bulacak kısa arama cümleleri üretir (ör. biri sağlık gerekçesiyle ev hapsine
@@ -608,7 +623,7 @@ def detail_queries(key, models, topic, arts):
     head = "\n".join(f"- {a['source']}: {a['text'][:500]}" for a in arts[:3])
     prompt = (
         f"Haber: {topic['title']}\n{head}\n\n"
-        "Bu haberi derinleştirmek için Türkçe haber aramasında kullanılacak 5 kısa arama cümlesi yaz "
+        "Bu haberi derinleştirmek için Türkçe haber aramasında kullanılacak 5 kısa arama cümlesi yaz, SIRAYLA. 2. cümle hariç hepsinde haberdeki ana kişi/örgüt/kurum adı aynen geçsin "
         "(3-7 kelime, tarafsız dil, suçlayıcı kelime yok):\n"
         "1) Haberdeki en tanınmış kişinin şu anki durumu ve önceki davaları\n"
         "2) Aynı dosyada ya da benzer davalarda FARKLI uygulama görmüş kişiler (örneğin biri sağlık "
@@ -642,10 +657,12 @@ def add_background(key, models, topic, arts):
             links += more[:4]
     except Exception as e:
         log(f"   [Bing Haber hata] {str(e)[:120]}")
-    for q in detail_queries(key, models, topic, arts):
+    for qi, q in enumerate(detail_queries(key, models, topic, arts)):
         try:
             more = bing_news_links(topic, known + [l["url"] for l in links], query=q)
             log(f"   Detay araması '{q}': {len(more)} aday")
+            for m in more[:3]:
+                m["contrast"] = (qi == 1)   # 2. sorgu: farklı uygulama / karşılaştırma örnekleri
             links += more[:3]
         except Exception as e:
             log(f"   [detay araması hata] {str(e)[:100]}")
@@ -666,6 +683,9 @@ def add_background(key, models, topic, arts):
             log(f"   [arka plan okunamadı] {l['title'] or l['url'][:50]}: {str(e)[:80]}")
             continue
         if count_words(text) < 150:
+            continue
+        if not l.get("contrast") and not relevant(topic, text):
+            log(f"   [arka plan alakasız, atlandı] {l['title'] or l['url'][:50]}")
             continue
         name = (l["title"] or "arka plan").strip()
         text = text[:min(PER_ARTICLE_CHARS, TOTAL_CHARS - total)]
