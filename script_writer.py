@@ -1,0 +1,670 @@
+#!/usr/bin/env python3
+"""Adım 2 - Senaryo yazıcı (Son Tanık).
+
+Akış:
+  1) topics.json içindeki "sistemin seçtiği konu"nun haber metinlerini indirir.
+  2) Metinlerden SADECE yazılı olguları çıkarır (uydurmayı engeller).
+  3) Senaryoyu bölüm bölüm, yalnızca bu olgulardan, Furkan'ın tarzında yazar.
+  4) Çok kısaysa uzatır, yapay zekâ kalıplarını temizler.
+  5) 3 Shorts parçası, başlık, açıklama, etiket üretir.
+  6) Sayı ve özel isimleri kaynaklarla otomatik karşılaştırır.
+Sonuç: script_latest.md (okunacak metin), script_latest.json, scripts/TARİH.md
+
+Sadece Python standart kütüphanesi. Gizli anahtar: GEMINI_API_KEY.
+Kullanım:
+    python script_writer.py
+    python script_writer.py --sources-only   # sadece haber metni okuma testi
+"""
+import json
+import os
+import re
+import sys
+import time
+import urllib.error
+import urllib.request
+from datetime import datetime, timezone
+from html.parser import HTMLParser
+
+API = "https://generativelanguage.googleapis.com/v1beta"
+UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
+      "Chrome/124.0 Safari/537.36")
+
+MIN_WORDS = 1300          # bunun altı "çok kısa" sayılır ve uzatılır
+MIN_SOURCE_WORDS = 600    # kaynak malzeme bunun altındaysa konu atlanır
+MIN_FACTS = 8
+MAX_ARTICLES = 6
+PER_ARTICLE_CHARS = 7000
+TOTAL_CHARS = 26000
+MAX_TOPICS_TRIED = 3
+PAUSE = 5                 # çağrılar arası bekleme (saniye), ücretsiz limit için
+
+BANNED = [
+    "bu videoda", "sonuç olarak", "önemle belirtmek", "özetle", "kısacası",
+    "günümüzde", "çok yönlü", "derinlemesine", "gelin bakalım", "birincisi",
+    "ikincisi", "üçüncüsü", "unutulmamalıdır", "bu bağlamda", "söz konusu",
+    "sonuç itibarıyla", "dikkat çekici bir şekilde",
+]
+
+SYSTEM = """Sen "Son Tanık" adlı Türkçe YouTube suç ve ceza kanalının yazarısın. Metni kanalın sahibi Furkan kendi sesiyle okuyacak. Metin Furkan'ın ağzından, birinci tekil kişiyle ("ben") çıkmış gibi yazılır.
+
+FURKAN'IN ANLATIM TARZI
+- Konuya uygun, sert ve akılda kalan bir söz ya da deyimle açılır (atasözü tadında). Her videoda yeni bir açılış sözü kur.
+- Kısa, doğrudan cümleler. Konuşma dili: "yani", "bak", "düşünsene", "peki ne oldu?", "inanması zor ama". Haber spikeri gibi değil, olayı bilen ve içi yanan mahalle abisi gibi.
+- Güçlü bir adalet duygusu: kim, kime, ne yaptı, hesap verecek mi?
+- Uzun bir cümleden sonra kısa bir cümle. Ara sıra tek kelimelik cümle.
+- Nefes ve vurgu yerlerine [duraklama] yaz (tüm metinde 8-12 kez).
+- Rakamları rakamla yaz (130, 245 gibi), okurken kolay olsun.
+
+YAPAY ZEKÂ KOKUSU YASAK
+Şunları ASLA kullanma: "Bu videoda", "sonuç olarak", "özetle", "kısacası", "önemle belirtmek gerekir", "günümüzde", "çok yönlü", "derinlemesine", "gelin bakalım", "birincisi/ikincisi/üçüncüsü" sıralamaları, "söz konusu", "bu bağlamda". Emoji, madde işareti, markdown başlığı, uzun tire (—) yok. Her paragrafı aynı kalıpla bitirme. Metni özetleyen kapanış paragrafı yazma. "Peki ama..." kalıbını her bölümde kullanma.
+
+KESİN HUKUKİ VE ETİK KURALLAR
+- Sadece sana verilen OLGULAR listesindeki bilgileri kullan. Listede olmayan isim, rakam, tarih, sözcük, diyalog, iç düşünce UYDURMA. Emin değilsen yazma.
+- Haber metinlerini kopyalama, olguları kendi cümlelerinle anlat.
+- Soruşturma ve dava aşamasındaki kişiler için hüküm verme. "İddia ediliyor", "savcılığa göre", "soruşturma kapsamında", "gözaltına alındı", "tutuklandı" gibi olgusal dil kullan. Mahkûmiyet kesinleşmedikçe "suçlu" deme. Olgularda varsa ilgililerin açıklamasını ve savunmasını da aktar.
+- Kaynaklar farklı anlatıyorsa ikisini de ver.
+- Çocukların ve mağdurların kimliğini, ayrıntılı şiddet tasvirini verme. Çocuk şüpheli ya da mağdur varsa isim yok. Kamu görevlisi ya da tanınmış kişi olmayan özel kişilerde isim yerine tanım kullan ("bir iş insanı").
+- Kişilere hakaret, aşağılama, kanıtsız suçlama yok. Öfke olguya ve işleyişe yönelir. Furkan'ın yorumu "bence" diye açıkça ayrılır, kısa tutulur, olgu gibi sunulmaz.
+- Siyasi taraf tutma yok: iktidar da muhalefet de aynı dille anlatılır.
+- "Her yerde örgüt var", "hepsi aynı çete" gibi genellemeleri olgu gibi söyleme."""
+
+FACT_SYSTEM = ("Sen titiz bir haber editörüsün. Görevin yalnızca kaynak metinlerde "
+               "açıkça yazan olguları çıkarmak. Yorum, tahmin, çıkarım, uydurma yok.")
+
+SECTIONS = [
+    ("KANCA", "İlk 15 saniye. Konuya uygun yeni bir açılış sözüyle ya da şaşırtıcı bir rakam/soruyla aç. Merak uyandır, haberin özetini verme.", 150),
+    ("OLAY", "Ne oldu? Kronolojik, sahneyi kur. Kim, ne zaman, nerede. Bir kırılma noktası olsun.", 450),
+    ("PARA VE İLİŞKİLER", "Rakamlar, kurumlar, kim kiminle bağlantılı (sadece olgulardaki kadar). Her iddiayı 'savcılığa göre' gibi kaynağa bağla.", 450),
+    ("SORUŞTURMA VE SÜREÇ", "Savcılık ne yapmış, hangi adımlar atılmış, ne bekleniyor. Dedektif gibi adım adım anlat.", 450),
+    ("TARAFLAR VE NEDEN ÖNEMLİ", "Taraflar ne diyor (resmi açıklama, savunma, karşı görüş, haberler arası farklar). Sonra sıradan insana etkisi.", 300),
+    ("KAPANIŞ", "Düşündüren tek bir son vuruş, sırada ne olabileceği. Tek cümlelik doğal bir 'kanala abone ol' daveti. Özet yapma.", 120),
+]
+
+META_SCHEMA = """Sadece şu JSON nesnesini döndür:
+{
+  "title_options": ["3 başlık, her biri en fazla 65 karakter, merak uyandırır ama yalan vaat etmez"],
+  "shorts": [
+    {"hook": "ilk cümle, izleyiciyi tutan kanca", "text": "30-45 saniyelik dikey video metni, 80-110 kelime, ilk cümlesi hook ile aynı, tek başına anlaşılır, SENARYODAKİ olgulara dayalı", "bolum": "senaryonun hangi bölümünden"}
+  ],
+  "description": "YouTube açıklaması: 3-4 cümle özet + 'Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.' notu",
+  "tags": ["10-15 etiket"],
+  "thumbnail_text": "küçük resim için 2-4 kelimelik vurucu yazı",
+  "risk_notes": ["Furkan'ın okurken dikkat etmesi gereken hukuken hassas cümleler, kısa kısa"]
+}
+"shorts" tam 3 öğe içersin."""
+
+
+# ---------------------------------------------------------------- yardımcılar
+def log(*a):
+    print(*a, flush=True)
+
+
+def tr_lower(s):
+    return s.replace("İ", "i").replace("I", "ı").lower()
+
+
+def count_words(text):
+    text = re.sub(r"\[duraklama\]", " ", text, flags=re.I)
+    return len(re.findall(r"[\wçğıöşüÇĞİÖŞÜ]+", text))
+
+
+STOP = set("için ile ama fakat çok daha gibi olan oldu olarak sonra önce bir bu şu "
+           "ve ya de da ki mi mı mu mü ne nasıl neden kadar göre hakkında üzerine".split())
+MONTHS = set("ocak şubat mart nisan mayıs haziran temmuz ağustos eylül ekim kasım aralık".split())
+
+
+def story_tokens(title):
+    ws = re.findall(r"[a-zçğıöşü0-9]+", tr_lower(title))
+    return {w[:6] for w in ws
+            if (len(w) >= 4 or (w.isdigit() and len(w) >= 3))
+            and w not in STOP and w not in MONTHS and not re.fullmatch(r"20\d\d", w)}
+
+
+def same_story(a, b):
+    shared = a & b
+    if len(shared) < 2:
+        return False
+    jac = len(shared) / len(a | b)
+    big = any(t.isdigit() for t in shared)
+    return (jac >= 0.4 or len(shared) >= 4
+            or (len(shared) >= 3 and jac >= 0.3) or (big and jac >= 0.1))
+
+
+# ---------------------------------------------------------- haber metni okuma
+class ArticleParser(HTMLParser):
+    SKIP = {"script", "style", "noscript", "nav", "footer", "aside", "form", "header"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.skip = 0
+        self.article = 0
+        self.in_p = False
+        self.cur = []
+        self.all_p = []
+        self.art_p = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.SKIP:
+            self.skip += 1
+        elif tag == "article":
+            self.article += 1
+        elif tag == "p" and not self.skip:
+            self.in_p, self.cur = True, []
+
+    def handle_endtag(self, tag):
+        if tag in self.SKIP:
+            self.skip = max(0, self.skip - 1)
+        elif tag == "article":
+            self.article = max(0, self.article - 1)
+        elif tag == "p" and self.in_p:
+            self.in_p = False
+            text = re.sub(r"\s+", " ", "".join(self.cur)).strip()
+            if text:
+                self.all_p.append(text)
+                if self.article:
+                    self.art_p.append(text)
+
+    def handle_data(self, data):
+        if self.in_p and not self.skip:
+            self.cur.append(data)
+
+
+BOILER = ("tüm hakları", "çerez", "©", "abone ol", "bültene", "gizlilik politikası",
+          "kvkk", "tıklayın", "whatsapp")
+
+
+def extract_article(html_text):
+    p = ArticleParser()
+    try:
+        p.feed(html_text)
+    except Exception:
+        pass
+    paras = p.art_p if sum(len(x) for x in p.art_p) > 600 else p.all_p
+    out, seen = [], set()
+    for t in paras:
+        low = t.lower()
+        if len(t) < 50 or any(b in low for b in BOILER) or t in seen:
+            continue
+        seen.add(t)
+        out.append(t)
+    return "\n\n".join(out)
+
+
+def fetch_article(url):
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA, "Accept-Language": "tr-TR,tr;q=0.9",
+        "Accept": "text/html,application/xhtml+xml"})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        raw = r.read()
+        ctype = r.headers.get_content_charset() or "utf-8"
+    head = raw[:3000].decode("ascii", "ignore")
+    m = re.search(r"charset=['\"]?([\w-]+)", head, re.I)
+    enc = (m.group(1) if m else ctype) or "utf-8"
+    try:
+        text = raw.decode(enc, "replace")
+    except LookupError:
+        text = raw.decode("utf-8", "replace")
+    return extract_article(text)
+
+
+def gather(topic):
+    arts, seen = [], set()
+    for l in topic.get("links", []):
+        url = l.get("url")
+        if not url or url in seen or len(arts) >= MAX_ARTICLES:
+            continue
+        seen.add(url)
+        text, how = "", ""
+        try:
+            text = fetch_article(url)
+            how = "tam metin"
+        except Exception as e:
+            log(f"   [okunamadı] {l.get('source')}: {e}")
+        if count_words(text) < 80:
+            # RSS özetine geri dön (kısa ama gerçek kaynak)
+            summ = (l.get("summary") or "").strip()
+            if count_words(summ) >= 15:
+                text, how = f"{l.get('title', '')}. {summ}", "yalnız özet"
+            else:
+                log(f"   [atlandı] {l.get('source')}: metin alınamadı")
+                continue
+        log(f"   [ok] {l.get('source')}: {count_words(text)} kelime ({how})")
+        arts.append({"source": l.get("source", "?"), "url": url,
+                     "text": text[:PER_ARTICLE_CHARS]})
+    out, total = [], 0
+    for a in arts:
+        room = TOTAL_CHARS - total
+        if room < 800:
+            break
+        a["text"] = a["text"][:room]
+        total += len(a["text"])
+        out.append(a)
+    return out
+
+
+# --------------------------------------------------------------------- Gemini
+class ApiError(Exception):
+    def __init__(self, code, body):
+        super().__init__(f"HTTP {code}: {body}")
+        self.code, self.body = code, body
+
+
+class Blocked(Exception):
+    pass
+
+
+class GenerationFailed(Exception):
+    pass
+
+
+def http(method, url, key, payload=None, timeout=300):
+    data = json.dumps(payload).encode("utf-8") if payload is not None else None
+    req = urllib.request.Request(url, data=data, method=method, headers={
+        "Content-Type": "application/json", "x-goog-api-key": key})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        raise ApiError(e.code, e.read().decode("utf-8", "replace")[:500])
+    except (urllib.error.URLError, TimeoutError) as e:
+        raise ApiError(0, str(e))
+
+
+def model_candidates(key):
+    forced = os.environ.get("GEMINI_MODEL", "").strip()
+    if forced:
+        return [forced]
+    try:
+        data = http("GET", f"{API}/models?pageSize=200", key, timeout=60)
+    except ApiError as e:
+        if e.code in (400, 401, 403):
+            raise GenerationFailed(
+                "API anahtarı geçersiz ya da yetkisiz görünüyor "
+                f"({e.code}). Anahtarı aistudio.google.com'dan yenileyip "
+                "GitHub Secrets'taki GEMINI_API_KEY'i güncelle.")
+        return ["gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"]
+    bad = ("image", "tts", "live", "audio", "embedding", "robotics", "computer",
+           "vision", "learnlm", "imagen", "veo", "native", "aqa")
+    names = []
+    for m in data.get("models", []):
+        if "generateContent" in m.get("supportedGenerationMethods", []):
+            n = m["name"].split("/", 1)[-1]
+            if n.startswith("gemini") and not any(b in n for b in bad):
+                names.append(n)
+
+    def ver(n):
+        m = re.match(r"gemini-(\d+(?:\.\d+)?)", n)
+        return float(m.group(1)) if m else 0.0
+
+    def desc(items):
+        return sorted(items, key=ver, reverse=True)
+
+    g0 = [n for n in names if n == "gemini-flash-latest"]
+    g1 = desc([n for n in names if re.match(r"^gemini-[\d.]+-flash(-\d+)?$", n)])
+    g2 = desc([n for n in names if "flash" in n and "lite" not in n
+               and n not in g0 and n not in g1])
+    g3 = desc([n for n in names if "flash-lite" in n])
+    g4 = desc([n for n in names if "pro" in n])
+    out = []
+    for n in g0 + g1 + g2 + g3 + g4:
+        if n not in out:
+            out.append(n)
+    return out[:6] or ["gemini-flash-latest", "gemini-2.5-flash"]
+
+
+def extract_text(resp):
+    pf = resp.get("promptFeedback", {})
+    if pf.get("blockReason"):
+        raise Blocked(f"engellendi: {pf.get('blockReason')}")
+    cands = resp.get("candidates") or []
+    if not cands:
+        raise Blocked("boş yanıt")
+    c = cands[0]
+    parts = c.get("content", {}).get("parts", [])
+    text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+    if not text.strip():
+        raise Blocked(f"metin yok (finishReason={c.get('finishReason')})")
+    return text
+
+
+def parse_json(text):
+    t = text.strip()
+    t = re.sub(r"^```(?:json)?\s*|\s*```$", "", t)
+    try:
+        return json.loads(t)
+    except ValueError:
+        a, b = t.find("{"), t.rfind("}")
+        if a >= 0 and b > a:
+            return json.loads(t[a:b + 1])
+        raise
+
+
+def generate(key, models, prompt, system=SYSTEM, json_out=False,
+             temperature=0.85, max_tokens=8192):
+    """Modelleri sırayla dener. (kullanılan_model, metin ya da sözlük) döndürür."""
+    last = "bilinmeyen hata"
+    for model in models:
+        for attempt in range(3):
+            cfg = {"temperature": temperature, "maxOutputTokens": max_tokens}
+            if json_out:
+                cfg["responseMimeType"] = "application/json"
+            payload = {"systemInstruction": {"parts": [{"text": system}]},
+                       "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                       "generationConfig": cfg}
+            try:
+                resp = http("POST", f"{API}/models/{model}:generateContent",
+                            key, payload)
+                text = extract_text(resp)
+                return model, (parse_json(text) if json_out else text.strip())
+            except Blocked as e:
+                last = f"{model}: {e}"
+                log(f"   [{model}] {e}")
+                break
+            except ValueError:
+                last = f"{model}: JSON okunamadı"
+                log(f"   [{model}] JSON okunamadı, tekrar deneniyor")
+                continue
+            except ApiError as e:
+                last = f"{model}: {e}"
+                log(f"   [{model}] {str(e)[:160]}")
+                if e.code in (0, 429, 500, 502, 503, 504) and attempt < 2:
+                    time.sleep(25 * (attempt + 1))
+                    continue
+                break
+    raise GenerationFailed(last)
+
+
+# ---------------------------------------------------------- senaryo üretimi
+def sources_block(arts):
+    return "\n\n".join(
+        f"[{i}] KAYNAK: {a['source']} | {a['url']}\n{a['text']}"
+        for i, a in enumerate(arts, 1))
+
+
+def extract_facts(key, models, topic, arts):
+    prompt = (
+        f"KONU: {topic['title']}\n\nAşağıdaki haber metinleri aynı olayı anlatıyor. "
+        "Yalnızca kaynaklarda AÇIKÇA yazan olguları çıkar: kim, ne, ne zaman, nerede, "
+        "kaç kişi, kaç lira, hangi kurum, kim ne açıkladı, kim ne dedi. Her olgu tek "
+        "cümle olsun. Kaynaklar birbirini tutmuyorsa çelişkiyi ayrı bir olgu olarak yaz. "
+        "En az 15 olgu çıkar (kaynak yeterliyse). Uydurma, yorum, tahmin ekleme.\n"
+        'Çıktı: {"facts":[{"olgu":"...","kaynaklar":["NTV","Hürriyet"]}]}\n\n'
+        + sources_block(arts))
+    model, data = generate(key, models, prompt, system=FACT_SYSTEM, json_out=True,
+                           temperature=0.1, max_tokens=12000)
+    facts = []
+    for f in data.get("facts", []):
+        if isinstance(f, str):
+            facts.append({"olgu": f, "kaynaklar": []})
+        elif isinstance(f, dict) and f.get("olgu"):
+            k = f.get("kaynaklar") or []
+            facts.append({"olgu": str(f["olgu"]),
+                          "kaynaklar": [k] if isinstance(k, str) else list(k)})
+    return model, facts
+
+
+def facts_text(facts):
+    return "\n".join(
+        f"- {f['olgu']} (kaynak: {', '.join(f['kaynaklar']) or '?'})" for f in facts)
+
+
+def write_sections(key, models, topic, facts):
+    ft = facts_text(facts)
+    parts, so_far = [], ""
+    for name, brief, words in SECTIONS:
+        prompt = (
+            f"KONU: {topic['title']}\n\nOLGULAR (sadece bunları kullan):\n{ft}\n\n"
+            "Şu ana kadar yazılan metnin son kısmı (tekrar etme, akışı sürdür):\n"
+            f"{so_far[-1200:] or '(henüz yok, ilk bölümü yazıyorsun)'}\n\n"
+            f'ŞİMDİ YAZ: "{name}" bölümü. Görev: {brief}\n'
+            f"Yaklaşık {words} kelime. Sadece okunacak metni yaz. Başlık, açıklama, "
+            "kaynak notu, bölüm adı ekleme.")
+        model, text = generate(key, models, prompt, temperature=0.9)
+        models = [model] + [m for m in models if m != model]
+        text = clean_script(text)
+        parts.append(text)
+        so_far += "\n" + text
+        log(f"   {name}: {count_words(text)} kelime")
+        time.sleep(PAUSE)
+    return models, "\n\n".join(parts)
+
+
+def clean_script(s):
+    s = s.replace("—", ", ").replace("–", ", ")
+    s = re.sub(r"[*#]+", "", s)
+    s = re.sub(r"\[\s*duraklama\s*\]", "[duraklama]", s, flags=re.I)
+    s = re.sub(r"[ \t]+", " ", s)
+    s = re.sub(r"\n{3,}", "\n\n", s)
+    return s.strip()
+
+
+def banned_found(s):
+    low = tr_lower(s)
+    return sorted({b for b in BANNED if b in low})
+
+
+def revise(key, models, script, instruction, facts):
+    prompt = (
+        f"{instruction}\n\nOLGULAR (yeni bilgi eklerken yalnızca bunları kullan):\n"
+        f"{facts_text(facts)}\n\nMEVCUT SENARYO:\n{script}\n\n"
+        'Çıktı: sadece {"script": "düzeltilmiş senaryonun tamamı"} JSON nesnesi. '
+        "Aynı üslubu, [duraklama] işaretlerini ve hukuki dil kurallarını koru.")
+    model, data = generate(key, models, prompt, json_out=True,
+                           temperature=0.7, max_tokens=20000)
+    s = data.get("script", "")
+    return s if isinstance(s, str) and count_words(s) > 200 else script
+
+
+def finalize_script(key, models, script, facts):
+    script = clean_script(script)
+    for _ in range(2):
+        n = count_words(script)
+        if n >= MIN_WORDS:
+            break
+        log(f"   senaryo {n} kelime, uzatılıyor")
+        script = clean_script(revise(
+            key, models, script,
+            f"Bu senaryo {n} kelime, çok kısa. Hedef 1500-1900 kelime. Olgular arasında "
+            "olup anlatılmamış ayrıntıları, olayın gelişimini, tarafların açıklamalarını "
+            "ve 'neden önemli' bölümünü genişleterek uzat. Yeni olgu uydurma.", facts))
+        time.sleep(PAUSE)
+    bf = banned_found(script)
+    if bf:
+        log(f"   yasak kalıplar bulundu: {bf}")
+        script = clean_script(revise(
+            key, models, script,
+            "Şu ifadeleri içeren cümleleri doğal, konuşma dilinde yeniden yaz: "
+            f"{', '.join(bf)}. Metnin geri kalanını olduğu gibi bırak.", facts))
+    return script
+
+
+def make_meta(key, models, topic, script, facts):
+    prompt = (
+        f"KONU: {topic['title']}\n\nOLGULAR:\n{facts_text(facts)}\n\n"
+        f"SENARYO:\n{script}\n\n" + META_SCHEMA)
+    model, data = generate(key, models, prompt, json_out=True,
+                           temperature=0.8, max_tokens=8000)
+    return data
+
+
+def unverified(script, arts):
+    """Senaryodaki sayı ve özel isimlerden kaynaklarda geçmeyenleri bulur."""
+    src = " ".join(a["text"] for a in arts)
+    src_nums = {re.sub(r"[.,]", "", n) for n in re.findall(r"\d[\d.,]*\d|\d", src)}
+    nums = {re.sub(r"[.,]", "", n) for n in re.findall(r"\d[\d.,]*\d|\d", script)}
+    bad_nums = sorted(n for n in nums if len(n) >= 2 and n not in src_nums)
+
+    stems = {tr_lower(w)[:5] for w in re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşüâîû]+", src)}
+    bad_names = set()
+    for m in re.finditer(r"[A-ZÇĞİÖŞÜ][a-zçğıöşüâîû]+(?:['’][a-zçğıöşü]+)?", script):
+        before = script[:m.start()].rstrip()
+        if not before or before[-1] in ".!?:\n\"“”‘’]":
+            continue
+        base = re.split(r"['’]", m.group(0))[0]
+        if len(base) >= 4 and tr_lower(base)[:5] not in stems:
+            bad_names.add(base)
+    return bad_nums, sorted(bad_names)
+
+
+# --------------------------------------------------------------- çıktı yazma
+def write_report(topic, arts, facts, meta, script, model, bad_nums, bad_names, warnings):
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    words = count_words(script)
+    minutes = round(words / 140)
+    titles = meta.get("title_options") or [topic["title"]]
+    L = [f"# Senaryo: {titles[0]}", "",
+         f"- Konu: {topic['title']}",
+         f"- Tarih: {today} | Kelime: {words} (yaklaşık {minutes} dk okuma) | Model: {model}",
+         "- Durum: **Okumadan önce aşağıdaki 'KONTROL ET' bölümüne 2 dakika ayır.**", ""]
+    if warnings:
+        L += ["## Uyarılar", *[f"- {w}" for w in warnings], ""]
+    L += ["## Başlık önerileri", *[f"{i}. {t}" for i, t in enumerate(titles, 1)], "",
+          f"Küçük resim yazısı: {meta.get('thumbnail_text', '')}", "",
+          "## OKUMA METNİ", "", script, "", "## Shorts parçaları", ""]
+    for i, s in enumerate(meta.get("shorts") or [], 1):
+        L += [f"### Short {i} ({s.get('bolum', '')})", f"Kanca: {s.get('hook', '')}", "",
+              s.get("text", ""), ""]
+    L += ["## Açıklama", "", meta.get("description", ""), "",
+          "Etiketler: " + ", ".join(meta.get("tags") or []), "",
+          "## KONTROL ET", ""]
+    for r in meta.get("risk_notes") or []:
+        L.append(f"- Hukuken hassas: {r}")
+    if bad_nums:
+        L.append("- Kaynaklarda **bulunamayan sayılar**: " + ", ".join(bad_nums))
+    if bad_names:
+        L.append("- Kaynaklarda **bulunamayan özel isimler**: " + ", ".join(bad_names))
+    if not (meta.get("risk_notes") or bad_nums or bad_names):
+        L.append("- Otomatik kontrol bir sorun bulmadı (yine de bir göz at).")
+    L += ["", "### Kullanılan olgular", facts_text(facts), "", "## Kaynaklar"]
+    for i, a in enumerate(arts, 1):
+        L.append(f"[{i}] {a['source']}: {a['url']}")
+    md = "\n".join(L) + "\n"
+
+    os.makedirs("scripts", exist_ok=True)
+    with open("script_latest.md", "w", encoding="utf-8") as f:
+        f.write(md)
+    with open(f"scripts/{today}.md", "w", encoding="utf-8") as f:
+        f.write(md)
+    out = dict(meta)
+    out.update({"script": script, "topic": topic["title"], "model": model,
+                "words": words, "minutes": minutes, "date": today,
+                "facts": facts, "unverified_numbers": bad_nums,
+                "unverified_names": bad_names,
+                "sources": [{"source": a["source"], "url": a["url"]} for a in arts]})
+    with open("script_latest.json", "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+    if os.path.exists("script_error.md"):
+        os.remove("script_error.md")
+
+
+def write_error(msg):
+    with open("script_error.md", "w", encoding="utf-8") as f:
+        f.write("# Senaryo yazılamadı\n\n" + msg + "\n")
+    log("HATA:", msg)
+
+
+def load_history():
+    try:
+        with open("history.json", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+
+def candidates(tdata, history):
+    out, seen = [], set()
+    pool = ([tdata["selected"]] if tdata.get("selected") else []) + tdata.get("topics", [])
+    used = [set(h.get("tok", [])) for h in history]
+    for t in pool:
+        if t["title"] in seen or t.get("single_source") or t.get("score", 0) <= 0:
+            continue
+        seen.add(t["title"])
+        tok = story_tokens(t["title"])
+        if any(same_story(tok, u) for u in used):
+            log(f"   [atlandı: daha önce işlendi] {t['title'][:70]}")
+            continue
+        out.append(t)
+    return out
+
+
+def main():
+    sources_only = "--sources-only" in sys.argv
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not key and not sources_only:
+        write_error("GEMINI_API_KEY bulunamadı. GitHub > Settings > Secrets and "
+                    "variables > Actions bölümünde GEMINI_API_KEY adıyla ekli olmalı.")
+        sys.exit(1)
+    try:
+        with open("topics.json", encoding="utf-8") as f:
+            tdata = json.load(f)
+    except Exception as e:
+        write_error(f"topics.json okunamadı: {e}. Önce konu taraması çalışmalı.")
+        sys.exit(1)
+
+    history = load_history()
+    cands = candidates(tdata, history)
+    if not cands:
+        write_error("Uygun konu yok (hepsi tek kaynaklı, düşük puanlı ya da daha önce işlenmiş).")
+        sys.exit(1)
+
+    try:
+        models = None if sources_only else model_candidates(key)
+    except GenerationFailed as e:
+        write_error(str(e))
+        sys.exit(1)
+    if models:
+        log("Denenecek modeller:", ", ".join(models))
+    notes = []
+    for topic in cands[:MAX_TOPICS_TRIED]:
+        log(f"\nKonu: {topic['title']}")
+        arts = gather(topic)
+        total = sum(count_words(a["text"]) for a in arts)
+        distinct = len({a["source"] for a in arts})
+        log(f"   toplam kaynak: {len(arts)} makale, {distinct} site, {total} kelime")
+        if len(arts) < 2 or distinct < 2 or total < MIN_SOURCE_WORDS:
+            notes.append(f"'{topic['title'][:60]}': yeterli kaynak metni okunamadı "
+                         f"({len(arts)} makale, {total} kelime)")
+            continue
+        if sources_only:
+            log("   kaynak okuma testi başarılı")
+            return
+        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        try:
+            model, facts = extract_facts(key, models, topic, arts)
+            models = [model] + [m for m in models if m != model]
+            log(f"   {len(facts)} olgu çıkarıldı")
+            if len(facts) < MIN_FACTS:
+                raise GenerationFailed(f"yalnızca {len(facts)} olgu çıkarılabildi")
+            time.sleep(PAUSE)
+            models, script = write_sections(key, models, topic, facts)
+            script = finalize_script(key, models, script, facts)
+            time.sleep(PAUSE)
+            meta = make_meta(key, models, topic, script, facts)
+        except GenerationFailed as e:
+            notes.append(f"'{topic['title'][:60]}': {e}")
+            if "API anahtarı" in str(e):
+                break
+            continue
+        bad_nums, bad_names = unverified(script, arts)
+        warnings = []
+        if count_words(script) < MIN_WORDS:
+            warnings.append(f"Senaryo hedeften kısa kaldı ({count_words(script)} kelime). "
+                            "Konunun malzemesi sınırlı olabilir.")
+        if topic.get("sensitive"):
+            warnings.append("Siyasi hassasiyet işaretli konu: metni özellikle dikkatle oku.")
+        if any(a for a in arts if count_words(a["text"]) < 120):
+            warnings.append("Bazı kaynaklarda yalnızca kısa özet okunabildi.")
+        write_report(topic, arts, facts, meta, script, models[0],
+                     bad_nums, bad_names, warnings)
+        history.append({"date": today, "title": topic["title"],
+                        "tok": sorted(story_tokens(topic["title"]))})
+        with open("history.json", "w", encoding="utf-8") as f:
+            json.dump(history[-60:], f, ensure_ascii=False, indent=1)
+        log(f"\nTAMAM: script_latest.md yazıldı ({count_words(script)} kelime, model {models[0]})")
+        return
+    write_error("Hiçbir konu için senaryo üretilemedi:\n\n- " + "\n- ".join(notes or ["bilinmeyen neden"]))
+    sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,138 +1,75 @@
 {
-  "generated": "2026-11-24 18:17 UTC",
+  "generated": "2026-11-25 08:34 UTC",
   "errors": [
     "AA: Remote end closed connection without response"
   ],
   "selected": {
-    "score": 56,
-    "title": "Fon soruşturması | Bulls Yatırım Yönetim Kurulu Başkanı Kemal Akkaya gözaltında",
+    "score": 30,
+    "title": "Fon soruşturmasında yeni gelişme: Bir şüpheli tutuklandı",
     "sources": [
-      "BirGün",
       "Hürriyet",
       "NTV"
     ],
     "links": [
       {
         "source": "NTV",
-        "url": "https://www.ntv.com.tr/turkiye/fon-sorusturmasi-bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-gozaltinda-1752349"
+        "url": "https://www.ntv.com.tr/turkiye/fon-sorusturmasinda-yeni-gelisme-bir-supheli-tutuklandi-1752468",
+        "title": "Fon soruşturmasında yeni gelişme: Bir şüpheli tutuklandı",
+        "summary": "Fon soruşturmasında adliyeye sevk edilen bir şüpheli daha tutuklandı. Sermaye piyasalarındaki gelişmelere ilişkin başlatılan fon soruşturması sürüyor. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada, 24 Kasım Salı günü dört şüpheli daha tutuklanmış, iki şüpheli adli kontrolle serbest bırakılmıştı . Aynı şüphelilerle birlikte gözaltına alınan bir kişinin emniyetteki işlemleri de dün tamamlandı. Çağlayan'daki İstanbul Adliyesi'ne çıkarılan şüpheli, savcıya verdiği ifadenin ardın"
       },
       {
         "source": "Hürriyet",
-        "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasi-bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-dahil-3-kisi-gozaltina-alindi-43389018"
-      },
-      {
-        "source": "BirGün",
-        "url": "https://www.birgun.net/haber/bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-gozaltina-alindi-748131"
+        "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasinda-gozaltina-alinan-1-supheli-tutuklandi-43390310",
+        "title": "Fon soruşturmasında gözaltına alınan 1 şüpheli tutuklandı",
+        "summary": ""
       }
     ],
     "reasons": [
-      "suç:+27",
-      "para:+13",
-      "güç:+10",
-      "gürültü:-2"
+      "suç:+12",
+      "para:+9",
+      "güç:+4"
     ],
-    "sensitive": true,
+    "sensitive": false,
     "single_source": false,
-    "newest": "2026-11-24T11:49:33+03:00"
+    "newest": "2026-11-25T07:44:49+00:00"
   },
   "topics": [
     {
-      "score": 56,
-      "title": "Fon soruşturması | Bulls Yatırım Yönetim Kurulu Başkanı Kemal Akkaya gözaltında",
+      "score": 30,
+      "title": "Fon soruşturmasında yeni gelişme: Bir şüpheli tutuklandı",
       "sources": [
-        "BirGün",
         "Hürriyet",
         "NTV"
       ],
       "links": [
         {
           "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/fon-sorusturmasi-bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-gozaltinda-1752349"
+          "url": "https://www.ntv.com.tr/turkiye/fon-sorusturmasinda-yeni-gelisme-bir-supheli-tutuklandi-1752468",
+          "title": "Fon soruşturmasında yeni gelişme: Bir şüpheli tutuklandı",
+          "summary": "Fon soruşturmasında adliyeye sevk edilen bir şüpheli daha tutuklandı. Sermaye piyasalarındaki gelişmelere ilişkin başlatılan fon soruşturması sürüyor. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada, 24 Kasım Salı günü dört şüpheli daha tutuklanmış, iki şüpheli adli kontrolle serbest bırakılmıştı . Aynı şüphelilerle birlikte gözaltına alınan bir kişinin emniyetteki işlemleri de dün tamamlandı. Çağlayan'daki İstanbul Adliyesi'ne çıkarılan şüpheli, savcıya verdiği ifadenin ardın"
         },
         {
           "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasi-bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-dahil-3-kisi-gozaltina-alindi-43389018"
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/bulls-yatirim-yonetim-kurulu-baskani-kemal-akkaya-gozaltina-alindi-748131"
+          "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasinda-gozaltina-alinan-1-supheli-tutuklandi-43390310",
+          "title": "Fon soruşturmasında gözaltına alınan 1 şüpheli tutuklandı",
+          "summary": ""
         }
       ],
       "reasons": [
-        "suç:+27",
-        "para:+13",
-        "güç:+10",
-        "gürültü:-2"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-24T11:49:33+03:00"
-    },
-    {
-      "score": 42,
-      "title": "Bahis, dolandırıcılık ve mal varlığı değerlerini aklama suçlarına yönelik 5 soruşturmada 245 gözaltı",
-      "sources": [
-        "CNN Türk",
-        "Hürriyet",
-        "NTV"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/bahis-dolandiricilik-ve-mal-varligi-degerlerini-aklama-suclarina-yonelik-5-sorusturmada-245-gozalti-1752360"
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/yasa-disi-bahse-darbe-bakan-gurlek-5-sorusturmada-245-supheli-yakalandi-43389807"
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/bakan-gurlek-duyurdu-5-sorusturmada-245-supheli-yakalandi-3497678"
-        }
-      ],
-      "reasons": [
-        "suç:+20",
-        "para:+8",
-        "güç:+5",
-        "rakam:+1"
+        "suç:+12",
+        "para:+9",
+        "güç:+4"
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-24T19:31:25+00:00"
+      "newest": "2026-11-25T07:44:49+00:00"
     },
     {
-      "score": 41,
-      "title": "71 ilde mali suç örgütlerine operasyon, 455 şüpheliye işlem",
-      "sources": [
-        "NTV",
-        "TRT Haber"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/71-ilde-mali-suc-orgutlerine-operasyon-455-supheliye-islem-1752398"
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/turkiye/71-ilde-mali-suc-orgutlerine-operasyon-964322.html"
-        }
-      ],
-      "reasons": [
-        "suç:+23",
-        "para:+6",
-        "güç:+6",
-        "rakam:+1"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-24T15:19:24+03:00"
-    },
-    {
-      "score": 29,
-      "title": "Son dakika... Fatma Betül Sayan Kaya ev hapsi şartıyla tahliye edildi",
+      "score": 28,
+      "title": "Danıştay 8. İdari Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
       "sources": [
         "BirGün",
-        "Cumhuriyet",
+        "CNN Türk",
         "Habertürk",
         "Hürriyet",
         "NTV"
@@ -140,136 +77,156 @@
       "links": [
         {
           "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/galeri-son-dakika-fatma-betul-sayan-kaya-ev-hapsi-sartiyla-tahliye-edildi-1752387"
+          "url": "https://www.ntv.com.tr/turkiye/danistay-8-idari-dairesi-imamoglunun-diplomasinin-iptali-kararini-onadi-1751606",
+          "title": "Danıştay 8. İdari Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
+          "summary": "Danıştay, 8. İdari Dairesi Ekrem İmamoğlu'nun üniversite diplomasının iptali kararını onadı. 23 Mart 2025'te tutuklandıktan sonra İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun üniversite diplomasının iptali kesinleşti. Kararı Danıştay 8. İdari Dairesi onadı. İmamoğlu'nun diploma iptaline karşı İstanbul 5. İdare Mahkemesi'nde açtığı dava bu senenin başında reddedilmişti. Bunun üzerine konu İstanbul 7. İdari Dava Dairesi'ne taşınmış, istinaf başvurusunu"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/danistay-ekrem-imamoglunun-diplomasinin-iptalini-onadi-43390351",
+          "title": "Danıştay, Ekrem İmamoğlu'nun diplomasının iptalini onadı",
+          "summary": ""
         },
         {
           "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesi-turkiye-nin-gundemine-oturdu-748186"
+          "url": "https://www.birgun.net/haber/danistay-onadi-ekrem-imamoglu-nun-diplomasinin-iptali-kesinlesti-748337",
+          "title": "Danıştay onadı: Ekrem İmamoğlu'nun diplomasının iptali kesinleşti!",
+          "summary": "Danıştay 8. Dairesi, Ekrem İmamoğlu’nun lisans diplomasının iptaline ilişkin mahkeme kararını onadı. Bu karar İmamoğlu için cumhurbaşkanlığı adaylığı yolunun kapanması anlamına geliyor."
         },
         {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242"
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/turkiye/son-dakika-danistaydan-ekrem-imamoglu-karari-diplomasinin-iptali-kesinlesti-3497917",
+          "title": "SON DAKİKA! Danıştay'dan \"Ekrem İmamoğlu\" kararı: Diplomasının iptali kesinleşti",
+          "summary": "Son dakika haberine göre; Danıştay 8. İdare Dairesi, Ekrem İmamoğlu'nun diplomasının iptali kararını onadı."
         },
         {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/akp-den-ihrac-edilmisti-mucahit-birinci-den-dikkat-ceken-fatma-betul-sayan-kaya-paylasimi-bunu-ifade-etmek-zorundayim-2559010"
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/tbmm-de-fon-vurgunu-tartismasi-fatma-betul-sayan-kaya-nin-tahliyesine-sert-tepki-geldi-yeni-yol-un-onerisi-akp-ve-mhp-oylariyla-reddedildi-2559068"
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/tutuklu-baskan-oya-tekin-den-adalet-cagrisi-fatma-betul-sayan-kaya-ya-uygulanan-adaleti-istiyorum-2559014"
+          "source": "Habertürk",
+          "url": "https://www.haberturk.com/gundem/son-dakika-imamoglunun-diploma-iptaline-onama-3929957",
+          "title": "Diploması resmen iptal edildi",
+          "summary": ""
         }
       ],
       "reasons": [
-        "suç:+9",
-        "para:+9",
-        "güç:+5",
-        "gürültü:-5"
+        "suç:+12",
+        "güç:+4",
+        "merak:+1"
       ],
       "sensitive": true,
       "single_source": false,
-      "newest": "2026-11-24T19:59:00+03:00"
+      "newest": "2026-11-25T11:20:45+00:00"
     },
     {
-      "score": 26,
-      "title": "İş insanının sır ölümü aydınlatıldı. Kızı miras için cinayeti planlamış",
+      "score": 28,
+      "title": "Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında",
       "sources": [
-        "BirGün",
+        "Cumhuriyet",
+        "Hürriyet",
+        "NTV",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/galeri-unlulere-uyusturucu-sorusturmasinda-yeni-dalga-ozcan-deniz-deniz-cakir-burcu-ozberk-de-gozaltinda-1752499",
+          "title": "Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında",
+          "summary": "Ünlülere yönelik yeni bir uyuşturucu operasyonu düzenlendi. Şarkıcı Özcan Deniz, oyuncular Deniz Çakır ve Burcu Özberk'in de aralarında bulunduğu 24 ünlü isim gözaltına alındı. Ünlülere yönelik uyuşturucu soruşturmasında yeni bir operasyon düzenlendi. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada 35 şüpheli hakkında gözaltı kararı verildi. Aralarında şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özbek ile organizatör Erdal Bozkuş ve internet ünlülerinin de bulunduğu 24 ki"
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/istanbul-da-unlulere-yonelik-uyusturucu-sorusturmasinda-gozalti-sayisi-24-e-yukseldi-ozcan-deniz-ve-deniz-cakir-da-listede-2559198",
+          "title": "İstanbul’da ünlülere yönelik uyuşturucu soruşturmasında gözaltı sayısı 24’e yükseldi: Özcan Deniz ve Deniz Çakır da listede",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından \"fuhuş\" ve \"uyuşturucu\" suçlamalarıyla yürütülen soruşturma kapsamında düzenlenen operasyonda gözaltına alınanların sayısı 24'e yükseldi. Hakkında gözaltı kararı verilen 35 isim arasında sanatçı Özcan Deniz, oyuncu Deniz Çakır Baykal, yönetmen Cem Karcı ve sunucu Murat Ceylan'ın da yer aldığı öğrenildi."
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/unlulere-yonelik-uyusturucu-sorusturmasinda-23-gozalti-964380.html",
+          "title": "Ünlülere yönelik uyuşturucu soruşturmasında 23 gözaltı",
+          "summary": "İstanbul'da ünlülere yönelik yürütülen uyuşturucu ve fuhuş soruşturmasında haklarında gözaltı kararı verilen 35 şüpheliden 23'ü gözaltına alındı. Gözaltına alınanlar arasında Özcan Deniz ve Deniz Çakır da bulunuyor."
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/unlulere-yonelik-uyusturucu-ve-fuhus-sorusturmasi-19-gozalti-964370.html",
+          "title": "Ünlülere yönelik uyuşturucu ve fuhuş soruşturması: 19 gözaltı",
+          "summary": "İstanbul'da ünlülere yönelik yürütülen uyuşturucu ve fuhuş soruşturmasında haklarında gözaltı kararı verilen 35 şüpheliden 19'u gözaltına alındı."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/unlulere-uyusturucu-operasyonunda-yeni-dalga-cok-sayida-isme-gozalti-karari-listede-ozcan-deniz-burcu-ozberk-murat-ceylan-ve-deniz-43390110",
+          "title": "Ünlülere uyuşturucu operasyonunda yeni dalga: Çok sayıda isme gözaltı kararı! Listede Özcan Deniz, Burcu Özberk, Murat Ceylan ve Deniz Çakır da var",
+          "summary": ""
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/son-dakika-aralarinda-ozcan-deniz-ile-deniz-cakir-da-var-unlulere-yonelik-sorusturmada-35-zanli-icin-gozalti-karari-43389996",
+          "title": "Son dakika : Aralarında Özcan Deniz ile Deniz Çakır da var… Ünlülere yönelik soruşturmada 35 isim için gözaltı kararı... 19 kişi yakalandı",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+13",
+        "güç:+4"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T10:34:00+03:00"
+    },
+    {
+      "score": 24,
+      "title": "Bir ay önce evlenen Kardelen'in şüpheli ölümü: Eşi tutuklandı",
+      "sources": [
         "NTV"
       ],
       "links": [
         {
           "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/is-insaninin-sir-olumu-aydinlatildi-kizi-miras-icin-cinayeti-planlamis-1752321"
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/izmir-deki-is-insani-cinayetinin-ardindan-miras-cikti-kizi-dahil-4-kisi-tutuklandi-748135"
+          "url": "https://www.ntv.com.tr/turkiye/galeri-bir-ay-once-evlenen-kardelenin-supheli-olumu-esi-tutuklandi-1752512",
+          "title": "Bir ay önce evlenen Kardelen'in şüpheli ölümü: Eşi tutuklandı",
+          "summary": "İstanbul'da Kardelen Hoş isimli kadın, beşinci kattan düşerek yaşamını yitirdi. Kardelen'in bir ay önce evlendiği Burak E., tutuklanarak cezaevine gönderildi. İstanbul'da bir kadın şüpheli şekilde yaşamını yitirdi. Olay, 18 Kasım Çarşamba günü saat 02.45 sıralarında Sultangazi Uğur Mumcu Mahallesi'nde meydana geldi. İddiaya göre, Kardelen Hoş, yaşadığı binanın beşinci katından henüz bilinmeyen bir nedenle beton zemine düştü. Çevredekilerin ihbarı üzerine olay yerine polis ve sağlık ekipleri sevk"
         }
       ],
       "reasons": [
-        "suç:+15",
-        "para:+2",
+        "suç:+18",
         "güç:+1",
         "merak:+3"
       ],
       "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-24T11:26:00+03:00"
+      "single_source": true,
+      "newest": "2026-11-25T10:45:46+03:00"
     },
     {
-      "score": 26,
-      "title": "Son Dakika... AKP'de ikinci 'fon skandalı' depremi: AKP Genel Başkan Yardımcısı Hayati Yazıcı istifa etti",
+      "score": 24,
+      "title": "15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: \"Korkudan şehir değiştirdim\"",
       "sources": [
-        "BirGün",
-        "CNN Türk",
-        "Cumhuriyet",
-        "Habertürk",
-        "NTV",
-        "TRT Haber"
-      ],
-      "links": [
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/son-dakika-akp-de-ikinci-fon-skandali-depremi-akp-genel-baskan-yardimcisi-hayati-yazici-istifa-etti-2559070"
-        },
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/hayati-yazici-istifa-mi-etti-aciklama-yapildi-1752422"
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/akpde-ikinci-ust-duzey-fon-depremi-hayati-yazici-istifa-mi-etti-748237"
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/akp-de-fon-vurgunu-krizi-hayati-yazici-istifa-etti-748246"
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/akp-de-ikinci-ust-duzey-fon-depremi-hayati-yazici-istifa-sorusuna-ne-yanit-verdi-2559065"
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/ak-parti-genel-baskan-yardimcisi-hayati-yazici-istifa-etti-964352.html"
-        }
-      ],
-      "reasons": [
-        "suç:+6",
-        "para:+6",
-        "güç:+3"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-24T20:50:04+00:00"
-    },
-    {
-      "score": 20,
-      "title": "Kazakistan'da 20 yıl önce işlenen cinayetin şüphelisi İstanbul'da yakalandı",
-      "sources": [
+        "Hürriyet",
         "NTV"
       ],
       "links": [
         {
           "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/kazakistanda-20-yil-once-islenen-cinayetin-suphelisi-istanbulda-yakalandi-1752342"
+          "url": "https://www.ntv.com.tr/turkiye/galeri-15-yasindaki-iki-cocuk-oldurdu-azmettiriciler-peslerini-birakmadi-korkudan-sehir-degistirdim-1752521",
+          "title": "15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: \"Korkudan şehir değiştirdim\"",
+          "summary": "Adana'da 15 yaşındaki iki katil zanlısı tarafından öldürülen PVC ustası Yusuf Çelik'in eşi azmettiricilerin tehditleri nedeniyle şehir değiştirmek zorunda kaldığını söyledi. Adana'da çocuk yaştaki iki saldırgan tarafından öldürülen PVC ustası Yusuf Çelik'in eşi Kadriye Çelik, azmettiriciler tarafından tehdit edildiklerini söyledi. Olay, 3 Mart'ta Seyhan ilçesi Mıdık Mahallesi'nde meydana geldi. H.H., arkadaşı L.A.'nın kullandığı motosikletle PVC ustası Yusuf Çelik'in iş yerine gitti. L.A. dışarı"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/15lik-katiller-oldurdu-azmettirenler-ailenin-kabusu-oldu-korkudan-sehir-degistirdik-43390200",
+          "title": "15'lik katiller öldürdü, azmettirenler ailenin kabusu oldu: Korkudan şehir değiştirdik",
+          "summary": ""
         }
       ],
       "reasons": [
-        "suç:+15",
-        "para:+2",
+        "suç:+13",
+        "güç:+2",
+        "merak:+3",
         "rakam:+1"
       ],
       "sensitive": false,
-      "single_source": true,
-      "newest": "2026-11-24T10:35:07+03:00"
+      "single_source": false,
+      "newest": "2026-11-25T11:22:06+03:00"
     },
     {
-      "score": 20,
-      "title": "‘ARPA’ ve ‘Yaramazlar’a eş zamanlı operasyon: 26,1 milyarlık yasa dışı bahis ve aklama ağı",
+      "score": 22,
+      "title": "Fatma Betül Sayan Kaya'nın tahliyesi, Türkiye'nin gündemine oturdu",
       "sources": [
         "BirGün",
         "Cumhuriyet",
@@ -277,94 +234,231 @@
       ],
       "links": [
         {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/arpa-ve-yaramazlara-es-zamanli-operasyon-26-1-milyarlik-yasa-disi-bahis-ve-aklama-agi-43389039"
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesi-turkiye-nin-gundemine-oturdu-748186",
+          "title": "Fatma Betül Sayan Kaya'nın tahliyesi, Türkiye'nin gündemine oturdu",
+          "summary": "\"Fon soruşturması\" kapsamında tutuklanan eski AKP Genel Başkan Yardımcısı Fatma Betül Sayan Kaya hakkındaki tahliye kararı ülke gündemine oturdu. X sosyal medya uygulamasında, Kaya'nın tahliyesi Türkiye gündeminde ilk sıralara yerleşti. Çok sayıda isim, tahliye kararı hakkında değerlendirmelerde bulundu. YENİ Parti Genel Başkanı Özgür Özel, \"Milletin 2,2 milyarını cebine indirmişti. Yattığı her gün karşılığında, 115 milyon lirasını aklamış oldu. İşte bu rejimin adaleti budur, çökmüştür. Ahlak an"
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242",
+          "title": "Oya Tekin'den Fatma Betül Sayan Kaya'nın tahliyesine tepki: Bana da aynı adaleti uygulayın",
+          "summary": "Silivri'de tutuklu bulunan Seyhan Belediye Başkanı Oya Tekin, fon soruşturması kapsamında tutuklanan eski Aile ve Sosyal Politikalar Bakanı Fatma Betül Sayan Kaya'nın ev hapsi şartıyla tahliye edilmesine tepki göstererek, \"Fatma Betül Sayan Kaya'ya uygulanan adaleti istiyorum. Ben üç çocuk sahibi bir anneyim. 35 yıllık avukatım, 1 yıl belediye başkanlığı yaptım, 18 aydır hapis yatıyorum. Suçum yok, delil yok, kamu zararı iddiası yok, suç iddiası olan kişilerle temasım yok. Buna rağmen tutukluluğ"
         },
         {
           "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/aydin-merkezli-3-ilde-yasa-disi-bahis-operasyonu-36-gozalti-2558977"
+          "url": "https://www.cumhuriyet.com.tr/siyaset/sol-parti-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-misafirligi-sona-erdi-2559170",
+          "title": "SOL Parti'den, Fatma Betül Sayan Kaya'nın tahliyesine tepki: 'Misafirliği sona erdi'",
+          "summary": "SOL Parti Eskişehir İl Örgütü, fon soruşturması kapsamında tutuklanan Fatma Betül Sayan Kaya'nın ev hapsi şartıyla tahliye edilmesini protesto etti."
         },
         {
           "source": "BirGün",
-          "url": "https://www.birgun.net/haber/yasa-disi-bahis-ve-dolandiricilik-operasyonu-407-internet-sitesine-erisim-engellendi-748079"
+          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330",
+          "title": "Fatma Betül Sayan Kaya'nın cezaevinde ağladığı iddia edilmişti: Avukat Hatipoğlu, şahit olduğu anları anlattı",
+          "summary": "Avukat Afşin Hatipoğlu, fon vurgunu soruşturması kapsamında 18 gün tutuklu kalan Fatma Betül Sayan Kaya'nın cezaevindeki günlerine ilişkin iddialarda bulundu. Hatipoğlu, Kaya'nın diğer tutuklulardan farklı muamele gördüğünün yanı sıra gazeteci Nagehan Alçı'nın iddialarına karşı çıkarak, \"Gayet sohbetli, nezaketli, zevkli, sefalıydı. Oradaki, cezaevi ortamında nasıl olunacaksa o şekilde gördüm\" dedi."
         },
         {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/yasa-disi-bahis-gelirini-kriptoyla-yurt-disina-cikarmislar-hesaplarda-3-1-milyar-lira-cikti-43388850"
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliye-edilmesine-karsi-sol-parti-den-eskisehir-de-eylem-kahrolsun-foncularin-esitsiz-duzeni-748236",
+          "title": "Fatma Betül Sayan Kaya'nın tahliye edilmesine karşı SOL Parti'den Eskişehir'de eylem: \"Kahrolsun foncuların eşitsiz düzeni\"",
+          "summary": "SOL Parti Eskişehir İl Örgütü eski Aile ve Sosyal Politikalar Bakanı ve AKP Genel Başkan Yardımcısı Fatma Betül Sayan Kaya'nın cezaevinden tahliye edilmesine yönelik Köprübaşı'nda sokağa çıktı. SOL Parti basın açıklamasında \"Kahrolsun foncuların, soyguncuların bu adaletsiz, eşitsiz düzeni. Bu düzeni değiştireceğiz! Geleceğimizden çalanlardan, cebimizdeki son kuruşa göz dikenlerden mutlaka hesap soracağız!\" dedi."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesini-protesto-etmislerdi-sol-parti-eskisehir-il-orgutu-nun-x-hesabi-engellendi-748252",
+          "title": "Fatma Betül Sayan Kaya'nın tahliyesini protesto etmişlerdi: SOL Parti Eskişehir İl Örgütü'nün X hesabı engellendi",
+          "summary": "SOL Parti Eskişehir’in X hesabı, Fatma Betül Sayan Kaya’nın tahliyesini protesto etmelerinin ardından erişime engellendi. SOL Parti \"Fon soygunu eyleminin ardından SOL Parti Eskişehir hesabımız askıya alındı. Telaş, panik, korku içindeler, gerçekleri her yerde söylemeye devam edeceğiz\" dedi."
         }
       ],
       "reasons": [
-        "suç:+8",
-        "para:+3",
-        "rakam:+1"
+        "suç:+6",
+        "para:+7",
+        "merak:+1"
       ],
-      "sensitive": false,
+      "sensitive": true,
       "single_source": false,
-      "newest": "2026-11-24T15:30:00+03:00"
+      "newest": "2026-11-25T10:56:00+03:00"
     },
     {
-      "score": 17,
-      "title": "Ülkeyi esir aldılar: Fon vurgununda yeni \"gölge hesaplar\"",
-      "sources": [
-        "BirGün"
-      ],
-      "links": [
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/ulkeyi-esir-aldilar-fon-vurgununda-yeni-golge-hesaplar-748058"
-        }
-      ],
-      "reasons": [
-        "suç:+4",
-        "para:+9",
-        "merak:+2"
-      ],
-      "sensitive": false,
-      "single_source": true,
-      "newest": "2026-11-24T05:00:00+03:00"
-    },
-    {
-      "score": 14,
-      "title": "On Numara 23 Kasım 2026 Sonuçları Açıklandı! Milli Piyango Çekiliş Sonuçları Sorgulama Ekranı | 23 Kasım 2026 On Numara çekiliş sonuçları",
+      "score": 19,
+      "title": "Numan Kurtulmuş: İzleme komisyonu 19 üyeli olacak",
       "sources": [
         "BirGün",
         "CNN Türk",
-        "Habertürk",
+        "Cumhuriyet",
+        "Hürriyet",
         "NTV"
       ],
       "links": [
         {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/on-numara-23-kasim-2026-sonuclari-aciklandi-milli-piyango-cekilis-sonuclari-sorgulama-ekrani-23-kasim-2026-on-numara-cekilis-sonuclari-748104"
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/numan-kurtulmus-izleme-komisyonu-19-uyeli-olacak-1752459",
+          "title": "Numan Kurtulmuş: İzleme komisyonu 19 üyeli olacak",
+          "summary": "Meclis Başkanı Numan Kurtulmuş, Meclis'te kurulacak İzleme Komisyonunun komisyonun 19 üye ile görev yapacağını açıkladı. Meclis Başkanı dokunulmazlıklar konusunda da dikkat çeken mesajlar verdi. Meclis Başkanı Numan Kurtulmuş, Avustralya ziyareti öncesinde, uçakta gazetecilere açıklamalara bulundu. Kurtulmuş, Meclis'te Terörsüz Türkiye süreci kapsamında kurulacak İzleme Komisyonunun 19 üyeden oluşacağını ve ilk toplantının Genel Kurul'da bütçe maratonu başlamadan yapılacağını açıkladı. Kurtulmuş"
         },
         {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/cilgin-sayisal-loto-23-kasim-2026-sonuclari-aciklandi-milli-piyango-cekilis-sonuclari-sorgulama-ekrani-23-kasim-2026-cilgin-sayisal-cekilis-sonuclari-748102"
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/siyaset/tbmm-baskani-numan-kurtulmus-tan-ozgur-ozel-e-izleme-komisyonu-cagrisi-2559171",
+          "title": "TBMM Başkanı Numan Kurtulmuş'tan Özgür Özel'e İzleme Komisyonu çağrısı",
+          "summary": "Avustralya temasları kapsamında gazetecilerin sorularını yanıtlayan TBMM Başkanı Numan Kurtulmuş, kurulacak İzleme Komisyonu'na üye vermeyeceğini açıklayan YENİ Parti Genel Başkanı Özgür Özel ve İYİ Parti'ye çağrıda bulundu. Kurtulmuş ayrıca milletvekili dokunulmazlıkları ve İmralı sürecine ilişkin dikkat çeken açıklamalarda bulundu."
         },
         {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/23-kasim-2026-pazartesi-reyting-sonuclari-aciklandi-gunun-en-cok-izlenen-yapimi-belli-oldu-748092"
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/tbmm-baskani-kurtulmustan-terorsuz-turkiye-aciklamasi-mecliste-19-uyeli-izleme-komisyonu-kurulacak-43390260",
+          "title": "TBMM Başkanı Kurtulmuş'tan 'Terörsüz Türkiye' açıklaması: Meclis'te 19 üyeli İzleme Komisyonu kurulacak",
+          "summary": ""
         },
         {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/24-kasim-2026-benzin-motorin-lpg-fiyatlari-indirim-veya-zam-var-mi-guncel-akaryakit-fiyatlari-748121"
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/son-dakika-tbmm-de-izleme-komisyonu-kuruluyor-numan-kurtulmus-tan-partilere-kritik-yazi-2559208",
+          "title": "Son Dakika... TBMM'de 'İzleme Komisyonu' kuruluyor: Numan Kurtulmuş'tan partilere kritik yazı",
+          "summary": "Son dakika haberi... TBMM Başkanı Numan Kurtulmuş, Meclis'te grubu bulunan siyasi partilere 19 üyeden oluşacak İzleme Komisyonu'nda görevlendirilecek milletvekillerinin bildirilmesi için resmi yazı gönderdi. Partilerden isimlerin 30 Kasım Pazartesi günü saat 17.00'ye kadar iletilmesi istendi."
         },
         {
           "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/ekonomi/super-loto-sonuclari-aciklandi-mi-24-kasim-2026-super-loto-sonuc-sorgulama-ekrani-3497652"
+          "url": "https://www.cnnturk.com/turkiye/tbmm-baskani-kurtulmustan-izleme-komisyonu-icin-partilere-davet-3497924",
+          "title": "TBMM Başkanı Kurtulmuş'tan İzleme Komisyonu için partilere davet",
+          "summary": "Meclis Başkanı Numan Kurtulmuş, terörsüz Türkiye kapsamında Meclis çatısı altında kurulacak İzleme Komisyonu için Meclis'te grubu bulunan siyasi partilere üye vermeleri için yazı gönderdi."
         },
         {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/video/haber/izle/bugun-ne-oldu-24-kasim-2026-haberleri-fatma-betul-sayan-kayaya-ev-hapsi-sartiyla-tahliye-2027de-ehliyet-pasaport-imei-ve-ceza-ucretleri-ne-kada/924029"
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/kurtulmus-acikladi-izleme-komisyonunda-19-uye-olacak-siyasi-partiler-uye-isimlerini-bildirecek-748320",
+          "title": "Kurtulmuş açıkladı: İzleme komisyonunda 19 üye olacak, siyasi partiler üye isimlerini bildirecek",
+          "summary": "TBMM Başkanı Numan Kurtulmuş gazetecilerin sorularını yanıtladı. Süreçle ilgili açıklamalarda bulunan bulunan Kurtulmuş, izleme komisyonunun 19 üyeden oluşacağını ve Yeni Parti’nin komisyona üye vermeyeceğini söyledi. Partilere komisyona üye bildirmeleri için yazı gönderdiklerini belirten Kurtulmuş, “Meclis’te bütçe görüşmeleri var, başlamadan ilk toplantımızı yaparız diye ümit ediyorum\" dedi."
         }
       ],
       "reasons": [
+        "suç:+8",
+        "para:+2",
+        "merak:+1",
+        "gürültü:-4",
+        "rakam:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T11:07:35+00:00"
+    },
+    {
+      "score": 18,
+      "title": "25 Kasım Kadına Yönelik Şiddete Karşı Mücadele Günü nasıl ortaya çıktı? İşte tarihsel geçmişi...",
+      "sources": [
+        "BirGün",
+        "Cumhuriyet",
+        "Hürriyet",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/25-kasim-kadina-yonelik-siddete-karsi-mucadele-gunu-nasil-ortaya-cikti-iste-tarihsel-gecmisi-2559243",
+          "title": "25 Kasım Kadına Yönelik Şiddete Karşı Mücadele Günü nasıl ortaya çıktı? İşte tarihsel geçmişi...",
+          "summary": "Türkiye'de kadın cinayetleri, erkek şiddeti ve cezasızlık tartışmaları sürerken 25 Kasım Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü, kadınların yaşam hakkı ve eşitlik taleplerini yeniden gündeme taşıdı. Kadına yönelik şiddetle mücadelenin simgesi haline gelen 25 Kasım'ın tarihsel geçmişini ve günümüzdeki yansımalarını sizler için derledik."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/beyoglu-kaymakamligi-25-kasim-kadina-yonelik-siddete-karsi-mucadele-gunu-yuruyusunu-yasakladi-748251",
+          "title": "Beyoğlu Kaymakamlığı 25 Kasım Kadına Yönelik Şiddete Karşı Mücadele Günü yürüyüşünü yasakladı",
+          "summary": "Kadınların 25 Kasım Kadına Yönelik Şiddete Karşı Mücadele Günü için Beyoğlu'na yaptıkları yürüyüş çağrılarına yönelik olarak Beyoğlu Kaymakamlığı'ndan açıklama geldi. Kaymakamlık her türlü yürüyüşün, toplanmanın ve eylemin yasaklandığını belirtti. Gerekçe olarak \"toplumsal barış\" gösterildi."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/emine-erdogandan-25-kasim-kadina-yonelik-siddete-karsi-uluslararasi-mucadele-gunu-paylasimi-43390324",
+          "title": "Emine Erdoğan'dan 25 Kasım Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü paylaşımı",
+          "summary": ""
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/makale/13-yargi-paketi-ne-yani-kadina-yonelik-ekonomik-siddete-karsi-durmak-748284",
+          "title": "13. Yargı Paketi'ne, yani kadına yönelik ekonomik şiddete karşı durmak",
+          "summary": ""
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/bakan-goktas-kadina-yonelik-siddetle-sifir-tolerans-ilkesiyle-mucadele-ediyoruz-964393.html",
+          "title": "Bakan Göktaş: Kadına yönelik şiddetle sıfır tolerans ilkesiyle mücadele ediyoruz",
+          "summary": "Aile ve Sosyal Hizmetler Bakanı Mahinur Özdemir Göktaş, kadına yönelik şiddetle \"sıfır tolerans\" ilkesiyle, amasız, fakatsız ve tavizsiz şekilde mücadele ettiklerini bildirdi."
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/emine-erdogandan-kadina-yonelik-siddete-karsi-uluslararasi-mucadele-gunu-paylasimi-964406.html",
+          "title": "Emine Erdoğan'dan Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü paylaşımı",
+          "summary": "Emine Erdoğan, 25 Kasım Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü dolayısıyla paylaşımda bulundu."
+        }
+      ],
+      "reasons": [
+        "suç:+4",
+        "merak:+2",
+        "rakam:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T11:05:00+03:00"
+    },
+    {
+      "score": 16,
+      "title": "Ünlülere yönelik uyuşturucu operasyonu daha 1 saatini doldurmadan yasadışı bahis sitelerine düştü!",
+      "sources": [
+        "BirGün",
+        "Cumhuriyet"
+      ],
+      "links": [
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/unlulere-yonelik-uyusturucu-operasyonu-daha-1-saatini-doldurmadan-yasadisi-bahis-sitelerine-dustu-2559249",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu daha 1 saatini doldurmadan yasadışı bahis sitelerine düştü!",
+          "summary": "Dün akşam saatlerinde İstanbul Cumhuriyet Başsavcılığı tarafından ünlülere yönelik başlatılan uyuşturucu soruşturması kapsamında düzenlenen operasyonun üzerinden henüz bir saat geçmeden yasadışı bahis sitelerinde dikkat çeken bir bahis açıldı. Aralarında Özcan Deniz ve Deniz Çakır'ın da bulunduğu isimlerin uyuşturucu testlerinin pozitif çıkıp çıkmayacağı üzerine tahmin seçenekleri oluşturuldu."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/istanbul-cumhuriyet-bassavciligi-ndan-unlulere-yonelik-uyusturucu-operasyonu-35-kisi-hakkinda-gozalti-karari-748262",
+          "title": "İstanbul Cumhuriyet Başsavcılığı'ndan ünlülere yönelik uyuşturucu operasyonu: 35 kişi hakkında gözaltı kararı",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı'nca ünlülere yönelik uyuşturucu operasyonunda 35 kişi hakkında gözaltı kararı çıkarıldı. Aralarında Özcan Deniz, oyuncu Deniz Çakır, Burcu Özberk, Murat Başoğlu, Meltem Keklik, Erdal Bozkuş ve Cem Karcı'nın da bulunduğu 21 kişinin gözaltına alındığı bildirildi."
+        }
+      ],
+      "reasons": [
+        "suç:+9",
+        "güç:+2"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T11:19:00+03:00"
+    },
+    {
+      "score": 16,
+      "title": "Piyasa değeri 80 milyon 480 bin lira... İstanbul Havalimanı'nda 20 kilo uyuşturucu ele geçirildi: 2 İranlı şüpheli gözaltında!",
+      "sources": [
+        "Cumhuriyet",
+        "Hürriyet",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/piyasa-degeri-80-milyon-480-bin-lira-istanbul-havalimani-nda-20-kilo-uyusturucu-ele-gecirildi-2-iranli-supheli-gozaltinda-2559205",
+          "title": "Piyasa değeri 80 milyon 480 bin lira... İstanbul Havalimanı'nda 20 kilo uyuşturucu ele geçirildi: 2 İranlı şüpheli gözaltında!",
+          "summary": "İstanbul Havalimanı’nda İran’dan gelen yolcuların taşıdığı bavullarda tekstil ürünlerine emdirilmiş halde toplam 20 kilo 120 gram metamfetamin ele geçirildi. Uyuşturucunun piyasa değerinin yaklaşık 80 milyon 480 bin lira olduğu belirlenirken, 2 İranlı şüpheli hakkında adli işlem başlatıldı."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/sislide-41-kilo-750-gram-uyusturucu-ele-gecirildi-2-supheli-gozaltinda-43390265",
+          "title": "Şişli’de 41 kilo 750 gram uyuşturucu ele geçirildi! 2 şüpheli gözaltında",
+          "summary": ""
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/turkiye/yurda-uyusturucu-sokmak-isteyen-2-kisi-istanbul-havalimaninda-gozaltina-alindi-964402.html",
+          "title": "Yurda uyuşturucu sokmak isteyen 2 kişi İstanbul Havalimanı'nda gözaltına alındı",
+          "summary": "İstanbul Havalimanı'nda Türkiye'ye giriş yapan İran uyruklu 2 şüpheliye ait valizlerde kıyafetlere emdirilmiş 20 kilogram uyuşturucu ele geçirildi, zanlılar gözaltına alındı."
+        }
+      ],
+      "reasons": [
+        "suç:+5",
         "para:+2",
         "rakam:+1"
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-24T18:20:32+00:00"
+      "newest": "2026-11-25T10:32:00+03:00"
     }
   ]
 }

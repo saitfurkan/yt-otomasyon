@@ -64,10 +64,14 @@ NOISE = [
     ("deprem listesi", -8), ("son depremler", -8), ("kur ", -3), ("altın fiyat", -6),
     ("meclis", -4), ("grup toplantısı", -6), ("bütçe görüşme", -5),
     ("milletvekili", -2), ("seçim", -3), ("kutlama", -6),
+    ("çekiliş", -10), ("loto", -10), ("piyango", -10), ("on numara", -10),
+    ("reyting", -8), ("akaryakıt", -8), ("benzin", -6), ("motorin", -6),
+    ("sonuçları açıklandı", -6), ("günün en çok", -8), ("bugün ne oldu", -8),
 ]
 # Siyasi hassasiyet işareti (puanı etkilemez, sana "dikkat" notu düşer)
 SENSITIVE = ["chp", "akp", "mhp", "dem parti", "cumhurbaşkan", "muhalefet", "iktidar"]
 
+MONTHS = set("ocak şubat mart nisan mayıs haziran temmuz ağustos eylül ekim kasım aralık".split())
 STOP = set("için ile ama fakat çok daha gibi olan oldu olarak sonra önce bir bu şu "
            "ve ya de da ki mi mı mu mü ne nasıl neden kadar göre hakkında üzerine".split())
 
@@ -148,17 +152,29 @@ def score_item(item):
     if re.search(r"\b\d{2,}\b", item["title"]):
         score += 1
         reasons.append("rakam:+1")
-    sensitive = any(k in text for k in SENSITIVE)
+    sensitive = any(re.search(r"(?<![a-zçğıöşü0-9])" + re.escape(k), text)
+                    for k in SENSITIVE)
     return score, reasons, sensitive
 
 
 def tokens(title):
     words = re.findall(r"[a-zçğıöşü0-9]+", tr_lower(title))
-    return {w[:6] for w in words if len(w) >= 4 and w not in STOP}
+    return {w[:6] for w in words
+            if (len(w) >= 4 or (w.isdigit() and len(w) >= 3))
+            and w not in STOP and w not in MONTHS
+            and not re.fullmatch(r"20\d\d", w)}
 
 
-def jaccard(a, b):
-    return len(a & b) / len(a | b) if a and b else 0.0
+def same_story(a, b):
+    """İki başlık aynı olayı mı anlatıyor?"""
+    shared = a & b
+    if len(shared) < 2:
+        return False
+    jac = len(shared) / len(a | b)
+    big_number = any(t.isdigit() for t in shared)  # ortak büyük rakam güçlü işaret
+    return (jac >= 0.4 or len(shared) >= 4
+            or (len(shared) >= 3 and jac >= 0.3)
+            or (big_number and jac >= 0.1))
 
 
 def build_topics(items):
@@ -175,12 +191,12 @@ def build_topics(items):
     clusters = []
     for it in fresh:
         for c in clusters:
-            if jaccard(it["tok"], c["tok"]) >= 0.35:
+            if same_story(it["tok"], c["first_tok"]):
                 c["items"].append(it)
-                c["tok"] |= it["tok"]
                 break
         else:
-            clusters.append({"items": [it], "tok": set(it["tok"])})
+            clusters.append({"items": [it], "tok": set(it["tok"]),
+                             "first_tok": set(it["tok"])})
 
     topics = []
     for c in clusters:
@@ -195,9 +211,12 @@ def build_topics(items):
             "score": total,
             "title": best["title"],
             "sources": sources,
-            "links": [{"source": i["source"], "url": i["link"]} for i in its][:6],
+            "links": [{"source": i["source"], "url": i["link"],
+                       "title": i["title"], "summary": i["summary"][:500]}
+                      for i in its][:6],
             "reasons": best["reasons"],
             "sensitive": any(i["sensitive"] for i in its),
+            "single_source": len(sources) < 2,
             "newest": newest.isoformat() if newest else None,
         })
     topics.sort(key=lambda t: t["score"], reverse=True)
@@ -217,14 +236,28 @@ def demo_items():
              "date": now - timedelta(hours=3), "source": s} for s, t in rows]
 
 
+def choose(topics):
+    """Sistemin kendi seçimi: en az 2 kaynakta geçen en yüksek puanlı konu."""
+    for t in topics:
+        if not t["single_source"] and t["score"] > 0:
+            return t
+    return None
+
+
 def write_outputs(topics, errors):
+    selected = choose(topics)
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     with open("topics.json", "w", encoding="utf-8") as f:
-        json.dump({"generated": stamp, "errors": errors, "topics": topics},
+        json.dump({"generated": stamp, "errors": errors,
+                   "selected": selected, "topics": topics},
                   f, ensure_ascii=False, indent=2)
     lines = [f"# Konu adayları ({stamp})", ""]
+    if selected:
+        lines += [f"**SİSTEMİN SEÇTİĞİ KONU:** {selected['title']}", ""]
     for n, t in enumerate(topics, 1):
         flag = "  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et" if t["sensitive"] else ""
+        if t["single_source"]:
+            flag += "  ⚠️ tek kaynak: başka kaynaktan doğrulanmadan video yapılmaz"
         lines.append(f"## {n}. {t['title']}  (puan: {t['score']}){flag}")
         lines.append(f"- Kaynaklar: {', '.join(t['sources'])}")
         lines.append(f"- Puan nedenleri: {', '.join(t['reasons']) or '-'}")
