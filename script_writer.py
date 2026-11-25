@@ -294,6 +294,60 @@ class QuotaExceeded(GenerationFailed):
     pass
 
 
+MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
+MISTRAL_MODEL = os.environ.get("MISTRAL_MODEL", "").strip() or "mistral-large-latest"
+GEMINI_DEAD = False   # Gemini kotası dolunca True olur, sonraki çağrılar doğrudan yedeğe gider
+
+
+def mistral_key():
+    return os.environ.get("MISTRAL_API_KEY", "").strip()
+
+
+def mistral_generate(prompt, system, json_out, temperature, max_tokens):
+    """Yedek sağlayıcı (Mistral, ücretsiz katman). (model, metin ya da sözlük) döndürür."""
+    payload = {"model": MISTRAL_MODEL, "temperature": min(temperature, 1.0),
+               "max_tokens": min(max_tokens, 16000),
+               "messages": [{"role": "system", "content": system},
+                            {"role": "user", "content": prompt}]}
+    if json_out:
+        payload["response_format"] = {"type": "json_object"}
+    last = "bilinmeyen hata"
+    for attempt in range(4):
+        req = urllib.request.Request(
+            MISTRAL_URL, data=json.dumps(payload).encode("utf-8"), method="POST",
+            headers={"Content-Type": "application/json", "Accept": "application/json",
+                     "Authorization": "Bearer " + mistral_key()})
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                data = json.loads(r.read().decode("utf-8"))
+            text = (data["choices"][0]["message"]["content"] or "").strip()
+            if not text:
+                raise Blocked("Mistral boş yanıt verdi")
+            return MISTRAL_MODEL, (parse_json(text) if json_out else text)
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "replace")[:300]
+            last = f"Mistral HTTP {e.code}: {body}"
+            log(f"   [mistral] {last[:160]}")
+            if e.code in (401, 403):
+                raise GenerationFailed("Mistral API anahtarı geçersiz görünüyor (MISTRAL_API_KEY).")
+            if e.code in (429, 500, 502, 503, 504) and attempt < 3:
+                time.sleep(3 * (attempt + 1))
+                continue
+            break
+        except ValueError:
+            last = "Mistral JSON okunamadı"
+            log("   [mistral] JSON okunamadı, tekrar deneniyor")
+            continue
+        except (urllib.error.URLError, TimeoutError) as e:
+            last = f"Mistral bağlantı hatası: {e}"
+            time.sleep(3)
+            continue
+        except Blocked as e:
+            last = str(e)
+            continue
+    raise GenerationFailed(last)
+
+
 def http(method, url, key, payload=None, timeout=300):
     data = json.dumps(payload).encode("utf-8") if payload is not None else None
     req = urllib.request.Request(url, data=data, method=method, headers={
@@ -381,9 +435,11 @@ def generate(key, models, prompt, system=SYSTEM, json_out=False,
     """Modelleri sırayla dener. (kullanılan_model, metin ya da sözlük) döndürür.
     Kota (429) dolmuşsa o modeli bekletmeden atlar; hepsinde kota doluysa
     QuotaExceeded fırlatır (boşuna dakikalarca beklemez)."""
+    global GEMINI_DEAD
     last = "bilinmeyen hata"
     quota_models, tried = 0, 0
-    for model in models:
+    gem_models = [m for m in models if not m.startswith("mistral")] if key and not GEMINI_DEAD else []
+    for model in gem_models:
         tried += 1
         hit_quota = False
         for attempt in range(3):
@@ -418,6 +474,14 @@ def generate(key, models, prompt, system=SYSTEM, json_out=False,
                 break
         if hit_quota:
             quota_models += 1
+    if tried and quota_models == tried:
+        GEMINI_DEAD = True
+    if mistral_key() and (GEMINI_DEAD or not gem_models or tried):
+        if GEMINI_DEAD:
+            log("   Gemini kotası dolu, yedek sağlayıcıya (Mistral) geçiliyor")
+        elif gem_models:
+            log("   Gemini yanıt vermedi, yedek sağlayıcıya (Mistral) geçiliyor")
+        return mistral_generate(prompt, system, json_out, temperature, max_tokens)
     if tried and quota_models == tried:
         raise QuotaExceeded(
             "Gemini ücretsiz kotası dolmuş görünüyor (tüm modellerde 429). "
@@ -471,6 +535,9 @@ def search_sources(key, models, topic, known_urls):
 
 def add_background(key, models, topic, arts):
     """Arka plan sayfalarını okuyup mevcut kaynaklara ekler."""
+    if GEMINI_DEAD or not key:
+        log("   arka plan araması atlandı (Gemini kullanılamıyor)")
+        return arts
     try:
         links = search_sources(key, models, topic, [a["url"] for a in arts])
     except Exception as e:
@@ -783,7 +850,7 @@ def candidates(tdata, history):
 def main():
     sources_only = "--sources-only" in sys.argv
     key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not key and not sources_only:
+    if not key and not mistral_key() and not sources_only:
         write_error("GEMINI_API_KEY bulunamadı. GitHub > Settings > Secrets and "
                     "variables > Actions bölümünde GEMINI_API_KEY adıyla ekli olmalı.")
         sys.exit(1)
@@ -801,10 +868,14 @@ def main():
         sys.exit(1)
 
     try:
-        models = None if sources_only else model_candidates(key)
+        models = None if sources_only else (model_candidates(key) if key else [])
     except GenerationFailed as e:
-        write_error(str(e))
-        sys.exit(1)
+        if mistral_key():
+            log(f"Gemini kullanılamıyor ({e}); yedek sağlayıcı (Mistral) kullanılacak.")
+            models = []
+        else:
+            write_error(str(e))
+            sys.exit(1)
     if models:
         log("Denenecek modeller:", ", ".join(models))
     notes = []
