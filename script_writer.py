@@ -48,7 +48,7 @@ BANNED = [
     "ikincisi", "üçüncüsü", "unutulmamalıdır", "bu bağlamda", "söz konusu",
     "sonuç itibarıyla", "dikkat çekici bir şekilde", "derler", "çorap söküğü",
     "son perde", "faturayı kesti", "terazisi başka", "ben furkan",
-    "kirli ilişki", "karanlığ", "pırıltılı", "taşları yerinden", "koridor", "ışığı sönünce", "parmaklıklar ardındaki", "hücrelerinde izl", "ekranın ışığ",
+    "kirli ilişki", "karanlığ", "pırıltılı", "taşları yerinden", "koridor", "terazi", "ışığı sönünce", "parmaklıklar ardındaki", "hücrelerinde izl", "ekranın ışığ",
     "aynı hizada", "ışıkların",
 ]
 
@@ -710,7 +710,7 @@ def extract_facts(key, models, topic, arts):
         "Yalnızca kaynaklarda AÇIKÇA yazan olguları çıkar: kim, ne, ne zaman, nerede, "
         "kaç kişi, kaç lira, hangi kurum, kim ne açıkladı, kim ne dedi. Her olgu tek "
         "cümle olsun. Yalnızca AYNI olgu için kaynaklar açıkça farklı rakam ya da isim veriyorsa çelişkiyi ayrı olgu olarak yaz; farklı tarihler farklı olay adımlarına ait olabilir, çelişki ilan etme. Kaynaklarda geçen arka plan bilgilerini de (önceki olaylar, kurumlar, yasal çerçeve) olgu olarak ekle. "
-        "Haberin merkezindeki kişilerin durumunu anlamak için gereken bağlamı da olgu olarak çıkar (kişi neden orada, neden tutuklu ya da yargılanıyor, hangi davanın parçası). Kişi detaylarını ayrıca çıkar: haberdeki tanınmış kişinin görevi, önceki davaları, şu anki durumu (tutuklu, ev hapsi, tahliye, sağlık gerekçesi, hangi tarihte). Kaynaklarda benzer başka dosyalar ya da FARKLI uygulamalar anlatılıyorsa (biri sağlık gerekçesiyle ev hapsi alırken ağır hasta başkalarının talebinin reddedilmesi, tahliye edilmeden ölenler gibi) bunları adı, tarihi ve rakamıyla ayrı olgu yap. Taraflı ya da yorum içeren kaynaklarda (iddia, eleştiri) olguyu 'X kaynağına göre' ya da 'eleştirenlere göre' diye kaynağa bağlayarak yaz, kesin bilgi gibi yazma. En az 20 olgu çıkar (kaynak yeterliyse). Çok sayıda şüpheli ismi varsa tek olguda 'diğer şüpheliler' diye özetle, yalnızca en tanınan 3 ismi ayrı yaz; özel kişilerin adını yazma. Uydurma, yorum, tahmin ekleme.\n"
+        "Haberin merkezindeki kişilerin durumunu anlamak için gereken bağlamı da olgu olarak çıkar (kişi neden orada, neden tutuklu ya da yargılanıyor, hangi davanın parçası). Kişi detaylarını ayrıca çıkar: haberdeki tanınmış kişinin görevi, önceki davaları, şu anki durumu (tutuklu, ev hapsi, tahliye, sağlık gerekçesi, hangi tarihte). Kaynaklarda benzer başka dosyalar ya da FARKLI uygulamalar anlatılıyorsa (biri sağlık gerekçesiyle ev hapsi alırken ağır hasta başkalarının talebinin reddedilmesi, tahliye edilmeden ölenler gibi) bunları adı, tarihi ve rakamıyla ayrı olgu yap. Taraflı ya da yorum içeren kaynaklarda (iddia, eleştiri) olguyu 'X kaynağına göre' ya da 'eleştirenlere göre' diye kaynağa bağlayarak yaz, kesin bilgi gibi yazma. En az 20 olgu çıkar (kaynak yeterliyse). Yalnızca baş harfleriyle anılan (H. C., E. Ö. gibi) kişileri olgulara yazma. Çok sayıda şüpheli ismi varsa tek olguda 'diğer şüpheliler' diye özetle, yalnızca en tanınan 3 ismi ayrı yaz; özel kişilerin adını yazma. Uydurma, yorum, tahmin ekleme.\n"
         + DATE_RULE.format(d=today_tr()) + "\n"
         'Çıktı: {"facts":[{"olgu":"...","kaynaklar":["NTV","Hürriyet"]}]}\n\n'
         + sources_block(arts))
@@ -800,7 +800,28 @@ def revise(key, models, script, instruction, facts):
 
 def split_sentences(text):
     t = re.sub(r"\[duraklama\]", " ", text)
-    return [x.strip() for x in re.split(r"(?<=[.!?])\s+|\n+", t) if x.strip()]
+    # kısaltmalarda (A. Ş., E. Ö., 250. madde, 3.5 gibi) cümle bölme
+    t = re.sub(r"\b([A-ZÇĞİÖŞÜ])\.\s", lambda m: m.group(1) + "\u2024 ", t)
+    t = re.sub(r"\b(\d{1,3})\.\s(?=[a-zçğıöşü0-9])", lambda m: m.group(1) + "\u2024 ", t)
+    parts = [x.strip() for x in re.split(r"(?<=[.!?])\s+|\n+", t) if x.strip()]
+    return [x.replace("\u2024", ".") for x in parts]
+
+
+def drop_initials(script):
+    """Yalnızca baş harfleriyle anılan kişi listesi içeren cümleleri siler (okunmaz, isim listesi gibi durur)."""
+    out, dropped = [], 0
+    for para in script.split("\n\n"):
+        keep = []
+        for sent in split_sentences(para):
+            if len(re.findall(r"\b[A-ZÇĞİÖŞÜ]\.", sent)) >= 2 and "Artık son tanık" not in sent:
+                dropped += 1
+                continue
+            keep.append(sent)
+        if keep:
+            out.append(" ".join(keep))
+    if dropped:
+        log(f"   baş harfli kişi içeren {dropped} cümle silindi")
+    return "\n\n".join(out)
 
 
 def repeats(script):
@@ -914,6 +935,7 @@ def finalize_script(key, models, script, facts):
                 f"{', '.join(bf)}. Metnin geri kalanını olduğu gibi bırak.", facts)))
         except GenerationFailed as e:
             log(f"   yasak kalıp temizliği yapılamadı: {str(e)[:100]}")
+    script = drop_initials(script)
     script, dropped = ground_filter(script, facts)
     if dropped:
         log(f"   {len(dropped)} kaynaksız cümle silindi")
