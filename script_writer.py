@@ -300,10 +300,14 @@ MISTRAL_MODELS = ([os.environ["MISTRAL_MODEL"].strip()]
                   else ["mistral-large-latest", "mistral-medium-latest",
                         "mistral-small-latest", "open-mistral-nemo"])
 MISTRAL_OK = []        # çalışan model bulunca buraya yazılır, sonraki çağrılar onu kullanır
+DEAD_MODELS = set()   # bu çalışmada kotası dolan modeller, tekrar denenmez
 GEMINI_DEAD = False   # Gemini kotası dolunca True olur, sonraki çağrılar doğrudan yedeğe gider
 
 
 def mistral_key():
+    """Yedek sağlayıcı yalnızca MISTRAL_ENABLE=1 ise kullanılır (ücretsiz API planı kapalı)."""
+    if os.environ.get("MISTRAL_ENABLE", "").strip() != "1":
+        return ""
     return os.environ.get("MISTRAL_API_KEY", "").strip()
 
 
@@ -407,12 +411,15 @@ def model_candidates(key):
     g2 = desc([n for n in names if "flash" in n and "lite" not in n
                and n not in g0 and n not in g1])
     g3 = desc([n for n in names if "flash-lite" in n])
+    g3 = [n for n in g3 if "latest" in n] + [n for n in g3 if "latest" not in n]
     g4 = desc([n for n in names if "pro" in n])
+    # Ücretsiz katmanda normal Flash günde ~20 istek, Flash-Lite ~500 istek verir.
+    # Önce en iyi Flash modelleri, kota dolunca Lite modelleri devreye girsin.
     out = []
-    for n in g0 + g1 + g2 + g3 + g4:
+    for n in (g0 + g1 + g2)[:3] + g3[:3] + (g0 + g1 + g2)[3:5]:
         if n not in out:
             out.append(n)
-    return out[:6] or ["gemini-flash-latest", "gemini-2.5-flash"]
+    return out[:8] or ["gemini-flash-latest", "gemini-flash-lite-latest", "gemini-2.5-flash"]
 
 
 def extract_text(resp):
@@ -450,7 +457,10 @@ def generate(key, models, prompt, system=SYSTEM, json_out=False,
     global GEMINI_DEAD
     last = "bilinmeyen hata"
     quota_models, tried = 0, 0
-    gem_models = [m for m in models if not m.startswith("mistral")] if key and not GEMINI_DEAD else []
+    gem_models = ([m for m in models if not m.startswith("mistral") and m not in DEAD_MODELS]
+                  if key and not GEMINI_DEAD else [])
+    if key and not gem_models and models and not GEMINI_DEAD:
+        gem_models = []  # hepsi daha önce 429 verdi
     for model in gem_models:
         tried += 1
         hit_quota = False
@@ -486,6 +496,7 @@ def generate(key, models, prompt, system=SYSTEM, json_out=False,
                 break
         if hit_quota:
             quota_models += 1
+            DEAD_MODELS.add(model)
     if tried and quota_models == tried:
         GEMINI_DEAD = True
     if mistral_key() and (GEMINI_DEAD or not gem_models or tried):
