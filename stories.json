@@ -1,50 +1,593 @@
 [
- {"id":"brentford","title":"Bahisçinin kulübü: Brentford'u yükselten matematik","terms":["benham","brentford"],
-  "wiki":[["en","Matthew Benham"],["en","Brentford F.C."],["en","Smartodds"],["tr","Brentford FK"]],
-  "queries":[["Matthew Benham Brentford","en-US"],["Matthew Benham betting Brentford owner","en-US"],["Brentford Matthew Benham bahis","tr-TR"]]},
- {"id":"cronje","title":"Hansie Cronje: Kriketin en büyük şike skandalı","terms":["cronje"],
-  "wiki":[["en","Hansie Cronje"],["en","Cronje match-fixing scandal"]],
-  "queries":[["Hansie Cronje match fixing","en-US"],["Hansie Cronje şike","tr-TR"]]},
- {"id":"calciopoli","title":"Calciopoli: İtalyan futbolunu sarsan telefon dinlemeleri","terms":["calciopoli","juventus","moggi"],
-  "wiki":[["en","2006 Italian football scandal"],["tr","Calciopoli"]],
-  "queries":[["Calciopoli Moggi Juventus","en-US"],["Calciopoli Juventus Moggi","tr-TR"]]},
- {"id":"donaghy","title":"Tim Donaghy: Bahis çetesine çalışan NBA hakemi","terms":["donaghy"],
-  "wiki":[["en","Tim Donaghy"]],
-  "queries":[["Tim Donaghy NBA betting scandal","en-US"],["Tim Donaghy NBA hakem bahis","tr-TR"]]},
- {"id":"leeson","title":"Nick Leeson: Tek bir adamın batırdığı 233 yıllık banka","terms":["leeson","barings"],
-  "wiki":[["en","Nick Leeson"],["en","Barings Bank"],["tr","Nick Leeson"]],
-  "queries":[["Nick Leeson Barings collapse","en-US"],["Nick Leeson Barings Bank","tr-TR"]]},
- {"id":"madoff","title":"Bernie Madoff: 65 milyar dolarlık piramit","terms":["madoff"],
-  "wiki":[["en","Bernie Madoff"],["tr","Bernard Madoff"]],
-  "queries":[["Bernie Madoff Ponzi scheme","en-US"],["Madoff piramit dolandırıcılık","tr-TR"]]},
- {"id":"ciftlikbank","title":"Çiftlik Bank: Sanal inekle yüz binlerce kişiyi nasıl kandırdılar","terms":["çiftlik","mehmet aydın"],
-  "wiki":[["tr","Çiftlik Bank"]],
-  "queries":[["Çiftlik Bank Mehmet Aydın dava","tr-TR"],["Çiftlik Bank mağdurları karar","tr-TR"]]},
- {"id":"susurluk","title":"Susurluk kazası: Devlet, mafya ve polis aynı arabada","terms":["susurluk"],
-  "wiki":[["tr","Susurluk kazası"],["en","Susurluk scandal"]],
-  "queries":[["Susurluk kazası 1996 Abdullah Çatlı","tr-TR"],["Susurluk scandal Turkey","en-US"]]},
- {"id":"thodex","title":"Thodex: Kripto borsasından kaçan CEO","terms":["thodex","özer"],
-  "wiki":[["tr","Thodex"]],
-  "queries":[["Thodex Faruk Fatih Özer dava karar","tr-TR"],["Thodex Faruk Özer","en-US"]]},
- {"id":"ftx","title":"Sam Bankman-Fried: FTX'in 8 milyar dolarlık çöküşü","terms":["bankman","ftx"],
-  "wiki":[["en","Sam Bankman-Fried"],["en","FTX"]],
-  "queries":[["Sam Bankman-Fried FTX collapse trial","en-US"],["FTX çöküş Bankman-Fried","tr-TR"]]},
- {"id":"theranos","title":"Theranos: Bir damla kanla kurulan yalan","terms":["theranos","holmes"],
-  "wiki":[["en","Theranos"],["en","Elizabeth Holmes"]],
-  "queries":[["Theranos Elizabeth Holmes fraud trial","en-US"],["Theranos Elizabeth Holmes","tr-TR"]]},
- {"id":"ghosn","title":"Carlos Ghosn: Müzik kutusunda kaçan CEO","terms":["ghosn"],
-  "wiki":[["en","Carlos Ghosn"]],
-  "queries":[["Carlos Ghosn escape Japan","en-US"],["Carlos Ghosn kaçış","tr-TR"]]},
- {"id":"blacksox","title":"Black Sox: 1919 Dünya Serisi'ni satan oyuncular","terms":["black sox","1919"],
-  "wiki":[["en","Black Sox Scandal"]],
-  "queries":[["Black Sox scandal 1919 World Series","en-US"]]},
- {"id":"antwerp","title":"Anvers elmas soygunu: Kasası 'geçilmez' denen tonoz","terms":["antwerp","anvers"],
-  "wiki":[["en","Antwerp diamond heist"]],
-  "queries":[["Antwerp diamond heist 2003 Leonardo Notarbartolo","en-US"]]},
- {"id":"hatton","title":"Hatton Garden soygunu: Yaşlı hırsızların büyük işi","terms":["hatton"],
-  "wiki":[["en","Hatton Garden safe deposit burglary"]],
-  "queries":[["Hatton Garden burglary 2015","en-US"]]},
- {"id":"calvi","title":"Roberto Calvi: Köprü altında asılı bulunan Vatikan bankacısı","terms":["calvi","ambrosiano"],
-  "wiki":[["en","Roberto Calvi"],["en","Banco Ambrosiano"]],
-  "queries":[["Roberto Calvi Banco Ambrosiano death","en-US"]]}
+ {
+  "id": "brentford",
+  "title": "Bahisçinin kulübü: Brentford'u yükselten matematik",
+  "terms": [
+   "benham",
+   "brentford"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Matthew Benham"
+   ],
+   [
+    "en",
+    "Brentford F.C."
+   ],
+   [
+    "en",
+    "Smartodds"
+   ]
+  ],
+  "queries": [
+   [
+    "Matthew Benham Brentford betting",
+    "en-US"
+   ],
+   [
+    "Brentford Matthew Benham bahis",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "togo",
+  "title": "Sahte Togo milli takımı: Maçı bile oynadılar",
+  "terms": [
+   "perumal",
+   "togo"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Wilson Raj Perumal"
+   ],
+   [
+    "en",
+    "Fake Togo national football team"
+   ]
+  ],
+  "queries": [
+   [
+    "Wilson Raj Perumal fake Togo national team Bahrain",
+    "en-US"
+   ],
+   [
+    "Wilson Raj Perumal şike",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "rojas",
+  "title": "Roberto Rojas: Kendini ustura ile kesen kaleci",
+  "terms": [
+   "rojas",
+   "maracan"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Roberto Rojas"
+   ],
+   [
+    "en",
+    "Condor (footballer)"
+   ],
+   [
+    "tr",
+    "Roberto Rojas"
+   ]
+  ],
+  "queries": [
+   [
+    "Roberto Rojas Condor 1989 Maracana flare Brazil Chile",
+    "en-US"
+   ],
+   [
+    "Roberto Rojas Maracana 1989 Şili Brezilya",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "hoyzer",
+  "title": "Robert Hoyzer: Maçları satan Alman hakem",
+  "terms": [
+   "hoyzer"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Robert Hoyzer"
+   ],
+   [
+    "tr",
+    "Robert Hoyzer"
+   ],
+   [
+    "en",
+    "2005 German football match-fixing scandal"
+   ]
+  ],
+  "queries": [
+   [
+    "Robert Hoyzer match fixing 2005 referee Germany",
+    "en-US"
+   ],
+   [
+    "Robert Hoyzer hakem şike",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "heilbronn",
+  "title": "Heilbronn'un hayaleti: 6 ülkede DNA'sı bulunan katil kim çıktı",
+  "terms": [
+   "heilbronn",
+   "phantom"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Phantom of Heilbronn"
+   ],
+   [
+    "tr",
+    "Heilbronn Hayaleti"
+   ]
+  ],
+  "queries": [
+   [
+    "Phantom of Heilbronn DNA cotton swab",
+    "en-US"
+   ],
+   [
+    "Heilbronn hayaleti DNA",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "horizon",
+  "title": "Postane skandalı: 900'den fazla masum insan nasıl hapse atıldı",
+  "terms": [
+   "horizon",
+   "post",
+   "office"
+  ],
+  "wiki": [
+   [
+    "en",
+    "British Post Office scandal"
+   ],
+   [
+    "en",
+    "Horizon (software)"
+   ]
+  ],
+  "queries": [
+   [
+    "Post Office Horizon scandal subpostmasters wrongful convictions",
+    "en-US"
+   ],
+   [
+    "Post Office Horizon skandalı",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "arnavutluk",
+  "title": "Arnavutluk 1997: Piramit şemaları bir ülkeyi nasıl savaşa sürükledi",
+  "terms": [
+   "piramit",
+   "arnavutluk",
+   "albania",
+   "pyramid"
+  ],
+  "wiki": [
+   [
+    "en",
+    "1997 rebellion in Albania"
+   ],
+   [
+    "en",
+    "Albanian pyramid scheme crisis"
+   ],
+   [
+    "tr",
+    "Arnavutluk'ta 1997 ayaklanması"
+   ]
+  ],
+  "queries": [
+   [
+    "Albania 1997 pyramid schemes collapse rebellion",
+    "en-US"
+   ],
+   [
+    "Arnavutluk 1997 piramit şemaları ayaklanma",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "danske",
+  "title": "Danske Bank: Küçük bir şubeden 200 milyar euroluk kara para",
+  "terms": [
+   "danske"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Danske Bank money laundering scandal"
+   ],
+   [
+    "en",
+    "Danske Bank"
+   ]
+  ],
+  "queries": [
+   [
+    "Danske Bank Estonia money laundering 200 billion",
+    "en-US"
+   ],
+   [
+    "Danske Bank Estonya kara para",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "kaiser",
+  "title": "Carlos Kaiser: 20 yıl top oynamadan futbolcu geçinen adam",
+  "terms": [
+   "kaiser",
+   "raposo"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Carlos Henrique Raposo"
+   ],
+   [
+    "tr",
+    "Carlos Kaiser"
+   ]
+  ],
+  "queries": [
+   [
+    "Carlos Kaiser footballer never played Raposo",
+    "en-US"
+   ],
+   [
+    "Carlos Kaiser futbolcu hiç maç oynamadı",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "monopoly",
+  "title": "McDonald's Monopoly: 12 yıl boyunca kazanan parçaları çalan adam",
+  "terms": [
+   "monopoly",
+   "mcdonald",
+   "jacobson"
+  ],
+  "wiki": [
+   [
+    "en",
+    "McDonald's Monopoly"
+   ],
+   [
+    "en",
+    "Jerome Jacobson"
+   ]
+  ],
+  "queries": [
+   [
+    "McDonald's Monopoly fraud Jerome Jacobson",
+    "en-US"
+   ],
+   [
+    "McDonald's Monopoly dolandırıcılık Jacobson",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "rodchenkov",
+  "title": "Rodchenkov: Soçi'de idrar numunelerini duvardan değiştirenler",
+  "terms": [
+   "rodchenkov"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Grigory Rodchenkov"
+   ],
+   [
+    "en",
+    "Russian doping scandal"
+   ]
+  ],
+  "queries": [
+   [
+    "Grigory Rodchenkov Sochi urine samples swap",
+    "en-US"
+   ],
+   [
+    "Rodçenkov Soçi doping idrar",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "ddr",
+  "title": "Devlet Planı 14.25: Doğu Almanya'nın sporcuları nasıl doping makinesine çevirdi",
+  "terms": [
+   "doğu",
+   "alman",
+   "east",
+   "german"
+  ],
+  "wiki": [
+   [
+    "en",
+    "State Plan 14.25"
+   ],
+   [
+    "tr",
+    "Devlet Planı 14.25"
+   ]
+  ],
+  "queries": [
+   [
+    "State Plan 14.25 East German doping athletes",
+    "en-US"
+   ],
+   [
+    "Doğu Almanya doping Devlet Planı 14.25",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "totonero",
+  "title": "Totonero 1980: Paolo Rossi'yi de içine çeken İtalyan bahis skandalı",
+  "terms": [
+   "totonero"
+  ],
+  "wiki": [
+   [
+    "en",
+    "1980 Italian football scandal"
+   ],
+   [
+    "tr",
+    "Totonero"
+   ]
+  ],
+  "queries": [
+   [
+    "Totonero 1980 Italian football scandal Paolo Rossi",
+    "en-US"
+   ],
+   [
+    "Totonero 1980 şike İtalya",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "om",
+  "title": "Marsilya 1993: Maçı satın alıp şampiyonluğa giden kulüp",
+  "terms": [
+   "marseille",
+   "valenciennes"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Olympique de Marseille"
+   ],
+   [
+    "en",
+    "Marseille match-fixing scandal"
+   ]
+  ],
+  "queries": [
+   [
+    "Marseille Valenciennes 1993 match fixing Tapie",
+    "en-US"
+   ],
+   [
+    "Marsilya Valenciennes 1993 şike Tapie",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "bcci",
+  "title": "BCCI: Diktatörlerin ve kaçakçıların bankası",
+  "terms": [
+   "bcci"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Bank of Credit and Commerce International"
+   ],
+   [
+    "tr",
+    "BCCI"
+   ]
+  ],
+  "queries": [
+   [
+    "BCCI bank scandal Bank of Credit and Commerce International",
+    "en-US"
+   ],
+   [
+    "BCCI bankası skandalı",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "toeslagen",
+  "title": "Hollanda ödenek skandalı: Devlet binlerce aileyi dolandırıcı ilan etti",
+  "terms": [
+   "toeslag",
+   "benefits",
+   "childcare"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Dutch childcare benefits scandal"
+   ],
+   [
+    "tr",
+    "Hollanda çocuk bakım yardımı skandalı"
+   ]
+  ],
+  "queries": [
+   [
+    "Dutch childcare benefits scandal tax authority families",
+    "en-US"
+   ],
+   [
+    "Hollanda çocuk yardımı skandalı vergi dairesi aileler",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "davydenko",
+  "title": "Sopot 2007: Dünya 4 numarasının maçı bahis borsasını kilitledi",
+  "terms": [
+   "davydenko",
+   "sopot"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Nikolay Davydenko"
+   ],
+   [
+    "en",
+    "Match fixing in tennis"
+   ]
+  ],
+  "queries": [
+   [
+    "Davydenko Sopot 2007 Betfair suspicious betting",
+    "en-US"
+   ],
+   [
+    "Davydenko Sopot 2007 bahis şike",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "benter",
+  "title": "Bill Benter: Hong Kong at yarışlarını bilgisayarla yenen adam",
+  "terms": [
+   "benter"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Bill Benter"
+   ],
+   [
+    "en",
+    "Computer-assisted gambling"
+   ]
+  ],
+  "queries": [
+   [
+    "Bill Benter Hong Kong horse racing computer model",
+    "en-US"
+   ]
+  ]
+ },
+ {
+  "id": "kastelli",
+  "title": "Banker Kastelli: Türkiye'nin 90'lardaki bankacı skandalı",
+  "terms": [
+   "kastelli"
+  ],
+  "wiki": [
+   [
+    "tr",
+    "Banker Kastelli"
+   ]
+  ],
+  "queries": [
+   [
+    "Banker Kastelli skandalı",
+    "tr-TR"
+   ],
+   [
+    "Banker Kastelli Cevat Kastelli dolandırıcılık",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "ciftlikbank",
+  "title": "Çiftlik Bank: Sanal inekle yüz binlerce kişiyi nasıl kandırdılar",
+  "terms": [
+   "çiftlik",
+   "mehmet",
+   "aydın"
+  ],
+  "wiki": [
+   [
+    "tr",
+    "Çiftlik Bank"
+   ]
+  ],
+  "queries": [
+   [
+    "Çiftlik Bank Mehmet Aydın dava",
+    "tr-TR"
+   ],
+   [
+    "Çiftlik Bank mağdurları karar",
+    "tr-TR"
+   ]
+  ]
+ },
+ {
+  "id": "salad",
+  "title": "Tuzlu yağ skandalı: Boş tankları dolu gösteren adam",
+  "terms": [
+   "salad",
+   "oil",
+   "de",
+   "angelis"
+  ],
+  "wiki": [
+   [
+    "en",
+    "Great Salad Oil Swindle"
+   ],
+   [
+    "en",
+    "Anthony De Angelis"
+   ]
+  ],
+  "queries": [
+   [
+    "Great Salad Oil Swindle Tino De Angelis",
+    "en-US"
+   ]
+  ]
+ }
 ]

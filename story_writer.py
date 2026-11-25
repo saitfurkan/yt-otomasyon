@@ -23,7 +23,17 @@ def wiki_text(lang, title):
     req = urllib.request.Request(url, headers={"User-Agent": sw.UA})
     with urllib.request.urlopen(req, timeout=30) as r:
         data = json.load(r)
-    for p in data.get("query", {}).get("pages", {}).values():
+    pages = list(data.get("query", {}).get("pages", {}).values())
+    if not pages or "missing" in pages[0] or not (pages[0].get("extract") or "").strip():
+        # başlık tutmadıysa Vikipedi aramasındaki ilk sonucu al
+        surl = (f"https://{lang}.wikipedia.org/w/api.php?action=query&list=search&srlimit=1&format=json&srsearch="
+                f"{urllib.parse.quote(title)}")
+        with urllib.request.urlopen(urllib.request.Request(surl, headers={"User-Agent": sw.UA}), timeout=30) as r:
+            hit = (json.load(r).get("query", {}).get("search") or [{}])[0].get("title")
+        if not hit or hit == title:
+            return ""
+        return wiki_text(lang, hit)
+    for p in pages:
         t = p.get("extract") or ""
         t = re.sub(r"\n==+ *(See also|References|External links|Further reading|Notes|Kaynakça|Dış bağlantılar|Ayrıca bakınız)[\s\S]*$", "", t)
         return re.sub(r"\n==+ *([^=\n]+?) *==+\n", r"\n\1\n", t).strip()
