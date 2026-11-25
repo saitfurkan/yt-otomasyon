@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 17:30 UTC",
+  "generated": "2026-11-25 17:45 UTC",
   "errors": [
     "AA: Remote end closed connection without response"
   ],
@@ -17,6 +17,12 @@
         "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
         "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
         "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
+      },
+      {
+        "source": "Hürriyet",
+        "url": "https://www.hurriyet.com.tr/gundem/sile-belediyesi-yolsuzluk-davasinda-haluk-levent-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43391173",
+        "title": "Şile Belediyesi ‘yolsuzluk’ davasında Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor /",
+        "summary": ""
       },
       {
         "source": "Hürriyet",
@@ -40,7 +46,7 @@
     ],
     "sensitive": false,
     "single_source": false,
-    "newest": "2026-11-25T12:48:02+03:00"
+    "newest": "2026-11-25T17:38:00+00:00"
   },
   "topics": [
     {
@@ -57,6 +63,12 @@
           "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
           "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
           "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/sile-belediyesi-yolsuzluk-davasinda-haluk-levent-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43391173",
+          "title": "Şile Belediyesi ‘yolsuzluk’ davasında Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor /",
+          "summary": ""
         },
         {
           "source": "Hürriyet",
@@ -80,7 +92,7 @@
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T12:48:02+03:00"
+      "newest": "2026-11-25T17:38:00+00:00"
     },
     {
       "score": 28,
@@ -180,9 +192,9 @@
         },
         {
           "source": "BirGün",
-          "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-10-kisi-adliyede-ifade-verecek-748387",
-          "title": "Ünlülere yönelik uyuşturucu operasyonu: 10 kişi adliyede ifade verecek",
-          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişiden 10'unun savcılıkta ifadesi alınacak. 14 kişinin ise ek ifadesinin alınması için yeniden emniyete götürüldüğü öğrenildi. Gözaltına alınanlar arasında Özcan Deniz, Burcu Özberk, Deniz Çakır ve Murat Ceylan da bulunuyor."
+          "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-1-kisiye-tutuklama-9-kisiye-adli-kontrol-talebi-748387",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu: 1 kişiye tutuklama 9 kişiye adli kontrol talebi",
+          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişiden 10'unun savcılıkta ifadesi alınacak. 14 kişi ise ek ifadesinin alınması için yeniden emniyete götürüldü. Savcılık, şüphelilerden Ceylan Kaya'yı tutuklama, Deniz Sözen, Murat Ceylan, Deniz Çakır Baykal, İbrahim Yılmaz, Özcan Deniz, Burcu Özberk, Murat Başoğlu, Ufuk Gündoğdu ve Onur Yüksel'i ise adli kontrol istemiyle sulh ceza hakimliğine sevk etti."
         },
         {
           "source": "Habertürk",
@@ -197,7 +209,7 @@
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T16:04:04+00:00"
+      "newest": "2026-11-25T17:34:59+00:00"
     },
     {
       "score": 21,
@@ -285,43 +297,6 @@
       "newest": "2026-11-25T12:24:59+00:00"
     },
     {
-      "score": 18,
-      "title": "60 ilde yeni nesil suç örgütlerine operasyon 280 gözaltı",
-      "sources": [
-        "Habertürk",
-        "Hürriyet",
-        "TRT Haber"
-      ],
-      "links": [
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/60-ilde-yeni-nesil-suc-orgutlerine-operasyon-280-gozalti-964420.html",
-          "title": "60 ilde yeni nesil suç örgütlerine operasyon 280 gözaltı",
-          "summary": "İçişleri Bakanlığı, 60 ilde \"yeni nesil suç örgütleri\"ne yönelik düzenlenen operasyonlarda 280 şüphelinin yakalandığını bildirdi."
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/60-ilde-yeni-nesil-suc-orgutlerine-yonelik-operasyon-280-supheli-yakalandi-43390449",
-          "title": "60 ilde yeni nesil suç örgütlerine yönelik operasyon: 280 şüpheli yakalandı",
-          "summary": ""
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/gundem/son-dakika-60-ilde-280-kisi-yakalandi-yeni-nesil-suc-orgutlerine-darbe-3929975",
-          "title": "Yeni nesil suç örgütlerine darbe! 60 ilde 280 kişi yakalandı",
-          "summary": ""
-        }
-      ],
-      "reasons": [
-        "suç:+8",
-        "güç:+1",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T11:16:20+00:00"
-    },
-    {
       "score": 15,
       "title": "Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi",
       "sources": [
@@ -386,6 +361,64 @@
       "sensitive": false,
       "single_source": false,
       "newest": "2026-11-25T17:34:00+03:00"
+    },
+    {
+      "score": 14,
+      "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+      "sources": [
+        "BirGün",
+        "CNN Türk",
+        "Cumhuriyet",
+        "Habertürk",
+        "Hürriyet",
+        "NTV",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-1752573",
+          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+          "summary": "Hakimler ve Savcılar Kurulunun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi. HSK Birinci Dairesinin adli ve idari yargıya ilişkin mazeret kararnamesi HSK'nin internet sitesinde ilan edildi. Buna göre, adli yargıda 915, idari yargıda 42 olmak üzere toplam 957 hakim ve savcı yeni görevlere atandı. Kararnameyle, Manisa Cumhuriyet Başsavcısı Kurtca Eker İzmir Cumhuriyet Başsavcılığına, İzmir Cumhuriyet Başsavcısı Ali Yeldan Ankara Bölge Adliye Mahkemesi Cu"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/957-hakim-ve-savcinin-gorev-yeri-degisti-43391122",
+          "title": "957 hakim ve savcının görev yeri değişti",
+          "summary": ""
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/hsk-nin-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-2559422",
+          "title": "HSK'nin kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+          "summary": "Hakimler ve Savcılar Kurulu'nun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi. İşte ayrıntılar..."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/hsk-nin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-748471",
+          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+          "summary": "Hakimler ve Savcılar Kurulunun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi."
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/957-hakim-ve-savcinin-gorev-yeri-degisti-964465.html",
+          "title": "957 hakim ve savcının görev yeri değişti",
+          "summary": "Hakimler ve Savcılar Kurulunun HSK, mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi."
+        },
+        {
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/turkiye/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-3498203",
+          "title": "HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti",
+          "summary": "Hakimler ve Savcılar Kurulunun (HSK), mazeret kararnamesiyle 957 hakim ve Cumhuriyet savcısının görev yeri değiştirildi."
+        }
+      ],
+      "reasons": [
+        "güç:+2",
+        "rakam:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T19:59:35+00:00"
     }
   ]
 }
