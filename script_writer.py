@@ -53,6 +53,7 @@ BANNED = [
 
 CELEB = ["ünlü", "şarkıcı", "oyuncu", "magazin", "fenomen", "sunucu", "futbolcu",
          "meghan", "markle", "kraliyet", "prens", "hollywood", "manken", "mankenin"]
+SKIP_TITLE = ["kararname", "görev yeri", "mazeret", "genelge", "atama listesi"]  # liste/idari haberler hikâye olmaz
 PIPE_WARNINGS = []   # çalışma sırasında oluşan, rapora yazılacak uyarılar
 
 POLITICAL = ["imamoğlu", "erdoğan", "özgür özel", "bahçeli", "kılıçdaroğlu",
@@ -536,7 +537,8 @@ def search_sources(key, models, topic, known_urls):
         "Olayın önceki aşamalarını, ilgili kişilerin bu dosyadaki rolünü, önceki "
         "duruşmaları ya da operasyonları ve davanın nasıl başladığını bul. "
         "Kısa bir özet yaz.")
-    for model in models[:3]:
+    live = [m for m in models if m not in DEAD_MODELS and not m.startswith("mistral")]
+    for model in live[:4]:
         payload = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
                    "tools": [{"google_search": {}}],
                    "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1500}}
@@ -544,6 +546,8 @@ def search_sources(key, models, topic, known_urls):
             resp = http("POST", f"{API}/models/{model}:generateContent", key, payload, timeout=120)
         except Exception as e:
             log(f"   [arka plan araması: {model}] {str(e)[:120]}")
+            if getattr(e, "code", 0) == 429:
+                DEAD_MODELS.add(model)
             continue
         links, seen = [], set(known_urls)
         for l in grounded_links(resp):
@@ -711,6 +715,65 @@ def repeats(script):
     return out
 
 
+SUPPORT_STOP = set("olarak ancak fakat ayrıca yani çünkü sadece bile kadar sonra önce bence "
+                   "aslında özellikle şimdi ise veya gibi daha çok bütün birer bunun bunu "
+                   "bunlar onun yine hala hâlâ artık için ile ama".split())
+SUPPORT_MIN = 0.55        # bir cümlenin içerik sözcüklerinin en az bu oranı olgularda geçmeli
+PIPE_DROPPED = []         # silinen kaynaksız cümleler (rapora yazılır)
+
+
+def content_stems(text):
+    return {w[:5] for w in re.findall(r"[a-zçğıöşü0-9]+", tr_lower(text))
+            if len(w) >= 5 and w not in SUPPORT_STOP}
+
+
+def ground_filter(script, facts):
+    """Olgu listesinde karşılığı olmayan cümleleri siler (uydurmaya karşı son güvenlik).
+    Kanca (ilk paragraf) ve kapanış paragrafı korunur. 'Bence' cümlelerinden en fazla 3'ü
+    düşük destekle de kalabilir (Furkan'ın yorumu)."""
+    ft = facts_text(facts)
+    sup = content_stems(ft)
+    fact_nums = {re.sub(r"[.,]", "", n) for n in re.findall(r"\d[\d.,]*\d|\d", ft)}
+    paras = [p for p in script.split("\n\n") if p.strip()]
+    out, dropped, bence = [], [], 3
+    for i, para in enumerate(paras):
+        if i == 0 or "Artık son tanık sizsiniz" in para:
+            out.append(para)
+            continue
+        sents = re.findall(r"[^.!?]+[.!?]+(?:\s*\[duraklama\])?|[^.!?]+$", para)
+        keep = []
+        for sent in sents:
+            plain = re.sub(r"\[duraklama\]", " ", sent).strip()
+            if not plain:
+                continue
+            st = content_stems(plain)
+            nums = {re.sub(r"[.,]", "", n) for n in re.findall(r"\d[\d.,]*\d|\d", plain)}
+            bad_num = any(len(n) >= 2 and n not in fact_nums for n in nums)
+            if len(st) < 4:
+                score = 1.0 if not bad_num else 0.0
+                # kısa cümle: sadece 'hukuk/adalet' gibi vaazları ele
+                if score and not (st & sup) and len(st) >= 2:
+                    score = 0.0
+            else:
+                score = len(st & sup) / len(st)
+            if bad_num:
+                score = 0.0
+            if banned_found(plain):
+                dropped.append(plain)
+            elif score >= SUPPORT_MIN:
+                keep.append(sent.strip())
+            elif "bence" in tr_lower(plain) and score >= 0.1 and bence > 0 and not bad_num:
+                bence -= 1
+                keep.append(sent.strip())
+            else:
+                dropped.append(plain)
+        if keep:
+            out.append(" ".join(keep))
+    text = "\n\n".join(out)
+    text = re.sub(r"\n\n(?:\[duraklama\]\s*)+(?=\n\n|$)", "", text)
+    return text.strip(), dropped
+
+
 def drop_self_intro(s):
     s = re.sub(r"(?:^|(?<=[.!?]\s))[^.!?\n]*\bBen Furkan\b[^.!?\n]*[.!?]?\s*", "", s)
     return s.strip()
@@ -748,6 +811,10 @@ def finalize_script(key, models, script, facts):
                 f"{', '.join(bf)}. Metnin geri kalanını olduğu gibi bırak.", facts)))
         except GenerationFailed as e:
             log(f"   yasak kalıp temizliği yapılamadı: {str(e)[:100]}")
+    script, dropped = ground_filter(script, facts)
+    if dropped:
+        log(f"   {len(dropped)} kaynaksız cümle silindi")
+        PIPE_DROPPED.extend(dropped)
     if not script.rstrip().endswith("Artık son tanık sizsiniz."):
         script = script.rstrip() + "\n\nArtık son tanık sizsiniz."
     return script
@@ -763,7 +830,8 @@ def make_meta(key, models, topic, script, facts):
 
 
 def unverified(script, arts):
-    allow = {"Furkan", "Tanık", "Son"}
+    allow = {"Furkan", "Tanık", "Son", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+             "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"}
     for a in arts:
         allow.update(re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşü]+", a["source"]))
     """Senaryodaki sayı ve özel isimlerden kaynaklarda geçmeyenleri bulur."""
@@ -816,7 +884,11 @@ def write_report(topic, arts, facts, meta, script, model, bad_nums, bad_names, w
         L.append("- Kaynaklarda **bulunamayan özel isimler**: " + ", ".join(bad_names))
     if not (meta.get("risk_notes") or bad_nums or bad_names):
         L.append("- Otomatik kontrol bir sorun bulmadı (yine de bir göz at).")
-    L += ["", "### Kullanılan olgular", facts_text(facts), "", "## Kaynaklar"]
+    L += ["", "### Kullanılan olgular", facts_text(facts), ""]
+    if PIPE_DROPPED:
+        L += ["### Silinen kaynaksız cümleler (yapay zekanın eklediği, olguda olmayan)",
+              *[f"- {d}" for d in PIPE_DROPPED[:60]], ""]
+    L += ["## Kaynaklar"]
     for i, a in enumerate(arts, 1):
         L.append(f"[{i}] {a['source']}: {a['url']}")
     md = "\n".join(L) + "\n"
@@ -879,6 +951,9 @@ def candidates(tdata, history):
     for t in pool:
         if minors(t):
             log(f"   [atlandı: çocuk/reşit olmayan içeriyor] {t['title'][:70]}")
+            continue
+        if any(w in tr_lower(t["title"]) for w in SKIP_TITLE):
+            log(f"   [atlandı: idari liste haberi] {t['title'][:70]}")
             continue
         if celeb(t):
             log(f"   [atlandı: ünlü/magazin konusu] {t['title'][:70]}")
@@ -976,6 +1051,9 @@ def main():
         meta["hook"] = script.split("\n\n")[0].strip()
         warnings = list(PIPE_WARNINGS)
         PIPE_WARNINGS.clear()
+        if PIPE_DROPPED:
+            warnings.append(f"{len(PIPE_DROPPED)} cümle olgu listesinde karşılığı olmadığı için "
+                            "otomatik silindi (uydurma riski). Listesi raporun sonunda.")
         if count_words(script) < MIN_WORDS:
             warnings.append(f"Senaryo hedeften kısa kaldı ({count_words(script)} kelime). "
                             "Konunun malzemesi sınırlı olabilir.")
@@ -999,6 +1077,7 @@ def main():
             warnings.append("Bazı kaynaklarda yalnızca kısa özet okunabildi.")
         write_report(topic, arts, facts, meta, script, models[0],
                      bad_nums, bad_names, warnings)
+        PIPE_DROPPED.clear()
         history.append({"date": today, "title": topic["title"],
                         "tok": sorted(story_tokens(topic["title"]))})
         with open("history.json", "w", encoding="utf-8") as f:
