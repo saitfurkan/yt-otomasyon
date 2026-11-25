@@ -1,4 +1,4 @@
-# Konu adayları (2026-11-25 13:44 UTC)
+# Konu adayları (2026-11-25 13:47 UTC)
 
 **SİSTEMİN SEÇTİĞİ KONU:** Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
 
