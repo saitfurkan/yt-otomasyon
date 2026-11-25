@@ -1,12 +1,11 @@
-# Konu adayları (2026-11-25 12:15 UTC)
+# Konu adayları (2026-11-25 13:16 UTC)
 
 **SİSTEMİN SEÇTİĞİ KONU:** Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
 
 ## 1. Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor  (puan: 33)
-- Kaynaklar: BirGün, CNN Türk, Cumhuriyet, Hürriyet, NTV
+- Kaynaklar: BirGün, Cumhuriyet, Hürriyet, NTV
 - Puan nedenleri: suç:+21, para:+3, güç:+3, merak:+1, gürültü:-6
 - NTV: https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542
-- CNN Türk: https://www.cnnturk.com/turkiye/haluk-leventten-sile-belediyesi-davasinda-ifade-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-3498006
 - Hürriyet: https://www.hurriyet.com.tr/gundem/sile-belediyesine-yonelik-yolsuzluk-davasi-haluk-levent-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43390375
 - Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/haluk-levent-sile-belediyesi-davasinda-tanik-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-2559280
 - BirGün: https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345
@@ -44,37 +43,35 @@
 - NTV: https://www.ntv.com.tr/turkiye/galeri-15-yasindaki-iki-cocuk-oldurdu-azmettiriciler-peslerini-birakmadi-korkudan-sehir-degistirdim-1752521
 - Hürriyet: https://www.hurriyet.com.tr/gundem/15lik-katiller-oldurdu-azmettirenler-ailenin-kabusu-oldu-korkudan-sehir-degistirdik-43390200
 
-## 7. İsa Aras Mersinli için yeniden otopsi istendi. "Mekanik bir robot gibiydi"  (puan: 21)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
+## 7. 2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de  (puan: 24)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
+- Kaynaklar: BirGün, Cumhuriyet, Hürriyet
+- Puan nedenleri: suç:+5, para:+9, güç:+1, rakam:+1
+- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/2-2-milyar-tl-lik-vurguna-19-gun-gazetecilige-aylarca-hapis-fatma-betul-sayan-kaya-tahliye-edildi-gazeteciler-hala-silivri-de-2559339
+- BirGün: https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242
+- BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330
+- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/yeni-parti-den-fatma-betul-sayan-kaya-nin-tahliyesine-gondermeli-video-menfaat-ortakliginiz-belli-2559304
+- BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliye-edilmesine-karsi-sol-parti-den-eskisehir-de-eylem-kahrolsun-foncularin-esitsiz-duzeni-748236
+- BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesini-protesto-etmislerdi-sol-parti-eskisehir-il-orgutu-nun-x-hesabi-engellendi-748252
+
+## 8. İsa Aras Mersinli için yeniden otopsi istendi. "Mekanik bir robot gibiydi"  (puan: 21)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
 - Kaynaklar: Cumhuriyet, Habertürk, NTV
 - Puan nedenleri: suç:+9, güç:+3, merak:+1
 - NTV: https://www.ntv.com.tr/turkiye/isa-aras-mersinli-icin-yeniden-otopsi-istendi-mekanik-bir-robot-gibiydi-1752553
 - Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/son-dakika-kahramanmaras-taki-okul-saldirisi-meb-den-isa-aras-mersinli-nin-otopsisi-icin-yeniden-inceleme-talebi-2559275
 - Habertürk: https://www.haberturk.com/gundem/son-dakika-haber-mekanik-bir-robot-gibiydi-isa-aras-mersinli-ye-bir-daha-otopsi-yapilacak-3930017
 
-## 8. Ünlülere yönelik uyuşturucu operasyonu! Gözaltına alınan 24 şüpheli adliyeye sevk edildi  (puan: 21)
-- Kaynaklar: BirGün, CNN Türk, Cumhuriyet
-- Puan nedenleri: suç:+10, güç:+2, rakam:+1
-- CNN Türk: https://www.cnnturk.com/turkiye/unlulere-yonelik-uyusturucu-operasyonu-gozaltina-alinan-24-supheli-adliyeye-sevk-edildi-3498039
-- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/unlulere-yonelik-uyusturucu-operasyonu-daha-1-saatini-doldurmadan-yasadisi-bahis-sitelerine-dustu-2559249
-- BirGün: https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-gozaltina-alinan-24-kisi-adliyeye-sevk-edildi-748387
-- BirGün: https://www.birgun.net/haber/istanbul-cumhuriyet-bassavciligi-ndan-unlulere-yonelik-uyusturucu-operasyonu-35-kisi-hakkinda-gozalti-karari-748262
-
-## 9. Oya Tekin'den Fatma Betül Sayan Kaya'nın tahliyesine tepki: Bana da aynı adaleti uygulayın  (puan: 20)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
-- Kaynaklar: BirGün, Cumhuriyet, Hürriyet
-- Puan nedenleri: suç:+8, para:+2, güç:+2
-- BirGün: https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242
-- BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330
-- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/yeni-parti-den-fatma-betul-sayan-kaya-nin-tahliyesine-gondermeli-video-menfaat-ortakliginiz-belli-2559304
-- Cumhuriyet: https://www.cumhuriyet.com.tr/siyaset/fatma-betul-sayan-kaya-nin-tahliyesi-2-abdulhamid-in-torunu-da-kizdirdi-nasil-bu-hale-gelinildi-2559257
-- BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliye-edilmesine-karsi-sol-parti-den-eskisehir-de-eylem-kahrolsun-foncularin-esitsiz-duzeni-748236
-- BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesini-protesto-etmislerdi-sol-parti-eskisehir-il-orgutu-nun-x-hesabi-engellendi-748252
-
-## 10. 60 ilde yeni nesil suç örgütlerine operasyon 280 gözaltı  (puan: 18)
+## 9. 60 ilde yeni nesil suç örgütlerine operasyon 280 gözaltı  (puan: 18)
 - Kaynaklar: Habertürk, Hürriyet, TRT Haber
 - Puan nedenleri: suç:+8, güç:+1, rakam:+1
 - TRT Haber: https://www.trthaber.com/haber/gundem/60-ilde-yeni-nesil-suc-orgutlerine-operasyon-280-gozalti-964420.html
 - Hürriyet: https://www.hurriyet.com.tr/gundem/60-ilde-yeni-nesil-suc-orgutlerine-yonelik-operasyon-280-supheli-yakalandi-43390449
 - Habertürk: https://www.haberturk.com/gundem/son-dakika-60-ilde-280-kisi-yakalandi-yeni-nesil-suc-orgutlerine-darbe-3929975
+
+## 10. İzmir'de baba ve oğul cinayetinde yeni gelişme: Eşi ve 2 kişi tutuklandı  (puan: 15)
+- Kaynaklar: Cumhuriyet, Hürriyet
+- Puan nedenleri: suç:+10
+- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/izmir-de-baba-ve-ogul-cinayetinde-yeni-gelisme-esi-ve-2-kisi-tutuklandi-2559324
+- Hürriyet: https://www.hurriyet.com.tr/gundem/ormanda-baba-ogul-cinayetinde-miras-suphesi-es-bakici-ve-erkek-arkadasi-tutuklandi-43390751
 
 ## Çalışmayan kaynaklar
 - AA: Remote end closed connection without response

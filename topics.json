@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 12:15 UTC",
+  "generated": "2026-11-25 13:16 UTC",
   "errors": [
     "AA: Remote end closed connection without response"
   ],
@@ -8,7 +8,6 @@
     "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
     "sources": [
       "BirGün",
-      "CNN Türk",
       "Cumhuriyet",
       "Hürriyet",
       "NTV"
@@ -19,12 +18,6 @@
         "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
         "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
         "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
-      },
-      {
-        "source": "CNN Türk",
-        "url": "https://www.cnnturk.com/turkiye/haluk-leventten-sile-belediyesi-davasinda-ifade-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-3498006",
-        "title": "Haluk Levent'ten \"Şile Belediyesi\" davasında ifade: \"Yeliz Kaya yerine benim tutuklanmam gerekiyor\"",
-        "summary": "Şile Belediyesi'ne yönelik 'Suç işlemek amacıyla örgüt kurma ve üye olma', 'Rüşvet', 'İrtikap' ve 'İhaleye fesat karıştırma' suçlarına ilişkin yürütülen soruşturma kapsamında tutuklanan, görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı davada 11'inci duruşma başladı. Duruşmada tanık olarak dinlenen Haluk Levent, \"Yeliz Kaya benim asistanımdır. Şile dosyasıyla ilgili hiçbir alakası yoktur. Onu"
       },
       {
         "source": "Hürriyet",
@@ -54,7 +47,7 @@
     ],
     "sensitive": false,
     "single_source": false,
-    "newest": "2026-11-25T13:48:41+00:00"
+    "newest": "2026-11-25T12:48:02+03:00"
   },
   "topics": [
     {
@@ -62,7 +55,6 @@
       "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
       "sources": [
         "BirGün",
-        "CNN Türk",
         "Cumhuriyet",
         "Hürriyet",
         "NTV"
@@ -73,12 +65,6 @@
           "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
           "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
           "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/haluk-leventten-sile-belediyesi-davasinda-ifade-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-3498006",
-          "title": "Haluk Levent'ten \"Şile Belediyesi\" davasında ifade: \"Yeliz Kaya yerine benim tutuklanmam gerekiyor\"",
-          "summary": "Şile Belediyesi'ne yönelik 'Suç işlemek amacıyla örgüt kurma ve üye olma', 'Rüşvet', 'İrtikap' ve 'İhaleye fesat karıştırma' suçlarına ilişkin yürütülen soruşturma kapsamında tutuklanan, görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı davada 11'inci duruşma başladı. Duruşmada tanık olarak dinlenen Haluk Levent, \"Yeliz Kaya benim asistanımdır. Şile dosyasıyla ilgili hiçbir alakası yoktur. Onu"
         },
         {
           "source": "Hürriyet",
@@ -108,7 +94,7 @@
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T13:48:41+00:00"
+      "newest": "2026-11-25T12:48:02+03:00"
     },
     {
       "score": 28,
@@ -174,7 +160,7 @@
           "source": "NTV",
           "url": "https://www.ntv.com.tr/turkiye/galeri-unlulere-uyusturucu-sorusturmasinda-yeni-dalga-ozcan-deniz-deniz-cakir-burcu-ozberk-de-gozaltinda-1752499",
           "title": "Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında",
-          "summary": "Ünlülere yönelik yeni bir uyuşturucu operasyonunda gözaltına alınan Özcan Deniz, Deniz Çakır ve Burcu Özberk'in de aralarında bulunduğu 24 ünlü isim adliyeye sevk edildi. Ünlülere yönelik uyuşturucu soruşturmasında yeni bir operasyon düzenlendi. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada 35 şüpheli hakkında gözaltı kararı verildi. Aralarında şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özbek ile organizatör Erdal Bozkuş ve internet ünlülerinin de bulunduğu 24 kişi göz"
+          "summary": "Ünlülere yönelik düzenlenen uyuşturucu operasyonunda gözaltına alınan ve adliyeye sevk edilen 24 şüpheliden 14’ü ek ifade için tekrar emniyete götürülecek. Ünlülere yönelik uyuşturucu soruşturmasında yeni bir operasyon düzenlendi. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada 35 şüpheli hakkında gözaltı kararı verildi. Aralarında şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özbek ile organizatör Erdal Bozkuş ve internet ünlülerinin de bulunduğu 24 kişi gözaltına alındı. "
         },
         {
           "source": "Cumhuriyet",
@@ -195,7 +181,7 @@
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T15:08:00+03:00"
+      "newest": "2026-11-25T15:18:53+03:00"
     },
     {
       "score": 25,
@@ -282,6 +268,62 @@
       "newest": "2026-11-25T11:22:06+03:00"
     },
     {
+      "score": 24,
+      "title": "2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de",
+      "sources": [
+        "BirGün",
+        "Cumhuriyet",
+        "Hürriyet"
+      ],
+      "links": [
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/2-2-milyar-tl-lik-vurguna-19-gun-gazetecilige-aylarca-hapis-fatma-betul-sayan-kaya-tahliye-edildi-gazeteciler-hala-silivri-de-2559339",
+          "title": "2,2 milyar TL’lik vurguna 19 gün, gazeteciliğe aylarca hapis: Fatma Betül Sayan Kaya tahliye edildi, gazeteciler hâlâ Silivri'de",
+          "summary": "AKP’li eski Bakan Fatma Betül Sayan Kaya, fon soruşturması kapsamında 19 gün tutuklu kaldıktan sonra ev hapsiyle tahliye edilirken çok sayıda gazeteci haftalardır cezaevinde. Avukat Elif Ergin, “Tutuklama tedbiri gazeteciler açısından istisnai olmaktan çıkıp peşinen cezalandırma aracına dönüştü” dedi."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242",
+          "title": "Oya Tekin'den Fatma Betül Sayan Kaya'nın tahliyesine tepki: Bana da aynı adaleti uygulayın",
+          "summary": "Silivri'de tutuklu bulunan Seyhan Belediye Başkanı Oya Tekin, fon soruşturması kapsamında tutuklanan eski Aile ve Sosyal Politikalar Bakanı Fatma Betül Sayan Kaya'nın ev hapsi şartıyla tahliye edilmesine tepki göstererek, \"Fatma Betül Sayan Kaya'ya uygulanan adaleti istiyorum. Ben üç çocuk sahibi bir anneyim. 35 yıllık avukatım, 1 yıl belediye başkanlığı yaptım, 18 aydır hapis yatıyorum. Suçum yok, delil yok, kamu zararı iddiası yok, suç iddiası olan kişilerle temasım yok. Buna rağmen tutukluluğ"
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330",
+          "title": "Fatma Betül Sayan Kaya'nın cezaevinde ağladığı iddia edilmişti: Avukat Hatipoğlu, şahit olduğu anları anlattı",
+          "summary": "Avukat Afşin Hatipoğlu, fon vurgunu soruşturması kapsamında 18 gün tutuklu kalan Fatma Betül Sayan Kaya'nın cezaevindeki günlerine ilişkin iddialarda bulundu. Hatipoğlu, Kaya'nın diğer tutuklulardan farklı muamele gördüğünün yanı sıra gazeteci Nagehan Alçı'nın iddialarına karşı çıkarak, \"Gayet sohbetli, nezaketli, zevkli, sefalıydı. Oradaki, cezaevi ortamında nasıl olunacaksa o şekilde gördüm\" dedi."
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/yeni-parti-den-fatma-betul-sayan-kaya-nin-tahliyesine-gondermeli-video-menfaat-ortakliginiz-belli-2559304",
+          "title": "YENİ Parti'den Fatma Betül Sayan Kaya'nın tahliyesine göndermeli video: 'Menfaat ortaklığınız belli!'",
+          "summary": "Fon soruşturması kapsamında tutuklanan eski Bakan Fatma Betül Sayan Kaya'nın ev hapsi kararıyla tahliye edilmesinin ardından YENİ Parti'den dikkat çeken bir paylaşım geldi. Partinin yayımladığı videoda, AKP'li Cumhurbaşkanı Recep Tayyip Erdoğan'ın soruşturmaya ilişkin sözlerine WhatsApp grubu üzerinden gönderme yapıldı."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliye-edilmesine-karsi-sol-parti-den-eskisehir-de-eylem-kahrolsun-foncularin-esitsiz-duzeni-748236",
+          "title": "Fatma Betül Sayan Kaya'nın tahliye edilmesine karşı SOL Parti'den Eskişehir'de eylem: \"Kahrolsun foncuların eşitsiz düzeni\"",
+          "summary": "SOL Parti Eskişehir İl Örgütü eski Aile ve Sosyal Politikalar Bakanı ve AKP Genel Başkan Yardımcısı Fatma Betül Sayan Kaya'nın cezaevinden tahliye edilmesine yönelik Köprübaşı'nda sokağa çıktı. SOL Parti basın açıklamasında \"Kahrolsun foncuların, soyguncuların bu adaletsiz, eşitsiz düzeni. Bu düzeni değiştireceğiz! Geleceğimizden çalanlardan, cebimizdeki son kuruşa göz dikenlerden mutlaka hesap soracağız!\" dedi."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesini-protesto-etmislerdi-sol-parti-eskisehir-il-orgutu-nun-x-hesabi-engellendi-748252",
+          "title": "Fatma Betül Sayan Kaya'nın tahliyesini protesto etmişlerdi: SOL Parti Eskişehir İl Örgütü'nün X hesabı engellendi",
+          "summary": "SOL Parti Eskişehir’in X hesabı, Fatma Betül Sayan Kaya’nın tahliyesini protesto etmelerinin ardından erişime engellendi. SOL Parti \"Fon soygunu eyleminin ardından SOL Parti Eskişehir hesabımız askıya alındı. Telaş, panik, korku içindeler, gerçekleri her yerde söylemeye devam edeceğiz\" dedi."
+        }
+      ],
+      "reasons": [
+        "suç:+5",
+        "para:+9",
+        "güç:+1",
+        "rakam:+1"
+      ],
+      "sensitive": true,
+      "single_source": false,
+      "newest": "2026-11-25T15:29:00+03:00"
+    },
+    {
       "score": 21,
       "title": "İsa Aras Mersinli için yeniden otopsi istendi. \"Mekanik bir robot gibiydi\"",
       "sources": [
@@ -316,105 +358,7 @@
       ],
       "sensitive": true,
       "single_source": false,
-      "newest": "2026-11-25T11:35:21+00:00"
-    },
-    {
-      "score": 21,
-      "title": "Ünlülere yönelik uyuşturucu operasyonu! Gözaltına alınan 24 şüpheli adliyeye sevk edildi",
-      "sources": [
-        "BirGün",
-        "CNN Türk",
-        "Cumhuriyet"
-      ],
-      "links": [
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/unlulere-yonelik-uyusturucu-operasyonu-gozaltina-alinan-24-supheli-adliyeye-sevk-edildi-3498039",
-          "title": "Ünlülere yönelik uyuşturucu operasyonu! Gözaltına alınan 24 şüpheli adliyeye sevk edildi",
-          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen ünlülere yönelik uyuşturucu soruşturması kapsamında, aralarında oyuncu Özcan Deniz ve Deniz Çakır'ın da bulunduğu 35 kişi hakkında gözaltı kararı verildi. Operasyonda gözaltına alınan 24 şüpheli sağlık kontrolünden geçirildikten sonra adliyeye sevk edildi."
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/unlulere-yonelik-uyusturucu-operasyonu-daha-1-saatini-doldurmadan-yasadisi-bahis-sitelerine-dustu-2559249",
-          "title": "Ünlülere yönelik uyuşturucu operasyonu daha 1 saatini doldurmadan yasadışı bahis sitelerine düştü!",
-          "summary": "Dün akşam saatlerinde İstanbul Cumhuriyet Başsavcılığı tarafından ünlülere yönelik başlatılan uyuşturucu soruşturması kapsamında düzenlenen operasyonun üzerinden henüz bir saat geçmeden yasadışı bahis sitelerinde dikkat çeken bir bahis açıldı. Aralarında Özcan Deniz ve Deniz Çakır'ın da bulunduğu isimlerin uyuşturucu testlerinin pozitif çıkıp çıkmayacağı üzerine tahmin seçenekleri oluşturuldu."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-gozaltina-alinan-24-kisi-adliyeye-sevk-edildi-748387",
-          "title": "Ünlülere yönelik uyuşturucu operasyonu: Gözaltına alınan 24 kişi adliyeye sevk edildi",
-          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişi sağlık kontrolünün ardından adliyeye sevk edildi. Gözaltına alınanlar arasında Özcan Deniz, Murat Ceylan, Burcu Özberk ve Deniz Çakır da bulunuyor."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/istanbul-cumhuriyet-bassavciligi-ndan-unlulere-yonelik-uyusturucu-operasyonu-35-kisi-hakkinda-gozalti-karari-748262",
-          "title": "İstanbul Cumhuriyet Başsavcılığı'ndan ünlülere yönelik uyuşturucu operasyonu: 35 kişi hakkında gözaltı kararı",
-          "summary": "İstanbul Cumhuriyet Başsavcılığı'nca ünlülere yönelik uyuşturucu operasyonunda 35 kişi hakkında gözaltı kararı çıkarıldı. Aralarında Özcan Deniz, oyuncu Deniz Çakır, Burcu Özberk, Murat Başoğlu, Meltem Keklik, Erdal Bozkuş ve Cem Karcı'nın da bulunduğu 21 kişinin gözaltına alındığı bildirildi."
-        }
-      ],
-      "reasons": [
-        "suç:+10",
-        "güç:+2",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T14:27:59+00:00"
-    },
-    {
-      "score": 20,
-      "title": "Oya Tekin'den Fatma Betül Sayan Kaya'nın tahliyesine tepki: Bana da aynı adaleti uygulayın",
-      "sources": [
-        "BirGün",
-        "Cumhuriyet",
-        "Hürriyet"
-      ],
-      "links": [
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242",
-          "title": "Oya Tekin'den Fatma Betül Sayan Kaya'nın tahliyesine tepki: Bana da aynı adaleti uygulayın",
-          "summary": "Silivri'de tutuklu bulunan Seyhan Belediye Başkanı Oya Tekin, fon soruşturması kapsamında tutuklanan eski Aile ve Sosyal Politikalar Bakanı Fatma Betül Sayan Kaya'nın ev hapsi şartıyla tahliye edilmesine tepki göstererek, \"Fatma Betül Sayan Kaya'ya uygulanan adaleti istiyorum. Ben üç çocuk sahibi bir anneyim. 35 yıllık avukatım, 1 yıl belediye başkanlığı yaptım, 18 aydır hapis yatıyorum. Suçum yok, delil yok, kamu zararı iddiası yok, suç iddiası olan kişilerle temasım yok. Buna rağmen tutukluluğ"
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330",
-          "title": "Fatma Betül Sayan Kaya'nın cezaevinde ağladığı iddia edilmişti: Avukat Hatipoğlu, şahit olduğu anları anlattı",
-          "summary": "Avukat Afşin Hatipoğlu, fon vurgunu soruşturması kapsamında 18 gün tutuklu kalan Fatma Betül Sayan Kaya'nın cezaevindeki günlerine ilişkin iddialarda bulundu. Hatipoğlu, Kaya'nın diğer tutuklulardan farklı muamele gördüğünün yanı sıra gazeteci Nagehan Alçı'nın iddialarına karşı çıkarak, \"Gayet sohbetli, nezaketli, zevkli, sefalıydı. Oradaki, cezaevi ortamında nasıl olunacaksa o şekilde gördüm\" dedi."
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/yeni-parti-den-fatma-betul-sayan-kaya-nin-tahliyesine-gondermeli-video-menfaat-ortakliginiz-belli-2559304",
-          "title": "YENİ Parti'den Fatma Betül Sayan Kaya'nın tahliyesine göndermeli video: 'Menfaat ortaklığınız belli!'",
-          "summary": "Fon soruşturması kapsamında tutuklanan eski Bakan Fatma Betül Sayan Kaya'nın ev hapsi kararıyla tahliye edilmesinin ardından YENİ Parti'den dikkat çeken bir paylaşım geldi. Partinin yayımladığı videoda, AKP'li Cumhurbaşkanı Recep Tayyip Erdoğan'ın soruşturmaya ilişkin sözlerine WhatsApp grubu üzerinden gönderme yapıldı."
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/fatma-betul-sayan-kaya-nin-tahliyesi-2-abdulhamid-in-torunu-da-kizdirdi-nasil-bu-hale-gelinildi-2559257",
-          "title": "Fatma Betül Sayan Kaya'nın tahliyesi 2. Abdülhamid'in torunu da kızdırdı: 'Nasıl bu hale gelinildi?'",
-          "summary": "Osmanlı Devleti'nin son padişahlarından 2. Abdülhamid'in torunu olarak bilinen Nurdan Sultan Osmanoğlu, 'fon' vurgunundan tutuklanan Fatma Betül Sayan Kaya'nın ev hapsine alınmasına büyük tepki gösterdi."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliye-edilmesine-karsi-sol-parti-den-eskisehir-de-eylem-kahrolsun-foncularin-esitsiz-duzeni-748236",
-          "title": "Fatma Betül Sayan Kaya'nın tahliye edilmesine karşı SOL Parti'den Eskişehir'de eylem: \"Kahrolsun foncuların eşitsiz düzeni\"",
-          "summary": "SOL Parti Eskişehir İl Örgütü eski Aile ve Sosyal Politikalar Bakanı ve AKP Genel Başkan Yardımcısı Fatma Betül Sayan Kaya'nın cezaevinden tahliye edilmesine yönelik Köprübaşı'nda sokağa çıktı. SOL Parti basın açıklamasında \"Kahrolsun foncuların, soyguncuların bu adaletsiz, eşitsiz düzeni. Bu düzeni değiştireceğiz! Geleceğimizden çalanlardan, cebimizdeki son kuruşa göz dikenlerden mutlaka hesap soracağız!\" dedi."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesini-protesto-etmislerdi-sol-parti-eskisehir-il-orgutu-nun-x-hesabi-engellendi-748252",
-          "title": "Fatma Betül Sayan Kaya'nın tahliyesini protesto etmişlerdi: SOL Parti Eskişehir İl Örgütü'nün X hesabı engellendi",
-          "summary": "SOL Parti Eskişehir’in X hesabı, Fatma Betül Sayan Kaya’nın tahliyesini protesto etmelerinin ardından erişime engellendi. SOL Parti \"Fon soygunu eyleminin ardından SOL Parti Eskişehir hesabımız askıya alındı. Telaş, panik, korku içindeler, gerçekleri her yerde söylemeye devam edeceğiz\" dedi."
-        }
-      ],
-      "reasons": [
-        "suç:+8",
-        "para:+2",
-        "güç:+2"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-25T13:20:00+03:00"
+      "newest": "2026-11-25T12:24:59+00:00"
     },
     {
       "score": 18,
@@ -452,6 +396,34 @@
       "sensitive": false,
       "single_source": false,
       "newest": "2026-11-25T11:16:20+00:00"
+    },
+    {
+      "score": 15,
+      "title": "İzmir'de baba ve oğul cinayetinde yeni gelişme: Eşi ve 2 kişi tutuklandı",
+      "sources": [
+        "Cumhuriyet",
+        "Hürriyet"
+      ],
+      "links": [
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/izmir-de-baba-ve-ogul-cinayetinde-yeni-gelisme-esi-ve-2-kisi-tutuklandi-2559324",
+          "title": "İzmir'de baba ve oğul cinayetinde yeni gelişme: Eşi ve 2 kişi tutuklandı",
+          "summary": "İzmir'in Karaburun ilçesinde 43 yaşındaki Eyüp Durnagöl ile 14 yaşındaki oğlu Yusuf Durnagöl'ün ormanda ölü bulunmasına ilişkin soruşturmada 3 kişi tutuklandı. Şüpheliler arasındaki şifreli yazışmaların incelendiği soruşturmada, cinayetin miras nedeniyle işlenmiş olabileceği ihtimali üzerinde duruldu."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/ormanda-baba-ogul-cinayetinde-miras-suphesi-es-bakici-ve-erkek-arkadasi-tutuklandi-43390751",
+          "title": "Ormanda baba-oğul cinayetinde miras şüphesi: Eş, bakıcı ve erkek arkadaşı tutuklandı",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+10"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T14:51:00+03:00"
     }
   ]
 }
