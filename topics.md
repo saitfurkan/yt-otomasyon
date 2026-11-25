@@ -1,4 +1,4 @@
-# Konu adayları (2026-11-25 18:03 UTC)
+# Konu adayları (2026-11-25 18:17 UTC)
 
 **SİSTEMİN SEÇTİĞİ KONU:** Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
 
@@ -11,10 +11,9 @@
 - BirGün: https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345
 
 ## 2. Danıştay 8. Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi  (puan: 28)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
-- Kaynaklar: BirGün, Habertürk, Hürriyet, NTV, TRT Haber
+- Kaynaklar: BirGün, Habertürk, Hürriyet, NTV
 - Puan nedenleri: suç:+12, güç:+4, merak:+1
 - NTV: https://www.ntv.com.tr/turkiye/danistay-8-dairesi-karari-onadi-imamoglunun-diplomasi-iptal-edildi-1751606
-- TRT Haber: https://www.trthaber.com/haber/gundem/imamoglunun-diploma-iptali-karari-onandi-964421.html
 - Hürriyet: https://www.hurriyet.com.tr/gundem/danistay-ekrem-imamoglunun-diplomasinin-iptalini-onadi-43390351
 - BirGün: https://www.birgun.net/haber/danistay-onadi-ekrem-imamoglu-nun-diplomasinin-iptali-kesinlesti-748337
 - Habertürk: https://www.haberturk.com/gundem/son-dakika-imamoglunun-diploma-iptaline-onama-3929957

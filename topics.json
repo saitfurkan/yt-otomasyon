@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 18:03 UTC",
+  "generated": "2026-11-25 18:17 UTC",
   "errors": [
     "AA: Remote end closed connection without response"
   ],
@@ -101,8 +101,7 @@
         "BirGün",
         "Habertürk",
         "Hürriyet",
-        "NTV",
-        "TRT Haber"
+        "NTV"
       ],
       "links": [
         {
@@ -110,12 +109,6 @@
           "url": "https://www.ntv.com.tr/turkiye/danistay-8-dairesi-karari-onadi-imamoglunun-diplomasi-iptal-edildi-1751606",
           "title": "Danıştay 8. Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
           "summary": "Danıştay, 8. Dairesi Ekrem İmamoğlu'nun üniversite diplomasının iptali kararını onadı. 23 Mart 2025'te tutuklandıktan sonra İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun üniversite diplomasının iptali kesinleşti. Kararı Danıştay 8. Dairesi onadı. Söz konusu yargılama süreci, İmamoğlu'nun 1990 yılında Girne Amerikan Üniversitesi'nden İstanbul Üniversitesi'ne yatay geçişinde usulsüzlük olduğu iddiasını konu ediniyordu. Dosyayı “üniversitenin tanınırlığı"
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/imamoglunun-diploma-iptali-karari-onandi-964421.html",
-          "title": "İmamoğlu'nun diploma iptali kararı onandı",
-          "summary": "Danıştay 8. Dairesi, tutuklanmasının ardından İstanbul Büyükşehir Belediye İBB Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun, üniversite diplomasının iptal edilmesi kararına yapılan itirazın reddine hükmetti."
         },
         {
           "source": "Hürriyet",
