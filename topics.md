@@ -1,4 +1,4 @@
-# Konu adayları (2026-11-25 13:16 UTC)
+# Konu adayları (2026-11-25 13:44 UTC)
 
 **SİSTEMİN SEÇTİĞİ KONU:** Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
 
@@ -47,11 +47,10 @@
 - Kaynaklar: BirGün, Cumhuriyet, Hürriyet
 - Puan nedenleri: suç:+5, para:+9, güç:+1, rakam:+1
 - Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/2-2-milyar-tl-lik-vurguna-19-gun-gazetecilige-aylarca-hapis-fatma-betul-sayan-kaya-tahliye-edildi-gazeteciler-hala-silivri-de-2559339
-- BirGün: https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242
 - BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330
 - Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/yeni-parti-den-fatma-betul-sayan-kaya-nin-tahliyesine-gondermeli-video-menfaat-ortakliginiz-belli-2559304
-- BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliye-edilmesine-karsi-sol-parti-den-eskisehir-de-eylem-kahrolsun-foncularin-esitsiz-duzeni-748236
 - BirGün: https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesini-protesto-etmislerdi-sol-parti-eskisehir-il-orgutu-nun-x-hesabi-engellendi-748252
+- Hürriyet: https://www.hurriyet.com.tr/gundem/fatma-betul-sayan-kaya-18-gun-sonra-tahliye-oldu-43390001
 
 ## 8. İsa Aras Mersinli için yeniden otopsi istendi. "Mekanik bir robot gibiydi"  (puan: 21)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
 - Kaynaklar: Cumhuriyet, Habertürk, NTV
@@ -67,11 +66,8 @@
 - Hürriyet: https://www.hurriyet.com.tr/gundem/60-ilde-yeni-nesil-suc-orgutlerine-yonelik-operasyon-280-supheli-yakalandi-43390449
 - Habertürk: https://www.haberturk.com/gundem/son-dakika-60-ilde-280-kisi-yakalandi-yeni-nesil-suc-orgutlerine-darbe-3929975
 
-## 10. İzmir'de baba ve oğul cinayetinde yeni gelişme: Eşi ve 2 kişi tutuklandı  (puan: 15)
-- Kaynaklar: Cumhuriyet, Hürriyet
-- Puan nedenleri: suç:+10
-- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/izmir-de-baba-ve-ogul-cinayetinde-yeni-gelisme-esi-ve-2-kisi-tutuklandi-2559324
-- Hürriyet: https://www.hurriyet.com.tr/gundem/ormanda-baba-ogul-cinayetinde-miras-suphesi-es-bakici-ve-erkek-arkadasi-tutuklandi-43390751
-
-## Çalışmayan kaynaklar
-- AA: Remote end closed connection without response
+## 10. Ünlülere yönelik uyuşturucu operasyonu: 10 kişi adliyede ifade verecek  (puan: 16)  ⚠️ tek kaynak: başka kaynaktan doğrulanmadan video yapılmaz
+- Kaynaklar: BirGün
+- Puan nedenleri: suç:+10, güç:+3, rakam:+1
+- BirGün: https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-10-kisi-adliyede-ifade-verecek-748387
+- BirGün: https://www.birgun.net/haber/istanbul-cumhuriyet-bassavciligi-ndan-unlulere-yonelik-uyusturucu-operasyonu-35-kisi-hakkinda-gozalti-karari-748262

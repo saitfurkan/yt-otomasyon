@@ -1,8 +1,6 @@
 {
-  "generated": "2026-11-25 13:16 UTC",
-  "errors": [
-    "AA: Remote end closed connection without response"
-  ],
+  "generated": "2026-11-25 13:44 UTC",
+  "errors": [],
   "selected": {
     "score": 33,
     "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
@@ -284,12 +282,6 @@
         },
         {
           "source": "BirGün",
-          "url": "https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242",
-          "title": "Oya Tekin'den Fatma Betül Sayan Kaya'nın tahliyesine tepki: Bana da aynı adaleti uygulayın",
-          "summary": "Silivri'de tutuklu bulunan Seyhan Belediye Başkanı Oya Tekin, fon soruşturması kapsamında tutuklanan eski Aile ve Sosyal Politikalar Bakanı Fatma Betül Sayan Kaya'nın ev hapsi şartıyla tahliye edilmesine tepki göstererek, \"Fatma Betül Sayan Kaya'ya uygulanan adaleti istiyorum. Ben üç çocuk sahibi bir anneyim. 35 yıllık avukatım, 1 yıl belediye başkanlığı yaptım, 18 aydır hapis yatıyorum. Suçum yok, delil yok, kamu zararı iddiası yok, suç iddiası olan kişilerle temasım yok. Buna rağmen tutukluluğ"
-        },
-        {
-          "source": "BirGün",
           "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330",
           "title": "Fatma Betül Sayan Kaya'nın cezaevinde ağladığı iddia edilmişti: Avukat Hatipoğlu, şahit olduğu anları anlattı",
           "summary": "Avukat Afşin Hatipoğlu, fon vurgunu soruşturması kapsamında 18 gün tutuklu kalan Fatma Betül Sayan Kaya'nın cezaevindeki günlerine ilişkin iddialarda bulundu. Hatipoğlu, Kaya'nın diğer tutuklulardan farklı muamele gördüğünün yanı sıra gazeteci Nagehan Alçı'nın iddialarına karşı çıkarak, \"Gayet sohbetli, nezaketli, zevkli, sefalıydı. Oradaki, cezaevi ortamında nasıl olunacaksa o şekilde gördüm\" dedi."
@@ -302,15 +294,15 @@
         },
         {
           "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliye-edilmesine-karsi-sol-parti-den-eskisehir-de-eylem-kahrolsun-foncularin-esitsiz-duzeni-748236",
-          "title": "Fatma Betül Sayan Kaya'nın tahliye edilmesine karşı SOL Parti'den Eskişehir'de eylem: \"Kahrolsun foncuların eşitsiz düzeni\"",
-          "summary": "SOL Parti Eskişehir İl Örgütü eski Aile ve Sosyal Politikalar Bakanı ve AKP Genel Başkan Yardımcısı Fatma Betül Sayan Kaya'nın cezaevinden tahliye edilmesine yönelik Köprübaşı'nda sokağa çıktı. SOL Parti basın açıklamasında \"Kahrolsun foncuların, soyguncuların bu adaletsiz, eşitsiz düzeni. Bu düzeni değiştireceğiz! Geleceğimizden çalanlardan, cebimizdeki son kuruşa göz dikenlerden mutlaka hesap soracağız!\" dedi."
-        },
-        {
-          "source": "BirGün",
           "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesini-protesto-etmislerdi-sol-parti-eskisehir-il-orgutu-nun-x-hesabi-engellendi-748252",
           "title": "Fatma Betül Sayan Kaya'nın tahliyesini protesto etmişlerdi: SOL Parti Eskişehir İl Örgütü'nün X hesabı engellendi",
           "summary": "SOL Parti Eskişehir’in X hesabı, Fatma Betül Sayan Kaya’nın tahliyesini protesto etmelerinin ardından erişime engellendi. SOL Parti \"Fon soygunu eyleminin ardından SOL Parti Eskişehir hesabımız askıya alındı. Telaş, panik, korku içindeler, gerçekleri her yerde söylemeye devam edeceğiz\" dedi."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/fatma-betul-sayan-kaya-18-gun-sonra-tahliye-oldu-43390001",
+          "title": "Fatma Betül Sayan Kaya 18 gün sonra tahliye oldu",
+          "summary": ""
         }
       ],
       "reasons": [
@@ -398,32 +390,33 @@
       "newest": "2026-11-25T11:16:20+00:00"
     },
     {
-      "score": 15,
-      "title": "İzmir'de baba ve oğul cinayetinde yeni gelişme: Eşi ve 2 kişi tutuklandı",
+      "score": 16,
+      "title": "Ünlülere yönelik uyuşturucu operasyonu: 10 kişi adliyede ifade verecek",
       "sources": [
-        "Cumhuriyet",
-        "Hürriyet"
+        "BirGün"
       ],
       "links": [
         {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/izmir-de-baba-ve-ogul-cinayetinde-yeni-gelisme-esi-ve-2-kisi-tutuklandi-2559324",
-          "title": "İzmir'de baba ve oğul cinayetinde yeni gelişme: Eşi ve 2 kişi tutuklandı",
-          "summary": "İzmir'in Karaburun ilçesinde 43 yaşındaki Eyüp Durnagöl ile 14 yaşındaki oğlu Yusuf Durnagöl'ün ormanda ölü bulunmasına ilişkin soruşturmada 3 kişi tutuklandı. Şüpheliler arasındaki şifreli yazışmaların incelendiği soruşturmada, cinayetin miras nedeniyle işlenmiş olabileceği ihtimali üzerinde duruldu."
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-10-kisi-adliyede-ifade-verecek-748387",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu: 10 kişi adliyede ifade verecek",
+          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişiden 10'unun savcılıkta ifadesi alınacak. 14 kişinin ise ek ifadesi alınması için emniyete götürüldüğü öğrenildi. Gözaltına alınanlar arasında Özcan Deniz, Murat Ceylan, Burcu Özberk ve Deniz Çakır da bulunuyor."
         },
         {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/ormanda-baba-ogul-cinayetinde-miras-suphesi-es-bakici-ve-erkek-arkadasi-tutuklandi-43390751",
-          "title": "Ormanda baba-oğul cinayetinde miras şüphesi: Eş, bakıcı ve erkek arkadaşı tutuklandı",
-          "summary": ""
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/istanbul-cumhuriyet-bassavciligi-ndan-unlulere-yonelik-uyusturucu-operasyonu-35-kisi-hakkinda-gozalti-karari-748262",
+          "title": "İstanbul Cumhuriyet Başsavcılığı'ndan ünlülere yönelik uyuşturucu operasyonu: 35 kişi hakkında gözaltı kararı",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı'nca ünlülere yönelik uyuşturucu operasyonunda 35 kişi hakkında gözaltı kararı çıkarıldı. Aralarında Özcan Deniz, oyuncu Deniz Çakır, Burcu Özberk, Murat Başoğlu, Meltem Keklik, Erdal Bozkuş ve Cem Karcı'nın da bulunduğu 21 kişinin gözaltına alındığı bildirildi."
         }
       ],
       "reasons": [
-        "suç:+10"
+        "suç:+10",
+        "güç:+3",
+        "rakam:+1"
       ],
       "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T14:51:00+03:00"
+      "single_source": true,
+      "newest": "2026-11-25T13:08:00+03:00"
     }
   ]
 }
