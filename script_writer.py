@@ -303,6 +303,7 @@ MISTRAL_MODELS = ([os.environ["MISTRAL_MODEL"].strip()]
                   else ["mistral-large-latest", "mistral-medium-latest",
                         "mistral-small-latest", "open-mistral-nemo"])
 MISTRAL_OK = []        # çalışan model bulunca buraya yazılır, sonraki çağrılar onu kullanır
+SEARCH_STATE = {"dead": False}   # Google arama kotası dolunca True
 DEAD_MODELS = set()   # bu çalışmada kotası dolan modeller, tekrar denenmez
 GEMINI_DEAD = False   # Gemini kotası dolunca True olur, sonraki çağrılar doğrudan yedeğe gider
 
@@ -462,8 +463,10 @@ def generate(key, models, prompt, system=SYSTEM, json_out=False,
     quota_models, tried = 0, 0
     gem_models = ([m for m in models if not m.startswith("mistral") and m not in DEAD_MODELS]
                   if key and not GEMINI_DEAD else [])
-    if key and not gem_models and models and not GEMINI_DEAD:
-        gem_models = []  # hepsi daha önce 429 verdi
+    if key and not gem_models and models and not GEMINI_DEAD and not mistral_key():
+        GEMINI_DEAD = True
+        raise QuotaExceeded("Gemini kotası dolmuş görünüyor (tüm modellerde 429). "
+                            "Kota her gün sıfırlanır (Türkiye saatiyle yaklaşık 10:00).")
     for model in gem_models:
         tried += 1
         hit_quota = False
@@ -546,8 +549,9 @@ def search_sources(key, models, topic, known_urls):
             resp = http("POST", f"{API}/models/{model}:generateContent", key, payload, timeout=120)
         except Exception as e:
             log(f"   [arka plan araması: {model}] {str(e)[:120]}")
-            if getattr(e, "code", 0) == 429:
-                DEAD_MODELS.add(model)
+            if "429" in str(e):
+                SEARCH_STATE["dead"] = True   # arama kotası ayrı; üretim modellerini etkilemez
+                break
             continue
         links, seen = [], set(known_urls)
         for l in grounded_links(resp):
@@ -564,8 +568,8 @@ def search_sources(key, models, topic, known_urls):
 
 def add_background(key, models, topic, arts):
     """Arka plan sayfalarını okuyup mevcut kaynaklara ekler."""
-    if GEMINI_DEAD or not key:
-        log("   arka plan araması atlandı (Gemini kullanılamıyor)")
+    if GEMINI_DEAD or not key or SEARCH_STATE["dead"]:
+        log("   arka plan araması atlandı (Gemini kullanılamıyor ya da arama kotası dolu)")
         return arts
     try:
         links = search_sources(key, models, topic, [a["url"] for a in arts])
