@@ -604,10 +604,13 @@ def relevant(topic, text, need=2):
     """Arka plan sayfası konuyla gerçekten ilgili mi: başlıktaki ayırt edici kelimelerden
     (ilk 5 harf eşleşmesiyle) en az 'need' tanesi metinde geçmeli."""
     terms = []
-    for w in re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşüâîû0-9]+", topic["title"]):
+    title = re.sub(r"(?i)son dakika( haberleri)?:?", " ", topic["title"])
+    for w in re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşüâîû0-9]+", title):
         w = tr_lower(w)
         if len(w) >= 5 and w not in STOP and w[:5] not in terms:
             terms.append(w[:5])
+    if len(terms) >= 5:
+        need = 3
     if len(terms) < need:
         need = max(1, len(terms))
     low = tr_lower(text)
@@ -808,19 +811,26 @@ def split_sentences(text):
 
 
 def drop_initials(script):
-    """Yalnızca baş harfleriyle anılan kişi listesi içeren cümleleri siler (okunmaz, isim listesi gibi durur)."""
+    """İsim listesi / baş harfli kişi listesi içeren cümleleri siler. Paragrafı yalnızca
+    silinecek cümle varsa yeniden kurar; [duraklama] işaretlerini korur."""
+    def bad(sent):
+        if "Artık son tanık" in sent:
+            return False
+        if len(re.findall(r"\b[A-ZÇĞİÖŞÜ]\.", sent)) >= 2:
+            return True
+        return len(re.findall(r"[A-ZÇĞİÖŞÜ][a-zçğıöşüâîû]+ [A-ZÇĞİÖŞÜ][a-zçğıöşüâîû]+", sent)) >= 4
     out, dropped = [], 0
     for para in script.split("\n\n"):
-        keep = []
-        for sent in split_sentences(para):
-            if len(re.findall(r"\b[A-ZÇĞİÖŞÜ]\.", sent)) >= 2 and "Artık son tanık" not in sent:
-                dropped += 1
-                continue
-            keep.append(sent)
-        if keep:
-            out.append(" ".join(keep))
+        t = re.sub(r"\b([A-ZÇĞİÖŞÜ])\.\s", lambda m: m.group(1) + "\u2024 ", para)
+        pieces = re.split(r"(?<=[.!?])\s+", t)
+        keep = [x for x in pieces if not bad(x.replace("\u2024", "."))]
+        if len(keep) != len(pieces):
+            dropped += len(pieces) - len(keep)
+            para = " ".join(keep).replace("\u2024", ".")
+        if para.strip():
+            out.append(para)
     if dropped:
-        log(f"   baş harfli kişi içeren {dropped} cümle silindi")
+        log(f"   isim/baş harf listesi içeren {dropped} cümle silindi")
     return "\n\n".join(out)
 
 
