@@ -295,7 +295,11 @@ class QuotaExceeded(GenerationFailed):
 
 
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
-MISTRAL_MODEL = os.environ.get("MISTRAL_MODEL", "").strip() or "mistral-large-latest"
+MISTRAL_MODELS = ([os.environ["MISTRAL_MODEL"].strip()]
+                  if os.environ.get("MISTRAL_MODEL", "").strip()
+                  else ["mistral-large-latest", "mistral-medium-latest",
+                        "mistral-small-latest", "open-mistral-nemo"])
+MISTRAL_OK = []        # çalışan model bulunca buraya yazılır, sonraki çağrılar onu kullanır
 GEMINI_DEAD = False   # Gemini kotası dolunca True olur, sonraki çağrılar doğrudan yedeğe gider
 
 
@@ -304,47 +308,55 @@ def mistral_key():
 
 
 def mistral_generate(prompt, system, json_out, temperature, max_tokens):
-    """Yedek sağlayıcı (Mistral, ücretsiz katman). (model, metin ya da sözlük) döndürür."""
-    payload = {"model": MISTRAL_MODEL, "temperature": min(temperature, 1.0),
-               "max_tokens": min(max_tokens, 16000),
-               "messages": [{"role": "system", "content": system},
-                            {"role": "user", "content": prompt}]}
-    if json_out:
-        payload["response_format"] = {"type": "json_object"}
+    """Yedek sağlayıcı (Mistral, ücretsiz katman). Ücretsiz planda kapalı modelleri
+    (403 tier_not_allowed) atlayıp sıradakini dener. (model, metin/sözlük) döndürür."""
     last = "bilinmeyen hata"
-    for attempt in range(4):
-        req = urllib.request.Request(
-            MISTRAL_URL, data=json.dumps(payload).encode("utf-8"), method="POST",
-            headers={"Content-Type": "application/json", "Accept": "application/json",
-                     "Authorization": "Bearer " + mistral_key()})
-        try:
-            with urllib.request.urlopen(req, timeout=300) as r:
-                data = json.loads(r.read().decode("utf-8"))
-            text = (data["choices"][0]["message"]["content"] or "").strip()
-            if not text:
-                raise Blocked("Mistral boş yanıt verdi")
-            return MISTRAL_MODEL, (parse_json(text) if json_out else text)
-        except urllib.error.HTTPError as e:
-            body = e.read().decode("utf-8", "replace")[:300]
-            last = f"Mistral HTTP {e.code}: {body}"
-            log(f"   [mistral] {last[:160]}")
-            if e.code in (401, 403):
-                raise GenerationFailed("Mistral API anahtarı geçersiz görünüyor (MISTRAL_API_KEY).")
-            if e.code in (429, 500, 502, 503, 504) and attempt < 3:
-                time.sleep(3 * (attempt + 1))
+    models = MISTRAL_OK[:1] or MISTRAL_MODELS
+    for model in models:
+        payload = {"model": model, "temperature": min(temperature, 1.0),
+                   "max_tokens": min(max_tokens, 16000),
+                   "messages": [{"role": "system", "content": system},
+                                {"role": "user", "content": prompt}]}
+        if json_out:
+            payload["response_format"] = {"type": "json_object"}
+        for attempt in range(4):
+            req = urllib.request.Request(
+                MISTRAL_URL, data=json.dumps(payload).encode("utf-8"), method="POST",
+                headers={"Content-Type": "application/json", "Accept": "application/json",
+                         "Authorization": "Bearer " + mistral_key()})
+            try:
+                with urllib.request.urlopen(req, timeout=300) as r:
+                    data = json.loads(r.read().decode("utf-8"))
+                text = (data["choices"][0]["message"]["content"] or "").strip()
+                if not text:
+                    raise Blocked("Mistral boş yanıt verdi")
+                if model not in MISTRAL_OK:
+                    MISTRAL_OK[:] = [model]
+                    log(f"   [mistral] kullanılan model: {model}")
+                return model, (parse_json(text) if json_out else text)
+            except urllib.error.HTTPError as e:
+                body = e.read().decode("utf-8", "replace")[:300]
+                last = f"{model}: Mistral HTTP {e.code}: {body}"
+                log(f"   [mistral] {last[:170]}")
+                if e.code == 401:
+                    raise GenerationFailed("Mistral API anahtarı geçersiz görünüyor (MISTRAL_API_KEY).")
+                if e.code in (403, 404, 400):
+                    break  # bu model kapalı ya da yok, sıradakine geç
+                if e.code in (429, 500, 502, 503, 504) and attempt < 3:
+                    time.sleep(3 * (attempt + 1))
+                    continue
+                break
+            except ValueError:
+                last = f"{model}: JSON okunamadı"
+                log("   [mistral] JSON okunamadı, tekrar deneniyor")
                 continue
-            break
-        except ValueError:
-            last = "Mistral JSON okunamadı"
-            log("   [mistral] JSON okunamadı, tekrar deneniyor")
-            continue
-        except (urllib.error.URLError, TimeoutError) as e:
-            last = f"Mistral bağlantı hatası: {e}"
-            time.sleep(3)
-            continue
-        except Blocked as e:
-            last = str(e)
-            continue
+            except (urllib.error.URLError, TimeoutError) as e:
+                last = f"{model}: bağlantı hatası {e}"
+                time.sleep(3)
+                continue
+            except Blocked as e:
+                last = f"{model}: {e}"
+                continue
     raise GenerationFailed(last)
 
 
@@ -834,7 +846,20 @@ def candidates(tdata, history):
         return any(c in low for c in CELEB)
 
     # siyasi ve magazin konuları sona (önce ciddi suç/para/devlet dosyaları)
-    pool = sorted(pool, key=lambda t: 1 if (political(t) or celeb(t)) else 0)
+    def minors(t):
+        low = tr_lower(t["title"])
+        if re.search(r"\b(?:[0-9]|1[0-7]) yaşındaki", low):
+            return True
+        return any(w in low for w in ("çocuk", "bebek", "küçük kız", "kız çocuğ",
+                                      "reşit olmayan", "çocuğ"))
+
+    kept = []
+    for t in pool:
+        if minors(t):
+            log(f"   [atlandı: çocuk/reşit olmayan içeriyor] {t['title'][:70]}")
+            continue
+        kept.append(t)
+    pool = sorted(kept, key=lambda t: 1 if (political(t) or celeb(t)) else 0)
     for t in pool:
         if t["title"] in seen or t.get("single_source") or t.get("score", 0) <= 0:
             continue
