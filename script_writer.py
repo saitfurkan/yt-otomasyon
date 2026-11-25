@@ -30,12 +30,12 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/124.0 Safari/537.36")
 
 MIN_WORDS = 900           # bunun altı uyarı olarak raporlanır (şişirme yapılmaz)
-MIN_SOURCE_WORDS = 600    # kaynak malzeme bunun altındaysa konu atlanır
-MIN_FACTS = 8
+MIN_SOURCE_WORDS = 800    # kaynak malzeme bunun altındaysa konu atlanır
+MIN_FACTS = 12
 MAX_ARTICLES = 6
 PER_ARTICLE_CHARS = 7000
 TOTAL_CHARS = 26000
-MAX_TOPICS_TRIED = 3
+MAX_TOPICS_TRIED = 4
 PAUSE = 5                 # çağrılar arası bekleme (saniye), ücretsiz limit için
 
 BANNED = [
@@ -44,7 +44,11 @@ BANNED = [
     "ikincisi", "üçüncüsü", "unutulmamalıdır", "bu bağlamda", "söz konusu",
     "sonuç itibarıyla", "dikkat çekici bir şekilde", "derler", "çorap söküğü",
     "son perde", "faturayı kesti", "terazisi başka", "ben furkan",
+    "kirli ilişki", "karanlığ", "pırıltılı", "taşları yerinden", "koridor",
+    "aynı hizada", "ışıkların",
 ]
+
+CELEB = ["ünlü", "şarkıcı", "oyuncu", "magazin", "fenomen", "sunucu", "futbolcu"]
 
 POLITICAL = ["imamoğlu", "erdoğan", "özgür özel", "bahçeli", "kılıçdaroğlu",
              "mansur yavaş", "demirtaş", "chp", "akp", "mhp", "dem parti",
@@ -60,6 +64,10 @@ FURKAN'IN ANLATIM TARZI
 - Uzun bir cümleden sonra kısa bir cümle. Ara sıra tek kelimelik cümle.
 - Nefes ve vurgu yerlerine [duraklama] yaz (tüm metinde 8-12 kez).
 - Rakamları rakamla yaz (130, 245 gibi), okurken kolay olsun.
+- İSİM POLİTİKASI: Çok sayıda şüpheli varsa isim listesi ASLA okuma. En fazla 3 isim ver: yalnızca ülke çapında tanınan ve en az 3 kaynakta geçen kişiler. Diğerleri için "aralarında iş insanları, yönetmen, organizatör de var" gibi tanım kullan. Özel kişilerin adı yok.
+- YARGI YÜKLÜ SÖZ YOK: "kirli", "karanlık", "pırıltılı", "ışıkların arkası", "ağır iddialar örtülemez" gibi suçu önceden kabul ettiren ya da şiirli doldurma sözler yasak. "Bence" yalnızca süreç ve adalet işleyişi hakkında olur, bir kişinin suçlu olup olmadığı hakkında asla; tüm metinde en fazla 2 kez.
+- VAAZ YOK: "Kanun karşısında herkes eşittir" türü genel adalet konuşması tüm metinde en fazla BİR kez, tek cümle. "Adliye koridorları", "ışıklar", "şöhret" gibi aynı imgeyi tekrar tekrar kurma.
+- SAYI FARKLARI: Gözaltı sayıları saatlere göre değişir. Kaynaklar farklı sayı veriyorsa "çelişki" deme; "sayı gün içinde 19'dan 24'e yükseldi" gibi her kaynağın verdiği sayıyı olgu olarak ver.
 - ASLA TEKRAR ETME: Bir olgu metinde yalnızca bir kez anlatılır. Daha önce anlatılmış bir rakamı, tarihi ya da olayı yeni bir bölümde yeniden anlatma. Malzeme azsa metin kısa kalsın, şişirme.
 
 YAPAY ZEKÂ KOKUSU YASAK
@@ -80,7 +88,7 @@ FACT_SYSTEM = ("Sen titiz bir haber editörüsün. Görevin yalnızca kaynak met
                "açıkça yazan olguları çıkarmak. Yorum, tahmin, çıkarım, uydurma yok.")
 
 SECTIONS = [
-    ("KANCA", "Videonun ilk 10-20 saniyesi, TEK PARAGRAF, 35-55 kelime. Önce konuya özel yeni, kısa, sert bir söz (birinci tekil kişiyle). Sonra şaşırtıcı bir rakam ya da merak uyandıran bir soruyla bitir. Haberin özetini ya da sonucunu verme. Kendini tanıtma. Paragrafın sonuna [duraklama] koy.", 45, False),
+    ("KANCA", "Videonun ilk 10-20 saniyesi, TEK PARAGRAF, 35-55 kelime. Önce konuya özel yeni, kısa, sert bir söz (birinci tekil kişiyle). Sonra şaşırtıcı bir rakam ya da merak uyandıran bir soruyla bitir. Şiirli imgeler (ışık, karanlık, taş, perde) kullanma; somut bir olgudan ya da rakamdan başla. Haberin özetini ya da sonucunu verme. Kendini tanıtma. Paragrafın sonuna [duraklama] koy.", 45, False),
     ("OLAY", "Ne oldu? Kronolojik, sahneyi kur. Kim, ne zaman, nerede. Bir kırılma noktası olsun.", 400, True),
     ("PARA VE İLİŞKİLER", "Rakamlar, kurumlar, kim kiminle bağlantılı (sadece olgulardaki kadar). Her iddiayı 'savcılığa göre' gibi kaynağa bağla. Olay bölümünde anlatılanları tekrar etme, yalnızca yeni olguları ver.", 400, True),
     ("SORUŞTURMA VE SÜREÇ", "Savcılık ve mahkemeler ne yapmış, hangi adımlar atılmış, ne bekleniyor. Önceki bölümlerde geçmeyen olgulardan anlat.", 400, True),
@@ -395,7 +403,7 @@ def extract_facts(key, models, topic, arts):
         "Yalnızca kaynaklarda AÇIKÇA yazan olguları çıkar: kim, ne, ne zaman, nerede, "
         "kaç kişi, kaç lira, hangi kurum, kim ne açıkladı, kim ne dedi. Her olgu tek "
         "cümle olsun. Yalnızca AYNI olgu için kaynaklar açıkça farklı rakam ya da isim veriyorsa çelişkiyi ayrı olgu olarak yaz; farklı tarihler farklı olay adımlarına ait olabilir, çelişki ilan etme. Kaynaklarda geçen arka plan bilgilerini de (önceki olaylar, kurumlar, yasal çerçeve) olgu olarak ekle. "
-        "En az 15 olgu çıkar (kaynak yeterliyse). Uydurma, yorum, tahmin ekleme.\n"
+        "En az 15 olgu çıkar (kaynak yeterliyse). Çok sayıda şüpheli ismi varsa tek olguda 'diğer şüpheliler' diye özetle, yalnızca en tanınan 3 ismi ayrı yaz; özel kişilerin adını yazma. Uydurma, yorum, tahmin ekleme.\n"
         'Çıktı: {"facts":[{"olgu":"...","kaynaklar":["NTV","Hürriyet"]}]}\n\n'
         + sources_block(arts))
     model, data = generate(key, models, prompt, system=FACT_SYSTEM, json_out=True,
@@ -451,7 +459,23 @@ def clean_script(s):
 
 def banned_found(s):
     low = tr_lower(s)
-    return sorted({b for b in BANNED if b in low})
+    return sorted({b for b in BANNED
+                   if re.search(r"(?<![a-zçğıöşü])" + re.escape(b), low)})
+
+
+LOADED = ["suçlu", "katil", "hırsız", "sahtekar", "sahtekâr", "azılı", "rezil"]
+
+
+def loaded_found(s):
+    low = tr_lower(s)
+    return sorted({w for w in LOADED
+                   if re.search(r"(?<![a-zçğıöşü])" + w + r"(?![a-zçğıöşü])", low)})
+
+
+def has_name_list(s):
+    """Arka arkaya 5+ özel ismin virgülle sıralandığı isim listesi var mı?"""
+    nm = r"[A-ZÇĞİÖŞÜ][\wçğıöşüâîû’']+(?: [A-ZÇĞİÖŞÜ][\wçğıöşüâîû’']+)*"
+    return bool(re.search(r"(?:" + nm + r", ){4,}" + nm, s))
 
 
 def revise(key, models, script, instruction, facts):
@@ -572,7 +596,7 @@ def write_report(topic, arts, facts, meta, script, model, bad_nums, bad_names, w
         L += [f"### Short {i} ({s.get('bolum', '')})", f"Kanca: {s.get('hook', '')}", "",
               s.get("text", ""), ""]
     L += ["## Açıklama", "", meta.get("description", ""), "",
-          "Etiketler: " + ", ".join(meta.get("tags") or []), "",
+          "Etiketler: " + ", ".join(t for t in (meta.get("tags") or []) if "furkan" not in t.lower()), "",
           "## KONTROL ET", ""]
     for r in meta.get("risk_notes") or []:
         L.append(f"- Hukuken hassas: {r}")
@@ -626,7 +650,12 @@ def candidates(tdata, history):
         low = tr_lower(t["title"])
         return bool(t.get("sensitive")) or any(p in low for p in POLITICAL)
 
-    pool = sorted(pool, key=lambda t: 1 if political(t) else 0)  # siyasi konular sona
+    def celeb(t):
+        low = tr_lower(t["title"])
+        return any(c in low for c in CELEB)
+
+    # siyasi ve magazin konuları sona (önce ciddi suç/para/devlet dosyaları)
+    pool = sorted(pool, key=lambda t: 1 if (political(t) or celeb(t)) else 0)
     for t in pool:
         if t["title"] in seen or t.get("single_source") or t.get("score", 0) <= 0:
             continue
@@ -705,6 +734,16 @@ def main():
                             "Konunun malzemesi sınırlı olabilir.")
         if topic.get("sensitive"):
             warnings.append("Siyasi hassasiyet işaretli konu: metni özellikle dikkatle oku.")
+        left = banned_found(script)
+        if left:
+            warnings.append("Metinde yasak kalıplar kaldı, elle düzelt: " + ", ".join(left))
+        lw = loaded_found(script)
+        if lw:
+            warnings.append("Yargı yüklü kelime geçiyor (" + ", ".join(lw) +
+                            "). Mahkûmiyet kesinleşmediyse bu cümleyi değiştir.")
+        if has_name_list(script):
+            warnings.append("Metinde isim listesi var. Özel kişilerin adlarını çıkar, "
+                            "en fazla 3 tanınmış isim kalsın.")
         if any(a for a in arts if count_words(a["text"]) < 120):
             warnings.append("Bazı kaynaklarda yalnızca kısa özet okunabildi.")
         write_report(topic, arts, facts, meta, script, models[0],

@@ -1,85 +1,137 @@
 {
-  "generated": "2026-11-25 09:21 UTC",
+  "generated": "2026-11-25 12:15 UTC",
   "errors": [
     "AA: Remote end closed connection without response"
   ],
   "selected": {
-    "score": 30,
-    "title": "Fon soruşturmasında yeni gelişme: Bir şüpheli tutuklandı",
+    "score": 33,
+    "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
     "sources": [
+      "BirGün",
+      "CNN Türk",
+      "Cumhuriyet",
       "Hürriyet",
       "NTV"
     ],
     "links": [
       {
         "source": "NTV",
-        "url": "https://www.ntv.com.tr/turkiye/fon-sorusturmasinda-yeni-gelisme-bir-supheli-tutuklandi-1752468",
-        "title": "Fon soruşturmasında yeni gelişme: Bir şüpheli tutuklandı",
-        "summary": "Fon soruşturmasında adliyeye sevk edilen bir şüpheli daha tutuklandı. Sermaye piyasalarındaki gelişmelere ilişkin başlatılan fon soruşturması sürüyor. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada, 24 Kasım Salı günü dört şüpheli daha tutuklanmış, iki şüpheli adli kontrolle serbest bırakılmıştı . Aynı şüphelilerle birlikte gözaltına alınan bir kişinin emniyetteki işlemleri de dün tamamlandı. Çağlayan'daki İstanbul Adliyesi'ne çıkarılan şüpheli, savcıya verdiği ifadenin ardın"
+        "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
+        "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
+        "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
+      },
+      {
+        "source": "CNN Türk",
+        "url": "https://www.cnnturk.com/turkiye/haluk-leventten-sile-belediyesi-davasinda-ifade-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-3498006",
+        "title": "Haluk Levent'ten \"Şile Belediyesi\" davasında ifade: \"Yeliz Kaya yerine benim tutuklanmam gerekiyor\"",
+        "summary": "Şile Belediyesi'ne yönelik 'Suç işlemek amacıyla örgüt kurma ve üye olma', 'Rüşvet', 'İrtikap' ve 'İhaleye fesat karıştırma' suçlarına ilişkin yürütülen soruşturma kapsamında tutuklanan, görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı davada 11'inci duruşma başladı. Duruşmada tanık olarak dinlenen Haluk Levent, \"Yeliz Kaya benim asistanımdır. Şile dosyasıyla ilgili hiçbir alakası yoktur. Onu"
       },
       {
         "source": "Hürriyet",
-        "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasinda-gozaltina-alinan-1-supheli-tutuklandi-43390310",
-        "title": "Fon soruşturmasında gözaltına alınan 1 şüpheli tutuklandı",
+        "url": "https://www.hurriyet.com.tr/gundem/sile-belediyesine-yonelik-yolsuzluk-davasi-haluk-levent-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43390375",
+        "title": "Şile Belediyesi'ne yönelik ‘yolsuzluk’ davası | Haluk Levent tanık olarak dinlendi: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
         "summary": ""
+      },
+      {
+        "source": "Cumhuriyet",
+        "url": "https://www.cumhuriyet.com.tr/turkiye/haluk-levent-sile-belediyesi-davasinda-tanik-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-2559280",
+        "title": "Haluk Levent Şile Belediyesi davasında tanık: 'Yeliz Kaya yerine benim tutuklanmam gerekiyor'",
+        "summary": "Şile Belediye Başkanı Özgür Kabadayı’nın da aralarında bulunduğu 11’i tutuklu 53 sanıklı davada tanık olarak dinlenen sanatçı Haluk Levent, asistanı Yeliz Kaya’nın banka hesaplarını kendisinin kullandığını söyledi. Levent, “Bu hesaplar benimdir, onun yerine benim tutuklanmam daha adaletli olur” dedi."
+      },
+      {
+        "source": "BirGün",
+        "url": "https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345",
+        "title": "Haluk Levent Şile Belediyesi davasında tanık olarak ifade verdi: \"Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\"",
+        "summary": "Şile Belediyesi'ne yönelik davanın 11'inci duruşmasında tanık olarak dinlenen Haluk Levent, asistanı olduğunu ifade ettiği Yeliz Kaya adına açılan banka hesaplarını kendisinin kullandığını ifade etti. Ahbap derneği için ise \"Ahbap Derneği toplanan bağışların yüzde 94'ünü deprem bölgesine aktaran dünyanın en büyük ve en başarılı derneğidir. Çaldığım iddia edilen paralar yönetim kurulu kararı ile karar defterine işlenen paralardır. Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\" dedi."
       }
     ],
     "reasons": [
-      "suç:+12",
-      "para:+9",
-      "güç:+4"
+      "suç:+21",
+      "para:+3",
+      "güç:+3",
+      "merak:+1",
+      "gürültü:-6"
     ],
     "sensitive": false,
     "single_source": false,
-    "newest": "2026-11-25T07:44:49+00:00"
+    "newest": "2026-11-25T13:48:41+00:00"
   },
   "topics": [
     {
-      "score": 30,
-      "title": "Fon soruşturmasında yeni gelişme: Bir şüpheli tutuklandı",
-      "sources": [
-        "Hürriyet",
-        "NTV"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/fon-sorusturmasinda-yeni-gelisme-bir-supheli-tutuklandi-1752468",
-          "title": "Fon soruşturmasında yeni gelişme: Bir şüpheli tutuklandı",
-          "summary": "Fon soruşturmasında adliyeye sevk edilen bir şüpheli daha tutuklandı. Sermaye piyasalarındaki gelişmelere ilişkin başlatılan fon soruşturması sürüyor. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada, 24 Kasım Salı günü dört şüpheli daha tutuklanmış, iki şüpheli adli kontrolle serbest bırakılmıştı . Aynı şüphelilerle birlikte gözaltına alınan bir kişinin emniyetteki işlemleri de dün tamamlandı. Çağlayan'daki İstanbul Adliyesi'ne çıkarılan şüpheli, savcıya verdiği ifadenin ardın"
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasinda-gozaltina-alinan-1-supheli-tutuklandi-43390310",
-          "title": "Fon soruşturmasında gözaltına alınan 1 şüpheli tutuklandı",
-          "summary": ""
-        }
-      ],
-      "reasons": [
-        "suç:+12",
-        "para:+9",
-        "güç:+4"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T07:44:49+00:00"
-    },
-    {
-      "score": 28,
-      "title": "Danıştay 8. İdari Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
+      "score": 33,
+      "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
       "sources": [
         "BirGün",
         "CNN Türk",
-        "Habertürk",
+        "Cumhuriyet",
         "Hürriyet",
         "NTV"
       ],
       "links": [
         {
           "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/danistay-8-idari-dairesi-imamoglunun-diplomasinin-iptali-kararini-onadi-1751606",
-          "title": "Danıştay 8. İdari Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
-          "summary": "Danıştay, 8. İdari Dairesi Ekrem İmamoğlu'nun üniversite diplomasının iptali kararını onadı. 23 Mart 2025'te tutuklandıktan sonra İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun üniversite diplomasının iptali kesinleşti. Kararı Danıştay 8. İdari Dairesi onadı. Söz konusu yargılama süreci, İmamoğlu'nun 1990 yılında Girne Amerikan Üniversitesi'nden İstanbul Üniversitesi'ne yatay geçişini konu ediniyordu. Dosyayı “üniversitenin tanınırlığı”, “kontenjan art"
+          "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
+          "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
+          "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
+        },
+        {
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/turkiye/haluk-leventten-sile-belediyesi-davasinda-ifade-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-3498006",
+          "title": "Haluk Levent'ten \"Şile Belediyesi\" davasında ifade: \"Yeliz Kaya yerine benim tutuklanmam gerekiyor\"",
+          "summary": "Şile Belediyesi'ne yönelik 'Suç işlemek amacıyla örgüt kurma ve üye olma', 'Rüşvet', 'İrtikap' ve 'İhaleye fesat karıştırma' suçlarına ilişkin yürütülen soruşturma kapsamında tutuklanan, görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı davada 11'inci duruşma başladı. Duruşmada tanık olarak dinlenen Haluk Levent, \"Yeliz Kaya benim asistanımdır. Şile dosyasıyla ilgili hiçbir alakası yoktur. Onu"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/sile-belediyesine-yonelik-yolsuzluk-davasi-haluk-levent-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43390375",
+          "title": "Şile Belediyesi'ne yönelik ‘yolsuzluk’ davası | Haluk Levent tanık olarak dinlendi: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
+          "summary": ""
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/haluk-levent-sile-belediyesi-davasinda-tanik-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-2559280",
+          "title": "Haluk Levent Şile Belediyesi davasında tanık: 'Yeliz Kaya yerine benim tutuklanmam gerekiyor'",
+          "summary": "Şile Belediye Başkanı Özgür Kabadayı’nın da aralarında bulunduğu 11’i tutuklu 53 sanıklı davada tanık olarak dinlenen sanatçı Haluk Levent, asistanı Yeliz Kaya’nın banka hesaplarını kendisinin kullandığını söyledi. Levent, “Bu hesaplar benimdir, onun yerine benim tutuklanmam daha adaletli olur” dedi."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345",
+          "title": "Haluk Levent Şile Belediyesi davasında tanık olarak ifade verdi: \"Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\"",
+          "summary": "Şile Belediyesi'ne yönelik davanın 11'inci duruşmasında tanık olarak dinlenen Haluk Levent, asistanı olduğunu ifade ettiği Yeliz Kaya adına açılan banka hesaplarını kendisinin kullandığını ifade etti. Ahbap derneği için ise \"Ahbap Derneği toplanan bağışların yüzde 94'ünü deprem bölgesine aktaran dünyanın en büyük ve en başarılı derneğidir. Çaldığım iddia edilen paralar yönetim kurulu kararı ile karar defterine işlenen paralardır. Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\" dedi."
+        }
+      ],
+      "reasons": [
+        "suç:+21",
+        "para:+3",
+        "güç:+3",
+        "merak:+1",
+        "gürültü:-6"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T13:48:41+00:00"
+    },
+    {
+      "score": 28,
+      "title": "Danıştay 8. Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
+      "sources": [
+        "BirGün",
+        "Habertürk",
+        "Hürriyet",
+        "NTV",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/danistay-8-dairesi-karari-onadi-imamoglunun-diplomasi-iptal-edildi-1751606",
+          "title": "Danıştay 8. Dairesi kararı onadı. İmamoğlu'nun diploması iptal edildi",
+          "summary": "Danıştay, 8. Dairesi Ekrem İmamoğlu'nun üniversite diplomasının iptali kararını onadı. 23 Mart 2025'te tutuklandıktan sonra İstanbul Büyükşehir Belediye (İBB) Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun üniversite diplomasının iptali kesinleşti. Kararı Danıştay 8. Dairesi onadı. Söz konusu yargılama süreci, İmamoğlu'nun 1990 yılında Girne Amerikan Üniversitesi'nden İstanbul Üniversitesi'ne yatay geçişinde usulsüzlük olduğu iddiasını konu ediniyordu. Dosyayı “üniversitenin tanınırlığı"
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/imamoglunun-diploma-iptali-karari-onandi-964421.html",
+          "title": "İmamoğlu'nun diploma iptali kararı onandı",
+          "summary": "Danıştay 8. Dairesi, tutuklanmasının ardından İstanbul Büyükşehir Belediye İBB Başkanlığı görevinden uzaklaştırılan Ekrem İmamoğlu'nun, üniversite diplomasının iptal edilmesi kararına yapılan itirazın reddine hükmetti."
         },
         {
           "source": "Hürriyet",
@@ -91,13 +143,7 @@
           "source": "BirGün",
           "url": "https://www.birgun.net/haber/danistay-onadi-ekrem-imamoglu-nun-diplomasinin-iptali-kesinlesti-748337",
           "title": "Danıştay onadı: Ekrem İmamoğlu'nun diplomasının iptali kesinleşti!",
-          "summary": "Danıştay 8. Dairesi, Ekrem İmamoğlu’nun lisans diplomasının iptaline ilişkin mahkeme kararını onadı. Bu karar İmamoğlu için cumhurbaşkanlığı adaylığı yolunun kapanması anlamına geliyor."
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/son-dakika-danistaydan-ekrem-imamoglu-karari-diplomasinin-iptali-kesinlesti-3497917",
-          "title": "SON DAKİKA! Danıştay'dan \"Ekrem İmamoğlu\" kararı: Diplomasının iptali kesinleşti",
-          "summary": "Son dakika haberine göre; Danıştay 8. İdare Dairesi, Ekrem İmamoğlu'nun diplomasının iptali kararını onadı."
+          "summary": "Danıştay 8. Dairesi, Ekrem İmamoğlu’nun lisans diplomasının iptaline ilişkin mahkeme kararını onadı. Danıştay 8. Dairesi, yatay geçiş işleminin 'açık hata' içerdiğini, bu nedenle süre şartı aranmaksızın geri alınabileceğini öne sürdü. Bu karar İmamoğlu için cumhurbaşkanlığı adaylığı yolunun kapanması anlamına geliyor."
         },
         {
           "source": "Habertürk",
@@ -113,56 +159,73 @@
       ],
       "sensitive": true,
       "single_source": false,
-      "newest": "2026-11-25T11:20:45+00:00"
+      "newest": "2026-11-25T11:51:59+00:00"
     },
     {
-      "score": 28,
+      "score": 26,
       "title": "Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında",
       "sources": [
         "Cumhuriyet",
         "Hürriyet",
-        "NTV",
-        "TRT Haber"
+        "NTV"
       ],
       "links": [
         {
           "source": "NTV",
           "url": "https://www.ntv.com.tr/turkiye/galeri-unlulere-uyusturucu-sorusturmasinda-yeni-dalga-ozcan-deniz-deniz-cakir-burcu-ozberk-de-gozaltinda-1752499",
           "title": "Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında",
-          "summary": "Ünlülere yönelik yeni bir uyuşturucu operasyonu düzenlendi. Şarkıcı Özcan Deniz, oyuncular Deniz Çakır ve Burcu Özberk'in de aralarında bulunduğu 24 ünlü isim gözaltına alındı. Ünlülere yönelik uyuşturucu soruşturmasında yeni bir operasyon düzenlendi. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada 35 şüpheli hakkında gözaltı kararı verildi. Aralarında şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özbek ile organizatör Erdal Bozkuş ve internet ünlülerinin de bulunduğu 24 ki"
+          "summary": "Ünlülere yönelik yeni bir uyuşturucu operasyonunda gözaltına alınan Özcan Deniz, Deniz Çakır ve Burcu Özberk'in de aralarında bulunduğu 24 ünlü isim adliyeye sevk edildi. Ünlülere yönelik uyuşturucu soruşturmasında yeni bir operasyon düzenlendi. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada 35 şüpheli hakkında gözaltı kararı verildi. Aralarında şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özbek ile organizatör Erdal Bozkuş ve internet ünlülerinin de bulunduğu 24 kişi göz"
         },
         {
           "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/istanbul-da-unlulere-yonelik-uyusturucu-sorusturmasinda-gozalti-sayisi-24-e-yukseldi-ozcan-deniz-ve-deniz-cakir-da-listede-2559198",
-          "title": "İstanbul’da ünlülere yönelik uyuşturucu soruşturmasında gözaltı sayısı 24’e yükseldi: Özcan Deniz ve Deniz Çakır da listede",
-          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından \"fuhuş\" ve \"uyuşturucu\" suçlamalarıyla yürütülen soruşturma kapsamında düzenlenen operasyonda gözaltına alınanların sayısı 24'e yükseldi. Hakkında gözaltı kararı verilen 35 isim arasında sanatçı Özcan Deniz, oyuncu Deniz Çakır Baykal, yönetmen Cem Karcı ve sunucu Murat Ceylan'ın da yer aldığı öğrenildi."
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/unlulere-yonelik-uyusturucu-sorusturmasinda-23-gozalti-964380.html",
-          "title": "Ünlülere yönelik uyuşturucu soruşturmasında 23 gözaltı",
-          "summary": "İstanbul'da ünlülere yönelik yürütülen uyuşturucu ve fuhuş soruşturmasında haklarında gözaltı kararı verilen 35 şüpheliden 23'ü gözaltına alındı. Gözaltına alınanlar arasında Özcan Deniz ve Deniz Çakır da bulunuyor."
+          "url": "https://www.cumhuriyet.com.tr/turkiye/unlulere-uyusturucu-operasyonu-ozcan-deniz-ve-deniz-cakir-da-aralarinda-24-supheli-adliyeye-sevk-edildi-2559327",
+          "title": "Ünlülere uyuşturucu operasyonu... Özcan Deniz ve Deniz Çakır da aralarında: 24 şüpheli adliyeye sevk edildi",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından fuhuş ve uyuşturucu suçlarına yönelik yürütülen soruşturma kapsamında gözaltına alınan aralarında sanatçı Özcan Deniz ve Deniz Çakır’ın da bulunduğu şüpheliler emniyetteki işlemlerinin tamamlanmasını ardından adliyeye sevk edildi."
         },
         {
           "source": "Hürriyet",
           "url": "https://www.hurriyet.com.tr/gundem/unlulere-uyusturucu-operasyonunda-yeni-dalga-cok-sayida-isme-gozalti-karari-listede-ozcan-deniz-burcu-ozberk-murat-ceylan-ve-deniz-43390110",
-          "title": "Ünlülere uyuşturucu operasyonunda yeni dalga: Çok sayıda isme gözaltı kararı! Listede Özcan Deniz, Burcu Özberk, Murat Ceylan ve Deniz Çakır da var",
-          "summary": ""
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/son-dakika-aralarinda-ozcan-deniz-ile-deniz-cakir-da-var-unlulere-yonelik-sorusturmada-35-zanli-icin-gozalti-karari-43389996",
-          "title": "Son dakika : Aralarında Özcan Deniz ile Deniz Çakır da var… Ünlülere yönelik soruşturmada 35 isim için gözaltı kararı... 19 kişi yakalandı",
+          "title": "Ünlülere uyuşturucu operasyonunda yeni dalga: Çok sayıda isim adliyede! Listede Özcan Deniz, Burcu Özberk, Murat Ceylan ve Deniz Çakır da var",
           "summary": ""
         }
       ],
       "reasons": [
         "suç:+13",
-        "güç:+4"
+        "güç:+5"
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T10:34:00+03:00"
+      "newest": "2026-11-25T15:08:00+03:00"
+    },
+    {
+      "score": 25,
+      "title": "ZDF'ye silahlı röportaj veren Daltonlar üyelerine İstanbul'da baskın",
+      "sources": [
+        "Hürriyet",
+        "NTV"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/galeri-zdfye-silahli-roportaj-veren-daltonlar-uyelerine-istanbulda-baskin-1752551",
+          "title": "ZDF'ye silahlı röportaj veren Daltonlar üyelerine İstanbul'da baskın",
+          "summary": "Alman ZDF kanalına ellerinde silahlarla röportaj veren Daltonlar Çetesi üyelerine operasyon düzenlendi. Polis dokuz şüpheliyi yakaladı. Alman kamu yayıncısı ZDF, gerçekleştirdikleri silahlı eylemlerle adını duyuran Daltonlar isimli çeteyi konu alan bir belgesel yayınladı. Daha önce yayınlanmayan fotoğraf ve videolar ile soruşturma dosyalarından ayrıntılara yer verilen belgeselde İstanbul'dan Berlin'e uzanan suç şeması ayrıntılı şekilde ele alındı. Belgeselin İstanbul'da çekilen bölümünde yüzleri"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/istanbulda-yabanci-basina-silahla-roportaj-veren-suc-orgutune-operasyon-9-gozalti-43390492",
+          "title": "İstanbul'da yabancı basına silahla röportaj veren suç örgütüne operasyon: 9 gözaltı",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+16",
+        "para:+3",
+        "güç:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T13:22:55+03:00"
     },
     {
       "score": 24,
@@ -219,20 +282,94 @@
       "newest": "2026-11-25T11:22:06+03:00"
     },
     {
-      "score": 22,
-      "title": "Fatma Betül Sayan Kaya'nın tahliyesi, Türkiye'nin gündemine oturdu",
+      "score": 21,
+      "title": "İsa Aras Mersinli için yeniden otopsi istendi. \"Mekanik bir robot gibiydi\"",
+      "sources": [
+        "Cumhuriyet",
+        "Habertürk",
+        "NTV"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/isa-aras-mersinli-icin-yeniden-otopsi-istendi-mekanik-bir-robot-gibiydi-1752553",
+          "title": "İsa Aras Mersinli için yeniden otopsi istendi. \"Mekanik bir robot gibiydi\"",
+          "summary": "Kahramanmaraş'ta 10 kişinin hayatını kaybettiği okul saldırısını gerçekleştiren İsa Aras Mersinli için yeniden otopsi istendi. Kahramanmaraş'taki okul saldırganının otopsi işleminin yenilenmesi talebi dava dosyasına girdi. Milli Eğitim Bakanlığı Hukuk Hizmetleri Genel Müdürlüğünce Kahramanmaraş 3. Ağır Ceza Mahkemesi'ne sunulan dilekçede, Mersinli'den alınan kan, doku ve göz içi sıvısı örnekleri üzerinde yeniden inceleme yapılması talep edildi. Dilekçede, Adli Tıp Kurumu Gaziantep Grup Başkanlığ"
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/son-dakika-kahramanmaras-taki-okul-saldirisi-meb-den-isa-aras-mersinli-nin-otopsisi-icin-yeniden-inceleme-talebi-2559275",
+          "title": "Son dakika... Kahramanmaraş'taki okul saldırısı: MEB'den İsa Aras Mersinli'nin otopsisi için yeniden inceleme talebi",
+          "summary": "Son dakika haberi... Milli Eğitim Bakanlığı, mevcut raporların yetersiz olduğu iddiasıyla Kahramanmaraş'ta 15 Nisan'da 10 kişinin hayatını kaybettiği okul saldırısını gerçekleştiren İsa Aras Mersinli'nin otopsisinin yeniden incelenmesini talep etti."
+        },
+        {
+          "source": "Habertürk",
+          "url": "https://www.haberturk.com/gundem/son-dakika-haber-mekanik-bir-robot-gibiydi-isa-aras-mersinli-ye-bir-daha-otopsi-yapilacak-3930017",
+          "title": "\"Mekanik bir robot gibiydi\" Caniye bir otopsi daha",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+9",
+        "güç:+3",
+        "merak:+1"
+      ],
+      "sensitive": true,
+      "single_source": false,
+      "newest": "2026-11-25T11:35:21+00:00"
+    },
+    {
+      "score": 21,
+      "title": "Ünlülere yönelik uyuşturucu operasyonu! Gözaltına alınan 24 şüpheli adliyeye sevk edildi",
+      "sources": [
+        "BirGün",
+        "CNN Türk",
+        "Cumhuriyet"
+      ],
+      "links": [
+        {
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/turkiye/unlulere-yonelik-uyusturucu-operasyonu-gozaltina-alinan-24-supheli-adliyeye-sevk-edildi-3498039",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu! Gözaltına alınan 24 şüpheli adliyeye sevk edildi",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen ünlülere yönelik uyuşturucu soruşturması kapsamında, aralarında oyuncu Özcan Deniz ve Deniz Çakır'ın da bulunduğu 35 kişi hakkında gözaltı kararı verildi. Operasyonda gözaltına alınan 24 şüpheli sağlık kontrolünden geçirildikten sonra adliyeye sevk edildi."
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/unlulere-yonelik-uyusturucu-operasyonu-daha-1-saatini-doldurmadan-yasadisi-bahis-sitelerine-dustu-2559249",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu daha 1 saatini doldurmadan yasadışı bahis sitelerine düştü!",
+          "summary": "Dün akşam saatlerinde İstanbul Cumhuriyet Başsavcılığı tarafından ünlülere yönelik başlatılan uyuşturucu soruşturması kapsamında düzenlenen operasyonun üzerinden henüz bir saat geçmeden yasadışı bahis sitelerinde dikkat çeken bir bahis açıldı. Aralarında Özcan Deniz ve Deniz Çakır'ın da bulunduğu isimlerin uyuşturucu testlerinin pozitif çıkıp çıkmayacağı üzerine tahmin seçenekleri oluşturuldu."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-gozaltina-alinan-24-kisi-adliyeye-sevk-edildi-748387",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu: Gözaltına alınan 24 kişi adliyeye sevk edildi",
+          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişi sağlık kontrolünün ardından adliyeye sevk edildi. Gözaltına alınanlar arasında Özcan Deniz, Murat Ceylan, Burcu Özberk ve Deniz Çakır da bulunuyor."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/istanbul-cumhuriyet-bassavciligi-ndan-unlulere-yonelik-uyusturucu-operasyonu-35-kisi-hakkinda-gozalti-karari-748262",
+          "title": "İstanbul Cumhuriyet Başsavcılığı'ndan ünlülere yönelik uyuşturucu operasyonu: 35 kişi hakkında gözaltı kararı",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı'nca ünlülere yönelik uyuşturucu operasyonunda 35 kişi hakkında gözaltı kararı çıkarıldı. Aralarında Özcan Deniz, oyuncu Deniz Çakır, Burcu Özberk, Murat Başoğlu, Meltem Keklik, Erdal Bozkuş ve Cem Karcı'nın da bulunduğu 21 kişinin gözaltına alındığı bildirildi."
+        }
+      ],
+      "reasons": [
+        "suç:+10",
+        "güç:+2",
+        "rakam:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T14:27:59+00:00"
+    },
+    {
+      "score": 20,
+      "title": "Oya Tekin'den Fatma Betül Sayan Kaya'nın tahliyesine tepki: Bana da aynı adaleti uygulayın",
       "sources": [
         "BirGün",
         "Cumhuriyet",
         "Hürriyet"
       ],
       "links": [
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-tahliyesi-turkiye-nin-gundemine-oturdu-748186",
-          "title": "Fatma Betül Sayan Kaya'nın tahliyesi, Türkiye'nin gündemine oturdu",
-          "summary": "\"Fon soruşturması\" kapsamında tutuklanan eski AKP Genel Başkan Yardımcısı Fatma Betül Sayan Kaya hakkındaki tahliye kararı ülke gündemine oturdu. X sosyal medya uygulamasında, Kaya'nın tahliyesi Türkiye gündeminde ilk sıralara yerleşti. Çok sayıda isim, tahliye kararı hakkında değerlendirmelerde bulundu. YENİ Parti Genel Başkanı Özgür Özel, \"Milletin 2,2 milyarını cebine indirmişti. Yattığı her gün karşılığında, 115 milyon lirasını aklamış oldu. İşte bu rejimin adaleti budur, çökmüştür. Ahlak an"
-        },
         {
           "source": "BirGün",
           "url": "https://www.birgun.net/haber/oya-tekin-den-fatma-betul-sayan-kaya-nin-tahliyesine-tepki-bana-da-ayni-adaleti-uygulayin-748242",
@@ -244,6 +381,12 @@
           "url": "https://www.birgun.net/haber/fatma-betul-sayan-kaya-nin-cezaevinde-agladigi-iddia-edilmisti-avukat-hatipoglu-sahit-oldugu-anlari-anlatti-748330",
           "title": "Fatma Betül Sayan Kaya'nın cezaevinde ağladığı iddia edilmişti: Avukat Hatipoğlu, şahit olduğu anları anlattı",
           "summary": "Avukat Afşin Hatipoğlu, fon vurgunu soruşturması kapsamında 18 gün tutuklu kalan Fatma Betül Sayan Kaya'nın cezaevindeki günlerine ilişkin iddialarda bulundu. Hatipoğlu, Kaya'nın diğer tutuklulardan farklı muamele gördüğünün yanı sıra gazeteci Nagehan Alçı'nın iddialarına karşı çıkarak, \"Gayet sohbetli, nezaketli, zevkli, sefalıydı. Oradaki, cezaevi ortamında nasıl olunacaksa o şekilde gördüm\" dedi."
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/yeni-parti-den-fatma-betul-sayan-kaya-nin-tahliyesine-gondermeli-video-menfaat-ortakliginiz-belli-2559304",
+          "title": "YENİ Parti'den Fatma Betül Sayan Kaya'nın tahliyesine göndermeli video: 'Menfaat ortaklığınız belli!'",
+          "summary": "Fon soruşturması kapsamında tutuklanan eski Bakan Fatma Betül Sayan Kaya'nın ev hapsi kararıyla tahliye edilmesinin ardından YENİ Parti'den dikkat çeken bir paylaşım geldi. Partinin yayımladığı videoda, AKP'li Cumhurbaşkanı Recep Tayyip Erdoğan'ın soruşturmaya ilişkin sözlerine WhatsApp grubu üzerinden gönderme yapıldı."
         },
         {
           "source": "Cumhuriyet",
@@ -265,122 +408,13 @@
         }
       ],
       "reasons": [
-        "suç:+6",
-        "para:+7",
-        "merak:+1"
+        "suç:+8",
+        "para:+2",
+        "güç:+2"
       ],
       "sensitive": true,
       "single_source": false,
-      "newest": "2026-11-25T11:36:00+03:00"
-    },
-    {
-      "score": 22,
-      "title": "4 kişi aranıyor... Ankara'da uyuşturucu ve fuhuş operasyonu: 20 gözaltı",
-      "sources": [
-        "BirGün",
-        "CNN Türk",
-        "Cumhuriyet",
-        "Habertürk",
-        "TRT Haber"
-      ],
-      "links": [
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/4-kisi-araniyor-ankara-da-uyusturucu-ve-fuhus-operasyonu-20-gozalti-2559259",
-          "title": "4 kişi aranıyor... Ankara'da uyuşturucu ve fuhuş operasyonu: 20 gözaltı",
-          "summary": "Ankara'da, uyuşturucu ve fuhuş suçlarına yönelik soruşturma kapsamında 20 şüpheli gözaltına alındı."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/istanbul-cumhuriyet-bassavciligi-ndan-unlulere-yonelik-uyusturucu-operasyonu-35-kisi-hakkinda-gozalti-karari-748262",
-          "title": "İstanbul Cumhuriyet Başsavcılığı'ndan ünlülere yönelik uyuşturucu operasyonu: 35 kişi hakkında gözaltı kararı",
-          "summary": "İstanbul Cumhuriyet Başsavcılığı'nca ünlülere yönelik uyuşturucu operasyonunda 35 kişi hakkında gözaltı kararı çıkarıldı. Aralarında Özcan Deniz, oyuncu Deniz Çakır, Burcu Özberk, Murat Başoğlu, Meltem Keklik, Erdal Bozkuş ve Cem Karcı'nın da bulunduğu 21 kişinin gözaltına alındığı bildirildi."
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/bursa-da-uyusturucu-operasyonu-122-gozalti-2559240",
-          "title": "Bursa’da uyuşturucu operasyonu: 122 gözaltı",
-          "summary": "Bursa merkez, Karacabey ve Orhaneli’de 95 adrese düzenlenen eş zamanlı operasyonda 122 şüpheli gözaltına alındı. Aramalarda yaklaşık 14 kilo uyuşturucu madde, sentetik haplar ve çok sayıda silah ele geçirildi."
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/ankarada-zehir-tacirlerine-operasyon-20-gozalti-964409.html",
-          "title": "Ankara'da zehir tacirlerine operasyon: 20 gözaltı",
-          "summary": "Ankara'da uyuşturucu ve fuhuş suçlarına yönelik düzenlenen operasyonda 20 şüpheli gözaltına alındı."
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/yerel-haberler/ankara/ankarada-uyusturucu-ve-fuhus-operasyonu-20-gozalti-3497946",
-          "title": "Ankara'da uyuşturucu ve fuhuş operasyonu: 20 gözaltı",
-          "summary": "Ankara'da uyuşturucu ve fuhuş operasyonu: 20 gözaltı"
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/gundem/son-dakika-haberler-bursada-uyusturucu-ticaretine-yonelik-duzenlenen-operasyonda-122-gozalti-3929941",
-          "title": "Uyuşturucu operasyonu: 122 gözaltı",
-          "summary": ""
-        }
-      ],
-      "reasons": [
-        "suç:+10",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T11:24:05+00:00"
-    },
-    {
-      "score": 19,
-      "title": "Numan Kurtulmuş: İzleme komisyonu 19 üyeli olacak",
-      "sources": [
-        "BirGün",
-        "CNN Türk",
-        "Cumhuriyet",
-        "Hürriyet",
-        "NTV"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/numan-kurtulmus-izleme-komisyonu-19-uyeli-olacak-1752459",
-          "title": "Numan Kurtulmuş: İzleme komisyonu 19 üyeli olacak",
-          "summary": "Meclis Başkanı Numan Kurtulmuş, Meclis'te kurulacak İzleme Komisyonunun komisyonun 19 üye ile görev yapacağını açıkladı. Meclis Başkanı dokunulmazlıklar konusunda da dikkat çeken mesajlar verdi. Meclis Başkanı Numan Kurtulmuş, Avustralya ziyareti öncesinde, uçakta gazetecilere açıklamalara bulundu. Kurtulmuş, Meclis'te Terörsüz Türkiye süreci kapsamında kurulacak İzleme Komisyonunun 19 üyeden oluşacağını ve ilk toplantının Genel Kurul'da bütçe maratonu başlamadan yapılacağını açıkladı. Kurtulmuş"
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/tbmm-baskani-kurtulmustan-terorsuz-turkiye-aciklamasi-mecliste-19-uyeli-izleme-komisyonu-kurulacak-43390260",
-          "title": "TBMM Başkanı Kurtulmuş'tan 'Terörsüz Türkiye' açıklaması: Meclis'te 19 üyeli İzleme Komisyonu kurulacak",
-          "summary": ""
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/son-dakika-tbmm-de-izleme-komisyonu-kuruluyor-numan-kurtulmus-tan-partilere-kritik-yazi-2559208",
-          "title": "Son Dakika... TBMM'de 'İzleme Komisyonu' kuruluyor: Numan Kurtulmuş'tan partilere kritik yazı",
-          "summary": "Son dakika haberi... TBMM Başkanı Numan Kurtulmuş, Meclis'te grubu bulunan siyasi partilere 19 üyeden oluşacak İzleme Komisyonu'nda görevlendirilecek milletvekillerinin bildirilmesi için resmi yazı gönderdi. Partilerden isimlerin 30 Kasım Pazartesi günü saat 17.00'ye kadar iletilmesi istendi."
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/tbmm-baskani-kurtulmustan-izleme-komisyonu-icin-partilere-davet-3497924",
-          "title": "TBMM Başkanı Kurtulmuş'tan İzleme Komisyonu için partilere davet",
-          "summary": "Meclis Başkanı Numan Kurtulmuş, terörsüz Türkiye kapsamında Meclis çatısı altında kurulacak İzleme Komisyonu için Meclis'te grubu bulunan siyasi partilere üye vermeleri için yazı gönderdi."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/kurtulmus-acikladi-izleme-komisyonunda-19-uye-olacak-siyasi-partiler-uye-isimlerini-bildirecek-748320",
-          "title": "Kurtulmuş açıkladı: İzleme komisyonunda 19 üye olacak, siyasi partiler üye isimlerini bildirecek",
-          "summary": "TBMM Başkanı Numan Kurtulmuş gazetecilerin sorularını yanıtladı. Süreçle ilgili açıklamalarda bulunan bulunan Kurtulmuş, izleme komisyonunun 19 üyeden oluşacağını ve Yeni Parti’nin komisyona üye vermeyeceğini söyledi. Partilere komisyona üye bildirmeleri için yazı gönderdiklerini belirten Kurtulmuş, “Meclis’te bütçe görüşmeleri var, başlamadan ilk toplantımızı yaparız diye ümit ediyorum\" dedi."
-        }
-      ],
-      "reasons": [
-        "suç:+8",
-        "para:+2",
-        "merak:+1",
-        "gürültü:-4",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T11:07:35+00:00"
+      "newest": "2026-11-25T13:20:00+03:00"
     },
     {
       "score": 18,
@@ -417,64 +451,7 @@
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T08:53:41+00:00"
-    },
-    {
-      "score": 18,
-      "title": "25 Kasım Kadına Yönelik Şiddete Karşı Mücadele Günü nasıl ortaya çıktı? İşte tarihsel geçmişi...",
-      "sources": [
-        "BirGün",
-        "CNN Türk",
-        "Cumhuriyet",
-        "Hürriyet",
-        "TRT Haber"
-      ],
-      "links": [
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/25-kasim-kadina-yonelik-siddete-karsi-mucadele-gunu-nasil-ortaya-cikti-iste-tarihsel-gecmisi-2559243",
-          "title": "25 Kasım Kadına Yönelik Şiddete Karşı Mücadele Günü nasıl ortaya çıktı? İşte tarihsel geçmişi...",
-          "summary": "Türkiye'de kadın cinayetleri, erkek şiddeti ve cezasızlık tartışmaları sürerken 25 Kasım Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü, kadınların yaşam hakkı ve eşitlik taleplerini yeniden gündeme taşıdı. Kadına yönelik şiddetle mücadelenin simgesi haline gelen 25 Kasım'ın tarihsel geçmişini ve günümüzdeki yansımalarını sizler için derledik."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/beyoglu-kaymakamligi-25-kasim-kadina-yonelik-siddete-karsi-mucadele-gunu-yuruyusunu-yasakladi-748251",
-          "title": "Beyoğlu Kaymakamlığı 25 Kasım Kadına Yönelik Şiddete Karşı Mücadele Günü yürüyüşünü yasakladı",
-          "summary": "Kadınların 25 Kasım Kadına Yönelik Şiddete Karşı Mücadele Günü için Beyoğlu'na yaptıkları yürüyüş çağrılarına yönelik olarak Beyoğlu Kaymakamlığı'ndan açıklama geldi. Kaymakamlık her türlü yürüyüşün, toplanmanın ve eylemin yasaklandığını belirtti. Gerekçe olarak \"toplumsal barış\" gösterildi."
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/emine-erdogandan-25-kasim-kadina-yonelik-siddete-karsi-uluslararasi-mucadele-gunu-paylasimi-43390324",
-          "title": "Emine Erdoğan'dan 25 Kasım Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü paylaşımı",
-          "summary": ""
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/makale/13-yargi-paketi-ne-yani-kadina-yonelik-ekonomik-siddete-karsi-durmak-748284",
-          "title": "13. Yargı Paketi'ne, yani kadına yönelik ekonomik şiddete karşı durmak",
-          "summary": ""
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/bakan-goktas-kadina-yonelik-siddetle-sifir-tolerans-ilkesiyle-mucadele-ediyoruz-964393.html",
-          "title": "Bakan Göktaş: Kadına yönelik şiddetle sıfır tolerans ilkesiyle mücadele ediyoruz",
-          "summary": "Aile ve Sosyal Hizmetler Bakanı Mahinur Özdemir Göktaş, kadına yönelik şiddetle \"sıfır tolerans\" ilkesiyle, amasız, fakatsız ve tavizsiz şekilde mücadele ettiklerini bildirdi."
-        },
-        {
-          "source": "TRT Haber",
-          "url": "https://www.trthaber.com/haber/gundem/emine-erdogandan-kadina-yonelik-siddete-karsi-uluslararasi-mucadele-gunu-paylasimi-964406.html",
-          "title": "Emine Erdoğan'dan Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü paylaşımı",
-          "summary": "Emine Erdoğan, 25 Kasım Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü dolayısıyla paylaşımda bulundu."
-        }
-      ],
-      "reasons": [
-        "suç:+4",
-        "merak:+2",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T11:29:58+00:00"
+      "newest": "2026-11-25T11:16:20+00:00"
     }
   ]
 }

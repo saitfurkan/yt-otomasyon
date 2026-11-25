@@ -1,110 +1,96 @@
-# Senaryo: Ünlülere Uyuşturucu Soruşturması: Gözaltı Listesinde Kimler Var?
+# Senaryo: Şile Belediyesi Davası: Haluk Levent Mahkemede Ne Dedi?
 
-- Konu: Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında
-- Tarih: 2026-11-25 | Kelime: 554 (yaklaşık 4 dk okuma) | Model: gemini-3.6-flash
+- Konu: Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
+- Tarih: 2026-11-25 | Kelime: 353 (yaklaşık 3 dk okuma) | Model: gemini-3.6-flash
 - Durum: **Okumadan önce aşağıdaki 'KONTROL ET' bölümüne 2 dakika ayır.**
 
 ## Uyarılar
-- Senaryo hedeften kısa kaldı (554 kelime). Konunun malzemesi sınırlı olabilir.
+- Senaryo hedeften kısa kaldı (353 kelime). Konunun malzemesi sınırlı olabilir.
+- Bazı kaynaklarda yalnızca kısa özet okunabildi.
 
 ## Başlık önerileri
-1. Ünlülere Uyuşturucu Soruşturması: Gözaltı Listesinde Kimler Var?
-2. 35 Kişilik Dev Operasyon: Ünlü İsimler Sağlık Kontrolünde
-3. Işıkların Ardındaki Karanlık: Ünlü İsimlere Gözaltı Kararı
+1. Şile Belediyesi Davası: Haluk Levent Mahkemede Ne Dedi?
+2. 92 Yıl Hapis İstemli Davada Sürpriz Tanık Açıklaması
+3. Yeliz Kaya Yerine Benim Tutuklanmam Gerekir!
 
-Küçük resim yazısı: ÜNLÜLERE GÖZALTI ŞOKU
+Küçük resim yazısı: BENİ TUTUKLAYIN!
 
 ## KANCA (videonun ilk 10-20 saniyesi)
 
-Işıkların arkasına saklanan karanlığı iyi bilirim. Ekranlardan tanıdığımız isimler, hastane kontrolünün ardından adliyenin kapısına dayandı. Tam 35 kişi hakkında verilen o gözaltı kararı taşları yerinden oynattı. Peki gizli tanıkların beyanları ve dijital raporlar daha neleri ortaya çıkaracak? [duraklama]
+Kendi cezamın bedelini başkasına ödetmem. 53 sanığın yargılandığı yolsuzluk davasında, 92 yıla kadar hapisle yargılananlar bir yanda, 4,5 aydır tek kişilik hücrede tutulan bir tanık diğer yanda. Duruşmada "Onun yerine benim tutuklanmam gerekiyor" diyen kimdi? [duraklama]
 
 ## OKUMA METNİ (kanca dahil, baştan sona)
 
-Işıkların arkasına saklanan karanlığı iyi bilirim. Ekranlardan tanıdığımız isimler, hastane kontrolünün ardından adliyenin kapısına dayandı. Tam 35 kişi hakkında verilen o gözaltı kararı taşları yerinden oynattı. Peki gizli tanıkların beyanları ve dijital raporlar daha neleri ortaya çıkaracak? [duraklama]
+Kendi cezamın bedelini başkasına ödetmem. 53 sanığın yargılandığı yolsuzluk davasında, 92 yıla kadar hapisle yargılananlar bir yanda, 4,5 aydır tek kişilik hücrede tutulan bir tanık diğer yanda. Duruşmada "Onun yerine benim tutuklanmam gerekiyor" diyen kimdi? [duraklama]
 
-Dosyanın geçmişi 8 Ekim 2025 tarihine dayanıyor. Geçen yıl ekim ayında başlayan bu operasyon sürecinde İstanbul Cumhuriyet Başsavcılığı Kaçakçılık, Narkotik ve Ekonomik Suçlar Soruşturma Bürosu takibi adım adım sürdürdü. İddialar ağır. Soruşturma fuhuş, uyuşturucu veya uyarıcı madde ticareti, temin etme ile uyuşturucu madde kullanma veya bulundurma suçlamaları çerçevesinde yürütülüyor.
+Süreç geçen yıl 10 Temmuz'da başladı. İlk operasyon düğmesine basıldı, ardından 2 ayrı dalga daha geldi. İstanbul Anadolu Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada şüphelilere örgüt kurma, rüşvet, irtikap ve ihaleye fesat karıştırma suçlamaları yöneltildi. [duraklama] İddianamede görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı hakkında 33 yıl 3 aydan 92 yıla kadar hapis cezası talep edildi.
 
-Operasyonun son dalgasında ünlü isimler hedefteydi. Şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve oyuncu Burcu Özberk gözaltına alınan şüpheliler arasında bulunuyor. Yanlarında organizatör Erdal Bozkuş da var. Listede yer alan diğer isimler Murat Ceylan, Murat Başoğlu, Cansu Taşkın ve İbrahim Yılmaz oldu. [duraklama]
+Dosya İstanbul Anadolu 27'nci Ağır Ceza Mahkemesi'nin huzuruna geldi. Özgür Kabadayı ve Berkant Acil'in de aralarında yer aldığı 11 tutuklu sanık salonda hazır bulundu. Ama gözler, Çorlu'daki cezaevinden salona getirilen tanığa kilitlendi. [duraklama] Haluk Levent salondaydı.
 
-Soruşturma genişliyor. Pınar Bent, Ceylan Kaya, Işıl Işık Demir, Burhan Karaca, Cem Güler ve İbrahim İzzet Özilhan polis nezaretine alındı. Saghar Shojaeı, İlknur Şahin, Meltem Özkayadan, Seher Grothe Sevdişan, Ufuk Gündoğdu, Onur Yüksel, Muammer Kapucuoğlu, Mehmet Can Karcı ve Deniz Sözen de gözaltına alınanlar arasında yer alıyor.
+Kürsüye geçti. Tutuklu sanıklardan Yeliz Kaya'nın Ahbap Derneği davasında asistanı olduğunu söyledi. [duraklama] Eski icra ve haciz dosyaları nedeniyle Kaya'nın banka hesaplarını kendisinin kullandığını ifade etti. 29 Mart 2025 tarihinde Ahbap Derneği'ni denetleyen İçişleri Bakanlığı başmüfettişlerine bu durumu bildirdiğini belirtti. Vergi dairesi başvurusu için ise kaynaklar farklı bilgi veriyor. Maltepe Vergi Dairesi'ne başvuru tarihini NTV bu yıl 4 Nisan olarak aktarırken, CNN Türk ve Hürriyet 4 Nisan 2026 olarak bildirdi. [duraklama]
 
-Fakat süreç bitmedi. Hakkında arama kararı bulunan yönetmen Cem Karcı adresinde bulunamadı. Emniyet güçleri Karcı'yı yakalamak için çalışmalarını sürdürüyor. [duraklama]
+Olayın kırılma noktası tam burada yaşandı. Haluk Levent, Yeliz Kaya'nın Şile Belediyesi davasıyla ilgisi olmadığını savundu. Asistanının serbest bırakılmasını isteyerek onun yerine kendisinin tutuklanması gerektiğini dile getirdi. [duraklama] Kardeşi Berkant Acil ile arasındaki para hareketlerinin borç alışverişinden ibaret olduğunu, rüşvet ya da ihale ilişkisi taşımadığını iddia etti. Dernekten kardeşine aktarılan 1 milyon liranın yönetim kurulu kararıyla karar defterine işlendiğini söyledi. Toplanan bağışların yüzde 94'ünün deprem bölgesine aktarıldığını ileri sürdü. 4,5 aydır cezaevinde tek kişilik hücrede tutulduğunu da ifade etti. [duraklama]
 
-Gözaltı sayılarına dair haber kaynaklarından farklı bilgiler geliyor. NTV ve Cumhuriyet operasyonda 24 kişinin gözaltına alındığını aktardı. TRT Haber ile Hürriyet'in bir haberinde sayı 23 olarak geçti. Hürriyet'in diğer haberinde ise 19 kişinin gözaltına alındığı bildirildi.
+Duruşmanın en dikkat çekici anı ise sanık sandalyesinden geldi. Berkant Acil, 6 aydır görmediği ağabeyi Haluk Levent'e bakıp duruşma salonunda doğum gününü kutladı. [duraklama]
 
-Adli Tıp Kurumu'na götürülen şüphelilerin akıbetini savcılık kararları belirleyecek. Savcılığın talebine göre kişiler ya serbest bırakılacak ya da mahkemeye sevk edilecek. Adalet bekliyor. [duraklama]
+Şimdi mahkeme heyetinin önünde bir inceleme süreci var. İçişleri Bakanlığı müfettişlerinin tespitleri, vergi dairesi başvuruları, dernek karar defterleri ve banka hesap hareketleri mahkemece değerlendirilecek.
 
-Kirli ilişkinin ağına düşen, hesabını yargı önünde vermek zorunda kalır.
+Sizce bu dosyada aydınlatılması gereken en kritik nokta hangisi: Banka hesaplarının devri mi, yoksa dernek kararları mı? [duraklama]
 
-Savcılığın bu kararları öyle bir anda almadığı anlaşılıyor. Dosyadaki iddialar sadece madde kullanımıyla sınırlı değil. Peki dosyadaki bu tablo nasıl kuruldu? Savcılığa göre süreç; şüpheli savunmaları, tanık beyanları ve gizli tanık anlatımları ile şekillendi. Bununla da bitmedi. Dijital materyaller tek tek incelendi. Bilirkişi inceleme raporları dosyaya girdi ve alınan kararlara dayanak oluşturdu. [duraklama]
-
-Bence ekran önündeki o pırıltılı yaşamlar, savcılığın dosyadaki ağır iddialarını örtmeye yetmiyor. Kimin neyle bağlantılı olduğu, hangi dijital verinin kime uzandığı adliye koridorlarında netleşecek.
-
-Yargının kapısından içeri giren kim olursa olsun yükü eşitlenir. [duraklama]
-
-Prosedür net. Gözaltına alınan isimler adliyeye sevk edilmeden önce ilk olarak hastanede sağlık kontrolünden geçiriliyor. Buradaki işlemlerin hemen ardından şüpheliler Adli Tıp Kurumu'na götürülüyor. Adli adımlar sırayla işliyor. Adli Tıp işlemleri ve sağlık kontrolleri tamamlanan şüpheliler için bir sonraki durak savcılık makamı olacak. Bundan sonraki gidişatı doğrudan savcılığın yapacağı değerlendirme şekillendirecek. [duraklama]
-
-Bence adliyenin koridorlarında isimlerin tanınmışlığı değil, dosyaya giren delillerin ağırlığı konuşur. Savcılığın sunacağı talepler ve mahkeme safhasında alınacak kararlar bu sürecin nereye uzanacağını net bir şekilde ortaya koyacak.
-
-Dosyaya giren resmi beyanlara baktığımızda süreç netleşiyor. Şüphelilerin verdikleri savunmalar ile bilirkişi incelemelerinin sonuçları süreçte belirleyici olacak. [duraklama]
-
-Bence bu dosyanın sokaktaki insana söylediği tek bir şey var. Kim olursan ol, sahnenin ışıkları ne kadar parlak olursa olsun kanun karşısında herkes aynı hizada durur. Ekranlarda hayranlıkla izlenen isimlerin ağır iddialarla adliyeye taşınması, adalete duyulan güvenin sınandığı yerdir.
-
-Şöhret ya da tanınmışlık iddiaları ortadan kaldırmaz. Savcılıkta yapılacak değerlendirmeler ve ortaya konan deliller doğrultusunda her şey netliğe kavuşacak. Kanun önünde ayrıcalık tanınmadığı sürece adalet yerini bulur. [duraklama]
-
-Önümüzdeki saatlerde savcılıktan çıkacak kararlar ve araması süren şüphelinin durumuyla operasyon yeni bir safhaya geçecek. Adliye koridorlarından gelecek haberleri yakından takip edeceğiz. Peki sizce bu dosyayı dijital materyaller mi, yoksa gizli tanık ifadeleri mi şekillendirecek? [duraklama] Artık son tanık sizsiniz.
+Artık son tanık sizsiniz.
 
 ## Shorts parçaları
 
-### Short 1 (Operasyonun Başlangıcı ve Gözaltı Kararları)
-Kanca: Işıkların arkasına saklanan karanlığı iyi bilirim.
+### Short 1 (Giriş ve İddianame Detayları)
+Kanca: 53 sanığın yargılandığı yolsuzluk davasında sular durulmuyor.
 
-Işıkların arkasına saklanan karanlığı iyi bilirim. Ekranlardan tanıdığımız ünlü isimler, hastane kontrolünün ardından adliyenin kapısına dayandı. İstanbul Cumhuriyet Başsavcılığı Kaçakçılık, Narkotik ve Ekonomik Suçlar Soruşturma Bürosu tarafından yürütülen dosyada 35 kişi hakkında gözaltı kararı verildi. Şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özberk de listede yer alıyor. Soruşturma uyuşturucu maddelerin ticareti, temini, kullanımı ve fuhuş iddialarını kapsıyor. Gözaltına alınan isimler sağlık kontrolünden geçirilip Adli Tıp Kurumu'na götürüldü. Arama kararı bulunan yönetmen Cem Karcı'yı yakalamak için ekiplerin takibi sürüyor.
+53 sanığın yargılandığı yolsuzluk davasında sular durulmuyor. Şile Belediyesi'ne yönelik soruşturma geçen yıl 10 Temmuz'daki ilk operasyonla başladı. 3 ayrı dalga halinde yürütülen süreçte sanıklara örgüt kurma, rüşvet, irtikap ve ihaleye fesat karıştırma suçlamaları yöneltildi. [duraklama] Görevinden uzaklaştırılan Belediye Başkanı Özgür Kabadayı hakkında iddianamede 33 yıl 3 aydan 92 yıla kadar hapis cezası isteniyor. Duruşma salonuna 11 tutuklu sanık getirildi. Ancak gözler Çorlu'daki cezaevinden tanık olarak getirilen ve 4,5 aydır tek kişilik hücrede kaldığını belirten isme kilitlendi. Mahkeme koridorlarındaki ifade süreci davanın seyrini doğrudan etkileyecek detaylar barındırıyor.
 
-### Short 2 (Farklı Kaynak Verileri ve Delil Süreci)
-Kanca: Gözaltı sayılarına dair haber kaynaklarından farklı bilgiler geliyor.
+### Short 2 (Haluk Levent'in Tanık İfadesi ve Hesap Devri)
+Kanca: Tutuklu sanık yerine benim tutuklanmam gerekiyor!
 
-Gözaltı sayılarına dair haber kaynaklarından farklı bilgiler geliyor. NTV ve Cumhuriyet operasyonda 24 kişinin gözaltına alındığını duyururken, TRT Haber ile Hürriyet'in bir haberinde bu sayı 23 olarak aktarıldı. Hürriyet'in bir başka haberinde ise 19 kişinin gözaltında olduğu belirtildi. Peki savcılık bu kararları nasıl aldı? Dosyadaki iddialar şüpheli savunmaları, tanık beyanları ve gizli tanık anlatımlarıyla şekillendi. Dijital materyaller tek tek incelendi ve bilirkişi raporları dosyaya girdi. Savcılığın yapacağı değerlendirmenin ardından şüphelilerin serbest mi bırakılacağı yoksa mahkemeye mi sevk edileceği netleşecek.
+Tutuklu sanık yerine benim tutuklanmam gerekiyor! Şile Belediyesi davasında tanık olarak dinlenen Haluk Levent duruşmada ezber bozan açıklamalar yaptı. [duraklama] Tutuklu sanık Yeliz Kaya'nın asistanı olduğunu söyleyen Levent, eski borçları ve haciz dosyaları sebebiyle Kaya'nın banka hesaplarını kendisinin kullandığını bildirdi. Kaya'nın bu davayla ilgisi olmadığını savunan Levent, asistanının yerine kendisinin tutuklanması gerektiğini dile getirdi. İçişleri Bakanlığı başmüfettişlerine durumu 29 Mart 2025'te aktardığını belirtti. Vergi dairesi başvuru tarihi konusunda ise kaynaklar 4 Nisan bu yıl ve 2026 olarak farklı tarihler aktarıyor. Bu ifadeler duruşma salonundaki tüm dengeleri değiştirdi.
 
-### Short 3 (Adli Prosedür ve Hukuki İnceleme)
-Kanca: Yargının kapısından içeri giren kim olursa olsun yükü eşitlenir.
+### Short 3 (Para Hareketleri İddiası ve Duruşma Anı)
+Kanca: Dernekten kardeşime aktarılan para borç alışverişinden ibarettir.
 
-Yargının kapısından içeri giren kim olursa olsun yükü eşitlenir. Prosedür son derece net işliyor. Gözaltına alınan isimler adliyeye sevk edilmeden önce ilk olarak hastanede sağlık kontrolünden geçiriliyor. Buradaki işlemlerin hemen ardından şüpheliler Adli Tıp Kurumu'na götürülüyor. Adli Tıp ve sağlık kontrolleri tamamlanan isimler için bir sonraki durak savcılık makamı olacak. Bence sahnenin ışıkları ne kadar parlak olursa olsun kanun karşısında herkes aynı hizada durur. Ekranlarda izlenen ünlü isimlerin adliyeye taşınması, delillerin ağırlığının konuşacağı bir sürecin başladığını gösteriyor.
+Dernekten kardeşime aktarılan para borç alışverişinden ibarettir. Haluk Levent, tutuklu sanık kardeşi Berkant Acil ile arasındaki para hareketlerinin rüşvet veya ihale ilişkisi taşımadığını iddia etti. [duraklama] Ahbap Derneği'nden kardeşine aktarılan 1 milyon liranın yönetim kurulu kararıyla deftere işlendiğini ve toplanan bağışların yüzde 94'ünün deprem bölgesine gönderildiğini öne sürdü. Duruşmada duygusal anlar da yaşandı. Kardeşi Berkant Acil, 6 aydır görmediği ağabeyi Haluk Levent'in doğum gününü kutladı. [duraklama] Şimdi mahkeme heyeti müfettiş raporlarını, vergi başvurularını ve banka hesap hareketlerini inceleyerek bir karara varacak.
 
 ## Açıklama
 
-İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturma kapsamında ünlü isimlerin de aralarında bulunduğu 35 şüpheli hakkında gözaltı kararı verildi. Özcan Deniz, Deniz Çakır ve Burcu Özberk gibi tanınan isimlerin sağlık kontrolü ve Adli Tıp işlemlerinin ardından savcılığa sevk edilmesi bekleniyor. Dosyada dijital incelemeler, gizli tanık ifadeleri ve ağır iddialar yer alıyor. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.
+Şile Belediyesi'ne yönelik yolsuzluk davasında duruşma İstanbul Anadolu 27'nci Ağır Ceza Mahkemesi'nde görüldü. 53 sanığın yargılandığı davada tanık olarak dinlenen Haluk Levent, tutuklu sanık Yeliz Kaya'nın banka hesaplarını kendisinin kullandığını belirterek Kaya'nın yerine kendisinin tutuklanması gerektiğini savundu. Soruşturma kapsamında örgüt kurma, rüşvet ve ihaleye fesat karıştırma iddiaları yer alıyor. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.
 
-Etiketler: uyuşturucu soruşturması, özcan deniz, deniz çakır, burcu özberk, gözaltı, istanbul başsavcılığı, adli tıp, operasyon, son tanık, furkan, magazin soruşturma, cem karcı
+Etiketler: Şile Belediyesi, Şile Belediyesi Davası, Haluk Levent, Özgür Kabadayı, Berkant Acil, Yeliz Kaya, Ahbap Derneği, Yolsuzluk Davası, Mahkeme Duruşması, Ağır Ceza Mahkemesi, Son Tanık
 
 ## KONTROL ET
 
-- Hukuken hassas: Hakkında kesin mahkûmiyet kararı bulunmayan şüpheliler için suçlu veya mahkûm ifadeleri kullanılmamalı, masumiyet karinesine dikkat edilmelidir.
-- Hukuken hassas: Haber kaynaklarındaki gözaltı sayısı farklılıkları (19, 23, 24) kesin bir yargı gibi sunulmamalı, haber kaynaklarının beyan ettiği olgusal veriler olarak aktarılmalıdır.
-- Hukuken hassas: Soruşturmadaki suçlamalar (fuhuş, uyuşturucu ticareti vb.) şahısların kesin fiilleri gibi değil, savcılığın soruşturma kapsamında incelediği iddialar olarak ifade edilmelidir.
+- Hukuken hassas: Haluk Levent'in beyanları tanık ifadesidir; kesinleşmiş yargı kararı veya sabit olgu gibi anlatılmamalıdır.
+- Hukuken hassas: Vergi dairesi başvuru tarihlerinde kaynaklar arası fark bulunduğundan çelişki yorumu yapılmadan doğrudan kaynak belirtilerek aktarılmalıdır.
+- Hukuken hassas: Sanıkların masumiyet karinesi gereği mahkûmiyet kararı çıkana kadar suçlu ilan edici ifadelerden kaçınılmalıdır.
 
 ### Kullanılan olgular
-- İstanbul Cumhuriyet Başsavcılığı Kaçakçılık, Narkotik ve Ekonomik Suçlar Soruşturma Bürosu tarafından yürütülen soruşturma kapsamında 35 şüpheli hakkında gözaltı kararı verilmiştir. (kaynak: NTV, Cumhuriyet, TRT Haber, Hürriyet)
-- Soruşturma fuhuş, uyuşturucu veya uyarıcı madde ticareti, uyuşturucu veya uyarıcı madde temin etme ile uyuşturucu madde kullanma veya bulundurma suçlamaları kapsamında yürütülmektedir. (kaynak: Cumhuriyet, TRT Haber, Hürriyet)
-- Gözaltı kararları; şüpheli savunmaları, tanık beyanları, gizli tanık anlatımları ile dijital materyaller üzerindeki bilirkişi inceleme raporları doğrultusunda alınmıştır. (kaynak: NTV, Cumhuriyet, TRT Haber, Hürriyet)
-- NTV ve Cumhuriyet haberlerine göre operasyon kapsamında gözaltına alınanların sayısı 24'tür. (kaynak: NTV, Cumhuriyet)
-- TRT Haber ve Hürriyet'in bir haberine göre gözaltına alınan şüpheli sayısı 23'tür. (kaynak: TRT Haber, Hürriyet)
-- Hürriyet'in diğer haberine göre 35 şüpheliden 19'u gözaltına alınmıştır. (kaynak: Hürriyet)
-- Şarkıcı Özcan Deniz soruşturma kapsamında gözaltına alınan şüpheliler arasındadır. (kaynak: NTV, Cumhuriyet, TRT Haber, Hürriyet)
-- Oyuncu Deniz Çakır (Deniz Çakır Baykal) gözaltına alınan isimlerden biridir. (kaynak: NTV, Cumhuriyet, TRT Haber, Hürriyet)
-- Oyuncu Burcu Özberk gözaltına alınan şüpheliler arasında yer almaktadır. (kaynak: NTV, TRT Haber, Hürriyet)
-- Organizatör Erdal Bozkuş gözaltına alınanlar arasındadır. (kaynak: NTV, TRT Haber, Hürriyet)
-- Hakkında gözaltı kararı bulunan yönetmen Cem Karcı'yı yakalamaya yönelik çalışmalar sürmektedir. (kaynak: Cumhuriyet)
-- Gözaltına alınan isimler adliyeye sevk edilmeden önce hastanede sağlık kontrolünden geçirilip Adli Tıp Kurumu'na götürülmektedir. (kaynak: NTV)
-- İstanbul Cumhuriyet Başsavcılığı'nın ünlülere yönelik yürüttüğü uyuşturucu soruşturması kapsamındaki operasyonlar 8 Ekim 2025'ten bu yana / geçen yıl ekim ayında başlamıştır. (kaynak: NTV)
-- Şüpheliler hakkında verilecek savcılık talebine göre kişiler serbest bırakılmakta veya mahkemeye sevk edilmektedir. (kaynak: NTV)
-- Murat Ceylan, Murat Başoğlu, Cansu Taşkın ve İbrahim Yılmaz gözaltına alınan listede bulunmaktadır. (kaynak: TRT Haber, Hürriyet)
-- Pınar Bent, Ceylan Kaya, Işıl Işık Demir, Burhan Karaca, Cem Güler ve İbrahim İzzet Özilhan gözaltına alınan isimler arasındadır. (kaynak: TRT Haber, Hürriyet)
-- Saghar Shojaeı, İlknur Şahin, Meltem Özkayadan, Seher Grothe Sevdişan, Ufuk Gündoğdu, Onur Yüksel, Muammer Kapucuoğlu, Mehmet Can Karcı ve Deniz Sözen gözaltına alınanlar arasındadır. (kaynak: TRT Haber, Hürriyet)
+- Şile Belediyesi'ne yönelik yolsuzluk davasının duruşması İstanbul Anadolu 27'nci Ağır Ceza Mahkemesi'nde görüldü. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet)
+- Davada, görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Berkant Acil'in de aralarında bulunduğu 53 sanık yargılanmaktadır. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet)
+- Duruşmada Özgür Kabadayı ve Berkant Acil'in de aralarında bulunduğu 11 tutuklu sanık salonda hazır bulundu. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet)
+- Tanık olarak dinlenmesine karar verilen Haluk Levent, tutuklu bulunduğu Çorlu'daki cezaevinden duruşmaya getirildi. (kaynak: NTV, CNN Türk, Hürriyet)
+- Şile Belediyesi'ne yönelik soruşturma İstanbul Anadolu Cumhuriyet Başsavcılığı tarafından yürütülmektedir. (kaynak: NTV, CNN Türk, Hürriyet)
+- Soruşturma kapsamında şüphelilere suç işlemek amacıyla örgüt kurma ve üye olma, rüşvet, irtikap ile ihaleye fesat karıştırma suçlamaları yöneltilmektedir. (kaynak: NTV, CNN Türk, Hürriyet)
+- İddianamede Özgür Kabadayı hakkında 33 yıl 3 aydan 92 yıla kadar hapis cezası talep edilmiştir. (kaynak: NTV, CNN Türk, Hürriyet)
+- Soruşturma süreci geçen yıl 10 Temmuz'da gerçekleştirilen ilk dalga operasyonla başlamış, ardından iki ayrı operasyon daha yapılmıştır. (kaynak: NTV)
+- Tutuklu sanıklardan Yeliz Kaya'nın Ahbap Derneği davasında Haluk Levent'in asistanı olduğu belirtilmiştir. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet, BirGün)
+- Haluk Levent, eski icra ve haciz dosyaları sebebiyle Yeliz Kaya'nın banka hesaplarını kendisinin kullandığını ifade etmiştir. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet, BirGün)
+- Haluk Levent, 29 Mart 2025 tarihinde Ahbap Derneği'ni denetleyen İçişleri Bakanlığı başmüfettişlerine Yeliz Kaya'nın hesaplarını kendisinin kullandığını bildirdiğini beyan etmiştir. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet)
+- Haluk Levent'in Yeliz Kaya hesaplarını kullandığına dair Maltepe Vergi Dairesi'ne başvurduğu tarihi NTV 'bu yıl 4 Nisan günü' olarak aktarırken, CNN Türk ve Hürriyet '4 Nisan 2026' olarak aktarmıştır. (kaynak: NTV, CNN Türk, Hürriyet)
+- Haluk Levent, Yeliz Kaya'nın Şile Belediyesi davasıyla ilgisi olmadığını belirterek Kaya'nın yerine kendisinin tutuklanması gerektiğini savunmuştur. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet)
+- Haluk Levent, kardeşi Berkant Acil ile arasındaki para hareketlerinin borç alışverişinden ibaret olduğunu ve rüşvet veya ihale ilişkisi taşımadığını iddia etmiştir. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet)
+- Haluk Levent, Ahbap Derneği'nden kardeşine aktarılan 1 milyon liranın yönetim kurulu kararıyla derneğin karar defterine işlendiğini belirtmiştir. (kaynak: NTV, CNN Türk, Hürriyet, Cumhuriyet, BirGün)
+- Haluk Levent, 4,5 aydır cezaevinde tek kişilik bir hücrede tutulduğunu ifade etmiştir. (kaynak: NTV, CNN Türk, Hürriyet)
+- Haluk Levent, Ahbap Derneği'nin toplanan bağışların yüzde 94'ünü deprem bölgesine aktardığını ileri sürmüştür. (kaynak: CNN Türk, Hürriyet, Cumhuriyet, BirGün)
+- Berkant Acil, duruşmada ağabeyi Haluk Levent'e kendisini 6 aydır görmediğini belirterek doğum gününü kutlamıştır. (kaynak: NTV, CNN Türk, Hürriyet)
 
 ## Kaynaklar
-[1] NTV: https://www.ntv.com.tr/turkiye/galeri-unlulere-uyusturucu-sorusturmasinda-yeni-dalga-ozcan-deniz-deniz-cakir-burcu-ozberk-de-gozaltinda-1752499
-[2] Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/istanbul-da-unlulere-yonelik-uyusturucu-sorusturmasinda-gozalti-sayisi-24-e-yukseldi-ozcan-deniz-ve-deniz-cakir-da-listede-2559198
-[3] TRT Haber: https://www.trthaber.com/haber/gundem/unlulere-yonelik-uyusturucu-sorusturmasinda-23-gozalti-964380.html
-[4] Hürriyet: https://www.hurriyet.com.tr/gundem/unlulere-uyusturucu-operasyonunda-yeni-dalga-cok-sayida-isme-gozalti-karari-listede-ozcan-deniz-burcu-ozberk-murat-ceylan-ve-deniz-43390110
-[5] Hürriyet: https://www.hurriyet.com.tr/gundem/son-dakika-aralarinda-ozcan-deniz-ile-deniz-cakir-da-var-unlulere-yonelik-sorusturmada-35-zanli-icin-gozalti-karari-43389996
+[1] NTV: https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542
+[2] CNN Türk: https://www.cnnturk.com/turkiye/haluk-leventten-sile-belediyesi-davasinda-ifade-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-3498006
+[3] Hürriyet: https://www.hurriyet.com.tr/gundem/sile-belediyesine-yonelik-yolsuzluk-davasi-haluk-levent-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43390375
+[4] Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/haluk-levent-sile-belediyesi-davasinda-tanik-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-2559280
+[5] BirGün: https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345
