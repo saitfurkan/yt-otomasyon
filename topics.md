@@ -1,4 +1,4 @@
-# Konu adayları (2026-11-25 17:45 UTC)
+# Konu adayları (2026-11-25 18:03 UTC)
 
 **SİSTEMİN SEÇTİĞİ KONU:** Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
 
@@ -30,6 +30,7 @@
 - Puan nedenleri: suç:+10, güç:+4
 - Cumhuriyet: https://www.cumhuriyet.com.tr/siyaset/unlulere-yonelik-uyusturucu-operasyonunda-yeni-gelisme-1-isme-tutuklama-9-isme-adli-kontrol-talebi-2559412
 - BirGün: https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-1-kisiye-tutuklama-9-kisiye-adli-kontrol-talebi-748387
+- Cumhuriyet: https://www.cumhuriyet.com.tr/siyaset/kepez-belediyesi-ne-yonelik-operasyonda-yeni-gelisme-24-kisi-adliyede-2559451
 - Habertürk: https://www.haberturk.com/gundem/son-dakika-unlulere-uyusturucu-operasyonunda-1-tutuklama-talebi-3930112
 
 ## 5. 15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: "Korkudan şehir değiştirdim"  (puan: 21)  ⚠️ tek kaynak: başka kaynaktan doğrulanmadan video yapılmaz

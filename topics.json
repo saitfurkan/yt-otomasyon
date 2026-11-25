@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 17:45 UTC",
+  "generated": "2026-11-25 18:03 UTC",
   "errors": [
     "AA: Remote end closed connection without response"
   ],
@@ -197,6 +197,12 @@
           "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişiden 10'unun savcılıkta ifadesi alınacak. 14 kişi ise ek ifadesinin alınması için yeniden emniyete götürüldü. Savcılık, şüphelilerden Ceylan Kaya'yı tutuklama, Deniz Sözen, Murat Ceylan, Deniz Çakır Baykal, İbrahim Yılmaz, Özcan Deniz, Burcu Özberk, Murat Başoğlu, Ufuk Gündoğdu ve Onur Yüksel'i ise adli kontrol istemiyle sulh ceza hakimliğine sevk etti."
         },
         {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/siyaset/kepez-belediyesi-ne-yonelik-operasyonda-yeni-gelisme-24-kisi-adliyede-2559451",
+          "title": "Kepez Belediyesi'ne yönelik operasyonda yeni gelişme: 24 kişi adliyede",
+          "summary": "Antalya'da Kepez Belediyesi’ne yönelik 'rüşvet' operasyonunda gözaltına alınan 24 kişi, emniyetteki işlemlerinin ardından adliyeye sevk edildi."
+        },
+        {
           "source": "Habertürk",
           "url": "https://www.haberturk.com/gundem/son-dakika-unlulere-uyusturucu-operasyonunda-1-tutuklama-talebi-3930112",
           "title": "Ünlülere uyuşturucu operasyonunda 1 tutuklama talebi",
@@ -209,7 +215,7 @@
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T17:34:59+00:00"
+      "newest": "2026-11-25T20:58:00+03:00"
     },
     {
       "score": 21,
