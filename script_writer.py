@@ -290,6 +290,10 @@ class GenerationFailed(Exception):
     pass
 
 
+class QuotaExceeded(GenerationFailed):
+    pass
+
+
 def http(method, url, key, payload=None, timeout=300):
     data = json.dumps(payload).encode("utf-8") if payload is not None else None
     req = urllib.request.Request(url, data=data, method=method, headers={
@@ -374,9 +378,14 @@ def parse_json(text):
 
 def generate(key, models, prompt, system=SYSTEM, json_out=False,
              temperature=0.85, max_tokens=8192):
-    """Modelleri sırayla dener. (kullanılan_model, metin ya da sözlük) döndürür."""
+    """Modelleri sırayla dener. (kullanılan_model, metin ya da sözlük) döndürür.
+    Kota (429) dolmuşsa o modeli bekletmeden atlar; hepsinde kota doluysa
+    QuotaExceeded fırlatır (boşuna dakikalarca beklemez)."""
     last = "bilinmeyen hata"
+    quota_models, tried = 0, 0
     for model in models:
+        tried += 1
+        hit_quota = False
         for attempt in range(3):
             cfg = {"temperature": temperature, "maxOutputTokens": max_tokens}
             if json_out:
@@ -400,10 +409,20 @@ def generate(key, models, prompt, system=SYSTEM, json_out=False,
             except ApiError as e:
                 last = f"{model}: {e}"
                 log(f"   [{model}] {str(e)[:160]}")
-                if e.code in (0, 429, 500, 502, 503, 504) and attempt < 2:
-                    time.sleep(25 * (attempt + 1))
+                if e.code == 429:
+                    hit_quota = True
+                    break  # bu modelin kotası dolu, sıradakine geç
+                if e.code in (0, 500, 502, 503, 504) and attempt < 2:
+                    time.sleep(20 * (attempt + 1))
                     continue
                 break
+        if hit_quota:
+            quota_models += 1
+    if tried and quota_models == tried:
+        raise QuotaExceeded(
+            "Gemini ücretsiz kotası dolmuş görünüyor (tüm modellerde 429). "
+            "Kota her gün sıfırlanır (Türkiye saatiyle yaklaşık 10:00). "
+            "Aynı gün içinde çok sayıda deneme yapıldıysa yarın tekrar çalıştır.")
     raise GenerationFailed(last)
 
 
@@ -719,6 +738,9 @@ def write_report(topic, arts, facts, meta, script, model, bad_nums, bad_names, w
 
 
 def write_error(msg):
+    for old in ("script_latest.md", "script_latest.json"):  # eski sonuç kafa karıştırmasın
+        if os.path.exists(old):
+            os.remove(old)
     with open("script_error.md", "w", encoding="utf-8") as f:
         f.write("# Senaryo yazılamadı\n\n" + msg + "\n")
     log("HATA:", msg)
@@ -817,7 +839,7 @@ def main():
             meta = make_meta(key, models, topic, script, facts)
         except GenerationFailed as e:
             notes.append(f"'{topic['title'][:60]}': {e}")
-            if "API anahtarı" in str(e):
+            if "API anahtarı" in str(e) or isinstance(e, QuotaExceeded):
                 break
             continue
         bad_nums, bad_names = unverified(script, arts)
