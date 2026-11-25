@@ -604,7 +604,7 @@ def relevant(topic, text, need=2):
     """Arka plan sayfası konuyla gerçekten ilgili mi: başlıktaki ayırt edici kelimelerden
     (ilk 5 harf eşleşmesiyle) en az 'need' tanesi metinde geçmeli."""
     terms = []
-    for w in re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşüâîû0-9']+", topic["title"]):
+    for w in re.findall(r"[A-Za-zÇĞİÖŞÜçğıöşüâîû0-9]+", topic["title"]):
         w = tr_lower(w)
         if len(w) >= 5 and w not in STOP and w[:5] not in terms:
             terms.append(w[:5])
