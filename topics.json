@@ -1,6 +1,8 @@
 {
-  "generated": "2026-11-25 15:53 UTC",
-  "errors": [],
+  "generated": "2026-11-25 17:30 UTC",
+  "errors": [
+    "AA: Remote end closed connection without response"
+  ],
   "selected": {
     "score": 30,
     "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
@@ -132,42 +134,6 @@
       "newest": "2026-11-25T11:51:59+00:00"
     },
     {
-      "score": 26,
-      "title": "Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında",
-      "sources": [
-        "Cumhuriyet",
-        "Hürriyet",
-        "NTV"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/galeri-unlulere-uyusturucu-sorusturmasinda-yeni-dalga-ozcan-deniz-deniz-cakir-burcu-ozberk-de-gozaltinda-1752499",
-          "title": "Ünlülere uyuşturucu soruşturmasında yeni dalga: Özcan Deniz, Deniz Çakır, Burcu Özberk de gözaltında",
-          "summary": "Ünlülere yönelik düzenlenen uyuşturucu operasyonunda gözaltına alınan ve adliyeye sevk edilen 24 şüpheliden 14’ü ek ifade için tekrar emniyete götürülecek. Ünlülere yönelik uyuşturucu soruşturmasında yeni bir operasyon düzenlendi. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen soruşturmada 35 şüpheli hakkında gözaltı kararı verildi. Aralarında şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özbek ile organizatör Erdal Bozkuş ve internet ünlülerinin de bulunduğu 24 kişi gözaltına alındı. "
-        },
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/turkiye/unlulere-uyusturucu-operasyonu-ozcan-deniz-ve-deniz-cakir-da-aralarinda-24-supheli-adliyeye-sevk-edildi-2559327",
-          "title": "Ünlülere uyuşturucu operasyonu... Özcan Deniz ve Deniz Çakır da aralarında: 24 şüpheli adliyeye sevk edildi",
-          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından fuhuş ve uyuşturucu suçlarına yönelik yürütülen soruşturma kapsamında gözaltına alınan aralarında sanatçı Özcan Deniz ve Deniz Çakır’ın da bulunduğu şüpheliler emniyetteki işlemlerinin tamamlanmasını ardından adliyeye sevk edildi."
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/unlulere-uyusturucu-operasyonunda-yeni-dalga-cok-sayida-isme-gozalti-karari-listede-ozcan-deniz-burcu-ozberk-murat-ceylan-ve-deniz-43390110",
-          "title": "Ünlülere uyuşturucu operasyonunda yeni dalga: Çok sayıda isim adliyede! Listede Özcan Deniz, Burcu Özberk, Murat Ceylan ve Deniz Çakır da var... 9 şüpheliye adli kontrol talebi",
-          "summary": ""
-        }
-      ],
-      "reasons": [
-        "suç:+13",
-        "güç:+5"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T15:18:53+03:00"
-    },
-    {
       "score": 25,
       "title": "ZDF'ye silahlı röportaj veren Daltonlar üyelerine İstanbul'da baskın",
       "sources": [
@@ -198,33 +164,45 @@
       "newest": "2026-11-25T13:22:55+03:00"
     },
     {
-      "score": 24,
-      "title": "Bir ay önce evlenen Kardelen'in şüpheli ölümü: Eşi tutuklandı",
+      "score": 22,
+      "title": "Ünlülere yönelik uyuşturucu operasyonunda yeni gelişme: 1 isme tutuklama, 9 isme adli kontrol talebi!",
       "sources": [
-        "NTV"
+        "BirGün",
+        "Cumhuriyet",
+        "Habertürk"
       ],
       "links": [
         {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/galeri-bir-ay-once-evlenen-kardelenin-supheli-olumu-esi-tutuklandi-1752512",
-          "title": "Bir ay önce evlenen Kardelen'in şüpheli ölümü: Eşi tutuklandı",
-          "summary": "İstanbul'da Kardelen Hoş isimli kadın, beşinci kattan düşerek yaşamını yitirdi. Kardelen'in bir ay önce evlendiği Burak E., tutuklanarak cezaevine gönderildi. İstanbul'da bir kadın şüpheli şekilde yaşamını yitirdi. Olay, 18 Kasım Çarşamba günü saat 02.45 sıralarında Sultangazi Uğur Mumcu Mahallesi'nde meydana geldi. İddiaya göre, Kardelen Hoş, yaşadığı binanın beşinci katından henüz bilinmeyen bir nedenle beton zemine düştü. Çevredekilerin ihbarı üzerine olay yerine polis ve sağlık ekipleri sevk"
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/siyaset/unlulere-yonelik-uyusturucu-operasyonunda-yeni-gelisme-1-isme-tutuklama-9-isme-adli-kontrol-talebi-2559412",
+          "title": "Ünlülere yönelik uyuşturucu operasyonunda yeni gelişme: 1 isme tutuklama, 9 isme adli kontrol talebi!",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen ünlülere yönelik uyuşturucu soruşturması kapsamında gözaltına alınan 24 şüpheliden aralarında Sanatçı Özcan Deniz, Deniz Çakır ve Burcu Özberk'in de bulunduğu 10 kişi adliyeye getirildi. Savcılıktaki ifadeleri tamamlanan Ceylan Kaya tutuklama talebiyle, Burcu Özberk, Özcan Deniz, Murat Ceylan, Ufuk Gündoğdu, Deniz Sözen, Murat Başoğlu, Deniz Çakır, İbrahim Yılmaz ve Onur Yüksel adli kontrol istemiyle Sulh Ceza Hakimliği'ne sevk edildi."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-10-kisi-adliyede-ifade-verecek-748387",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu: 10 kişi adliyede ifade verecek",
+          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişiden 10'unun savcılıkta ifadesi alınacak. 14 kişinin ise ek ifadesinin alınması için yeniden emniyete götürüldüğü öğrenildi. Gözaltına alınanlar arasında Özcan Deniz, Burcu Özberk, Deniz Çakır ve Murat Ceylan da bulunuyor."
+        },
+        {
+          "source": "Habertürk",
+          "url": "https://www.haberturk.com/gundem/son-dakika-unlulere-uyusturucu-operasyonunda-1-tutuklama-talebi-3930112",
+          "title": "Ünlülere uyuşturucu operasyonunda 1 tutuklama talebi",
+          "summary": ""
         }
       ],
       "reasons": [
-        "suç:+18",
-        "güç:+1",
-        "merak:+3"
+        "suç:+10",
+        "güç:+4"
       ],
       "sensitive": false,
-      "single_source": true,
-      "newest": "2026-11-25T10:45:46+03:00"
+      "single_source": false,
+      "newest": "2026-11-25T16:04:04+00:00"
     },
     {
-      "score": 24,
+      "score": 21,
       "title": "15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: \"Korkudan şehir değiştirdim\"",
       "sources": [
-        "Hürriyet",
         "NTV"
       ],
       "links": [
@@ -233,12 +211,6 @@
           "url": "https://www.ntv.com.tr/turkiye/galeri-15-yasindaki-iki-cocuk-oldurdu-azmettiriciler-peslerini-birakmadi-korkudan-sehir-degistirdim-1752521",
           "title": "15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: \"Korkudan şehir değiştirdim\"",
           "summary": "Adana'da 15 yaşındaki iki katil zanlısı tarafından öldürülen PVC ustası Yusuf Çelik'in eşi azmettiricilerin tehditleri nedeniyle şehir değiştirmek zorunda kaldığını söyledi. Adana'da çocuk yaştaki iki saldırgan tarafından öldürülen PVC ustası Yusuf Çelik'in eşi Kadriye Çelik, azmettiriciler tarafından tehdit edildiklerini söyledi. Olay, 3 Mart'ta Seyhan ilçesi Mıdık Mahallesi'nde meydana geldi. H.H., arkadaşı L.A.'nın kullandığı motosikletle PVC ustası Yusuf Çelik'in iş yerine gitti. L.A. dışarı"
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/15lik-katiller-oldurdu-azmettirenler-ailenin-kabusu-oldu-korkudan-sehir-degistirdik-43390200",
-          "title": "15'lik katiller öldürdü, azmettirenler ailenin kabusu oldu: Korkudan şehir değiştirdik",
-          "summary": ""
         }
       ],
       "reasons": [
@@ -248,7 +220,7 @@
         "rakam:+1"
       ],
       "sensitive": false,
-      "single_source": false,
+      "single_source": true,
       "newest": "2026-11-25T11:22:06+03:00"
     },
     {
@@ -281,35 +253,6 @@
       "sensitive": true,
       "single_source": false,
       "newest": "2026-11-25T15:29:00+03:00"
-    },
-    {
-      "score": 19,
-      "title": "Ünlülere yönelik uyuşturucu operasyonunda yeni gelişme: 1 isme tutuklama, 9 isme adli kontrol talebi!",
-      "sources": [
-        "BirGün",
-        "Cumhuriyet"
-      ],
-      "links": [
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/unlulere-yonelik-uyusturucu-operasyonunda-yeni-gelisme-1-isme-tutuklama-9-isme-adli-kontrol-talebi-2559412",
-          "title": "Ünlülere yönelik uyuşturucu operasyonunda yeni gelişme: 1 isme tutuklama, 9 isme adli kontrol talebi!",
-          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen ünlülere yönelik uyuşturucu soruşturması kapsamında gözaltına alınan 24 şüpheliden aralarında Sanatçı Özcan Deniz, Deniz Çakır ve Burcu Özberk'in de bulunduğu 10 kişi adliyeye getirildi. Savcılıktaki ifadeleri tamamlanan Ceylan Kaya tutuklama talebiyle, Burcu Özberk, Özcan Deniz, Murat Ceylan, Ufuk Gündoğdu, Deniz Sözen, Murat Başoğlu, Deniz Çakır, İbrahim Yılmaz ve Onur Yüksel adli kontrol istemiyle Sulh Ceza Hakimliği'ne sevk edildi."
-        },
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-10-kisi-adliyede-ifade-verecek-748387",
-          "title": "Ünlülere yönelik uyuşturucu operasyonu: 10 kişi adliyede ifade verecek",
-          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişiden 10'unun savcılıkta ifadesi alınacak. 14 kişinin ise ek ifadesi alınması için emniyete götürüldüğü öğrenildi. Gözaltına alınanlar arasında Özcan Deniz, Burcu Özberk, Deniz Çakır ve Murat Ceylan da bulunuyor."
-        }
-      ],
-      "reasons": [
-        "suç:+10",
-        "güç:+4"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T18:33:00+03:00"
     },
     {
       "score": 18,
@@ -377,6 +320,72 @@
       "sensitive": false,
       "single_source": false,
       "newest": "2026-11-25T11:16:20+00:00"
+    },
+    {
+      "score": 15,
+      "title": "Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi",
+      "sources": [
+        "BirGün",
+        "Hürriyet"
+      ],
+      "links": [
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/kepez-belediyesi-ne-operasyon-eski-belediye-baskani-dahil-24-kisi-adliyeye-sevk-edildi-748462",
+          "title": "Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi",
+          "summary": "Kepez Belediyesi'ne yönelik yürütülen soruşturma kapsamında düzenlenen operasyonda gözaltına alınan, aralarında eski belediye başkanı E.Ö'nün de bulunduğu 24 kişi adliyeye sevk edildi."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/kepez-belediyesi-operasyonunda-24-supheli-adliyede-eski-baskan-ve-mudurler-de-listede-43391042",
+          "title": "Kepez Belediyesi operasyonunda 24 şüpheli adliyede: Eski başkan ve müdürler de listede",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+8",
+        "güç:+1",
+        "rakam:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T14:54:13+00:00"
+    },
+    {
+      "score": 14,
+      "title": "Meghan Markle'ın babası Thomas Markle'a ağır suçlama: 40 yıl hapis cezasıyla karşı karşıya",
+      "sources": [
+        "BirGün",
+        "Cumhuriyet",
+        "Habertürk"
+      ],
+      "links": [
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/magazin/meghan-markle-in-babasi-thomas-markle-a-agir-suclama-40-yil-hapis-cezasiyla-karsi-karsiya-2559396",
+          "title": "Meghan Markle'ın babası Thomas Markle'a ağır suçlama: 40 yıl hapis cezasıyla karşı karşıya",
+          "summary": "Sussex Düşesi Meghan Markle'ın 82 yaşındaki babası Thomas Markle hakkında, çocuklara yönelik cinsel istismar materyali bulundurduğu iddiasıyla iki ayrı suçlamayı içeren iddianame hazırlandı. Psikiyatrik değerlendirme sonucunda yargılanmasına engel bir durum bulunmadığı belirtilen Markle, suçlu bulunması halinde 40 yıla kadar hapis cezası alabilecek."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/meghan-markle-in-babasina-cocuk-istismari-materyali-suclamasi-40-yila-kadar-hapisle-karsi-karsiya-748342",
+          "title": "Meghan Markle'ın babasına çocuk istismarı materyali suçlaması: 40 yıla kadar hapisle karşı karşıya",
+          "summary": "Sussex Düşesi Meghan Markle'ın babası Thomas Markle hakkında, çocukların cinsel istismarını içeren materyalleri bulundurduğu suçlamasıyla ABD'de iki ayrı suçtan iddianame hazırlandı. Tutuklu bulunan 82 yaşındaki Markle'ın suçlu bulunması halinde 40 yıla kadar hapis cezası alabileceği belirtilirken Markle'ın suçlamaları reddettiği bildirildi."
+        },
+        {
+          "source": "Habertürk",
+          "url": "https://www.haberturk.com/magazin/meghan-markle-in-babasi-40-yil-hapis-cezasiyla-karsi-karsiya-3929999",
+          "title": "40 yıl hapis cezasıyla karşı karşıya",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+5",
+        "rakam:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-25T17:34:00+03:00"
     }
   ]
 }
