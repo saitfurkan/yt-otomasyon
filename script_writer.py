@@ -34,7 +34,10 @@ MIN_SOURCE_WORDS = 800    # kaynak malzeme bunun altındaysa konu atlanır
 MIN_FACTS = 12
 MAX_ARTICLES = 6
 PER_ARTICLE_CHARS = 7000
-TOTAL_CHARS = 26000
+TOTAL_CHARS = 60000
+MAX_EXTRA = 8             # arka plan için aranıp okunacak ek makale sayısı
+BAD_HOSTS = ("youtube", "youtu.be", "twitter", "x.com", "instagram", "facebook",
+             "tiktok", "t.me", "pinterest", "reddit")
 MAX_TOPICS_TRIED = 4
 PAUSE = 5                 # çağrılar arası bekleme (saniye), ücretsiz limit için
 
@@ -58,7 +61,7 @@ SYSTEM = """Sen "Son Tanık" adlı Türkçe YouTube suç ve ceza kanalının yaz
 
 FURKAN'IN ANLATIM TARZI
 - Metin, konuya özel ve her videoda yeni kurulmuş kısa, sert, hükmeden bir sözle açılır. Söz birinci tekil kişiyle, kendi cümlesi gibi çıkar ("derim", "bilirim" ya da doğrudan hüküm). Örnek kalıp: "Taşa kazınan silgiyle silinmez." Bu örneği ya da bilinen atasözlerini KOPYALAMA, konuya uygun yeni bir söz kur. "Derler", "denir" gibi başkasından aktaran kalıplar yok.
-- Kendini tanıtma. "Ben Furkan", "hoş geldiniz", "kanalıma" gibi giriş yok. Kanal tanıtımını video kendi ayrı bölümünde yapıyor.
+- Söz, Furkan'ın genel adalet/hukuk hükmü olsun. Olayın içindeki bir kişinin sözünü ya da durumunu kendi sözün gibi söyleme ("kendi cezamın bedelini ödetmem" gibi olay kahramanının ağzından konuşma yasak). Kendini tanıtma. "Ben Furkan", "hoş geldiniz", "kanalıma" gibi giriş yok. Kanal tanıtımını video kendi ayrı bölümünde yapıyor.
 - Kısa, doğrudan cümleler. Konuşma dili. Haber spikeri gibi değil, olayı bilen ve içi yanan mahalle abisi gibi. "Bak", "düşünsene", "inanması zor ama", "yani" gibi sözleri tüm metinde en fazla 2-3 kez kullan, yoksa yapay durur.
 - Güçlü bir adalet duygusu: kim, kime, ne yaptı, hesap verecek mi? Ama bunu ima ile değil, olgularla kur. "Acaba terazi mi şaştı?" gibi örtülü suçlamalar yasak.
 - Uzun bir cümleden sonra kısa bir cümle. Ara sıra tek kelimelik cümle.
@@ -90,6 +93,7 @@ FACT_SYSTEM = ("Sen titiz bir haber editörüsün. Görevin yalnızca kaynak met
 SECTIONS = [
     ("KANCA", "Videonun ilk 10-20 saniyesi, TEK PARAGRAF, 35-55 kelime. Önce konuya özel yeni, kısa, sert bir söz (birinci tekil kişiyle). Sonra şaşırtıcı bir rakam ya da merak uyandıran bir soruyla bitir. Şiirli imgeler (ışık, karanlık, taş, perde) kullanma; somut bir olgudan ya da rakamdan başla. Haberin özetini ya da sonucunu verme. Kendini tanıtma. Paragrafın sonuna [duraklama] koy.", 45, False),
     ("OLAY", "Ne oldu? Kronolojik, sahneyi kur. Kim, ne zaman, nerede. Bir kırılma noktası olsun.", 400, True),
+    ("GEÇMİŞ VE BAĞLAM", "Buraya nasıl gelindi? Dosyanın önceki aşamaları, ilgili kişilerin bu dosyadaki rolü, daha önceki duruşmalar, operasyonlar ya da kararlar. Kronolojik anlat. Olay bölümünde geçenleri tekrar etme, yalnızca geçmişe ait olgulardan yaz.", 450, True),
     ("PARA VE İLİŞKİLER", "Rakamlar, kurumlar, kim kiminle bağlantılı (sadece olgulardaki kadar). Her iddiayı 'savcılığa göre' gibi kaynağa bağla. Olay bölümünde anlatılanları tekrar etme, yalnızca yeni olguları ver.", 400, True),
     ("SORUŞTURMA VE SÜREÇ", "Savcılık ve mahkemeler ne yapmış, hangi adımlar atılmış, ne bekleniyor. Önceki bölümlerde geçmeyen olgulardan anlat.", 400, True),
     ("TARAFLAR VE NEDEN ÖNEMLİ", "Taraflar ne diyor (resmi açıklama, savunma, karşı görüş). Sonra sıradan insana etkisi. Yeni olgu yoksa kısa tut.", 250, True),
@@ -107,10 +111,23 @@ META_SCHEMA = """Sadece şu JSON nesnesini döndür:
   "thumbnail_text": "küçük resim için 2-4 kelimelik vurucu yazı",
   "risk_notes": ["Furkan'ın okurken dikkat etmesi gereken hukuken hassas cümleler, kısa kısa"]
 }
-"shorts" tam 3 öğe içersin. Short metinlerinde kendini tanıtma ve abone ol daveti yok."""
+"shorts" tam 3 öğe içersin. Short metinlerinde kendini tanıtma ve abone ol daveti yok. Olayın bir kişisinden alıntı yaparken ismini ve tırnağı kullan (Haluk Levent mahkemede şunu söyledi: \"...\"); anlatıcı o kişiymiş gibi birinci tekil kişiyle konuşma. Senaryodaki yasak kalıplar ve yargı yüklü sözler Shorts için de yasak, \"koridor\" \"ışıklar\" gibi doldurma imgeler yok."""
 
 
 # ---------------------------------------------------------------- yardımcılar
+def today_tr():
+    aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz",
+             "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
+    d = datetime.now(timezone.utc)
+    return f"{d.day} {aylar[d.month - 1]} {d.year}"
+
+
+DATE_RULE = ("BUGÜNÜN TARİHİ: {d}. 'Bu yıl', 'geçen yıl', 'dün', 'geçen ay' gibi göreli "
+             "tarihleri bu tarihe göre MUTLAK tarihe çevir (ör. bugün 2026 ise 'geçen yıl' = 2025, "
+             "'bu yıl 4 Nisan' = 4 Nisan 2026). Göreli ifade ile yıl numarası aynı tarihi "
+             "gösteriyorsa bu bir çelişki DEĞİLDİR, tek tarih olarak yaz.")
+
+
 def log(*a):
     print(*a, flush=True)
 
@@ -390,6 +407,78 @@ def generate(key, models, prompt, system=SYSTEM, json_out=False,
     raise GenerationFailed(last)
 
 
+def grounded_links(resp):
+    """Google Arama destekli yanıttan kaynak bağlantılarını çıkarır."""
+    out = []
+    for c in resp.get("candidates") or []:
+        gm = c.get("groundingMetadata") or {}
+        for ch in gm.get("groundingChunks") or []:
+            w = ch.get("web") or {}
+            if w.get("uri"):
+                out.append({"url": w["uri"], "title": w.get("title", "")})
+    return out
+
+
+def search_sources(key, models, topic, known_urls):
+    """Gemini'nin Google Arama özelliğiyle konunun arka planını anlatan ek haber
+    sayfalarını bulur. Olguları BURADAN almayız, sadece bağlantıları alırız; olgular
+    yine sayfanın kendi metninden çıkarılır. Hata olursa boş liste döner."""
+    prompt = (
+        f"Şu haberin arka planını Türkçe haber kaynaklarında ara: {topic['title']}\n"
+        "Olayın önceki aşamalarını, ilgili kişilerin bu dosyadaki rolünü, önceki "
+        "duruşmaları ya da operasyonları ve davanın nasıl başladığını bul. "
+        "Kısa bir özet yaz.")
+    for model in models[:3]:
+        payload = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                   "tools": [{"google_search": {}}],
+                   "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1500}}
+        try:
+            resp = http("POST", f"{API}/models/{model}:generateContent", key, payload, timeout=120)
+        except Exception as e:
+            log(f"   [arka plan araması: {model}] {str(e)[:120]}")
+            continue
+        links, seen = [], set(known_urls)
+        for l in grounded_links(resp):
+            host = (l["title"] or l["url"]).lower()
+            if l["url"] in seen or any(b in host for b in BAD_HOSTS):
+                continue
+            seen.add(l["url"])
+            links.append(l)
+        if links:
+            return links[:MAX_EXTRA]
+        log(f"   [arka plan araması: {model}] kaynak bulunamadı")
+    return []
+
+
+def add_background(key, models, topic, arts):
+    """Arka plan sayfalarını okuyup mevcut kaynaklara ekler."""
+    try:
+        links = search_sources(key, models, topic, [a["url"] for a in arts])
+    except Exception as e:
+        log(f"   [arka plan araması hata] {e}")
+        return arts
+    total = sum(len(a["text"]) for a in arts)
+    added = 0
+    for l in links:
+        if total > TOTAL_CHARS - 1500:
+            break
+        try:
+            text = fetch_article(l["url"])
+        except Exception as e:
+            log(f"   [arka plan okunamadı] {l['title'] or l['url'][:50]}: {str(e)[:80]}")
+            continue
+        if count_words(text) < 150:
+            continue
+        name = (l["title"] or "arka plan").strip()
+        text = text[:min(PER_ARTICLE_CHARS, TOTAL_CHARS - total)]
+        arts.append({"source": name, "url": l["url"], "text": text, "background": True})
+        total += len(text)
+        added += 1
+        log(f"   [arka plan ok] {name}: {count_words(text)} kelime")
+    log(f"   arka plan: {added} ek makale eklendi")
+    return arts
+
+
 # ---------------------------------------------------------- senaryo üretimi
 def sources_block(arts):
     return "\n\n".join(
@@ -403,7 +492,8 @@ def extract_facts(key, models, topic, arts):
         "Yalnızca kaynaklarda AÇIKÇA yazan olguları çıkar: kim, ne, ne zaman, nerede, "
         "kaç kişi, kaç lira, hangi kurum, kim ne açıkladı, kim ne dedi. Her olgu tek "
         "cümle olsun. Yalnızca AYNI olgu için kaynaklar açıkça farklı rakam ya da isim veriyorsa çelişkiyi ayrı olgu olarak yaz; farklı tarihler farklı olay adımlarına ait olabilir, çelişki ilan etme. Kaynaklarda geçen arka plan bilgilerini de (önceki olaylar, kurumlar, yasal çerçeve) olgu olarak ekle. "
-        "En az 15 olgu çıkar (kaynak yeterliyse). Çok sayıda şüpheli ismi varsa tek olguda 'diğer şüpheliler' diye özetle, yalnızca en tanınan 3 ismi ayrı yaz; özel kişilerin adını yazma. Uydurma, yorum, tahmin ekleme.\n"
+        "Haberin merkezindeki kişilerin durumunu anlamak için gereken bağlamı da olgu olarak çıkar (kişi neden orada, neden tutuklu ya da yargılanıyor, hangi davanın parçası). En az 15 olgu çıkar (kaynak yeterliyse). Çok sayıda şüpheli ismi varsa tek olguda 'diğer şüpheliler' diye özetle, yalnızca en tanınan 3 ismi ayrı yaz; özel kişilerin adını yazma. Uydurma, yorum, tahmin ekleme.\n"
+        + DATE_RULE.format(d=today_tr()) + "\n"
         'Çıktı: {"facts":[{"olgu":"...","kaynaklar":["NTV","Hürriyet"]}]}\n\n'
         + sources_block(arts))
     model, data = generate(key, models, prompt, system=FACT_SYSTEM, json_out=True,
@@ -431,7 +521,7 @@ def write_sections(key, models, topic, facts):
     for name, brief, words, scalable in SECTIONS:
         words = int(words * scale) if scalable else words
         prompt = (
-            f"KONU: {topic['title']}\n\nOLGULAR (sadece bunları kullan):\n{ft}\n\n"
+            f"KONU: {topic['title']}\n{DATE_RULE.format(d=today_tr())}\n\nOLGULAR (sadece bunları kullan):\n{ft}\n\n"
             "Şu ana kadar yazılan metin (burada anlatılan hiçbir olguyu, rakamı ya da "
             "tarihi yeniden anlatma, akışı sürdür):\n"
             f"{so_far[-7000:] or '(henüz yok, ilk bölümü yazıyorsun)'}\n\n"
@@ -702,6 +792,10 @@ def main():
         total = sum(count_words(a["text"]) for a in arts)
         distinct = len({a["source"] for a in arts})
         log(f"   toplam kaynak: {len(arts)} makale, {distinct} site, {total} kelime")
+        if models and len(arts) >= 2 and distinct >= 2:
+            arts = add_background(key, models, topic, arts)
+            total = sum(count_words(a["text"]) for a in arts)
+            log(f"   arka plan dahil toplam: {len(arts)} makale, {total} kelime")
         if len(arts) < 2 or distinct < 2 or total < MIN_SOURCE_WORDS:
             notes.append(f"'{topic['title'][:60]}': yeterli kaynak metni okunamadı "
                          f"({len(arts)} makale, {total} kelime)")
@@ -734,6 +828,10 @@ def main():
                             "Konunun malzemesi sınırlı olabilir.")
         if topic.get("sensitive"):
             warnings.append("Siyasi hassasiyet işaretli konu: metni özellikle dikkatle oku.")
+        for i, sh in enumerate(meta.get("shorts") or [], 1):
+            bad = banned_found(sh.get("text", "")) + loaded_found(sh.get("text", ""))
+            if bad:
+                warnings.append(f"Short {i} metninde sorunlu kalıp var: {', '.join(sorted(set(bad)))}")
         left = banned_found(script)
         if left:
             warnings.append("Metinde yasak kalıplar kaldı, elle düzelt: " + ", ".join(left))
