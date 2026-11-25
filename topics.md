@@ -1,4 +1,4 @@
-# Konu adayları (2026-11-25 18:35 UTC)
+# Konu adayları (2026-11-25 18:48 UTC)
 
 **SİSTEMİN SEÇTİĞİ KONU:** Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor
 
@@ -28,9 +28,10 @@
 - Sözcü: https://www.sozcu.com.tr/gozaltina-alinan-unluler-saglik-kontrolunde-boyle-gorduruldu-p384307
 
 ## 4. SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı  (puan: 24)
-- Kaynaklar: CNN Türk, Habertürk, Hürriyet, Milliyet, Sözcü
+- Kaynaklar: AA, CNN Türk, Habertürk, Hürriyet, Milliyet, Sözcü
 - Puan nedenleri: suç:+8, para:+2, güç:+3
 - Milliyet: https://www.milliyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-7707969
+- AA: https://www.aa.com.tr/tr/ekonomi/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi/4137806
 - CNN Türk: https://www.cnnturk.com/turkiye/tmsf-sumer-varlik-yonetime-kayyum-olarak-atandi-3498212
 - Hürriyet: https://www.hurriyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-43391147
 - Sözcü: https://www.sozcu.com.tr/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-p384406
@@ -60,24 +61,22 @@
 - Euronews TR: https://tr.euronews.com/2026/11/25/istanbulda-daltonlar-operasyonu-alman-kanali-zdfnin-belgeselinde-yer-alan-9-kisi-gozaltind
 
 ## 9. Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz  (puan: 17)
-- Kaynaklar: CNN Türk, Hürriyet, Milliyet, NTV, Sabah
+- Kaynaklar: AA, CNN Türk, Hürriyet, Milliyet, NTV, Sabah
 - Puan nedenleri: suç:+5, güç:+1
 - Milliyet: https://www.milliyet.com.tr/dunya/disislerinden-riyaddaki-saldiriya-tepki-en-guclu-sekilde-kiniyoruz-7707943
+- AA: https://www.aa.com.tr/tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi/4137757
 - NTV: https://www.ntv.com.tr/turkiye/disislerinden-husilerin-riyada-yonelik-saldirisina-kinama-1752570
 - Hürriyet: https://www.hurriyet.com.tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi-43391119
 - CNN Türk: https://www.cnnturk.com/turkiye/disislerinden-riyaddaki-finans-merkezine-gerceklestirilen-saldiriai-kinama-3498200
 - Sabah: https://www.sabah.com.tr/gundem/2026/11/25/disisleri-bakanligindan-riyaddaki-saldiriya-kinama
 
-## 10. HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti  (puan: 17)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
-- Kaynaklar: BirGün, CNN Türk, Cumhuriyet, Habertürk, Hürriyet, Milliyet, NTV, Sabah, Sözcü, TRT Haber
-- Puan nedenleri: para:+2, güç:+3, rakam:+1
-- Milliyet: https://www.milliyet.com.tr/gundem/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-7707950
-- NTV: https://www.ntv.com.tr/turkiye/hsknin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-1752573
-- Sabah: https://www.sabah.com.tr/gundem/2026/11/25/hsk-kararnamesi-yayimlandi-957-hakim-ve-savcinin-gorev-yeri-degisti
-- Hürriyet: https://www.hurriyet.com.tr/gundem/957-hakim-ve-savcinin-gorev-yeri-degisti-43391122
-- Cumhuriyet: https://www.cumhuriyet.com.tr/turkiye/hsk-nin-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-2559422
-- BirGün: https://www.birgun.net/haber/hsk-nin-mazeret-kararnamesiyle-957-hakim-ve-savcinin-gorev-yeri-degisti-748471
+## 10. Danıştay, İmamoğlu'nun diploma iptali kararını neye dayandırdı?  (puan: 15)  ⚠️ siyasi hassasiyet: metni dikkatle kontrol et
+- Kaynaklar: BBC Türkçe, BirGün, DW Türkçe, Euronews TR
+- Puan nedenleri: suç:+3, güç:+1
+- BBC Türkçe: https://www.bbc.com/turkce/articles/c338535pvm2o?at_medium=RSS&at_campaign=rss
+- BirGün: https://www.birgun.net/haber/danistay-onadi-ekrem-imamoglu-nun-diplomasinin-iptali-kesinlesti-748337
+- DW Türkçe: https://www.dw.com/tr/i̇mamoğlu-nun-diploma-iptali-kesinleşti-danıştay-ın-gerekçesi-ne/a-80043434?maca=tur-rss-tur-all-1495-rdf
+- Euronews TR: https://tr.euronews.com/2026/11/25/imamoglu-diploma-davasi-icin-aymye-basvuracak-danistay-karari-hukuka-aykiridir
 
 ## Çalışmayan kaynaklar
-- AA: Remote end closed connection without response
 - T24: syntax error: line 1, column 0
