@@ -444,11 +444,18 @@ def key_caption(text):
     return None
 
 
+def key_counter(text):
+    m = re.search(r"\b(\d{1,3})\s+(milyar|milyon|bin)\b\s*(lira|dolar|euro|TL)?", text, re.I)
+    if m and "," not in text[m.start():m.end() + 1]:
+        return ("sayac", int(m.group(1)), tr_upper((m.group(2) + (" " + m.group(3) if m.group(3) else ""))))
+    return None
+
+
 def tr_upper(s):
     return s.replace("i", "İ").replace("ı", "I").upper()
 
 
-def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False):
+def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False, geom=None):
     """Belgesel görünümü: yavaş kamera hareketi, renk düzeltme, film greni, sinema bantları, künye yazısı."""
     zoom = 1.14
     ww, hh = int(W * zoom), int(H * zoom)
@@ -462,13 +469,23 @@ def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False):
             sc, ye, xe = f"scale=-2:{H}", "0", ("(iw-ow)*t/%f" % each) if idx % 2 == 0 else ("(iw-ow)*(1-t/%f)" % each)
     else:
         sc = f"scale={ww}:{hh}:force_original_aspect_ratio=increase"
-    f = (f"{sc},crop={W}:{H}:x='{xe}':y='{ye}',setsar=1,fps=30,"
+    head = geom if geom else f"{sc},crop={W}:{H}:x='{xe}':y='{ye}'"
+    f = (f"{head},setsar=1,fps=30,"
          "eq=brightness=-0.05:saturation=0.85:contrast=1.1,"
          "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,vignette=PI/4.5,noise=alls=5:allf=t")
     if letterbox and W > H:
         bar = int(H * 0.095)
         f += f",drawbox=x=0:y=0:w=iw:h={bar}:color=black@1:t=fill,drawbox=x=0:y={H - bar}:w=iw:h={bar}:color=black@1:t=fill"
-    if caption:
+    if isinstance(caption, tuple):       # animasyonlu sayaç: ("sayac", sayı, birim)
+        _, num, unit = caption
+        size = 150 if W > H else 130
+        y = int(H * 0.38)
+        suffix = (" " + unit).replace("'", "").replace(":", "\\:")
+        f += (f",drawtext=fontfile={FONT_BOLD_PATH}:text='%{{eif\\:min({num}\\,trunc(t/1.5*{num}))\\:d}}{suffix}':"
+              f"fontsize={size}:fontcolor=0xE6B800:x=(w-text_w)/2:y={y}:box=1:boxcolor=black@0.55:boxborderw=34:"
+              "shadowcolor=black@0.9:shadowx=4:shadowy=4:"
+              "alpha='if(lt(t,0.3),0,if(lt(t,0.6),(t-0.3)/0.3,if(lt(t,3.6),1,max(0,(4.0-t)/0.4))))'")
+    elif caption:
         cap = caption.replace("'", "").replace(":", "\\:")
         size = 58 if W > H else 70
         y = int(H * 0.15) if W > H else int(H * 0.2)
@@ -495,18 +512,38 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
     any_still = any(c.get("still") for c in clips)
     n = len(clips) if any_still else max(1, math.ceil(total / 6.0))
     each = total / n
+    specs = []
     for i in range(n):
         c = clips[i % len(clips)]
-        p = os.path.join(workdir, f"seg_{tag}_{i}.mp4")
-        vf = grade_filter(W, H, each, i + random.randint(0, 3), caption if i == 0 else None, still=bool(c.get("still")))
-        if c.get("still"):
-            src = ["-loop", "1", "-framerate", "30", "-i", c["path"]]
+        if c.get("still") and each >= 3.0:        # her çizim iki plan: önce tarama, sonra yakın plan (kesme hissi)
+            specs.append((c, each * 0.55, "pan"))
+            specs.append((c, each * 0.45, "punch"))
         else:
-            room = max(0.0, c["duration"] - each - 0.2)
-            ss = random.uniform(0, room) if room > 0 else 0.0
-            src = ["-stream_loop", "-1", "-ss", f"{ss:.2f}", "-i", c["path"]]
+            specs.append((c, each, "pan"))
+    for i, (c, dur, kind) in enumerate(specs):
+        p = os.path.join(workdir, f"seg_{tag}_{i}.mp4")
+        cap = caption if i == 0 else None
+        if kind == "punch":
+            fx, fy = random.choice([0.28, 0.5, 0.72]), random.choice([0.3, 0.5, 0.7])
+            N = max(2, int(dur * 30))
+            if W > H:
+                g = (f"scale=3200:-2,crop=3200:1800:0:(ih-1800)*{fy},zoompan=z='1+0.4*on/{N}':"
+                     f"x='{fx}*(iw-iw/zoom)':y='{fy}*(ih-ih/zoom)':d={N}:s={W}x{H}:fps=30")
+            else:
+                g = (f"scale=-2:3200,crop=1800:3200:(iw-1800)*{fx}:0,zoompan=z='1+0.4*on/{N}':"
+                     f"x='{fx}*(iw-iw/zoom)':y='{fy}*(ih-ih/zoom)':d={N}:s={W}x{H}:fps=30")
+            vf = grade_filter(W, H, dur, i, cap, geom=g)
+            src = ["-i", c["path"]]
+        else:
+            vf = grade_filter(W, H, dur, i + random.randint(0, 3), cap, still=bool(c.get("still")))
+            if c.get("still"):
+                src = ["-loop", "1", "-framerate", "30", "-i", c["path"]]
+            else:
+                room = max(0.0, c["duration"] - dur - 0.2)
+                ss = random.uniform(0, room) if room > 0 else 0.0
+                src = ["-stream_loop", "-1", "-ss", f"{ss:.2f}", "-i", c["path"]]
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error"] + src +
-            ["-t", f"{each:.3f}", "-an", "-vf", vf, "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23", p])
+            ["-t", f"{dur:.3f}", "-an", "-vf", vf, "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23", p])
         parts.append(p)
     lst = os.path.join(workdir, f"list_{tag}.txt")
     with open(lst, "w") as f:
@@ -784,7 +821,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             if clips and first_clip is None:
                 first_clip = clips[0]["path"]
             p = os.path.join(workdir, f"{tag}_{k}.mp4")
-            render_visual(clips, d, p, 1920, 1080, workdir, f"{tag}{k}", key_caption(paras[k]))
+            render_visual(clips, d, p, 1920, 1080, workdir, f"{tag}{k}", key_counter(paras[k]) or key_caption(paras[k]))
             parts.append(p)
             log(f"   paragraf {k + 1}/{len(paras)}: {d:.0f} sn, {len(clips)} klip")
         lf = os.path.join(workdir, f"v_{tag}.txt")
@@ -852,7 +889,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
                 continue
             clips = mix_clips(scenes[k] if scenes else None, queries[k], "portrait", workdir, f"s{n}p{k}", d, used, search)
             p = os.path.join(sdir, f"p{k}.mp4")
-            render_visual(clips, d, p, 1080, 1920, workdir, f"s{n}_{k}", key_caption(paras[k]))
+            render_visual(clips, d, p, 1080, 1920, workdir, f"s{n}_{k}", key_counter(paras[k]) or key_caption(paras[k]))
             parts.append(p)
         lf = os.path.join(sdir, "l.txt")
         with open(lf, "w") as f:
