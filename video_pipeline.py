@@ -156,7 +156,7 @@ def build_subtitles(words, times, ass_path, shift_after=None, shift=0.0, t_from=
     """words: senaryo kelimeleri, times: (s,e). Metin senaryodan gelir, zaman sesten."""
     W, H = (1080, 1920) if vertical else (1920, 1080)
     size = 78 if vertical else 56
-    marg = 520 if vertical else 80
+    marg = 520 if vertical else 125
     maxc = 22 if vertical else 40
     head = (f"[Script Info]\nScriptType: v4.00+\nPlayResX: {W}\nPlayResY: {H}\nWrapStyle: 2\n\n"
             "[V4+ Styles]\nFormat: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,"
@@ -296,30 +296,77 @@ def fetch_clips(queries, orientation, workdir, used, need=3, search=pexels_searc
     return clips
 
 
-def grade_filter(W, H):
-    return (f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps=30,"
-            "eq=brightness=-0.07:saturation=0.72:contrast=1.1,vignette=PI/5,format=yuv420p")
+MONTHS = "ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık"
 
 
-def render_visual(clips, total, out_path, W, H, workdir, tag):
-    """Süre kadar klibi koyu tonla birleştirir (ses yok). clips boşsa koyu animasyonlu zemin."""
+def key_caption(text):
+    """Paragraftan ekrana yazılacak kısa künye: tarih ya da büyük rakam."""
+    m = re.search(rf"\b(\d{{1,2}}\s+)?({MONTHS})\s+(\d{{4}})", text, re.I)
+    if m:
+        return tr_upper(m.group(0))
+    m = re.search(r"\b(\d[\d.,]*)\s+(milyar|milyon|bin)\s*(lira|dolar|euro|TL|\w+)?", text, re.I)
+    if m:
+        return tr_upper(m.group(1) + " " + m.group(2) + (" " + m.group(3) if m.group(3) else ""))
+    m = re.search(r"\b(19|20)\d{2}\b", text)
+    if m:
+        return m.group(0)
+    return None
+
+
+def tr_upper(s):
+    return s.replace("i", "İ").replace("ı", "I").upper()
+
+
+def grade_filter(W, H, each, idx=0, caption=None, letterbox=True):
+    """Belgesel görünümü: yavaş kamera hareketi, renk düzeltme, film greni, sinema bantları, künye yazısı."""
+    zoom = 1.14
+    ww, hh = int(W * zoom), int(H * zoom)
+    dx = (ww - W)
+    dy = (hh - H)
+    mode = idx % 4
+    xe = ["(iw-ow)*t/%f" % each, "(iw-ow)*(1-t/%f)" % each, "(iw-ow)/2", "(iw-ow)/2"][mode]
+    ye = ["(ih-oh)/2", "(ih-oh)/2", "(ih-oh)*t/%f" % each, "(ih-oh)*(1-t/%f)" % each][mode]
+    f = (f"scale={ww}:{hh}:force_original_aspect_ratio=increase,crop={W}:{H}:x='{xe}':y='{ye}',setsar=1,fps=30,"
+         "eq=brightness=-0.06:saturation=0.62:contrast=1.14,"
+         "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,vignette=PI/4.5,noise=alls=9:allf=t")
+    if letterbox and W > H:
+        bar = int(H * 0.095)
+        f += f",drawbox=x=0:y=0:w=iw:h={bar}:color=black@1:t=fill,drawbox=x=0:y={H - bar}:w=iw:h={bar}:color=black@1:t=fill"
+    if caption:
+        cap = caption.replace("'", "").replace(":", "\\:")
+        size = 58 if W > H else 70
+        y = int(H * 0.15) if W > H else int(H * 0.2)
+        f += (f",drawbox=x=60:y={y - 8}:w=10:h={size + 16}:color=0xE6B800@1:t=fill:enable='between(t,0.5,4.2)',"
+              f"drawtext=fontfile={FONT_BOLD_PATH}:text='{cap}':fontsize={size}:fontcolor=white:"
+              f"x=86:y={y}:shadowcolor=black@0.8:shadowx=3:shadowy=3:"
+              "alpha='if(lt(t,0.5),0,if(lt(t,0.9),(t-0.5)/0.4,if(lt(t,3.8),1,max(0,(4.2-t)/0.4))))'")
+    f += f",fade=t=in:st=0:d=0.35,fade=t=out:st={max(0.0, each - 0.35):.2f}:d=0.35,format=yuv420p"
+    return f
+
+
+def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
+    """Süre kadar klibi belgesel tonuyla birleştirir (ses yok). clips boşsa koyu animasyonlu zemin."""
     parts = []
     if not clips:
-        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i",
-             f"gradients=s={W}x{H}:c0=0x0b0d12:c1=0x1b2433:speed=0.01:d={total:.2f}:r=30",
+        base = f"gradients=s={W}x{H}:c0=0x0b0d12:c1=0x1b2433:speed=0.01:d={total:.2f}:r=30"
+        vf = f"noise=alls=9:allf=t,format=yuv420p"
+        if caption:
+            cap = caption.replace("'", "").replace(":", "\\:")
+            vf = f"drawtext=fontfile={FONT_BOLD_PATH}:text='{cap}':fontsize=64:fontcolor=white:x=86:y=h*0.15," + vf
+        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i", base, "-vf", vf,
              "-c:v", "libx264", "-preset", "ultrafast", "-crf", "24", "-pix_fmt", "yuv420p", out_path])
         return out_path
-    n = max(1, math.ceil(total / 7.0))
+    n = max(1, math.ceil(total / 6.0))
     each = total / n
     for i in range(n):
         c = clips[i % len(clips)]
         room = max(0.0, c["duration"] - each - 0.2)
         ss = random.uniform(0, room) if room > 0 else 0.0
         p = os.path.join(workdir, f"seg_{tag}_{i}.mp4")
-        vf = grade_filter(W, H)
+        vf = grade_filter(W, H, each, i + random.randint(0, 3), caption if i == 0 else None)
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{ss:.2f}",
              "-i", c["path"], "-t", f"{each:.3f}", "-an", "-vf", vf, "-c:v", "libx264",
-             "-preset", "ultrafast", "-crf", "24", p])
+             "-preset", "ultrafast", "-crf", "23", p])
         parts.append(p)
     lst = os.path.join(workdir, f"list_{tag}.txt")
     with open(lst, "w") as f:
@@ -524,7 +571,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=pe
             if clips and first_clip is None:
                 first_clip = clips[0]["path"]
             p = os.path.join(workdir, f"{tag}_{k}.mp4")
-            render_visual(clips, d, p, 1920, 1080, workdir, f"{tag}{k}")
+            render_visual(clips, d, p, 1920, 1080, workdir, f"{tag}{k}", key_caption(paras[k]))
             parts.append(p)
             log(f"   paragraf {k + 1}/{len(paras)}: {d:.0f} sn, {len(clips)} klip")
         lf = os.path.join(workdir, f"v_{tag}.txt")
@@ -580,7 +627,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=pe
                 continue
             clips = fetch_clips(queries[k], "portrait", workdir, used, need=2, search=search)
             p = os.path.join(sdir, f"p{k}.mp4")
-            render_visual(clips, d, p, 1080, 1920, workdir, f"s{n}_{k}")
+            render_visual(clips, d, p, 1080, 1920, workdir, f"s{n}_{k}", key_caption(paras[k]))
             parts.append(p)
         lf = os.path.join(sdir, "l.txt")
         with open(lf, "w") as f:
