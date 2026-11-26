@@ -313,8 +313,45 @@ DEAD_MODELS = set()   # bu çalışmada kotası dolan modeller, tekrar denenmez
 GEMINI_DEAD = False   # Gemini kotası dolunca True olur, sonraki çağrılar doğrudan yedeğe gider
 
 
+OR_URL = "https://openrouter.ai/api/v1/chat/completions"
+OR_PREF = ("gpt-oss-120b", "llama-3.3-70b", "qwen3-next", "qwen3-235b", "qwen3-coder",
+           "deepseek", "gemma-3-27b", "mistral-small", "glm", "nemotron")
+OR_DEAD = [False]      # günlük ücretsiz limit dolunca True, sonraki çağrılar Gemini'ye gider
+OR_MODELS = []
+
+
+def openrouter_key():
+    return os.environ.get("OPENROUTER_API_KEY", "").strip()
+
+
+def or_models():
+    """OpenRouter'ın herkese açık model listesinden, bağlamı geniş ücretsiz modelleri seçer."""
+    if OR_MODELS:
+        return OR_MODELS
+    try:
+        req = urllib.request.Request("https://openrouter.ai/api/v1/models", headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.load(r).get("data", [])
+        free = [m["id"] for m in data
+                if m.get("id", "").endswith(":free") and (m.get("context_length") or 0) >= 64000]
+        def rank(mid):
+            for i, k in enumerate(OR_PREF):
+                if k in mid:
+                    return i
+            return len(OR_PREF)
+        free.sort(key=rank)
+        OR_MODELS[:] = free[:6]
+        log("   [openrouter] ücretsiz modeller:", ", ".join(OR_MODELS))
+    except Exception as e:
+        log(f"   [openrouter] model listesi alınamadı: {str(e)[:100]}")
+        OR_MODELS[:] = ["openai/gpt-oss-120b:free", "meta-llama/llama-3.3-70b-instruct:free"]
+    return OR_MODELS
+
+
 def mistral_key():
-    """Yedek sağlayıcı yalnızca MISTRAL_ENABLE=1 ise kullanılır (ücretsiz API planı kapalı)."""
+    """Yedek sağlayıcı anahtarı: OpenRouter varsa o, yoksa (MISTRAL_ENABLE=1 ise) Mistral."""
+    if openrouter_key() and not OR_DEAD[0]:
+        return openrouter_key()
     if os.environ.get("MISTRAL_ENABLE", "").strip() != "1":
         return ""
     return os.environ.get("MISTRAL_API_KEY", "").strip()
@@ -324,25 +361,28 @@ def mistral_generate(prompt, system, json_out, temperature, max_tokens):
     """Yedek sağlayıcı (Mistral, ücretsiz katman). Ücretsiz planda kapalı modelleri
     (403 tier_not_allowed) atlayıp sıradakini dener. (model, metin/sözlük) döndürür."""
     last = "bilinmeyen hata"
-    models = MISTRAL_OK[:1] or MISTRAL_MODELS
+    use_or = bool(openrouter_key()) and not OR_DEAD[0]
+    url = OR_URL if use_or else MISTRAL_URL
+    token = openrouter_key() if use_or else mistral_key()
+    models = MISTRAL_OK[:1] or (or_models() if use_or else MISTRAL_MODELS)
     for model in models:
         payload = {"model": model, "temperature": min(temperature, 1.0),
                    "max_tokens": min(max_tokens, 16000),
                    "messages": [{"role": "system", "content": system},
                                 {"role": "user", "content": prompt}]}
-        if json_out:
+        if json_out and not use_or:
             payload["response_format"] = {"type": "json_object"}
         for attempt in range(4):
             req = urllib.request.Request(
-                MISTRAL_URL, data=json.dumps(payload).encode("utf-8"), method="POST",
+                url, data=json.dumps(payload).encode("utf-8"), method="POST",
                 headers={"Content-Type": "application/json", "Accept": "application/json",
-                         "Authorization": "Bearer " + mistral_key()})
+                         "Authorization": "Bearer " + token, "User-Agent": UA})
             try:
                 with urllib.request.urlopen(req, timeout=300) as r:
                     data = json.loads(r.read().decode("utf-8"))
                 text = (data["choices"][0]["message"]["content"] or "").strip()
                 if not text:
-                    raise Blocked("Mistral boş yanıt verdi")
+                    raise Blocked("boş yanıt")
                 if model not in MISTRAL_OK:
                     MISTRAL_OK[:] = [model]
                     log(f"   [mistral] kullanılan model: {model}")
@@ -352,7 +392,12 @@ def mistral_generate(prompt, system, json_out, temperature, max_tokens):
                 last = f"{model}: Mistral HTTP {e.code}: {body}"
                 log(f"   [mistral] {last[:170]}")
                 if e.code == 401:
-                    raise GenerationFailed("Mistral API anahtarı geçersiz görünüyor (MISTRAL_API_KEY).")
+                    if use_or:
+                        OR_DEAD[0] = True
+                    raise GenerationFailed("Yedek sağlayıcı API anahtarı geçersiz görünüyor.")
+                if use_or and e.code in (402, 429) and ("per-day" in body or "free-models-per-day" in body or e.code == 402):
+                    OR_DEAD[0] = True
+                    raise GenerationFailed("OpenRouter günlük ücretsiz limiti doldu.")
                 if e.code in (403, 404, 400):
                     break  # bu model kapalı ya da yok, sıradakine geç
                 if e.code in (429, 500, 502, 503, 504) and attempt < 3:
@@ -370,6 +415,8 @@ def mistral_generate(prompt, system, json_out, temperature, max_tokens):
             except Blocked as e:
                 last = f"{model}: {e}"
                 continue
+    if use_or:
+        OR_DEAD[0] = True   # bu çalışmada tüm ücretsiz modeller başarısız, Gemini'ye dön
     raise GenerationFailed(last)
 
 
@@ -464,6 +511,12 @@ def generate(key, models, prompt, system=SYSTEM, json_out=False,
     Kota (429) dolmuşsa o modeli bekletmeden atlar; hepsinde kota doluysa
     QuotaExceeded fırlatır (boşuna dakikalarca beklemez)."""
     global GEMINI_DEAD
+    if (os.environ.get("PREFER_OPENROUTER", "").strip() == "1" and openrouter_key()
+            and not OR_DEAD[0]):
+        try:
+            return mistral_generate(prompt, system, json_out, temperature, max_tokens)
+        except GenerationFailed as e:
+            log(f"   [openrouter] kullanılamadı, Gemini'ye dönülüyor: {str(e)[:120]}")
     last = "bilinmeyen hata"
     quota_models, tried = 0, 0
     gem_models = ([m for m in models if not m.startswith("mistral") and m not in DEAD_MODELS]
