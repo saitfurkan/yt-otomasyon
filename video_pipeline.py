@@ -564,8 +564,7 @@ def make_ident(ident_voice, out_mp4, out_wav, workdir):
     voice = os.path.join(workdir, "ident_voice.wav")
     if ident_voice and os.path.exists(ident_voice):
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", ident_voice, "-af",
-             "highpass=f=80,lowpass=f=6500,afftdn=nf=-30,loudnorm=I=-19:TP=-2,"
-             "aecho=0.8:0.88:70|140|230:0.45|0.3|0.18,apad", "-t", "3.2", "-ar", "44100", "-ac", "1", voice])
+             "highpass=f=80,lowpass=f=9000,afftdn=nf=-25,loudnorm=I=-18:TP=-2,apad", "-t", "3.2", "-ar", "44100", "-ac", "1", voice])
     else:
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i",
              "anullsrc=r=44100:cl=mono", "-t", "3.2", voice])
