@@ -95,76 +95,134 @@ def _paste_rgba(canvas, layer, xy, alpha=1.0, add=False):
         canvas[y0:y1, x0:x1] = canvas[y0:y1, x0:x1] * (1 - a) + sub[..., :3] * a
 
 
+def _keyhole_line(size):
+    """Sadece ince altın çizgili anahtar deliği (dolgusuz, zarif)."""
+    S = size * 4
+    im = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    cx, cy, r = S / 2, S * 0.38, S * 0.19
+    top = cy + r * 0.6
+    w = max(6, S // 60)
+    d.arc([cx - r, cy - r, cx + r, cy + r], 128, 412, fill=GOLD + (255,), width=w)
+    pts = [(cx - S * 0.075, top - 6), (cx - S * 0.16, S * 0.92), (cx + S * 0.16, S * 0.92), (cx + S * 0.075, top - 6)]
+    d.line([pts[0], pts[1], pts[2], pts[3]], fill=GOLD + (255,), width=w, joint="curve")
+    glow = im.filter(ImageFilter.GaussianBlur(S * 0.03))
+    out = Image.alpha_composite(glow, im)
+    return out.resize((size, size), Image.LANCZOS)
+
+
 def render_ident_base(out_mp4, D, hit_t, font_path, W=1920, H=1080, fps=30, seed=7):
-    """hit_t: vuruşun/başlığın geldiği an (sn)."""
+    """Elit sürüm: simsiyah sahne, ince altın çizgi, harfleri ortadan açılan Cinzel başlık, altın parıltı geçişi."""
     rnd = random.Random(seed)
-    bg = _radial_bg(W, H)
-    beam = _beam(W, H)
-    ksize = 330
-    key = _keyhole(ksize)
-    kpos = ((W - ksize) // 2, 150)
-    letters, ly = _title_letters(font_path, "SON TANIK", 150, 34, W, 760)
-    motes = [dict(x=rnd.uniform(0, W), y=rnd.uniform(0, H), vx=rnd.uniform(-9, 9), vy=rnd.uniform(-22, -5),
-                  r=rnd.uniform(1.2, 4.2), ph=rnd.uniform(0, 6.28), sp=rnd.uniform(0.6, 1.8), b=rnd.uniform(0.25, 0.9))
-             for _ in range(110)]
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    dist = np.sqrt(((x - W * 0.5) / (W * 0.55)) ** 2 + ((y - H * 0.5) / (H * 0.6)) ** 2)
+    glow_map = np.clip(1 - dist, 0, 1) ** 2.2
+    text = "SON TANIK"
+    size = 132
+    font = ImageFont.truetype(font_path, size)
+    try:
+        font.set_variation_by_axes([600])
+    except Exception:
+        pass
+    widths = [font.getlength(c) for c in text]
+    ty = 600
+    glyphs = []
+    for c in text:
+        lay = Image.new("RGBA", (int(size * 1.4), int(size * 1.7)), (0, 0, 0, 0))
+        if c != " ":
+            ImageDraw.Draw(lay).text((size * 0.1, size * 0.1), c, font=font, fill=WARM + (255,))
+        glyphs.append(lay)
+    t_final, t_start = 52.0, 6.0
+    def positions(track):
+        total = sum(widths) + track * (len(text) - 1)
+        xs, x0 = [], (W - total) / 2
+        for w_ in widths:
+            xs.append(x0)
+            x0 += w_ + track
+        return xs
+    final_xs = positions(t_final)
+    mask = Image.new("L", (W, H), 0)
+    for lay, gx in zip(glyphs, final_xs):
+        mask.paste(lay.split()[3], (int(gx - size * 0.1), ty), lay.split()[3])
+    mask_np = np.asarray(mask, dtype=np.float32) / 255.0
+    key = _keyhole_line(150)
+    motes = [dict(x=rnd.uniform(0, W), y=rnd.uniform(0, H), vy=rnd.uniform(-14, -4), vx=rnd.uniform(-5, 5),
+                  r=rnd.uniform(1.0, 2.8), ph=rnd.uniform(0, 6.28), sp=rnd.uniform(0.5, 1.4), b=rnd.uniform(0.25, 0.7))
+             for _ in range(45)]
     p = subprocess.Popen(
         ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
          "-r", str(fps), "-i", "-", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-pix_fmt", "yuv420p", out_mp4],
         stdin=subprocess.PIPE)
+    gold = np.array(GOLD, np.float32)
     n = int(round(D * fps))
     for i in range(n):
         t = i / fps
-        f = bg.copy()
-        # ışık huzmesi: yavaş salınım + hafif nefes
-        sway = int(math.sin(t * 0.55) * 70)
-        b = np.roll(beam, sway, axis=1)
-        k = 0.075 + 0.025 * math.sin(t * 1.3)
+        f = np.zeros((H, W, 3), np.float32)
+        f += glow_map[..., None] * np.array([7, 7, 9], np.float32)
+        # vuruştan sonra başlığın arkasında sıcak bir ışık nefesi
         if t > hit_t:
-            k += 0.10 * max(0.0, 1 - (t - hit_t) / 0.9)
-        f += b[..., None] * np.array([255, 226, 170], np.float32) * k
-        # anahtar deliği: sessizce belirir, vuruşta parlar
-        if t < hit_t:
-            ka = max(0.0, min(1.0, (t - 0.6) / 3.0)) * 0.55
-        else:
-            ka = 0.9 + 0.1 * max(0.0, 1 - (t - hit_t) / 0.5)
-        _paste_rgba(f, key, kpos, ka)
-        # toz zerrecikleri (yarım çözünürlükte çizilip büyütülür)
+            k = min(1.0, (t - hit_t) / 0.8) * (0.7 + 0.3 * math.sin((t - hit_t) * 1.6))
+            gm = np.clip(1 - np.sqrt(((x - W * 0.5) / (W * 0.30)) ** 2 + ((y - 640) / 180.0) ** 2), 0, 1) ** 2
+            f += gm[..., None] * np.array([70, 52, 28], np.float32) * k
+        # ince altın çizgi: ortadan açılır, ses boyunca durur
+        la = max(0.0, min(1.0, (t - 0.5) / 1.6))
+        if t >= hit_t:
+            la = max(0.0, 1 - (t - hit_t) / 0.35)
+        if la > 0:
+            e = 1 - (1 - la) ** 3 if t < hit_t else la
+            half = int(520 * (1 - (1 - min(1.0, (t - 0.5) / 1.6)) ** 3)) if t < hit_t else 520
+            f[538:541, W // 2 - half:W // 2 + half] = gold * (0.75 if t < hit_t else 0.75 * la)
+        # toz
         dust = Image.new("RGB", (W // 2, H // 2), (0, 0, 0))
         dd = ImageDraw.Draw(dust)
         for m in motes:
-            x = (m["x"] + m["vx"] * t) % W
-            y = (m["y"] + m["vy"] * t) % H
+            xx = (m["x"] + m["vx"] * t) % W
+            yy = (m["y"] + m["vy"] * t) % H
             tw = 0.5 + 0.5 * math.sin(t * m["sp"] + m["ph"])
-            lum = int(255 * m["b"] * (0.25 + 0.75 * tw))
+            lum = int(255 * m["b"] * (0.2 + 0.8 * tw))
             r = m["r"] / 2
-            dd.ellipse([x / 2 - r, y / 2 - r, x / 2 + r, y / 2 + r], fill=(lum, int(lum * 0.9), int(lum * 0.72)))
-        dust = dust.filter(ImageFilter.GaussianBlur(1.1)).resize((W, H), Image.BILINEAR)
-        f += np.asarray(dust, dtype=np.float32) * 0.55
-        # başlık: harf harf, yukarı süzülerek
-        for j, (lay, glow) in enumerate(letters):
-            ts = hit_t + 0.07 * j
-            a = max(0.0, min(1.0, (t - ts) / 0.45))
-            if a <= 0:
-                continue
-            e = 1 - (1 - a) ** 3
-            dy = int((1 - e) * 26)
-            _paste_rgba(f, glow, (0, ly + dy), e * 0.9, add=True)
-            _paste_rgba(f, lay, (0, ly + dy), e)
-        # altın çizgi: ortadan iki yana açılır, ortasında kırmızı nokta
-        la = max(0.0, min(1.0, (t - (hit_t + 0.55)) / 0.7))
-        if la > 0:
-            e = 1 - (1 - la) ** 3
-            half = int(230 * e)
-            y0 = 872
-            f[y0:y0 + 3, W // 2 - half:W // 2 + half] = np.array(GOLD, np.float32)
-            if e > 0.9:
-                f[y0 - 4:y0 + 7, W // 2 - 5:W // 2 + 6] = np.array(RED, np.float32)
-        # vuruş parlaması
+            dd.ellipse([xx / 2 - r, yy / 2 - r, xx / 2 + r, yy / 2 + r], fill=(lum, int(lum * 0.9), int(lum * 0.7)))
+        dust = dust.filter(ImageFilter.GaussianBlur(1.0)).resize((W, H), Image.BILINEAR)
+        f += np.asarray(dust, dtype=np.float32) * 0.40
+        # başlık: harfler ortadan dışa doğru belirir, aralık genişler
         if t >= hit_t:
-            f += 38 * max(0.0, 1 - (t - hit_t) / 0.3)
+            e_track = min(1.0, (t - hit_t) / 1.0)
+            e_track = 1 - (1 - e_track) ** 3
+            xs = positions(t_start + (t_final - t_start) * e_track)
+            mid = (len(text) - 1) / 2
+            tl = Image.new("L", (W, H), 0)
+            for j, (lay, gx) in enumerate(zip(glyphs, xs)):
+                ts = hit_t + 0.10 * abs(j - mid)
+                a = max(0.0, min(1.0, (t - ts) / 0.55))
+                if a <= 0 or text[j] == " ":
+                    continue
+                ea = 1 - (1 - a) ** 2
+                al = lay.split()[3].point(lambda v, ea=ea: int(v * ea))
+                tl.paste(al, (int(gx - size * 0.1), ty), al)
+            tl_np = np.asarray(tl, dtype=np.float32) / 255.0
+            glow = np.asarray(tl.filter(ImageFilter.GaussianBlur(26)), dtype=np.float32) / 255.0
+            f += glow[..., None] * np.array([120, 92, 48], np.float32) * 0.55
+            f = f * (1 - tl_np[..., None]) + np.array(WARM, np.float32) * tl_np[..., None]
+            # altın folyo parıltısı: eğik bir ışık bandı başlığın üstünden geçer
+            ts0 = hit_t + 1.05
+            if t > ts0:
+                pos = -300 + (t - ts0) / 1.1 * (W + 600)
+                band = np.exp(-(((x + 0.45 * (y - ty)) - pos) / 90.0) ** 2)
+                f += (band * tl_np)[..., None] * np.array([255, 214, 130], np.float32) * 0.9
+            # anahtar deliği ve alt çizgi
+            ka = max(0.0, min(1.0, (t - (hit_t + 0.25)) / 0.7))
+            _paste_rgba(f, key, ((W - 150) // 2, 380), ka * 0.95)
+            lb = max(0.0, min(1.0, (t - (hit_t + 0.6)) / 0.7))
+            if lb > 0:
+                eb = 1 - (1 - lb) ** 3
+                half = int(260 * eb)
+                f[828:830, W // 2 - half:W // 2 + half] = gold
+                if eb > 0.95:
+                    f[823:836, W // 2 - 6:W // 2 + 7] = np.array(RED, np.float32)
+            if t < hit_t + 0.3:
+                f += 26 * (1 - (t - hit_t) / 0.3)
         img = Image.fromarray(np.clip(f, 0, 255).astype(np.uint8))
-        # yavaş yaklaşma
-        z = 1.0 + 0.05 * (t / D)
+        z = 1.0 + 0.04 * (t / D)
         cw, ch = int(W / z), int(H / z)
         x0, y0 = (W - cw) // 2, (H - ch) // 2
         img = img.crop((x0, y0, x0 + cw, y0 + ch)).resize((W, H), Image.BICUBIC)

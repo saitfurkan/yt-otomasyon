@@ -21,6 +21,7 @@ FONT_SERIF_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
 _FD = os.path.join(HERE, "fonts")
 FONT_HEAD = os.path.join(_FD, "Anton-Regular.ttf") if os.path.exists(os.path.join(_FD, "Anton-Regular.ttf")) else FONT_BOLD_PATH
 FONT_LABEL = os.path.join(_FD, "BebasNeue-Regular.ttf") if os.path.exists(os.path.join(_FD, "BebasNeue-Regular.ttf")) else FONT_BOLD_PATH
+FONT_CINZEL = os.path.join(_FD, "Cinzel.ttf")
 FONT_ELEGANT = os.path.join(_FD, "AbrilFatface-Regular.ttf") if os.path.exists(os.path.join(_FD, "AbrilFatface-Regular.ttf")) else FONT_SERIF_BOLD
 IDENT_SECONDS = 6.6
 UA = "Mozilla/5.0 (X11; Linux x86_64)"
@@ -582,9 +583,9 @@ def make_ident(ident_voice, out_mp4, out_wav, workdir):
          "-map", "[o]", "-t", f"{D}", "-ar", "44100", out_wav])
     import ident_gorsel
     base = os.path.join(workdir, "ident_base.mp4")
-    ident_gorsel.render_ident_base(base, D, 4.3, FONT_ELEGANT)
-    fc = ("[1:a]showwaves=s=1300x150:mode=cline:rate=30:colors=0xF0E8DA@0.9,format=yuva420p,"
-          "fade=t=out:st=3.8:d=0.5:alpha=1[w];[0:v][w]overlay=(W-w)/2:905:shortest=0,"
+    ident_gorsel.render_ident_base(base, D, 4.3, FONT_CINZEL)
+    fc = ("[1:a]showwaves=s=1040x110:mode=cline:rate=30:colors=0xF0E8DA@0.9,format=yuva420p,"
+          "fade=t=out:st=3.9:d=0.4:alpha=1[w];[0:v][w]overlay=(W-w)/2:485:shortest=0,"
           f"noise=alls=7:allf=t,fade=t=out:st={D - 0.3}:d=0.3,format=yuv420p[v]")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", base, "-i", out_wav, "-filter_complex", fc, "-map", "[v]",
          "-t", f"{D}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
