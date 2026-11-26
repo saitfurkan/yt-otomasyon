@@ -5,7 +5,7 @@ KAPAK: İKİ ADAM, TEK KURAL
 AÇIKLAMA: Futbolu bahisle yenen Matthew Benham, çocukluk aşkı Brentford'u Premier Lig'e taşıdı. Sonra en pahalı golcüsü 232 bahis ihlalinden men edildi. Kural herkese aynı mıydı?
 ETİKETLER: brentford,matthew benham,ivan toney,bahis,futbol,premier lig,fa,gerçek hikaye,belgesel,son tanık
 
-Süre: yaklaşık 10-11 dakika okuma. [duraklama] işareti kısa nefes payı. Kaynaklar ve kontrol listesi sonda.
+Süre: yaklaşık 6-7 dakika okuma. [duraklama] işareti kısa nefes payı. Kaynaklar ve kontrol listesi sonda.
 
 ## OKUMA METNİ
 
@@ -58,4 +58,4 @@ Ben şöyle düşünüyorum: Bir kural, sadece oyuncuya uygulanıyorsa kural de�
 2. Guardian'ın haberi dolaylı kaynaktan (iGaming Business) alındı. İstersen Guardian'ın orijinal haberine bir kez bak.
 3. Toney'in cezasının "kumar bağımlılığı teşhisiyle indirildiği" ESPN başlığına dayanıyor. Metinde "haberlere göre" dedim.
 4. Net servet rakamı yok, kaynaklarda bulunmadı.
-5. Metin yaklaşık 1200 kelime. Yavaş okursan 10-11 dakika.
+5. Metin yaklaşık 770 kelime, okuması 6-7 dakika. 10 dakikayı hedefliyorsak sonraki senaryolarda daha fazla detay ekleyeceğim.
