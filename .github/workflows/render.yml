@@ -31,7 +31,7 @@ jobs:
           print("token uzunlugu:", len(t), "bicim dogru:", bool(re.fullmatch(r"\d{6,}:[A-Za-z0-9_-]{30,}", t)))
           r = json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getUpdates?timeout=0"))
           ms = [u["message"] for u in r["result"] if "message" in u]
-          go = any((m.get("text") or "").lower().startswith("/bitti") or (m.get("text") or "").strip().lower().lstrip("/") in ("ident", "ıdent") or "ident" in (m.get("caption") or "").lower() for m in ms)
+          go = any((m.get("text") or "").lower().startswith(("/bitti", "/senaryo")) or (m.get("text") or "").strip().lower().lstrip("/") in ("ident", "ıdent") or "ident" in (m.get("caption") or "").lower() for m in ms)
           open(os.environ["GITHUB_OUTPUT"], "a").write(f"go={'1' if go else '0'}\n")
           PY
         env:
@@ -57,8 +57,8 @@ jobs:
       - name: Ident'i kaydet
         if: steps.probe.outputs.go == '1'
         run: |
-          if [ -f assets/ident.wav ]; then
+          if [ -d assets ]; then
             git config user.name "bot"; git config user.email "bot@users.noreply.github.com"
-            git add assets/ident.wav
+            git add assets/ident.wav assets/gonderildi.txt 2>/dev/null || true
             git diff --cached --quiet || (git commit -m "ident sesi" && git pull --rebase && git push)
           fi

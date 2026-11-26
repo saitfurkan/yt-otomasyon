@@ -86,6 +86,24 @@ def main():
             os.remove(os.path.join(HERE, "assets", "ident_raw"))
             say(m["chat"]["id"], "Açılış sesi kaydedildi. Bundan sonra her videoda kullanılacak.")
             ident_done = True
+    # /senaryo yazılınca okuma metnini sohbete gönder (bir kez)
+    sidx = [i for i, (_, m) in enumerate(msgs) if re.match(r"/senaryo\s+\S+", (m.get("text") or "").strip(), re.I)]
+    if sidx:
+        uid_s, m_s = msgs[sidx[-1]]
+        stfile = os.path.join(HERE, "assets", "gonderildi.txt")
+        done = open(stfile).read().split() if os.path.exists(stfile) else []
+        if str(uid_s) not in done:
+            sid_s = re.match(r"/senaryo\s+(\S+)", m_s["text"].strip(), re.I).group(1)
+            sp = os.path.join(HERE, "hazir", sid_s if sid_s.endswith(".md") else sid_s + ".md")
+            if os.path.exists(sp):
+                meta_s, paras_s, hook_s = vp.parse_script(sp)
+                chat_s = m_s["chat"]["id"]
+                say(chat_s, f"Senaryo: {meta_s.get('BAŞLIK', sid_s)}\nAşağıdaki metni sırayla sesli mesaj olarak gönder, "
+                            "bitince /bitti yaz. (Açılış cümlesini ayrıca okuma, otomatik eklenir.)")
+                for n_, p_ in enumerate(paras_s, 1):
+                    say(chat_s, f"{n_}/{len(paras_s)}\n{p_}")
+                os.makedirs(os.path.dirname(stfile), exist_ok=True)
+                open(stfile, "a").write(str(uid_s) + "\n")
     # son /bitti
     idx = [i for i, (_, m) in enumerate(msgs) if (m.get("text") or "").strip().lower().startswith("/bitti")]
     if not idx:
