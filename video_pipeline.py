@@ -580,15 +580,15 @@ def make_ident(ident_voice, out_mp4, out_wav, workdir):
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", voice, "-i", hit, "-filter_complex",
          "[0:a]apad=whole_dur=%s[v];[v][1:a]amix=inputs=2:duration=longest:normalize=0,alimiter=limit=0.95[o]" % D,
          "-map", "[o]", "-t", f"{D}", "-ar", "44100", out_wav])
-    fc = ("[0:a]showwaves=s=1400x260:mode=cline:rate=30:colors=0xFFFFFF@0.95,format=yuva420p,"
-          "fade=t=out:st=4.0:d=0.6:alpha=1[w];"
-          f"color=c=0x050608:s=1920x1080:d={D}:r=30[bg];[bg][w]overlay=(W-w)/2:(H-h)/2:shortest=0,"
-          f"drawtext=fontfile={FONT_ELEGANT}:text='SON TANIK':fontsize=150:fontcolor=white:"
-          "x=(w-text_w)/2:y=(h-text_h)/2-10:alpha='if(lt(t,4.3),0,min(1,(t-4.3)/0.5))',"
-          f"drawbox=x=(iw-300)/2:y=ih/2+95:w=300:h=4:color=0xC0392B@1:t=fill:"
-          "enable='gte(t,4.6)',format=yuv420p[v]")
-    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", out_wav, "-filter_complex", fc, "-map", "[v]",
-         "-t", f"{D}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", out_mp4])
+    import ident_gorsel
+    base = os.path.join(workdir, "ident_base.mp4")
+    ident_gorsel.render_ident_base(base, D, 4.3, FONT_ELEGANT)
+    fc = ("[1:a]showwaves=s=1300x150:mode=cline:rate=30:colors=0xF0E8DA@0.9,format=yuva420p,"
+          "fade=t=out:st=3.8:d=0.5:alpha=1[w];[0:v][w]overlay=(W-w)/2:905:shortest=0,"
+          f"noise=alls=7:allf=t,fade=t=out:st={D - 0.3}:d=0.3,format=yuv420p[v]")
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", base, "-i", out_wav, "-filter_complex", fc, "-map", "[v]",
+         "-t", f"{D}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
+         "-maxrate", "6M", "-bufsize", "12M", out_mp4])
     return out_mp4, out_wav
 
 
