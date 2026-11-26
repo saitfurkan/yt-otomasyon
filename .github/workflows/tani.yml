@@ -1,0 +1,19 @@
+name: Telegram teshis
+on: workflow_dispatch
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          T: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          t = os.environ["T"].strip()
+          r = json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getUpdates?timeout=0"))
+          print("toplam guncelleme:", len(r["result"]))
+          for u in r["result"][-15:]:
+              k = [x for x in u if x != "update_id"]
+              m = u.get("message") or u.get("channel_post") or {}
+              print(u["update_id"], k, "voice" if m.get("voice") else "", "audio" if m.get("audio") else "", "caption=" + repr(m.get("caption")), "text=" + repr((m.get("text") or "")[:20]))
+          PY
