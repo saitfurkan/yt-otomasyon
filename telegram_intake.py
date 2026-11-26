@@ -28,6 +28,11 @@ def tg(method, **params):
         return json.load(r)["result"]
 
 
+def LATEST():
+    fs = sorted(f for f in os.listdir(os.path.join(HERE, "hazir")) if f.endswith(".md"))
+    return fs[-1][:-3] if fs else ""
+
+
 def say(chat, text):
     try:
         tg("sendMessage", chat_id=chat, text=text[:3900])
@@ -87,13 +92,13 @@ def main():
             say(m["chat"]["id"], "Açılış sesi kaydedildi. Bundan sonra her videoda kullanılacak.")
             ident_done = True
     # /senaryo yazılınca okuma metnini sohbete gönder (bir kez)
-    sidx = [i for i, (_, m) in enumerate(msgs) if re.match(r"/senaryo\s+\S+", (m.get("text") or "").strip(), re.I)]
+    sidx = [i for i, (_, m) in enumerate(msgs) if re.match(r"/senaryo(\s+\S+)?\s*$", (m.get("text") or "").strip(), re.I)]
     if sidx:
         uid_s, m_s = msgs[sidx[-1]]
         stfile = os.path.join(HERE, "assets", "gonderildi.txt")
         done = open(stfile).read().split() if os.path.exists(stfile) else []
         if str(uid_s) not in done:
-            sid_s = re.match(r"/senaryo\s+(\S+)", m_s["text"].strip(), re.I).group(1)
+            sid_s = (re.match(r"/senaryo\s+(\S+)", m_s["text"].strip(), re.I) or [None, LATEST()])[1]
             sp = os.path.join(HERE, "hazir", sid_s if sid_s.endswith(".md") else sid_s + ".md")
             if os.path.exists(sp):
                 meta_s, paras_s, hook_s = vp.parse_script(sp)
@@ -116,9 +121,9 @@ def main():
     sid = None
     for i in range(end, -1, -1):
         t = (msgs[i][1].get("text") or "").strip()
-        mm = re.match(r"/senaryo\s+(\S+)", t, re.I)
+        mm = re.match(r"/senaryo(?:\s+(\S+))?\s*$", t, re.I)
         if mm:
-            start, sid = i, mm.group(1)
+            start, sid = i, (mm.group(1) or LATEST())
             break
     chat = msgs[end][1]["chat"]["id"]
     if not sid:
