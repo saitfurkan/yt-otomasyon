@@ -1,63 +1,61 @@
-# Senaryo: Futbolu bahisle yenen adam, kulübü cebine koydu (Son Tanık)
+# Senaryo: Sahibi bahisçi olan kulüpte, bahis yüzünden men edilen golcü (Son Tanık)
 
-BAŞLIK: Bahisçi, Futbol Kulübünü Satın Aldı: Brentford Hikâyesi
-KAPAK: KUMARBAZ KULÜP ALDI
-AÇIKLAMA: Bahis dünyasından çıkıp çocukluk aşkı Brentford'u 74 yıl sonra Premier Lig'e taşıyan Matthew Benham'ın akıl almaz hikâyesi.
-ETİKETLER: brentford,matthew benham,bahis,futbol,premier lig,gerçek hikaye,belgesel,son tanık
+BAŞLIK: Bahisçi Kulüp Sahibi, Bahis Yüzünden Men Edilen Golcü: Brentford Skandalı
+KAPAK: İKİ ADAM, TEK KURAL
+AÇIKLAMA: Futbolu bahisle yenen Matthew Benham, çocukluk aşkı Brentford'u Premier Lig'e taşıdı. Sonra en pahalı golcüsü 232 bahis ihlalinden men edildi. Kural herkese aynı mıydı?
+ETİKETLER: brentford,matthew benham,ivan toney,bahis,futbol,premier lig,fa,gerçek hikaye,belgesel,son tanık
 
 Süre: yaklaşık 10-11 dakika okuma. [duraklama] işareti kısa nefes payı. Kaynaklar ve kontrol listesi sonda.
 
 ## OKUMA METNİ
 
-Düşün: Bir adam futbol maçlarını bahis şirketlerinden daha iyi tahmin ediyor. Bunu yıllarca yapıyor, zengin oluyor. Sonra bir gün çocukluk aşkı kulübün kapısını çalıyor. Ve o kulüp, tam yetmiş dört yıl sonra Premier Lig'e çıkıyor. [duraklama] Bu bir film senaryosu değil. Bu, Londra'nın batısında yaşandı.
+Bir tarafta futbolu bahisten kazanan bir kulüp sahibi. Diğer tarafta, o kulübün beş milyon sterline aldığı golcü. Mayıs 2023'te Futbol Federasyonu o golcüye "sekiz ay men" dedi. Sebep: Bahis. [duraklama] Peki aynı federasyon, kulübün sahibine ne dedi? İşte bu sorunun cevabı, hikâyenin tam ortasında duruyor.
 
 [SON TANIK AÇILIŞ SESİ: "Karar verilmeden önce, son sözü tanık söyler."]
 
-Adı Matthew Benham. 1968'de doğdu, Londra'nın hemen dışında bir kasabada büyüdü. Annesi babası öğretmen. Ve on bir yaşında babasıyla ilk Brentford maçına gitti. Bunu aklında tut, çünkü hikâyenin bütün motoru bu. [duraklama]
+Önce adamı tanıyalım. Matthew Benham. 1968'de doğdu, annesiyle babası öğretmen. On bir yaşındayken babasıyla ilk Brentford maçına gitti. Bunu aklında tut, çünkü bütün hikâye bu bir maçtan çıkıyor. [duraklama]
 
-Brentford mu? Londra'nın küçük kulüplerinden biri. Büyük bir geçmişi yok, kupası yok. Taraftarı, yağmurda tribünde üşüyüp yine de gelen insanlardan oluşur. Benham da onlardan biriydi. Çocukken bir keresinde okulu asıp arkadaşıyla Brentford'un deplasman maçına gitmiş. On dört yaşında bir çocuk, kimsenin kulağına bile girmeyen bir takım için okulu asıyor.
+Brentford, Londra'nın küçük kulüplerinden biri. Büyük bir geçmişi yok, kupası yok. Taraftarı yağmurda tribünde üşüyüp yine de gelen insanlardan oluşur. Benham da onlardan biriydi. On dört yaşındayken okulu asıp bir arkadaşıyla Brentford'un deplasman maçına gitmiş. Kimsenin kulağına bile girmeyen bir takım için.
 
-Sonra büyüdü. Oxford'da fizik okudu. Evet, fizik. Mezun olunca da kendini Londra'nın finans dünyasında buldu. Yaklaşık on iki yıl boyunca bir yatırım fonunda çalıştı, Deutsche Bank'ta türev ürün trader'lığı yaptı, Bank of America'da başkan yardımcılığına kadar yükseldi. [duraklama] Yani maaşı fena değildi. Ama içinde bir kaşıntı vardı. Rakamlar.
+Sonra büyüdü, Oxford'da fizik okudu ve Londra'nın finans dünyasına girdi. Yaklaşık on iki yıl yatırım fonunda çalıştı, Deutsche Bank'ta türev ürün trader'lığı yaptı, Bank of America'da başkan yardımcılığına kadar çıktı. Maaşı fenaydı ama içinde bir kaşıntı vardı: rakamlar.
 
-2001'de hayatı döndü. Tony Bloom adında bir bahisçi, onu kendi şirketine aldı. Orada Benham, Asya bahis piyasasında bir istatistik modeli kullanmaya başladı. Model, Lancaster Üniversitesi'nden iki akademisyenin işiydi. Mantık basitti: Bir maçın hangi skorla biteceğini, bahis şirketlerinden daha iyi hesaplamak. Ve işe yaradı. Anlatılana göre ciddi bir para kazandı. [duraklama]
+2001'de hayatı döndü. Tony Bloom adında bir bahisçi onu kendi şirketine aldı. Orada Benham, Asya bahis piyasasında bir istatistik modeli kullandı. Model, Lancaster Üniversitesi'nden iki akademisyenin işiydi. Mantığı basit: Bir maçın nasıl biteceğini, bahis şirketlerinden daha iyi tahmin etmek. Ve işe yaradı. Anlatılana göre ciddi para kazandı. [duraklama]
 
-Ama işin tuhaf tarafı şu: Bloom'la yolları ayrıldı. 2004'te kendi şirketini kurdu. Adı Smartodds. Londra'nın Kentish Town semtinde, profesyonel bahisçilere futbol modelleri satıyor. Bir adam futbolu hesapla çözüyor, kasası dolu. Ama aklı hâlâ başka yerde: çocukluk kulübünde. [duraklama]
+2004'te Bloom'la yolları ayrıldı, kendi şirketini kurdu: Smartodds. Londra'nın Kentish Town semtinde, profesyonel bahisçilere futbol modelleri satıyor. Kasası dolu. Ama aklı hâlâ çocukluk kulübünde.
 
-2005. Brentford batmak üzere. Taraftar derneği, yani Bees United, kulübü kurtarmak için zengin yatırımcı arıyor. Benham bir gazete yazısında bunu okuyor. Ve ne yapıyor? Kapıdan "ben geldim" diye girmiyor. İsmini saklıyor. Bir süre "gizemli yatırımcı" olarak kalıyor. Kulüp bile onun kim olduğunu tam bilmiyor. [duraklama]
+2005. Brentford batmak üzere. Taraftar derneği kulübü kurtarmak için zengin yatırımcı arıyor. Benham bunu bir gazetede okuyor ve kapıdan "ben geldim" diye girmiyor. İsmini saklıyor. Bir süre "gizemli yatırımcı" olarak kalıyor. [duraklama]
 
-2007'de hamlesi büyüdü. Yaklaşık üç milyon sterlin ödeyip kulübün borçlarını üstlendi. Üstelik beş yıl boyunca faiz de almayacağını söyledi. 2009'da bir adım daha attı: Beş yıl boyunca her yıl bir milyon sterlin koyacaktı, karşılığında imtiyazlı hisse ve ileride çoğunluk ortaklığı hakkı. [duraklama] Yani sanki bir bahis gibi. Ama bu sefer oynadığı, kasasının tamamı değil, çocukluğuydu.
+2007'de yaklaşık üç milyon sterlin ödeyip kulübün borçlarını üstleniyor, beş yıl faiz de almayacağını söylüyor. 2009'da, beş yıl boyunca her yıl bir milyon sterlin koymayı kabul ediyor. Karşılığında hisse, ve çoğunluk ortaklığı hakkı. Haziran 2012'de, kulüp üçüncü ligdeyken, taraftar derneği tüm kontrolü ona devrediyor. Ve ondan on gün sonra ne yapıyor? Kew Bridge istasyonunun yakınında yeni stadyum için arsa alıyor. Üçüncü ligde olan bir kulüp, stadyum arsası alıyor. [duraklama]
 
-Haziran 2012. Brentford o zaman üçüncü ligde. Bees United, kulübün tüm kontrolünü ona devretmeye oy verdi. Ve işte burada tuhaf bir detay var: Yaklaşık on gün sonra Benham, Kew Bridge istasyonunun yakınında bir arsa satın aldı. Neden? Yeni stadyum için. Üçüncü ligde olan, kimsenin tanımadığı bir kulüp, yeni stadyum arsası alıyor. Herkes "bu adam ne yapıyor" diye bakıyor. [duraklama]
+Sonra matematik devreye girdi. Oyuncuları sezgiyle değil veriyle alıyorsun. Ucuz ama istatistiği güçlü olanı bulursun, geliştirirsin, pahalıya satarsın. Aynı yöntemi 2014'te Danimarka'da FC Midtjylland'da da denedi, altı buçuk milyon sterline çoğunluk hissesi aldı. 2015'te Midtjylland tarihinde ilk kez şampiyon oldu. Aynı adam, iki ülke, iki küçük kulüp, aynı formül. Ben buna tesadüf diyemiyorum. [duraklama]
 
-Sonra işin matematikçi tarafı devreye girdi. 2013'te Mark Warburton'ı teknik direktör yaptı. 2014-15 sezonunda Brentford yirmi bir yıl sonra ilk kez Championship'e, yani ikinci lige çıktı. Taraftar sokaklara döküldü. [duraklama] Ama asıl kıyamet ondan sonra koptu.
+Brentford 2015'te yirmi bir yıl sonra ikinci lige çıktı. 2020'de play-off finalinde Fulham'a kaybetti. Bir basamak kala. Ama aynı yıl beş milyon sterline aldıkları golcü, Ivan Toney, sahanın en gözde ismine dönüşmüştü. 2021'de Wembley'de Swansea'yı ikiye sıfır yendiler ve tam yetmiş dört yıl sonra Premier Lig'e çıktılar. Final golünü atan isim, Ivan Toney. [duraklama]
 
-Benham, kulübü bahis modeliyle yönetmeye başladı. Bu ne demek? Oyuncuları sezgiyle değil, veriyle alacaksın. Ucuz ama istatistiği güçlü oyuncuları bulacaksın, geliştireceksin, sonra pahalıya satacaksın. Bunu daha önce başka kulüpler denemişti ama Benham işi bir adım ileri taşıdı. İşte tam burada Warburton ile arası bozuldu. Haberlere göre transferlerdeki söz hakkı elinden alındı, taktik talimatlar da tartışma konusu oldu. Warburton 2015'te ayrılacağını açıkladı. [duraklama] Taraftar ikiye bölündü. Biri "bu adam kulübü bozuyor" dedi, diğeri "bırakın bakalım".
+Şimdi hikâyenin karanlık kısmı. 2023'ün Mart ayında Toney'in bahis kurallarını ihlal ettiği ortaya çıktı. Futbol Federasyonu onu 262 maddeyle suçladı. Otuzunu geri çekti, Toney geri kalan 232'sini kabul etti. İhlaller 25 Şubat 2017 ile 23 Ocak 2021 arasındaki dönemi kapsıyordu. Ceza: Sekiz ay futbol yasağı, elli bin sterlin para cezası ve gelecek için uyarı. 16 Ocak 2024'e kadar. [duraklama] Haberlere göre ceza, kumar bağımlılığı teşhisi dikkate alınarak indirildi. Yani bir oyuncu, bahis kuralını yüzlerce kez çiğnedi, bunu kabul etti ve cezasını aldı. Kural açık: Futbolla ilgisi olan hiç kimse dünyanın hiçbir yerinde bir futbol maçına bahis oynayamaz. [duraklama]
 
-Benham o sıralar Danimarka'da da aynı oyunu oynuyordu. 2014'te FC Midtjylland'ın çoğunluk hissesini aldı, yaklaşık altı buçuk milyon sterlin yatırdı. Aynı veri modeli, aynı mantık. Ve 2015'te Midtjylland, tarihinde ilk kez Danimarka şampiyonu oldu. [duraklama] Aynı adam, iki ülkede iki küçük kulüp, ikisinde de aynı formül. Tesadüf mü? Ben inanmıyorum.
+İşte tam burada Guardian'ın haberi devreye giriyor. Gazeteye göre Benham'ın, kendi adına açılmış, İngiltere merkezli bir ortaklık üzerinden futbol bahislerinden para kazandığına dair kanıtlar vardı. Aynı gazete, Federasyonun kulüp sahipleriyle "belirsiz bir düzenleme" yaptığını yazdı. Bu düzenlemenin ne olduğu, kamuoyuna açıklanmadı. Benham'ın cevabı kısa: Federasyonun tüm bahis kurallarına uyduğunu söylüyor. [duraklama] Burada net olalım: Benham hakkında bir ceza kararı yok. Haberler, bir iddianın ve bir eleştirinin ötesine geçmiyor. Ama soru, ortada duruyor.
 
-2015'te Brentford'a iki isim daha geldi. Phil Giles, Benham'ın kendi şirketinde çalışmış bir matematikçi. Bir de Rasmus Ankersen. İkisi birlikte futbol direktörü oldu. Ve sistem oturdu: Veriyle oyuncu bul, geliştir, sat. Ivan Toney'i yaklaşık beş milyon sterline aldılar. Hatırla, çünkü bu isim çok önemli olacak. [duraklama]
+Eleştirenler şunu söyledi: Bir oyuncu hem kural dışı bahis oynadığı için ağır ceza alırken, kulübün sahibi profesyonel bahisçilik yapabiliyorsa, ortada çifte standart var. Hele ki o sahip, takımın seçimini etkileyebilecek konumdaysa. Federasyon ise bu düzenlemenin ayrıntısını anlatmadı. [duraklama]
 
-2018'de teknik direktörlüğe Thomas Frank geldi. 2020'de Brentford, Championship play-off finalinde Fulham'a kaybetti. Bir basamak kala. İnsan o an düşünür: Bu kadar emek, bu kadar para, bu kadar rakam. Ve olmadı. [duraklama] Ağustos 2020'de ise on yedi bin kişilik yeni stadyum açıldı. Ama koronavirüs yüzünden tribünlerde seyirci yoktu. Hayatının eseri hazır, ve içeride tek bir kişi yok.
+Benham kendisi, Toney'in davasında bir rol oynamadı. Bu da kayıtlara geçsin. Ama hikâye şunu gösteriyor: Aynı futbol dünyasında, bahisten kazanan ve bahisten ceza alan, aynı kulübün çatısı altında yaşadı. [duraklama]
 
-Ve 2021. Play-off finali yine Brentford'un önünde. Rakip Swansea. Maç Wembley'de oynanıyor. Skor ikiye sıfır bitiyor ve Brentford, tam yetmiş dört yıl sonra, 1947'den beri ilk kez en üst lige çıkıyor. Golü atan isim de, evet, o beş milyon sterline alınan Ivan Toney. [duraklama]
+Bu arada Benham 2023'te Midtjylland'daki hisselerini sattı. Brentford ise Premier Lig'de dört sezon boyunca küme düşmedi. Benham, 2022'de yapılan on bin beş yüz taraftarlık bir ankette Premier Lig'in en çok onay alan sahibiydi. Bir sıralamada da en az zengin sahibi olarak çıktı. Yani sevgi var, sonuç var, soru da var. [duraklama]
 
-Hikâyenin ucu burada kapanmıyor. Sonrasında Brentford, Premier Lig'de dört sezon boyunca küme düşmedi. Benham'ın kendisi ise bir sıralamada Premier Lig'in en az zengin sahibi çıktı. Yani zenginler arasında en fakiri, ama sahadaki sonuç başka. [duraklama] 2022'de on bin beş yüz taraftarla yapılan bir ankette, Premier Lig sahipleri arasında en yüksek onay oranına sahip isim de oydu. 2023'te de Midtjylland'daki hisselerini sattı.
+Ben şöyle düşünüyorum: Bir kural, sadece oyuncuya uygulanıyorsa kural değildir, sınavdır. Ama kimin sınava girdiğine karar verenler de, kuralı yazanlardır. Bu, sadece Brentford'un sorusu değil. Bütün futbolun sorusu. [duraklama]
 
-Bence hikâyenin özü şu: On bir yaşında gittiği maç, elli küsur yaşında bir kulübün sahibi yaptı onu. Arada para değil, inat vardı. [duraklama]
-
-Ama bir soru kafamda kaldı. Bir kulübü matematikle yönetmek, futbolun ruhunu öldürür mü? Taraftar sevdiği oyuncuyu satılırken izliyor. Her yıl en iyi isimler gidiyor. Bunu kabul edebilir misin? Yoksa "ben sevdiğim takımı kazanırken görmek isterim, kâr etsin etmesin" mi dersin?
-
-Yorumlara yaz. Sen Brentford taraftarı olsan Benham'a teşekkür mü ederdin, yoksa küsmüş mü olurdun? [duraklama] Artık son tanık sizsiniz.
+Şimdi sana soruyorum. Bir oyuncu bahis kuralını çiğnediği için sekiz ay men edildiyse, kulüp sahibinin profesyonel bahisçi olması adil mi? Yoksa kural, oyunu sahada oynayanlar için mi var? Yorumlara yaz. [duraklama] Artık son tanık sizsiniz.
 
 ## Kaynaklar
-- Wikipedia (Matthew Benham): doğum, eğitim, kariyer, Premier Bet/Smartodds, 2005-2012 yatırım, Warburton, Giles/Ankersen, Frank, 2020 stadyum, 2021 yükselme, Midtjylland, anket
-- Football Park ("How a professional gambler turned Brentford into a Premier League mainstay"): borç devri, imtiyazlı hisse, Ivan Toney bedeli, stadyum, yükselme
-- Yahoo Sports / CBS / Sky Sports: 2021 play-off finali Swansea 2-0, 74 yıl sonra üst lig
+- Wikipedia (Matthew Benham): doğum, eğitim, kariyer, Premier Bet/Smartodds, 2005-2012 yatırım, Midtjylland, 2020-21 dönemi, anket
+- Football Park: borç devri, imtiyazlı hisse, Toney bedeli, 2021 yükselme
+- The FA (17 Mayıs 2023, "Ivan Toney suspended, fined and warned for betting breaches"): 262 suçlama, 30'u geri çekildi, 232 kabul, 25 Şubat 2017 - 23 Ocak 2021, 8 ay, 50.000 £, 16 Ocak 2024
+- iGaming Business ("Red card for double standards") ve Irish Times: Guardian'ın Benham haberi, Federasyonun belirsiz düzenlemesi, Benham'ın "tüm kurallara uyuyorum" cevabı, çifte standart eleştirisi
+- ESPN: ceza indirimi ve kumar bağımlılığı teşhisi
+- Yahoo / CBS / Sky: 2021 play-off finali Swansea 2-0, Toney golü
 
 ## KONTROL ET (2 dakika)
-1. Final golünü Toney'in attığı kaynak başlığında geçiyor ("Ivan Toney strikes"). Gol dakikasını yazmadım.
-2. "Gizemli yatırımcı" ayrıntısı Wikipedia'dan. Detay için bir kez daha kontrol edebilirsin.
-3. Net servet rakamı yazmadım, kaynaklarda yok. Böyle kalsın.
-4. Maç skoru 2-0: bir kaynakta açık, gol dakikalarını yazmadım.
-5. Yaş: "elli küsur". 1968 doğumlu, 2026'da 58. Doğru.
-6. Warburton ayrılığı haberlere dayalı, "haberlere göre" diye yazıldı.
+1. Benham hakkında ceza veya yasal karar YOK. Metinde bunu açıkça söyledim. Guardian haberi "iddia ve eleştiri" olarak çerçevelendi. Bu kısım yasal risk taşır, olduğu gibi bırak.
+2. Guardian'ın haberi dolaylı kaynaktan (iGaming Business) alındı. İstersen Guardian'ın orijinal haberine bir kez bak.
+3. Toney'in cezasının "kumar bağımlılığı teşhisiyle indirildiği" ESPN başlığına dayanıyor. Metinde "haberlere göre" dedim.
+4. Net servet rakamı yok, kaynaklarda bulunmadı.
+5. Metin yaklaşık 1200 kelime. Yavaş okursan 10-11 dakika.
