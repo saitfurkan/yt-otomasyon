@@ -1,6 +1,8 @@
 name: Uctan uca deneme
 on:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   deneme:
     runs-on: ubuntu-latest
@@ -19,7 +21,7 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          AI_IMAGE_MAX: "12"
+          AI_IMAGE_MAX: "40"
       - uses: actions/upload-artifact@v4
         with:
           name: deneme
@@ -47,3 +49,11 @@ jobs:
           [ -f _out/onizleme.mp4 ] && curl -s -F chat_id=$CHAT -F video=@_out/onizleme.mp4 -F supports_streaming=true "https://api.telegram.org/bot$T/sendVideo" | head -c 200
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      - name: Ornek kareleri kaydet
+        if: always()
+        run: |
+          mkdir -p ornekler
+          for t in 8 20 45 80 120; do ffmpeg -y -loglevel error -ss $t -i _out/video.mp4 -vframes 1 -vf scale=960:-2 ornekler/kare_$t.jpg || true; done
+          cp _out/kapak.jpg ornekler/kapak_son.jpg || true
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add ornekler && git commit -m "ornek kareler" && git pull --rebase && git push || true

@@ -242,8 +242,9 @@ def gemini_queries(paragraphs):
         return [random.sample(GENERIC_QUERIES, 2) for _ in paragraphs]
 
 
-STYLE = ("cinematic documentary photograph, dramatic low-key lighting, muted desaturated colors, 35mm film look, "
-         "shallow depth of field, realistic, no text, no letters, no logos, no recognizable faces")
+STYLE = ("graphic novel noir illustration, bold ink lines, dramatic chiaroscuro lighting, limited palette of black, warm grey "
+         "and deep red-orange accents, stylized illustrated adult characters, painterly texture, cinematic wide composition, "
+         "no text, no letters, no numbers, no logos, no signature")
 AI_STATE = {"used": 0, "dead": False}
 
 
@@ -265,7 +266,8 @@ def ai_scene_prompts(paragraphs):
                 "İngilizce sahne tarifi yaz (görsel üretim yapay zekası için). Somut ol: mekân, nesne, ışık, eylem "
                 "(ör. 'a bank employee's empty desk at night with a glowing computer screen showing a long row of "
                 "numbers'). Gerçek kişileri, ünlüleri, marka ve logoları, yazı içeren nesneleri anlatma; insanlar "
-                "gerekiyorsa arkadan, siluet ya da uzaktan göster. Her tarif tek cümle, 15-30 kelime.\n\n"
+                "gerekiyorsa arkadan, siluet ya da uzaktan göster. Karakterler her zaman yetişkin olsun (çocuk ya da genç gösterme). "
+                "Her tarif tek cümle, 15-30 kelime.\n\n"
                 f"{listing}\n\nSadece JSON: {{\"scenes\": [[\"a\",\"b\",\"c\"], ...]}} ({len(chunk)} liste)")
             _, data = sw.generate(key, models, prompt, json_out=True, temperature=0.5, max_tokens=6000)
             sc = data.get("scenes", [])
@@ -323,11 +325,11 @@ def ai_clips(scenes, orientation, workdir, tag, need):
 
 def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search):
     """Paragraf süresine göre yapay zeka görselleri ve stok videoyu dönüşümlü dizer (hareket + konu bağı)."""
-    per = 10.0
+    per = 9.0
     total_n = max(1, round(d / per))
-    n_ai = max(1, total_n // 2) if scenes else 0
+    n_ai = max(1, -(-total_n * 2 // 3)) if scenes else 0
     ai = ai_clips(scenes, orientation, workdir, tag, n_ai)
-    vids = fetch_clips(queries, orientation, workdir, used, need=max(1, total_n - len(ai)), search=search)
+    vids = fetch_clips(queries, orientation, workdir, used, need=max(1, total_n - len(ai)) if len(ai) < total_n else 0, search=search)
     out = []
     for i in range(max(len(ai), len(vids))):
         if i < len(vids):
@@ -446,17 +448,22 @@ def tr_upper(s):
     return s.replace("i", "İ").replace("ı", "I").upper()
 
 
-def grade_filter(W, H, each, idx=0, caption=None, letterbox=True):
+def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False):
     """Belgesel görünümü: yavaş kamera hareketi, renk düzeltme, film greni, sinema bantları, künye yazısı."""
     zoom = 1.14
     ww, hh = int(W * zoom), int(H * zoom)
-    dx = (ww - W)
-    dy = (hh - H)
     mode = idx % 4
     xe = ["(iw-ow)*t/%f" % each, "(iw-ow)*(1-t/%f)" % each, "(iw-ow)/2", "(iw-ow)/2"][mode]
     ye = ["(ih-oh)/2", "(ih-oh)/2", "(ih-oh)*t/%f" % each, "(ih-oh)*(1-t/%f)" % each][mode]
-    f = (f"scale={ww}:{hh}:force_original_aspect_ratio=increase,crop={W}:{H}:x='{xe}':y='{ye}',setsar=1,fps=30,"
-         "eq=brightness=-0.06:saturation=0.62:contrast=1.14,"
+    if still:      # kare çizimi baştan sona tarayan kamera: tüm kompozisyon görünür
+        if W > H:
+            sc, xe, ye = f"scale={W}:-2", "0", ("(ih-oh)*t/%f" % each) if idx % 2 == 0 else ("(ih-oh)*(1-t/%f)" % each)
+        else:
+            sc, ye, xe = f"scale=-2:{H}", "0", ("(iw-ow)*t/%f" % each) if idx % 2 == 0 else ("(iw-ow)*(1-t/%f)" % each)
+    else:
+        sc = f"scale={ww}:{hh}:force_original_aspect_ratio=increase"
+    f = (f"{sc},crop={W}:{H}:x='{xe}':y='{ye}',setsar=1,fps=30,"
+         "eq=brightness=-0.05:saturation=0.85:contrast=1.1,"
          "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,vignette=PI/4.5,noise=alls=5:allf=t")
     if letterbox and W > H:
         bar = int(H * 0.095)
@@ -491,7 +498,7 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
     for i in range(n):
         c = clips[i % len(clips)]
         p = os.path.join(workdir, f"seg_{tag}_{i}.mp4")
-        vf = grade_filter(W, H, each, i + random.randint(0, 3), caption if i == 0 else None)
+        vf = grade_filter(W, H, each, i + random.randint(0, 3), caption if i == 0 else None, still=bool(c.get("still")))
         if c.get("still"):
             src = ["-loop", "1", "-framerate", "30", "-i", c["path"]]
         else:
@@ -573,7 +580,7 @@ def make_watermark(path, w=150):
 
 
 # ------------------------------------------------------------------ kapak
-def make_thumbnail(frame_png, text, out_jpg, tag="DOSYA"):
+def make_thumbnail(frame_png, text, out_jpg, tag="DOSYA", keep_color=False):
     """Kendine özgü, sade ve kaliteli kapak: koyu duotone görüntü, serif başlık, altın vurgu, anahtar deliği imzası."""
     from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
     W, H = 1280, 720
@@ -588,9 +595,12 @@ def make_thumbnail(frame_png, text, out_jpg, tag="DOSYA"):
         im = im.crop((x0, y0, x0 + W, y0 + H))
     else:
         im = Image.new("RGB", (W, H), (22, 22, 26))
-    g = ImageOps.autocontrast(ImageOps.grayscale(im), cutoff=2)
-    g = ImageEnhance.Contrast(g).enhance(1.25)
-    im = ImageOps.colorize(g, black=(6, 6, 9), mid=(70, 62, 58), white=(236, 226, 208)).convert("RGBA")
+    if keep_color:
+        im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.05)).enhance(1.12).convert("RGBA")
+    else:
+        g = ImageOps.autocontrast(ImageOps.grayscale(im), cutoff=2)
+        g = ImageEnhance.Contrast(g).enhance(1.25)
+        im = ImageOps.colorize(g, black=(6, 6, 9), mid=(70, 62, 58), white=(236, 226, 208)).convert("RGBA")
     # soldan koyu geçiş + alt karartma
     sh = Image.new("RGBA", (W, H))
     sd = ImageDraw.Draw(sh)
@@ -777,7 +787,13 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     elif first_clip:
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", "1", "-i", first_clip, "-vframes", "1", frame])
     cover_text = meta.get("KAPAK") or meta["BAŞLIK"].split(":")[0]
-    thumb = make_thumbnail(frame if os.path.exists(frame) else None, cover_text, os.path.join(outdir, "kapak.jpg"))
+    tpath, tcolor = (frame if os.path.exists(frame) else None), False
+    if scenes and scenes[0] and os.environ.get("CF_API_TOKEN"):
+        tp = cf_image(scenes[0][0] + ", one dramatic stylized adult character in close-up on the right side of the frame, "
+                      "large dark empty space on the left", "landscape", os.path.join(workdir, "thumb_ai.png"))
+        if tp:
+            tpath, tcolor = tp, True
+    thumb = make_thumbnail(tpath, cover_text, os.path.join(outdir, "kapak.jpg"), keep_color=tcolor)
 
     # shorts
     shorts = []
