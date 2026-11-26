@@ -457,7 +457,7 @@ def grade_filter(W, H, each, idx=0, caption=None, letterbox=True):
     ye = ["(ih-oh)/2", "(ih-oh)/2", "(ih-oh)*t/%f" % each, "(ih-oh)*(1-t/%f)" % each][mode]
     f = (f"scale={ww}:{hh}:force_original_aspect_ratio=increase,crop={W}:{H}:x='{xe}':y='{ye}',setsar=1,fps=30,"
          "eq=brightness=-0.06:saturation=0.62:contrast=1.14,"
-         "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,vignette=PI/4.5,noise=alls=9:allf=t")
+         "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,vignette=PI/4.5,noise=alls=5:allf=t")
     if letterbox and W > H:
         bar = int(H * 0.095)
         f += f",drawbox=x=0:y=0:w=iw:h={bar}:color=black@1:t=fill,drawbox=x=0:y={H - bar}:w=iw:h={bar}:color=black@1:t=fill"
@@ -478,7 +478,7 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
     parts = []
     if not clips:
         base = f"gradients=s={W}x{H}:c0=0x0b0d12:c1=0x1b2433:speed=0.01:d={total:.2f}:r=30"
-        vf = f"noise=alls=9:allf=t,format=yuv420p"
+        vf = f"noise=alls=5:allf=t,format=yuv420p"
         if caption:
             cap = caption.replace("'", "").replace(":", "\\:")
             vf = f"drawtext=fontfile={FONT_BOLD_PATH}:text='{cap}':fontsize=64:fontcolor=white:x=86:y=h*0.15," + vf
@@ -762,8 +762,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     final = os.path.join(outdir, "video.mp4")
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video_full, "-i", cat,
-         "-vf", f"ass='{ass_esc}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "21",
-         "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
+         "-vf", f"ass='{ass_esc}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
+         "-maxrate", "6M", "-bufsize", "12M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
     log(f"Video hazır: {duration(final) / 60:.1f} dk")
 
     # kapak
@@ -803,8 +803,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
         out = os.path.join(outdir, f"short{n}.mp4")
         sa = sass.replace("\\", "/").replace(":", "\\:")
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", sv, "-i", swav,
-             "-vf", f"ass='{sa}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
-             "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out])
+             "-vf", f"ass='{sa}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
+             "-maxrate", "5M", "-bufsize", "10M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out])
         first = " ".join(paras[a].split()[:9])
         shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first})
         log(f"   short{n}: {t1 - t0:.0f} sn")
