@@ -125,7 +125,8 @@ def main():
         models = sw.model_candidates(key)
     except sw.GenerationFailed as e:
         sw.write_error(str(e)); sys.exit(1)
-    sw.SECTIONS[:] = STORY_SECTIONS
+    focus = " Başlıktaki olay hikâyenin merkezidir; bu olayı sahne sahne, ayrıntılı anlat. Ona doğrudan bağlı olmayan yan olaylara (başka turnuva, başka ülke, güncel söylenti) en fazla 2 cümle ayır."
+    sw.SECTIONS[:] = [(n, b + focus if n not in ("KANCA", "KAPANIŞ") else b, w, sc) for n, b, w, sc in STORY_SECTIONS]
     notes = []
     for st in todo[:3]:
         topic = {"title": st["title"]}
