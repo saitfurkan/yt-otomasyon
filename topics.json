@@ -1,74 +1,198 @@
 {
-  "generated": "2026-11-25 18:57 UTC",
+  "generated": "2026-11-26 09:11 UTC",
   "errors": [
+    "AA: Remote end closed connection without response",
     "T24: syntax error: line 1, column 0"
   ],
   "selected": {
-    "score": 33,
-    "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
+    "score": 36,
+    "title": "Kepez Belediyesi'ne yolsuzluk operasyonunda 21 tutuklama",
     "sources": [
+      "BBC Türkçe",
       "BirGün",
-      "CNN Türk",
+      "Cumhuriyet",
       "Hürriyet",
       "NTV",
-      "Sözcü"
+      "Sabah",
+      "Sözcü",
+      "TRT Haber"
     ],
     "links": [
       {
         "source": "NTV",
-        "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
-        "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
-        "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
-      },
-      {
-        "source": "CNN Türk",
-        "url": "https://www.cnnturk.com/turkiye/sile-belediyesi-davasinda-haluk-leventten-dikkat-ceken-sozler-onun-yerine-benim-tutuklanmam-gerekiyor-3498211",
-        "title": "Şile Belediyesi davasında Haluk Levent'ten dikkat çeken sözler: \"Onun yerine benim tutuklanmam gerekiyor\"",
-        "summary": "Şile Belediyesi'ne yönelik rüşvet ve yolsuzluk soruşturması kapsamında 53 sanığın yargılandığı davanın 11'inci duruşması görüldü. Duruşmada tanık olarak dinlenen sanatçı Haluk Levent, asistanı Yeliz Kaya'nın hesaplarının kendisi tarafından kullanıldığını belirterek, \"Bu nedenle Yeliz Kaya'nın mahkemenizin Şile dosyasıyla ilgili hiçbir alakası yoktur. Onun yerine benim tutuklanmam gerekiyor\" dedi. Duruşma yarına ertelendi."
-      },
-      {
-        "source": "Hürriyet",
-        "url": "https://www.hurriyet.com.tr/gundem/sile-belediyesi-yolsuzluk-davasinda-haluk-levent-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43391173",
-        "title": "Şile Belediyesi ‘yolsuzluk’ davasında Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor /",
-        "summary": ""
-      },
-      {
-        "source": "Hürriyet",
-        "url": "https://www.hurriyet.com.tr/gundem/sile-belediyesine-yonelik-yolsuzluk-davasi-haluk-levent-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43390375",
-        "title": "Şile Belediyesi'ne yönelik ‘yolsuzluk’ davası | Haluk Levent tanık olarak dinlendi: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
-        "summary": ""
+        "url": "https://www.ntv.com.tr/turkiye/kepez-belediyesine-yolsuzluk-operasyonunda-21-tutuklama-1752671",
+        "title": "Kepez Belediyesi'ne yolsuzluk operasyonunda 21 tutuklama",
+        "summary": "Antalya'da Kepez Belediyesi'ne yönelik yolsuzluk soruşturmasında gözaltına alınan 21 şüpheli tutuklandı. Antalya'da Kepez Belediyesi'ne yönelik yolsuzluk soruşturmasında 21 şüpheli hakkında tutuklama kararı verildi. Antalya Cumhuriyet Başsavcılığınca yürütülen soruşturmada, 22 Kasım günü gözaltına alınan ve emniyetteki işlemlerin ardından adliyeye sevk edilen zanlıların savcılık sorguları geç saatlere kadar sürdü. Nöbetçi sulh ceza hakimliğine çıkarılan şüphelilerden İmar Müdürü E.K, Destek Hizm"
       },
       {
         "source": "BirGün",
-        "url": "https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345",
-        "title": "Haluk Levent Şile Belediyesi davasında tanık olarak ifade verdi: \"Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\"",
-        "summary": "Şile Belediyesi'ne yönelik davanın 11'inci duruşmasında tanık olarak dinlenen Haluk Levent, asistanı olduğunu ifade ettiği Yeliz Kaya adına açılan banka hesaplarını kendisinin kullandığını ifade etti. Ahbap derneği için ise \"Ahbap Derneği toplanan bağışların yüzde 94'ünü deprem bölgesine aktaran dünyanın en büyük ve en başarılı derneğidir. Çaldığım iddia edilen paralar yönetim kurulu kararı ile karar defterine işlenen paralardır. Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\" dedi."
+        "url": "https://www.birgun.net/haber/kepez-belediyesi-operasyonu-21-kisi-tutuklandi-748535",
+        "title": "Kepez Belediyesi operasyonu: 21 kişi tutuklandı",
+        "summary": "Antalya'da Kepez Belediyesi'ne yönelik \"rüşvet\", \"ihaleye fesat karıştırma\" ve \"edimin ifasına fesat karıştırma\" iddialarıyla yürütülen soruşturmada 24 kişi gözaltına alındı. Adliyeye sevk edilen 21 kişi tutuklanırken, 3 kişi adli kontrol şartıyla serbest bırakıldı."
       },
       {
-        "source": "Sözcü",
-        "url": "https://www.sozcu.com.tr/haluk-levent-mahkemede-konustu-onun-yerine-beni-tutuklayin-p384321",
-        "title": "Haluk Levent mahkemede konuştu: \"Onun yerine beni tutuklayın\"",
+        "source": "TRT Haber",
+        "url": "https://www.trthaber.com/haber/turkiye/kepez-belediyesine-rusvet-sorusturmasi-21-tutuklama-964497.html",
+        "title": "Kepez Belediyesi'ne rüşvet soruşturması: 21 tutuklama",
+        "summary": "Antalya'da, Kepez Belediyesine yönelik yürütülen soruşturma kapsamında \"rüşvet\", \"kamu kurum ve kuruluşlarının ihalesine fesat karıştırma\" ve \"edimin ifasına fesat karıştırma\" suçlarından gözaltına alınan 24 şüpheliden 21'i tutuklandı, 3'ü adli kontrol şartıyla serbest bırakıldı."
+      },
+      {
+        "source": "Cumhuriyet",
+        "url": "https://www.cumhuriyet.com.tr/turkiye/kepez-belediyesi-ne-yonelik-operasyonda-yeni-gelisme-21-kisi-tutuklandi-2559533",
+        "title": "Kepez Belediyesi'ne yönelik operasyonda yeni gelişme: 21 kişi tutuklandı",
+        "summary": "Antalya'da Kepez Belediyesi’ne yönelik 'rüşvet' operasyonunda gözaltına alınan 24 şüpheliden 21'i tutuklandı."
+      },
+      {
+        "source": "BBC Türkçe",
+        "url": "https://www.bbc.com/turkce/articles/c6y0xy47q4wpo?at_medium=RSS&at_campaign=rss",
+        "title": "Antalya Kepez Belediyesi'ne yönelik soruşturmada 21 kişi tutuklandı",
+        "summary": "Antalya Cumhuriyet Başsavcılığı tarafından Antalya Kepez Belediyesi hakkında yürütülen soruşturma kapsamında gözaltına alınan 24 kişiden 21'i tutuklandı. Tutuklananlar arasında eski belediye başkanı da var."
+      },
+      {
+        "source": "Hürriyet",
+        "url": "https://www.hurriyet.com.tr/gundem/kepez-belediyesine-yonelik-rusvet-operasyonu-21-kisi-tutuklandi-43391409",
+        "title": "Kepez Belediyesi'ne yönelik rüşvet operasyonu: 21 kişi tutuklandı",
         "summary": ""
       }
     ],
     "reasons": [
-      "suç:+21",
-      "para:+3",
-      "güç:+3",
-      "merak:+1",
-      "gürültü:-6"
+      "suç:+22",
+      "güç:+6",
+      "gürültü:-4",
+      "rakam:+1"
     ],
-    "sensitive": false,
+    "sensitive": true,
     "single_source": false,
-    "newest": "2026-11-25T21:11:17+00:00"
+    "newest": "2026-11-26T10:16:51+03:00"
   },
   "topics": [
     {
+      "score": 36,
+      "title": "Kepez Belediyesi'ne yolsuzluk operasyonunda 21 tutuklama",
+      "sources": [
+        "BBC Türkçe",
+        "BirGün",
+        "Cumhuriyet",
+        "Hürriyet",
+        "NTV",
+        "Sabah",
+        "Sözcü",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/kepez-belediyesine-yolsuzluk-operasyonunda-21-tutuklama-1752671",
+          "title": "Kepez Belediyesi'ne yolsuzluk operasyonunda 21 tutuklama",
+          "summary": "Antalya'da Kepez Belediyesi'ne yönelik yolsuzluk soruşturmasında gözaltına alınan 21 şüpheli tutuklandı. Antalya'da Kepez Belediyesi'ne yönelik yolsuzluk soruşturmasında 21 şüpheli hakkında tutuklama kararı verildi. Antalya Cumhuriyet Başsavcılığınca yürütülen soruşturmada, 22 Kasım günü gözaltına alınan ve emniyetteki işlemlerin ardından adliyeye sevk edilen zanlıların savcılık sorguları geç saatlere kadar sürdü. Nöbetçi sulh ceza hakimliğine çıkarılan şüphelilerden İmar Müdürü E.K, Destek Hizm"
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/kepez-belediyesi-operasyonu-21-kisi-tutuklandi-748535",
+          "title": "Kepez Belediyesi operasyonu: 21 kişi tutuklandı",
+          "summary": "Antalya'da Kepez Belediyesi'ne yönelik \"rüşvet\", \"ihaleye fesat karıştırma\" ve \"edimin ifasına fesat karıştırma\" iddialarıyla yürütülen soruşturmada 24 kişi gözaltına alındı. Adliyeye sevk edilen 21 kişi tutuklanırken, 3 kişi adli kontrol şartıyla serbest bırakıldı."
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/turkiye/kepez-belediyesine-rusvet-sorusturmasi-21-tutuklama-964497.html",
+          "title": "Kepez Belediyesi'ne rüşvet soruşturması: 21 tutuklama",
+          "summary": "Antalya'da, Kepez Belediyesine yönelik yürütülen soruşturma kapsamında \"rüşvet\", \"kamu kurum ve kuruluşlarının ihalesine fesat karıştırma\" ve \"edimin ifasına fesat karıştırma\" suçlarından gözaltına alınan 24 şüpheliden 21'i tutuklandı, 3'ü adli kontrol şartıyla serbest bırakıldı."
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/kepez-belediyesi-ne-yonelik-operasyonda-yeni-gelisme-21-kisi-tutuklandi-2559533",
+          "title": "Kepez Belediyesi'ne yönelik operasyonda yeni gelişme: 21 kişi tutuklandı",
+          "summary": "Antalya'da Kepez Belediyesi’ne yönelik 'rüşvet' operasyonunda gözaltına alınan 24 şüpheliden 21'i tutuklandı."
+        },
+        {
+          "source": "BBC Türkçe",
+          "url": "https://www.bbc.com/turkce/articles/c6y0xy47q4wpo?at_medium=RSS&at_campaign=rss",
+          "title": "Antalya Kepez Belediyesi'ne yönelik soruşturmada 21 kişi tutuklandı",
+          "summary": "Antalya Cumhuriyet Başsavcılığı tarafından Antalya Kepez Belediyesi hakkında yürütülen soruşturma kapsamında gözaltına alınan 24 kişiden 21'i tutuklandı. Tutuklananlar arasında eski belediye başkanı da var."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/kepez-belediyesine-yonelik-rusvet-operasyonu-21-kisi-tutuklandi-43391409",
+          "title": "Kepez Belediyesi'ne yönelik rüşvet operasyonu: 21 kişi tutuklandı",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+22",
+        "güç:+6",
+        "gürültü:-4",
+        "rakam:+1"
+      ],
+      "sensitive": true,
+      "single_source": false,
+      "newest": "2026-11-26T10:16:51+03:00"
+    },
+    {
       "score": 33,
-      "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
+      "title": "12 ilde yasa dışı bahis operasyonu, 2,2 milyar liralık para hareketi tespit edildi",
       "sources": [
         "BirGün",
         "CNN Türk",
+        "Hürriyet",
+        "NTV",
+        "Sabah",
+        "Sözcü",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/12-ilde-yasa-disi-bahis-operasyonu-22-milyar-liralik-para-hareketi-tespit-edildi-1752660",
+          "title": "12 ilde yasa dışı bahis operasyonu, 2,2 milyar liralık para hareketi tespit edildi",
+          "summary": "Ankara merkezli 12 ilde düzenlenen yasa dışı bahis operasyonlarında, hesaplarında 2 milyar 200 milyon liralık para hareketi tespit edilen 25 şüpheli yakalandı. İçişleri Bakanlığı, Ankara merkezli 12 ilde yasa dışı bahse yönelik düzenlenen operasyonlarda 25 şüphelinin yakalandığını duyurdu. Bakanlığın sosyal medya hesabından yapılan açıklamaya göre, Jandarma Genel Komutanlığı KOM ve Siber Suçlarla Mücadele Daire Başkanlığı, MASAK ve Ankara Cumhuriyet Başsavcılığı koordinesinde yürütülen çalışmala"
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/12-ilde-yasa-disi-bahis-operasyonu-25-gozalti-748558",
+          "title": "12 ilde 'yasa dışı bahis' operasyonu: 25 gözaltı",
+          "summary": "Ankara merkezli 12 ilde yürütülen yasa dışı bahis soruşturmasında 25 şüpheli yakalandı. İçişleri Bakanlığı, şüphelilerin hesaplarında 2 milyar 200 milyon liralık para hareketi tespit edildiğini açıkladı. Soruşturma kapsamında 1 şirket, 3 taşınmaz, 8 taşınır ile 1423 banka ve kripto varlık hesabına el konuldu."
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/turkiye/yasa-disi-bahis-operasyonunda-22-milyar-liralik-hareketlilik-25-gozalti-964501.html",
+          "title": "Yasa dışı bahis operasyonunda 2,2 milyar liralık hareketlilik: 25 gözaltı",
+          "summary": "Ankara merkezli 12 ilde \"yasa dışı bahis\" suçuna yönelik düzenlenen operasyonlarda, hesaplarında 2 milyar 200 milyon TL para hareketliliği tespit edilen 25 şüpheli yakalandı. Suçtan kaynaklanan mal varlığı değerlerinin aklanması suçu kapsamında şüphelilere ait; 1 şirket, 3 taşınmaz, 8 taşınır, 1.423 banka ve kripto varlık hesabına el konuldu."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/2-2-milyar-tllik-para-hareketliligi-12-ilde-dugmeye-basildi-yasa-disi-bahis-operasyonlarinda-25-gozalti-43391455",
+          "title": "2.2 milyar TL'lik para hareketliliği | 12 ilde düğmeye basıldı: Yasa dışı bahis operasyonlarında 25 gözaltı",
+          "summary": ""
+        },
+        {
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/yerel-haberler/antalya/kumluca/yasa-disi-bahis-ve-kumar-operasyonu-14-gozalti-3498471",
+          "title": "Yasa dışı bahis ve kumar operasyonu; 14 gözaltı",
+          "summary": "Yasa dışı bahis ve kumar operasyonu; 14 gözaltı"
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/1-5-milyar-liralik-yasa-disi-bahis-sorusturmasinda-33-supheli-adliyeye-cikarildi-43391419",
+          "title": "1,5 milyar liralık yasa dışı bahis soruşturmasında 33 şüpheli adliyeye çıkarıldı",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+4",
+        "para:+11",
+        "güç:+6",
+        "rakam:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-26T11:34:10+00:00"
+    },
+    {
+      "score": 32,
+      "title": "Ünlülere uyuşturucu soruşturmasında Özcan Deniz, Deniz Çakır ve Burcu Özberk'in ifadesi ortaya çıktı",
+      "sources": [
+        "BirGün",
+        "Cumhuriyet",
         "Hürriyet",
         "NTV",
         "Sözcü"
@@ -76,400 +200,336 @@
       "links": [
         {
           "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/galeri-haluk-levent-sile-davasinda-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-1752542",
-          "title": "Şile Belediyesi davası | Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
-          "summary": "Ahbap Derneği soruşturmasında tutuklu bulunan Haluk Levent, Şile Belediyesi davasında tutuklanan asistanı Yeliz Kaya'nın suçsuz olduğunu, bu dosyada kendisinin tutuklanması gerektiğini ileri sürdü. Şile Belediyesi'ne yönelik yolsuzluk suçlamasıyla açılan davanın 11'inci duruşması bugün görülüyor. Tutuklandıktan sonra görevinden uzaklaştırılan Şile Belediye Başkanı Özgür Kabadayı ve Haluk Levent'in kardeşi Berkant Acil'in de aralarında bulunduğu 53 sanığın yargılandığı dava, Anadolu 27'nci Ağır C"
+          "url": "https://www.ntv.com.tr/turkiye/galeri-unlulere-uyusturucu-sorusturmasinda-ozcan-deniz-deniz-cakir-ve-burcu-ozberk-serbest-birakildi-1752646",
+          "title": "Ünlülere uyuşturucu soruşturmasında Özcan Deniz, Deniz Çakır ve Burcu Özberk'in ifadesi ortaya çıktı",
+          "summary": "Ünlülere yönelik uyuşturucu soruşturmasında gözaltına alınan ve adli kontrol şartıyla serbest bırakılan oyuncu Burcu Özberk, Deniz Çakır ve şarkıcı Özcan Deniz'in ifadesi ortaya çıktı. İstanbul'da ünlülere yönelik uyuşturucu soruşturmasında dün yeni bir operasyon düzenlendi. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen dosyada 35 şüpheli hakkında gözaltı kararı verildi. Aralarında şarkıcı Özcan Deniz, oyuncu Deniz Çakır ve Burcu Özbek ile organizatör Erdal Bozkuş ve internet ünlülerinin"
         },
         {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/sile-belediyesi-davasinda-haluk-leventten-dikkat-ceken-sozler-onun-yerine-benim-tutuklanmam-gerekiyor-3498211",
-          "title": "Şile Belediyesi davasında Haluk Levent'ten dikkat çeken sözler: \"Onun yerine benim tutuklanmam gerekiyor\"",
-          "summary": "Şile Belediyesi'ne yönelik rüşvet ve yolsuzluk soruşturması kapsamında 53 sanığın yargılandığı davanın 11'inci duruşması görüldü. Duruşmada tanık olarak dinlenen sanatçı Haluk Levent, asistanı Yeliz Kaya'nın hesaplarının kendisi tarafından kullanıldığını belirterek, \"Bu nedenle Yeliz Kaya'nın mahkemenizin Şile dosyasıyla ilgili hiçbir alakası yoktur. Onun yerine benim tutuklanmam gerekiyor\" dedi. Duruşma yarına ertelendi."
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/sile-belediyesi-yolsuzluk-davasinda-haluk-levent-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43391173",
-          "title": "Şile Belediyesi ‘yolsuzluk’ davasında Haluk Levent: Yeliz Kaya yerine benim tutuklanmam gerekiyor /",
-          "summary": ""
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/sile-belediyesine-yonelik-yolsuzluk-davasi-haluk-levent-tanik-olarak-dinlendi-yeliz-kaya-yerine-benim-tutuklanmam-gerekiyor-43390375",
-          "title": "Şile Belediyesi'ne yönelik ‘yolsuzluk’ davası | Haluk Levent tanık olarak dinlendi: Yeliz Kaya yerine benim tutuklanmam gerekiyor",
-          "summary": ""
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/unlulere-yonelik-uyusturucu-sorusturmasi-ozcan-deniz-burcu-ozberk-ve-deniz-cakir-in-ifadeleri-ortaya-cikti-2559548",
+          "title": "Ünlülere yönelik uyuşturucu soruşturması: Özcan Deniz, Burcu Özberk ve Deniz Çakır'ın ifadeleri ortaya çıktı",
+          "summary": "Ünlülere yönelik yürütülen uyuşturucu soruşturması kapsamında adli kontrol şartıyla serbest bırakılan Özcan Deniz, Burcu Özberk ve Deniz Çakır'ın savcılık ifadeleri ortaya çıktı. Üç isim de uyuşturucu madde kullanmadıklarını belirterek haklarındaki suçlamaları reddetti."
         },
         {
           "source": "BirGün",
-          "url": "https://www.birgun.net/haber/haluk-levent-sile-belediyesi-davasinda-tanik-olarak-ifade-verdi-alacak-vereceklerim-ahbap-dernegi-ile-karistirilmistir-748345",
-          "title": "Haluk Levent Şile Belediyesi davasında tanık olarak ifade verdi: \"Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\"",
-          "summary": "Şile Belediyesi'ne yönelik davanın 11'inci duruşmasında tanık olarak dinlenen Haluk Levent, asistanı olduğunu ifade ettiği Yeliz Kaya adına açılan banka hesaplarını kendisinin kullandığını ifade etti. Ahbap derneği için ise \"Ahbap Derneği toplanan bağışların yüzde 94'ünü deprem bölgesine aktaran dünyanın en büyük ve en başarılı derneğidir. Çaldığım iddia edilen paralar yönetim kurulu kararı ile karar defterine işlenen paralardır. Alacak vereceklerim Ahbap Derneği ile karıştırılmıştır\" dedi."
+          "url": "https://www.birgun.net/haber/uyusturucu-sorusturmasi-burcu-ozberk-deniz-cakir-ve-ozcan-deniz-in-ifadeleri-ortaya-cikti-748545",
+          "title": "Uyuşturucu soruşturması: Burcu Özberk, Deniz Çakır ve Özcan Deniz'in ifadeleri ortaya çıktı",
+          "summary": "Ünlülere yönelik yürütülen 'uyuşturucu' soruşturmasında adli kontrol şartıyla serbest bırakılan Burcu Özberk, Deniz Çakır ve Özcan Deniz'in savcılık ifadeleri ortaya çıktı. Üç isim de ifadelerinde uyuşturucu madde kullanmadıklarını söyleyerek suçlamaları reddetti."
+        },
+        {
+          "source": "Hürriyet",
+          "url": "https://www.hurriyet.com.tr/gundem/unlulere-yonelik-uyusturucu-operasyonu-ozcan-deniz-deniz-cakir-burcu-ozberk-murat-basoglu-ve-ceylan-kaya-hakkinda-karar-verildi-43391427",
+          "title": "Ünlülere uyuşturucu operasyonunda ifadeler ortaya çıktı! Burcu Özberk, Deniz Çakır ve Özcan Deniz aylık gelirini açıkladı",
+          "summary": ""
         },
         {
           "source": "Sözcü",
-          "url": "https://www.sozcu.com.tr/haluk-levent-mahkemede-konustu-onun-yerine-beni-tutuklayin-p384321",
-          "title": "Haluk Levent mahkemede konuştu: \"Onun yerine beni tutuklayın\"",
+          "url": "https://www.sozcu.com.tr/ozcan-deniz-deniz-cakir-ve-burcu-ozberk-in-ifadeleri-ortaya-cikti-p384539",
+          "title": "Özcan Deniz, Deniz Çakır ve Burcu Özberk'in ifadeleri ortaya çıktı",
           "summary": ""
         }
       ],
       "reasons": [
-        "suç:+21",
-        "para:+3",
-        "güç:+3",
-        "merak:+1",
-        "gürültü:-6"
+        "suç:+16",
+        "para:+2",
+        "güç:+5",
+        "merak:+2",
+        "gürültü:-4"
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T21:11:17+00:00"
+      "newest": "2026-11-26T10:22:00+03:00"
+    },
+    {
+      "score": 30,
+      "title": "Şahap Kavcıoğlu hakkında soruşturma izni verildi",
+      "sources": [
+        "BBC Türkçe",
+        "BirGün",
+        "Cumhuriyet",
+        "DW Türkçe",
+        "Euronews TR",
+        "Habertürk",
+        "Hürriyet",
+        "Medyascope",
+        "NTV",
+        "Sözcü",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/sahap-kavcioglu-hakkinda-sorusturma-izni-verildi-1752640",
+          "title": "Şahap Kavcıoğlu hakkında soruşturma izni verildi",
+          "summary": "Hazine ve Maliye Bakanı Mehmet Şimşek, Bakanlık Teftiş Başkanlığı tarafından yapılan ön inceleme sonucu, eski BDDK Başkanı Şahap Kavcıoğlu hakkında soruşturma izni verdi. Hazine ve Maliye Bakanı Mehmet Şimşek, Bankacılık Düzenleme ve Denetleme Kurumu'nun (BDDK) eski başkanı Şahap Kavcıoğlu hakkında soruşturma izni verdi. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen fon soruşturmasında adı geçen Kavcıoğlu, 11 Kasım'da görevden affını istemişti . Şahap Kavcıoğlu, bu kararı \"kurumunun daha"
+        },
+        {
+          "source": "BBC Türkçe",
+          "url": "https://www.bbc.com/turkce/articles/ck1wre80j7ggo?at_medium=RSS&at_campaign=rss",
+          "title": "Eski BDDK Başkanı Şahap Kavcıoğlu hakkında soruşturma izni",
+          "summary": "Hazine ve Maliye Bakanı Mehmet Şimşek, fon soruşturması kapsamında, Bakanlık Teftiş Başkanlığının ön inceleme raporuna istinaden eski Bankacılık Düzenleme ve Denetleme Kurumu (BDDK) Başkanı Şahap Kavcıoğlu hakkında soruşturma izni verdi."
+        },
+        {
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/fon-sorusturmasinda-yeni-gelisme-sahap-kavcioglu-hakkinda-sorusturma-izni-748533",
+          "title": "Fon soruşturmasında yeni gelişme: Şahap Kavcıoğlu hakkında soruşturma izni",
+          "summary": "Hazine ve Maliye Bakanlığı Teftiş Başkanlığı'nın yürüttüğü ön incelemenin ardından eski BDDK Başkanı Şahap Kavcıoğlu hakkında soruşturma izni verildi. Kararı Hazine ve Maliye Bakanı Mehmet Şimşek onayladı."
+        },
+        {
+          "source": "Euronews TR",
+          "url": "https://tr.euronews.com/2026/11/26/eski-bddk-baskani-sahap-kavcioglu-icin-sorusturma-izni-verildi",
+          "title": "Eski BDDK Başkanı Şahap Kavcıoğlu için soruşturma izni verildi",
+          "summary": "Fon soruşturması kapsamında, eski Bankacılık Düzenleme ve Denetleme Kurumu (BDDK) Başkanı Şahap Kavcıoğlu hakkında soruşturma izni verildi."
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/bakan-simsek-eski-bddk-baskani-sahap-kavcioglu-hakkinda-sorusturma-izni-verdi-964495.html",
+          "title": "Bakan Şimşek, eski BDDK Başkanı Şahap Kavcıoğlu hakkında soruşturma izni verdi",
+          "summary": "Hazine ve Maliye Bakanı Mehmet Şimşek, Bakanlık Teftiş Başkanlığının ön inceleme raporuna istinaden eski Bankacılık Düzenleme ve Denetleme Kurumu BDDK Başkanı Şahap Kavcıoğlu hakkında soruşturma izni verdi."
+        },
+        {
+          "source": "DW Türkçe",
+          "url": "https://www.dw.com/tr/şahap-kavcıoğlu-hakkında-soruşturma-izni-verildi/a-80056438?maca=tur-rss-tur-all-1495-rdf",
+          "title": "Şahap Kavcıoğlu hakkında soruşturma izni verildi",
+          "summary": "Eski BDDK Başkanı Şahap Kavcıoğlu hakkında soruşturma izni verildi. Kavcıoğlu'na daha önce fon soruşturması kapsamında yurt dışına çıkış yasağı getirilmişti."
+        }
+      ],
+      "reasons": [
+        "suç:+10",
+        "para:+3",
+        "güç:+5",
+        "merak:+1"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-26T09:42:15+01:00"
+    },
+    {
+      "score": 29,
+      "title": "Malatya ve Eskişehir’deki helikopter kazalarıyla ilgili MSB'den açıklama",
+      "sources": [
+        "Milliyet",
+        "NTV",
+        "Sözcü",
+        "TRT Haber"
+      ],
+      "links": [
+        {
+          "source": "Milliyet",
+          "url": "https://www.milliyet.com.tr/gundem/malatya-ve-eskisehirdeki-helikopter-kazalariyla-ilgili-msbden-aciklama-7708412",
+          "title": "Malatya ve Eskişehir’deki helikopter kazalarıyla ilgili MSB'den açıklama",
+          "summary": "Milli Savunma Bakanlığı (MSB) Haftalık Basın Bilgilendirme Toplantısı gerçekleştirildi. Toplantının ardından basın mensuplarının sorularını yanıtlayan Bakanlık kaynakları, Malatya ve Eskişehir’de kaza kırıma uğrayan helikopterlerimizle ilgili şu açıklamalarda bulundu: \"Türk Silahlı Kuvvetlerimize bağlı birlikler, harbe hazırlık seviyelerini yükseltmek ve muhafaza etmek amacıyla gece gündüz, her türlü hava ve arazi şartında eğitim faaliyetlerini sürdürmektedir. Eskişehir'de şehit olan 5 asker tör"
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/gundem/msb-malatya-ve-eskisehirdeki-helikopter-kazalariyla-ilgili-adli-sorusturma-baslatildi-964523.html",
+          "title": "MSB: Malatya ve Eskişehirdeki helikopter kazalarıyla ilgili adli soruşturma başlatıldı",
+          "summary": "MSB, Malatya ve Eskişehirde kaza kırıma uğrayan helikopterlerimizle ilgili, \"Kazaların ardından derhal adli ve idari süreçler başlatılmıştır. Kaza nedenlerini belirlemek üzere görevlendirilen idari tahkikat heyetleri ile kaza kırım ekipleri, illerde inceleme ve araştırmalarını her türlü olasılığı dikkate alarak titizlikle sürdürmektedir\" dedi."
+        },
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/msbden-helikopter-kazalarina-iliskin-aciklama-1752701",
+          "title": "MSB'den helikopter kazalarına ilişkin açıklama",
+          "summary": "Milli Savunma Bakanlığı, Malatya ve Eskişehir'de meydana gelen helikopter kazalarına ilişkin araştırmaların sürdüğünü belirterek, her olasılığın dikkate alındığını bildirdi. Son dakika haberinin ayrıntıları birazdan ntv.com.tr'de…"
+        },
+        {
+          "source": "Sözcü",
+          "url": "https://www.sozcu.com.tr/son-dakika-msb-den-helikopter-kazalari-ile-ilgili-aciklama-p384587",
+          "title": "Son dakika... MSB'den helikopter kazaları ile ilgili açıklama",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+8",
+        "güç:+4",
+        "merak:+6"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-26T09:07:15+00:00"
+    },
+    {
+      "score": 28,
+      "title": "DJ Burak Yeter uyuşturucu soruşturmasında gözaltına alındı",
+      "sources": [
+        "CNN Türk",
+        "Cumhuriyet",
+        "NTV",
+        "Sözcü"
+      ],
+      "links": [
+        {
+          "source": "NTV",
+          "url": "https://www.ntv.com.tr/turkiye/dj-burak-yeter-uyusturucu-sorusturmasinda-gozaltina-alindi-1752682",
+          "title": "DJ Burak Yeter uyuşturucu soruşturmasında gözaltına alındı",
+          "summary": "Ünlü DJ ve müzik yapımcısı Burak Yeter, uyuşturucu soruşturmasında gözaltına alındı. Ünlülere yönelik uyuşturucu soruşturması sürüyor. Son olarak DJ ve müzik yapımcısı Burak Yeter gözaltına alındı. İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen dosyada dün de aralarında şarkıcı Özcan Deniz, oyuncular Deniz Çakır ve Burcu Özberk'in de aralarında bulunduğu 24 kişi gözaltına alınmıştı. Savcıya ifade veren Deniz, Çakır ve Özberk dahil dokuz kişi serbest bırakılmış; Ceylan Kaya isimli şüpheli "
+        },
+        {
+          "source": "Cumhuriyet",
+          "url": "https://www.cumhuriyet.com.tr/turkiye/unlulere-yonelik-uyusturucu-ve-fuhus-sorusturmasinda-dj-burak-yeter-gozaltina-alindi-2559544",
+          "title": "Ünlülere yönelik uyuşturucu ve fuhuş soruşturmasında DJ Burak Yeter gözaltına alındı",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından ünlü isimlere yönelik yürütülen uyuşturucu ve fuhuş soruşturması kapsamında DJ ve müzik yapımcısı Burak Yeter gözaltına alındı. Yeter'in gözaltına alınmasıyla birlikte soruşturma dosyasında gözaltına alınan şüpheli sayısı 25'e çıktı."
+        },
+        {
+          "source": "CNN Türk",
+          "url": "https://www.cnnturk.com/magazin/dj-burak-yeter-gozaltina-alindi-unlulere-yonelik-sorusturmada-yeni-gelisme-3498450",
+          "title": "DJ Burak Yeter gözaltına alındı! Ünlülere yönelik soruşturmada yeni gelişme",
+          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen uyuşturucu ve fuhuş soruşturmasında yeni bir gelişme yaşandı. DJ ve müzik yapımcısı Burak Yeter'in gözaltına alındığı bildirildi. Son gözaltıyla birlikte soruşturma kapsamında gözaltına alınan şüpheli sayısı 25'e yükseldi."
+        },
+        {
+          "source": "Sözcü",
+          "url": "https://www.sozcu.com.tr/son-dakika-unlu-dj-burak-yeter-gozaltina-alindi-p384532",
+          "title": "Son dakika... Ünlü DJ Burak Yeter gözaltına alındı",
+          "summary": ""
+        }
+      ],
+      "reasons": [
+        "suç:+13",
+        "güç:+4"
+      ],
+      "sensitive": false,
+      "single_source": false,
+      "newest": "2026-11-26T11:45:38+00:00"
+    },
+    {
+      "score": 26,
+      "title": "Güzellik merkezi cinayetinde kan donduran savunma: 'En sonunda beni vurdun ya'",
+      "sources": [
+        "Milliyet"
+      ],
+      "links": [
+        {
+          "source": "Milliyet",
+          "url": "https://www.milliyet.com.tr/gundem/guzellik-merkezi-cinayetinde-kan-donduran-savunma-en-sonunda-beni-vurdun-ya-7708411",
+          "title": "Güzellik merkezi cinayetinde kan donduran savunma: 'En sonunda beni vurdun ya'",
+          "summary": "Mart ayında Nilüfer ilçesi Konak Mahallesi Lefkoşa Caddesi'nde 7 katlı iş merkezinin 4'üncü katındaki güzellik merkezine gelen Halit Dertli, eski sevgilisi Nagihan Karadeniz'in iş yerindeki herkesi dışarı çıkarıp kapıyı kilitledi. Tartışmanın ardından içeriden silah sesleri duyuldu. İhbar üzerine adrese polis, sağlık ve itfaiye ekipleri sevk edildi. İş yerinin kapısını kırıp içeri giren ekipler, Nagihan Karadeniz ve Halit Dertli'yi yaralı halde buldu. Ambulansla hastaneye kaldırılan yaralılardan"
+        }
+      ],
+      "reasons": [
+        "suç:+16",
+        "para:+2",
+        "merak:+6"
+      ],
+      "sensitive": false,
+      "single_source": true,
+      "newest": "2026-11-26T09:02:43+00:00"
     },
     {
       "score": 25,
-      "title": "ZDF'ye silahlı röportaj veren Daltonlar üyelerine İstanbul'da baskın",
+      "title": "Çocuğunun boğazına bıçak dayayarak eşini tehdit etmişti. 8 yıl 3 aylık cezanın gerekçesi açıklandı",
       "sources": [
+        "Habertürk",
         "Hürriyet",
         "NTV"
       ],
       "links": [
         {
           "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/galeri-zdfye-silahli-roportaj-veren-daltonlar-uyelerine-istanbulda-baskin-1752551",
-          "title": "ZDF'ye silahlı röportaj veren Daltonlar üyelerine İstanbul'da baskın",
-          "summary": "Alman ZDF kanalına ellerinde silahlarla röportaj veren Daltonlar Çetesi üyelerine operasyon düzenlendi. Polis dokuz şüpheliyi yakaladı. Alman kamu yayıncısı ZDF, gerçekleştirdikleri silahlı eylemlerle adını duyuran Daltonlar isimli çeteyi konu alan bir belgesel yayınladı. Daha önce yayınlanmayan fotoğraf ve videolar ile soruşturma dosyalarından ayrıntılara yer verilen belgeselde İstanbul'dan Berlin'e uzanan suç şeması ayrıntılı şekilde ele alındı. Belgeselin İstanbul'da çekilen bölümünde yüzleri"
+          "url": "https://www.ntv.com.tr/turkiye/cocugunun-bogazina-bicak-dayayarak-esini-tehdit-etmisti-8-yil-3-aylik-cezanin-gerekcesi-aciklandi-1752675",
+          "title": "Çocuğunun boğazına bıçak dayayarak eşini tehdit etmişti. 8 yıl 3 aylık cezanın gerekçesi açıklandı",
+          "summary": "İzmir'de çocuğunun boğazına bıçak dayayarak boşanma aşamasındaki eşini tehdit eden sanığa verilen 8 yıl 3 aylık hapis cezasının gerekçesi açıklandı. İzmir'de boşanma aşamasında olduğu eşi Fatma C.'yi (27) görüntülü arayıp, çocuğunun boğazına bıçak dayayarak tehdit ettiği gerekçesiyle Şiyar Alpaslan'a (31) verilen indirimsiz toplam 8 yıl 3 ay hapis cezasının gerekçesi açıklandı. Kararda heyet; sanığın, mağdur çocuğu silahtan sayılan bıçakla yaraladığına dair delil bulunmadığına ve kendiliğinden s"
         },
         {
           "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/istanbulda-yabanci-basina-silahla-roportaj-veren-suc-orgutune-operasyon-9-gozalti-43390492",
-          "title": "İstanbul'da yabancı basına silahla röportaj veren suç örgütüne operasyon: 9 gözaltı",
+          "url": "https://www.hurriyet.com.tr/gundem/izmirde-cocugunun-bogazina-bicak-dayayan-saniga-verilen-cezanin-gerekceli-karari-aciklandi-43391523",
+          "title": "İzmir’de çocuğunun boğazına bıçak dayayan sanığa verilen cezanın gerekçeli kararı açıklandı",
+          "summary": ""
+        },
+        {
+          "source": "Habertürk",
+          "url": "https://www.haberturk.com/gundem/son-dakika-haber-cocugunun-bogazina-bicak-dayamisti-karar-aciklandi-izmir-haberleri-3930248",
+          "title": "Çocuğunun boğazına bıçak dayamıştı! Karar açıklandı",
           "summary": ""
         }
       ],
       "reasons": [
-        "suç:+16",
-        "para:+3",
-        "güç:+1"
+        "suç:+11",
+        "para:+2",
+        "güç:+3",
+        "merak:+1"
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T13:22:55+03:00"
+      "newest": "2026-11-26T08:13:58+00:00"
     },
     {
-      "score": 25,
-      "title": "Ünlülere yönelik uyuşturucu operasyonunda yeni gelişme: 1 isme tutuklama, 9 isme adli kontrol talebi!",
+      "score": 24,
+      "title": "Ünlülere yönelik uyuşturucu operasyonu: 1 kişiye tutuklama 9 kişiye adli kontrol talebi",
       "sources": [
         "BirGün",
         "Cumhuriyet",
-        "Habertürk",
-        "Sözcü"
+        "Sözcü",
+        "TRT Haber"
       ],
       "links": [
-        {
-          "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/unlulere-yonelik-uyusturucu-operasyonunda-yeni-gelisme-1-isme-tutuklama-9-isme-adli-kontrol-talebi-2559412",
-          "title": "Ünlülere yönelik uyuşturucu operasyonunda yeni gelişme: 1 isme tutuklama, 9 isme adli kontrol talebi!",
-          "summary": "İstanbul Cumhuriyet Başsavcılığı tarafından yürütülen ünlülere yönelik uyuşturucu soruşturması kapsamında gözaltına alınan 24 şüpheliden aralarında Sanatçı Özcan Deniz, Deniz Çakır ve Burcu Özberk'in de bulunduğu 10 kişi adliyeye getirildi. Savcılıktaki ifadeleri tamamlanan Ceylan Kaya tutuklama talebiyle, Burcu Özberk, Özcan Deniz, Murat Ceylan, Ufuk Gündoğdu, Deniz Sözen, Murat Başoğlu, Deniz Çakır, İbrahim Yılmaz ve Onur Yüksel adli kontrol istemiyle Sulh Ceza Hakimliği'ne sevk edildi."
-        },
         {
           "source": "BirGün",
           "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-1-kisiye-tutuklama-9-kisiye-adli-kontrol-talebi-748387",
           "title": "Ünlülere yönelik uyuşturucu operasyonu: 1 kişiye tutuklama 9 kişiye adli kontrol talebi",
-          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişiden 10'unun savcılıkta ifadesi alınacak. 14 kişi ise ek ifadesinin alınması için yeniden emniyete götürüldü. Savcılık, şüphelilerden Ceylan Kaya'yı tutuklama, Deniz Sözen, Murat Ceylan, Deniz Çakır Baykal, İbrahim Yılmaz, Özcan Deniz, Burcu Özberk, Murat Başoğlu, Ufuk Gündoğdu ve Onur Yüksel'i ise adli kontrol istemiyle sulh ceza hakimliğine sevk etti."
+          "summary": "Ünlülere yönelik soruşturma kapsamında yapılan operasyon sonucu gözaltına alınan 24 kişiden 10'unun savcılıkta ifadesi alındı. 14 kişi ise ek ifadesinin alınması için yeniden emniyete götürüldü. Savcılık, Ceylan Kaya'yı tutuklama, Deniz Sözen, Murat Ceylan, Deniz Çakır Baykal, İbrahim Yılmaz, Özcan Deniz, Burcu Özberk, Murat Başoğlu, Ufuk Gündoğdu ve Onur Yüksel'i ise adli kontrol istemiyle sulh ceza hakimliğine sevk etti."
+        },
+        {
+          "source": "TRT Haber",
+          "url": "https://www.trthaber.com/haber/turkiye/unlulere-yonelik-uyusturucu-sorusturmasi-1-supheli-tutuklandi-964509.html",
+          "title": "Ünlülere yönelik uyuşturucu soruşturması: 1 şüpheli tutuklandı",
+          "summary": "İstanbul'da ünlülere yönelik yürütülen uyuşturucu soruşturmasında gözaltına alınan şüphelilerden 1'i tutuklandı, 9'u hakkında adli kontrol tedbiri uygulandı."
         },
         {
           "source": "Cumhuriyet",
-          "url": "https://www.cumhuriyet.com.tr/siyaset/kepez-belediyesi-ne-yonelik-operasyonda-yeni-gelisme-24-kisi-adliyede-2559451",
-          "title": "Kepez Belediyesi'ne yönelik operasyonda yeni gelişme: 24 kişi adliyede",
-          "summary": "Antalya'da Kepez Belediyesi’ne yönelik 'rüşvet' operasyonunda gözaltına alınan 24 kişi, emniyetteki işlemlerinin ardından adliyeye sevk edildi."
+          "url": "https://www.cumhuriyet.com.tr/turkiye/aydin-da-uyusturucu-operasyonu-5-tutuklama-2559521",
+          "title": "Aydın’da uyuşturucu operasyonu: 5 tutuklama",
+          "summary": "Aydın'ın Nazilli ilçesinde polis ekiplerinin düzenlediği operasyonunda satışa hazır halde çeşitli uyuşturucu maddeler ve suçtan elde edildiği değerlendirilen 100 bin TL ele geçirildi. Gözaltına alınan 5 şüpheli tutuklandı."
         },
         {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/gundem/son-dakika-unlulere-uyusturucu-operasyonunda-1-tutuklama-talebi-3930112",
-          "title": "Ünlülere uyuşturucu operasyonunda 1 tutuklama talebi",
-          "summary": ""
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/unlulere-yonelik-uyusturucu-operasyonu-1-kisi-tutuklandi-9-kisi-serbest-birakildi-748542",
+          "title": "Ünlülere yönelik uyuşturucu operasyonu: 1 kişi tutuklandı, 9 kişi serbest bırakıldı",
+          "summary": "Uyuşturucu soruşturması kapsamında şarkıcı Ceylan Kaya tutuklandı. Özcan Deniz ve Burcu Özberk'in de aralarında bulunduğu 9 kişi ise adli kontrol şartıyla serbest bırakıldı."
         },
         {
           "source": "Sözcü",
-          "url": "https://www.sozcu.com.tr/gozaltina-alinan-unluler-saglik-kontrolunde-boyle-gorduruldu-p384307",
-          "title": "Ünlülere yönelik uyuşturucu operasyonu: 1 tutuklama, 9 adli kontrol talebi",
+          "url": "https://www.sozcu.com.tr/son-dakika-veya-unlulere-yonelik-uyusturucu-sorusturmasi-1-sarkici-tutuklandi-9-kisiye-adli-kontrol-p384519",
+          "title": "SON DAKİKA | Ünlülere yönelik uyuşturucu soruşturması: 1 şarkıcı tutuklandı, 9 kişiye adli kontrol",
           "summary": ""
         }
       ],
       "reasons": [
         "suç:+10",
-        "güç:+4"
+        "güç:+3"
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T20:58:00+03:00"
+      "newest": "2026-11-26T10:27:00+03:00"
     },
     {
-      "score": 24,
-      "title": "SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
+      "score": 22,
+      "title": "Sümer Varlık'a TMSF kayyum olarak atandı",
       "sources": [
-        "AA",
-        "CNN Türk",
-        "Habertürk",
-        "Hürriyet",
-        "Milliyet",
+        "BirGün",
         "Sözcü"
       ],
       "links": [
         {
-          "source": "Milliyet",
-          "url": "https://www.milliyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-7707969",
-          "title": "SON DAKİKA HABERLERİ: Sümer Varlık Yönetim'e kayyum mu atandı? Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
-          "summary": "Şirketin Kamuyu Aydınlatma Platformu'nda (KAP) yayımlanan açıklamasında, İstanbul 6. Sulh Ceza Hakimliğinin 24 Kasım 2026 tarihli ve 2026/11489 D. İş sayılı kararıyla TMSF'nin şirkete kayyum olarak atandığı bildirildi. Söz konusu karar uyarınca Fon Kurulu tarafından şirketin yeni yönetim kurulunun oluşturulduğu belirtilen açıklamada, yönetim kurulu başkanlığına Nevzat Avunç'un, başkan vekilliğine ise Melek İnceköse İmert'in getirildiği kaydedildi. Açıklamada, yönetim kurulu üyeliklerine Erdinç P"
-        },
-        {
-          "source": "AA",
-          "url": "https://www.aa.com.tr/tr/ekonomi/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi/4137806",
-          "title": "Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
-          "summary": "Sümer Varlık Yönetim AŞ'ye Tasarruf Mevduatı Sigorta Fonu (TMSF) kayyum olarak atandı."
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/tmsf-sumer-varlik-yonetime-kayyum-olarak-atandi-3498212",
-          "title": "TMSF, Sümer Varlık Yönetim'e kayyum olarak atandı",
-          "summary": "Sümer Varlık Yönetim AŞ'ye Tasarruf Mevduatı Sigorta Fonu (TMSF) kayyum olarak atandı."
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/sumer-varlik-yonetime-tmsf-kayyum-olarak-atandi-43391147",
-          "title": "Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
-          "summary": ""
+          "source": "BirGün",
+          "url": "https://www.birgun.net/haber/sumer-varlik-a-tmsf-kayyum-olarak-atandi-748530",
+          "title": "Sümer Varlık'a TMSF kayyum olarak atandı",
+          "summary": "Fon vurgunu soruşturması kapsamında Altınbaş Holding'in ardından, aileye ait ASV Holding bünyesindeki Sümer Varlık Yönetim AŞ'ye de kayyum atandı."
         },
         {
           "source": "Sözcü",
           "url": "https://www.sozcu.com.tr/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-p384406",
           "title": "Sümer Varlık Yönetim'e TMSF kayyum olarak atandı",
           "summary": ""
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/ekonomi/sumer-varlik-yonetim-e-tmsf-kayyum-olarak-atandi-3930123",
-          "title": "Sümer Varlık Yönetim'e kayyum atandı",
-          "summary": ""
         }
       ],
       "reasons": [
-        "suç:+8",
-        "para:+2",
+        "suç:+6",
+        "para:+8",
         "güç:+3"
       ],
       "sensitive": false,
       "single_source": false,
-      "newest": "2026-11-25T21:13:14+00:00"
-    },
-    {
-      "score": 21,
-      "title": "15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: \"Korkudan şehir değiştirdim\"",
-      "sources": [
-        "NTV"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/galeri-15-yasindaki-iki-cocuk-oldurdu-azmettiriciler-peslerini-birakmadi-korkudan-sehir-degistirdim-1752521",
-          "title": "15 yaşındaki iki çocuk öldürdü, azmettiriciler peşlerini bırakmadı: \"Korkudan şehir değiştirdim\"",
-          "summary": "Adana'da 15 yaşındaki iki katil zanlısı tarafından öldürülen PVC ustası Yusuf Çelik'in eşi azmettiricilerin tehditleri nedeniyle şehir değiştirmek zorunda kaldığını söyledi. Adana'da çocuk yaştaki iki saldırgan tarafından öldürülen PVC ustası Yusuf Çelik'in eşi Kadriye Çelik, azmettiriciler tarafından tehdit edildiklerini söyledi. Olay, 3 Mart'ta Seyhan ilçesi Mıdık Mahallesi'nde meydana geldi. H.H., arkadaşı L.A.'nın kullandığı motosikletle PVC ustası Yusuf Çelik'in iş yerine gitti. L.A. dışarı"
-        }
-      ],
-      "reasons": [
-        "suç:+13",
-        "güç:+2",
-        "merak:+3",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "single_source": true,
-      "newest": "2026-11-25T11:22:06+03:00"
-    },
-    {
-      "score": 18,
-      "title": "İsa Aras Mersinli için yeniden otopsi istendi. \"Mekanik bir robot gibiydi\"",
-      "sources": [
-        "Habertürk",
-        "NTV"
-      ],
-      "links": [
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/isa-aras-mersinli-icin-yeniden-otopsi-istendi-mekanik-bir-robot-gibiydi-1752553",
-          "title": "İsa Aras Mersinli için yeniden otopsi istendi. \"Mekanik bir robot gibiydi\"",
-          "summary": "Kahramanmaraş'ta 10 kişinin hayatını kaybettiği okul saldırısını gerçekleştiren İsa Aras Mersinli için yeniden otopsi istendi. Kahramanmaraş'taki okul saldırganının otopsi işleminin yenilenmesi talebi dava dosyasına girdi. Milli Eğitim Bakanlığı Hukuk Hizmetleri Genel Müdürlüğünce Kahramanmaraş 3. Ağır Ceza Mahkemesi'ne sunulan dilekçede, Mersinli'den alınan kan, doku ve göz içi sıvısı örnekleri üzerinde yeniden inceleme yapılması talep edildi. Dilekçede, Adli Tıp Kurumu Gaziantep Grup Başkanlığ"
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/gundem/son-dakika-haber-mekanik-bir-robot-gibiydi-isa-aras-mersinli-ye-bir-daha-otopsi-yapilacak-3930017",
-          "title": "\"Mekanik bir robot gibiydi\" Caniye bir otopsi daha",
-          "summary": ""
-        }
-      ],
-      "reasons": [
-        "suç:+9",
-        "güç:+3",
-        "merak:+1"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-25T12:24:59+00:00"
-    },
-    {
-      "score": 18,
-      "title": "Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi",
-      "sources": [
-        "BirGün",
-        "Hürriyet",
-        "Sabah"
-      ],
-      "links": [
-        {
-          "source": "BirGün",
-          "url": "https://www.birgun.net/haber/kepez-belediyesi-ne-operasyon-eski-belediye-baskani-dahil-24-kisi-adliyeye-sevk-edildi-748462",
-          "title": "Kepez Belediyesi'ne operasyon: Eski belediye başkanı dahil 24 kişi adliyeye sevk edildi",
-          "summary": "Kepez Belediyesi'ne yönelik yürütülen soruşturma kapsamında düzenlenen operasyonda gözaltına alınan, aralarında eski belediye başkanı E.Ö'nün de bulunduğu 24 kişi adliyeye sevk edildi."
-        },
-        {
-          "source": "Sabah",
-          "url": "https://www.sabah.com.tr/gundem/2026/11/25/kepez-belediyesine-yonelsik-rusvet-operasyonunda-yeni-gelisme-24-supheli-adliyeye-sevk-edildi",
-          "title": "Kepez Belediyesi'ne yönelşik rüşvet operasyonunda yeni gelişme: 24 şüpheli adliyeye sevk edildi",
-          "summary": ""
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/kepez-belediyesi-operasyonunda-24-supheli-adliyede-eski-baskan-ve-mudurler-de-listede-43391042",
-          "title": "Kepez Belediyesi operasyonunda 24 şüpheli adliyede: Eski başkan ve müdürler de listede",
-          "summary": ""
-        }
-      ],
-      "reasons": [
-        "suç:+8",
-        "güç:+1",
-        "rakam:+1"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T14:54:13+00:00"
-    },
-    {
-      "score": 17,
-      "title": "İstanbul'da Daltonlar operasyonu: Alman kanalı ZDF'nin belgeselinde yer alan 9 kişi gözaltında",
-      "sources": [
-        "Euronews TR"
-      ],
-      "links": [
-        {
-          "source": "Euronews TR",
-          "url": "https://tr.euronews.com/2026/11/25/istanbulda-daltonlar-operasyonu-alman-kanali-zdfnin-belgeselinde-yer-alan-9-kisi-gozaltind",
-          "title": "İstanbul'da Daltonlar operasyonu: Alman kanalı ZDF'nin belgeselinde yer alan 9 kişi gözaltında",
-          "summary": "Almanya merkezli kamu yayıncısı ZDF, geçtiğimiz günlerde İstanbul'daki Daltonlar çetesini konu alan \"Sınır Tanımayan Cinayet\" başlıklı üç bölümlük bir belgesel yayınlamıştı. Belgeselde çete üyeleri ve örgütün faaliyetleri ele alınmıştı."
-        }
-      ],
-      "reasons": [
-        "suç:+15"
-      ],
-      "sensitive": false,
-      "single_source": true,
-      "newest": "2026-11-25T12:50:13+01:00"
-    },
-    {
-      "score": 17,
-      "title": "Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz",
-      "sources": [
-        "AA",
-        "CNN Türk",
-        "Hürriyet",
-        "Milliyet",
-        "NTV",
-        "Sabah"
-      ],
-      "links": [
-        {
-          "source": "Milliyet",
-          "url": "https://www.milliyet.com.tr/dunya/disislerinden-riyaddaki-saldiriya-tepki-en-guclu-sekilde-kiniyoruz-7707943",
-          "title": "Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz",
-          "summary": "Bakanlık, Husilerin Suudi Arabistan'ı hedef alan saldırısına ilişkin yazılı açıklama yaptı. Açıklamada, \"Husiler tarafından dün Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi'ne gerçekleştirilen saldırıyı en güçlü şekilde kınıyor, yaralılara acil şifalar diliyoruz.\" ifadesi kullanıldı. İlginizi Çekebilir Sivil tesisleri hedef alan, bölgesel barış ve güvenliği tehdit eden bu eylemlerin derhal sona erdirilmesi yönündeki çağrının yinelendiği belirtilen açıklamada, \"Husile"
-        },
-        {
-          "source": "AA",
-          "url": "https://www.aa.com.tr/tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi/4137757",
-          "title": "Dışişleri Bakanlığı, Husilerin Riyad'daki Finans Merkezi'ne düzenlediği saldırıyı kınadı",
-          "summary": "Dışişleri Bakanlığı, Yemen'deki İran destekli Husilerin Suudi Arabistan'ın başkenti Riyad'daki Finans Merkezi'ne düzenlediği saldırıyı en güçlü şekilde kınadı."
-        },
-        {
-          "source": "NTV",
-          "url": "https://www.ntv.com.tr/turkiye/disislerinden-husilerin-riyada-yonelik-saldirisina-kinama-1752570",
-          "title": "Dışişleri'nden Husilerin Riyad'a yönelik saldırısına kınama",
-          "summary": "Dışişleri Bakanlığı, Husilerin Suudi Arabistan'ın başkenti Riyad'daki Kral Abdullah Finans Merkezi'ne yönelik saldırısını kınadı. Dışişleri Bakanlığı, Yemen'deki Husilerin Suudi Arabistan'ı hedef alan saldırılarına ilişkin yazılı açıklama yaptı. Bakanlık, Husilerin 24 Kasım'da Riyad'da bulunan Kral Abdullah Finans Merkezi'ne gerçekleştirdiği saldırıyı en güçlü şekilde kınadığını belirterek, yaralılara acil şifalar diledi. Açıklamada, \"Sivil tesisleri hedef alan, bölgesel barış ve güvenliği tehdi"
-        },
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi-43391119",
-          "title": "Dışişleri Bakanlığı, Husilerin Riyad'daki Finans Merkezi'ne düzenlediği saldırıyı kınadı",
-          "summary": ""
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/disislerinden-riyaddaki-finans-merkezine-gerceklestirilen-saldiriai-kinama-3498200",
-          "title": "Dışişleri'nden Riyad’daki Finans Merkezi’ne gerçekleştirilen saldırıya kınama",
-          "summary": "Dışişleri Bakanlığı tarafından yapılan açıklamada, \"Husiler tarafından Riyad’da bulunan Kral Abdullah Finans Merkezi’ne gerçekleştirilen saldırıyı en güçlü şekilde kınıyoruz.\" denildi."
-        },
-        {
-          "source": "Sabah",
-          "url": "https://www.sabah.com.tr/gundem/2026/11/25/disisleri-bakanligindan-riyaddaki-saldiriya-kinama",
-          "title": "Dışişleri Bakanlığı'ndan Riyad'daki saldırıya kınama!",
-          "summary": ""
-        }
-      ],
-      "reasons": [
-        "suç:+5",
-        "güç:+1"
-      ],
-      "sensitive": false,
-      "single_source": false,
-      "newest": "2026-11-25T19:59:42+00:00"
-    },
-    {
-      "score": 16,
-      "title": "Fon soruşturmasıyla ilgili ortak basın toplantısı düzenlenecek",
-      "sources": [
-        "CNN Türk",
-        "Habertürk",
-        "Hürriyet",
-        "Milliyet"
-      ],
-      "links": [
-        {
-          "source": "Hürriyet",
-          "url": "https://www.hurriyet.com.tr/gundem/fon-sorusturmasiyla-ilgili-ortak-basin-toplantisi-duzenlenecek-43391202",
-          "title": "Fon soruşturmasıyla ilgili ortak basın toplantısı düzenlenecek",
-          "summary": ""
-        },
-        {
-          "source": "CNN Türk",
-          "url": "https://www.cnnturk.com/turkiye/fon-meselesine-iliskin-ortak-basin-toplantisi-duzenlenecek-3498215",
-          "title": "Fon meselesine ilişkin ortak basın toplantısı düzenlenecek",
-          "summary": "Cumhurbaşkanı Yardımcısı Cevdet Yılmaz, Adalet Bakanı Akın Gürlek ve Hazine ve Maliye Bakanı Mehmet Şimşek'in katılımıyla yarın fon meselesine ilişkin ortak basın toplantısı düzenlenecek."
-        },
-        {
-          "source": "Milliyet",
-          "url": "https://www.milliyet.com.tr/gundem/fon-meselesine-iliskin-ortak-basin-toplantisi-duzenlenecek-7707987",
-          "title": "Fon meselesine ilişkin ortak basın toplantısı düzenlenecek",
-          "summary": "Cumhurbaşkanlığı Külliyesi Basın Salonu'nda saat 19.00'da başlayacak toplantıda, Cumhurbaşkanı Yardımcısı Yılmaz, Adalet Bakanı Gürlek ve Hazine ve Maliye Bakanı Şimşek, fon meselesine ilişkin son durum hakkında bilgi verecek, basın mensuplarının sorularını cevaplandıracak. HSK'nin mazeret kararnamesiyle 957 hakim ve savcının görev yeri değişti Altında düşüş sürecek mi? Gram altın için rakam verdi: Bir fırsatın içerisindeyiz"
-        },
-        {
-          "source": "Habertürk",
-          "url": "https://www.haberturk.com/gundem/fon-meselesi-hakkinda-ortak-basin-toplantisi-duzenlenecek-3930142",
-          "title": "Fon meselesi hakkında ortak basın toplantısı düzenlenecek",
-          "summary": ""
-        }
-      ],
-      "reasons": [
-        "suç:+3",
-        "para:+2"
-      ],
-      "sensitive": true,
-      "single_source": false,
-      "newest": "2026-11-25T21:35:05+00:00"
+      "newest": "2026-11-26T07:58:00+03:00"
     }
   ]
 }

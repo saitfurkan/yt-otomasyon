@@ -1,141 +1,184 @@
-# Senaryo: Riyad'da İkinci Şok: Finans Merkezi Neden Hedefte?
+# Senaryo: 12 İlde Milyarlık Yasa Dışı Bahis Vurgunu
 
-- Konu: Dışişleri'nden Riyad'daki saldırıya tepki: En güçlü şekilde kınıyoruz
-- Tarih: 2026-11-25 | Kelime: 453 (yaklaşık 3 dk okuma) | Model: gemini-flash-lite-latest
+- Konu: 12 ilde yasa dışı bahis operasyonu, 2,2 milyar liralık para hareketi tespit edildi
+- Tarih: 2026-11-26 | Kelime: 527 (yaklaşık 4 dk okuma) | Model: gemini-flash-lite-latest
 - Durum: **Okumadan önce aşağıdaki 'KONTROL ET' bölümüne 2 dakika ayır.**
 
 ## Uyarılar
-- 29 cümle olgu listesinde karşılığı olmadığı için otomatik silindi (uydurma riski). Listesi raporun sonunda.
-- Senaryo hedeften kısa kaldı (453 kelime). Konunun malzemesi sınırlı olabilir.
+- 55 cümle olgu listesinde karşılığı olmadığı için otomatik silindi (uydurma riski). Listesi raporun sonunda.
+- Senaryo hedeften kısa kaldı (527 kelime). Konunun malzemesi sınırlı olabilir.
+- Short 2 metninde sorunlu kalıp var: çok yönlü
+- Metinde isim listesi var. Özel kişilerin adlarını çıkar, en fazla 3 tanınmış isim kalsın.
 - Bazı kaynaklarda yalnızca kısa özet okunabildi.
 
 ## Başlık önerileri
-1. Riyad'da İkinci Şok: Finans Merkezi Neden Hedefte?
-2. Füzeler Riyad'ı Vurdu: Bölgesel Kriz Derinleşiyor
-3. Kral Abdullah Finans Merkezi'ne Peş Peşe Saldırı
+1. 12 İlde Milyarlık Yasa Dışı Bahis Vurgunu
+2. 2.2 Milyarlık Bahis Trafiğine Operasyon
+3. Sanal Bahis Çetelerine Milyarlık Darbe
 
-Küçük resim yazısı: RİYAD'DA İKİNCİ SALDIRI
+Küçük resim yazısı: 2.2 MİLYARLIK BAHİS VURGUNU
 
 ## KANCA (videonun ilk 10-20 saniyesi)
 
-Hedef masum bir bina değilse, o füze sadece duvara çarpmaz. [duraklama] 24 Kasım 2026 tarihinde Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi hedef alındı. Aynı binaya bir hafta içinde ikinci kez hangi akılla ateş açılır?
+Sanal masalarda kurulan hayallerin bedeli [duraklama] icralık senetlerle ödenir bilirim. Ankara merkezli 12 ilde masaya vuran eller birer birer kelepçelendi. Hesaplarda 2 milyar 200 milyon liralık hareketlilik yakalandı ama asıl soru şu: [duraklama] o ekranların arkasındaki asıl aslan payı kime çalışıyordu?
 
 ## OKUMA METNİ (kanca dahil, baştan sona)
 
-Hedef masum bir bina değilse, o füze sadece duvara çarpmaz. [duraklama] 24 Kasım 2026 tarihinde Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi hedef alındı. Aynı binaya bir hafta içinde ikinci kez hangi akılla ateş açılır?
+Sanal masalarda kurulan hayallerin bedeli [duraklama] icralık senetlerle ödenir bilirim. Ankara merkezli 12 ilde masaya vuran eller birer birer kelepçelendi. Hesaplarda 2 milyar 200 milyon liralık hareketlilik yakalandı ama asıl soru şu: [duraklama] o ekranların arkasındaki asıl aslan payı kime çalışıyordu?
 
-Saldırı anında hoparlör takılı bir araç sokaklardaydı. [duraklama] Yayaları tehlikeye karşı uyarıyor, güvenli alanlara sığınmalarını istiyordu. [duraklama] Aynı kule bir hafta içinde ikinci kez saldırıya uğradı. Suudi yetkililer, geçen hafta düzenlenen ilk saldırıda binanın birkaç katının ve çevresindeki iki komşu yapının hasar gördüğünü bildirdi; olayda can kaybı yaşanmadı. Sivil Savunma Kurumu'nun paylaştığı fotoğraflarda, kulenin kırılan camları ve dış cephesindeki hasar net şekilde görüldü.
+Ankara, Adana, Antalya, Osmaniye, Samsun, İstanbul, Sakarya, İzmir, Gaziantep, Kırıkkale, Muğla ve Trabzon illerini kapsayan operasyon ağında 25 şüpheli yakalandı.
 
-Yemen'de Eylül 2014'te Husilerin başkent Sana ve bazı bölgelerin kontrolünü ele geçirmesiyle kriz derinleşti. Mart 2015'ten itibaren Suudi Arabistan öncülüğündeki Arap Koalisyonu, uluslararası alanda tanınan Yemen hükümetine destek vermeye başladı. Nisan 2022'de yürürlüğe giren ateşkesle görece sakin bir dönem yaşandı, ancak temmuz ayından bu yana tırmanan çatışmalar sahadaki kontrol haritasını değiştirdi. [duraklama] İran destekli Husiler, hükümet kontrolündeki bölgelere yönelik saldırılarını artırırken Suudi Arabistan'ı da balistik füze ve İHA'larla hedef almayı sürdürüyor. [duraklama] 2026'nın son aylarında, kasım ayının son günlerinde Husiler geçici başkent Aden'e yakın yerleşim yerlerinde, dağlık bölgelerde ve deniz kıyısı şeridinde tekrar kontrol sağladı. Suudi liderliğindeki askeri koalisyonun sözcüsü Türki el-Malki, finans merkezindeki kulelerden birinin korkakça bir terörist saldırının hedefi olduğunu doğruladı ve ilgili makamların bölgeyi incelediğini belirtti. [duraklama] Bölgedeki bu tırmanış, tehditlerin nasıl çeşitlendiğini ve yoğunlaştığını açıkça ortaya koyuyor.
+Şüphelilerin internet siteleri üzerinden yasa dışı bahis oynattıkları, para transferlerine aracılık ettikleri [duraklama] ve sosyal medya platformlarında reklam yaparak haksız kazanç sağladıkları tespit edildi. Vatandaşlar yasa dışı bahis sitelerine yönlendirilerek dolandırıldı. Adreslerde yapılan aramalarda çok sayıda dijital materyal ele geçirildi.
 
-2026 yılının son aylarında, kasım ayının son günlerinde yaşanan gelişmeler bu durumun en net kanıtı oldu.
+Suçtan kaynaklanan mal varlığı değerlerinin aklanması suçu kapsamında atılan adımlar da dosyada yerini aldı. Operasyonlar sonucunda şüphelilere ait 1 şirket, 3 taşınmaz, 8 taşınır ile birlikte tam 1. İçişleri Bakanlığı açıklamasındaki 2 milyar 200 milyon liralık tutar, şüphelilerin hesaplarındaki para trafiğini ifade ediyor; bu miktarın tamamının kesinleşmiş suç geliri olduğuna dair raporda net bir bilgi bulunmuyor.
 
-Dışişleri Bakanlığı, Riyad'a düzenlenen bu saldırının ardından yazılı bir açıklama yayımladı. [duraklama] Yapılan açıklamada, Husilerin Riyad'daki Kral Abdullah Finans Merkezi'ne düzenlediği saldırı en güçlü şekilde kınandı ve yaralılara acil şifalar dilendi.
+Antalya'nın Kumluca ilçesinde Cumhuriyet Başsavcılığınca yürütülen soruşturmada 14 şüpheli gözaltına alındı ve bu koldaki 20 şüphelinin para hareketlerinde 725 milyonluk işlem hacmi belirlendi. Samsun merkezli 8 ilde yapılan eş zamanlı operasyonda ise 3'ü asker, 2'si cezaevinde bulunanlar dahil 75 şüpheli yakalandı ve bunlardan 33'ü adliyeye sevk edildi. Samsun merkezli soruşturmada 74 şüphelinin banka hesaplarında 1,5 milyar liralık işlem hacmi tespit edildi.
 
-Sivil tesisleri hedef alan eylemler karşısındaki duruş net bir şekilde ortaya kondu. [duraklama] Dışişleri Bakanlığı açıklamasında, sivil tesisleri hedef alan ve bölgesel barış ile güvenliği tehdit eden eylemlerin derhal sona erdirilmesi çağrısı yinelendi. [duraklama] Aynı açıklamada, Suudi Arabistan ile tam dayanışma içinde olunulduğu vurgulandı ve ülkenin egemenliğine ile toprak bütünlüğüne yönelik destek teyit edildi.
+Denizli merkezli 11 ilde düzenlenen bir diğer operasyonda 24 şüpheli yakalandı, 1 şüphelinin ise yurt dışında olduğu belirlendi. Bu hatta toplam işlem hacmi 2,5 milyar liraya ulaştı; gözaltına alınan 24 şüpheliden 18'i tutuklanırken 6 kişi adli kontrol şartıyla serbest bırakıldı. Denizli'deki baskınlarda şüphelilerin ikamet ve iş yerlerinde 830 bin lira nakit para ele geçirildi, 30 taşınmaza, 21 lüks ve binek araca, ayrıca 2 şirkete mahkeme kararıyla tedbir konuldu.
 
-İbn Haldun Üniversitesi Öğretim Üyesi Dr. [duraklama]
+Daha önceki benzer operasyonlarda da benzer yöntemler izlendi; [duraklama] şüphelilerin internet siteleri üzerinden organize oldukları, sosyal medya platformlarını reklam alanı olarak kullandıkları ve banka hesapları ile kripto varlıklar üzerinden devasa transferler gerçekleştirdikleri [duraklama] geçmiş soruşturma dosyalarında da yer bulmuştu.
 
-İlgili makamlar bölgeyi incelemek üzere derhal harekete geçti ve sahada kapsamlı soruşturma başlattı.
+İçişleri Bakanlığı [duraklama] vatandaşları bu tuzaklardan korumak adına mücadelenin kararlılıkla sürdürüleceğini her fırsatta yineledi.
 
-Riyad'daki Kral Abdullah Finans Merkezi'nde bulunan gökdelenlerden birinin bir haftada ikinci kez saldırıya hedef olması, yürütülen soruşturmaların kapsamını daha da genişletti. [duraklama] Güvenlik birimleri, balistik füze ve İHA'larla gerçekleştirilen bu eylemlerin ardından bölgedeki koruma tedbirlerini en üst seviyeye çıkardı.
+İçişleri Bakanlığı yaptığı açıklamalarda operasyonda görev yapan jandarma ekiplerini, ilgili daire başkanlıklarını, MASAK'ı ve Ankara Cumhuriyet Başsavcılığını tebrik ederken [duraklama] vatandaşları bu tuzaklardan korumak için mücadelenin süreceğini bildirdi.
 
-İlgili makamlar, uluslararası hukuka ve sivil güvenliğe yönelen bu eylemlerin hukuki ve askeri sonuçlarıyla ilgili incelemelerini derinleştiriyor. [duraklama]
+Antalya Cumhuriyet Başsavcılığının Kepez Belediyesine yönelik yürüttüğü soruşturma kapsamında gözaltına alınan 21 şüpheli tutuklandı. Bir yanda yasa dışı bahis ağları ve milyarlık hesap hareketleri [duraklama] diğer yanda belediye eksenli yürütülen operasyonlar.
 
-Gökdelenlerin hedef alındığı bu saldırı zincirinin arkasındaki planlama henüz aydınlatılmış değil. [duraklama] Sivil merkezleri vuran bu füze yağmurunda asıl merak edilen detayı biliyor musunuz, bu istihbarat zafiyeti mi yoksa koruma kalkanının bilinçli bir tercihi mi? Artık son tanık sizsiniz.
+Ankara merkezli 12 ildeki operasyonlarda da [duraklama] tam bu mekanizma işletildi.
+
+Suçtan kaynaklanan mal varlığı değerlerinin aklanması suçu kapsamında [duraklama] savcılık talebiyle mahkemeler harekete geçti.
+
+Samsun merkezli 8 ildeki soruşturmada yakalanan 75 şüpheliden [duraklama] 33'ünün adliyeye sevk edilmesi, sürecin mahkeme aşamasına taşındığını açıkça gösteriyor. Kimi şüpheli suçlamaları reddederken kimi [duraklama] dijital materyallerdeki verilerle köşeye sıkışıyor. Antalya Kumluca Cumhuriyet Başsavcılığınca yürütülen soruşturmada da [duraklama] gözaltına alınan 14 şüpheli için adli süreç aynı titizlikle işletiliyor.
+
+Resmî makamlar hesaplardaki milyarlık trafiğin izini sürerken [duraklama] soruşturma kapsamında adı geçen kaynaklar ise bu tutarların tamamının kesinleşmiş suç geliri olup olmadığının tespiti için MASAK raporlarının bekendiğine dikkat çekiyor.
+
+Paranın bu kadar kolay el değiştirdiği bir düzende [duraklama] yeni operasyonların haberi her an kapımızı çalabilir bilirim. [duraklama] Milyarlık bu ağın arkasındaki asıl isimler [duraklama] gerçekten yargı önüne çıkacak mı? [duraklama] Artık son tanık sizsiniz.
 
 ## Shorts parçaları
 
-### Short 1 (Giriş ve ilk saldırı detayları)
-Kanca: Hedef masum bir bina değilse, o füze sadece duvara çarpmaz.
+### Short 1 (Ankara merkezli 12 il operasyonu)
+Kanca: Sanal masalarda kurulan hayallerin bedeli icralık senetlerle ödenir bilirim.
 
-Hedef masum bir bina değilse, o füze sadece duvara çarpmaz. 24 Kasım 2026 tarihinde Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi hedef alındı. Aynı binaya bir hafta içinde ikinci kez ateş açıldı. Sivil Savunma Kurumu, PIF Kulesi'nin kırılan camlarını ve dış cephesindeki hasarı paylaştı. Yetkililer saldırıyı doğrularken bölgede incelemeler sürüyor.
+Sanal masalarda kurulan hayallerin bedeli icralık senetlerle ödenir bilirim. Ankara merkezli 12 ilde masaya vuran eller kelepçelendi. Hesaplarda 2 milyar 200 milyon liralık hareketlilik yakalandı. İnternet siteleri ve sosyal medya üzerinden yasa dışı bahis oynattığı tespit edilen 25 şüpheli gözaltına alındı. Savcılık süreci ve MASAK incelemeleri titizlikle yürütülüyor.
 
-### Short 2 (Yemen'deki kriz ve koalisyon açıklaması)
-Kanca: Yemen'de kriz derinleşirken füzeler başkenti buldu.
+### Short 2 (Denizli merkezli operasyon)
+Kanca: Denizli merkezli 11 ildeki operasyonda toplam işlem hacmi 2.5 milyar liraya ulaştı.
 
-Yemen'de Eylül 2014'ten bu yana süren kriz sahadaki denklemi değiştirdi. İran destekli Husiler, hükümet kontrolündeki bölgelere saldırırken Suudi Arabistan'ı da balistik füze ve İHA'larla hedef alıyor. 2026'nın son aylarında tırmanan çatışmalar haritayı yeniden şekillendirdi. Koalisyon sözcüsü Türki el-Malki, saldırının korkakça bir terörist eylem olduğunu doğruladı.
+Denizli merkezli 11 ildeki operasyonda toplam işlem hacmi 2.5 milyar liraya ulaştı. Gözaltına alınan 24 şüpheliden 18 kişi tutuklandı. Adreslerde 830 bin lira nakit para ele geçirilirken, 30 taşınmaza ve 21 lüks araca mahkeme kararıyla tedbir konuldu. Soruşturma kapsamında adli süreç çok yönlü devam ediyor.
 
-### Short 3 (Türkiye'nin resmi tepkileri)
-Kanca: Dışişleri Bakanlığı'ndan Riyad saldırısına sert tepki.
+### Short 3 (Samsun merkezli operasyon)
+Kanca: Samsun merkezli 8 ilde yapılan eş zamanlı operasyonda 75 şüpheli yakalandı.
 
-Dışişleri Bakanlığı, Riyad'daki Kral Abdullah Finans Merkezi'ne düzenlenen saldırıyı en güçlü şekilde kınadı. Açıklamada, sivil tesisleri hedef alan ve bölgesel güvenliği tehdit eden eylemlerin derhal sona erdirilmesi istendi. Suudi Arabistan ile tam dayanışma içinde olunulduğu vurgulandı. AK Parti Sözcüsü Ömer Çelik ve İletişim Başkanı Burhanettin Duran da saldırıyı kınayan açıklamalar yaptı.
+Samsun merkezli 8 ilde yapılan eş zamanlı operasyonda 75 şüpheli yakalandı. Aralarında askerlerin de olduğu şüphelilerden 33'ü adliyeye sevk edildi. Banka hesaplarında 1.5 milyar liralık işlem hacmi tespit edildi. Rakamlar büyük, soruşturma genişliyor.
 
 ## Açıklama
 
-Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi'ne bir hafta içinde düzenlenen ikinci saldırının ardından yaşanan gelişmeler. Türkiye'nin kınama mesajları ve bölgedeki son durum. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.
+Ankara merkezli 12 ilde ve eş zamanlı diğer illerde düzenlenen yasa dışı bahis operasyonlarında milyarlık para hareketleri tespit edildi. Şüphelilerin hesap trafiği incelenirken çok sayıda mal varlığına el konuldu. Bilgiler haber kaynaklarına dayanır. Soruşturmalar sürüyor, kimse mahkûm edilene kadar suçsuz sayılır.
 
-Etiketler: Riyad saldırısı, Suudi Arabistan, Husiler, Dışişleri Bakanlığı, Kral Abdullah Finans Merkezi, Yemen krizi, PIF Kulesi, Arap Koalisyonu, balistik füze, haber, dünya gündemi, Son Tanık
+Etiketler: yasa dışı bahis, bahis operasyonu, Ankara merkezli operasyon, MASAK, Jandarma, siber suçlar, Denizli operasyonu, Samsun operasyonu, kara para aklama, bahis soruşturması, Son Tanık
 
 ## KONTROL ET
 
-- Hukuken hassas: Husiler için resmi kaynaklarda geçen 'terörist eylem' ve 'İran destekli' ifadeleri dışında başka bir sıfat kullanılmamalı.
-- Hukuken hassas: Saldırının arkasındaki planlama veya istihbarat zafiyeti hakkında kesin yargılardan kaçınılmalı, sadece soruşturma ve inceleme vurgusu yapılmalı.
+- Hukuken hassas: Şüphelilerin kesin suçlu olduğu yönünde ifadeler kullanılmamalı, soruşturma aşamasında olduğu vurgulanmalı.
+- Hukuken hassas: 2.2 milyar liranın tamamının kesinleşmiş suç geliri olmadığı, hesap hareketlerini ifade ettiği belirtilmeli.
 
 ### Kullanılan olgular
-- Dışişleri Bakanlığı, Husilerin Suudi Arabistan'ı hedef alan saldırısına ilişkin yazılı açıklama yaptı. (kaynak: Milliyet, AA, Hürriyet, CNN Türk, ensonhaber.com)
-- Husiler, 24 Kasım 2026 tarihinde Suudi Arabistan'ın başkenti Riyad'da bulunan Kral Abdullah Finans Merkezi'ne saldırı gerçekleştirdi. (kaynak: Milliyet, AA, NTV, Hürriyet, CNN Türk, Sabah, aksam.com.tr, yirmidort.tv, yenisafak.com, ensonhaber.com, tgrthaber.com, takvim.com.tr)
-- Türkiye Dışişleri Bakanlığı, Husilerin Riyad'daki Kral Abdullah Finans Merkezi'ne düzenlediği saldırıyı en güçlü şekilde kınadı ve yaralılara acil şifalar diledi. (kaynak: Milliyet, AA, NTV, Hürriyet, CNN Türk, Sabah, aksam.com.tr, yirmidort.tv, yenisafak.com, ensonhaber.com, tgrthaber.com, takvim.com.tr)
-- Dışişleri Bakanlığı açıklamasında, sivil tesisleri hedef alan ve bölgesel barış ile güvenliği tehdit eden eylemlerin derhal sona erdirilmesi çağrısı yinelendi. (kaynak: Milliyet, AA, Hürriyet, CNN Türk, Sabah, aksam.com.tr, yirmidort.tv, yenisafak.com, ensonhaber.com, tgrthaber.com, takvim.com.tr)
-- Dışişleri Bakanlığı açıklamasında, Suudi Arabistan ile tam dayanışma içinde olunulduğu vurgulandı ve ülkenin egemenliğine ile toprak bütünlüğüne yönelik destek teyit edildi. (kaynak: Milliyet, AA, NTV, Hürriyet, CNN Türk, Sabah, aksam.com.tr, yirmidort.tv, tgrthaber.com, takvim.com.tr)
-- Yemen'de İran destekli Husilerin Eylül 2014'te başkent Sana ile bazı bölgelerin kontrolünü ele geçirmesinin ardından kriz derinleşti. (kaynak: Milliyet, AA, Hürriyet, CNN Türk, aksam.com.tr, ensonhaber.com)
-- Suudi Arabistan öncülüğündeki Arap Koalisyonu, Mart 2015'ten itibaren uluslararası alanda tanınan Yemen hükümetine destek vermeye başladı. (kaynak: Milliyet, AA, Hürriyet, CNN Türk, aksam.com.tr, ensonhaber.com)
-- Nisan 2022'de yürürlüğe giren ateşkesle Yemen'de görece sakin bir dönem yaşandı, ancak temmuz ayından bu yana tırmanan çatışmalar sahadaki kontrol haritasını değiştirdi. (kaynak: Milliyet, AA, Hürriyet, CNN Türk, aksam.com.tr, ensonhaber.com)
-- İran destekli Husiler, Yemen'de hükümet kontrolündeki bölgelere yönelik saldırılarını artırırken Suudi Arabistan'ı da balistik füze ve İHA'larla hedef alıyor. (kaynak: Milliyet, AA, Hürriyet, CNN Türk, aksam.com.tr, ensonhaber.com)
-- AK Parti Sözcüsü Ömer Çelik, Suudi Arabistan'ın başkenti Riyad'daki Kral Abdullah Finans Merkezi'ne düzenlenen saldırıyı şiddetle kınadıklarını, yaralananlara acil şifalar dilediklerini ve sivil alanları hedef alan bu saldırganlığın derhal son bulması gerektiğini açıkladı. (kaynak: Sabah, aksam.com.tr, yirmidort.tv, tgrthaber.com, takvim.com.tr)
-- Cumhurbaşkanlığı İletişim Başkanı Burhanettin Duran, Husilerin Riyad'daki Kral Abdullah Finans Merkezi'ne yönelik saldırısını şiddetle kınayarak yaralılara acil şifalar diledi ve bu saldırıların bölgenin barış ve istikrarına yönelik bir tehdit olduğunu belirtti. (kaynak: yirmidort.tv, tgrthaber.com, takvim.com.tr)
-- Riyad'daki Kral Abdullah Finans Merkezi'nde bulunan gökdelenlerden biri bir haftada ikinci kez saldırıya hedef oldu. (kaynak: tgrthaber.com, elipshaber.com)
-- Suudi liderliğindeki askeri koalisyonun sözcüsü Türki el-Malki, finans merkezindeki kulelerden birinin korkakça bir terörist saldırısının hedefi olduğunu ve ilgili makamların bölgeyi incelediğini doğruladı. (kaynak: elipshaber.com)
-- Fransız haber ajansı AFP'ye konuşan bir görgü tanığı, hoparlör takılı bir aracın bölgedeki yayaları olası tehlikeye karşı uyardığını ve güvenli alanlara sığınmalarını istediğini aktardı. (kaynak: elipshaber.com)
-- Suudi yetkililer, geçen hafta finans bölgesindeki bir kuleye düzenlenen saldırıda binanın birkaç katının ve çevresindeki iki komşu yapının hasar gördüğünü ve olayda can kaybı yaşanmadığını bildirdi. (kaynak: elipshaber.com)
-- Suudi Sivil Savunma Kurumu tarafından paylaşılan fotoğraflarda, Kamu Yatırım Fonu'nun genel merkezinin bulunduğu yaklaşık 385 metre yüksekliğindeki PIF Kulesi'nin kırılan camları ve dış cephesindeki hasar dikkati çekti. (kaynak: elipshaber.com)
-- Yemen'de İran tarafından desteklenen Husiler, geçen haftaki saldırının sorumluluğunu üstlenmişti. (kaynak: elipshaber.com)
-- İbn Haldun Üniversitesi Öğretim Üyesi Dr. Gökhan Ereli'nin analizine göre, 2026'nın son aylarında Husiler kasım ayının son günlerinde geçici başkent Aden'e yakın yerleşim yerlerinde, dağlık bölgelerde ve deniz kıyısı şeridinde tekrar kontrol sağladı. (kaynak: haberler.com)
-- Dr. Gökhan Ereli'ye göre, Husilerin Riyad'daki Kamu Yatırım Fonu (PIF) binasını hedef alması, Suudi Arabistan'a yönelik tehditlerin çeşitlendiğini ve yoğunlaştığını gösteriyor. (kaynak: haberler.com)
+- Ankara merkezli 12 ilde yasa dışı bahis suçuna yönelik düzenlenen operasyonlarda 25 şüpheli yakalandı. (kaynak: NTV, BirGün, TRT Haber, Hürriyet, ilkses.com.tr, haberekspres.com.tr, t24.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, haber365.com, istiklal.com.tr, memleket.com.tr, ngazete.com, mansethaber.com, haber.doviz.com, milliyet.com.tr)
+- Yakalanan şüphelilerin hesaplarında 2 milyar 200 milyon liralık para hareketi tespit edildi. (kaynak: NTV, BirGün, TRT Haber, Hürriyet, ilkses.com.tr, haberekspres.com.tr, t24.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, haber365.com, istiklal.com.tr, memleket.com.tr, ngazete.com, mansethaber.com, haber.doviz.com, milliyet.com.tr)
+- Operasyonlar; Jandarma Genel Komutanlığı KOM ve Siber Suçlarla Mücadele Daire Başkanlığı, MASAK ve Ankara Cumhuriyet Başsavcılığı koordinesinde, Ankara İl Jandarma Komutanlığı ekiplerince yürütüldü. (kaynak: NTV, TRT Haber, Hürriyet, ilkses.com.tr, haberekspres.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, haber365.com, istiklal.com.tr, memleket.com.tr, ngazete.com, mansethaber.com, haber.doviz.com)
+- Suçtan kaynaklanan mal varlığı değerlerinin aklanması suçu kapsamında şüphelilere ait 1 şirket, 3 taşınmaz, 8 taşınır ile 1.423 banka ve kripto varlık hesabına el konuldu. (kaynak: NTV, BirGün, TRT Haber, Hürriyet, ilkses.com.tr, haberekspres.com.tr, t24.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, haber365.com, istiklal.com.tr, memleket.com.tr, ngazete.com, mansethaber.com, haber.doviz.com, milliyet.com.tr)
+- Şüphelilerin internet siteleri üzerinden yasa dışı bahis oynattıkları ve yasa dışı para transferlerine aracılık ettikleri tespit edildi. (kaynak: NTV, TRT Haber, Hürriyet, ilkses.com.tr, haberekspres.com.tr, t24.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, haber365.com, istiklal.com.tr, memleket.com.tr, ngazete.com, mansethaber.com, haber.doviz.com, milliyet.com.tr)
+- Şüphelilerin sosyal medya platformlarında yasa dışı bahis reklamı yaparak haksız kazanç sağladıkları tespit edildi. (kaynak: NTV, TRT Haber, Hürriyet, ilkses.com.tr, haberekspres.com.tr, t24.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, haber365.com, istiklal.com.tr, memleket.com.tr, ngazete.com, mansethaber.com, haber.doviz.com, milliyet.com.tr)
+- Şüphelilerin yasa dışı bahis sitelerine kullanıcı yönlendirmesi yaparak vatandaşları dolandırdıkları tespit edildi. (kaynak: NTV, TRT Haber, Hürriyet, ilkses.com.tr, haberekspres.com.tr, t24.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, haber365.com, istiklal.com.tr, memleket.com.tr, ngazete.com, mansethaber.com, haber.doviz.com, milliyet.com.tr)
+- Ankara merkezli 12 il operasyonunun yapıldığı iller Ankara, Adana, Antalya, Osmaniye, Samsun, İstanbul, Sakarya, İzmir, Gaziantep, Kırıkkale, Muğla ve Trabzon'dur. (kaynak: haberekspres.com.tr, t24.com.tr)
+- Antalya'nın Kumluca ilçesinde Kumluca Cumhuriyet Başsavcılığınca yürütülen soruşturma kapsamında yasa dışı bahis ve kumar operasyonunda 14 şüpheli gözaltına alındı. (kaynak: CNN Türk)
+- Antalya Kumluca'daki operasyonda belirlenen 20 şüphelinin para hareketlerinde toplam 725 milyonluk işlem hacmi tespit edildi. (kaynak: CNN Türk)
+- Samsun merkezli 8 ilde düzenlenen eş zamanlı operasyonda, 3'ü asker, 2'si cezaevinde olmak üzere toplam 75 şüpheli yakalanarak gözaltına alındı ve bunlardan 33'ü adliyeye sevk edildi. (kaynak: Hürriyet)
+- Samsun merkezli 1,5 milyar liralık yasa dışı bahis soruşturmasında toplam 74 şüphelinin banka hesaplarında işlem hacmi tespit edildi. (kaynak: Hürriyet)
+- Denizli merkezli 11 ilde düzenlenen yasa dışı bahis operasyonunda 24 şüpheli yakalanırken 1 şüphelinin yurt dışında olduğu tespit edildi. (kaynak: sozcu.com.tr)
+- Denizli merkezli 11 ildeki soruşturmada toplam işlem hacminin 2,5 milyar liraya ulaştığı belirlendi ve gözaltına alınan 24 şüpheliden 18'i tutuklandı, 6 şüpheli adli kontrol şartıyla serbest bırakıldı. (kaynak: sozcu.com.tr)
+- Denizli merkezli operasyonda şüphelilerin ikamet ve iş yerlerinde 830 bin lira nakit para ele geçirildi, 30 taşınmaza, 21 lüks ve binek araca ile 2 şirkete mahkeme kararıyla tedbir konuldu. (kaynak: sozcu.com.tr)
+- Mansethaber.com kaynağına göre, İçişleri Bakanlığı açıklamasındaki 2 milyar 200 milyon liralık tutar şüphelilerin hesaplarındaki para trafiğini ifade etmekte olup, bu miktarın tamamının suç geliri olduğuna ilişkin kesinleşmiş bir bilgiye yer verilmedi. (kaynak: mansethaber.com)
+- İçişleri Bakanlığı, vatandaşları yasa dışı bahis tuzağından korumak için siber suçlarla mücadelenin kararlılıkla sürdürüldüğünü bildirdi. (kaynak: TRT Haber, Hürriyet, ilkses.com.tr, haberekspres.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, istiklal.com.tr, ngazete.com, mansethaber.com, haber.doviz.com, milliyet.com.tr)
+- Antalya Cumhuriyet Başsavcılığının Kepez Belediyesine yönelik yürüttüğü soruşturma kapsamında gözaltına alınan 21 şüpheli tutuklandı. (kaynak: ayancikgazetesi.com)
+- Ankara merkezli 12 ildeki jandarma operasyonlarında şüphelilerin adreslerindeki aramalarda çok sayıda dijital materyal ele geçirildi. (kaynak: haberekspres.com.tr, t24.com.tr)
+- İçişleri Bakanlığı yaptığı açıklamada operasyonda görev yapan jandarma ekiplerini, ilgili daire başkanlıklarını, MASAK'ı ve Ankara Cumhuriyet Başsavcılığını tebrik etti. (kaynak: TRT Haber, Hürriyet, ilkses.com.tr, turkiyegazetesi.com.tr, sabah.com.tr, istiklal.com.tr, ngazete.com, mansethaber.com, haber.doviz.com, milliyet.com.tr)
 
 ### Silinen kaynaksız cümleler (yapay zekanın eklediği, olguda olmayan)
-- Bu coğrafyada krizin kökleri bugüne dayanmıyor.
-- Adaletin terazisi şaşarsa, kurşun her zaman doğru adresi bulur sanılır.
-- Bu krizin geçmişi on yıldan uzun bir zaman öncesine dayanıyor.
-- Devletler bu ateşe sessiz kalmadı.
-- Ancak bu sessizlik kalıcı olmadı.
-- Saha sürekli hareket halinde, tehditlerin boyutu her geçen gün büyüüyor.
-- Fiyatı ödenmeyen her imza, bir gün başka bir masadan tahsil edilir.
-- Ankara'dan yükselen bu ses, tek bir merkezle sınırlı kalmadı.
-- Uluslararası analizler ve resmi açıklamalar aynı noktada birleşiyor.
-- Resmi makamlar ve uzmanlar, sivil yapıların hedef alınmasının bölgesel güvenliği doğrudan sarstığı konusunda hemfikir.
-- Açıklamalar yalnızca diplomatik masalardan ibaret kalmaz, sorumluların adı konur.
-- Bu süreçte adı geçen isimler, atılan adımların ve yapılan açıklamaların ağırlığını doğrudan taşıyor.
-- Aynı coğrafyada sivil hedeflere yönelik saldırılar sürerken, resmi makamların ve uzmanların dile getirdiği bu uyarılar sahadaki tehlikenin boyutunu gözler önüne seriyor.
-- Sivil tesislerin doğrudan hedef alınması karşısında uluslararası düzeyde verilen tepkiler, krizin sadece yerel bir çatışma olmadığını, tüm bölgenin güvenliğini tehdit eden küresel bir mesele haline geldiğini net bir şekilde gösteriyor.
-- Kararlar alınır, kınamalar peş peşe gelir ama sahadaki gerçekler masadaki diplomasiyi her seferinde zorlamaya devam eder.
-- Sınırların arkasındaki hesap, her zaman ilk patlamayla açığa çıkmaz.
-- Güvenlik güçleri ve inceleme ekipleri delilleri toplarken, yapılan ilk değerlendirmeler saldırının izlerini tek tek ortaya koyuyor.
-- Bu süreçte resmi makamların yürüttüğü incelemeler, saldırının boyutunu ve arkasındaki mekanizmayı aydınlatmak için aralıksız sürüyor.
-- Saldırıların ardındaki faillerin tespiti ve benzer tehditlerin önlenmesi için atılan adımlar titizlikle yürütülüyor.
-- Soruşturma dosyası güncellenirken, sahadaki adli ve idari denetimler hız kesmeden devam ediyor.
-- Yalnızca masalarda konuşulanlar değil, sahadaki can pazarı da bu krizin asıl yüzünü gösteriyor.
-- Bir anda çalınan o uyarı sirenleri, sıradan bir insanın sokağa çıktığında nelerle karşılaşabileceğinin en somut kanıtı oldu.
-- Sokaktaki insan için mesele diplomatik bildiriler ya da stratejik analizler değil, başının üzerine düşebilecek bir füze ya da İHA tehdididir.
-- Resmi makamlar ve koalisyon güçleri güvenlik çemberini daraltmaya çalışırken, bölgede yaşayan siviller her an yeni bir alarm sesiyle irkiliyor.
-- Hayatın akışı bu tehditlerle kesintiye uğruyor, her sokak başı belirsizliğe çıkıyor.
-- Taraflar bir yandan en sert kınama mesajlarını yayımlarken, diğer yandan sahada kontrolü elinde tutmak için pozisyon alıyor.
-- Dışişleri Bakanlığının ve uluslararası aktörlerin yaptığı çağrılar, sivil halkın korunması gerektiğinin altını defalarca çiziyor.
-- Ancak bu kınamalar, havada uçuşan füzelerin ve patlayan camların gerçeğini tek başına değiştirmeye yetmiyor.
-- Masadaki hesap ile sahadaki yıkım arasındaki bu derin uçurum, en çok o sokaklarda yürüyen insanları vuruyor.
+- Düğmeye basıldı ve siber ağlar daraltıldı.
+- Bu rakam küçük değil.
+- 423 banka ve kripto varlık hesabına el konuldu.
+- Aynı operasyon dalgası farklı kollardan da yürüdü.
+- İzlenen bu yol   bugünün tablosunu tek günde yaratmadı.
+- Kökleri derinlerde olan bu yapılar için   geçmişte de benzer adımlar atıldı.
+- Siber suç ağlarına karşı yürütülen bu süreç   yıllardır kademeli olarak genişletiliyor.
+- MASAK raporları ve ilgili daire başkanlıklarının ortak çalışmaları, bu ağların sadece bireysel değil   organize bir yapı içinde hareket ettiğini defalarca ortaya koydu.
+- Geçmişteki benzer dosyalarda da   mal varlıklarına el koyma tedbirleri uygulanmış, şirketler ve taşınmazlar üzerinden para aklama mekanizmaları çözülmeye çalışılmıştı.
+- Ancak her yeni operasyon   sistemin ne kadar hızlı kabuk değiştirdiğini gösteriyor.
+- Bir ilde kapatılan hesap   başka bir ilde farklı bir yöntemle yeniden açılıyor.
+- Geçmişten bugüne atılan her adım   bu zincirin halkalarını koparmayı hedefliyor.
+- Hesaplardaki milyarlık rakamlar   sadece bugünün değil, geçmiş yıllardan bu yana biriken haksız kazancın bir dökümü.
+- Adalet terazisini   bu para trafiğinin ardındaki tüm isimleri hesap vermeye çağırmak için ben kurarım.
+- Paranın izi sürüldüğünde   ağın kimlere uzandığı tüm çıplaklığıyla ortaya dökülür bilirim.
+- Soruşturma dosyalarında adı geçen rakamlar ve kurumlar arasındaki bağlar   işin boyutunu gözler önüne seriyor.
+- Savcılık ve ilgili birimlerin raporlarına göre   operasyonlar sadece saha baskınlarıyla sınırlı kalmadı.
+- Bu devasa ağın tek bir merkezden yönetilmediğini gösteriyor.
+- Aynı ülkede farklı illerde kurulan bu devasa çarklar   işte meselenin tam kalbinde yer alıyor.
+- Dosyadaki iddialara göre şüpheliler   elde ettikleri haksız kazancı aklamak için şirketler, taşınmazlar ve lüks araçlar üzerinden bir sistem kurdu.
+- Bu rakamlar küçük değil.
+- Samsun merkezli soruşturmanın detaylarında ise dikkat çekici bağlar yer alıyor.
+- Savcılık dosyasına göre yakalanan 75 şüpheli arasında   3 asker ve cezaevinde bulunan 2 kişi de bulunuyor.
+- Bu kişilerin yasa dışı bahis ağlarıyla nasıl bir ilişki kurduğu   soruşturmanın derinleşmesiyle netleşecek.
+- Kanun karşısında herkes eşittir.
+- Ancak bu devasa para trafiğinin arkasındaki tüm isimler   yargı önünde hesap verecek mi, bunu zaman gösterecek.
+- Dosyanın diğer ucunda   adı geçen bazı isimler var ki, işin rengini değiştiriyor.
+- Bu rakam küçük değil.
+- Samsun merkezli operasyonda yakalanan 75 şüpheliden 3'ünün asker, 2'sinin ise halihazırda cezaevinde olması   suç ağının kolları nerelere uzanıyor sorusunu akla getiriyor.
+- İçerde olan birinin dışarıdaki bahis çarkında nasıl rol oynadığı   soruşturmanın en kritik noktalarından biri.
+- Farklı illerdeki operasyonlarda kimisi adli kontrol şartıyla serbest kalırken kimisi   doğrudan cezaevine gönderiliyor.
+- Aynı dosya içinde bile uygulanan tedbirlerin seyri değişiyor.
+- Kimi kaçma şüphesiyle ya da delil durumuyla cezaevine yollanırken kimi   imza atarak dışarıda kalıyor.
+- Bu tablo   adaletin mekanizmasının her dosyada nasıl işletildiğini gözler önüne seriyor.
+- Yurt dışında olduğu tespit edilen 1 şüpheli için atılacak adımlar   bu işin uluslararası boyutunu da açıkça gösteriyor.
+- Sınırları aşan bu para trafiği   sadece yerel operasyonlarla çözülemeyecek kadar büyük bir ağa işaret ediyor.
+- Yakalanan şüphelilerin profilleri, görevleri ve   devasa finansal hareketler içindeki konumları   savcılığın masasında duruyor.
+- Kimi şüpheli evinde yakalanıp nakit parayla kelepçelenirken kimi   çoktan yurt dışına kaçmış durumda.
+- Adalet bu dengesizliği   kapatabilecek mi?
+- Hesaplar donduruldu, şirketlere tedbir konuldu   ama masanın etrafındakilerin tamamı hesap verecek mi, bunu göreceğiz.
+- Paranın izi mahkeme kapılarına dayandığında   atılan her hukuki adımın seyri değişir bilirim.
+- Savcılıklar sadece para trafiğini takip etmekle kalmıyor,   suçtan elde edilen mal varlıklarının dondurulması için operasyon anında düğmeye basıyor.
+- Bu dijital izler   ağın tam merkezine ulaşmanın tek yolu.
+- Soruşturma dosyalarında yer alan adli adımlar   sadece el koyma kararlarıyla sınırlı kalmıyor.
+- Bu tedbir kararları   paranın kaçırılmasını önlemek için atılan en kritik hukuki adımlar arasında yer alıyor.
+- Savcılık sorgularının ardından hâkim karşısına çıkan şüpheliler   suçlamalara karşı savunmalarını yapıyor.
+- Yargının önündeki en büyük sınav   milyarlık bu para trafiğinin arkasındaki asıl sorumluların adalet önüne çıkarılması.
+- Savcılıklar dijital materyalleri çözerken, MASAK raporları   hesaplar arasındaki zinciri gün yüzüne çıkarıyor.
+- Bu devasa çarkın dişlileri arasında kaybolan milyonlar   mahkeme salonlarında hesap verecek mi, bunu zaman gösterecek.
+- Suçun merkezindeki bu devasa çark dönerken   yetkililer ve şüpheliler cephesinde atılan adımlar tabloyu netleştiriyor.
+- Sokağın bütçesine göz diken bu sistemler   en çok asgari ücretle geçinmeye çalışan vatandaşı vurur bilirim.
+- Sosyal medya reklamları ve internet siteleri üzerinden kurulan bu tuzaklar   kısa yoldan zengin olma hayali kuranları   milyarlık bir borç batağının içine çekiyor.
+- Bir tarafta lüks araçlara ve devasa şirketlere tedbir konulurken   diğer tarafta bu çarkın yüzünden batan ocaklar var.
+- Aynı ülkede yaşanan bu adaletsizlik   işte meselenin ta kendisi.
+- Mahkeme salonlarında verilecek kararlar   sadece bu dosyadaki şüphelilerin değil,   benzer tuzaklara düşen binlerce insanın adalet arayışının da cevabı olacak.
 
 ## Kaynaklar
-[1] Milliyet: https://www.milliyet.com.tr/dunya/disislerinden-riyaddaki-saldiriya-tepki-en-guclu-sekilde-kiniyoruz-7707943
-[2] AA: https://www.aa.com.tr/tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi/4137757
-[3] NTV: https://www.ntv.com.tr/turkiye/disislerinden-husilerin-riyada-yonelik-saldirisina-kinama-1752570
-[4] Hürriyet: https://www.hurriyet.com.tr/gundem/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-duzenledigi-saldiriyi-kinadi-43391119
-[5] CNN Türk: https://www.cnnturk.com/turkiye/disislerinden-riyaddaki-finans-merkezine-gerceklestirilen-saldiriai-kinama-3498200
-[6] Sabah: https://www.sabah.com.tr/gundem/2026/11/25/disisleri-bakanligindan-riyaddaki-saldiriya-kinama
-[7] aksam.com.tr: https://www.aksam.com.tr/guncel/ankaradan-riyaddaki-saldiriya-sert-tepki-en-guclu-sekilde-kiniyoruz/haber-1717407
-[8] yirmidort.tv: https://www.yirmidort.tv/gundem/turkiyeden-husilere-riyad-tepkisi-bu-saldirganlik-derhal-son-bulmali-301304
-[9] yenisafak.com: https://www.yenisafak.com/gundem/turkiyeden-riyaddaki-saldiriya-kinama-suudi-arabistana-tam-destek-4876519
-[10] ensonhaber.com: https://www.ensonhaber.com/disisleri-bakanligi-husilerin-riyaddaki-finans-merkezine-saldirisini-kinadi-h1585622
-[11] tgrthaber.com: https://www.tgrthaber.com/gundem/husiler-suudi-arabistandaki-finans-merkezini-hedef-aldi-turkiye-saldiriyi-kinadi-3373498
-[12] elipshaber.com: https://www.elipshaber.com/finans-merkezine-saldiri-suudi-arabistanin-en-yuksek-binasi-yeniden-hedef-alindi
-[13] takvim.com.tr: https://www.takvim.com.tr/guncel/2026/11/25/turkiye-husilerin-riyada-duzenledigi-saldiriyi-kinadi
-[14] haberler.com: https://www.haberler.com/guncel/dr-ereli-husilerin-suudi-arabistan-a-yonelik-20456837-haberi/
+[1] NTV: https://www.ntv.com.tr/turkiye/12-ilde-yasa-disi-bahis-operasyonu-22-milyar-liralik-para-hareketi-tespit-edildi-1752660
+[2] BirGün: https://www.birgun.net/haber/12-ilde-yasa-disi-bahis-operasyonu-25-gozalti-748558
+[3] TRT Haber: https://www.trthaber.com/haber/turkiye/yasa-disi-bahis-operasyonunda-22-milyar-liralik-hareketlilik-25-gozalti-964501.html
+[4] Hürriyet: https://www.hurriyet.com.tr/gundem/2-2-milyar-tllik-para-hareketliligi-12-ilde-dugmeye-basildi-yasa-disi-bahis-operasyonlarinda-25-gozalti-43391455
+[5] CNN Türk: https://www.cnnturk.com/yerel-haberler/antalya/kumluca/yasa-disi-bahis-ve-kumar-operasyonu-14-gozalti-3498471
+[6] Hürriyet: https://www.hurriyet.com.tr/gundem/1-5-milyar-liralik-yasa-disi-bahis-sorusturmasinda-33-supheli-adliyeye-cikarildi-43391419
+[7] ilkses.com.tr: https://ilkses.com.tr/gundem/12-ilde-yasa-disi-bahis-operasyonu-2-2-milyar-liralik-para-trafigi-ortaya-cikti-468991
+[8] haberekspres.com.tr: https://www.haberekspres.com.tr/izmir-dahil-12-ilde-yasa-disi-bahis-operasyonu
+[9] ayancikgazetesi.com: https://www.ayancikgazetesi.com/12-ilde-yasa-disi-bahis-operasyonu-25-gozalti-22-milyar-liralik-para-hareketi/157862
+[10] t24.com.tr: https://t24.com.tr/gundem/yasa-disi-bahis-operasyonunda-milyarlik-para-trafigi-ortaya-cikti-25-supheli-yakalandi,1360991
+[11] sozcu.com.tr: https://www.sozcu.com.tr/2-5-milyar-liralik-yasa-disi-bahis-agina-dev-darbe-11-ilde-es-zamanli-operasyon-18-tutuklama-p383757
+[12] turkiyegazetesi.com.tr: https://www.turkiyegazetesi.com.tr/gundem/ankara-merkezli-12-ilde-yasa-disi-bahis-operasyonu-milyarlik-para-hareketi-tespit-edi-1831802
+[13] sabah.com.tr: https://www.sabah.com.tr/gundem/2026/11/26/ankara-merkezli-12-ilde-yasa-disi-bahis-sucuna-yonelik-operasyon-25-gozalti
+[14] haber365.com: https://www.haber365.com/haber/ankara-merkezli-operasyonda-12-ilde-yasa-disi-bahis-cetesi-cokertildi-493171
+[15] istiklal.com.tr: https://www.istiklal.com.tr/genel/ankara-merkezli-12-ilde-yasa-disi-bahis-operasyonunda-25-supheli-yakalandi-1111692h
+[16] memleket.com.tr: https://www.memleket.com.tr/12-ilde-jandarmadan-yasa-disi-bahis-darbesi-2367759h.htm
+[17] ngazete.com: https://www.ngazete.com/12-ilde-duzenlenen-yasa-disi-bahis-operasyonlarinda-25-supheli-yakalandi-289609h.htm
+[18] mansethaber.com: https://mansethaber.com/haber/yasa-disi-bahis-sorusturmasinda-milyarlik-para-trafigi
+[19] haber.doviz.com: https://haber.doviz.com/gundem-haberleri/2-2-milyar-tl-lik-para-hareketi-tespit-edildi-12-ilde-yasa-disi-bahis-operasyonu/957882
+[20] milliyet.com.tr: https://www.milliyet.com.tr/yerel-haberler/ankara/12-ilde-yasa-disi-bahis-operasyonu-25-gozalt-7708331
