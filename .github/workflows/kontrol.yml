@@ -1,0 +1,23 @@
+name: Anahtar kontrolu
+on:
+  workflow_dispatch:
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hangi anahtarlar var
+        run: |
+          for n in TELEGRAM_BOT_TOKEN PIXABAY_API_KEY PEXELS_API_KEY CF_ACCOUNT_ID CF_API_TOKEN GEMINI_API_KEY OPENROUTER_API_KEY YT_CLIENT_ID YT_CLIENT_SECRET YT_REFRESH_TOKEN; do
+            v="${!n}"; if [ -n "$v" ]; then echo "VAR   $n (uzunluk ${#v})"; else echo "YOK   $n"; fi
+          done
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
