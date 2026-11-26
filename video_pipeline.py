@@ -365,27 +365,39 @@ def make_ident(ident_voice, out_mp4, out_wav, workdir):
 
 # ------------------------------------------------------------------ kapak
 def make_thumbnail(frame_png, text, out_jpg):
-    from PIL import Image, ImageDraw, ImageFont, ImageFilter
+    """Sinematik kapak: koyu renk düzeltmeli görüntü, güçlü yazı, sarı vurgu kutusu, kırmızı etiket."""
+    from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
     W, H = 1280, 720
     if frame_png and os.path.exists(frame_png):
         im = Image.open(frame_png).convert("RGB")
-        r = max(W / im.width, H / im.height)
+        r = max(W / im.width, H / im.height) * 1.08
         im = im.resize((int(im.width * r), int(im.height * r)))
-        im = im.crop(((im.width - W) // 2, (im.height - H) // 2, (im.width - W) // 2 + W, (im.height - H) // 2 + H))
+        x0, y0 = (im.width - W) // 2 + 60, (im.height - H) // 2
+        im = im.crop((x0, y0, x0 + W, y0 + H))
+        im = ImageEnhance.Color(im).enhance(0.55)
+        im = ImageEnhance.Contrast(im).enhance(1.25)
+        im = ImageEnhance.Brightness(im).enhance(0.8)
     else:
-        im = Image.new("RGB", (W, H), (14, 16, 22))
-    im = im.filter(ImageFilter.GaussianBlur(1.2))
-    over = Image.new("RGBA", (W, H))
-    d = ImageDraw.Draw(over)
+        im = Image.new("RGB", (W, H), (16, 18, 26))
+    # sağ tarafa kırmızı sıcak ışık, soldan koyu geçiş, kenar karartma
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    gd.ellipse([700, -150, 1500, 650], fill=(190, 40, 30, 70))
+    glow = glow.filter(ImageFilter.GaussianBlur(120))
+    im = Image.alpha_composite(im.convert("RGBA"), glow)
+    shade = Image.new("RGBA", (W, H))
+    sd = ImageDraw.Draw(shade)
     for x in range(W):
-        a = int(215 * (1 - x / W) ** 0.8) + 25
-        d.line([(x, 0), (x, H)], fill=(0, 0, 0, min(235, a)))
-    im = Image.alpha_composite(im.convert("RGBA"), over).convert("RGB")
+        sd.line([(x, 0), (x, H)], fill=(0, 0, 0, int(235 * max(0.0, 1 - x / (W * 0.82)) ** 1.1)))
+    for y in range(H):
+        a = int(150 * (y / H) ** 3)
+        sd.line([(0, y), (W, y)], fill=(0, 0, 0, a))
+    im = Image.alpha_composite(im, shade).convert("RGB")
     d = ImageDraw.Draw(im)
-    words = text.upper().split()
+    words = text.replace("i", "İ").replace("ı", "I").upper().split()
     lines, cur = [], ""
     for w in words:
-        if len(cur) + len(w) + 1 > 12 and cur:
+        if len(cur) + len(w) + 1 > 14 and cur:
             lines.append(cur)
             cur = w
         else:
@@ -393,21 +405,29 @@ def make_thumbnail(frame_png, text, out_jpg):
     if cur:
         lines.append(cur)
     lines = lines[:4]
-    size = 150 if len(lines) <= 2 else 118
+    size = {1: 190, 2: 168, 3: 140}.get(len(lines), 112)
     font = ImageFont.truetype(FONT_BOLD_PATH, size)
-    y = (H - len(lines) * (size + 8)) // 2 - 10
+    while size > 70 and max(d.textlength(l, font=font) for l in lines) > 1000:
+        size -= 6
+        font = ImageFont.truetype(FONT_BOLD_PATH, size)
+    lh = int(size * 1.02)
+    y = (H - len(lines) * lh) // 2 + 10
     for i, ln in enumerate(lines):
-        col = (255, 214, 10) if i == len(lines) - 1 else (255, 255, 255)
-        x = 60
-        for dx in range(-6, 7, 3):
-            for dy in range(-6, 7, 3):
+        x = 56
+        if i == len(lines) - 1:        # son satır: sarı kutu üstünde siyah yazı
+            tw = d.textlength(ln, font=font)
+            d.rectangle([x - 18, y + 8, x + tw + 22, y + lh - 2], fill=(255, 205, 0))
+            d.text((x, y), ln, font=font, fill=(10, 10, 10))
+        else:
+            for dx, dy in ((8, 8), (6, 6), (-3, 3)):
                 d.text((x + dx, y + dy), ln, font=font, fill=(0, 0, 0))
-        d.text((x, y), ln, font=font, fill=col)
-        y += size + 8
-    tag = ImageFont.truetype(FONT_BOLD_PATH, 40)
-    d.rectangle([0, H - 86, 360, H], fill=(192, 57, 43))
-    d.text((24, H - 76), "SON TANIK", font=tag, fill=(255, 255, 255))
-    im.save(out_jpg, quality=90)
+            d.text((x, y), ln, font=font, fill=(255, 255, 255))
+        y += lh
+    tag = ImageFont.truetype(FONT_BOLD_PATH, 38)
+    d.rectangle([56, 46, 56 + 262, 46 + 62], fill=(200, 30, 30))
+    d.text((56 + 22, 46 + 10), "SON TANIK", font=tag, fill=(255, 255, 255))
+    d.rectangle([0, H - 10, W, H], fill=(200, 30, 30))
+    im.save(out_jpg, quality=92)
     return out_jpg
 
 
