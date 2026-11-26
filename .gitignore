@@ -1,2 +1,5 @@
 __pycache__/
 _work/
+_out/
+_work/
+_selftest.*

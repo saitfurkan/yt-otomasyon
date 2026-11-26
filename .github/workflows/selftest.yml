@@ -1,0 +1,29 @@
+name: Uctan uca deneme
+on:
+  workflow_dispatch:
+jobs:
+  deneme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg espeak-ng fonts-dejavu-core
+          pip install faster-whisper pillow
+      - run: python selftest.py
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AI_IMAGE_MAX: "12"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deneme
+          path: |
+            _out/video.mp4
+            _out/kapak.jpg
+            _out/short1.mp4
