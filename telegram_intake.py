@@ -71,10 +71,14 @@ def main():
     # ident kaydı
     last_id = msgs[-1][0]
     ident_done = False
-    for uid, m in msgs:
+    ident_idx = set()
+    for i, (uid, m) in enumerate(msgs):
+        if (m.get("text") or "").strip().lower().lstrip("/") in ("ident", "ıdent", "i̇dent") and i > 0 and audio_of(msgs[i - 1][1]):
+            ident_idx.add(i - 1)
+    for i, (uid, m) in enumerate(msgs):
         cap = (m.get("caption") or m.get("text") or "").lower()
         fid = audio_of(m)
-        if fid and "ident" in cap:
+        if fid and ("ident" in cap or i in ident_idx):
             os.makedirs(os.path.join(HERE, "assets"), exist_ok=True)
             fetch_file(fid, os.path.join(HERE, "assets", "ident_raw"))
             vp.run(["ffmpeg", "-y", "-loglevel", "error", "-i", os.path.join(HERE, "assets", "ident_raw"),
@@ -108,7 +112,7 @@ def main():
         say(chat, f"hazir/{sid}.md bulunamadı. Dosya adını kontrol et.")
         tg("getUpdates", offset=msgs[end][0] + 1)
         return
-    voices = [audio_of(m) for _, m in msgs[start:end] if audio_of(m) and "ident" not in (m.get("caption") or "").lower()]
+    voices = [audio_of(m) for j, (_, m) in enumerate(msgs[start:end], start) if audio_of(m) and j not in ident_idx and "ident" not in (m.get("caption") or "").lower()]
     if not voices:
         say(chat, "Ses bulamadım. Sesli mesajları /senaryo ile /bitti arasında gönder.")
         tg("getUpdates", offset=msgs[end][0] + 1)

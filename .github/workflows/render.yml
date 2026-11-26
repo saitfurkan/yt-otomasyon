@@ -31,7 +31,7 @@ jobs:
           print("token uzunlugu:", len(t), "bicim dogru:", bool(re.fullmatch(r"\d{6,}:[A-Za-z0-9_-]{30,}", t)))
           r = json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getUpdates?timeout=0"))
           ms = [u["message"] for u in r["result"] if "message" in u]
-          go = any((m.get("text") or "").lower().startswith("/bitti") or "ident" in (m.get("caption") or "").lower() for m in ms)
+          go = any((m.get("text") or "").lower().startswith("/bitti") or (m.get("text") or "").strip().lower().lstrip("/") in ("ident", "ıdent") or "ident" in (m.get("caption") or "").lower() for m in ms)
           open(os.environ["GITHUB_OUTPUT"], "a").write(f"go={'1' if go else '0'}\n")
           PY
         env:
