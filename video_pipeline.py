@@ -154,6 +154,84 @@ def align(script_words, whisper_words, total):
     return out
 
 
+# ------------------------------------------------------------------ okuma hatası kontrolü
+def plan_takes(script_words, wh):
+    """Tekrar okunmuş (yarım bırakılıp baştan alınmış) kısımları ve yutulan kelimeleri bulur.
+    Dönüş: (kesilecek [(s,e)] saniye aralıkları, tekrar metinleri, yutulan [(metin, saniye, kelime_no)])"""
+    sw_ = [norm_word(w) for w in script_words]
+    ww_ = [norm_word(w[0]) for w in wh]
+    sm = difflib.SequenceMatcher(None, sw_, ww_, autojunk=False)
+    cuts, cut_txt, swallowed = [], [], []
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        extra = (j2 - j1) - (i2 - i1) if tag == "replace" else (j2 - j1 if tag == "insert" else 0)
+        if tag in ("insert", "replace") and extra >= 2:
+            run = list(range(j1, j2)) if tag == "insert" else list(range(j1, j2))
+            run_words = [ww_[j] for j in run if ww_[j]]
+            lo, hi = max(0, i1 - len(run) - 3), min(len(sw_), i2 + len(run) + 8)
+            near = set(sw_[lo:hi])
+            hit = sum(1 for w in run_words if w in near)
+            if run_words and hit / len(run_words) >= 0.6:
+                s0 = wh[j1][1]
+                nxt = wh[j2][1] if j2 < len(wh) else wh[j2 - 1][2] + 0.5
+                e0 = min(nxt - 0.12, wh[j2 - 1][2] + 0.4)
+                if e0 > s0:
+                    cuts.append((max(0.0, s0 - 0.04), e0))
+                    cut_txt.append(" ".join(wh[j][0] for j in run))
+        if tag in ("delete", "replace") and (i2 - i1) - (j2 - j1) >= 3:
+            ta = wh[j1 - 1][2] if j1 > 0 else (wh[0][1] if wh else 0.0)
+            tb = wh[j2][1] if j2 < len(wh) else (wh[-1][2] if wh else 0.0)
+            miss = (i2 - i1) - (j2 - j1)
+            if tb - ta < 0.14 * miss + 0.25:
+                swallowed.append((" ".join(script_words[i1:i2]), ta, i1))
+    return cuts, cut_txt, swallowed
+
+
+def apply_cuts(wav, cuts, out_wav):
+    """Ses dosyasından aralıkları keser (kısa geçişle), yeni dosyayı yazar."""
+    import wave
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-f", "s16le", "-ac", "1", "-ar", "44100", "-"],
+                         capture_output=True, check=True).stdout
+    a = np.frombuffer(raw, dtype=np.int16).astype(np.float32)
+    sr = 44100
+    keep, pos = [], 0
+    for s0, e0 in sorted(cuts):
+        s0, e0 = int(s0 * sr), int(e0 * sr)
+        if s0 > pos:
+            keep.append(a[pos:s0])
+        pos = max(pos, e0)
+    keep.append(a[pos:])
+    fade = int(0.012 * sr)
+    for k in range(len(keep)):
+        seg = keep[k].copy()
+        if len(seg) > 2 * fade:
+            if k > 0:
+                seg[:fade] *= np.linspace(0, 1, fade)
+            if k < len(keep) - 1:
+                seg[-fade:] *= np.linspace(1, 0, fade)
+        keep[k] = seg
+    out = np.concatenate(keep).astype(np.int16)
+    with wave.open(out_wav, "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes(out.tobytes())
+    return out_wav
+
+
+def shift_words(wh, cuts):
+    """Kesilen aralıklardaki kelimeleri çıkarır, sonrakilerin zamanını geri çeker."""
+    cs = sorted(cuts)
+    res = []
+    for w, s0, e0 in wh:
+        if any(a - 0.02 <= s0 and e0 <= b + 0.05 for a, b in cs):
+            continue
+        d = sum(min(b, s0) - a for a, b in cs if s0 > a)
+        d = sum(max(0.0, min(b, s0) - a) for a, b in cs)
+        res.append((w, s0 - d, e0 - d))
+    return res
+
+
 # ------------------------------------------------------------------ altyazı
 def ass_time(t):
     t = max(0.0, t)
@@ -766,6 +844,21 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     words_all = [w for p in paras for w in p.split()]
     wh = (transcribe_fn or transcribe)(wav, " ".join(words_all[:60]))
     log(f"Whisper: {len(wh)} kelime")
+    kontrol = []
+    try:
+        cuts, cut_txt, swallowed = plan_takes(words_all, wh)
+        if cuts:
+            wav = apply_cuts(wav, cuts, os.path.join(workdir, "voice_kesilmis.wav"))
+            wh = shift_words(wh, cuts)
+            total = duration(wav)
+            kontrol.append(f"{len(cuts)} yerde tekrar/yarım okuma bulup otomatik kestim:")
+            kontrol += [f"  • «{t[:70]}»" for t in cut_txt[:6]]
+        if swallowed:
+            kontrol.append("Şu kısımlarda kelime yutulmuş olabilir (istersen o cümleyi tekrar okuyup yeni bir videoda ekle):")
+            kontrol += [f"  • {int(t // 60)}:{int(t % 60):02d} civarı: «{m[:80]}»" for m, t, _ in swallowed[:8]]
+        log("Okuma kontrolü: %d kesim, %d yutulan" % (len(cuts), len(swallowed)))
+    except Exception as e:
+        log("Okuma kontrolü atlandı: " + str(e)[:120])
     times = align(words_all, wh, total)
     # paragraf zamanları
     idx, para_idx = 0, []
@@ -910,7 +1003,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
         shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first})
         log(f"   short{n}: {t1 - t0:.0f} sn")
     info = {"video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
-            "minutes": round(duration(final) / 60, 1)}
+            "minutes": round(duration(final) / 60, 1), "kontrol": "\n".join(kontrol)}
     json.dump(info, open(os.path.join(outdir, "info.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     return info
 

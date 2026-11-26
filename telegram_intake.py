@@ -158,6 +158,8 @@ def main():
     tg("getUpdates", offset=msgs[end][0] + 1)          # işlendi
     os.makedirs(os.path.join(HERE, "assets"), exist_ok=True)
     open(os.path.join(HERE, "assets", "bitenler.txt"), "a").write(os.path.basename(spath)[:-3] + "\n")
+    if info.get("kontrol"):
+        say(chat, "Okuma kontrolü:\n" + info["kontrol"])
     meta = info["meta"]
     title = meta["BAŞLIK"]
     desc = meta.get("AÇIKLAMA") or (title + "\n\nSon Tanık: karar verilmeden önce, son sözü tanık söyler.")
