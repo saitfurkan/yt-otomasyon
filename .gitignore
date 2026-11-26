@@ -4,3 +4,4 @@ _out/
 _work/
 _selftest.*
 _t/
+.chat/

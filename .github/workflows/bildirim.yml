@@ -1,0 +1,29 @@
+name: Gunluk hatirlatma
+on:
+  schedule:
+    - cron: "0 17 * * *"   # 18:00 Belgrad (kış saati)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: yt-render
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache/restore@v4
+        with:
+          path: .chat
+          key: chat-id-v1
+      - run: pip install pillow numpy
+      - env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python bildirim.py
+      - run: |
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add assets/bildirim.txt 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "bildirim durumu" && git pull --rebase && git push)

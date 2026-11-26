@@ -73,6 +73,9 @@ def main():
     if not msgs:
         print("yeni mesaj yok")
         return
+    # günlük hatırlatma için sohbet kimliğini sakla (depoya yazılmaz, Actions önbelleğinde tutulur)
+    os.makedirs(os.path.join(HERE, ".chat"), exist_ok=True)
+    open(os.path.join(HERE, ".chat", "id"), "w").write(str(msgs[-1][1]["chat"]["id"]))
     # ident kaydı
     last_id = msgs[-1][0]
     ident_done = False
@@ -153,6 +156,8 @@ def main():
         tg("getUpdates", offset=msgs[end][0] + 1)
         raise
     tg("getUpdates", offset=msgs[end][0] + 1)          # işlendi
+    os.makedirs(os.path.join(HERE, "assets"), exist_ok=True)
+    open(os.path.join(HERE, "assets", "bitenler.txt"), "a").write(os.path.basename(spath)[:-3] + "\n")
     meta = info["meta"]
     title = meta["BAŞLIK"]
     desc = meta.get("AÇIKLAMA") or (title + "\n\nSon Tanık: karar verilmeden önce, son sözü tanık söyler.")
