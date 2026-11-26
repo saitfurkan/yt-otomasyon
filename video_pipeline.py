@@ -468,9 +468,9 @@ def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False, g
     ye = ["(ih-oh)/2", "(ih-oh)/2", "(ih-oh)*t/%f" % each, "(ih-oh)*(1-t/%f)" % each][mode]
     if still:      # kare çizimi baştan sona tarayan kamera: tüm kompozisyon görünür
         if W > H:
-            sc, xe, ye = f"scale={W}:-2", "0", ("(ih-oh)*t/%f" % each) if idx % 2 == 0 else ("(ih-oh)*(1-t/%f)" % each)
+            sc, xe, ye = f"scale={W}:-2:flags=lanczos,unsharp=5:5:0.8:3:3:0.0", "0", ("(ih-oh)*t/%f" % each) if idx % 2 == 0 else ("(ih-oh)*(1-t/%f)" % each)
         else:
-            sc, ye, xe = f"scale=-2:{H}", "0", ("(iw-ow)*t/%f" % each) if idx % 2 == 0 else ("(iw-ow)*(1-t/%f)" % each)
+            sc, ye, xe = f"scale=-2:{H}:flags=lanczos,unsharp=5:5:0.8:3:3:0.0", "0", ("(iw-ow)*t/%f" % each) if idx % 2 == 0 else ("(iw-ow)*(1-t/%f)" % each)
     else:
         sc = f"scale={ww}:{hh}:force_original_aspect_ratio=increase"
     head = geom if geom else f"{sc},crop={W}:{H}:x='{xe}':y='{ye}'"
@@ -531,10 +531,10 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
             fx, fy = random.choice([0.28, 0.5, 0.72]), random.choice([0.3, 0.5, 0.7])
             N = max(2, int(dur * 30))
             if W > H:
-                g = (f"scale=3200:-2,crop=3200:1800:0:(ih-1800)*{fy},zoompan=z='1+0.4*on/{N}':"
+                g = (f"scale=3200:-2:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop=3200:1800:0:(ih-1800)*{fy},zoompan=z='1+0.4*on/{N}':"
                      f"x='{fx}*(iw-iw/zoom)':y='{fy}*(ih-ih/zoom)':d={N}:s={W}x{H}:fps=30")
             else:
-                g = (f"scale=-2:3200,crop=1800:3200:(iw-1800)*{fx}:0,zoompan=z='1+0.4*on/{N}':"
+                g = (f"scale=-2:3200:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop=1800:3200:(iw-1800)*{fx}:0,zoompan=z='1+0.4*on/{N}':"
                      f"x='{fx}*(iw-iw/zoom)':y='{fy}*(ih-ih/zoom)':d={N}:s={W}x{H}:fps=30")
             vf = grade_filter(W, H, dur, i, cap, geom=g)
             src = ["-i", c["path"]]
@@ -547,7 +547,7 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
                 ss = random.uniform(0, room) if room > 0 else 0.0
                 src = ["-stream_loop", "-1", "-ss", f"{ss:.2f}", "-i", c["path"]]
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error"] + src +
-            ["-t", f"{dur:.3f}", "-an", "-vf", vf, "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23", p])
+            ["-t", f"{dur:.3f}", "-an", "-vf", vf, "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", p])
         parts.append(p)
     lst = os.path.join(workdir, f"list_{tag}.txt")
     with open(lst, "w") as f:
@@ -849,8 +849,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     final = os.path.join(outdir, "video.mp4")
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video_full, "-i", cat,
-         "-vf", f"ass='{ass_esc}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
-         "-maxrate", "6M", "-bufsize", "12M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
+         "-vf", f"ass='{ass_esc}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+         "-maxrate", "9M", "-bufsize", "18M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
     log(f"Video hazır: {duration(final) / 60:.1f} dk")
 
     # kapak

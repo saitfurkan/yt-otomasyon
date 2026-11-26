@@ -45,7 +45,7 @@ jobs:
           ls -la _out || true
           [ -f _out/short1.mp4 ] && curl -s -F chat_id=$CHAT -F video=@_out/short1.mp4 "https://api.telegram.org/bot$T/sendVideo" | head -c 100
           [ -f _out/kapak.jpg ] && curl -s -F chat_id=$CHAT -F photo=@_out/kapak.jpg "https://api.telegram.org/bot$T/sendPhoto" >/dev/null
-          ffmpeg -y -loglevel error -i _out/video.mp4 -vf scale=960:-2 -c:v libx264 -crf 28 -preset veryfast -c:a aac -b:a 96k _out/onizleme.mp4
+          ffmpeg -y -loglevel error -i _out/video.mp4 -vf scale=1280:-2 -c:v libx264 -crf 25 -preset veryfast -c:a aac -b:a 96k _out/onizleme.mp4
           [ -f _out/onizleme.mp4 ] && curl -s -F chat_id=$CHAT -F video=@_out/onizleme.mp4 -F supports_streaming=true "https://api.telegram.org/bot$T/sendVideo" | head -c 200
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
