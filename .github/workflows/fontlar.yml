@@ -18,6 +18,8 @@ jobs:
           curl -fsSL -o Cinzel.ttf "$B/cinzel/Cinzel%5Bwght%5D.ttf"
           curl -fsSL -o CormorantGaramond-Light.ttf "$B/cormorantgaramond/CormorantGaramond-Light.ttf" || true
           curl -fsSL -o CormorantGaramond-Italic.ttf "$B/cormorantgaramond/CormorantGaramond-Italic%5Bwght%5D.ttf" || true
+          curl -fsSL -o Montserrat.ttf "$B/montserrat/Montserrat%5Bwght%5D.ttf"
+          curl -fsSL -o Jost.ttf "$B/jost/Jost%5Bwght%5D.ttf"
           ls -la
       - run: |
           git config user.name bot; git config user.email bot@users.noreply.github.com
