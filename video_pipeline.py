@@ -353,6 +353,34 @@ def pexels_search(query, orientation, key):
     return out
 
 
+def pixabay_search(query, orientation, key):
+    url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": key, "q": query[:100], "per_page": 20})
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=40) as r:
+        data = json.load(r)
+    out = []
+    for v in data.get("hits", []):
+        pick = None
+        for size in ("medium", "small", "large"):
+            f = (v.get("videos") or {}).get(size) or {}
+            if f.get("url") and f.get("width"):
+                ok = f["height"] >= 1280 if orientation == "portrait" else f["width"] >= 1280
+                is_portrait = f["height"] > f["width"]
+                if ok and is_portrait == (orientation == "portrait"):
+                    pick = f
+                    break
+        if pick and 4 <= (v.get("duration") or 0) <= 60:
+            out.append({"id": "pb%s" % v["id"], "url": pick["url"], "duration": v.get("duration", 10)})
+    return out
+
+
+def stock_search(query, orientation, key):
+    """Pexels anahtarı varsa Pexels, yoksa Pixabay."""
+    if os.environ.get("PEXELS_API_KEY", "").strip():
+        return pexels_search(query, orientation, os.environ["PEXELS_API_KEY"].strip())
+    return pixabay_search(query, orientation, os.environ.get("PIXABAY_API_KEY", "").strip())
+
+
 def download(url, dest):
     if os.path.exists(dest):
         return dest
@@ -362,8 +390,9 @@ def download(url, dest):
     return dest
 
 
-def fetch_clips(queries, orientation, workdir, used, need=3, search=pexels_search):
-    key = os.environ.get("PEXELS_API_KEY", "").strip()
+def fetch_clips(queries, orientation, workdir, used, need=3, search=None):
+    search = search or stock_search
+    key = os.environ.get("PEXELS_API_KEY", "").strip() or os.environ.get("PIXABAY_API_KEY", "").strip()
     clips = []
     for q in queries + random.sample(GENERIC_QUERIES, 3):
         if len(clips) >= need:
@@ -608,7 +637,7 @@ def pick_shorts(paras, para_times, hook_n, count=3, lo=30.0, hi=58.0):
     return wins[:count]
 
 
-def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=pexels_search,
+def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=None,
                transcribe_fn=None, shorts_count=3):
     outdir, workdir = os.path.abspath(outdir), os.path.abspath(workdir)
     os.makedirs(outdir, exist_ok=True)
