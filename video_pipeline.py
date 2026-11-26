@@ -759,7 +759,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     final = os.path.join(outdir, "video.mp4")
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video_full, "-i", cat, "-i", wmp,
-         "-filter_complex", f"[0:v]ass='{ass_esc}'[a];[a][2:v]overlay=W-w-40:44:enable='gte(t,{t_main_start:.2f})'[v]",
+         "-filter_complex", f"[0:v]ass='{ass_esc}'[a];[a][2:v]overlay=W-w-50:125:enable='gte(t,{t_main_start:.2f})'[v]",
          "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "21",
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
     log(f"Video hazır: {duration(final) / 60:.1f} dk")
