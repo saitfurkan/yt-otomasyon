@@ -12,7 +12,7 @@ jobs:
           python-version: "3.12"
       - run: |
           sudo apt-get update -y && sudo apt-get install -y ffmpeg espeak-ng fonts-dejavu-core
-          pip install faster-whisper pillow
+          pip install -U faster-whisper pillow av
       - run: python selftest.py
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}

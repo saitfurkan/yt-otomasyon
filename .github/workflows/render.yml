@@ -40,7 +40,7 @@ jobs:
         if: steps.probe.outputs.go == '1'
         run: |
           sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-dejavu-core
-          pip install faster-whisper pillow
+          pip install -U faster-whisper pillow av
       - name: Uret ve yukle
         if: steps.probe.outputs.go == '1'
         run: python telegram_intake.py

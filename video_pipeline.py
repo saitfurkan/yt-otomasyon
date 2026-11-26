@@ -100,7 +100,11 @@ def transcribe(wav, prompt=""):
     """faster-whisper ile kelime zamanları: [(kelime, başlangıç, bitiş)]."""
     from faster_whisper import WhisperModel
     model = WhisperModel(os.environ.get("WHISPER_MODEL", "small"), device="cpu", compute_type="int8")
-    segs, _ = model.transcribe(wav, language="tr", word_timestamps=True, vad_filter=True,
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    audio = np.frombuffer(raw, dtype=np.float32)
+    segs, _ = model.transcribe(audio, language="tr", word_timestamps=True, vad_filter=True,
                                initial_prompt=prompt[:400] or None, beam_size=5)
     words = []
     for s in segs:
