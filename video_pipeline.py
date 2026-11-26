@@ -283,7 +283,7 @@ def cf_image(prompt, orientation, dest):
     import base64
     url = f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell"
     w, h = (1280, 720) if orientation == "landscape" else (720, 1280)
-    for attempt, extra in enumerate(({"width": w, "height": h}, {})):
+    for attempt, extra in enumerate(({},)):
         body = {"prompt": (prompt + ", " + STYLE)[:1900], "steps": 6}
         body.update(extra)
         req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST", headers={

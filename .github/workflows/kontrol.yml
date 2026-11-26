@@ -35,7 +35,7 @@ jobs:
               except Exception as e: print("HATA ", name, str(e)[:200])
           t = os.environ["TELEGRAM_BOT_TOKEN"].strip()
           show("telegram", lambda: json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getMe"))["result"]["username"])
-          show("pixabay", lambda: len(json.load(urllib.request.urlopen("https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": os.environ["PIXABAY_API_KEY"].strip(), "q": "city night", "per_page": 5})))["hits"]))
+          show("pixabay", lambda: len(json.load(urllib.request.urlopen(urllib.request.Request("https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": os.environ["PIXABAY_API_KEY"].strip(), "q": "city night", "per_page": 5}), headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64)"})))["hits"]))
           def cf():
               acc, tok = os.environ["CF_ACCOUNT_ID"].strip(), os.environ["CF_API_TOKEN"].strip()
               url = f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell"
