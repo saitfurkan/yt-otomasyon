@@ -122,7 +122,8 @@ def main():
     try:
         info = vp.render_all(spath, files, ident if os.path.exists(ident) else None, out, os.path.join(WORK, "w"))
     except Exception as e:
-        say(chat, "Video üretiminde hata oldu: " + str(e)[-600:])
+        say(chat, "Video üretiminde hata oldu: " + str(e)[-600:] + "\nTekrar denemek için /senaryo, sesler ve /bitti'yi yeniden gönder.")
+        tg("getUpdates", offset=msgs[end][0] + 1)
         raise
     tg("getUpdates", offset=msgs[end][0] + 1)          # işlendi
     meta = info["meta"]
@@ -131,13 +132,18 @@ def main():
     tags = [t.strip() for t in meta.get("ETİKETLER", "son tanık,gerçek hikaye,belgesel").split(",") if t.strip()]
     if all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
         import youtube_upload as yu
-        vid = yu.upload(info["video"], title, desc, tags, publish_at=next_slot(0), thumb=info["thumbnail"])
-        lines = [f"Ana video yüklendi (zamanlandı): https://youtu.be/{vid}"]
-        for n, s in enumerate(info["shorts"], 1):
-            sv = yu.upload(s["file"], f"{s['hint']}... #Shorts"[:95], desc + "\n#Shorts", tags + ["shorts"],
-                           publish_at=next_slot(n))
-            lines.append(f"Short {n}: https://youtu.be/{sv}")
-        say(chat, "\n".join(lines) + "\nYouTube Studio'dan kontrol edebilirsin.")
+        lines = []
+        try:
+            vid = yu.upload(info["video"], title, desc, tags, publish_at=next_slot(0), thumb=info["thumbnail"])
+            lines.append(f"Ana video yüklendi (zamanlandı): https://youtu.be/{vid}")
+            for n, s in enumerate(info["shorts"], 1):
+                sv = yu.upload(s["file"], f"{s['hint']}... #Shorts"[:95], desc + "\n#Shorts", tags + ["shorts"],
+                               publish_at=next_slot(n))
+                lines.append(f"Short {n}: https://youtu.be/{sv}")
+            say(chat, "\n".join(lines) + "\nYouTube Studio'dan kontrol edebilirsin.")
+        except Exception as e:
+            say(chat, "\n".join(lines) + "\nYouTube yükleme hatası: " + str(e)[:500])
+            raise
     else:
         say(chat, "Video hazır ama YouTube anahtarları yok, yüklenmedi.")
 

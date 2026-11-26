@@ -755,12 +755,10 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     ass = build_subtitles(words_all, times, os.path.join(workdir, "subs.ass"),
                           shift_after=t_hook - 0.01, shift=IDENT_SECONDS)
     t_main_start = t_hook + IDENT_SECONDS
-    wmp = make_watermark(os.path.join(workdir, "wm.png"), 150)
     final = os.path.join(outdir, "video.mp4")
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
-    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video_full, "-i", cat, "-i", wmp,
-         "-filter_complex", f"[0:v]ass='{ass_esc}'[a];[a][2:v]overlay=W-w-50:125:enable='gte(t,{t_main_start:.2f})'[v]",
-         "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "21",
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video_full, "-i", cat,
+         "-vf", f"ass='{ass_esc}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "21",
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
     log(f"Video hazır: {duration(final) / 60:.1f} dk")
 
@@ -800,11 +798,9 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
                                vertical=True, offset=t0)
         out = os.path.join(outdir, f"short{n}.mp4")
         sa = sass.replace("\\", "/").replace(":", "\\:")
-        wmv = make_watermark(os.path.join(workdir, "wm_v.png"), 170)
-        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", sv, "-i", swav, "-i", wmv,
-             "-filter_complex", f"[0:v]ass='{sa}'[a];[a][2:v]overlay=(W-w)/2:130[v]",
-             "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p",
-             "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out])
+        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", sv, "-i", swav,
+             "-vf", f"ass='{sa}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
+             "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out])
         first = " ".join(paras[a].split()[:9])
         shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first})
         log(f"   short{n}: {t1 - t0:.0f} sn")
