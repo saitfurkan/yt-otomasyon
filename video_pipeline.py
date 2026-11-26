@@ -284,7 +284,7 @@ def cf_image(prompt, orientation, dest):
     """Cloudflare Workers AI (FLUX.1 schnell) ile görsel üretir. Kota/hata olursa None."""
     acc = os.environ.get("CF_ACCOUNT_ID", "").strip()
     tok = os.environ.get("CF_API_TOKEN", "").strip()
-    if not acc or not tok or AI_STATE["dead"] or AI_STATE["used"] >= int(os.environ.get("AI_IMAGE_MAX", "60")):
+    if not acc or not tok or AI_STATE["dead"] or AI_STATE["used"] >= int(os.environ.get("AI_IMAGE_MAX", "100")):
         return None
     import base64
     url = f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell"
@@ -325,9 +325,9 @@ def ai_clips(scenes, orientation, workdir, tag, need):
 
 def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search):
     """Paragraf süresine göre yapay zeka görselleri ve stok videoyu dönüşümlü dizer (hareket + konu bağı)."""
-    per = 9.0
+    per = 8.0
     total_n = max(1, round(d / per))
-    n_ai = max(1, -(-total_n * 2 // 3)) if scenes else 0
+    n_ai = total_n if scenes else 0
     ai = ai_clips(scenes, orientation, workdir, tag, n_ai)
     vids = fetch_clips(queries, orientation, workdir, used, need=max(1, total_n - len(ai)) if len(ai) < total_n else 0, search=search)
     out = []
@@ -591,7 +591,7 @@ def make_thumbnail(frame_png, text, out_jpg, tag="DOSYA", keep_color=False):
         im = im.resize((int(im.width * r), int(im.height * r)), Image.LANCZOS)
         x0 = (im.width - W) // 2
         x0 = min(im.width - W, x0 + min(90, x0))
-        y0 = (im.height - H) // 2
+        y0 = int((im.height - H) * 0.3) if keep_color else (im.height - H) // 2
         im = im.crop((x0, y0, x0 + W, y0 + H))
     else:
         im = Image.new("RGB", (W, H), (22, 22, 26))
