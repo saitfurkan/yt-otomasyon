@@ -573,40 +573,42 @@ def make_watermark(path, w=150):
 
 
 # ------------------------------------------------------------------ kapak
-def make_thumbnail(frame_png, text, out_jpg):
-    """Sinematik kapak: koyu renk düzeltmeli görüntü, güçlü yazı, sarı vurgu kutusu, kırmızı etiket."""
-    from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+def make_thumbnail(frame_png, text, out_jpg, tag="DOSYA"):
+    """Kendine özgü, sade ve kaliteli kapak: koyu duotone görüntü, serif başlık, altın vurgu, anahtar deliği imzası."""
+    from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
     W, H = 1280, 720
+    GOLD = (212, 175, 90)
     if frame_png and os.path.exists(frame_png):
         im = Image.open(frame_png).convert("RGB")
-        r = max(W / im.width, H / im.height) * 1.08
-        im = im.resize((int(im.width * r), int(im.height * r)))
-        x0, y0 = (im.width - W) // 2 + 60, (im.height - H) // 2
+        r = max(W / im.width, H / im.height) * 1.05
+        im = im.resize((int(im.width * r), int(im.height * r)), Image.LANCZOS)
+        x0 = (im.width - W) // 2
+        x0 = min(im.width - W, x0 + min(90, x0))
+        y0 = (im.height - H) // 2
         im = im.crop((x0, y0, x0 + W, y0 + H))
-        im = ImageEnhance.Color(im).enhance(0.55)
-        im = ImageEnhance.Contrast(im).enhance(1.25)
-        im = ImageEnhance.Brightness(im).enhance(0.8)
     else:
-        im = Image.new("RGB", (W, H), (16, 18, 26))
-    # sağ tarafa kırmızı sıcak ışık, soldan koyu geçiş, kenar karartma
-    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    gd = ImageDraw.Draw(glow)
-    gd.ellipse([700, -150, 1500, 650], fill=(190, 40, 30, 70))
-    glow = glow.filter(ImageFilter.GaussianBlur(120))
-    im = Image.alpha_composite(im.convert("RGBA"), glow)
-    shade = Image.new("RGBA", (W, H))
-    sd = ImageDraw.Draw(shade)
+        im = Image.new("RGB", (W, H), (22, 22, 26))
+    g = ImageOps.autocontrast(ImageOps.grayscale(im), cutoff=2)
+    g = ImageEnhance.Contrast(g).enhance(1.25)
+    im = ImageOps.colorize(g, black=(6, 6, 9), mid=(70, 62, 58), white=(236, 226, 208)).convert("RGBA")
+    # soldan koyu geçiş + alt karartma
+    sh = Image.new("RGBA", (W, H))
+    sd = ImageDraw.Draw(sh)
     for x in range(W):
-        sd.line([(x, 0), (x, H)], fill=(0, 0, 0, int(235 * max(0.0, 1 - x / (W * 0.82)) ** 1.1)))
+        sd.line([(x, 0), (x, H)], fill=(4, 4, 6, int(250 * max(0.0, 1 - x / (W * 0.78)) ** 0.9)))
     for y in range(H):
-        a = int(150 * (y / H) ** 3)
-        sd.line([(0, y), (W, y)], fill=(0, 0, 0, a))
-    im = Image.alpha_composite(im, shade).convert("RGB")
+        sd.line([(0, y), (W, y)], fill=(0, 0, 0, int(140 * (y / H) ** 3)))
+    im = Image.alpha_composite(im, sh)
+    # ince film grenı
+    import random
+    gr = Image.effect_noise((W, H), 28).convert("L").point(lambda v: abs(v - 128) // 3)
+    im = Image.alpha_composite(im, Image.merge("RGBA", (gr, gr, gr, gr.point(lambda v: min(40, v * 2)))))
     d = ImageDraw.Draw(im)
+    # başlık
     words = text.replace("i", "İ").replace("ı", "I").upper().split()
     lines, cur = [], ""
     for w in words:
-        if len(cur) + len(w) + 1 > 14 and cur:
+        if len(cur) + len(w) + 1 > 13 and cur:
             lines.append(cur)
             cur = w
         else:
@@ -614,29 +616,31 @@ def make_thumbnail(frame_png, text, out_jpg):
     if cur:
         lines.append(cur)
     lines = lines[:4]
-    size = {1: 190, 2: 168, 3: 140}.get(len(lines), 112)
-    font = ImageFont.truetype(FONT_BOLD_PATH, size)
-    while size > 70 and max(d.textlength(l, font=font) for l in lines) > 1000:
+    size = {1: 170, 2: 150, 3: 122}.get(len(lines), 100)
+    font = ImageFont.truetype(FONT_SERIF_BOLD, size)
+    while size > 70 and max(d.textlength(l, font=font) for l in lines) > 780:
         size -= 6
-        font = ImageFont.truetype(FONT_BOLD_PATH, size)
-    lh = int(size * 1.02)
-    y = (H - len(lines) * lh) // 2 + 10
+        font = ImageFont.truetype(FONT_SERIF_BOLD, size)
+    lh = int(size * 1.08)
+    y = (H - len(lines) * lh) // 2 + 28
     for i, ln in enumerate(lines):
-        x = 56
-        if i == len(lines) - 1:        # son satır: sarı kutu üstünde siyah yazı
-            tw = d.textlength(ln, font=font)
-            d.rectangle([x - 18, y + 8, x + tw + 22, y + lh - 2], fill=(255, 205, 0))
-            d.text((x, y), ln, font=font, fill=(10, 10, 10))
-        else:
-            for dx, dy in ((8, 8), (6, 6), (-3, 3)):
-                d.text((x + dx, y + dy), ln, font=font, fill=(0, 0, 0))
-            d.text((x, y), ln, font=font, fill=(255, 255, 255))
+        col = GOLD if i == len(lines) - 1 else (246, 244, 238)
+        for dx, dy in ((5, 6), (3, 4)):
+            d.text((70 + dx, y + dy), ln, font=font, fill=(0, 0, 0, 255))
+        d.text((70, y), ln, font=font, fill=col)
         y += lh
-    tag = ImageFont.truetype(FONT_BOLD_PATH, 38)
-    d.rectangle([56, 46, 56 + 262, 46 + 62], fill=(200, 30, 30))
-    d.text((56 + 22, 46 + 10), "SON TANIK", font=tag, fill=(255, 255, 255))
-    d.rectangle([0, H - 10, W, H], fill=(200, 30, 30))
-    im.save(out_jpg, quality=92)
+    d.rectangle([70, y + 14, 70 + 150, y + 18], fill=(200, 38, 38))
+    # imza: anahtar deliği + SON TANIK
+    kx, ky, kr = 96, 92, 17
+    d.ellipse([kx - kr, ky - kr, kx + kr, ky + kr], fill=(246, 244, 238))
+    d.polygon([(kx - kr * 0.5, ky + kr * 0.5), (kx + kr * 0.5, ky + kr * 0.5), (kx + kr * 0.95, ky + 52), (kx - kr * 0.95, ky + 52)], fill=(246, 244, 238))
+    d.ellipse([kx - 6, ky - 6, kx + 6, ky + 6], fill=(200, 38, 38))
+    f2 = ImageFont.truetype(FONT_BOLD_PATH, 34)
+    d.text((136, 70), "SON TANIK", font=f2, fill=(246, 244, 238))
+    d.text((136, 108), tag, font=ImageFont.truetype(FONT_BOLD_PATH, 22), fill=GOLD)
+    # ince çerçeve
+    d.rectangle([22, 22, W - 22, H - 22], outline=(212, 175, 90, 110), width=2)
+    im.convert("RGB").save(out_jpg, quality=93)
     return out_jpg
 
 
