@@ -22,7 +22,7 @@ _FD = os.path.join(HERE, "fonts")
 FONT_HEAD = os.path.join(_FD, "Anton-Regular.ttf") if os.path.exists(os.path.join(_FD, "Anton-Regular.ttf")) else FONT_BOLD_PATH
 FONT_LABEL = os.path.join(_FD, "BebasNeue-Regular.ttf") if os.path.exists(os.path.join(_FD, "BebasNeue-Regular.ttf")) else FONT_BOLD_PATH
 FONT_ELEGANT = os.path.join(_FD, "AbrilFatface-Regular.ttf") if os.path.exists(os.path.join(_FD, "AbrilFatface-Regular.ttf")) else FONT_SERIF_BOLD
-IDENT_SECONDS = 5.5
+IDENT_SECONDS = 6.6
 UA = "Mozilla/5.0 (X11; Linux x86_64)"
 GENERIC_QUERIES = [
     "dark city night aerial", "courthouse exterior", "stack of documents desk", "bank building exterior",
@@ -564,27 +564,29 @@ def make_ident(ident_voice, out_mp4, out_wav, workdir):
     voice = os.path.join(workdir, "ident_voice.wav")
     if ident_voice and os.path.exists(ident_voice):
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", ident_voice, "-af",
-             "highpass=f=80,lowpass=f=9000,afftdn=nf=-25,loudnorm=I=-18:TP=-2,apad", "-t", "3.2", "-ar", "44100", "-ac", "1", voice])
+             "highpass=f=100,deesser=i=0.4:m=0.5:f=0.5,equalizer=f=150:t=q:w=1:g=2,"
+             "acompressor=threshold=-20dB:ratio=2:attack=10:release=200,volume=2.2,"
+             "alimiter=limit=0.8:attack=5:release=60,afade=t=in:d=0.04,apad", "-t", "4.4", "-ar", "44100", "-ac", "1", voice])
     else:
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i",
-             "anullsrc=r=44100:cl=mono", "-t", "3.2", voice])
+             "anullsrc=r=44100:cl=mono", "-t", "4.4", voice])
     hit = os.path.join(workdir, "ident_hit.wav")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
          "-f", "lavfi", "-i", "sine=f=48:d=1.8", "-f", "lavfi", "-i", "anoisesrc=d=1.8:c=brown:a=0.5",
          "-filter_complex",
          "[0:a]afade=t=out:st=0.05:d=1.7,volume=1.4[s];[1:a]lowpass=f=300,afade=t=out:st=0:d=0.9[n];"
-         "[s][n]amix=inputs=2:duration=longest,adelay=3200|3200,apad,aresample=44100[o]",
+         "[s][n]amix=inputs=2:duration=longest,adelay=4300|4300,apad,aresample=44100[o]",
          "-map", "[o]", "-t", f"{D}", hit])
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", voice, "-i", hit, "-filter_complex",
          "[0:a]apad=whole_dur=%s[v];[v][1:a]amix=inputs=2:duration=longest:normalize=0,alimiter=limit=0.95[o]" % D,
          "-map", "[o]", "-t", f"{D}", "-ar", "44100", out_wav])
     fc = ("[0:a]showwaves=s=1400x260:mode=cline:rate=30:colors=0xFFFFFF@0.95,format=yuva420p,"
-          "fade=t=out:st=2.7:d=0.6:alpha=1[w];"
+          "fade=t=out:st=4.0:d=0.6:alpha=1[w];"
           f"color=c=0x050608:s=1920x1080:d={D}:r=30[bg];[bg][w]overlay=(W-w)/2:(H-h)/2:shortest=0,"
           f"drawtext=fontfile={FONT_ELEGANT}:text='SON TANIK':fontsize=150:fontcolor=white:"
-          "x=(w-text_w)/2:y=(h-text_h)/2-10:alpha='if(lt(t,3.1),0,min(1,(t-3.1)/0.5))',"
+          "x=(w-text_w)/2:y=(h-text_h)/2-10:alpha='if(lt(t,4.3),0,min(1,(t-4.3)/0.5))',"
           f"drawbox=x=(iw-300)/2:y=ih/2+95:w=300:h=4:color=0xC0392B@1:t=fill:"
-          "enable='gte(t,3.4)',format=yuv420p[v]")
+          "enable='gte(t,4.6)',format=yuv420p[v]")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", out_wav, "-filter_complex", fc, "-map", "[v]",
          "-t", f"{D}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", out_mp4])
     return out_mp4, out_wav
