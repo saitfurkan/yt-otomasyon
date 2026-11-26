@@ -1,0 +1,59 @@
+name: Video uret ve yukle
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Telegram'i kontrol et
+        id: probe
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          t = os.environ["TELEGRAM_BOT_TOKEN"]
+          r = json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getUpdates?timeout=0"))
+          ms = [u["message"] for u in r["result"] if "message" in u]
+          go = any((m.get("text") or "").lower().startswith("/bitti") or "ident" in (m.get("caption") or "").lower() for m in ms)
+          open(os.environ["GITHUB_OUTPUT"], "a").write(f"go={'1' if go else '0'}\n")
+          PY
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      - name: Araclari kur
+        if: steps.probe.outputs.go == '1'
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          pip install faster-whisper pillow
+      - name: Uret ve yukle
+        if: steps.probe.outputs.go == '1'
+        run: python telegram_intake.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      - name: Ident'i kaydet
+        if: steps.probe.outputs.go == '1'
+        run: |
+          if [ -f assets/ident.wav ]; then
+            git config user.name "bot"; git config user.email "bot@users.noreply.github.com"
+            git add assets/ident.wav
+            git diff --cached --quiet || (git commit -m "ident sesi" && git pull --rebase && git push)
+          fi
