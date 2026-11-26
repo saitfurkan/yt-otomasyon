@@ -18,6 +18,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FONT_SANS = "DejaVu Sans"
 FONT_BOLD_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf"
 FONT_SERIF_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
+_FD = os.path.join(HERE, "fonts")
+FONT_HEAD = os.path.join(_FD, "Anton-Regular.ttf") if os.path.exists(os.path.join(_FD, "Anton-Regular.ttf")) else FONT_BOLD_PATH
+FONT_LABEL = os.path.join(_FD, "BebasNeue-Regular.ttf") if os.path.exists(os.path.join(_FD, "BebasNeue-Regular.ttf")) else FONT_BOLD_PATH
+FONT_ELEGANT = os.path.join(_FD, "AbrilFatface-Regular.ttf") if os.path.exists(os.path.join(_FD, "AbrilFatface-Regular.ttf")) else FONT_SERIF_BOLD
 IDENT_SECONDS = 5.5
 UA = "Mozilla/5.0 (X11; Linux x86_64)"
 GENERIC_QUERIES = [
@@ -481,7 +485,7 @@ def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False, g
         size = 150 if W > H else 130
         y = int(H * 0.38)
         suffix = (" " + unit).replace("'", "").replace(":", "\\:")
-        f += (f",drawtext=fontfile={FONT_BOLD_PATH}:text='%{{eif\\:min({num}\\,trunc(t/1.5*{num}))\\:d}}{suffix}':"
+        f += (f",drawtext=fontfile={FONT_HEAD}:text='%{{eif\\:min({num}\\,trunc(t/1.5*{num}))\\:d}}{suffix}':"
               f"fontsize={size}:fontcolor=0xE6B800:x=(w-text_w)/2:y={y}:box=1:boxcolor=black@0.55:boxborderw=34:"
               "shadowcolor=black@0.9:shadowx=4:shadowy=4:"
               "alpha='if(lt(t,0.3),0,if(lt(t,0.6),(t-0.3)/0.3,if(lt(t,3.6),1,max(0,(4.0-t)/0.4))))'")
@@ -490,7 +494,7 @@ def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False, g
         size = 58 if W > H else 70
         y = int(H * 0.15) if W > H else int(H * 0.2)
         f += (f",drawbox=x=60:y={y - 8}:w=10:h={size + 16}:color=0xE6B800@1:t=fill:enable='between(t,0.5,4.2)',"
-              f"drawtext=fontfile={FONT_BOLD_PATH}:text='{cap}':fontsize={size}:fontcolor=white:"
+              f"drawtext=fontfile={FONT_LABEL}:text='{cap}':fontsize={int(size * 1.35)}:fontcolor=white:"
               f"x=86:y={y}:shadowcolor=black@0.8:shadowx=3:shadowy=3:"
               "alpha='if(lt(t,0.5),0,if(lt(t,0.9),(t-0.5)/0.4,if(lt(t,3.8),1,max(0,(4.2-t)/0.4))))'")
     f += f",fade=t=in:st=0:d=0.35,fade=t=out:st={max(0.0, each - 0.35):.2f}:d=0.35,format=yuv420p"
@@ -578,7 +582,7 @@ def make_ident(ident_voice, out_mp4, out_wav, workdir):
     fc = ("[0:a]showwaves=s=1400x260:mode=cline:rate=30:colors=0xFFFFFF@0.95,format=yuva420p,"
           "fade=t=out:st=2.7:d=0.6:alpha=1[w];"
           f"color=c=0x050608:s=1920x1080:d={D}:r=30[bg];[bg][w]overlay=(W-w)/2:(H-h)/2:shortest=0,"
-          f"drawtext=fontfile={FONT_SERIF_BOLD}:text='SON TANIK':fontsize=150:fontcolor=white:"
+          f"drawtext=fontfile={FONT_ELEGANT}:text='SON TANIK':fontsize=150:fontcolor=white:"
           "x=(w-text_w)/2:y=(h-text_h)/2-10:alpha='if(lt(t,3.1),0,min(1,(t-3.1)/0.5))',"
           f"drawbox=x=(iw-300)/2:y=ih/2+95:w=300:h=4:color=0xC0392B@1:t=fill:"
           "enable='gte(t,3.4)',format=yuv420p[v]")
@@ -618,10 +622,10 @@ def make_watermark(path, w=150):
 
 # ------------------------------------------------------------------ kapak
 def make_thumbnail(frame_png, text, out_jpg, tag="DOSYA", keep_color=False):
-    """Kendine özgü, sade ve kaliteli kapak: koyu duotone görüntü, serif başlık, altın vurgu, anahtar deliği imzası."""
+    """Kapak: güçlü çizim, Anton başlık, altın vurgu, kırmızı bant, anahtar deliği imzası, ince çerçeve."""
     from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
     W, H = 1280, 720
-    GOLD = (212, 175, 90)
+    GOLD, RED, CREAM = (232, 190, 70), (205, 36, 36), (248, 244, 234)
     if frame_png and os.path.exists(frame_png):
         im = Image.open(frame_png).convert("RGB")
         r = max(W / im.width, H / im.height) * 1.05
@@ -633,61 +637,58 @@ def make_thumbnail(frame_png, text, out_jpg, tag="DOSYA", keep_color=False):
     else:
         im = Image.new("RGB", (W, H), (22, 22, 26))
     if keep_color:
-        im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.05)).enhance(1.12).convert("RGBA")
+        im = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.15)).enhance(1.15)
+        im = ImageEnhance.Brightness(im).enhance(1.08).convert("RGBA")
     else:
         g = ImageOps.autocontrast(ImageOps.grayscale(im), cutoff=2)
-        g = ImageEnhance.Contrast(g).enhance(1.25)
-        im = ImageOps.colorize(g, black=(6, 6, 9), mid=(70, 62, 58), white=(236, 226, 208)).convert("RGBA")
-    # soldan koyu geçiş + alt karartma
+        im = ImageOps.colorize(ImageEnhance.Contrast(g).enhance(1.25), black=(6, 6, 9), mid=(70, 62, 58), white=(236, 226, 208)).convert("RGBA")
     sh = Image.new("RGBA", (W, H))
     sd = ImageDraw.Draw(sh)
     for x in range(W):
-        sd.line([(x, 0), (x, H)], fill=(4, 4, 6, int(250 * max(0.0, 1 - x / (W * 0.78)) ** 0.9)))
+        sd.line([(x, 0), (x, H)], fill=(3, 3, 5, int(245 * max(0.0, 1 - x / (W * 0.72)) ** 1.0)))
     for y in range(H):
-        sd.line([(0, y), (W, y)], fill=(0, 0, 0, int(140 * (y / H) ** 3)))
+        sd.line([(0, y), (W, y)], fill=(0, 0, 0, int(150 * (y / H) ** 3)))
     im = Image.alpha_composite(im, sh)
-    # ince film grenı
-    import random
-    gr = Image.effect_noise((W, H), 28).convert("L").point(lambda v: abs(v - 128) // 3)
-    im = Image.alpha_composite(im, Image.merge("RGBA", (gr, gr, gr, gr.point(lambda v: min(40, v * 2)))))
     d = ImageDraw.Draw(im)
-    # başlık
     words = text.replace("i", "İ").replace("ı", "I").upper().split()
     lines, cur = [], ""
     for w in words:
-        if len(cur) + len(w) + 1 > 13 and cur:
+        if len(cur) + len(w) + 1 > 15 and cur:
             lines.append(cur)
             cur = w
         else:
             cur = (cur + " " + w).strip()
     if cur:
         lines.append(cur)
-    lines = lines[:4]
-    size = {1: 170, 2: 150, 3: 122}.get(len(lines), 100)
-    font = ImageFont.truetype(FONT_SERIF_BOLD, size)
-    while size > 70 and max(d.textlength(l, font=font) for l in lines) > 780:
+    lines = lines[:3]
+    size = {1: 250, 2: 215, 3: 150}.get(len(lines), 130)
+    font = ImageFont.truetype(FONT_HEAD, size)
+    while size > 90 and max(d.textlength(l, font=font) for l in lines) > 760:
         size -= 6
-        font = ImageFont.truetype(FONT_SERIF_BOLD, size)
-    lh = int(size * 1.08)
-    y = (H - len(lines) * lh) // 2 + 28
+        font = ImageFont.truetype(FONT_HEAD, size)
+    lh = int(size * 1.0)
+    total_h = len(lines) * lh
+    y = (H - total_h) // 2 + 50
+    # başlığın altına yumuşak karartma
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(glow).rectangle([30, y - 20, 840, y + total_h + 40], fill=(0, 0, 0, 120))
+    im = Image.alpha_composite(im, glow.filter(ImageFilter.GaussianBlur(40)))
+    d = ImageDraw.Draw(im)
     for i, ln in enumerate(lines):
-        col = GOLD if i == len(lines) - 1 else (246, 244, 238)
-        for dx, dy in ((5, 6), (3, 4)):
-            d.text((70 + dx, y + dy), ln, font=font, fill=(0, 0, 0, 255))
-        d.text((70, y), ln, font=font, fill=col)
+        col = GOLD if i == len(lines) - 1 else CREAM
+        d.text((72 + 6, y + 7), ln, font=font, fill=(0, 0, 0, 255))
+        d.text((72, y), ln, font=font, fill=col)
         y += lh
-    d.rectangle([70, y + 14, 70 + 150, y + 18], fill=(200, 38, 38))
-    # imza: anahtar deliği + SON TANIK
-    kx, ky, kr = 96, 92, 17
-    d.ellipse([kx - kr, ky - kr, kx + kr, ky + kr], fill=(246, 244, 238))
-    d.polygon([(kx - kr * 0.5, ky + kr * 0.5), (kx + kr * 0.5, ky + kr * 0.5), (kx + kr * 0.95, ky + 52), (kx - kr * 0.95, ky + 52)], fill=(246, 244, 238))
-    d.ellipse([kx - 6, ky - 6, kx + 6, ky + 6], fill=(200, 38, 38))
-    f2 = ImageFont.truetype(FONT_BOLD_PATH, 34)
-    d.text((136, 70), "SON TANIK", font=f2, fill=(246, 244, 238))
-    d.text((136, 108), tag, font=ImageFont.truetype(FONT_BOLD_PATH, 22), fill=GOLD)
-    # ince çerçeve
-    d.rectangle([22, 22, W - 22, H - 22], outline=(212, 175, 90, 110), width=2)
-    im.convert("RGB").save(out_jpg, quality=93)
+    d.rectangle([72, y + 26, 72 + 210, y + 34], fill=RED)
+    # imza
+    kx, ky, kr = 100, 96, 19
+    d.ellipse([kx - kr, ky - kr, kx + kr, ky + kr], fill=CREAM)
+    d.polygon([(kx - kr * 0.5, ky + kr * 0.5), (kx + kr * 0.5, ky + kr * 0.5), (kx + kr * 0.95, ky + 58), (kx - kr * 0.95, ky + 58)], fill=CREAM)
+    d.ellipse([kx - 7, ky - 7, kx + 7, ky + 7], fill=RED)
+    d.text((142, 64), "SON TANIK", font=ImageFont.truetype(FONT_LABEL, 62), fill=CREAM)
+    d.text((144, 118), tag, font=ImageFont.truetype(FONT_LABEL, 34), fill=GOLD)
+    d.rectangle([22, 22, W - 22, H - 22], outline=(232, 190, 70, 130), width=2)
+    im.convert("RGB").save(out_jpg, quality=94)
     return out_jpg
 
 
