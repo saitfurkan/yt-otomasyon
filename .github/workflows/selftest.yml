@@ -27,3 +27,21 @@ jobs:
             _out/video.mp4
             _out/kapak.jpg
             _out/short1.mp4
+      - name: Sonucu Telegram'a gonder
+        if: always()
+        run: |
+          CHAT=$(python - <<'PY'
+          import json, os, urllib.request
+          t = os.environ["TELEGRAM_BOT_TOKEN"].strip()
+          r = json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getUpdates?timeout=0"))["result"]
+          c = [u["message"]["chat"]["id"] for u in r if "message" in u]
+          print(c[-1] if c else "")
+          PY
+          )
+          T="${TELEGRAM_BOT_TOKEN}"
+          if [ -z "$CHAT" ]; then echo "Telegram sohbeti yok (bota once mesaj yaz)"; exit 0; fi
+          ls -la _out || true
+          [ -f _out/kapak.jpg ] && curl -s -F chat_id=$CHAT -F photo=@_out/kapak.jpg "https://api.telegram.org/bot$T/sendPhoto" >/dev/null
+          [ -f _out/video.mp4 ] && curl -s -F chat_id=$CHAT -F video=@_out/video.mp4 -F supports_streaming=true "https://api.telegram.org/bot$T/sendVideo" | head -c 200
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
