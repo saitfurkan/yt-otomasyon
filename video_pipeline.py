@@ -270,9 +270,11 @@ def qa_check(video, words_all, times, t_hook, transcribe_fn=None):
             tail = diffs[int(len(diffs) * 0.9)]
             out["kayma_medyan"] = round(med, 2)
             out["kayma_p90"] = round(max(abs(diffs[int(len(diffs) * 0.1)]), abs(tail)), 2)
-            if abs(med) > 0.6 or out["kayma_p90"] > 1.5:
+            bad = sum(1 for d in diffs if abs(d) > 2.5) / len(diffs)     # cümle sonlarındaki Whisper uzatmaları sayılmasın
+            out["kotu_oran"] = round(bad, 2)
+            if abs(med) > 0.6 or bad > 0.25:
                 out["ok"] = False
-                out["notlar"].append(f"altyazı ile ses tutmuyor (medyan {med:+.1f} sn, p90 {out['kayma_p90']:.1f} sn)")
+                out["notlar"].append(f"altyazı ile ses tutmuyor (medyan {med:+.1f} sn, {bad:.0%} kelime 2,5 sn'den fazla kaymış)")
     except Exception as e:
         out["notlar"].append("kalite kontrol çalışamadı: " + str(e)[:120])
     return out
