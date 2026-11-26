@@ -655,6 +655,35 @@ def make_thumbnail(frame_png, text, out_jpg, tag="DOSYA", keep_color=False):
 
 
 # ------------------------------------------------------------------ ana akış
+def make_ambient(seconds, out_wav, seed=0):
+    """Telifsiz, sentezlenmiş karanlık fon: alçak drone + rüzgâr + yavaş kalp atışı. Konuşmanın altında kısık durur."""
+    d = f"{seconds + 2:.2f}"
+    fc = ("[0:a]volume=0.5[d1];[1:a]volume=0.32[d2];[2:a]volume=0.22[d3];"
+          "[3:a]lowpass=f=420,highpass=f=60,tremolo=f=0.15:d=0.8,volume=0.9[wind];"
+          "[4:a]lowpass=f=140,apulsator=hz=1.05:amount=0.9:mode=sine,volume=0.55[beat];"
+          "[d1][d2][d3][wind][beat]amix=inputs=5:duration=longest:normalize=0,"
+          "lowpass=f=900,aecho=0.7:0.6:900|1700:0.3|0.2,volume=1.6[o]")
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+         "-f", "lavfi", "-i", f"sine=f=55:d={d}", "-f", "lavfi", "-i", f"sine=f=82.5:d={d}",
+         "-f", "lavfi", "-i", f"sine=f=110.4:d={d}", "-f", "lavfi", "-i", f"anoisesrc=d={d}:c=pink:a=0.4:seed={seed + 7}",
+         "-f", "lavfi", "-i", f"sine=f=48:d={d}", "-filter_complex", fc, "-map", "[o]", "-ar", "44100", "-ac", "1", out_wav])
+    return out_wav
+
+
+def mix_ambient(voice_wav, ambient_wav, out_wav, quiet_from=None, quiet_to=None):
+    """Sesi fonla birleştirir; konuşma varken fon otomatik kısılır (sidechain). quiet aralığında fon yok (ident)."""
+    amb = "[1:a]volume=0.55"
+    if quiet_from is not None:
+        amb += f",volume=enable='between(t,{quiet_from:.2f},{quiet_to:.2f})':volume=0"
+        amb += f",afade=t=in:st={quiet_to:.2f}:d=3"
+    amb += "[amb];"
+    fc = (amb + "[amb][0:a]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=400[duck];"
+          "[0:a][duck]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[o]")
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", voice_wav, "-i", ambient_wav,
+         "-filter_complex", fc, "-map", "[o]", "-ar", "44100", "-ac", "1", out_wav])
+    return out_wav
+
+
 def pick_shorts(paras, para_times, hook_n, count=3, lo=30.0, hi=58.0):
     """(başlangıç_paragraf, bitiş_paragraf) pencereleri: kanca ile başlayan 1, sonra 'bence/derim' yoğun yerler."""
     wins = []
@@ -728,7 +757,13 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     with open(lst, "w") as f:
         f.write("".join(f"file '{p}'\n" for p in (hook_wav, ident_wav, main_wav)))
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst,
-         "-ar", "44100", "-ac", "1", cat])
+         "-ar", "44100", "-ac", "1", os.path.join(workdir, "audio_dry.wav")])
+    try:
+        amb = make_ambient(duration(os.path.join(workdir, "audio_dry.wav")), os.path.join(workdir, "ambient.wav"))
+        mix_ambient(os.path.join(workdir, "audio_dry.wav"), amb, cat, t_hook, t_hook + IDENT_SECONDS)
+    except Exception as e:
+        log(f"   [fon sesi eklenemedi] {str(e)[:150]}")
+        shutil.copy(os.path.join(workdir, "audio_dry.wav"), cat)
 
     # görüntüler
     queries = gemini_queries(paras)
@@ -802,8 +837,14 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
         sdir = os.path.join(workdir, f"s{n}")
         os.makedirs(sdir, exist_ok=True)
         swav = os.path.join(sdir, "a.wav")
+        sdry = os.path.join(sdir, "a_dry.wav")
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", wav, "-ss", f"{t0:.3f}", "-to", f"{t1:.3f}",
-             "-af", "afade=t=in:d=0.05,afade=t=out:st=%.2f:d=0.4" % max(0, t1 - t0 - 0.4), swav])
+             "-af", "afade=t=in:d=0.05,afade=t=out:st=%.2f:d=0.4" % max(0, t1 - t0 - 0.4), sdry])
+        try:
+            mix_ambient(sdry, make_ambient(t1 - t0, os.path.join(sdir, "amb.wav"), n), swav)
+        except Exception as e:
+            log(f"   [short fon sesi eklenemedi] {str(e)[:120]}")
+            shutil.copy(sdry, swav)
         parts = []
         for k in range(a, b + 1):
             d = ptimes[k][1] - ptimes[k][0]
