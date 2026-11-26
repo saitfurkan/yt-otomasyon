@@ -5,3 +5,4 @@ _work/
 _selftest.*
 _t/
 .chat/
+.ses/

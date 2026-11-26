@@ -25,6 +25,11 @@ jobs:
         with:
           path: .chat
           key: chat-id-v1
+      - uses: actions/cache/restore@v4
+        with:
+          path: .ses
+          key: ses-yok
+          restore-keys: ses-
       - name: Telegram'i kontrol et
         id: probe
         run: |
@@ -35,7 +40,7 @@ jobs:
           print("token uzunlugu:", len(t), "bicim dogru:", bool(re.fullmatch(r"\d{6,}:[A-Za-z0-9_-]{30,}", t)))
           r = json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getUpdates?timeout=0"))
           ms = [u["message"] for u in r["result"] if "message" in u]
-          go = any((m.get("text") or "").lower().startswith(("/bitti", "/senaryo")) or (m.get("text") or "").strip().lower().lstrip("/") in ("ident", "ıdent") or "ident" in (m.get("caption") or "").lower() for m in ms)
+          go = any((m.get("text") or "").lower().startswith(("/bitti", "/senaryo", "/tekrar")) or (m.get("text") or "").strip().lower().lstrip("/") in ("ident", "ıdent") or "ident" in (m.get("caption") or "").lower() for m in ms)
           open(os.environ["GITHUB_OUTPUT"], "a").write(f"go={'1' if go else '0'}\n")
           PY
         env:
@@ -66,3 +71,9 @@ jobs:
             git add assets/ident.wav assets/gonderildi.txt assets/bitenler.txt 2>/dev/null || true
             git diff --cached --quiet || (git commit -m "ident sesi" && git pull --rebase && git push)
           fi
+      - name: Sesleri sakla (ozel onbellek)
+        if: always() && hashFiles('.ses/sid.txt') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: .ses
+          key: ses-${{ github.run_id }}

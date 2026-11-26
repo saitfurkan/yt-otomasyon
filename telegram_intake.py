@@ -28,6 +28,18 @@ def tg(method, **params):
         return json.load(r)["result"]
 
 
+SES = os.path.join(HERE, ".ses")
+
+
+def keep_voices(files, sid):
+    """Sesleri (özel) Actions önbelleğinde sakla: video hatalıysa yeniden söylemen gerekmez (/tekrar)."""
+    shutil.rmtree(SES, ignore_errors=True)
+    os.makedirs(SES)
+    for i, f in enumerate(files):
+        shutil.copy(f, os.path.join(SES, f"in{i:03d}"))
+    open(os.path.join(SES, "sid.txt"), "w").write(sid)
+
+
 def LATEST():
     fs = sorted(f for f in os.listdir(os.path.join(HERE, "hazir")) if f.endswith(".md"))
     return fs[-1][:-3] if fs else ""
@@ -113,7 +125,7 @@ def main():
                 os.makedirs(os.path.dirname(stfile), exist_ok=True)
                 open(stfile, "a").write(str(uid_s) + "\n")
     # son /bitti
-    idx = [i for i, (_, m) in enumerate(msgs) if (m.get("text") or "").strip().lower().startswith("/bitti")]
+    idx = [i for i, (_, m) in enumerate(msgs) if (m.get("text") or "").strip().lower().startswith(("/bitti", "/tekrar"))]
     if not idx:
         if ident_done:
             tg("getUpdates", offset=last_id + 1)
@@ -122,7 +134,17 @@ def main():
     end = idx[-1]
     start = 0
     sid = None
-    for i in range(end, -1, -1):
+    repeat = (msgs[end][1].get("text") or "").strip().lower().startswith("/tekrar")
+    if repeat:
+        chat = msgs[end][1]["chat"]["id"]
+        sf = os.path.join(SES, "sid.txt")
+        if not os.path.exists(sf):
+            say(chat, "Saklı ses bulamadım (önbellek temizlenmiş olabilir). /senaryo ile baştan gönder.")
+            tg("getUpdates", offset=msgs[end][0] + 1)
+            return
+        sid = open(sf).read().strip()
+        start = end
+    for i in range(end if not repeat else -1, -1, -1):
         t = (msgs[i][1].get("text") or "").strip()
         mm = re.match(r"/senaryo(?:\s+(\S+))?\s*$", t, re.I)
         if mm:
@@ -138,7 +160,10 @@ def main():
         say(chat, f"hazir/{sid}.md bulunamadı. Dosya adını kontrol et.")
         tg("getUpdates", offset=msgs[end][0] + 1)
         return
-    voices = [audio_of(m) for j, (_, m) in enumerate(msgs[start:end], start) if audio_of(m) and j not in ident_idx and "ident" not in (m.get("caption") or "").lower()]
+    if repeat:
+        voices = sorted(f for f in os.listdir(SES) if f.startswith("in"))
+    else:
+        voices = [audio_of(m) for j, (_, m) in enumerate(msgs[start:end], start) if audio_of(m) and j not in ident_idx and "ident" not in (m.get("caption") or "").lower()]
     if not voices:
         say(chat, "Ses bulamadım. Sesli mesajları /senaryo ile /bitti arasında gönder.")
         tg("getUpdates", offset=msgs[end][0] + 1)
@@ -146,7 +171,14 @@ def main():
     say(chat, f"{len(voices)} ses aldım. Video hazırlanıyor, yaklaşık 30-40 dakika sürer.")
     shutil.rmtree(WORK, ignore_errors=True)
     os.makedirs(WORK)
-    files = [fetch_file(f, os.path.join(WORK, f"in{i}")) for i, f in enumerate(voices)]
+    if repeat:
+        files = []
+        for i, f in enumerate(voices):
+            shutil.copy(os.path.join(SES, f), os.path.join(WORK, f"in{i}"))
+            files.append(os.path.join(WORK, f"in{i}"))
+    else:
+        files = [fetch_file(f, os.path.join(WORK, f"in{i}")) for i, f in enumerate(voices)]
+        keep_voices(files, sid)
     ident = os.path.join(HERE, "assets", "ident.wav")
     out = os.path.join(WORK, "out")
     try:
@@ -156,10 +188,17 @@ def main():
         tg("getUpdates", offset=msgs[end][0] + 1)
         raise
     tg("getUpdates", offset=msgs[end][0] + 1)          # işlendi
-    os.makedirs(os.path.join(HERE, "assets"), exist_ok=True)
-    open(os.path.join(HERE, "assets", "bitenler.txt"), "a").write(os.path.basename(spath)[:-3] + "\n")
     if info.get("kontrol"):
         say(chat, "Okuma kontrolü:\n" + info["kontrol"])
+    qa = info.get("qa") or {}
+    say(chat, "Kalite kontrol: " + ("TAMAM" if qa.get("ok") else "SORUNLU") + f" | ses {qa.get('ses_db')} dB, "
+              f"ses-görüntü farkı {qa.get('fark_sn')} sn, altyazı kayması medyan {qa.get('kayma_medyan')} sn"
+        + ("\n" + "\n".join(qa.get("notlar", [])) if qa.get("notlar") else ""))
+    if not qa.get("ok"):
+        say(chat, "Video hatalı göründüğü için YouTube'a YÜKLEMEDİM. Sorunu düzeltip /tekrar yazarsan aynı seslerle yeniden üretirim.")
+        return
+    os.makedirs(os.path.join(HERE, "assets"), exist_ok=True)
+    open(os.path.join(HERE, "assets", "bitenler.txt"), "a").write(os.path.basename(spath)[:-3] + "\n")
     meta = info["meta"]
     title = meta["BAŞLIK"]
     desc = meta.get("AÇIKLAMA") or (title + "\n\nSon Tanık: karar verilmeden önce, son sözü tanık söyler.")

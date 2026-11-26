@@ -232,6 +232,50 @@ def shift_words(wh, cuts):
     return res
 
 
+def qa_check(video, words_all, times, t_hook, transcribe_fn=None):
+    """Bitmiş videonun KENDİ ses kanalını dinler: ses var mı, altyazı zamanları sesle tutuyor mu, ses/görüntü süreleri."""
+    out = {"ok": True, "notlar": []}
+    try:
+        vol = subprocess.run(["ffmpeg", "-hide_banner", "-i", video, "-af", "volumedetect", "-vn", "-f", "null", "-"],
+                             capture_output=True, text=True).stderr
+        m = re.search(r"mean_volume:\s*(-?[\d.]+) dB", vol)
+        mean = float(m.group(1)) if m else -99.0
+        out["ses_db"] = mean
+        if mean < -45:
+            out["ok"] = False
+            out["notlar"].append(f"ses neredeyse yok ({mean:.0f} dB)")
+        dv = float(run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=duration",
+                        "-of", "default=nw=1:nk=1", video]).stdout.strip())
+        da = float(run(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=duration",
+                        "-of", "default=nw=1:nk=1", video]).stdout.strip())
+        out["fark_sn"] = round(abs(dv - da), 2)
+        if abs(dv - da) > 1.0:
+            out["ok"] = False
+            out["notlar"].append(f"görüntü ({dv:.1f} sn) ile ses ({da:.1f} sn) süresi farklı")
+        wav = video + ".qa.wav"
+        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video, "-vn", "-ac", "1", "-ar", "16000", wav])
+        wh2 = (transcribe_fn or transcribe)(wav, " ".join(words_all[:40]))
+        os.remove(wav)
+        t2 = align(words_all, wh2, da)
+        # altyazının gösterildiği an: senaryo zamanı (+ ident kayması)
+        diffs = []
+        for (s0, _), (a0, _) in zip(times, t2):
+            shown = s0 + (IDENT_SECONDS if s0 >= t_hook else 0.0)
+            diffs.append(a0 - shown)
+        if diffs:
+            diffs.sort()
+            med = diffs[len(diffs) // 2]
+            tail = diffs[int(len(diffs) * 0.9)]
+            out["kayma_medyan"] = round(med, 2)
+            out["kayma_p90"] = round(max(abs(diffs[int(len(diffs) * 0.1)]), abs(tail)), 2)
+            if abs(med) > 0.6 or out["kayma_p90"] > 1.5:
+                out["ok"] = False
+                out["notlar"].append(f"altyazı ile ses tutmuyor (medyan {med:+.1f} sn, p90 {out['kayma_p90']:.1f} sn)")
+    except Exception as e:
+        out["notlar"].append("kalite kontrol çalışamadı: " + str(e)[:120])
+    return out
+
+
 # ------------------------------------------------------------------ altyazı
 def ass_time(t):
     t = max(0.0, t)
@@ -586,6 +630,8 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
     if not clips:
         base = f"gradients=s={W}x{H}:c0=0x0b0d12:c1=0x1b2433:speed=0.01:d={total:.2f}:r=30"
         vf = f"noise=alls=5:allf=t,format=yuv420p"
+        if isinstance(caption, tuple):
+            caption = f"{caption[1]} {caption[2]}"
         if caption:
             cap = caption.replace("'", "").replace(":", "\\:")
             vf = f"drawtext=fontfile={FONT_BOLD_PATH}:text='{cap}':fontsize=64:fontcolor=white:x=86:y=h*0.15," + vf
@@ -847,9 +893,17 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     kontrol = []
     try:
         cuts, cut_txt, swallowed = plan_takes(words_all, wh)
+        def _ratio(ws):
+            return difflib.SequenceMatcher(None, [norm_word(w) for w in words_all], [norm_word(w[0]) for w in ws],
+                                           autojunk=False).ratio()
+        if cuts:
+            new_wh = shift_words(wh, cuts)
+            if _ratio(new_wh) < _ratio(wh) + 0.003:      # kesim metne uyumu artırmıyorsa güvenme
+                log("   [kesim geri alındı: uyum artmadı]")
+                cuts, cut_txt = [], []
         if cuts:
             wav = apply_cuts(wav, cuts, os.path.join(workdir, "voice_kesilmis.wav"))
-            wh = shift_words(wh, cuts)
+            wh = new_wh
             total = duration(wav)
             kontrol.append(f"{len(cuts)} yerde tekrar/yarım okuma bulup otomatik kestim:")
             kontrol += [f"  • «{t[:70]}»" for t in cut_txt[:6]]
@@ -947,6 +1001,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
          "-vf", f"ass='{ass_esc}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
          "-maxrate", "9M", "-bufsize", "18M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
     log(f"Video hazır: {duration(final) / 60:.1f} dk")
+    qa_res = qa_check(final, words_all, times, t_hook, transcribe_fn)
+    log("Kalite kontrol: " + json.dumps(qa_res, ensure_ascii=False))
 
     # kapak
     frame = os.path.join(workdir, "frame.png")
@@ -1003,7 +1059,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
         shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first})
         log(f"   short{n}: {t1 - t0:.0f} sn")
     info = {"video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
-            "minutes": round(duration(final) / 60, 1), "kontrol": "\n".join(kontrol)}
+            "minutes": round(duration(final) / 60, 1), "kontrol": "\n".join(kontrol), "qa": qa_res}
     json.dump(info, open(os.path.join(outdir, "info.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     return info
 
