@@ -21,3 +21,37 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Servisler calisiyor mu
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request, urllib.parse, base64, urllib.error
+          def show(name, fn):
+              try: print("TAMAM", name, fn())
+              except urllib.error.HTTPError as e: print("HATA ", name, e.code, e.read().decode()[:200])
+              except Exception as e: print("HATA ", name, str(e)[:200])
+          t = os.environ["TELEGRAM_BOT_TOKEN"].strip()
+          show("telegram", lambda: json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getMe"))["result"]["username"])
+          show("pixabay", lambda: len(json.load(urllib.request.urlopen("https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": os.environ["PIXABAY_API_KEY"].strip(), "q": "city night", "per_page": 5})))["hits"]))
+          def cf():
+              acc, tok = os.environ["CF_ACCOUNT_ID"].strip(), os.environ["CF_API_TOKEN"].strip()
+              url = f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell"
+              for extra in ({"width": 1280, "height": 720}, {}):
+                  body = {"prompt": "an empty bank desk at night, cinematic", "steps": 4}; body.update(extra)
+                  req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST", headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+                  try:
+                      r = json.load(urllib.request.urlopen(req, timeout=120))
+                      return ("boyut parametresi " + ("kabul" if extra else "yok") + ", resim bayt: " + str(len(base64.b64decode(r["result"]["image"]))))
+                  except urllib.error.HTTPError as e:
+                      print("   deneme hatasi", extra, e.code, e.read().decode()[:150])
+              raise RuntimeError("uretilemedi")
+          show("cloudflare", cf)
+          PY
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
