@@ -262,6 +262,8 @@ def qa_check(video, words_all, times, t_hook, transcribe_fn=None):
         for (s0, _), (a0, _) in zip(times, t2):
             shown = s0 + (IDENT_SECONDS if s0 >= t_hook else 0.0)
             diffs.append(a0 - shown)
+        out["en_kotu"] = [(i, words_all[i], round(d, 1), round(times[i][0], 1)) for i, d in
+                          sorted(enumerate(diffs), key=lambda x: -abs(x[1]))[:12]]
         if diffs:
             diffs.sort()
             med = diffs[len(diffs) // 2]
