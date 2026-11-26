@@ -118,21 +118,21 @@ def render_ident_base(out_mp4, D, hit_t, font_path, W=1920, H=1080, fps=30, seed
     dist = np.sqrt(((x - W * 0.5) / (W * 0.55)) ** 2 + ((y - H * 0.5) / (H * 0.6)) ** 2)
     glow_map = np.clip(1 - dist, 0, 1) ** 2.2
     text = "SON TANIK"
-    size = 132
+    size = 118
     font = ImageFont.truetype(font_path, size)
     try:
         font.set_variation_by_axes([600])
     except Exception:
         pass
     widths = [font.getlength(c) for c in text]
-    ty = 600
+    ty = 475
     glyphs = []
     for c in text:
         lay = Image.new("RGBA", (int(size * 1.4), int(size * 1.7)), (0, 0, 0, 0))
         if c != " ":
             ImageDraw.Draw(lay).text((size * 0.1, size * 0.1), c, font=font, fill=WARM + (255,))
         glyphs.append(lay)
-    t_final, t_start = 52.0, 6.0
+    t_final, t_start = 40.0, 4.0
     def positions(track):
         total = sum(widths) + track * (len(text) - 1)
         xs, x0 = [], (W - total) / 2
@@ -162,7 +162,7 @@ def render_ident_base(out_mp4, D, hit_t, font_path, W=1920, H=1080, fps=30, seed
         # vuruştan sonra başlığın arkasında sıcak bir ışık nefesi
         if t > hit_t:
             k = min(1.0, (t - hit_t) / 0.8) * (0.7 + 0.3 * math.sin((t - hit_t) * 1.6))
-            gm = np.clip(1 - np.sqrt(((x - W * 0.5) / (W * 0.30)) ** 2 + ((y - 640) / 180.0) ** 2), 0, 1) ** 2
+            gm = np.clip(1 - np.sqrt(((x - W * 0.5) / (W * 0.30)) ** 2 + ((y - 545) / 170.0) ** 2), 0, 1) ** 2
             f += gm[..., None] * np.array([70, 52, 28], np.float32) * k
         # ince altın çizgi: ortadan açılır, ses boyunca durur
         la = max(0.0, min(1.0, (t - 0.5) / 1.6))
@@ -211,14 +211,13 @@ def render_ident_base(out_mp4, D, hit_t, font_path, W=1920, H=1080, fps=30, seed
                 f += (band * tl_np)[..., None] * np.array([255, 214, 130], np.float32) * 0.9
             # anahtar deliği ve alt çizgi
             ka = max(0.0, min(1.0, (t - (hit_t + 0.25)) / 0.7))
-            _paste_rgba(f, key, ((W - 150) // 2, 380), ka * 0.95)
             lb = max(0.0, min(1.0, (t - (hit_t + 0.6)) / 0.7))
             if lb > 0:
                 eb = 1 - (1 - lb) ** 3
                 half = int(260 * eb)
-                f[828:830, W // 2 - half:W // 2 + half] = gold
+                f[655:657, W // 2 - half:W // 2 + half] = gold
                 if eb > 0.95:
-                    f[823:836, W // 2 - 6:W // 2 + 7] = np.array(RED, np.float32)
+                    f[650:663, W // 2 - 6:W // 2 + 7] = np.array(RED, np.float32)
             if t < hit_t + 0.3:
                 f += 26 * (1 - (t - hit_t) / 0.3)
         img = Image.fromarray(np.clip(f, 0, 255).astype(np.uint8))
