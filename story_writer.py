@@ -137,23 +137,26 @@ def main():
         if len(arts) < 2 or total < 1500:
             notes.append(f"'{st['title']}': yeterli kaynak yok"); continue
         try:
-            model, facts = extract_all(key, models, topic, arts)
-            models = [model] + [m for m in models if m != model]
+            lite = sorted(models, key=lambda m: "lite" not in m)   # Lite önce: Flash kotası yazıma kalsın
+            model, facts = extract_all(key, lite, topic, arts)
             sw.log(f"   {len(facts)} olgu çıkarıldı")
             if len(facts) < sw.MIN_FACTS:
                 raise sw.GenerationFailed(f"yalnızca {len(facts)} olgu")
             time.sleep(sw.PAUSE)
             models, script = sw.write_sections(key, models, topic, facts)
-            script = sw.finalize_script(key, models, script, facts)
+            script = sw.finalize_script(key, lite, script, facts)
             time.sleep(sw.PAUSE)
             try:
-                meta = sw.make_meta(key, models, topic, script, facts)
+                meta = sw.make_meta(key, lite, topic, script, facts)
             except sw.GenerationFailed as e:
                 if isinstance(e, sw.QuotaExceeded): raise
                 meta = {"title_options": [st["title"]], "shorts": [], "description": "", "tags": [], "thumbnail_text": "", "risk_notes": []}
         except sw.GenerationFailed as e:
             notes.append(f"'{st['title']}': {e}")
             if isinstance(e, sw.QuotaExceeded): break
+            continue
+        except Exception as e:
+            notes.append(f"'{st['title']}': beklenmeyen hata {type(e).__name__}: {str(e)[:150]}")
             continue
         bad_nums, bad_names = sw.unverified(script, arts)
         meta["hook"] = script.split("\n\n")[0].strip()
