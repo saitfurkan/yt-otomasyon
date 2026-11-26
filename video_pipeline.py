@@ -539,6 +539,35 @@ def make_ident(ident_voice, out_mp4, out_wav, workdir):
     return out_mp4, out_wav
 
 
+def make_watermark(path, w=150):
+    """Köşe filigranı: göz + ses çubukları (yarı saydam)."""
+    from PIL import Image, ImageDraw
+    SS = 4
+    W, H = w * SS, int(w * 0.5 * SS) + 8 * SS
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    cx, cy, ww, hh = W / 2, H / 2, W - 8 * SS, (W - 8 * SS) * 0.5
+    pts = lambda: ([(cx + (-1 + 2 * i / 200) * ww / 2, cy - (1 - (-1 + 2 * i / 200) ** 2) ** 0.9 * hh / 2) for i in range(201)]
+                   + [(cx + (-1 + 2 * i / 200) * ww / 2, cy + (1 - (-1 + 2 * i / 200) ** 2) ** 0.9 * hh / 2) for i in range(200, -1, -1)])
+    d.polygon(pts(), fill=(255, 255, 255, 255))
+    t = 3.2 * SS
+    inner = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(inner).polygon([(cx + (x - cx) * (1 - 2 * t * 1.6 / ww), cy + (y - cy) * (1 - 2 * t * 1.2 / hh)) for x, y in pts()], fill=255)
+    im.paste((0, 0, 0, 0), mask=inner)
+    d = ImageDraw.Draw(im)
+    bw, gap = ww * 0.055, ww * 0.105
+    for k, f in enumerate((0.28, 0.5, 0.82, 0.5, 0.28)):
+        x = cx + (k - 2) * gap
+        ph = f * hh * 0.9 / 2
+        d.rounded_rectangle([x - bw / 2, cy - ph, x + bw / 2, cy + ph], radius=bw / 2,
+                            fill=(214, 40, 40, 255) if k == 2 else (255, 255, 255, 255))
+    im = im.resize((W // SS, H // SS), Image.LANCZOS)
+    a = im.getchannel("A").point(lambda v: int(v * 0.65))
+    im.putalpha(a)
+    im.save(path)
+    return path
+
+
 # ------------------------------------------------------------------ kapak
 def make_thumbnail(frame_png, text, out_jpg):
     """Sinematik kapak: koyu renk düzeltmeli görüntü, güçlü yazı, sarı vurgu kutusu, kırmızı etiket."""
@@ -726,12 +755,12 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     ass = build_subtitles(words_all, times, os.path.join(workdir, "subs.ass"),
                           shift_after=t_hook - 0.01, shift=IDENT_SECONDS)
     t_main_start = t_hook + IDENT_SECONDS
-    wm = (f"drawtext=fontfile={FONT_BOLD_PATH}:text='SON TANIK':fontsize=30:fontcolor=white@0.55:"
-          f"x=w-text_w-36:y=30:enable='gte(t,{t_main_start:.2f})'")
+    wmp = make_watermark(os.path.join(workdir, "wm.png"), 150)
     final = os.path.join(outdir, "video.mp4")
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
-    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video_full, "-i", cat,
-         "-vf", f"ass='{ass_esc}',{wm}", "-c:v", "libx264", "-preset", "veryfast", "-crf", "21",
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video_full, "-i", cat, "-i", wmp,
+         "-filter_complex", f"[0:v]ass='{ass_esc}'[a];[a][2:v]overlay=W-w-40:44:enable='gte(t,{t_main_start:.2f})'[v]",
+         "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "21",
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
     log(f"Video hazır: {duration(final) / 60:.1f} dk")
 
@@ -771,10 +800,10 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
                                vertical=True, offset=t0)
         out = os.path.join(outdir, f"short{n}.mp4")
         sa = sass.replace("\\", "/").replace(":", "\\:")
-        wms = (f"drawtext=fontfile={FONT_BOLD_PATH}:text='SON TANIK':fontsize=44:fontcolor=white@0.6:"
-               "x=(w-text_w)/2:y=120")
-        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", sv, "-i", swav,
-             "-vf", f"ass='{sa}',{wms}", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p",
+        wmv = make_watermark(os.path.join(workdir, "wm_v.png"), 170)
+        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", sv, "-i", swav, "-i", wmv,
+             "-filter_complex", f"[0:v]ass='{sa}'[a];[a][2:v]overlay=(W-w)/2:130[v]",
+             "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p",
              "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out])
         first = " ".join(paras[a].split()[:9])
         shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first})
