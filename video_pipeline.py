@@ -10,6 +10,7 @@ import re
 import shutil
 import subprocess
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -237,6 +238,101 @@ def gemini_queries(paragraphs):
         return [random.sample(GENERIC_QUERIES, 2) for _ in paragraphs]
 
 
+STYLE = ("cinematic documentary photograph, dramatic low-key lighting, muted desaturated colors, 35mm film look, "
+         "shallow depth of field, realistic, no text, no letters, no logos, no recognizable faces")
+AI_STATE = {"used": 0, "dead": False}
+
+
+def ai_scene_prompts(paragraphs):
+    """Her paragraf için 3 İngilizce sahne tarifi (yapay zeka görseli için). Başarısızsa None."""
+    try:
+        sys.path.insert(0, HERE)
+        import script_writer as sw
+        key = os.environ.get("GEMINI_API_KEY", "").strip()
+        if not key:
+            return None
+        models = sorted(sw.model_candidates(key), key=lambda m: "lite" not in m)
+        out = []
+        for i in range(0, len(paragraphs), 12):
+            chunk = paragraphs[i:i + 12]
+            listing = "\n".join(f"{j + 1}. {p[:400]}" for j, p in enumerate(chunk))
+            prompt = (
+                "Aşağıdaki Türkçe belgesel anlatımının her paragrafı için, anlatılan şeyi BİREBİR gösteren 3 farklı "
+                "İngilizce sahne tarifi yaz (görsel üretim yapay zekası için). Somut ol: mekân, nesne, ışık, eylem "
+                "(ör. 'a bank employee's empty desk at night with a glowing computer screen showing a long row of "
+                "numbers'). Gerçek kişileri, ünlüleri, marka ve logoları, yazı içeren nesneleri anlatma; insanlar "
+                "gerekiyorsa arkadan, siluet ya da uzaktan göster. Her tarif tek cümle, 15-30 kelime.\n\n"
+                f"{listing}\n\nSadece JSON: {{\"scenes\": [[\"a\",\"b\",\"c\"], ...]}} ({len(chunk)} liste)")
+            _, data = sw.generate(key, models, prompt, json_out=True, temperature=0.5, max_tokens=6000)
+            sc = data.get("scenes", [])
+            for j in range(len(chunk)):
+                q = [x for x in (sc[j] if j < len(sc) else []) if isinstance(x, str) and len(x) > 10]
+                out.append(q[:3])
+        return out
+    except Exception as e:
+        log(f"   [sahne tarifleri alınamadı] {str(e)[:120]}")
+        return None
+
+
+def cf_image(prompt, orientation, dest):
+    """Cloudflare Workers AI (FLUX.1 schnell) ile görsel üretir. Kota/hata olursa None."""
+    acc = os.environ.get("CF_ACCOUNT_ID", "").strip()
+    tok = os.environ.get("CF_API_TOKEN", "").strip()
+    if not acc or not tok or AI_STATE["dead"] or AI_STATE["used"] >= int(os.environ.get("AI_IMAGE_MAX", "60")):
+        return None
+    import base64
+    url = f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell"
+    w, h = (1280, 720) if orientation == "landscape" else (720, 1280)
+    for attempt, extra in enumerate(({"width": w, "height": h}, {})):
+        body = {"prompt": (prompt + ", " + STYLE)[:1900], "steps": 6}
+        body.update(extra)
+        req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST", headers={
+            "Authorization": f"Bearer {tok}", "Content-Type": "application/json", "User-Agent": UA})
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                res = json.load(r)
+            img = base64.b64decode(res["result"]["image"])
+            with open(dest, "wb") as f:
+                f.write(img)
+            AI_STATE["used"] += 1
+            return dest
+        except urllib.error.HTTPError as e:
+            msg = e.read().decode("utf-8", "ignore")[:200]
+            if e.code in (429, 402, 403) or "neurons" in msg.lower() or "limit" in msg.lower():
+                log(f"   [AI görsel kotası doldu] {e.code} {msg[:100]}")
+                AI_STATE["dead"] = True
+                return None
+            log(f"   [AI görsel hata] {e.code} {msg[:100]}")
+        except Exception as e:
+            log(f"   [AI görsel hata] {str(e)[:100]}")
+    return None
+
+
+def ai_clips(scenes, orientation, workdir, tag, need):
+    out = []
+    for i, sc in enumerate((scenes or [])[:need]):
+        p = cf_image(sc, orientation, os.path.join(workdir, f"ai_{tag}_{i}.png"))
+        if p:
+            out.append({"path": p, "duration": 999, "still": True})
+    return out
+
+
+def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search):
+    """Paragraf süresine göre yapay zeka görselleri ve stok videoyu dönüşümlü dizer (hareket + konu bağı)."""
+    per = 10.0
+    total_n = max(1, round(d / per))
+    n_ai = max(1, total_n // 2) if scenes else 0
+    ai = ai_clips(scenes, orientation, workdir, tag, n_ai)
+    vids = fetch_clips(queries, orientation, workdir, used, need=max(1, total_n - len(ai)), search=search)
+    out = []
+    for i in range(max(len(ai), len(vids))):
+        if i < len(vids):
+            out.append(vids[i])
+        if i < len(ai):
+            out.append(ai[i])
+    return out
+
+
 def pexels_search(query, orientation, key):
     url = ("https://api.pexels.com/videos/search?" + urllib.parse.urlencode(
         {"query": query, "orientation": orientation, "size": "medium", "per_page": 12}))
@@ -356,17 +452,21 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i", base, "-vf", vf,
              "-c:v", "libx264", "-preset", "ultrafast", "-crf", "24", "-pix_fmt", "yuv420p", out_path])
         return out_path
-    n = max(1, math.ceil(total / 6.0))
+    any_still = any(c.get("still") for c in clips)
+    n = len(clips) if any_still else max(1, math.ceil(total / 6.0))
     each = total / n
     for i in range(n):
         c = clips[i % len(clips)]
-        room = max(0.0, c["duration"] - each - 0.2)
-        ss = random.uniform(0, room) if room > 0 else 0.0
         p = os.path.join(workdir, f"seg_{tag}_{i}.mp4")
         vf = grade_filter(W, H, each, i + random.randint(0, 3), caption if i == 0 else None)
-        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{ss:.2f}",
-             "-i", c["path"], "-t", f"{each:.3f}", "-an", "-vf", vf, "-c:v", "libx264",
-             "-preset", "ultrafast", "-crf", "23", p])
+        if c.get("still"):
+            src = ["-loop", "1", "-framerate", "30", "-i", c["path"]]
+        else:
+            room = max(0.0, c["duration"] - each - 0.2)
+            ss = random.uniform(0, room) if room > 0 else 0.0
+            src = ["-stream_loop", "-1", "-ss", f"{ss:.2f}", "-i", c["path"]]
+        run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error"] + src +
+            ["-t", f"{each:.3f}", "-an", "-vf", vf, "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23", p])
         parts.append(p)
     lst = os.path.join(workdir, f"list_{tag}.txt")
     with open(lst, "w") as f:
@@ -510,6 +610,7 @@ def pick_shorts(paras, para_times, hook_n, count=3, lo=30.0, hi=58.0):
 
 def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=pexels_search,
                transcribe_fn=None, shorts_count=3):
+    outdir, workdir = os.path.abspath(outdir), os.path.abspath(workdir)
     os.makedirs(outdir, exist_ok=True)
     os.makedirs(workdir, exist_ok=True)
     meta, paras, hook_n = parse_script(script_path)
@@ -555,6 +656,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=pe
 
     # görüntüler
     queries = gemini_queries(paras)
+    scenes = ai_scene_prompts(paras) if os.environ.get("CF_API_TOKEN") else None
     used = set()
     seg_files, first_clip = [], None
     hook_video = os.path.join(workdir, "hook_v.mp4")
@@ -566,8 +668,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=pe
             d = ptimes[k][1] - ptimes[k][0]
             if d < 0.3:
                 continue
-            clips = fetch_clips(queries[k], "landscape", workdir, used, need=3, search=search)
             nonlocal first_clip
+            clips = mix_clips(scenes[k] if scenes else None, queries[k], "landscape", workdir, f"{tag}{k}", d, used, search)
             if clips and first_clip is None:
                 first_clip = clips[0]["path"]
             p = os.path.join(workdir, f"{tag}_{k}.mp4")
@@ -606,7 +708,9 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=pe
 
     # kapak
     frame = os.path.join(workdir, "frame.png")
-    if first_clip:
+    if first_clip and first_clip.endswith(".png"):
+        shutil.copy(first_clip, frame)
+    elif first_clip:
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", "1", "-i", first_clip, "-vframes", "1", frame])
     cover_text = meta.get("KAPAK") or meta["BAŞLIK"].split(":")[0]
     thumb = make_thumbnail(frame if os.path.exists(frame) else None, cover_text, os.path.join(outdir, "kapak.jpg"))
@@ -625,7 +729,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=pe
             d = ptimes[k][1] - ptimes[k][0]
             if d < 0.3:
                 continue
-            clips = fetch_clips(queries[k], "portrait", workdir, used, need=2, search=search)
+            clips = mix_clips(scenes[k] if scenes else None, queries[k], "portrait", workdir, f"s{n}p{k}", d, used, search)
             p = os.path.join(sdir, f"p{k}.mp4")
             render_visual(clips, d, p, 1080, 1920, workdir, f"s{n}_{k}", key_caption(paras[k]))
             parts.append(p)
