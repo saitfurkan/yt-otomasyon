@@ -1,0 +1,21 @@
+name: Fontlar
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fontlar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p fonts && cd fonts
+          B=https://raw.githubusercontent.com/google/fonts/main/ofl
+          curl -fsSL -o Anton-Regular.ttf $B/anton/Anton-Regular.ttf
+          curl -fsSL -o AbrilFatface-Regular.ttf $B/abrilfatface/AbrilFatface-Regular.ttf
+          curl -fsSL -o BebasNeue-Regular.ttf $B/bebasneue/BebasNeue-Regular.ttf
+          curl -fsSL -o Oswald.ttf "$B/oswald/Oswald%5Bwght%5D.ttf"
+          ls -la
+      - run: |
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add fonts && git commit -m "fontlar (OFL)" && git pull --rebase && git push
