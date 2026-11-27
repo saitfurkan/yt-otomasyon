@@ -111,7 +111,9 @@ def transcribe(wav, prompt=""):
                          capture_output=True, check=True).stdout
     audio = np.frombuffer(raw, dtype=np.float32)
     segs, _ = model.transcribe(audio, language="tr", word_timestamps=True, vad_filter=True,
-                               initial_prompt=prompt[:400] or None, beam_size=5)
+                               initial_prompt=prompt[:400] or None, beam_size=5,
+                               condition_on_previous_text=False, compression_ratio_threshold=2.0,
+                               repetition_penalty=1.1, temperature=[0.0, 0.2, 0.4])
     words = []
     for s in segs:
         for w in (s.words or []):
