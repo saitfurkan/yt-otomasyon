@@ -1,6 +1,6 @@
 """Telegram'dan sesleri alır, videoyu üretir, YouTube'a zamanlanmış yükler.
 Komutlar (sadece sen yazarsın):
-  /senaryo 01-samsun-16-milyar   -> hangi senaryo (hazir/ klasöründeki dosya adı)
+  /senaryo 02-kumarbaz-futbol-kulubu   -> hangi senaryo (hazir/ klasöründeki dosya adı)
   (sonra sesli mesaj(lar)ı gönder)
   /bitti                         -> üretimi başlatır
   /ident  (sesli mesaja yanıt/altyazı olarak 'ident' yaz) -> açılış sesini kaydeder
@@ -152,7 +152,7 @@ def main():
             break
     chat = msgs[end][1]["chat"]["id"]
     if not sid:
-        say(chat, "Önce /senaryo ve dosya adını yaz. Örnek: /senaryo 01-samsun-16-milyar")
+        say(chat, "Önce /senaryo ve dosya adını yaz. Örnek: /senaryo 02-kumarbaz-futbol-kulubu")
         tg("getUpdates", offset=msgs[end][0] + 1)
         return
     spath = os.path.join(HERE, "hazir", sid if sid.endswith(".md") else sid + ".md")
