@@ -10,6 +10,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -411,7 +412,7 @@ def ai_scene_prompts(paragraphs):
         return None
 
 
-def cf_image(prompt, orientation, dest):
+def _cf_flux(prompt, orientation, dest):
     """Cloudflare Workers AI (FLUX.1 schnell) ile görsel üretir. Kota/hata olursa None."""
     acc = os.environ.get("CF_ACCOUNT_ID", "").strip()
     tok = os.environ.get("CF_API_TOKEN", "").strip()
@@ -443,6 +444,82 @@ def cf_image(prompt, orientation, dest):
         except Exception as e:
             log(f"   [AI görsel hata] {str(e)[:100]}")
     return None
+
+
+AI_PROV = {"together_dead": False, "poll_used": 0, "poll_last": 0.0, "poll_dead": False}
+
+
+def _together_image(prompt, orientation, dest):
+    """Together AI ücretsiz FLUX.1-schnell (TOGETHER_API_KEY varsa)."""
+    key = os.environ.get("TOGETHER_API_KEY", "").strip()
+    if not key or AI_PROV["together_dead"]:
+        return None
+    import base64
+    w, h = (1280, 720) if orientation == "landscape" else (720, 1280)
+    body = {"model": "black-forest-labs/FLUX.1-schnell-Free", "prompt": (prompt + ", " + STYLE)[:1500],
+            "width": w, "height": h, "steps": 4, "n": 1, "response_format": "b64_json"}
+    for attempt in range(4):
+        req = urllib.request.Request("https://api.together.xyz/v1/images/generations", data=json.dumps(body).encode(),
+                                     method="POST", headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": UA})
+        try:
+            with urllib.request.urlopen(req, timeout=150) as r:
+                res = json.load(r)
+            with open(dest, "wb") as f:
+                f.write(base64.b64decode(res["data"][0]["b64_json"]))
+            return dest
+        except urllib.error.HTTPError as e:
+            msg = e.read().decode("utf-8", "ignore")[:160]
+            if e.code == 429:
+                time.sleep(15 * (attempt + 1))
+                continue
+            log(f"   [Together hata] {e.code} {msg[:100]}")
+            if e.code in (401, 402, 403, 404):
+                AI_PROV["together_dead"] = True
+            return None
+        except Exception as e:
+            log(f"   [Together hata] {str(e)[:100]}")
+            return None
+    return None
+
+
+def _pollinations_image(prompt, orientation, dest):
+    """Pollinations ücretsiz (IP başına 45 sn'de 1 görsel, sağ altta filigran: kırpılır). Son çare."""
+    if AI_PROV["poll_dead"] or AI_PROV["poll_used"] >= int(os.environ.get("AI_POLL_MAX", "24")):
+        return None
+    from PIL import Image
+    import io
+    w, h = (1280, 720) if orientation == "landscape" else (720, 1280)
+    url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote((prompt + ", " + STYLE)[:900]) +
+           f"?model=flux&width={w}&height={h}&nologo=true&seed={random.randint(1, 99999)}")
+    for attempt in range(5):
+        wait = 46 - (time.time() - AI_PROV["poll_last"])
+        if wait > 0:
+            time.sleep(wait)
+        AI_PROV["poll_last"] = time.time()
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            data = urllib.request.urlopen(req, timeout=180).read()
+            im = Image.open(io.BytesIO(data)).convert("RGB")
+            iw, ih = im.size
+            im = im.crop((0, 0, iw, int(ih * 0.93))).resize((iw, ih), Image.LANCZOS)   # filigranı at
+            im.save(dest)
+            AI_PROV["poll_used"] += 1
+            return dest
+        except urllib.error.HTTPError as e:
+            if e.code in (402, 429, 503):
+                time.sleep(20)
+                continue
+            AI_PROV["poll_dead"] = True
+            return None
+        except Exception:
+            continue
+    AI_PROV["poll_dead"] = True
+    return None
+
+
+def cf_image(prompt, orientation, dest):
+    """Sağlayıcı havuzu: Cloudflare → Together (ücretsiz FLUX) → Pollinations. Hiçbiri olmazsa None (stok devreye girer)."""
+    return _cf_flux(prompt, orientation, dest) or _together_image(prompt, orientation, dest) or _pollinations_image(prompt, orientation, dest)
 
 
 def ai_clips(scenes, orientation, workdir, tag, need):
