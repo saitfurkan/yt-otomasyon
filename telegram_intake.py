@@ -237,7 +237,11 @@ def main():
     title = meta["BAŞLIK"]
     desc = meta.get("AÇIKLAMA") or (title + "\n\nSon Tanık: karar verilmeden önce, son sözü tanık söyler.")
     if info.get("credits"):
-        desc += "\n\nGörsel ve müzik kaynakları (Wikimedia Commons):\n" + "\n".join(info["credits"])
+        desc += "\n\nGörsel ve müzik kaynakları (Wikimedia Commons):"
+        for cl in info["credits"]:             # açıklama 5000 bayt sınırını aşmasın
+            if len((desc + "\n" + cl).encode("utf-8")) > 4200:
+                break
+            desc += "\n" + cl
     tags = [t.strip() for t in meta.get("ETİKETLER", "son tanık,gerçek hikaye,belgesel").split(",") if t.strip()]
     if all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
         import youtube_upload as yu

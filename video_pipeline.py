@@ -1309,7 +1309,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             db = mean_db(out)
         shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first, "db": round(db, 1)})
         log(f"   short{n}: {t1 - t0:.0f} sn, ses {db:.1f} dB, süre farkı {abs(duration(out) - (t1 - t0)):.2f} sn")
-    info = {"credits": sorted(set(CREDITS.values())) + music_credits, "video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
+    info = {"credits": music_credits + sorted(set(CREDITS.values())), "video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
             "minutes": round(duration(final) / 60, 1), "kontrol": "\n".join(kontrol), "qa": qa_res}
     json.dump(info, open(os.path.join(outdir, "info.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     return info

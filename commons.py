@@ -107,7 +107,7 @@ def fetch_map(spec, workdir, per_query=2):
                 to_canvas(base + "_raw.jpg", base + ".jpg")
             except Exception:
                 continue
-            got.append({"path": base + ".jpg", "credit": f"{re.sub(r'^File:', '', it['title'])} — {it['author'][:60]}, {it['license']}, {it['page']}"})
+            got.append({"path": base + ".jpg", "credit": f"Görsel: {it['author'][:45]}, {it['license']}, {it['page']}"})
             time.sleep(1)
         res.setdefault(key, []).extend(got)
     return res
@@ -213,7 +213,7 @@ def music_bed(seconds, out_wav, workdir, seed=0):
         r = subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", f, "-vn", "-ac", "1", "-ar", "44100", w])
         if r.returncode != 0 or not os.path.exists(w):
             continue
-        got.append((w, dur, f"Müzik: {re.sub(r'^File:', '', title)} — {artist or 'Bilinmiyor'}, {lic}, {page}"))
+        got.append((w, dur, f"Müzik: {re.sub(r'^File:', '', title)[:60]} — {artist[:40] or 'Bilinmiyor'}, {lic}, {page}"))
         total += dur - 6
     if not got:
         return None, []

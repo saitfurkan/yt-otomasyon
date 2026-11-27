@@ -25,7 +25,8 @@ def upload(path, title, description, tags, publish_at=None, shorts=False, thumb=
     status = {"privacyStatus": "private" if publish_at else "public", "selfDeclaredMadeForKids": False}
     if publish_at:
         status["publishAt"] = publish_at          # ISO 8601, örn. 2026-11-29T16:00:00Z
-    body = {"snippet": {"title": title[:100], "description": description[:4900], "tags": tags[:15],
+    description = description.encode("utf-8")[:4800].decode("utf-8", "ignore")      # YouTube sınırı 5000 BAYT (karakter değil)
+    body = {"snippet": {"title": title[:100], "description": description, "tags": tags[:15],
                         "categoryId": category, "defaultLanguage": "tr", "defaultAudioLanguage": "tr"},
             "status": status}
     size = os.path.getsize(path)
@@ -34,8 +35,11 @@ def upload(path, title, description, tags, publish_at=None, shorts=False, thumb=
         data=json.dumps(body).encode(), method="POST",
         headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8",
                  "X-Upload-Content-Length": str(size), "X-Upload-Content-Type": "video/mp4"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        loc = r.headers["Location"]
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            loc = r.headers["Location"]
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"YouTube {e.code}: " + e.read().decode("utf-8", "ignore")[:400]) from None
     chunk = 8 * 1024 * 1024
     sent = 0
     with open(path, "rb") as f:
