@@ -246,6 +246,9 @@ def main():
             vid = yu.upload(info["video"], title, desc, tags, publish_at=next_slot(0), thumb=info["thumbnail"])
             lines.append(f"Ana video yüklendi (zamanlandı): https://youtu.be/{vid}")
             for n, s in enumerate(info["shorts"], 1):
+                if s.get("db", 0) < -40:
+                    lines.append(f"Short {n}: sessiz çıktığı için YÜKLENMEDİ ({s.get('db')} dB)")
+                    continue
                 sv = yu.upload(s["file"], f"{s['hint']}... #Shorts"[:95], f"Hikâyenin tamamı: https://youtu.be/{vid}\n\n" + desc + "\n#Shorts", tags + ["shorts"],
                                publish_at=next_slot(n))
                 lines.append(f"Short {n}: https://youtu.be/{sv}")
