@@ -357,15 +357,15 @@ def build_subtitles(words, times, ass_path, shift_after=None, shift=0.0, t_from=
                     vertical=False, offset=0.0, cta=None):
     """words: senaryo kelimeleri, times: (s,e). Metin senaryodan gelir, zaman sesten."""
     W, H = (1080, 1920) if vertical else (1920, 1080)
-    size = 78 if vertical else 56
+    size = 92 if vertical else 68
     marg = 520 if vertical else 125
-    maxc = 22 if vertical else 40
+    maxc = 20 if vertical else 36
     head = (f"[Script Info]\nScriptType: v4.00+\nPlayResX: {W}\nPlayResY: {H}\nWrapStyle: 2\n\n"
             "[V4+ Styles]\nFormat: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,"
             "Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,"
             "MarginL,MarginR,MarginV,Encoding\n"
             f"Style: Default,{FONT_SANS},{size},&H00FFFFFF,&H000000FF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,"
-            f"4,1,2,60,60,{marg},1\n\n[Events]\nFormat: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text\n")
+            f"5,2,2,60,60,{marg},1\n\n[Events]\nFormat: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text\n")
     lines, cur, cs = [], [], None
     for w, (s, e) in zip(words, times):
         if e < t_from or s > t_to:
@@ -471,14 +471,18 @@ def ai_scene_prompts(paragraphs, topic=""):
                 f"Video konusu: {topic}. Aşağıdaki Türkçe belgesel anlatımının her paragrafı için, anlatılan şeyi BİREBİR gösteren 3 farklı "
                 "İngilizce sahne tarifi yaz (görsel üretim yapay zekası için). Somut ol: mekân, nesne, ışık, eylem "
                 "(ör. 'a bank employee's empty desk at night with a glowing computer screen showing a long row of "
-                "numbers'). Gerçek kişileri, ünlüleri, marka ve logoları, yazı içeren nesneleri anlatma; insanlar "
+                "numbers'). Gerçek kişileri, ünlüleri, marka ve logoları anlatma. Üzerinde yazı olabilecek HİÇBİR nesne olmasın: gazete, belge, kâğıt, kitap, ekran, "
+                "tabela, pano, afiş, tahta, defter, telefon, skor tabelası, forma numarası, kitaplık YASAK (yapay zeka bunlara anlamsız harf basıyor); "
+                "bunların yerine manzara, bina cephesi (yazısız), stadyum, çim, tünel, koridor, silüet, eller, eşya, ışık kullan; insanlar "
                 "gerekiyorsa arkadan, siluet ya da uzaktan göster. Karakterler her zaman yetişkin olsun (çocuk ya da genç gösterme). "
                 "Her tarif tek cümle, 15-30 kelime.\n\n"
                 f"{listing}\n\nSadece JSON: {{\"scenes\": [[\"a\",\"b\",\"c\"], ...]}} ({len(chunk)} liste)")
             _, data = sw.generate(key, models, prompt, json_out=True, temperature=0.5, max_tokens=6000)
             sc = data.get("scenes", [])
             for j in range(len(chunk)):
-                q = [x for x in (sc[j] if j < len(sc) else []) if isinstance(x, str) and len(x) > 10]
+                q = [x for x in (sc[j] if j < len(sc) else []) if isinstance(x, str) and len(x) > 10
+                     and not re.search(r"newspaper|document|paper|book|screen|monitor|sign\b|signboard|billboard|poster|board|"
+                                       r"notebook|phone|scoreboard|jersey|shirt number|letter|text|label|banner|bookshel|library|map\b|chart|ticket|banknote|contract|file\b", x, re.I)]
                 out.append(q[:3])
         return out
     except Exception as e:
