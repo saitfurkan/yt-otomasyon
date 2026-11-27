@@ -272,15 +272,19 @@ def qa_check(video, words_all, times, t_hook, transcribe_fn=None):
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video, "-vn", "-ac", "1", "-ar", "16000", wav])
         wh2 = (transcribe_fn or transcribe)(wav, " ".join(words_all[:40]))
         os.remove(wav)
-        t2 = align(words_all, wh2, da)
-        log("QA-Whisper: " + " ".join(f"{w[0]}@{w[1]:.0f}" for w in wh2))
-        # altyazının gösterildiği an: senaryo zamanı (+ ident kayması)
-        diffs = []
-        for (s0, _), (a0, _) in zip(times, t2):
-            shown = s0 + (IDENT_SECONDS if s0 >= t_hook else 0.0)
-            diffs.append(a0 - shown)
-        out["en_kotu"] = [(i, words_all[i], round(d, 1), round(times[i][0], 1)) for i, d in
-                          sorted(enumerate(diffs), key=lambda x: -abs(x[1]))[:12]]
+        # yalnızca birebir eşleşen kelimelerin zamanı karşılaştırılır (Whisper'ın kaçırdığı yerler yanlış alarm üretmesin)
+        sm = difflib.SequenceMatcher(None, [norm_word(w) for w in words_all], [norm_word(w[0]) for w in wh2], autojunk=False)
+        diffs, idxs = [], []
+        for i, j, n in sm.get_matching_blocks():
+            for k in range(n):
+                shown = times[i + k][0] + (IDENT_SECONDS if times[i + k][0] >= t_hook else 0.0)
+                diffs.append(wh2[j + k][1] - shown)
+                idxs.append(i + k)
+        out["eslesen_kelime"] = f"{len(diffs)}/{len(words_all)}"
+        out["en_kotu"] = [(idxs[x], words_all[idxs[x]], round(diffs[x], 1), round(times[idxs[x]][0], 1)) for x in
+                          sorted(range(len(diffs)), key=lambda x: -abs(diffs[x]))[:12]]
+        if len(diffs) < 0.25 * len(words_all):
+            out["notlar"].append("uyarı: sesin çoğu yazıya çevrilemedi, altyazı doğrulaması sınırlı kaldı")
         if diffs:
             diffs.sort()
             med = diffs[len(diffs) // 2]
@@ -1304,7 +1308,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
                  "-movflags", "+faststart", out])
             db = mean_db(out)
         shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first, "db": round(db, 1)})
-        log(f"   short{n}: {t1 - t0:.0f} sn")
+        log(f"   short{n}: {t1 - t0:.0f} sn, ses {db:.1f} dB, süre farkı {abs(duration(out) - (t1 - t0)):.2f} sn")
     info = {"credits": sorted(set(CREDITS.values())) + music_credits, "video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
             "minutes": round(duration(final) / 60, 1), "kontrol": "\n".join(kontrol), "qa": qa_res}
     json.dump(info, open(os.path.join(outdir, "info.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
