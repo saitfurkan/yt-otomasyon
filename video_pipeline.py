@@ -1266,7 +1266,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             d = ptimes[k][1] - ptimes[k][0]
             if d < 0.3:
                 continue
-            clips = mix_clips(scenes[k] if scenes else None, queries[k], "portrait", workdir, f"s{n}p{k}", d, used, search)
+            clips = mix_clips(scenes[k] if scenes else None, queries[k], "portrait", workdir, f"s{n}p{k}", d, used, search,
+                              pick_photos(photo_map, paras[k], {}), per=6.0)
             p = os.path.join(sdir, f"p{k}.mp4")
             render_visual(clips, d, p, 1080, 1920, workdir, f"s{n}_{k}", key_counter(paras[k]) or key_caption(paras[k]))
             parts.append(p)
