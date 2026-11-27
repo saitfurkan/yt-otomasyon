@@ -350,7 +350,7 @@ def ass_time(t):
 
 
 def build_subtitles(words, times, ass_path, shift_after=None, shift=0.0, t_from=0.0, t_to=1e9,
-                    vertical=False, offset=0.0):
+                    vertical=False, offset=0.0, cta=None):
     """words: senaryo kelimeleri, times: (s,e). Metin senaryodan gelir, zaman sesten."""
     W, H = (1080, 1920) if vertical else (1920, 1080)
     size = 78 if vertical else 56
@@ -400,6 +400,12 @@ def build_subtitles(words, times, ass_path, shift_after=None, shift=0.0, t_from=
         if shift_after is not None and s < shift_after:
             e = min(e, shift_after)
         events.append(f"Dialogue: 0,{ass_time(sh(s))},{ass_time(sh(e))},Default,,0,0,0,,{txt}")
+    if cta:      # (metin, başlangıç, bitiş): ekranın üst-ortasında altın renkli, yumuşak giriş/çıkışlı çağrı yazısı
+        txt, c0, c1 = cta
+        fs = 64 if vertical else 66
+        mv = 330 if vertical else 150
+        events.append(f"Dialogue: 1,{ass_time(c0)},{ass_time(c1)},Default,,0,0,{mv},,"
+                      "{\\an8\\fad(600,600)\\b1\\fs%d\\1c&H00B8E6&\\3c&H000000&\\bord5\\shad2}%s" % (fs, txt.replace("\n", "\\N")))
     with open(ass_path, "w", encoding="utf-8") as f:
         f.write(head + "\n".join(events) + "\n")
     return ass_path
@@ -1205,8 +1211,10 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
 
     # altyazı + filigran + son birleştirme
     sub_words, sub_times = merge_sub_words(words_all, wh)      # altyazı: kayıttaki gerçek söyleyişten
+    vid_len = duration(video_full)
     ass = build_subtitles(sub_words, sub_times, os.path.join(workdir, "subs.ass"),
-                          shift_after=t_hook - 0.01, shift=IDENT_SECONDS)
+                          shift_after=t_hook - 0.01, shift=IDENT_SECONDS,
+                          cta=("Devamı gelsin istiyorsan abone ol\\NDestek olduğun için teşekkürler", max(0.0, vid_len - 9.0), vid_len - 0.3))
     t_main_start = t_hook + IDENT_SECONDS
     final = os.path.join(outdir, "video.mp4")
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
@@ -1268,7 +1276,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
         sv = os.path.join(sdir, "v.mp4")
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lf, "-c", "copy", sv])
         sass = build_subtitles(sub_words, sub_times, os.path.join(sdir, "s.ass"), t_from=t0, t_to=t1,
-                               vertical=True, offset=t0)
+                               vertical=True, offset=t0,
+                               cta=("Hikâyenin tamamı\\Nkanalımdaki videoda", max(0.0, t1 - t0 - 5.5), t1 - t0 - 0.2))
         out = os.path.join(outdir, f"short{n}.mp4")
         sa = sass.replace("\\", "/").replace(":", "\\:")
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", sv, "-i", swav,

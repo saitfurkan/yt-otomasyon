@@ -246,7 +246,7 @@ def main():
             vid = yu.upload(info["video"], title, desc, tags, publish_at=next_slot(0), thumb=info["thumbnail"])
             lines.append(f"Ana video yüklendi (zamanlandı): https://youtu.be/{vid}")
             for n, s in enumerate(info["shorts"], 1):
-                sv = yu.upload(s["file"], f"{s['hint']}... #Shorts"[:95], desc + "\n#Shorts", tags + ["shorts"],
+                sv = yu.upload(s["file"], f"{s['hint']}... #Shorts"[:95], f"Hikâyenin tamamı: https://youtu.be/{vid}\n\n" + desc + "\n#Shorts", tags + ["shorts"],
                                publish_at=next_slot(n))
                 lines.append(f"Short {n}: https://youtu.be/{sv}")
             say(chat, "\n".join(lines) + "\nYouTube Studio'dan kontrol edebilirsin.")
