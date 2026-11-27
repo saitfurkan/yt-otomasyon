@@ -17,6 +17,9 @@ def access_token():
         return json.load(r)["access_token"]
 
 
+THUMB_ERR = {"msg": ""}
+
+
 def upload(path, title, description, tags, publish_at=None, shorts=False, thumb=None, category="25"):
     tok = access_token()
     status = {"privacyStatus": "private" if publish_at else "public", "selfDeclaredMadeForKids": False}
@@ -62,7 +65,9 @@ def upload(path, title, description, tags, publish_at=None, shorts=False, thumb=
                 data=open(thumb, "rb").read(), method="POST",
                 headers={"Authorization": f"Bearer {tok}", "Content-Type": "image/jpeg"})
             urllib.request.urlopen(rq, timeout=60).read()
+            THUMB_ERR["msg"] = ""
         except Exception as e:
+            THUMB_ERR["msg"] = str(e)[:150]
             print("kapak yüklenemedi:", str(e)[:150])
     return vid
 

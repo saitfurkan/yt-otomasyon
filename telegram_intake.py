@@ -245,6 +245,7 @@ def main():
         try:
             vid = yu.upload(info["video"], title, desc, tags, publish_at=next_slot(0), thumb=info["thumbnail"])
             lines.append(f"Ana video yüklendi (zamanlandı): https://youtu.be/{vid}")
+            lines.append("Kapak: " + ("YÜKLENEMEDİ (" + yu.THUMB_ERR["msg"] + ")" if yu.THUMB_ERR["msg"] else "yüklendi"))
             for n, s in enumerate(info["shorts"], 1):
                 if s.get("db", 0) < -40:
                     lines.append(f"Short {n}: sessiz çıktığı için YÜKLENMEDİ ({s.get('db')} dB)")
