@@ -730,9 +730,10 @@ def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False, g
     else:
         sc = f"scale={ww}:{hh}:force_original_aspect_ratio=increase"
     head = geom if geom else f"{sc},crop={W}:{H}:x='{xe}':y='{ye}'"
-    f = (f"{head},setsar=1,fps=30,"
-         "eq=brightness=-0.05:saturation=0.85:contrast=1.1,"
-         "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,vignette=PI/4.5,noise=alls=5:allf=t")
+    # renk ve tane kaynak çözünürlüğünde uygulanır (4K'da 3-4 kat hızlı); ölçeklenince film greni gibi görünür
+    pre = ("eq=brightness=-0.05:saturation=0.85:contrast=1.1,"
+           "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,noise=alls=7:allf=t,")
+    f = f"{pre}{head},setsar=1,fps=30,vignette=PI/4.5"
     if letterbox and W > H:
         bar = int(H * 0.095)
         f += f",drawbox=x=0:y=0:w=iw:h={bar}:color=black@1:t=fill,drawbox=x=0:y={H - bar}:w=iw:h={bar}:color=black@1:t=fill"
