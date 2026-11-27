@@ -3,6 +3,7 @@
 BAŞLIK: Bahisçi Kulüp Sahibi, Bahis Yüzünden Men Edilen Golcü: Brentford Skandalı
 KAPAK: İKİ ADAM, TEK KURAL
 AÇIKLAMA: Futbolu bahisle yenen Matthew Benham, çocukluk aşkı Brentford'u Premier Lig'e taşıdı. Sonra en pahalı golcüsü 232 bahis ihlalinden men edildi. Kural herkese aynı mıydı?
+GÖRSELLER: Brentford Community Stadium; Griffin Park Brentford; MCH Arena Herning; Wembley Stadium; Kew Bridge station
 ETİKETLER: brentford,matthew benham,ivan toney,bahis,futbol,premier lig,fa,gerçek hikaye,belgesel,son tanık
 
 Süre: yaklaşık 6-7 dakika okuma. [duraklama] işareti kısa nefes payı. Kaynaklar ve kontrol listesi sonda.

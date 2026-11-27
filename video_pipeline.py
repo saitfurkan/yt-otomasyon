@@ -61,7 +61,7 @@ def norm_word(w):
 def parse_script(path):
     txt = open(path, encoding="utf-8").read()
     meta = {}
-    for key in ("BAŞLIK", "KAPAK", "AÇIKLAMA", "ETİKETLER"):
+    for key in ("BAŞLIK", "KAPAK", "AÇIKLAMA", "ETİKETLER", "GÖRSELLER"):
         m = re.search(rf"^{key}:\s*(.+)$", txt, re.M)
         if m:
             meta[key] = m.group(1).strip()
@@ -556,7 +556,12 @@ def ai_clips(scenes, orientation, workdir, tag, need):
     return out
 
 
-def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search):
+LAND_W = int(os.environ.get("LAND_W", "3840"))
+LAND_H = LAND_W * 9 // 16
+CREDITS = {}
+
+
+def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search, photos=None):
     """Paragraf süresine göre yapay zeka görselleri ve stok videoyu dönüşümlü dizer (hareket + konu bağı)."""
     per = 8.0
     total_n = max(1, round(d / per))
@@ -569,7 +574,28 @@ def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search):
             out.append(vids[i])
         if i < len(ai):
             out.append(ai[i])
+    if photos:
+        out = photos + out
     return out
+
+
+def pick_photos(photo_map, text, uses, limit=2):
+    """Paragrafta adı geçen yer/nesne için Commons fotoğrafı seç (her fotoğraf en fazla 2 kez)."""
+    low = text.lower()
+    got = []
+    for q, items in photo_map.items():
+        toks = [t.lower() for t in re.findall(r"[\wçğıöşüÇĞİÖŞÜ]{5,}", q)]
+        if not toks or not any(t[:5] in low for t in toks[:2]):
+            continue
+        for it in items:
+            if uses.get(it["path"], 0) < 2:
+                uses[it["path"]] = uses.get(it["path"], 0) + 1
+                got.append({"path": it["path"], "duration": 999, "still": True})
+                CREDITS.setdefault(it["path"], it["credit"])
+                break
+        if len(got) >= 2:
+            break
+    return got
 
 
 def pexels_search(query, orientation, key):
@@ -690,6 +716,7 @@ def tr_upper(s):
 
 def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False, geom=None):
     """Belgesel görünümü: yavaş kamera hareketi, renk düzeltme, film greni, sinema bantları, künye yazısı."""
+    k = W / 1920.0 if W > H else 1.0       # yatay çıktıda ölçek (4K = 2.0)
     zoom = 1.14
     ww, hh = int(W * zoom), int(H * zoom)
     mode = idx % 4
@@ -711,20 +738,20 @@ def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False, g
         f += f",drawbox=x=0:y=0:w=iw:h={bar}:color=black@1:t=fill,drawbox=x=0:y={H - bar}:w=iw:h={bar}:color=black@1:t=fill"
     if isinstance(caption, tuple):       # animasyonlu sayaç: ("sayac", sayı, birim)
         _, num, unit = caption
-        size = 150 if W > H else 130
+        size = int(150 * k) if W > H else 130
         y = int(H * 0.38)
         suffix = (" " + unit).replace("'", "").replace(":", "\\:")
         f += (f",drawtext=fontfile={FONT_HEAD}:text='%{{eif\\:min({num}\\,trunc(t/1.5*{num}))\\:d}}{suffix}':"
-              f"fontsize={size}:fontcolor=0xE6B800:x=(w-text_w)/2:y={y}:box=1:boxcolor=black@0.55:boxborderw=34:"
-              "shadowcolor=black@0.9:shadowx=4:shadowy=4:"
+              f"fontsize={size}:fontcolor=0xE6B800:x=(w-text_w)/2:y={y}:box=1:boxcolor=black@0.55:boxborderw={int(34 * k)}:"
+              f"shadowcolor=black@0.9:shadowx={int(4 * k)}:shadowy={int(4 * k)}:"
               "alpha='if(lt(t,0.3),0,if(lt(t,0.6),(t-0.3)/0.3,if(lt(t,3.6),1,max(0,(4.0-t)/0.4))))'")
     elif caption:
         cap = caption.replace("'", "").replace(":", "\\:")
-        size = 58 if W > H else 70
+        size = int(58 * k) if W > H else 70
         y = int(H * 0.15) if W > H else int(H * 0.2)
-        f += (f",drawbox=x=60:y={y - 8}:w=10:h={size + 16}:color=0xE6B800@1:t=fill:enable='between(t,0.5,4.2)',"
+        f += (f",drawbox=x={int(60 * k)}:y={y - 8}:w={int(10 * k)}:h={size + 16}:color=0xE6B800@1:t=fill:enable='between(t,0.5,4.2)',"
               f"drawtext=fontfile={FONT_LABEL}:text='{cap}':fontsize={int(size * 1.35)}:fontcolor=white:"
-              f"x=86:y={y}:shadowcolor=black@0.8:shadowx=3:shadowy=3:"
+              f"x={int(86 * k)}:y={y}:shadowcolor=black@0.8:shadowx={int(3 * k)}:shadowy={int(3 * k)}:"
               "alpha='if(lt(t,0.5),0,if(lt(t,0.9),(t-0.5)/0.4,if(lt(t,3.8),1,max(0,(4.2-t)/0.4))))'")
     f += f",fade=t=in:st=0:d=0.35,fade=t=out:st={max(0.0, each - 0.35):.2f}:d=0.35,format=yuv420p"
     return f
@@ -740,7 +767,7 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
             caption = f"{caption[1]} {caption[2]}"
         if caption:
             cap = caption.replace("'", "").replace(":", "\\:")
-            vf = f"drawtext=fontfile={FONT_BOLD_PATH}:text='{cap}':fontsize=64:fontcolor=white:x=86:y=h*0.15," + vf
+            vf = f"drawtext=fontfile={FONT_BOLD_PATH}:text='{cap}':fontsize={int(64 * W / 1920)}:fontcolor=white:x={int(86 * W / 1920)}:y=h*0.15," + vf
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i", base, "-vf", vf,
              "-c:v", "libx264", "-preset", "ultrafast", "-crf", "24", "-pix_fmt", "yuv420p", out_path])
         return out_path
@@ -762,7 +789,9 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
             fx, fy = random.choice([0.28, 0.5, 0.72]), random.choice([0.3, 0.5, 0.7])
             N = max(2, int(dur * 30))
             if W > H:
-                g = (f"scale=3200:-2:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop=3200:1800:0:(ih-1800)*{fy},zoompan=z='1+0.4*on/{N}':"
+                kk = W / 1920.0
+                bw, bh = int(3200 * kk / 2) * 2, int(1800 * kk / 2) * 2
+                g = (f"scale={bw}:-2:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop={bw}:{bh}:0:(ih-{bh})*{fy},zoompan=z='1+0.4*on/{N}':"
                      f"x='{fx}*(iw-iw/zoom)':y='{fy}*(ih-ih/zoom)':d={N}:s={W}x{H}:fps=30")
             else:
                 g = (f"scale=-2:3200:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop=1800:3200:(iw-1800)*{fx}:0,zoompan=z='1+0.4*on/{N}':"
@@ -816,7 +845,7 @@ def make_ident(ident_voice, out_mp4, out_wav, workdir):
     ident_gorsel.render_ident_base(base, D, 4.3, FONT_CINZEL)
     fc = ("[1:a]showwaves=s=1040x110:mode=cline:rate=30:colors=0xF0E8DA@0.9,format=yuva420p,"
           "fade=t=out:st=3.9:d=0.4:alpha=1[w];[0:v][w]overlay=(W-w)/2:485:shortest=0,"
-          f"noise=alls=7:allf=t,fade=t=out:st={D - 0.3}:d=0.3,format=yuv420p[v]")
+          f"noise=alls=7:allf=t,fade=t=out:st={D - 0.3}:d=0.3,scale={LAND_W}:{LAND_H}:flags=lanczos,fps=30,format=yuv420p[v]")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", base, "-i", out_wav, "-filter_complex", fc, "-map", "[v]",
          "-t", f"{D}", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22",
          "-maxrate", "6M", "-bufsize", "12M", out_mp4])
@@ -1062,6 +1091,16 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     queries = gemini_queries(paras)
     scenes = ai_scene_prompts(paras) if os.environ.get("CF_API_TOKEN") else None
     used = set()
+    photo_map, photo_uses = {}, {}
+    CREDITS.clear()
+    try:
+        import commons
+        gq = [q.strip() for q in (meta.get("GÖRSELLER") or "").split(";") if q.strip()]
+        if gq:
+            photo_map = commons.fetch(gq, workdir, per_query=3)
+            log(f"Commons fotoğrafları: {sum(len(v) for v in photo_map.values())}")
+    except Exception as e:
+        log(f"   [Commons atlandı] {str(e)[:150]}")
     seg_files, first_clip = [], None
     hook_video = os.path.join(workdir, "hook_v.mp4")
     main_video = os.path.join(workdir, "main_v.mp4")
@@ -1073,11 +1112,12 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             if d < 0.3:
                 continue
             nonlocal first_clip
-            clips = mix_clips(scenes[k] if scenes else None, queries[k], "landscape", workdir, f"{tag}{k}", d, used, search)
+            clips = mix_clips(scenes[k] if scenes else None, queries[k], "landscape", workdir, f"{tag}{k}", d, used, search,
+                              pick_photos(photo_map, paras[k], photo_uses))
             if clips and first_clip is None:
                 first_clip = clips[0]["path"]
             p = os.path.join(workdir, f"{tag}_{k}.mp4")
-            render_visual(clips, d, p, 1920, 1080, workdir, f"{tag}{k}", key_counter(paras[k]) or key_caption(paras[k]))
+            render_visual(clips, d, p, LAND_W, LAND_H, workdir, f"{tag}{k}", key_counter(paras[k]) or key_caption(paras[k]))
             parts.append(p)
             log(f"   paragraf {k + 1}/{len(paras)}: {d:.0f} sn, {len(clips)} klip")
         lf = os.path.join(workdir, f"v_{tag}.txt")
@@ -1106,7 +1146,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video_full, "-i", cat,
          "-vf", f"ass='{ass_esc}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-         "-maxrate", "9M", "-bufsize", "18M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
+         "-maxrate", "16M", "-bufsize", "32M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
     log(f"Video hazır: {duration(final) / 60:.1f} dk")
     qa_res = qa_check(final, sub_words, sub_times, t_hook, transcribe_fn)
     log("Kalite kontrol: " + json.dumps(qa_res, ensure_ascii=False))
@@ -1165,7 +1205,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
         first = " ".join(paras[a].split()[:9])
         shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first})
         log(f"   short{n}: {t1 - t0:.0f} sn")
-    info = {"video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
+    info = {"credits": sorted(set(CREDITS.values())), "video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
             "minutes": round(duration(final) / 60, 1), "kontrol": "\n".join(kontrol), "qa": qa_res}
     json.dump(info, open(os.path.join(outdir, "info.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     return info
