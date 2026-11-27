@@ -52,6 +52,32 @@ def say(chat, text):
         print("mesaj gönderilemedi:", e)
 
 
+def send_video(chat, path, caption=""):
+    """Dosyayı Telegram'a video olarak gönder (50 MB altı). Hata olursa sessizce geç."""
+    import subprocess
+    try:
+        r = subprocess.run(["curl", "-s", "-m", "300", "-F", f"chat_id={chat}", "-F", f"video=@{path}", "-F", "supports_streaming=true",
+                            "-F", f"caption={caption[:900]}", f"{API}/sendVideo"], capture_output=True, text=True)
+        return '"ok":true' in r.stdout
+    except Exception as e:
+        print("video gönderilemedi:", e)
+        return False
+
+
+def make_preview(video, out, max_mb=44):
+    """Telegram sınırına (50 MB) sığan küçük önizleme: süreye göre bitrate hesaplanır."""
+    import subprocess
+    dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=nw=1:nk=1", video],
+                               capture_output=True, text=True).stdout.strip() or 0)
+    if dur <= 0:
+        return None
+    vb = max(150, int((max_mb * 8192) / dur - 64))
+    subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video, "-vf", "scale=854:-2", "-c:v", "libx264",
+                    "-preset", "veryfast", "-b:v", f"{vb}k", "-maxrate", f"{int(vb * 1.3)}k", "-bufsize", f"{vb * 2}k",
+                    "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart", out], check=True)
+    return out
+
+
 def fetch_file(file_id, dest):
     info = tg("getFile", file_id=file_id)
     url = f"https://api.telegram.org/file/bot{TOKEN}/{info['file_path']}"
@@ -197,13 +223,21 @@ def main():
     if not qa.get("ok"):
         say(chat, "Video hatalı göründüğü için YouTube'a YÜKLEMEDİM. Sorunu düzeltip /tekrar yazarsan aynı seslerle yeniden üretirim.")
         return
+    try:
+        pv = make_preview(info["video"], os.path.join(WORK, "onizleme.mp4"))
+        if pv:
+            send_video(chat, pv, "Ana video önizlemesi (küçültülmüş; asıl video 4K olarak YouTube'a yüklenecek)")
+        for n, s in enumerate(info["shorts"], 1):
+            send_video(chat, s["file"], f"Short {n} | ses seviyesi {s.get('db')} dB")
+    except Exception as e:
+        print("önizleme gönderilemedi:", e)
     os.makedirs(os.path.join(HERE, "assets"), exist_ok=True)
     open(os.path.join(HERE, "assets", "bitenler.txt"), "a").write(os.path.basename(spath)[:-3] + "\n")
     meta = info["meta"]
     title = meta["BAŞLIK"]
     desc = meta.get("AÇIKLAMA") or (title + "\n\nSon Tanık: karar verilmeden önce, son sözü tanık söyler.")
     if info.get("credits"):
-        desc += "\n\nGörseller (Wikimedia Commons):\n" + "\n".join(info["credits"])
+        desc += "\n\nGörsel ve müzik kaynakları (Wikimedia Commons):\n" + "\n".join(info["credits"])
     tags = [t.strip() for t in meta.get("ETİKETLER", "son tanık,gerçek hikaye,belgesel").split(",") if t.strip()]
     if all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
         import youtube_upload as yu

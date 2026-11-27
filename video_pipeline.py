@@ -61,7 +61,7 @@ def norm_word(w):
 def parse_script(path):
     txt = open(path, encoding="utf-8").read()
     meta = {}
-    for key in ("BAŞLIK", "KAPAK", "AÇIKLAMA", "ETİKETLER", "GÖRSELLER"):
+    for key in ("BAŞLIK", "KAPAK", "AÇIKLAMA", "ETİKETLER", "GÖRSELLER", "KİŞİLER", "ARAMA", "KANCA"):
         m = re.search(rf"^{key}:\s*(.+)$", txt, re.M)
         if m:
             meta[key] = m.group(1).strip()
@@ -93,11 +93,14 @@ def clean_voice(inputs, out_wav):
     n = len(inputs)
     pre = "".join(f"[{i}:a]aresample=44100,aformat=channel_layouts=mono[a{i}];" for i in range(n))
     cat = "".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1[c];"
-    chain = ("[c]highpass=f=75,lowpass=f=12000,afftdn=nf=-28,"
-             "acompressor=threshold=-20dB:ratio=3:attack=5:release=90:makeup=3,"
+    chain = ("[c]highpass=f=80,lowpass=f=14000,afftdn=nf=-30:nr=12,deesser=i=0.35:m=0.5:f=0.5,"
+             "equalizer=f=110:t=q:w=1:g=2.2,equalizer=f=320:t=q:w=1:g=-2.2,"          # sıcaklık, boğukluk kesimi
+             "equalizer=f=3200:t=q:w=1.2:g=2.6,highshelf=f=9500:g=2.5,"               # anlaşılırlık ve hava
+             "aexciter=level_in=1:level_out=1:amount=1.1:drive=8:blend=0:freq=7000,"
+             "acompressor=threshold=-24dB:ratio=2.4:attack=8:release=120:makeup=3,"
              "silenceremove=start_periods=1:start_threshold=-48dB:stop_periods=-1:"
              "stop_duration=1.1:stop_threshold=-48dB:stop_silence=0.4,"
-             "loudnorm=I=-16:TP=-1.5:LRA=11[o]")
+             "loudnorm=I=-16:TP=-1.5:LRA=9[o]")
     run(args + ["-filter_complex", pre + cat + chain, "-map", "[o]", "-ar", "44100", "-ac", "1", out_wav])
     return out_wav
 
@@ -233,6 +236,16 @@ def shift_words(wh, cuts):
         d = sum(max(0.0, min(b, s0) - a) for a, b in cs)
         res.append((w, s0 - d, e0 - d))
     return res
+
+
+def mean_db(path):
+    try:
+        v = subprocess.run(["ffmpeg", "-hide_banner", "-i", path, "-af", "volumedetect", "-vn", "-f", "null", "-"],
+                           capture_output=True, text=True).stderr
+        m = re.search(r"mean_volume:\s*(-?[\d.]+) dB", v)
+        return float(m.group(1)) if m else -99.0
+    except Exception:
+        return -99.0
 
 
 def qa_check(video, words_all, times, t_hook, transcribe_fn=None):
@@ -393,7 +406,7 @@ def build_subtitles(words, times, ass_path, shift_after=None, shift=0.0, t_from=
 
 
 # ------------------------------------------------------------------ görüntü (Pexels)
-def gemini_queries(paragraphs):
+def gemini_queries(paragraphs, topic="", fallback=None):
     """Her paragraf için 2 İngilizce Pexels arama cümlesi. Gemini yoksa genel liste."""
     try:
         sys.path.insert(0, HERE)
@@ -405,9 +418,10 @@ def gemini_queries(paragraphs):
         models = sorted(models, key=lambda m: "lite" not in m)
         listing = "\n".join(f"{i + 1}. {p[:220]}" for i, p in enumerate(paragraphs))
         prompt = (
-            "Aşağıdaki Türkçe YouTube senaryosunun her paragrafı için, stok video sitesinde (Pexels) aranacak "
-            "2 İngilizce arama cümlesi yaz. Sinematik, koyu tonlu, soyut ve atmosferik görüntüler tercih et "
-            "(şehir geceleri, belgeler, bina cepheleri, ekranlar, yağmur, para, koridorlar, eller). "
+            f"Video konusu: {topic}. Aşağıdaki Türkçe YouTube senaryosunun her paragrafı için, stok video sitesinde "
+            "aranacak 2 İngilizce arama cümlesi yaz. Aramalar paragrafta anlatılan şeyle ve video konusuyla DOĞRUDAN ilgili olsun "
+            "(konu futbolsa stadyum, tribün, saha, top, antrenman; bahis ise bahis fişi, ekranda oranlar; finans ise borsa ekranı). "
+            "Alakasız genel manzara (sokak, deniz, doğa) YAZMA. "
             "Gerçek kişi, marka ya da logo gerektiren cümle yazma. Her cümle 2-4 kelime olsun.\n\n"
             f"{listing}\n\nSadece JSON: {{\"queries\": [[\"a\",\"b\"], ...]}} (paragraf sayısı kadar liste)")
         _, data = sw.generate(key, models, prompt, json_out=True, temperature=0.4, max_tokens=3000)
@@ -415,10 +429,12 @@ def gemini_queries(paragraphs):
         out = []
         for i in range(len(paragraphs)):
             q = [x for x in (qs[i] if i < len(qs) else []) if isinstance(x, str) and x.strip()]
-            out.append(q[:2] or random.sample(GENERIC_QUERIES, 2))
+            out.append(q[:2] or (random.sample(fallback, min(2, len(fallback))) if fallback else random.sample(GENERIC_QUERIES, 2)))
         return out
     except Exception as e:
         log(f"   [arama kelimeleri varsayılan] {str(e)[:100]}")
+        if fallback:
+            return [[fallback[(2 * i) % len(fallback)], fallback[(2 * i + 1) % len(fallback)]] for i in range(len(paragraphs))]
         return [random.sample(GENERIC_QUERIES, 2) for _ in paragraphs]
 
 
@@ -428,7 +444,7 @@ STYLE = ("graphic novel noir illustration, bold ink lines, dramatic chiaroscuro 
 AI_STATE = {"used": 0, "dead": False}
 
 
-def ai_scene_prompts(paragraphs):
+def ai_scene_prompts(paragraphs, topic=""):
     """Her paragraf için 3 İngilizce sahne tarifi (yapay zeka görseli için). Başarısızsa None."""
     try:
         sys.path.insert(0, HERE)
@@ -442,7 +458,7 @@ def ai_scene_prompts(paragraphs):
             chunk = paragraphs[i:i + 12]
             listing = "\n".join(f"{j + 1}. {p[:400]}" for j, p in enumerate(chunk))
             prompt = (
-                "Aşağıdaki Türkçe belgesel anlatımının her paragrafı için, anlatılan şeyi BİREBİR gösteren 3 farklı "
+                f"Video konusu: {topic}. Aşağıdaki Türkçe belgesel anlatımının her paragrafı için, anlatılan şeyi BİREBİR gösteren 3 farklı "
                 "İngilizce sahne tarifi yaz (görsel üretim yapay zekası için). Somut ol: mekân, nesne, ışık, eylem "
                 "(ör. 'a bank employee's empty desk at night with a glowing computer screen showing a long row of "
                 "numbers'). Gerçek kişileri, ünlüleri, marka ve logoları, yazı içeren nesneleri anlatma; insanlar "
@@ -584,9 +600,8 @@ LAND_H = LAND_W * 9 // 16
 CREDITS = {}
 
 
-def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search, photos=None):
+def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search, photos=None, per=8.0):
     """Paragraf süresine göre yapay zeka görselleri ve stok videoyu dönüşümlü dizer (hareket + konu bağı)."""
-    per = 8.0
     total_n = max(1, round(d / per))
     n_ai = total_n if scenes else 0
     ai = ai_clips(scenes, orientation, workdir, tag, n_ai)
@@ -603,12 +618,12 @@ def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search, photo
 
 
 def pick_photos(photo_map, text, uses, limit=2):
-    """Paragrafta adı geçen yer/nesne için Commons fotoğrafı seç (her fotoğraf en fazla 2 kez)."""
+    """Paragrafta anahtar kelimesi geçen yer/nesne/kişi fotoğraflarını seç (her fotoğraf en fazla 2 kez)."""
     low = text.lower()
     got = []
-    for q, items in photo_map.items():
-        toks = [t.lower() for t in re.findall(r"[\wçğıöşüÇĞİÖŞÜ]{5,}", q)]
-        if not toks or not any(t[:5] in low for t in toks[:2]):
+    for key, items in photo_map.items():
+        stem = key.lower().strip()[:6]
+        if not stem or stem not in low:
             continue
         for it in items:
             if uses.get(it["path"], 0) < 2:
@@ -616,7 +631,7 @@ def pick_photos(photo_map, text, uses, limit=2):
                 got.append({"path": it["path"], "duration": 999, "still": True})
                 CREDITS.setdefault(it["path"], it["credit"])
                 break
-        if len(got) >= 2:
+        if len(got) >= limit:
             break
     return got
 
@@ -737,7 +752,7 @@ def tr_upper(s):
     return s.replace("i", "İ").replace("ı", "I").upper()
 
 
-def grade_filter(W, H, each, idx=0, caption=None, letterbox=True, still=False, geom=None):
+def grade_filter(W, H, each, idx=0, caption=None, letterbox=False, still=False, geom=None):
     """Belgesel görünümü: yavaş kamera hareketi, renk düzeltme, film greni, sinema bantları, künye yazısı."""
     k = W / 1920.0 if W > H else 1.0       # yatay çıktıda ölçek (4K = 2.0)
     zoom = 1.14
@@ -993,14 +1008,14 @@ def make_ambient(seconds, out_wav, seed=0):
     return out_wav
 
 
-def mix_ambient(voice_wav, ambient_wav, out_wav, quiet_from=None, quiet_to=None):
+def mix_ambient(voice_wav, ambient_wav, out_wav, quiet_from=None, quiet_to=None, level=0.55):
     """Sesi fonla birleştirir; konuşma varken fon otomatik kısılır (sidechain). quiet aralığında fon yok (ident)."""
-    amb = "[1:a]volume=0.55"
+    amb = f"[1:a]volume={level}"
     if quiet_from is not None:
         amb += f",volume=enable='between(t,{quiet_from:.2f},{quiet_to:.2f})':volume=0"
         amb += f",afade=t=in:st={quiet_to:.2f}:d=3"
     amb += "[amb];"
-    fc = (amb + "[amb][0:a]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=400[duck];"
+    fc = (amb + "[amb][0:a]sidechaincompress=threshold=0.03:ratio=5:attack=25:release=700[duck];"
           "[0:a][duck]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[o]")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", voice_wav, "-i", ambient_wav,
          "-filter_complex", fc, "-map", "[o]", "-ar", "44100", "-ac", "1", out_wav])
@@ -1106,25 +1121,44 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
         f.write("".join(f"file '{p}'\n" for p in (hook_wav, ident_wav, main_wav)))
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst,
          "-ar", "44100", "-ac", "1", os.path.join(workdir, "audio_dry.wav")])
+    dry_len = duration(os.path.join(workdir, "audio_dry.wav"))
+    bed, music_credits, music_level = None, [], 0.55
     try:
-        amb = make_ambient(duration(os.path.join(workdir, "audio_dry.wav")), os.path.join(workdir, "ambient.wav"))
-        mix_ambient(os.path.join(workdir, "audio_dry.wav"), amb, cat, t_hook, t_hook + IDENT_SECONDS)
+        import commons
+        bed, music_credits = commons.music_bed(dry_len + 6, os.path.join(workdir, "muzik_yatagi.wav"), workdir,
+                                                seed=sum(map(ord, meta.get("BAŞLIK", ""))))
+        if bed:
+            music_level = 1.0
+            log(f"Fon müziği: {len(music_credits)} parça (Commons)")
+    except Exception as e:
+        log(f"   [fon müziği alınamadı] {str(e)[:150]}")
+        bed = None
+    try:
+        amb = bed or make_ambient(dry_len, os.path.join(workdir, "ambient.wav"))
+        mix_ambient(os.path.join(workdir, "audio_dry.wav"), amb, cat, t_hook, t_hook + IDENT_SECONDS, level=music_level)
     except Exception as e:
         log(f"   [fon sesi eklenemedi] {str(e)[:150]}")
         shutil.copy(os.path.join(workdir, "audio_dry.wav"), cat)
 
     # görüntüler
-    queries = gemini_queries(paras)
-    scenes = ai_scene_prompts(paras) if os.environ.get("CF_API_TOKEN") else None
+    topic = meta.get("BAŞLIK", "")
+    fb = [x.strip() for x in (meta.get("ARAMA") or "").split(";") if x.strip()]
+    queries = gemini_queries(paras, topic, fb or None)
+    scenes = ai_scene_prompts(paras, topic) if (os.environ.get("CF_API_TOKEN") or os.environ.get("GEMINI_API_KEY")) else None
     used = set()
     photo_map, photo_uses = {}, {}
     CREDITS.clear()
     try:
         import commons
-        gq = [q.strip() for q in (meta.get("GÖRSELLER") or "").split(";") if q.strip()]
-        if gq:
-            photo_map = commons.fetch(gq, workdir, per_query=3)
-            log(f"Commons fotoğrafları: {sum(len(v) for v in photo_map.values())}")
+        spec = []
+        for hdr, person in (("GÖRSELLER", False), ("KİŞİLER", True)):
+            for part in (meta.get(hdr) or "").split(";"):
+                if part.strip():
+                    key, _, q = part.partition("=")
+                    spec.append((key.strip(), (q or key).strip(), person))
+        if spec:
+            photo_map = commons.fetch_map(spec, workdir, per_query=2)
+            log("Commons fotoğrafları: " + ", ".join(f"{k}:{len(v)}" for k, v in photo_map.items()))
     except Exception as e:
         log(f"   [Commons atlandı] {str(e)[:150]}")
     seg_files, first_clip = [], None
@@ -1138,8 +1172,14 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             if d < 0.3:
                 continue
             nonlocal first_clip
+            ph = pick_photos(photo_map, paras[k], photo_uses)
+            if tag == "h":              # kanca: belirtilen kişi/yer fotoğrafları sırayla, hızlı kesme
+                for key in [x.strip() for x in (meta.get("KANCA") or "").split(";") if x.strip()]:
+                    for it in photo_map.get(key, [])[:1]:
+                        ph.append({"path": it["path"], "duration": 999, "still": True})
+                        CREDITS.setdefault(it["path"], it["credit"])
             clips = mix_clips(scenes[k] if scenes else None, queries[k], "landscape", workdir, f"{tag}{k}", d, used, search,
-                              pick_photos(photo_map, paras[k], photo_uses))
+                              ph, per=4.0 if tag == "h" else 8.0)
             if clips and first_clip is None:
                 first_clip = clips[0]["path"]
             p = os.path.join(workdir, f"{tag}_{k}.mp4")
@@ -1203,7 +1243,13 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", wav, "-ss", f"{t0:.3f}", "-to", f"{t1:.3f}",
              "-af", "afade=t=in:d=0.05,afade=t=out:st=%.2f:d=0.4" % max(0, t1 - t0 - 0.4), sdry])
         try:
-            mix_ambient(sdry, make_ambient(t1 - t0, os.path.join(sdir, "amb.wav"), n), swav)
+            if bed:
+                sl = os.path.join(sdir, "bed.wav")
+                run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", f"{t0:.2f}", "-t", f"{t1 - t0 + 1:.2f}", "-i", bed,
+                     "-af", "afade=t=in:d=1.5", sl])
+                mix_ambient(sdry, sl, swav, level=music_level)
+            else:
+                mix_ambient(sdry, make_ambient(t1 - t0, os.path.join(sdir, "amb.wav"), n), swav)
         except Exception as e:
             log(f"   [short fon sesi eklenemedi] {str(e)[:120]}")
             shutil.copy(sdry, swav)
@@ -1229,9 +1275,16 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
              "-vf", f"ass='{sa}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
              "-maxrate", "5M", "-bufsize", "10M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out])
         first = " ".join(paras[a].split()[:9])
-        shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first})
+        db = mean_db(out)
+        if db < -40:                 # ses yoksa: yalnızca konuşmayla yeniden birleştir
+            log(f"   [short{n} sessiz ({db:.0f} dB), konuşma sesiyle onarılıyor]")
+            run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", sv, "-i", sdry, "-vf", f"ass='{sa}'", "-map", "0:v", "-map", "1:a",
+                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "23", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest",
+                 "-movflags", "+faststart", out])
+            db = mean_db(out)
+        shorts.append({"file": out, "from": round(t0, 1), "to": round(t1, 1), "hint": first, "db": round(db, 1)})
         log(f"   short{n}: {t1 - t0:.0f} sn")
-    info = {"credits": sorted(set(CREDITS.values())), "video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
+    info = {"credits": sorted(set(CREDITS.values())) + music_credits, "video": final, "thumbnail": thumb, "shorts": shorts, "meta": meta,
             "minutes": round(duration(final) / 60, 1), "kontrol": "\n".join(kontrol), "qa": qa_res}
     json.dump(info, open(os.path.join(outdir, "info.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     return info
