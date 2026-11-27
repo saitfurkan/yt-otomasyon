@@ -281,6 +281,31 @@ def qa_check(video, words_all, times, t_hook, transcribe_fn=None):
     return out
 
 
+def merge_sub_words(script_words, wh):
+    """Altyazı metni KAYITTAN: gerçekten söylenen kelimeler (Whisper) ve onların gerçek zamanları.
+    Senaryodaki karşılığıyla eşleşen kelimelerde senaryonun yazımı (özel isim, noktalama) kullanılır."""
+    sw = [norm_word(w) for w in script_words]
+    ww = [norm_word(w[0]) for w in wh]
+    sm = difflib.SequenceMatcher(None, sw, ww, autojunk=False)
+    words, times = [], []
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == "equal":
+            for k in range(i2 - i1):
+                words.append(script_words[i1 + k])
+                times.append((wh[j1 + k][1], wh[j1 + k][2]))
+        elif tag in ("replace", "insert"):
+            cand = script_words[i1:i2]
+            for k, j in enumerate(range(j1, j2)):
+                w = wh[j][0]
+                if tag == "replace" and (j2 - j1) == (i2 - i1) and \
+                        difflib.SequenceMatcher(None, sw[i1 + k], ww[j]).ratio() >= 0.6:
+                    w = cand[k]
+                words.append(w)
+                times.append((wh[j][1], wh[j][2]))
+        # delete: senaryoda olup söylenmeyen kelimeler altyazıya girmez
+    return words, times
+
+
 # ------------------------------------------------------------------ altyazı
 def ass_time(t):
     t = max(0.0, t)
@@ -1073,7 +1098,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
          "-c", "copy", video_full])
 
     # altyazı + filigran + son birleştirme
-    ass = build_subtitles(words_all, times, os.path.join(workdir, "subs.ass"),
+    sub_words, sub_times = merge_sub_words(words_all, wh)      # altyazı: kayıttaki gerçek söyleyişten
+    ass = build_subtitles(sub_words, sub_times, os.path.join(workdir, "subs.ass"),
                           shift_after=t_hook - 0.01, shift=IDENT_SECONDS)
     t_main_start = t_hook + IDENT_SECONDS
     final = os.path.join(outdir, "video.mp4")
@@ -1082,7 +1108,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
          "-vf", f"ass='{ass_esc}'", "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
          "-maxrate", "9M", "-bufsize", "18M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", final])
     log(f"Video hazır: {duration(final) / 60:.1f} dk")
-    qa_res = qa_check(final, words_all, times, t_hook, transcribe_fn)
+    qa_res = qa_check(final, sub_words, sub_times, t_hook, transcribe_fn)
     log("Kalite kontrol: " + json.dumps(qa_res, ensure_ascii=False))
 
     # kapak
@@ -1129,7 +1155,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             f.write("".join(f"file '{p}'\n" for p in parts))
         sv = os.path.join(sdir, "v.mp4")
         run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lf, "-c", "copy", sv])
-        sass = build_subtitles(words_all, times, os.path.join(sdir, "s.ass"), t_from=t0, t_to=t1,
+        sass = build_subtitles(sub_words, sub_times, os.path.join(sdir, "s.ass"), t_from=t0, t_to=t1,
                                vertical=True, offset=t0)
         out = os.path.join(outdir, f"short{n}.mp4")
         sa = sass.replace("\\", "/").replace(":", "\\:")
