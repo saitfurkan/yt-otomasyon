@@ -258,6 +258,7 @@ def qa_check(video, words_all, times, t_hook, transcribe_fn=None):
         wh2 = (transcribe_fn or transcribe)(wav, " ".join(words_all[:40]))
         os.remove(wav)
         t2 = align(words_all, wh2, da)
+        log("QA-Whisper: " + " ".join(f"{w[0]}@{w[1]:.0f}" for w in wh2))
         # altyazının gösterildiği an: senaryo zamanı (+ ident kayması)
         diffs = []
         for (s0, _), (a0, _) in zip(times, t2):
@@ -1068,6 +1069,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
     ptimes[-1][1] = total
     t_hook = ptimes[hook_n - 1][1]
     log(f"Kanca bitişi: {t_hook:.1f} sn")
+    log("Whisper-1: " + " ".join(f"{w[0]}@{w[1]:.0f}" for w in wh))
+    log("Senaryo: " + " ".join(f"{w}@{t[0]:.0f}" for w, t in zip(words_all, times)))
 
     # ses parçaları
     hook_wav, main_wav = os.path.join(workdir, "hook.wav"), os.path.join(workdir, "main.wav")
