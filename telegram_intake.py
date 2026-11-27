@@ -161,6 +161,7 @@ def main():
     start = 0
     sid = None
     repeat = (msgs[end][1].get("text") or "").strip().lower().startswith("/tekrar")
+    shorts_only = repeat and "short" in (msgs[end][1].get("text") or "").lower()
     if repeat:
         chat = msgs[end][1]["chat"]["id"]
         sf = os.path.join(SES, "sid.txt")
@@ -247,9 +248,16 @@ def main():
         import youtube_upload as yu
         lines = []
         try:
-            vid = yu.upload(info["video"], title, desc, tags, publish_at=next_slot(0), thumb=info["thumbnail"])
-            lines.append(f"Ana video yüklendi (zamanlandı): https://youtu.be/{vid}")
-            lines.append("Kapak: " + ("YÜKLENEMEDİ (" + yu.THUMB_ERR["msg"] + ")" if yu.THUMB_ERR["msg"] else "yüklendi"))
+            if shorts_only:
+                vid = yu.find_uploaded(title)
+                if not vid:
+                    say(chat, "Kanalda bu başlıkla ana video bulamadım; Shorts yüklenmedi. Ana videoyu yeniden yüklemek için /tekrar yaz.")
+                    return
+                lines.append(f"Ana video zaten yüklü, tekrar yüklenmedi: https://youtu.be/{vid}")
+            else:
+                vid = yu.upload(info["video"], title, desc, tags, publish_at=next_slot(0), thumb=info["thumbnail"])
+                lines.append(f"Ana video yüklendi (zamanlandı): https://youtu.be/{vid}")
+                lines.append("Kapak: " + ("YÜKLENEMEDİ (" + yu.THUMB_ERR["msg"] + ")" if yu.THUMB_ERR["msg"] else "yüklendi"))
             for n, s in enumerate(info["shorts"], 1):
                 if s.get("db", 0) < -40:
                     lines.append(f"Short {n}: sessiz çıktığı için YÜKLENMEDİ ({s.get('db')} dB)")

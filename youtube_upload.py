@@ -76,5 +76,19 @@ def upload(path, title, description, tags, publish_at=None, shorts=False, thumb=
     return vid
 
 
+def find_uploaded(title):
+    """Kanalın yüklemeler listesinden başlığı eşleşen en yeni videonun kimliği (1 kota birimi)."""
+    tok = access_token()
+    def get(url):
+        return json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"Authorization": f"Bearer {tok}"}), timeout=40))
+    ch = get("https://www.googleapis.com/youtube/v3/channels?part=contentDetails&mine=true")
+    pl = ch["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    items = get(f"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId={pl}")["items"]
+    for it in items:
+        if it["snippet"]["title"].strip() == title.strip()[:100]:
+            return it["snippet"]["resourceId"]["videoId"]
+    return None
+
+
 if __name__ == "__main__":
     print(upload(sys.argv[1], "test", "test", [], None))
