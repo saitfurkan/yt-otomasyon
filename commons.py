@@ -54,8 +54,8 @@ def search(query, limit=14, min_w=2400, person=False):
         if not any(k in lic.lower() for k in OK_LIC):
             continue
         if person:
-            last = [t for t in re.findall(r"\w+", query.lower()) if len(t) > 2][-1:]
-            if not all(t in blob for t in last):                 # adı geçmeyen dosya başka biri olabilir
+            full = re.sub(r"\s+", " ", query.lower()).strip()
+            if not re.sub(r"^file:", "", title.lower()).strip().startswith(full):   # dosya adı kişinin tam adıyla başlamıyorsa (grup fotoğrafı, başka kişi) alınmaz
                 continue
         elif any(b in blob for b in BAD_WORDS):
             continue
@@ -76,7 +76,7 @@ def to_canvas(src, dst, W=3840, H=2160):
         img = img.resize((int(img.width * s) + 1, int(img.height * s) + 1), Image.LANCZOS)
         x, y = (img.width - W) // 2, (img.height - H) // 2
         return img.crop((x, y, x + W, y + H))
-    if 1.6 <= r <= 2.0:
+    if 1.4 <= r <= 2.4:
         out = cover(im)
     else:
         bg = cover(im.resize((max(8, im.width // 8), max(8, im.height // 8)))).filter(ImageFilter.GaussianBlur(30))

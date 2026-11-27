@@ -828,7 +828,9 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
     specs = []
     for i in range(n):
         c = clips[i % len(clips)]
-        if c.get("still") and each >= 3.0:        # her çizim iki plan: önce tarama, sonra yakın plan (kesme hissi)
+        if c.get("photo"):                        # gerçek fotoğraf: tek parça, yavaş yaklaşma (Ken Burns)
+            specs.append((c, each, "punch"))
+        elif c.get("still") and each >= 3.0:        # her çizim iki plan: önce tarama, sonra yakın plan (kesme hissi)
             specs.append((c, each * 0.55, "pan"))
             specs.append((c, each * 0.45, "punch"))
         else:
@@ -839,13 +841,16 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
         if kind == "punch":
             fx, fy = random.choice([0.28, 0.5, 0.72]), random.choice([0.3, 0.5, 0.7])
             N = max(2, int(dur * 30))
+            za = 0.16 if c.get("photo") else 0.4
+            if c.get("photo") and W < H:
+                fx = 0.5
             if W > H:
                 kk = W / 1920.0
                 bw, bh = int(3200 * kk / 2) * 2, int(1800 * kk / 2) * 2
-                g = (f"scale={bw}:-2:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop={bw}:{bh}:0:(ih-{bh})*{fy},zoompan=z='1+0.4*on/{N}':"
+                g = (f"scale={bw}:-2:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop={bw}:{bh}:0:(ih-{bh})*{fy},zoompan=z='1+{za}*on/{N}':"
                      f"x='{fx}*(iw-iw/zoom)':y='{fy}*(ih-ih/zoom)':d={N}:s={W}x{H}:fps=30")
             else:
-                g = (f"scale=-2:3200:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop=1800:3200:(iw-1800)*{fx}:0,zoompan=z='1+0.4*on/{N}':"
+                g = (f"scale=-2:3200:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop=1800:3200:(iw-1800)*{fx}:0,zoompan=z='1+{za}*on/{N}':"
                      f"x='{fx}*(iw-iw/zoom)':y='{fy}*(ih-ih/zoom)':d={N}:s={W}x{H}:fps=30")
             vf = grade_filter(W, H, dur, i, cap, geom=g, photo=bool(c.get("photo")))
             src = ["-i", c["path"]]
