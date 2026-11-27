@@ -634,7 +634,7 @@ def pick_photos(photo_map, text, uses, limit=2):
         for it in items:
             if uses.get(it["path"], 0) < 2:
                 uses[it["path"]] = uses.get(it["path"], 0) + 1
-                got.append({"path": it["path"], "duration": 999, "still": True})
+                got.append({"path": it["path"], "duration": 999, "still": True, "photo": True})
                 CREDITS.setdefault(it["path"], it["credit"])
                 break
         if len(got) >= limit:
@@ -758,7 +758,7 @@ def tr_upper(s):
     return s.replace("i", "İ").replace("ı", "I").upper()
 
 
-def grade_filter(W, H, each, idx=0, caption=None, letterbox=False, still=False, geom=None):
+def grade_filter(W, H, each, idx=0, caption=None, letterbox=False, still=False, geom=None, photo=False):
     """Belgesel görünümü: yavaş kamera hareketi, renk düzeltme, film greni, sinema bantları, künye yazısı."""
     k = W / 1920.0 if W > H else 1.0       # yatay çıktıda ölçek (4K = 2.0)
     zoom = 1.14
@@ -775,9 +775,15 @@ def grade_filter(W, H, each, idx=0, caption=None, letterbox=False, still=False, 
         sc = f"scale={ww}:{hh}:force_original_aspect_ratio=increase"
     head = geom if geom else f"{sc},crop={W}:{H}:x='{xe}':y='{ye}'"
     # renk ve tane kaynak çözünürlüğünde uygulanır (4K'da 3-4 kat hızlı); ölçeklenince film greni gibi görünür
-    pre = ("eq=brightness=-0.05:saturation=0.85:contrast=1.1,"
-           "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,noise=alls=7:allf=t,")
-    f = f"{pre}{head},setsar=1,fps=30,vignette=PI/4.5"
+    if photo:      # gerçek fotoğraf: doğal ton, hafif belgesel renk, ince tane
+        pre = ("eq=brightness=0.0:saturation=0.92:contrast=1.06,"
+               "colorbalance=rs=-0.02:bs=0.04:rh=0.04:bh=-0.03,noise=alls=4:allf=t,")
+        vig = "vignette=PI/6"
+    else:
+        pre = ("eq=brightness=-0.05:saturation=0.85:contrast=1.1,"
+               "colorbalance=rs=-0.04:bs=0.07:rh=0.07:bh=-0.05,noise=alls=7:allf=t,")
+        vig = "vignette=PI/4.5"
+    f = f"{pre}{head},setsar=1,fps=30,{vig}"
     if letterbox and W > H:
         bar = int(H * 0.095)
         f += f",drawbox=x=0:y=0:w=iw:h={bar}:color=black@1:t=fill,drawbox=x=0:y={H - bar}:w=iw:h={bar}:color=black@1:t=fill"
@@ -841,10 +847,10 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
             else:
                 g = (f"scale=-2:3200:flags=lanczos,unsharp=5:5:0.8:3:3:0.0,crop=1800:3200:(iw-1800)*{fx}:0,zoompan=z='1+0.4*on/{N}':"
                      f"x='{fx}*(iw-iw/zoom)':y='{fy}*(ih-ih/zoom)':d={N}:s={W}x{H}:fps=30")
-            vf = grade_filter(W, H, dur, i, cap, geom=g)
+            vf = grade_filter(W, H, dur, i, cap, geom=g, photo=bool(c.get("photo")))
             src = ["-i", c["path"]]
         else:
-            vf = grade_filter(W, H, dur, i + random.randint(0, 3), cap, still=bool(c.get("still")))
+            vf = grade_filter(W, H, dur, i + random.randint(0, 3), cap, still=bool(c.get("still")), photo=bool(c.get("photo")))
             if c.get("still"):
                 src = ["-loop", "1", "-framerate", "30", "-i", c["path"]]
             else:
@@ -1182,7 +1188,7 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             if tag == "h":              # kanca: belirtilen kişi/yer fotoğrafları sırayla, hızlı kesme
                 for key in [x.strip() for x in (meta.get("KANCA") or "").split(";") if x.strip()]:
                     for it in photo_map.get(key, [])[:1]:
-                        ph.append({"path": it["path"], "duration": 999, "still": True})
+                        ph.append({"path": it["path"], "duration": 999, "still": True, "photo": True})
                         CREDITS.setdefault(it["path"], it["credit"])
             clips = mix_clips(scenes[k] if scenes else None, queries[k], "landscape", workdir, f"{tag}{k}", d, used, search,
                               ph, per=4.0 if tag == "h" else 8.0)
