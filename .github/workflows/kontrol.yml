@@ -1,57 +1,35 @@
-name: Anahtar kontrolu
+name: Deneme uretimi (yukleme yok)
 on:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   kontrol:
     runs-on: ubuntu-latest
+    timeout-minutes: 200
     steps:
-      - name: Hangi anahtarlar var
-        run: |
-          for n in TELEGRAM_BOT_TOKEN PIXABAY_API_KEY PEXELS_API_KEY CF_ACCOUNT_ID CF_API_TOKEN GEMINI_API_KEY OPENROUTER_API_KEY YT_CLIENT_ID YT_CLIENT_SECRET YT_REFRESH_TOKEN; do
-            v="${!n}"; if [ -n "$v" ]; then echo "VAR   $n (uzunluk ${#v})"; else echo "YOK   $n"; fi
-          done
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
-          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Servisler calisiyor mu
-        run: |
-          python - <<'PY'
-          import json, os, urllib.request, urllib.parse, base64, urllib.error
-          def show(name, fn):
-              try: print("TAMAM", name, fn())
-              except urllib.error.HTTPError as e: print("HATA ", name, e.code, e.read().decode()[:200])
-              except Exception as e: print("HATA ", name, str(e)[:200])
-          t = os.environ["TELEGRAM_BOT_TOKEN"].strip()
-          show("telegram", lambda: json.load(urllib.request.urlopen(f"https://api.telegram.org/bot{t}/getMe"))["result"]["username"])
-          show("pixabay", lambda: len(json.load(urllib.request.urlopen(urllib.request.Request("https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": os.environ["PIXABAY_API_KEY"].strip(), "q": "city night", "per_page": 5}), headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64)"})))["hits"]))
-          def cf():
-              acc, tok = os.environ["CF_ACCOUNT_ID"].strip(), os.environ["CF_API_TOKEN"].strip()
-              url = f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell"
-              for extra in ({"width": 1280, "height": 720}, {}):
-                  body = {"prompt": "an empty bank desk at night, cinematic", "steps": 4}; body.update(extra)
-                  req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST", headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
-                  try:
-                      r = json.load(urllib.request.urlopen(req, timeout=120))
-                      return ("boyut parametresi " + ("kabul" if extra else "yok") + ", resim bayt: " + str(len(base64.b64decode(r["result"]["image"]))))
-                  except urllib.error.HTTPError as e:
-                      print("   deneme hatasi", extra, e.code, e.read().decode()[:150])
-              raise RuntimeError("uretilemedi")
-          show("cloudflare", cf)
-          PY
+      - uses: actions/cache/restore@v4
+        with:
+          path: .ses
+          key: ses-yok
+          restore-keys: ses-
+      - run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg fonts-dejavu-core
+          pip install -U faster-whisper pillow av
+      - run: python debug_render.py
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+          LAND_W: "1920"
+      - name: Kareleri dala yaz
+        if: always()
+        run: |
+          cd kareler_out && git init -q && git checkout -q -b kareler && git config user.name bot && git config user.email bot@users.noreply.github.com
+          git add -A && git commit -qm kareler && git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" kareler
