@@ -284,28 +284,48 @@ def qa_check(video, words_all, times, t_hook, transcribe_fn=None):
     return out
 
 
+def _spread(cand, t0, t1):
+    """cand kelimelerini [t0,t1] aralığına harf sayısına göre yay."""
+    t1 = max(t1, t0 + 0.12 * len(cand))
+    tot = sum(len(w) + 1 for w in cand)
+    out, t = [], t0
+    for w in cand:
+        d = (t1 - t0) * (len(w) + 1) / tot
+        out.append((t, t + d))
+        t += d
+    return out
+
+
 def merge_sub_words(script_words, wh):
-    """Altyazı metni KAYITTAN: gerçekten söylenen kelimeler (Whisper) ve onların gerçek zamanları.
-    Senaryodaki karşılığıyla eşleşen kelimelerde senaryonun yazımı (özel isim, noktalama) kullanılır."""
+    """Altyazı zamanı KAYITTAN (Whisper), yazımı senaryodan: yanlış duyulan kelime altyazıya girmez, kayma olmaz.
+    Kayıtta fazladan çıkan sesler (tekrar, Whisper hatası) altyazıya alınmaz; kesilmişlerse zaten sesten atılmıştır."""
     sw = [norm_word(w) for w in script_words]
     ww = [norm_word(w[0]) for w in wh]
     sm = difflib.SequenceMatcher(None, sw, ww, autojunk=False)
     words, times = [], []
-    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+    last_end = wh[0][1] if wh else 0.0
+    ops = sm.get_opcodes()
+    for n, (tag, i1, i2, j1, j2) in enumerate(ops):
+        cand = script_words[i1:i2]
         if tag == "equal":
             for k in range(i2 - i1):
                 words.append(script_words[i1 + k])
                 times.append((wh[j1 + k][1], wh[j1 + k][2]))
-        elif tag in ("replace", "insert"):
-            cand = script_words[i1:i2]
-            for k, j in enumerate(range(j1, j2)):
-                w = wh[j][0]
-                if tag == "replace" and (j2 - j1) == (i2 - i1) and \
-                        difflib.SequenceMatcher(None, sw[i1 + k], ww[j]).ratio() >= 0.6:
-                    w = cand[k]
+                last_end = wh[j1 + k][2]
+        elif tag == "replace":
+            t0, t1 = wh[j1][1], wh[j2 - 1][2]
+            for w, tt in zip(cand, _spread(cand, t0, t1)):
                 words.append(w)
-                times.append((wh[j][1], wh[j][2]))
-        # delete: senaryoda olup söylenmeyen kelimeler altyazıya girmez
+                times.append(tt)
+            last_end = t1
+        elif tag == "delete":
+            if len(cand) >= 4:          # uzun süre söylenmemiş: altyazıya girmez
+                continue
+            nxt = wh[ops[n + 1][3]][1] if n + 1 < len(ops) and ops[n + 1][3] < len(wh) else last_end + 0.3 * len(cand)
+            for w, tt in zip(cand, _spread(cand, last_end, max(nxt, last_end + 0.1 * len(cand)))):
+                words.append(w)
+                times.append(tt)
+        # insert: kayıttaki fazladan kelimeler altyazıya alınmaz
     return words, times
 
 
