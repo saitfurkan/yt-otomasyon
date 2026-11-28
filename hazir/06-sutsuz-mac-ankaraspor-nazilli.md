@@ -43,7 +43,7 @@ Ceza davası ise sürüyor. Mart 2026'da ilk duruşma oldu. Tutuklu 5 kişi serb
 
 Bana en tuhaf gelen şey şu: Maçta hiçbir şey olmadı ama dosyada her şey var. Gol yok, şut yok, kart yok, bir sürü sayfa var. Bu sessizlik tesadüf müydü, anlaşma mı? Onu mahkeme söyleyecek. [duraklama]
 
-Sen ne düşünüyorsun? Tek şutun çekilmemesi bir şey ispatlar mı, yoksa asıl delil o mesaj mı? Yorumlara yaz. Böyle Türkiye'den gerçek ve tuhaf dosyalar gelsin istiyorsan, kanala abone ol. [duraklama] Artık son tanık sizsiniz.
+Sen ne düşünüyorsun? Tek şutun çekilmemesi bir şey ispatlar mı, yoksa asıl delil o mesaj mı? Yorumlara yaz. Böyle videoların devamını istiyorsan, kanala abone olup beğenebilirsin. Destekler için teşekkürler. [duraklama] Artık son tanık sizsiniz.
 
 ## Kaynaklar
 - NTV (6 Mart 2026): maçın tarihi/yeri, iddianame (46 sayfa, 52 şüpheli, 5 tutuklu, talep edilen cezalar), isimler, tahliye ve erteleme (8 Mayıs)
