@@ -17,7 +17,7 @@ Bir futbol maçı düşün. Doksan dakika oynanıyor. İki takım da topu ayağ�
 
 [SON TANIK AÇILIŞ SESİ: "Karar verilmeden önce, son sözü tanık söyler."]
 
-28 Nisan 2024. Ankara'da, Etimesgut'taki stadyumda 2. Lig'in Beyaz Grup maçı var: Ankaraspor, Nazilli Belediyespor'u ağırlıyor. İki takımın da o gün ihtiyacı farklı. Sezonun son haftaları, kimin ligde kalacağı, kimin play-off'a çıkacağı belli olmak üzere. Ankaraspor play-off'u garantilemiş sayılır. Nazilli ise ligde kalma derdinde. Ve bu hesapta hep görünmeyen bir üçüncü isim var: Zonguldak. Zonguldak'ın da ligde kalıp kalmayacağı, bu maçın sonucuna bağlı. [duraklama]
+28 Nisan 2024. Ankara, Etimesgut'taki stadyumda 2. Lig Beyaz Grup maçı var. Hava hafiften sıcak, tribünde sıradan bir pazar havası. Ama dosyaya baktığında, o gün hiç de öyle görünmüyor. Ankaraspor, Nazilli Belediyespor'u ağırlıyor. İki takımın da o gün ihtiyacı farklı. Sezonun son haftaları, kimin ligde kalacağı, kimin play-off'a çıkacağı belli olmak üzere. Ankaraspor play-off'u garantilemiş sayılır. Nazilli ise ligde kalma derdinde. Ve bu hesapta hep görünmeyen bir üçüncü isim var: Zonguldak. Zonguldak'ın da ligde kalıp kalmayacağı, bu maçın sonucuna bağlı. [duraklama]
 
 Maç başlıyor ve garip bir şey oluyor. Kimse bir şey yapmıyor. Raporlara göre iki takım da birbirine baskı kurmuyor, top çeviriyor, gol aramıyor. Maç sıfır sıfır bitiyor. İki takım da toplam doksan dakikada kaleye tek bir şut çekmiyor. Hakem raporunda tek kart, tek penaltı, tek tartışma yok. Bir de bu sonucun getirdikleri: Nazilli ligde kalıyor, Ankaraspor play-off'a gidiyor, Zonguldak ise küme düşüyor. Yani tek bir sıfır sıfır, üç takımın kaderini belirliyor. [duraklama]
 
