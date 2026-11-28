@@ -101,6 +101,9 @@ def spoken_numbers(text):
     def card(m):
         w = tr_num_words(int(m.group(1)))
         suf = m.group(2) or ""
+        before = m.string[:m.start()].rstrip()
+        if not before or before[-1] in ".!?:":
+            w = w[:1].upper() + w[1:] if not w.startswith("i") else "İ" + w[1:]
         return w + suf.lstrip("'’")
     text = re.sub(r"\b(\d{1,6})(['’][a-zçğıöşü]+)?(?![\d])", card, text)
     return text
