@@ -1,0 +1,21 @@
+name: Senaryoyu Telegram'a gonder
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  g:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache/restore@v4
+        with:
+          path: .chat
+          key: chat-id-v1
+      - run: pip install pillow numpy
+      - env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python senaryo_gonder.py
