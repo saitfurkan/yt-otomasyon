@@ -61,7 +61,7 @@ def norm_word(w):
 def parse_script(path):
     txt = open(path, encoding="utf-8").read()
     meta = {}
-    for key in ("BAŞLIK", "KAPAK", "AÇIKLAMA", "ETİKETLER", "GÖRSELLER", "KİŞİLER", "ARAMA", "KANCA"):
+    for key in ("BAŞLIK", "KAPAK", "AÇIKLAMA", "ETİKETLER", "GÖRSELLER", "KİŞİLER", "ARAMA", "KANCA", "MESAJ"):
         m = re.search(rf"^{key}:\s*(.+)$", txt, re.M)
         if m:
             meta[key] = m.group(1).strip()
@@ -631,6 +631,65 @@ def mix_clips(scenes, queries, orientation, workdir, tag, d, used, search, photo
     return out
 
 
+
+def make_message_card(sender, texts, dest, W=3840, H=2160):
+    """Telefon ekranında mesaj kutusu görünümü (canlandırma). İddianamede geçtiği öne sürülen mesajı gösterir."""
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter
+    s = W / 1920.0
+    img = Image.new("RGB", (W, H), (9, 12, 17))
+    d = ImageDraw.Draw(img)
+    for y in range(H):                                   # arka plan: koyu dikey geçiş
+        t = y / H
+        d.line([(0, y), (W, y)], fill=(int(9 + 10 * t), int(12 + 14 * t), int(17 + 22 * t)))
+    reg = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+    bold = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    F = lambda p, n: ImageFont.truetype(p, int(n * s))
+    pw, ph = 480 * s, 820 * s                           # telefon gövdesi
+    px, py = (W - pw) / 2, 34 * s
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(sh).rounded_rectangle([px + 10 * s, py + 24 * s, px + pw + 10 * s, py + ph + 24 * s], int(70 * s), fill=(0, 0, 0, 150))
+    img.paste(sh.filter(ImageFilter.GaussianBlur(int(30 * s))), (0, 0), sh.filter(ImageFilter.GaussianBlur(int(30 * s))))
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle([px, py, px + pw, py + ph], int(70 * s), fill=(28, 30, 36))
+    m = 14 * s
+    sx0, sy0, sx1, sy1 = px + m, py + m, px + pw - m, py + ph - m
+    d.rounded_rectangle([sx0, sy0, sx1, sy1], int(58 * s), fill=(14, 17, 22))
+    d.rounded_rectangle([px + pw / 2 - 60 * s, sy0 + 12 * s, px + pw / 2 + 60 * s, sy0 + 40 * s], int(14 * s), fill=(0, 0, 0))
+    d.rectangle([sx0, sy0 + 50 * s, sx1, sy0 + 150 * s], fill=(24, 28, 36))              # üst çubuk
+    d.ellipse([sx0 + 24 * s, sy0 + 68 * s, sx0 + 92 * s, sy0 + 136 * s], fill=(70, 86, 110))
+    d.text((sx0 + 58 * s, sy0 + 102 * s), sender[:1].upper(), font=F(bold, 34), fill=(235, 240, 248), anchor="mm")
+    d.text((sx0 + 112 * s, sy0 + 84 * s), sender, font=F(bold, 28), fill=(240, 244, 250), anchor="lm")
+    d.text((sx0 + 112 * s, sy0 + 120 * s), "mesajlar", font=F(reg, 21), fill=(130, 142, 160), anchor="lm")
+    y = sy0 + 200 * s
+    maxw = (sx1 - sx0) - 150 * s
+    fnt = F(reg, 30)
+    for tx in texts:
+        words, lines, cur = tx.split(), [], ""
+        for w in words:
+            t = (cur + " " + w).strip()
+            if d.textlength(t, font=fnt) <= maxw:
+                cur = t
+            else:
+                lines.append(cur); cur = w
+        lines.append(cur)
+        lh = 44 * s
+        bw = max(d.textlength(l, font=fnt) for l in lines) + 44 * s
+        bh = lh * len(lines) + 34 * s
+        d.rounded_rectangle([sx0 + 28 * s, y, sx0 + 28 * s + bw, y + bh], int(26 * s), fill=(45, 52, 66))
+        for i, l in enumerate(lines):
+            d.text((sx0 + 50 * s, y + 17 * s + i * lh + lh / 2), l, font=fnt, fill=(240, 244, 250), anchor="lm")
+        y += bh + 22 * s
+    d.rounded_rectangle([sx0 + 24 * s, sy1 - 110 * s, sx1 - 24 * s, sy1 - 40 * s], int(35 * s), fill=(30, 35, 45))
+    d.text((sx0 + 56 * s, sy1 - 75 * s), "Mesaj yaz", font=F(reg, 24), fill=(100, 112, 130), anchor="lm")
+    lab = "İDDİANAMEDE GEÇTİĞİ ÖNE SÜRÜLEN MESAJ  ·  GÖRSEL CANLANDIRMADIR"
+    lf = F(bold, 24)
+    tw = d.textlength(lab, font=lf)
+    ly = py + ph + 56 * s
+    d.rounded_rectangle([(W - tw) / 2 - 30 * s, ly - 24 * s, (W + tw) / 2 + 30 * s, ly + 26 * s], int(12 * s), fill=(200, 160, 60))
+    d.text((W / 2, ly), lab, font=lf, fill=(20, 16, 6), anchor="mm")
+    img.save(dest, quality=93)
+    return dest
+
 def pick_photos(photo_map, text, uses, limit=2):
     """Paragrafta anahtar kelimesi geçen yer/nesne/kişi fotoğraflarını seç (her fotoğraf en fazla 2 kez)."""
     low = text.lower()
@@ -836,7 +895,9 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
     specs = []
     for i in range(n):
         c = clips[i % len(clips)]
-        if c.get("photo"):                        # gerçek fotoğraf: tek parça, yavaş yaklaşma (Ken Burns)
+        if c.get("card"):                         # mesaj kartı: kırpma ve renk oyunu yok, olduğu gibi göster
+            specs.append((c, each, "card"))
+        elif c.get("photo"):                        # gerçek fotoğraf: tek parça, yavaş yaklaşma (Ken Burns)
             specs.append((c, each, "punch"))
         elif c.get("still") and each >= 3.0:        # her çizim iki plan: önce tarama, sonra yakın plan (kesme hissi)
             specs.append((c, each * 0.55, "pan"))
@@ -846,7 +907,11 @@ def render_visual(clips, total, out_path, W, H, workdir, tag, caption=None):
     for i, (c, dur, kind) in enumerate(specs):
         p = os.path.join(workdir, f"seg_{tag}_{i}.mp4")
         cap = caption if i == 0 else None
-        if kind == "punch":
+        if kind == "card":
+            vf = (f"scale={W}:{H}:flags=lanczos,zoompan=z='1+0.03*on/{max(2, int(dur * 30))}':d={max(2, int(dur * 30))}:"
+                  f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps=30,fade=t=in:st=0:d=0.25,format=yuv420p")
+            src = ["-i", c["path"]]
+        elif kind == "punch":
             fx, fy = random.choice([0.28, 0.5, 0.72]), random.choice([0.3, 0.5, 0.7])
             N = max(2, int(dur * 30))
             za = 0.16 if c.get("photo") else 0.4
@@ -1186,6 +1251,18 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             log("Commons fotoğrafları: " + ", ".join(f"{k}:{len(v)}" for k, v in photo_map.items()))
     except Exception as e:
         log(f"   [Commons atlandı] {str(e)[:150]}")
+    cards = []
+    for part in (meta.get("MESAJ") or "").split(";"):
+        if "=" in part and "|" in part:
+            trig, _, rest = part.partition("=")
+            bits = [b.strip() for b in rest.split("|") if b.strip()]
+            if len(bits) >= 2:
+                try:
+                    cp = os.path.join(workdir, f"mesaj_{len(cards)}.jpg")
+                    make_message_card(bits[0], bits[1:], cp, LAND_W, LAND_H)
+                    cards.append((trig.strip().lower(), cp))
+                except Exception as e:
+                    log(f"   [mesaj kartı yapılamadı] {str(e)[:120]}")
     seg_files, first_clip = [], None
     hook_video = os.path.join(workdir, "hook_v.mp4")
     main_video = os.path.join(workdir, "main_v.mp4")
@@ -1205,6 +1282,9 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
                         CREDITS.setdefault(it["path"], it["credit"])
             clips = mix_clips(scenes[k] if scenes else None, queries[k], "landscape", workdir, f"{tag}{k}", d, used, search,
                               ph, per=4.0 if tag == "h" else 8.0)
+            for trig, cp in cards:
+                if trig and trig in paras[k].lower():
+                    clips.insert(min(1, len(clips)), {"path": cp, "duration": 999, "still": True, "photo": True, "card": True})
             if clips and first_clip is None:
                 first_clip = clips[0]["path"]
             p = os.path.join(workdir, f"{tag}_{k}.mp4")

@@ -5,6 +5,7 @@ KAPAK: TEK ŞUT YOK
 AÇIKLAMA: 28 Nisan 2024. 2. Lig'de 90 dakika oynandı, tek şut çekilmedi, kart çıkmadı. İddianameye göre iki kulüp başkanı sonucu önceden konuşmuştu, kaybeden Zonguldak oldu. Türk futbolunun bahis ve şike dosyasında ilk iddianamenin hikâyesi. Tüm anlatılanlar iddia ve resmî kararlara dayanır, dava sürüyor.
 GÖRSELLER: Ankara=Ankara Turkey; Nazilli=Nazilli Aydın; Zonguldak=Zonguldak Turkey; Etimesgut=Etimesgut Ankara
 KANCA: Etimesgut
+MESAJ: zonguldak teşvik=Nazilli Başkanı|Zonguldak teşvik gönderecekmiş Ankaraspor'a, ondan bizim bir an önce görüşmemiz lazım dayı
 ARAMA: empty football stadium evening; football pitch aerial turkey; stadium floodlights night; referee whistle football; football scoreboard 0-0; mobile phone messages dark room; courthouse istanbul; football fans stand turkey
 ETİKETLER: şike,bahis skandalı,ankaraspor,nazillispor,türk futbolu,tff,pfdk,gerçek hikaye,belgesel,son tanık
 
