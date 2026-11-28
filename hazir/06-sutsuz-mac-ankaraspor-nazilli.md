@@ -27,9 +27,11 @@ O gün kimse bunu büyütmedi. Federasyon bir bakmaya başladı ama konu kapanm�
 
 Bu fırtına o maçla mı başladı? Bir gazeteci öyle söyledi. Federasyon bunu doğrulamadı. Ben de bunu sadece bir iddia olarak söylüyorum. [duraklama]
 
-Peki dosyada ne var? Savcılık elli iki kişiyi şüpheli yapmış. Beşi tutuklanmış. İddiaya göre iki kulüp başkanı, sonucu maçtan önce konuşmuş. Ve en çok konuşulan şey de bir mesaj. [duraklama]
+Dosyada ne var? Savcılık elli iki kişiyi şüpheli yapmış. Beşi tutuklanmış. İddiaya göre iki kulüp başkanı, sonucu maçtan önce konuşmuş. [duraklama]
 
-İddiaya göre Nazilli Başkanı Şahin Kaya, Ankaraspor Başkanı Mehmet Emin Katipoğlu'na şunu yazmış: "Zonguldak teşvik gönderecekmiş Ankaraspor'a, ondan bizim bir an önce görüşmemiz lazım dayı." Maçtan sonra da bir başkası "Hayırlı olsun" demiş. Bunları mahkeme değerlendirecek. [duraklama]
+Maçla ilgili raporlar da var. Federasyonun incelemesine göre, maçtan önce beraberliğe şüpheli bir bahis oynanmış. Bilirkişiler, takımların birbirine baskı kurmadığını yazmış. İddiaya göre bir futbolcu, seksen dokuzuncu dakikada topu geri almak için hiç çaba göstermemiş. Savcılık bunları, sonucun önceden belli olduğunun işareti sayıyor. Ama dosyadaki en çok konuşulan şey başka. [duraklama]
+
+O şey bir mesaj. İddiaya göre Nazilli Başkanı Şahin Kaya, Ankaraspor Başkanı Mehmet Emin Katipoğlu'na şunu yazmış: "Zonguldak teşvik gönderecekmiş Ankaraspor'a, ondan bizim bir an önce görüşmemiz lazım dayı." Maçtan sonra da bir başkası "Hayırlı olsun" demiş. Bunları mahkeme değerlendirecek. [duraklama]
 
 Teşvik primi ne demek? Bir takımın, başka bir takıma "şu maçı kazan, sana para vereceğim" demesi. İddiaya göre Zonguldak da Ankaraspor'a, Nazilli'yi yenmesi için prim verecekti. Savcılığa göre iki başkan bunun üzerine görüşüp berabere kalmaya karar verdi. Zonguldak ise dosyada "suçtan zarar gören" olarak geçiyor. Yani küme düşen taraf. [duraklama]
 
