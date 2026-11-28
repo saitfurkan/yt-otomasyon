@@ -690,6 +690,84 @@ def make_message_card(sender, texts, dest, W=3840, H=2160):
     img.save(dest, quality=93)
     return dest
 
+
+def make_document_card(title, quote, dest, W=3840, H=2160):
+    """Resmî belge sayfası görünümü: iddianame, rapor, karar ya da ifadeden alıntı (canlandırma)."""
+    from PIL import Image, ImageDraw, ImageFont
+    s = W / 1920.0
+    img = Image.new("RGB", (W, H), (13, 15, 20))
+    d = ImageDraw.Draw(img)
+    for y in range(H):
+        t = y / H
+        d.line([(0, y), (W, y)], fill=(int(13 + 8 * t), int(15 + 10 * t), int(20 + 16 * t)))
+    reg = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
+    bold = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
+    sans = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    F = lambda p, n: ImageFont.truetype(p, int(n * s))
+    pw, ph = 700 * s, 900 * s
+    px, py = (W - pw) / 2, 34 * s
+    d.rectangle([px + 12 * s, py + 16 * s, px + pw + 12 * s, py + ph + 16 * s], fill=(4, 5, 8))        # gölge
+    d.rectangle([px, py, px + pw, py + ph], fill=(236, 231, 220))                                      # kâğıt
+    d.rectangle([px, py, px + pw, py + 14 * s], fill=(120, 30, 30))
+    d.text((px + 60 * s, py + 80 * s), title.upper(), font=F(bold, 26), fill=(40, 36, 30), anchor="lm")
+    d.line([(px + 60 * s, py + 112 * s), (px + pw - 60 * s, py + 112 * s)], fill=(90, 84, 74), width=int(2 * s))
+    fnt = F(reg, 31)
+    maxw = pw - 120 * s
+    words, lines, cur = quote.split(), [], ""
+    for w in words:
+        t = (cur + " " + w).strip()
+        if d.textlength(t, font=fnt) <= maxw:
+            cur = t
+        else:
+            lines.append(cur); cur = w
+    lines.append(cur)
+    y = py + 170 * s
+    for l in lines[:14]:
+        d.text((px + 60 * s, y), l, font=fnt, fill=(30, 28, 24), anchor="lm")
+        y += 52 * s
+    # vurgu: alıntının tamamını saran sarı fosforlu çizgi hissi
+    d.rectangle([px + 40 * s, py + 150 * s, px + 48 * s, y - 10 * s], fill=(200, 160, 60))
+    for k in range(3):                                                                                  # sahte "sayfa çizgisi" yerine sade alt çizgi
+        pass
+    lab = "BELGEDEN ALINTI  ·  GÖRSEL CANLANDIRMADIR"
+    lf = F(sans, 24)
+    tw = d.textlength(lab, font=lf)
+    ly = py + ph + 62 * s
+    d.rounded_rectangle([(W - tw) / 2 - 30 * s, ly - 24 * s, (W + tw) / 2 + 30 * s, ly + 26 * s], int(12 * s), fill=(200, 160, 60))
+    d.text((W / 2, ly), lab, font=lf, fill=(20, 16, 6), anchor="mm")
+    img.save(dest, quality=93)
+    return dest
+
+
+def auto_cards(paras, workdir, W, H):
+    """Senaryoda tırnak içinde geçen mesaj ve belge alıntılarını otomatik kart yapar. [(paragraf_no, dosya)]"""
+    out = []
+    pat = re.compile(r'["“]([^"”]{35,260})["”]')
+    for k, p in enumerate(paras):
+        low = p.lower()
+        marks = [i for i, ch in enumerate(p) if ch in '"“”']
+        q = None
+        if len(marks) % 2 == 0:
+            for a, b in zip(marks[0::2], marks[1::2]):
+                seg = p[a + 1:b].strip()
+                if 35 <= len(seg) <= 260 and len(seg.split()) >= 6:
+                    q = seg
+                    break
+        if not q:
+            continue
+        dest = os.path.join(workdir, f"auto_{k}.jpg")
+        try:
+            if "mesaj" in low:
+                make_message_card("Mesaj", [q], dest, W, H)
+            elif re.search(r"iddianame|rapor|karar|ifade|tutanak|yazıyor", low):
+                make_document_card("Belge", q, dest, W, H)
+            else:
+                continue
+            out.append((k, dest))
+        except Exception as e:
+            log(f"   [otomatik kart yapılamadı] {str(e)[:100]}")
+    return out
+
 def pick_photos(photo_map, text, uses, limit=2):
     """Paragrafta anahtar kelimesi geçen yer/nesne/kişi fotoğraflarını seç (her fotoğraf en fazla 2 kez)."""
     low = text.lower()
@@ -1263,6 +1341,13 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
                     cards.append((trig.strip().lower(), cp))
                 except Exception as e:
                     log(f"   [mesaj kartı yapılamadı] {str(e)[:120]}")
+    auto = {}
+    try:
+        for k, cp in auto_cards(paras, workdir, LAND_W, LAND_H):
+            if not any(t and t in paras[k].lower() for t, _ in cards):
+                auto[k] = cp
+    except Exception as e:
+        log(f"   [otomatik kartlar atlandı] {str(e)[:100]}")
     seg_files, first_clip = [], None
     hook_video = os.path.join(workdir, "hook_v.mp4")
     main_video = os.path.join(workdir, "main_v.mp4")
@@ -1285,6 +1370,8 @@ def render_all(script_path, voice_files, ident_voice, outdir, workdir, search=No
             for trig, cp in cards:
                 if trig and trig in paras[k].lower():
                     clips.insert(min(1, len(clips)), {"path": cp, "duration": 999, "still": True, "photo": True, "card": True})
+            if k in auto and not any(c.get("card") for c in clips):
+                clips.insert(min(1, len(clips)), {"path": auto[k], "duration": 999, "still": True, "photo": True, "card": True})
             if clips and first_clip is None:
                 first_clip = clips[0]["path"]
             p = os.path.join(workdir, f"{tag}_{k}.mp4")
