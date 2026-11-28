@@ -13,33 +13,33 @@ Süre: yaklaşık 5-6 dakika okuma. [duraklama] kısa nefes payı. Kaynaklar ve 
 
 ## OKUMA METNİ
 
-Doksan dakika oynandı. Tek şut yok. Tek kart yok. Skor tabelasında baştan sona sıfır sıfır. Ama bu sıkıcı maç, şimdi Türkiye'nin en büyük futbol dosyalarından birinin kapağında. [duraklama]
+90 dakika oynandı. Tek şut yok. Tek kart yok. Skor tabelasında baştan sona 0-0. Ama bu sıkıcı maç, şimdi Türkiye'nin en büyük futbol dosyalarından birinin kapağında. [duraklama]
 
 [SON TANIK AÇILIŞ SESİ: "Karar verilmeden önce, son sözü tanık söyler."]
 
-28 Nisan 2024. Ankara, Etimesgut. Hava hafiften sıcak, sıradan bir pazar. İkinci Lig'de Ankaraspor, Nazilli Belediyespor'la oynuyor. Ama dosyaya bakınca, o gün hiç de sıradan görünmüyor. [duraklama]
+28 Nisan 2024. Ankara, Etimesgut. Hava hafiften sıcak, sıradan bir pazar. 2. Lig'de Ankaraspor, Nazilli Belediyespor'la oynuyor. Ama dosyaya bakınca, o gün hiç de sıradan görünmüyor. [duraklama]
 
-Çünkü bu maça üç takımın kaderi bağlı. Ankaraspor play-off'u zaten almış. Nazilli ligde kalmaya çalışıyor. Bir de sahada olmayan Zonguldak var. Onların da kaderi bu maçın sonucuna bağlı. [duraklama]
+Çünkü bu maça 3 takımın kaderi bağlı. Ankaraspor play-off'u zaten almış. Nazilli ligde kalmaya çalışıyor. Bir de sahada olmayan Zonguldak var. Onların da kaderi bu maçın sonucuna bağlı. [duraklama]
 
-Maç başlıyor ve garip bir şey oluyor: Kimse acele etmiyor. Top dönüyor, pas gidiyor ama kimse kaleyi aramıyor. Kaleciler o gün herhalde hayatlarının en sakin maçını izledi. Dakikalar geçiyor, tabelada hâlâ sıfır sıfır. Doksan dakika bitiyor. Tek şut yok, tek kart yok, sadece iki korner. Ve sonuç şu: Nazilli ligde kalıyor. Ankaraspor play-off'a gidiyor. Zonguldak küme düşüyor. [duraklama]
+Maç başlıyor ve garip bir şey oluyor: Kimse acele etmiyor. Top dönüyor, pas gidiyor ama kimse kaleyi aramıyor. Kaleciler o gün herhalde hayatlarının en sakin maçını izledi. Dakikalar geçiyor, tabelada hâlâ 0-0. 90 dakika bitiyor. Tek şut yok, tek kart yok, sadece 2 korner. Ve sonuç şu: Nazilli ligde kalıyor. Ankaraspor play-off'a gidiyor. Zonguldak küme düşüyor. [duraklama]
 
-O gün kimse bunu büyütmedi. Federasyon bir bakmaya başladı ama konu kapanmış gibiydi. Sonra bir buçuk yıl geçti ve Türk futbolu başka bir sabaha uyandı. Federasyon Başkanı rakamları açıkladı. Üç yüz yetmiş bir hakemin bahis hesabı varmış. Yüz elli ikisi bahis oynamış. Birinin bahis sayısı on sekiz bin. Haberlere göre bin küsur futbolcu da disipline sevk edilmiş. İşte bu fırtınanın içinde, o sessiz maç da yeniden masaya geldi. [duraklama]
+O gün kimse bunu büyütmedi. Federasyon bir bakmaya başladı ama konu kapanmış gibiydi. Sonra 1,5 yıl geçti ve Türk futbolu başka bir sabaha uyandı. Federasyon Başkanı rakamları açıkladı. 371 hakemin bahis hesabı varmış. 152'si bahis oynamış. Birinin bahis sayısı 18 bin. Haberlere göre 1000'den fazla futbolcu da disipline sevk edilmiş. İşte bu fırtınanın içinde, o sessiz maç da yeniden masaya geldi. [duraklama]
 
 Bu fırtına o maçla mı başladı? Bir gazeteci öyle söyledi. Federasyon bunu doğrulamadı. Ben de bunu sadece bir iddia olarak söylüyorum. [duraklama]
 
-Dosyada ne var? Savcılık elli iki kişiyi şüpheli yapmış. Beşi tutuklanmış. İddiaya göre iki kulüp başkanı, sonucu maçtan önce konuşmuş. [duraklama]
+Dosyada ne var? Savcılık 52 kişiyi şüpheli yapmış. 5'i tutuklanmış. İddiaya göre 2 kulüp başkanı, sonucu maçtan önce konuşmuş. [duraklama]
 
-Maçla ilgili raporlar da var. Federasyonun incelemesine göre, maçtan önce beraberliğe şüpheli bir bahis oynanmış. Bilirkişiler, takımların birbirine baskı kurmadığını yazmış. İddiaya göre bir futbolcu, seksen dokuzuncu dakikada topu geri almak için hiç çaba göstermemiş. Savcılık bunları, sonucun önceden belli olduğunun işareti sayıyor. Ama dosyadaki en çok konuşulan şey başka. [duraklama]
+Maçla ilgili raporlar da var. Federasyonun incelemesine göre, maçtan önce beraberliğe şüpheli bir bahis oynanmış. Bilirkişiler, takımların birbirine baskı kurmadığını yazmış. İddiaya göre bir futbolcu, 89. dakikada topu geri almak için hiç çaba göstermemiş. Savcılık bunları, sonucun önceden belli olduğunun işareti sayıyor. Ama dosyadaki en çok konuşulan şey başka. [duraklama]
 
 O şey bir mesaj. İddiaya göre Nazilli Başkanı Şahin Kaya, Ankaraspor Başkanı Mehmet Emin Katipoğlu'na şunu yazmış: "Zonguldak teşvik gönderecekmiş Ankaraspor'a, ondan bizim bir an önce görüşmemiz lazım dayı." Maçtan sonra da bir başkası "Hayırlı olsun" demiş. Bunları mahkeme değerlendirecek. [duraklama]
 
-Teşvik primi ne demek? Bir takımın, başka bir takıma "şu maçı kazan, sana para vereceğim" demesi. İddiaya göre Zonguldak da Ankaraspor'a, Nazilli'yi yenmesi için prim verecekti. Savcılığa göre iki başkan bunun üzerine görüşüp berabere kalmaya karar verdi. Zonguldak ise dosyada "suçtan zarar gören" olarak geçiyor. Yani küme düşen taraf. [duraklama]
+Teşvik primi ne demek? Bir takımın, başka bir takıma "şu maçı kazan, sana para vereceğim" demesi. İddiaya göre Zonguldak da Ankaraspor'a, Nazilli'yi yenmesi için prim verecekti. Savcılığa göre 2 başkan bunun üzerine görüşüp berabere kalmaya karar verdi. Zonguldak ise dosyada "suçtan zarar gören" olarak geçiyor. Yani küme düşen taraf. [duraklama]
 
-Savcılık iki başkan için bir buçuk yıldan dört buçuk yıla kadar hapis istiyor. Ama bu bir talep. Karar değil. [duraklama]
+Savcılık 2 başkan için 1,5 yıldan 4,5 yıla kadar hapis istiyor. Ama bu bir talep. Karar değil. [duraklama]
 
-Spor yargısı ise kararını verdi. Disiplin Kurulu on iki futbolcuya sekiz aydan bir yıla kadar ceza verdi. Nazilli Başkanı da bir yıl ceza aldı. Tahkim Kurulu cezaları onadı. [duraklama]
+Spor yargısı ise kararını verdi. Disiplin Kurulu 12 futbolcuya 8 aydan 1 yıla kadar ceza verdi. Nazilli Başkanı da 1 yıl ceza aldı. Tahkim Kurulu cezaları onadı. [duraklama]
 
-Ceza davası ise sürüyor. Mart 2026'da ilk duruşma oldu. Tutuklu beş kişi serbest bırakıldı. Sanıklar suçlamayı kabul etmiyor. Yani ortada bir karar yok. O zamana kadar herkes masum sayılır. [duraklama]
+Ceza davası ise sürüyor. Mart 2026'da ilk duruşma oldu. Tutuklu 5 kişi serbest bırakıldı. Sanıklar suçlamayı kabul etmiyor. Yani ortada bir karar yok. O zamana kadar herkes masum sayılır. [duraklama]
 
 Bana en tuhaf gelen şey şu: Maçta hiçbir şey olmadı ama dosyada her şey var. Gol yok, şut yok, kart yok, bir sürü sayfa var. Bu sessizlik tesadüf müydü, anlaşma mı? Onu mahkeme söyleyecek. [duraklama]
 

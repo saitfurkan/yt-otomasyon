@@ -142,7 +142,7 @@ def main():
             sid_s = (re.match(r"/senaryo\s+(\S+)", m_s["text"].strip(), re.I) or [None, LATEST()])[1]
             sp = os.path.join(HERE, "hazir", sid_s if sid_s.endswith(".md") else sid_s + ".md")
             if os.path.exists(sp):
-                meta_s, paras_s, hook_s = vp.parse_script(sp)
+                meta_s, paras_s, hook_s = vp.parse_script(sp, digits=True)
                 chat_s = m_s["chat"]["id"]
                 say(chat_s, f"Senaryo: {meta_s.get('BAŞLIK', sid_s)}\nAşağıdaki metni sırayla sesli mesaj olarak gönder, "
                             "bitince /bitti yaz. (Açılış cümlesini ayrıca okuma, otomatik eklenir.)")

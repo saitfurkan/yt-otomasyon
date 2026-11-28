@@ -57,8 +57,57 @@ def norm_word(w):
     return re.sub(r"[^\w]", "", tr_lower(w))
 
 
+
+_ONES = ["", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"]
+_TENS = ["", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"]
+
+
+def tr_num_words(n):
+    """0..999999 arası tam sayıyı Türkçe okunuşa çevirir (üç yüz yetmiş bir)."""
+    if n == 0:
+        return "sıfır"
+    out = []
+    th, rest = divmod(n, 1000)
+    if th:
+        out.append(("" if th == 1 else tr_num_words(th) + " ") + "bin")
+    h, rest = divmod(rest, 100)
+    if h:
+        out.append(("" if h == 1 else _ONES[h] + " ") + "yüz")
+    t, o = divmod(rest, 10)
+    if t:
+        out.append(_TENS[t])
+    if o:
+        out.append(_ONES[o])
+    return " ".join(out)
+
+
+_ORD_SUFFIX = {"bir": "birinci", "iki": "ikinci", "üç": "üçüncü", "dört": "dördüncü", "beş": "beşinci", "altı": "altıncı",
+               "yedi": "yedinci", "sekiz": "sekizinci", "dokuz": "dokuzuncu", "on": "onuncu", "yirmi": "yirminci", "otuz": "otuzuncu",
+               "kırk": "kırkıncı", "elli": "ellinci", "altmış": "altmışıncı", "yetmiş": "yetmişinci", "seksen": "sekseninci",
+               "doksan": "doksanıncı", "yüz": "yüzüncü", "bin": "bininci"}
+
+
+def spoken_numbers(text):
+    """Rakamları okunuşa çevirir (hizalama ve altyazı için); ekranda/Telegram'da rakamlar kalır."""
+    def ordinal(m):
+        words = tr_num_words(int(m.group(1))).split()
+        words[-1] = _ORD_SUFFIX.get(words[-1], words[-1])
+        return " ".join(words) + m.group(2)
+    text = re.sub(r"\b(\d{1,6})\.(\s+)(?=[a-zçğıöşü])", ordinal, text)
+    text = re.sub(r"\b0-0\b", "sıfır sıfır", text)
+    text = re.sub(r"\b(\d+),5\b", lambda m: tr_num_words(int(m.group(1))) + " buçuk", text)
+    text = re.sub(r"\b(\d+),(\d)\b", lambda m: tr_num_words(int(m.group(1))) + " virgül " + tr_num_words(int(m.group(2))), text)
+
+    def card(m):
+        w = tr_num_words(int(m.group(1)))
+        suf = m.group(2) or ""
+        return w + suf.lstrip("'’")
+    text = re.sub(r"\b(\d{1,6})(['’][a-zçğıöşü]+)?(?![\d])", card, text)
+    return text
+
+
 # ------------------------------------------------------------------ senaryo
-def parse_script(path):
+def parse_script(path, digits=False):
     txt = open(path, encoding="utf-8").read()
     meta = {}
     for key in ("BAŞLIK", "KAPAK", "AÇIKLAMA", "ETİKETLER", "GÖRSELLER", "KİŞİLER", "ARAMA", "KANCA", "MESAJ"):
@@ -81,6 +130,8 @@ def parse_script(path):
         p = re.sub(r"\s+", " ", p).strip()
         if p:
             clean.append(p)
+    if not digits:
+        clean = [spoken_numbers(p) for p in clean]
     return meta, clean, max(1, hook_n)
 
 
