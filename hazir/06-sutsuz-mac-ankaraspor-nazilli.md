@@ -13,7 +13,7 @@ Süre: yaklaşık 5-6 dakika okuma. [duraklama] kısa nefes payı. Kaynaklar ve 
 
 ## OKUMA METNİ
 
-Doksan dakika oynandı. Tek şut yok. Tek kart yok. Skor tabelasında baştan sona sıfır sıfır. Ve bu maç, Türkiye'nin en büyük futbol dosyalarından birinin kapağı oldu. [duraklama]
+Doksan dakika oynandı. Tek şut yok. Tek kart yok. Skor tabelasında baştan sona sıfır sıfır. Ama bu sıkıcı maç, şimdi Türkiye'nin en büyük futbol dosyalarından birinin kapağında. [duraklama]
 
 [SON TANIK AÇILIŞ SESİ: "Karar verilmeden önce, son sözü tanık söyler."]
 
@@ -21,7 +21,7 @@ Doksan dakika oynandı. Tek şut yok. Tek kart yok. Skor tabelasında baştan so
 
 Çünkü bu maça üç takımın kaderi bağlı. Ankaraspor play-off'u zaten almış. Nazilli ligde kalmaya çalışıyor. Bir de sahada olmayan Zonguldak var. Onların da kaderi bu maçın sonucuna bağlı. [duraklama]
 
-Maç başlıyor ve garip bir şey oluyor: Kimse acele etmiyor. Top dönüyor, pas gidiyor ama kimse kaleyi aramıyor. Dakikalar geçiyor, tabelada hâlâ sıfır sıfır. Doksan dakika bitiyor. Tek şut yok, tek kart yok, sadece iki korner. Ve sonuç şu: Nazilli ligde kalıyor. Ankaraspor play-off'a gidiyor. Zonguldak küme düşüyor. [duraklama]
+Maç başlıyor ve garip bir şey oluyor: Kimse acele etmiyor. Top dönüyor, pas gidiyor ama kimse kaleyi aramıyor. Kaleciler o gün herhalde hayatlarının en sakin maçını izledi. Dakikalar geçiyor, tabelada hâlâ sıfır sıfır. Doksan dakika bitiyor. Tek şut yok, tek kart yok, sadece iki korner. Ve sonuç şu: Nazilli ligde kalıyor. Ankaraspor play-off'a gidiyor. Zonguldak küme düşüyor. [duraklama]
 
 O gün kimse bunu büyütmedi. Federasyon bir bakmaya başladı ama konu kapanmış gibiydi. Sonra bir buçuk yıl geçti ve Türk futbolu başka bir sabaha uyandı. Federasyon Başkanı rakamları açıkladı. Üç yüz yetmiş bir hakemin bahis hesabı varmış. Yüz elli ikisi bahis oynamış. Birinin bahis sayısı on sekiz bin. Haberlere göre bin küsur futbolcu da disipline sevk edilmiş. İşte bu fırtınanın içinde, o sessiz maç da yeniden masaya geldi. [duraklama]
 
@@ -41,7 +41,7 @@ Spor yargısı ise kararını verdi. Disiplin Kurulu on iki futbolcuya sekiz ayd
 
 Ceza davası ise sürüyor. Mart 2026'da ilk duruşma oldu. Tutuklu beş kişi serbest bırakıldı. Sanıklar suçlamayı kabul etmiyor. Yani ortada bir karar yok. O zamana kadar herkes masum sayılır. [duraklama]
 
-Bana en tuhaf gelen şey şu: Koskoca bir dosya, hiçbir şey olmayan bir maçtan çıktı. Gol yok, şut yok, kart yok. Bu sessizlik tesadüf müydü, anlaşma mı? Onu mahkeme söyleyecek. [duraklama]
+Bana en tuhaf gelen şey şu: Maçta hiçbir şey olmadı ama dosyada her şey var. Gol yok, şut yok, kart yok, bir sürü sayfa var. Bu sessizlik tesadüf müydü, anlaşma mı? Onu mahkeme söyleyecek. [duraklama]
 
 Sen ne düşünüyorsun? Tek şutun çekilmemesi bir şey ispatlar mı, yoksa asıl delil o mesaj mı? Yorumlara yaz. Böyle Türkiye'den gerçek ve tuhaf dosyalar gelsin istiyorsan, kanala abone ol. [duraklama] Artık son tanık sizsiniz.
 
