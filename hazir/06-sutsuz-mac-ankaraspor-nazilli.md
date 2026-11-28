@@ -9,37 +9,39 @@ MESAJ: zonguldak teşvik=Nazilli Başkanı|Zonguldak teşvik gönderecekmiş Ank
 ARAMA: empty football stadium evening; football pitch aerial turkey; stadium floodlights night; referee whistle football; football scoreboard 0-0; mobile phone messages dark room; courthouse istanbul; football fans stand turkey
 ETİKETLER: şike,bahis skandalı,ankaraspor,nazillispor,türk futbolu,tff,pfdk,gerçek hikaye,belgesel,son tanık
 
-Süre: yaklaşık 9-10 dakika okuma. [duraklama] kısa nefes payı. Kaynaklar ve kontrol listesi sonda.
+Süre: yaklaşık 5-6 dakika okuma. [duraklama] kısa nefes payı. Kaynaklar ve kontrol listesi sonda.
 
 ## OKUMA METNİ
 
-Bir futbol maçı düşün. Doksan dakika oynanıyor. Futbolcular koşuyor, top ayaktan ayağa dolaşıyor, tribünden ses geliyor. Ama kaleye tek bir şut çekilmiyor. Tek bir tane. Hakem cebinden kart çıkarmıyor, korner sadece iki kere kullanılıyor. Skor tabelasında baştan sona sıfır sıfır yazıyor. İşte bu sıkıcı maç, aylar sonra bir savcının masasına gidiyor ve Türkiye'nin en büyük futbol dosyalarından birinin kapağı oluyor. [duraklama] Şimdi o doksan dakikaya dönelim.
+Doksan dakika oynandı. Tek şut yok. Tek kart yok. Skor tabelasında baştan sona sıfır sıfır. Ve bu maç, Türkiye'nin en büyük futbol dosyalarından birinin kapağı oldu. [duraklama]
 
 [SON TANIK AÇILIŞ SESİ: "Karar verilmeden önce, son sözü tanık söyler."]
 
-28 Nisan 2024. Ankara, Etimesgut'taki stadyumda 2. Lig Beyaz Grup maçı var. Hava hafiften sıcak, tribünde sıradan bir pazar havası. Ama dosyaya baktığında, o gün hiç de öyle görünmüyor. Çünkü sahada iki takım var ama maçın sonucuna bağlı üç takım var. Ankaraspor, Nazilli Belediyespor'u ağırlıyor. Sezonun son haftaları, her puan bir kapı gibi: Biri play-off kapısına, biri ligde kalma kapısına yaklaşıyor. Ankaraspor play-off'u zaten garantilemiş. Nazilli ise ligde kalma derdinde. Ve bu hesabın içinde, sahada olmayan ama sonuçtan en çok etkilenecek bir isim daha var: Zonguldak. [duraklama]
+28 Nisan 2024. Ankara, Etimesgut. Hava hafiften sıcak, sıradan bir pazar. İkinci Lig'de Ankaraspor, Nazilli Belediyespor'la oynuyor. Ama dosyaya bakınca, o gün hiç de sıradan görünmüyor. [duraklama]
 
-Hakemin düdüğüyle maç başlıyor ve aradan birkaç dakika geçince bir şey dikkat çekiyor: Kimse acele etmiyor. Raporlara göre iki takım da birbirine baskı kurmuyor, top çeviriyor, gol aramıyor. Dakikalar geçiyor, tabelada hâlâ sıfır sıfır. Doksan dakika bitiyor ve kaleye tek bir şut çekilmemiş. Hakem gözlemcisinin raporunda tek kart, tek penaltı, tek tartışma yok. Ve bu sessizliğin faturası ağır: Nazilli ligde kalıyor, Ankaraspor play-off'a gidiyor, Zonguldak ise küme düşüyor. Tek bir sıfır sıfır, üç takımın kaderini belirliyor. [duraklama]
+Çünkü bu maça üç takımın kaderi bağlı. Ankaraspor play-off'u zaten almış. Nazilli ligde kalmaya çalışıyor. Bir de sahada olmayan Zonguldak var. Onların da kaderi bu maçın sonucuna bağlı. [duraklama]
 
-Maçtan hemen sonra Türkiye Futbol Federasyonu bu maça bakmaya başlıyor ama konu uzun süre büyümüyor. Sonra yaklaşık bir buçuk yıl geçiyor ve Türk futbolu bambaşka bir sabaha uyanıyor. Ekim 2025'te Federasyon Başkanı basın toplantısı yapıyor ve rakamları tek tek okuyor: Hakemlerin 371'inin bahis hesabı var. Bunların 152'si bahis oynamış. Bir hakem, 18 bin küsur maça bahis yapmış. Haberlere göre bin yirmi dört futbolcu da disipline sevk ediliyor. Türk futbolu, yıllardır görmediği türden bir bahis fırtınasının tam ortasında kalıyor. [duraklama]
+Maç başlıyor ve garip bir şey oluyor: Kimse acele etmiyor. Top dönüyor, pas gidiyor ama kimse kaleyi aramıyor. Dakikalar geçiyor, tabelada hâlâ sıfır sıfır. Doksan dakika bitiyor. Tek şut yok, tek kart yok, sadece iki korner. Ve sonuç şu: Nazilli ligde kalıyor. Ankaraspor play-off'a gidiyor. Zonguldak küme düşüyor. [duraklama]
 
-Bu fırtınanın nereden başladığı konusunda bir iddia var. Bir spor gazetecisi, her şeyin Ankaraspor-Nazilli maçıyla başladığını söyledi. Federasyon bunu doğrulamadı, o yüzden bunu iddia olarak bırakıyorum. Ama bildiğimiz bir şey var: O sessiz maçın dosyası, ilk iddianamelerden birine dönüştü. [duraklama]
+O gün kimse bunu büyütmedi. Federasyon bir bakmaya başladı ama konu kapanmış gibiydi. Sonra bir buçuk yıl geçti ve Türk futbolu başka bir sabaha uyandı. Federasyon Başkanı rakamları açıkladı. Üç yüz yetmiş bir hakemin bahis hesabı varmış. Yüz elli ikisi bahis oynamış. Birinin bahis sayısı on sekiz bin. Haberlere göre bin küsur futbolcu da disipline sevk edilmiş. İşte bu fırtınanın içinde, o sessiz maç da yeniden masaya geldi. [duraklama]
 
-İddianameyi masaya koyalım. İstanbul Cumhuriyet Başsavcılığı'nın hazırladığı dosya kırk altı sayfa. Elli iki şüpheli, beş tutuklu. Federasyonun incelemesine göre maçtan önce takip edilen bahis şirketlerinde beraberliğe şüpheli oranda bahis oynanmış. Bilirkişiler, takımların gerçek bir baskı kurmadığını yazıyor. İddianameye göre bir futbolcu, seksen dokuzuncu dakikada, topu geri kazanmak için gerçekten çaba göstermiyor. Savcılık bunların hepsini, sonucun önceden konuşulduğunun işareti sayıyor. Ama dosyanın en çok konuşulan kısmı başka yerde. [duraklama]
+Bu fırtına o maçla mı başladı? Bir gazeteci öyle söyledi. Federasyon bunu doğrulamadı. Ben de bunu sadece bir iddia olarak söylüyorum. [duraklama]
 
-Telefon kayıtları. İddianameye girdiğine göre, Nazilli Belediyespor Başkanı Şahin Kaya'nın, Ankaraspor Başkanı Mehmet Emin Katipoğlu'na yazdığı iddia edilen bir mesaj var. Aynen şöyle: "Zonguldak teşvik gönderecekmiş Ankaraspor'a, ondan bizim bir an önce görüşmemiz lazım dayı." Maçtan sonra da bir başka şüphelinin Katipoğlu'na attığı iddia edilen iki kelimelik bir mesaj var: "Hayırlı olsun." [duraklama]
+Peki dosyada ne var? Savcılık elli iki kişiyi şüpheli yapmış. Beşi tutuklanmış. İddiaya göre iki kulüp başkanı, sonucu maçtan önce konuşmuş. Ve en çok konuşulan şey de bir mesaj. [duraklama]
 
-Bu mesajı yorumlamak bana düşmüyor, mahkeme yorumlayacak. Ama mantığı şöyle. Teşvik primi dediğimiz şey, bir kulübün kendi puan hesabına yarasın diye başka bir takıma "şu maçı kazan, sana para vereceğim" demesi. İddiaya göre Zonguldak, Ankaraspor'a Nazilli'yi yenmesi için prim vaat ediyordu. Mesajın iddia edilen anlamı ise şu: İki başkan görüşüp sıfır sıfır konusunda anlaşırsa, Nazilli ligde kalacak, Zonguldak kaybedecek. İddianamede Zonguldakspor "suçtan zarar gören" olarak geçiyor. Yani iddianameye göre Zonguldak, bu işin mağduru sayılıyor ve küme düşmenin bedelini ödedi. [duraklama]
+İddiaya göre Nazilli Başkanı Şahin Kaya, Ankaraspor Başkanı Mehmet Emin Katipoğlu'na şunu yazmış: "Zonguldak teşvik gönderecekmiş Ankaraspor'a, ondan bizim bir an önce görüşmemiz lazım dayı." Maçtan sonra da bir başkası "Hayırlı olsun" demiş. Bunları mahkeme değerlendirecek. [duraklama]
 
-Savcılık Şahin Kaya ve Mehmet Emin Katipoğlu için bir buçuk yıldan dört buçuk yıla kadar hapis istiyor. Diğer şüpheliler için bir yıldan üç yıla kadar. Suçlamanın adı şike ve teşvik primi. Kulüp yönetiminde görev yapma ve maç izleme yasağı da talepler arasında. Ama bunlar savcılığın talepleri, hüküm değil. [duraklama]
+Teşvik primi ne demek? Bir takımın, başka bir takıma "şu maçı kazan, sana para vereceğim" demesi. İddiaya göre Zonguldak da Ankaraspor'a, Nazilli'yi yenmesi için prim verecekti. Savcılığa göre iki başkan bunun üzerine görüşüp berabere kalmaya karar verdi. Zonguldak ise dosyada "suçtan zarar gören" olarak geçiyor. Yani küme düşen taraf. [duraklama]
 
-Federasyon ise kendi yolundan gitti. Disiplin Kurulu, yani PFDK, bahis gerekçesiyle ceza verdi. Şahin Kaya ve dört futbolcuya bir yıl hak mahrumiyeti, altı futbolcuya sekiz ay. Toplamda on iki futbolcuya sekiz ay ile bir yıl arasında ceza çıktı. Tahkim Kurulu da cezaları indirmeden onayladı. Yani spor yargısı kararını verdi, ceza yargısı ise henüz konuşmadı. [duraklama]
+Savcılık iki başkan için bir buçuk yıldan dört buçuk yıla kadar hapis istiyor. Ama bu bir talep. Karar değil. [duraklama]
 
-Ceza yargısı da sahneye çıktı. 6 Mart 2026'da İstanbul'da ilk duruşma yapıldı. Mahkeme tutuklu beş sanığı tahliye etti ve dosyanın eksikleri giderilsin diye duruşmayı erteledi. Sanıklar suçlamaları kabul etmedi. Hikâye bitmiş değil. Mahkeme karar verene kadar herkes için masumiyet karinesi geçerli. [duraklama]
+Spor yargısı ise kararını verdi. Disiplin Kurulu on iki futbolcuya sekiz aydan bir yıla kadar ceza verdi. Nazilli Başkanı da bir yıl ceza aldı. Tahkim Kurulu cezaları onadı. [duraklama]
 
-Bana en tuhaf gelen şey şu: Bütün bu dosya, bir maçın en sıkıcı yanından çıkmış. Gol yok, şut yok, kart yok. Futbolda genelde gürültü dikkat çeker, bu dosyada dikkat çeken şey sessizlikti. Bunun tesadüf mü, yoksa bir anlaşmanın sonucu mu olduğuna mahkeme karar verecek. [duraklama]
+Ceza davası ise sürüyor. Mart 2026'da ilk duruşma oldu. Tutuklu beş kişi serbest bırakıldı. Sanıklar suçlamayı kabul etmiyor. Yani ortada bir karar yok. O zamana kadar herkes masum sayılır. [duraklama]
 
-Şimdi sana sorayım: Sence doksan dakika boyunca tek şut çekilmemesi tek başına bir şey ispatlar mı? Yoksa asıl delil o mesajlar mı? Yorumlara yaz, merak ediyorum. Böyle Türkiye'den gerçek ve tuhaf dosyaların devamı gelsin istiyorsan kanala abone ol, bir sonraki hikâye bundan da ilginç. [duraklama] Artık son tanık sizsiniz.
+Bana en tuhaf gelen şey şu: Koskoca bir dosya, hiçbir şey olmayan bir maçtan çıktı. Gol yok, şut yok, kart yok. Bu sessizlik tesadüf müydü, anlaşma mı? Onu mahkeme söyleyecek. [duraklama]
+
+Sen ne düşünüyorsun? Tek şutun çekilmemesi bir şey ispatlar mı, yoksa asıl delil o mesaj mı? Yorumlara yaz. Böyle Türkiye'den gerçek ve tuhaf dosyalar gelsin istiyorsan, kanala abone ol. [duraklama] Artık son tanık sizsiniz.
 
 ## Kaynaklar
 - NTV (6 Mart 2026): maçın tarihi/yeri, iddianame (46 sayfa, 52 şüpheli, 5 tutuklu, talep edilen cezalar), isimler, tahliye ve erteleme (8 Mayıs)
